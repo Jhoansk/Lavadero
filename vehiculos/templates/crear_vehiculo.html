@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Vehículo</title>
+</head>
+<body>
+    <h1>Crear Vehículo</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="placa">Placa:</label>
+        <input type="text" name="placa" required>
+
+        <label for="marca">Marca:</label>
+        <input type="text" name="marca" required>
+
+        <label for="linea">Línea:</label>
+        <input type="text" name="linea" required>
+
+        <label for="modelo">Modelo:</label>
+        <input type="text" name="modelo" required>
+
+        <button type="submit">Crear Vehículo</button>
+    </form>
+</body>
+</html>

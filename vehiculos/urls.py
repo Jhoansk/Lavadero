@@ -1,0 +1,19 @@
+from django.urls import path
+from django.contrib.auth.views import LogoutView  
+from .views import login_view, register_employee, dashboard
+from .views import *
+
+urlpatterns = [
+    path('login/', login_view, name='login'), #Vista de Login
+    path('register/', register_employee, name='register_employee'), #vista para registrar empleado
+    path('dashboard/', dashboard, name='dashboard'), #Vista de Dashboard
+    path('logout/', LogoutView.as_view(), name='logout'), #Vista para cerrar sesion
+    path('crear_cliente/', crear_cliente, name='crear_cliente'),  # Vista para crear cliente
+    path('crear_vehiculo/', crear_vehiculo, name='crear_vehiculo'),  # Vista para crear vehículo
+    path('recepcion/', crear_recepcion, name='crear_recepcion'), #Vista para crear la recepcion
+    path('empezar_lavado/<int:id>/', empezar_lavado, name='empezar_lavado'), #Vista para empezar el lavado
+    path('eliminar_recepcion/<int:id>/', eliminar_recepcion, name='eliminar_recepcion'),#Elimina la recepcion
+    path('reiniciar_recepcion/<int:id>/', reiniciar_recepcion, name='reiniciar_recepcion'),#Reinicia la Recepcion
+    path('ver_lavado/<int:id>/', ver_lavado, name='ver_lavado'),#Vista para ver el lavado del vehiculo
+    path('terminar_lavado/<int:id>/', terminar_lavado, name='terminar_lavado'), #terminar Lavado
+]

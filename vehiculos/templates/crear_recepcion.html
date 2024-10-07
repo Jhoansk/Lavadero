@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Recepción</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crear Recepción</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="fecha">Fecha (dd/mm/yyyy):</label>
+            <input type="text" name="fecha" required placeholder="dd/mm/yyyy">
+        </div>
+
+        <div class="form-group">
+            <label for="placa_vehiculo">Placa del Vehículo:</label>
+            <input type="text" name="placa_vehiculo" required>
+        </div>
+
+        <div class="form-group">
+            <label for="cliente_vehiculo">Cédula del Cliente:</label>
+            <input type="text" name="cliente_vehiculo" required>
+        </div>
+
+        <div class="form-group">
+            <label for="tipo_lavado">Tipo de Lavado:</label>
+            <select name="tipo_lavado" required>
+                <option value="Lavado General">Lavado General</option>
+                <option value="Lavado Motor">Lavado Motor</option>
+                <option value="Lavado y pulido">Lavado y pulido</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="tiempo">Tiempo:</label>
+            <input type="text" name="tiempo" value="1:00:00" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="valor">Valor:</label>
+            <input type="text" name="valor" value="100000" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="imagen_1">Imagen Lateral Frontal Izquierdo:</label>
+            <input type="file" name="imagen_1" accept="image/*" required>
+        </div>
+
+        <div class="form-group">
+            <label for="imagen_2">Imagen Lateral Frontal Derecho:</label>
+            <input type="file" name="imagen_2" accept="image/*" required>
+        </div>
+
+        <div class="form-group">
+            <label for="imagen_3">Imagen Lateral Posterior Izquierdo:</label>
+            <input type="file" name="imagen_3" accept="image/*" required>
+        </div>
+
+        <div class="form-group">
+            <label for="imagen_4">Imagen Lateral Posterior Derecho:</label>
+            <input type="file" name="imagen_4" accept="image/*" required>
+        </div>
+
+        <button type="submit">Crear Recepción</button>
+    </form>
+</body>
+</html>

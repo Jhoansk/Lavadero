@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Empleado</title>
+    <style>
+        /* Estilo básico */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registrar Empleado</h2>
+    <form method="post">
+        {% csrf_token %}
+        
+        <!-- Campos del formulario de usuario -->
+        <label for="username">Nombre de Usuario:</label>
+        <input type="text" name="username" required>
+
+        <label for="password1">Contraseña:</label>
+        <input type="password" name="password1" required>
+
+        <label for="password2">Confirmar Contraseña:</label>
+        <input type="password" name="password2" required>
+
+        <!-- Campos adicionales del empleado -->
+        <label for="cedula">Cédula:</label>
+        <input type="text" name="cedula" required>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required>
+
+        <label for="s_nombre">Segundo Nombre:</label>
+        <input type="text" name="s_nombre">
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" required>
+
+        <label for="s_apellido">Segundo Apellido:</label>
+        <input type="text" name="s_apellido">
+
+        <label for="telefono">Teléfono:</label>
+        <input type="text" name="telefono" required>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" name="direccion" required>
+
+        <label for="rol">Rol:</label>
+        <select name="rol" required>
+            <option value="empleado">Empleado</option>
+            <option value="administrador">Administrador</option>
+        </select>
+
+        <button type="submit">Registrar</button>
+    </form>
+
+    {% if messages %}
+        <div>
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+</body>
+</html>

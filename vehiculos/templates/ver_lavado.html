@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles del Lavado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .btn {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .btn-terminar {
+            background-color: #f44336;
+        }
+        .btn-terminar:hover {
+            background-color: #d32f2f;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        .imagenes {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .imagenes img {
+            width: 200px;
+            height: 150px;
+            border: 1px solid #ccc;
+        }
+        .contador {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+    <script>
+        function startCountdown(duration) {
+            var timer = duration, hours, minutes, seconds;
+            var display = document.getElementById('contador');
+
+            setInterval(function () {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                // Formatea el tiempo
+                display.textContent = hours + " horas " + minutes + " minutos " + seconds + " segundos";
+
+                // Si el contador llega a 0, detiene la cuenta
+                if (--timer < 0) {
+                    timer = 0;
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            // Usa el tiempo restante que pasamos desde la vista
+            var tiempoRestante = {{ tiempo_restante|default:0 }};
+            startCountdown(tiempoRestante);
+        };
+    </script>
+</head>
+<body>
+    <h1>Detalles del Lavado</h1>
+
+    <h3>Información del Vehículo</h3>
+    <table>
+        <tr>
+            <th>Placa</th>
+            <td>{{ recepcion.placa_vehiculo.placa }}</td>
+        </tr>
+        <tr>
+            <th>Marca</th>
+            <td>{{ recepcion.placa_vehiculo.marca }}</td>
+        </tr>
+        <tr>
+            <th>Línea</th>
+            <td>{{ recepcion.placa_vehiculo.linea }}</td>
+        </tr>
+        <tr>
+            <th>Modelo</th>
+            <td>{{ recepcion.placa_vehiculo.modelo }}</td>
+        </tr>
+    </table>
+
+    <h3>Información del Lavado</h3>
+    <table>
+        <tr>
+            <th>Tipo de Lavado</th>
+            <td>{{ recepcion.tipo_lavado }}</td>
+        </tr>
+        <tr>
+            <th>Tiempo Estimado</th>
+            <td>{{ recepcion.tiempo }}</td>
+        </tr>
+        <tr>
+            <th>Valor</th>
+            <td>${{ recepcion.valor }}</td>
+        </tr>
+        <tr>
+            <th>Estado</th>
+            <td>{{ recepcion.estado }}</td>
+        </tr>
+        <tr>
+            <th>Encargado</th>
+            <td>
+                {% if recepcion.encargado %}
+                    {{ recepcion.encargado }}
+                {% else %}
+                    Sin asignar
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+
+    <h3>Contador de Lavado</h3>
+    <div class="contador" id="contador"></div>
+
+    <h3>Imágenes del Vehículo</h3>
+    <div class="imagenes">
+        {% if recepcion.imagenes %}
+            <img src="{{ recepcion.imagenes.url }}" alt="Lateral Frontal Izquierdo">
+            <img src="{{ recepcion.imagenes.url }}" alt="Lateral Frontal Derecho">
+            <img src="{{ recepcion.imagenes.url }}" alt="Lateral Posterior Izquierdo">
+            <img src="{{ recepcion.imagenes.url }}" alt="Lateral Posterior Derecho">
+        {% else %}
+            <p>No hay imágenes disponibles.</p>
+        {% endif %}
+    </div>
+
+    <br>
+
+    {% if request.user.rol == 'administrador' or request.user.username == recepcion.encargado %}
+    <form action="{% url 'terminar_lavado' recepcion.id %}" method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-terminar" onclick="return confirm('¿Estás seguro de que deseas terminar el lavado?')">Terminar Lavado</button>
+    </form>
+    {% endif %}
+
+    <br>
+    <a href="{% url 'dashboard' %}" class="btn">Volver al Dashboard</a>
+</body>
+</html>

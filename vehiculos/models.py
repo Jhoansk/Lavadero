@@ -1,0 +1,103 @@
+import os
+from django.db import models
+from django.contrib.auth.models import AbstractUser
+
+# Usuario Model (extensión del modelo User de Django)
+class Usuario(AbstractUser):
+    rol = models.CharField(max_length=50, blank=True, null=True)
+
+    def __str__(self):
+        return self.username
+
+# Vehiculo Model
+class Vehiculo(models.Model):
+    placa = models.CharField(max_length=100, primary_key=True)
+    marca = models.CharField(max_length=100)
+    linea = models.CharField(max_length=100)
+    modelo = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.placa
+
+# Cliente Model
+class Cliente(models.Model):
+    cedula = models.CharField(max_length=100, primary_key=True)
+    nombre = models.CharField(max_length=100)
+    s_nombre = models.CharField(max_length=100, blank=True, null=True)
+    apellido = models.CharField(max_length=100)
+    s_apellido = models.CharField(max_length=100, blank=True, null=True)
+    celular = models.CharField(max_length=20)
+    direccion = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"{self.nombre} {self.apellido}"
+
+# Empleado Model
+class Empleado(models.Model):
+    cod_empleado = models.AutoField(primary_key=True)
+    usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE)  # Relación uno a uno con el modelo Usuario
+    cedula = models.CharField(max_length=100)
+    nombre = models.CharField(max_length=100)
+    s_nombre = models.CharField(max_length=100, blank=True, null=True)
+    apellido = models.CharField(max_length=100)
+    s_apellido = models.CharField(max_length=100, blank=True, null=True)
+    telefono = models.CharField(max_length=20)
+    direccion = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"{self.nombre} {self.apellido}"
+
+# Bahia Model
+class Bahia(models.Model):
+    cod_bahia = models.AutoField(primary_key=True)
+    numero_bahia = models.IntegerField()
+
+    def __str__(self):
+        return str(self.numero_bahia)
+
+# Función para definir la ruta de guardado de las imágenes
+def get_image_upload_path(instance, filename):
+    # Guardar las imágenes en la carpeta 'imagenes/<placa>/'
+    return os.path.join('imagenes', instance.placa_vehiculo.placa, filename)
+
+# Lavado Model
+class Lavado(models.Model):
+    fecha = models.DateTimeField()
+    placa_vehiculo = models.ForeignKey(Vehiculo, on_delete=models.CASCADE)  # Relación con Vehículo
+    empleado_encargado = models.ForeignKey(Empleado, on_delete=models.CASCADE)  # Relación con Empleado
+    cliente_vehiculo = models.ForeignKey(Cliente, on_delete=models.CASCADE)  # Relación con Cliente
+    bahia_vehiculo = models.ForeignKey(Bahia, on_delete=models.CASCADE)  # Relación con Bahía
+
+    def __str__(self):
+        return f"Vehículo {self.placa_vehiculo} - {self.fecha}"
+
+# Recepcion Model
+class Recepcion(models.Model):
+    fecha = models.DateTimeField()
+    placa_vehiculo = models.ForeignKey(Vehiculo, on_delete=models.CASCADE)  # Relación con Vehículo
+    cliente_vehiculo = models.ForeignKey(Cliente, on_delete=models.CASCADE)  # Relación con Cliente
+    tipo_lavado = models.CharField(max_length=100)
+    tiempo = models.TimeField()
+    valor = models.FloatField()
+    imagenes = models.ImageField(upload_to=get_image_upload_path)  # Almacenamiento dinámico de imágenes
+    estado = models.CharField(max_length=50, default='En Espera')
+    encargado = models.CharField(max_length=100, default='Sin Asignar')
+    en_lavado = models.BooleanField(default=False)
+    inicio_lavado = models.DateTimeField(null=True, blank=True)  # Hora de inicio del lavado
+
+    def __str__(self):
+        return f"{self.placa_vehiculo} - {self.estado}"
+    
+class Historial(models.Model):
+    fecha = models.DateTimeField()
+    placa_vehiculo = models.ForeignKey(Vehiculo, on_delete=models.CASCADE)
+    cliente_vehiculo = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    tipo_lavado = models.CharField(max_length=100)
+    tiempo = models.TimeField()
+    valor = models.FloatField()
+    imagenes = models.ImageField(upload_to=get_image_upload_path)
+    encargado = models.ForeignKey(Usuario, on_delete=models.SET_NULL, null=True, blank=True)
+    estado = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"Historial de {self.placa_vehiculo.placa} - {self.tipo_lavado}"
