@@ -51,6 +51,7 @@
         <a href="{% url 'crear_cliente' %}" class="btn">Crear Cliente</a>
         <a href="{% url 'crear_vehiculo' %}" class="btn">Crear Vehículo</a>
         <a href="{% url 'crear_recepcion' %}" class="btn">Recepción</a>
+        <a href="{% url 'register_employee' %}" class="btn">Crear Usuario</a>
     {% endif %}
 
     <h2>Bienvenido, {{ request.user.username }}</h2>
@@ -69,7 +70,8 @@
                 <th>Placa</th>
                 <th>Marca</th>
                 <th>Línea</th>
-                <th>Modelo</th>
+                <th>Color</th>
+                <th>Tipo Vehiculo</th>
                 <th>Tipo de Lavado</th>
                 <th>Estado</th>
                 <th>Encargado</th>
@@ -82,7 +84,8 @@
                 <td>{{ recepcion.placa_vehiculo.placa }}</td>
                 <td>{{ recepcion.placa_vehiculo.marca }}</td>
                 <td>{{ recepcion.placa_vehiculo.linea }}</td>
-                <td>{{ recepcion.placa_vehiculo.modelo }}</td>
+                <td>{{ recepcion.placa_vehiculo.color }}</td>
+                <td>{{ recepcion.placa_vehiculo.tipo_vehiculo }}</td>
                 <td>{{ recepcion.tipo_lavado }}</td>
                 <td>{{ recepcion.estado }}</td>
                 <td>

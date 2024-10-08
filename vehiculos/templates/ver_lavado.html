@@ -140,13 +140,28 @@
 
     <h3>Imágenes del Vehículo</h3>
     <div class="imagenes">
-        {% if recepcion.imagenes %}
-            <img src="{{ recepcion.imagenes.url }}" alt="Lateral Frontal Izquierdo">
-            <img src="{{ recepcion.imagenes.url }}" alt="Lateral Frontal Derecho">
-            <img src="{{ recepcion.imagenes.url }}" alt="Lateral Posterior Izquierdo">
-            <img src="{{ recepcion.imagenes.url }}" alt="Lateral Posterior Derecho">
+        {% if recepcion.imagen_1 %}
+            <img src="{{ recepcion.imagen_1.url }}" alt="Lateral Frontal Izquierdo">
         {% else %}
-            <p>No hay imágenes disponibles.</p>
+            <p>No hay imagen lateral frontal izquierdo disponible.</p>
+        {% endif %}
+
+        {% if recepcion.imagen_2 %}
+            <img src="{{ recepcion.imagen_2.url }}" alt="Lateral Frontal Derecho">
+        {% else %}
+            <p>No hay imagen lateral frontal derecho disponible.</p>
+        {% endif %}
+
+        {% if recepcion.imagen_3 %}
+            <img src="{{ recepcion.imagen_3.url }}" alt="Lateral Posterior Izquierdo">
+        {% else %}
+            <p>No hay imagen lateral posterior izquierdo disponible.</p>
+        {% endif %}
+
+        {% if recepcion.imagen_4 %}
+            <img src="{{ recepcion.imagen_4.url }}" alt="Lateral Posterior Derecho">
+        {% else %}
+            <p>No hay imagen lateral posterior derecho disponible.</p>
         {% endif %}
     </div>
 

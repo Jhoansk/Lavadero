@@ -15,6 +15,8 @@ class Vehiculo(models.Model):
     marca = models.CharField(max_length=100)
     linea = models.CharField(max_length=100)
     modelo = models.CharField(max_length=100)
+    color = models.CharField(max_length=100, null=True, blank=True)
+    tipo_vehiculo = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
         return self.placa
@@ -79,7 +81,10 @@ class Recepcion(models.Model):
     tipo_lavado = models.CharField(max_length=100)
     tiempo = models.TimeField()
     valor = models.FloatField()
-    imagenes = models.ImageField(upload_to=get_image_upload_path)  # Almacenamiento dinámico de imágenes
+    imagen_1 = models.ImageField(upload_to=get_image_upload_path, null=True)  # Almacenamiento de la primera imagen
+    imagen_2 = models.ImageField(upload_to=get_image_upload_path, null=True)  # Almacenamiento de la segunda imagen
+    imagen_3 = models.ImageField(upload_to=get_image_upload_path, null=True)  # Almacenamiento de la tercera imagen
+    imagen_4 = models.ImageField(upload_to=get_image_upload_path, null=True)  # Almacenamiento de la cuarta imagen
     estado = models.CharField(max_length=50, default='En Espera')
     encargado = models.CharField(max_length=100, default='Sin Asignar')
     en_lavado = models.BooleanField(default=False)
@@ -90,14 +95,19 @@ class Recepcion(models.Model):
     
 class Historial(models.Model):
     fecha = models.DateTimeField()
-    placa_vehiculo = models.ForeignKey(Vehiculo, on_delete=models.CASCADE)
-    cliente_vehiculo = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    placa_vehiculo = models.ForeignKey(Vehiculo, on_delete=models.CASCADE)  # Relación con Vehículo
+    cliente_vehiculo = models.ForeignKey(Cliente, on_delete=models.CASCADE)  # Relación con Cliente
     tipo_lavado = models.CharField(max_length=100)
     tiempo = models.TimeField()
     valor = models.FloatField()
-    imagenes = models.ImageField(upload_to=get_image_upload_path)
-    encargado = models.ForeignKey(Usuario, on_delete=models.SET_NULL, null=True, blank=True)
-    estado = models.CharField(max_length=100)
+    imagen_1 = models.ImageField(upload_to=get_image_upload_path, null=True)  # Almacenamiento de la primera imagen
+    imagen_2 = models.ImageField(upload_to=get_image_upload_path, null=True)  # Almacenamiento de la segunda imagen
+    imagen_3 = models.ImageField(upload_to=get_image_upload_path, null=True)  # Almacenamiento de la tercera imagen
+    imagen_4 = models.ImageField(upload_to=get_image_upload_path, null=True)  # Almacenamiento de la cuarta imagen
+    estado = models.CharField(max_length=50, default='En Espera')
+    encargado = models.CharField(max_length=100, default='Sin Asignar')
+    en_lavado = models.BooleanField(default=False)
+    inicio_lavado = models.DateTimeField(null=True, blank=True)  # Hora de inicio del lavado
 
     def __str__(self):
         return f"Historial de {self.placa_vehiculo.placa} - {self.tipo_lavado}"

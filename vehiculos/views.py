@@ -110,13 +110,17 @@ def crear_vehiculo(request):
         marca = request.POST.get('marca')
         linea = request.POST.get('linea')
         modelo = request.POST.get('modelo')
+        color = request.POST.get('color')
+        tipo_vehiculo = request.POST.get('tipo_vehiculo')
 
         # Crea una nueva instancia de Vehiculo
         nuevo_vehiculo = Vehiculo(
             placa=placa,
             marca=marca,
             linea=linea,
-            modelo=modelo
+            modelo=modelo,
+            color=color,
+            tipo_vehiculo=tipo_vehiculo
         )
         nuevo_vehiculo.save()  # Guarda el vehículo en la base de datos
 
@@ -140,11 +144,11 @@ def crear_recepcion(request):
         tipo_lavado = request.POST.get('tipo_lavado')
         tiempo = request.POST.get('tiempo')
         valor = request.POST.get('valor')
-        
+
         # Procesa la fecha
         try:
             fecha = datetime.strptime(fecha_str, '%d/%m/%Y')
-            fecha = timezone.make_aware(fecha)  # Convierte a un objeto de fecha y hora consciente del tiempo
+            fecha = fecha.replace(hour=datetime.now().hour, minute=datetime.now().minute, second=datetime.now().second)
         except ValueError:
             messages.error(request, 'Formato de fecha inválido. Use dd/mm/yyyy.')
             return redirect('crear_recepcion')
@@ -160,12 +164,11 @@ def crear_recepcion(request):
             tiempo = '1:00:00'  # 1 hora
             valor = 100000.00
 
-        # Obtiene las imágenes (se espera que se envíen con nombres específicos)
-        imagenes = []
-        for i in range(1, 5):
-            imagen = request.FILES.get(f'imagen_{i}')
-            if imagen:
-                imagenes.append(imagen)
+        # Obtiene las imágenes
+        imagen_1 = request.FILES.get('imagen_1')
+        imagen_2 = request.FILES.get('imagen_2')
+        imagen_3 = request.FILES.get('imagen_3')
+        imagen_4 = request.FILES.get('imagen_4')
 
         # Crea la nueva recepción
         recepcion = Recepcion(
@@ -173,13 +176,13 @@ def crear_recepcion(request):
             placa_vehiculo=Vehiculo.objects.get(placa=placa_vehiculo),
             cliente_vehiculo=Cliente.objects.get(cedula=cliente_vehiculo),
             tipo_lavado=tipo_lavado,
-            tiempo=tiempo,
-            valor=valor
+            tiempo=datetime.strptime(tiempo, '%H:%M:%S').time(),  # Asegúrate de que se almacene como objeto time
+            valor=valor,
+            imagen_1=imagen_1,
+            imagen_2=imagen_2,
+            imagen_3=imagen_3,
+            imagen_4=imagen_4
         )
-
-        # Guarda las imágenes
-        for imagen in imagenes:
-            recepcion.imagenes = imagen  # Aquí se puede manejar un sistema para almacenar múltiples imágenes
 
         recepcion.save()  # Guarda la recepción en la base de datos
         messages.success(request, 'Recepción creada exitosamente.')
@@ -199,11 +202,13 @@ def empezar_lavado(request, id):
         recepcion.estado = "En Lavado"
         recepcion.encargado = request.user.username  # Asigna el nombre de usuario del que inició sesión
         
-        # Establece el tiempo estimado (1 hora)
-        recepcion.tiempo = (timezone.now() + timedelta(hours=1)).time()
-        recepcion.inicio_lavado = timezone.now()  # Guarda la hora de inicio del lavado
+        # Establece el tiempo estimado (1 hora más desde ahora) solo con la parte del tiempo (no datetime completo)
+        tiempo_estimado = timezone.now() + timedelta(hours=1)
+        recepcion.tiempo = tiempo_estimado.time()  # Almacena solo la parte del tiempo
         
-        recepcion.en_lavado = True  # Si tienes un campo booleano para indicar que está en lavado
+        recepcion.inicio_lavado = timezone.now()  # Guarda la hora de inicio del lavado en UTC
+        
+        recepcion.en_lavado = True  # Marca que el lavado ha comenzado
         
         recepcion.save()  # Guarda los cambios en la base de datos
 
@@ -267,7 +272,10 @@ def terminar_lavado(request, id):
                 tipo_lavado=recepcion.tipo_lavado,
                 tiempo=recepcion.tiempo,
                 valor=recepcion.valor,
-                imagenes=recepcion.imagenes,
+                imagen_1=recepcion.imagen_1,  # Guardar la primera imagen
+                imagen_2=recepcion.imagen_2,  # Guardar la segunda imagen
+                imagen_3=recepcion.imagen_3,  # Guardar la tercera imagen
+                imagen_4=recepcion.imagen_4,  # Guardar la cuarta imagen
                 estado='Terminado',
                 encargado=get_object_or_404(Usuario, username=recepcion.encargado)  # Buscar la instancia del Usuario
             )
