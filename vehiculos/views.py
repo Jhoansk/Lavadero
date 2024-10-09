@@ -175,6 +175,10 @@ def crear_recepcion(request):
         # Obtener el encargado como instancia de Usuario
         encargado = Usuario.objects.get(username=encargado_username) if encargado_username else None
 
+        # Asignar el turno incrementable
+        ultimo_turno = Recepcion.objects.filter(estado='En Espera').order_by('turno').last()
+        nuevo_turno = (ultimo_turno.turno + 1) if ultimo_turno else 1
+
         # Crea la nueva recepción
         recepcion = Recepcion(
             fecha=fecha,
@@ -183,7 +187,8 @@ def crear_recepcion(request):
             tipo_lavado=tipo_lavado,
             tiempo=datetime.strptime(tiempo, '%H:%M:%S').time(),
             valor=valor,
-            encargado=encargado.username if encargado else 'Sin Asignar'
+            encargado=encargado.username if encargado else 'Sin Asignar',
+            turno=nuevo_turno  # Asigna el nuevo turno
         )
 
         # Guarda las imágenes en sus respectivos campos
@@ -206,26 +211,34 @@ def crear_recepcion(request):
         'clientes': clientes,
         'usuarios': usuarios  # Pasar los encargados al template
     })
-
+    
 @login_required
 def empezar_lavado(request, id):
     recepcion = get_object_or_404(Recepcion, id=id)
 
     if request.method == "POST":
-        recepcion.estado = "En Lavado"
-        recepcion.encargado = request.user.username  # Asigna el nombre de usuario del que inició sesión
-        
-        # Establece el tiempo estimado (1 hora más desde ahora) solo con la parte del tiempo (no datetime completo)
-        tiempo_estimado = timezone.now() + timedelta(hours=1)
-        recepcion.tiempo = tiempo_estimado.time()  # Almacena solo la parte del tiempo
-        
-        recepcion.inicio_lavado = timezone.now()  # Guarda la hora de inicio del lavado en UTC
-        
-        recepcion.en_lavado = True  # Marca que el lavado ha comenzado
-        
-        recepcion.save()  # Guarda los cambios en la base de datos
+        # Verifica que la recepción esté en estado 'En Espera' antes de comenzar el lavado
+        if recepcion.estado == "En Espera":
+            recepcion.estado = "En Lavado"
+            recepcion.encargado = request.user.username  # Asigna el nombre de usuario del que inició sesión
+            
+            # Establece el tiempo estimado (1 hora más desde ahora) solo con la parte del tiempo (no datetime completo)
+            tiempo_estimado = timezone.now() + timedelta(hours=1)
+            recepcion.tiempo = tiempo_estimado.time()  # Almacena solo la parte del tiempo
+            
+            recepcion.inicio_lavado = timezone.now()  # Guarda la hora de inicio del lavado en UTC
+            
+            recepcion.en_lavado = True  # Marca que el lavado ha comenzado
+            
+            recepcion.save()  # Guarda los cambios en la base de datos
 
-        return redirect('ver_lavado', id=recepcion.id)  # Redirige a la vista de ver lavado
+            # Actualiza los turnos de las recepciones en espera
+            recepciones_en_espera = Recepcion.objects.filter(estado='En Espera').order_by('turno')
+            for index, recepcion_espera in enumerate(recepciones_en_espera):
+                recepcion_espera.turno = index + 1
+                recepcion_espera.save()
+
+            return redirect('ver_lavado', id=recepcion.id)  # Redirige a la vista de ver lavado
 
     return render(request, 'ver_lavado.html', {'recepcion': recepcion})
 
@@ -329,3 +342,29 @@ def editar_encargado(request, recepcion_id):
         messages.success(request, 'Encargado actualizado exitosamente.')
     
     return redirect('dashboard')
+
+@login_required
+def historial(request):
+    historial_lavados = []
+    vehiculo = None
+
+    if request.method == 'POST':
+        placa_vehiculo = request.POST.get('placa_vehiculo')
+        vehiculo = Vehiculo.objects.filter(placa=placa_vehiculo).first()  # Obtiene el vehículo por placa
+
+        if vehiculo:
+            # Obtiene el historial del vehículo
+            historial_lavados = Historial.objects.filter(placa_vehiculo=vehiculo).order_by('-fecha')
+
+    return render(request, 'historial.html', {
+        'historial_lavados': historial_lavados,
+        'vehiculo': vehiculo
+    })
+    
+@login_required
+def ver_detalle_historial(request, id):
+    historial = get_object_or_404(Historial, id=id)
+
+    return render(request, 'detalle_historial.html', {
+        'historial': historial
+    })

@@ -88,6 +88,7 @@
         <a href="{% url 'crear_vehiculo' %}" class="btn">Crear Vehículo</a>
         <a href="{% url 'crear_recepcion' %}" class="btn">Recepción</a>
         <a href="{% url 'register_employee' %}" class="btn">Crear Usuario</a>
+        <a href="{% url 'historial' %}" class="btn">Historial</a>
     {% endif %}
 
     <h2>Bienvenido, {{ request.user.username }}</h2>
@@ -109,6 +110,7 @@
                 <th>Tipo de Lavado</th>
                 <th>Estado</th>
                 <th>Encargado</th>
+                <th>Turno</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -127,6 +129,13 @@
                         {{ recepcion.encargado }}
                     {% else %}
                         Sin asignar
+                    {% endif %}
+                </td>
+                <td>
+                    {% if recepcion.estado == 'En Espera' %}
+                        {{ recepcion.turno }}
+                    {% else %}
+                        En Proceso
                     {% endif %}
                 </td>
                 <td>

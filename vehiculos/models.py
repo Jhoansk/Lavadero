@@ -72,6 +72,7 @@ class Lavado(models.Model):
 
     def __str__(self):
         return f"Vehículo {self.placa_vehiculo} - {self.fecha}"
+    
 
 # Recepcion Model
 class Recepcion(models.Model):
@@ -89,6 +90,7 @@ class Recepcion(models.Model):
     encargado = models.CharField(max_length=100, default='Sin Asignar')
     en_lavado = models.BooleanField(default=False)
     inicio_lavado = models.DateTimeField(null=True, blank=True)  # Hora de inicio del lavado
+    turno = models.PositiveIntegerField(default=0)  # Campo para el turno
 
     def __str__(self):
         return f"{self.placa_vehiculo} - {self.estado}"
@@ -111,3 +113,4 @@ class Historial(models.Model):
 
     def __str__(self):
         return f"Historial de {self.placa_vehiculo.placa} - {self.tipo_lavado}"
+    
