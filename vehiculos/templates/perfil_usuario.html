@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil de Usuario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        form {
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="date"], input[type="password"], button {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+            max-width: 300px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
+
+        .success-message {
+            color: green;
+            font-weight: bold;
+        }
+
+        /* Estilos para los mensajes */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        /* Ocultar el formulario de cambiar contraseña por defecto */
+        #password-form {
+            display: none;
+            margin-top: 20px;
+        }
+
+        /* Estilos del botón Cambiar Contraseña */
+        .toggle-btn {
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-btn:hover {
+            background-color: #1976D2;
+        }
+
+    </style>
+
+    <script>
+        function togglePasswordForm() {
+            var form = document.getElementById("password-form");
+            form.style.display = form.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Perfil de {{ request.user.username }}</h1>
+
+    <!-- Botón para desplegar el formulario de cambiar contraseña -->
+    <button class="toggle-btn" onclick="togglePasswordForm()">Cambiar Contraseña</button>
+
+    <!-- Formulario para cambiar contraseña (oculto por defecto) -->
+    <div id="password-form">
+        <h2>Cambiar contraseña</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="old_password">Contraseña anterior:</label>
+                <input type="password" name="old_password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="new_password">Nueva contraseña:</label>
+                <input type="password" name="new_password" required>
+                <p>Tu contraseña no puede ser demasiado similar a otra información personal.</p>
+                <p>Tu contraseña debe contener al menos 8 caracteres.</p>
+                <p>Tu contraseña no puede ser una contraseña comúnmente usada.</p>
+                <p>Tu contraseña no puede ser completamente numérica.</p>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm_password">Confirmación de la nueva contraseña:</label>
+                <input type="password" name="confirm_password" required>
+                <p>Ingresa la misma contraseña que antes, para verificación.</p>
+            </div>
+
+            <button type="submit">Guardar Cambios</button>
+        </form>
+    </div>
+
+    <!-- Mostrar mensajes de éxito/error -->
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li class="{% if message.tags %}{{ message.tags }}-message{% endif %}">
+                    {{ message }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <!-- Filtro por fecha -->
+    <h2>Mis Lavados</h2>
+    <form method="GET">
+        <label for="fecha_inicio">Fecha Inicio:</label>
+        <input type="date" id="fecha_inicio" name="fecha_inicio" value="{{ fecha_inicio }}">
+        <label for="fecha_fin">Fecha Fin:</label>
+        <input type="date" id="fecha_fin" name="fecha_fin" value="{{ fecha_fin }}">
+        <button type="submit">Filtrar</button>
+    </form>
+
+    <!-- Tabla de vehículos lavados -->
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Placa del Vehículo</th>
+                <th>Tipo de Lavado</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for historial in historiales %}
+                <tr>
+                    <td>{{ historial.fecha|date:"Y-m-d H:i" }}</td>
+                    <td>{{ historial.placa_vehiculo.placa }}</td>
+                    <td>{{ historial.tipo_lavado }}</td>
+                    <td>{{ historial.valor }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No se encontraron lavados para este período.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" style="text-align: right; font-weight: bold;">Total:</td>
+                <td>{{ total_valor }}</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>

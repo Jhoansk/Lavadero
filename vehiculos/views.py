@@ -8,7 +8,10 @@ from .forms import CustomUserCreationForm
 from django.utils import timezone
 from datetime import datetime, timedelta
 from django.http import HttpResponseForbidden
-
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
+from django.db.models import Sum
+from django.contrib.auth.decorators import user_passes_test
 
 # Vistas para el login
 def login_view(request):
@@ -216,12 +219,20 @@ def crear_recepcion(request):
 def empezar_lavado(request, id):
     recepcion = get_object_or_404(Recepcion, id=id)
 
+    # Verifica que el usuario tenga permisos para iniciar el lavado
+    if request.user.rol not in ['administrador', 'controlador'] and recepcion.encargado != request.user.username:
+        messages.error(request, 'No tienes permiso para iniciar el lavado.')
+        return redirect('dashboard')
+
     if request.method == "POST":
         # Verifica que la recepción esté en estado 'En Espera' antes de comenzar el lavado
         if recepcion.estado == "En Espera":
             recepcion.estado = "En Lavado"
-            recepcion.encargado = request.user.username  # Asigna el nombre de usuario del que inició sesión
-            
+            # Si el usuario es controlador, el encargado permanece igual
+            # El encargado solo se puede cambiar por el usuario que inició el lavado si es administrador
+            if request.user.rol == 'administrador':
+                recepcion.encargado = request.user.username  # Asigna el nombre de usuario del administrador
+
             # Establece el tiempo estimado (1 hora más desde ahora) solo con la parte del tiempo (no datetime completo)
             tiempo_estimado = timezone.now() + timedelta(hours=1)
             recepcion.tiempo = tiempo_estimado.time()  # Almacena solo la parte del tiempo
@@ -281,12 +292,13 @@ def ver_lavado(request, id):
     return render(request, 'ver_lavado.html', {'recepcion': recepcion, 'tiempo_restante': tiempo_restante})
 
 @login_required
+@login_required
 def terminar_lavado(request, id):
     # Obtener la recepción correspondiente
     recepcion = get_object_or_404(Recepcion, id=id)
 
-    # Verificar si el usuario es administrador o el encargado del lavado
-    if request.user.rol == 'administrador' or request.user.username == recepcion.encargado:
+    # Verificar si el usuario es administrador, controlador o el encargado del lavado
+    if request.user.rol in ['administrador', 'controlador'] or request.user.username == recepcion.encargado:
 
         # Pregunta de confirmación antes de terminar el lavado
         if request.method == 'POST':
@@ -321,6 +333,7 @@ def terminar_lavado(request, id):
         # Mostrar mensaje de error si el usuario no tiene permiso
         messages.error(request, 'No tienes permiso para realizar esta acción.')
         return redirect('dashboard')
+    
 @login_required    
 def editar_encargado(request, recepcion_id):
     if request.user.rol != 'administrador':
@@ -367,4 +380,84 @@ def ver_detalle_historial(request, id):
 
     return render(request, 'detalle_historial.html', {
         'historial': historial
+    })
+    
+@login_required
+def perfil_usuario(request):
+    # Manejar el cambio de contraseña
+    if request.method == 'POST':
+        password_form = PasswordChangeForm(request.user, request.POST)
+        if password_form.is_valid():
+            user = password_form.save()
+            update_session_auth_hash(request, user)  # Mantiene la sesión del usuario después del cambio de contraseña
+            messages.success(request, 'Tu contraseña ha sido actualizada correctamente.')
+            return redirect('perfil_usuario')
+        else:
+            messages.error(request, 'Por favor corrige los errores.')
+    else:
+        password_form = PasswordChangeForm(request.user)
+
+    # Filtrar historial por fecha
+    fecha_inicio = request.GET.get('fecha_inicio', '')
+    fecha_fin = request.GET.get('fecha_fin', '')
+    historiales = Historial.objects.filter(encargado=request.user.username)  # Filtrar por el encargado (usuario actual)
+
+    if fecha_inicio and fecha_fin:
+        try:
+            # Convertir las fechas a formato datetime
+            fecha_inicio_dt = timezone.datetime.strptime(fecha_inicio, '%Y-%m-%d')
+            fecha_fin_dt = timezone.datetime.strptime(fecha_fin, '%Y-%m-%d') + timezone.timedelta(days=1)  # Incluir todo el último día
+            historiales = historiales.filter(fecha__range=[fecha_inicio_dt, fecha_fin_dt])
+        except ValueError:
+            messages.error(request, "Formato de fecha inválido, usa el formato 'YYYY-MM-DD'.")
+
+    # Calcular el total
+    total_valor = sum(historial.valor for historial in historiales)
+
+    return render(request, 'perfil_usuario.html', {
+        'password_form': password_form,
+        'historiales': historiales,
+        'fecha_inicio': fecha_inicio,
+        'fecha_fin': fecha_fin,
+        'total_valor': total_valor,
+    })
+    
+@user_passes_test(lambda u: u.is_superuser)
+@login_required
+def estadisticas(request):
+    # Inicializar variables
+    usuarios = Usuario.objects.all()  # Obtener todos los usuarios
+    historiales = []
+    valor_total = 0
+    selected_usuario = None
+    fecha_inicio = None
+    fecha_fin = None
+
+    # Procesar el formulario
+    if request.method == 'GET':
+        selected_usuario = request.GET.get('usuario')
+        fecha_inicio = request.GET.get('fecha_inicio')
+        fecha_fin = request.GET.get('fecha_fin')
+
+        # Filtrar historiales según el usuario y las fechas proporcionadas
+        filters = {}
+        if selected_usuario:
+            filters['encargado'] = selected_usuario  # Filtra por usuario encargado
+        if fecha_inicio:
+            filters['fecha__gte'] = timezone.datetime.strptime(fecha_inicio, '%Y-%m-%d')
+        if fecha_fin:
+            filters['fecha__lte'] = timezone.datetime.strptime(fecha_fin, '%Y-%m-%d') + timezone.timedelta(days=1)
+
+        historiales = Historial.objects.filter(**filters)  # Filtrar historiales
+
+        # Calcular el valor total de los historiales filtrados
+        valor_total = historiales.aggregate(Sum('valor'))['valor__sum'] or 0
+
+    return render(request, 'estadistica.html', {
+        'usuarios': usuarios,  # Pasar la lista de usuarios a la plantilla
+        'historiales': historiales,
+        'valor_total': valor_total,
+        'selected_usuario': selected_usuario,
+        'fecha_inicio': fecha_inicio,
+        'fecha_fin': fecha_fin,
     })

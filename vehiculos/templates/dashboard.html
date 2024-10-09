@@ -89,7 +89,9 @@
         <a href="{% url 'crear_recepcion' %}" class="btn">Recepción</a>
         <a href="{% url 'register_employee' %}" class="btn">Crear Usuario</a>
         <a href="{% url 'historial' %}" class="btn">Historial</a>
+        <a href="{% url 'estadistica' %}" class="btn">Estadistica</a> 
     {% endif %}
+    <a href="{% url 'perfil_usuario' %}" class="btn">Perfil</a>
 
     <h2>Bienvenido, {{ request.user.username }}</h2>
 

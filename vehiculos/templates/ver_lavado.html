@@ -167,7 +167,7 @@
 
     <br>
 
-    {% if request.user.rol == 'administrador' or request.user.username == recepcion.encargado %}
+    {% if request.user.rol == 'administrador' or request.user.username == recepcion.encargado or request.user.rol == 'controlador' %}
     <form action="{% url 'terminar_lavado' recepcion.id %}" method="post" style="display:inline;">
         {% csrf_token %}
         <button type="submit" class="btn btn-terminar" onclick="return confirm('¿Estás seguro de que deseas terminar el lavado?')">Terminar Lavado</button>

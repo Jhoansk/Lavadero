@@ -19,4 +19,6 @@ urlpatterns = [
     path('editar_encargado/<int:recepcion_id>/', editar_encargado, name='editar_encargado'),#Edita el encargado del lavado
     path('historial/', historial, name='historial'),
     path('historial/detalle/<int:id>/', ver_detalle_historial, name='detalle_historial'),
+    path('perfil/', perfil_usuario, name='perfil_usuario'),
+    path('estadistica', estadisticas, name='estadistica'),
 ]
