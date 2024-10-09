@@ -16,4 +16,5 @@ urlpatterns = [
     path('reiniciar_recepcion/<int:id>/', reiniciar_recepcion, name='reiniciar_recepcion'),#Reinicia la Recepcion
     path('ver_lavado/<int:id>/', ver_lavado, name='ver_lavado'),#Vista para ver el lavado del vehiculo
     path('terminar_lavado/<int:id>/', terminar_lavado, name='terminar_lavado'), #terminar Lavado
+    path('editar_encargado/<int:recepcion_id>/', editar_encargado, name='editar_encargado'),
 ]

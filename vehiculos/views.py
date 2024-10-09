@@ -61,7 +61,14 @@ def dashboard(request):
     # Obtiene todas las recepciones
     recepciones = Recepcion.objects.select_related('placa_vehiculo').all()  # Utiliza select_related para optimizar consultas
 
-    return render(request, 'dashboard.html', {'recepciones': recepciones})
+    # Filtra usuarios con el rol de 'empleado'
+    usuarios = Usuario.objects.filter(rol='empleado')
+
+    # Renderiza el template y pasa las recepciones y los usuarios
+    return render(request, 'dashboard.html', {
+        'recepciones': recepciones,
+        'usuarios': usuarios,
+    })
 
 @login_required
 def crear_cliente(request):
@@ -138,12 +145,13 @@ def crear_recepcion(request):
 
     if request.method == 'POST':
         # Obtiene los datos del formulario
-        fecha_str = request.POST.get('fecha')  # Formato dd/mm/yyyy
+        fecha_str = request.POST.get('fecha')
         placa_vehiculo = request.POST.get('placa_vehiculo')
         cliente_vehiculo = request.POST.get('cliente_vehiculo')
         tipo_lavado = request.POST.get('tipo_lavado')
         tiempo = request.POST.get('tiempo')
         valor = request.POST.get('valor')
+        encargado_username = request.POST.get('encargado')  # Obtener el encargado desde el formulario
 
         # Procesa la fecha
         try:
@@ -153,22 +161,19 @@ def crear_recepcion(request):
             messages.error(request, 'Formato de fecha inválido. Use dd/mm/yyyy.')
             return redirect('crear_recepcion')
 
-        # Verifica el tipo de lavado para establecer tiempo y valor
+        # Verifica el tipo de lavado
         if tipo_lavado == 'Lavado General':
-            tiempo = '1:00:00'  # 1 hora
+            tiempo = '1:00:00'
             valor = 100000.00
         elif tipo_lavado == 'Lavado Motor':
-            tiempo = '1:00:00'  # 1 hora
+            tiempo = '1:00:00'
             valor = 100000.00
         elif tipo_lavado == 'Lavado y pulido':
-            tiempo = '1:00:00'  # 1 hora
+            tiempo = '1:00:00'
             valor = 100000.00
 
-        # Obtiene las imágenes
-        imagen_1 = request.FILES.get('imagen_1')
-        imagen_2 = request.FILES.get('imagen_2')
-        imagen_3 = request.FILES.get('imagen_3')
-        imagen_4 = request.FILES.get('imagen_4')
+        # Obtener el encargado como instancia de Usuario
+        encargado = Usuario.objects.get(username=encargado_username) if encargado_username else None
 
         # Crea la nueva recepción
         recepcion = Recepcion(
@@ -176,23 +181,31 @@ def crear_recepcion(request):
             placa_vehiculo=Vehiculo.objects.get(placa=placa_vehiculo),
             cliente_vehiculo=Cliente.objects.get(cedula=cliente_vehiculo),
             tipo_lavado=tipo_lavado,
-            tiempo=datetime.strptime(tiempo, '%H:%M:%S').time(),  # Asegúrate de que se almacene como objeto time
+            tiempo=datetime.strptime(tiempo, '%H:%M:%S').time(),
             valor=valor,
-            imagen_1=imagen_1,
-            imagen_2=imagen_2,
-            imagen_3=imagen_3,
-            imagen_4=imagen_4
+            encargado=encargado.username if encargado else 'Sin Asignar'
         )
 
-        recepcion.save()  # Guarda la recepción en la base de datos
-        messages.success(request, 'Recepción creada exitosamente.')
-        return redirect('dashboard')  # Redirige al dashboard después de crear la recepción
+        # Guarda las imágenes en sus respectivos campos
+        recepcion.imagen_1 = request.FILES.get('imagen_1')
+        recepcion.imagen_2 = request.FILES.get('imagen_2')
+        recepcion.imagen_3 = request.FILES.get('imagen_3')
+        recepcion.imagen_4 = request.FILES.get('imagen_4')
 
-    # Obtiene todas las placas de vehículos y cédulas de clientes para los formularios
+        recepcion.save()
+
+        messages.success(request, 'Recepción creada exitosamente.')
+        return redirect('dashboard')
+
     vehiculos = Vehiculo.objects.all()
     clientes = Cliente.objects.all()
+    usuarios = Usuario.objects.filter(rol='empleado')  # Solo mostramos usuarios con rol de 'lavador'
 
-    return render(request, 'crear_recepcion.html', {'vehiculos': vehiculos, 'clientes': clientes})
+    return render(request, 'crear_recepcion.html', {
+        'vehiculos': vehiculos,
+        'clientes': clientes,
+        'usuarios': usuarios  # Pasar los encargados al template
+    })
 
 @login_required
 def empezar_lavado(request, id):
@@ -295,3 +308,24 @@ def terminar_lavado(request, id):
         # Mostrar mensaje de error si el usuario no tiene permiso
         messages.error(request, 'No tienes permiso para realizar esta acción.')
         return redirect('dashboard')
+@login_required    
+def editar_encargado(request, recepcion_id):
+    if request.user.rol != 'administrador':
+        messages.error(request, 'No tienes permiso para editar el encargado.')
+        return redirect('dashboard')
+
+    recepcion = Recepcion.objects.get(id=recepcion_id)
+
+    if request.method == 'POST':
+        encargado_username = request.POST.get('encargado')  # Cambia esto a 'encargado' para que coincida con el nombre del campo en el formulario
+
+        if encargado_username:
+            encargado = Usuario.objects.get(username=encargado_username)
+            recepcion.encargado = encargado.username
+        else:
+            recepcion.encargado = 'Sin Asignar'
+
+        recepcion.save()
+        messages.success(request, 'Encargado actualizado exitosamente.')
+    
+    return redirect('dashboard')

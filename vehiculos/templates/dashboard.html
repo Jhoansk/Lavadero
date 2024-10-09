@@ -22,10 +22,17 @@
             background-color: #45a049;
         }
         .btn-logout {
-            background-color: #f44336; /* Color rojo para el botón de cerrar sesión */
+            background-color: #f44336;
         }
         .btn-logout:hover {
-            background-color: #d32f2f; /* Color más oscuro al pasar el mouse */
+            background-color: #d32f2f;
+        }
+        .btn-danger {
+            background-color: #f44336;
+            color: white;
+        }
+        .btn-danger:hover {
+            background-color: #d32f2f;
         }
         table {
             width: 100%;
@@ -42,11 +49,40 @@
             color: white;
         }
     </style>
+    <script>
+        function enableEdit(recepcionId) {
+            const encargadoTd = document.getElementById(`encargado-${recepcionId}`);
+            const currentEncargado = encargadoTd.innerText.trim();
+            encargadoTd.innerHTML = `
+                <select id="select-encargado-${recepcionId}">
+                    <option value="">Sin asignar</option>
+                    {% for usuario in usuarios %}
+                        <option value="{{ usuario.username }}" ${currentEncargado === '{{ usuario.username }}' ? 'selected' : ''}>
+                            {{ usuario.username }}
+                        </option>
+                    {% endfor %}
+                </select>
+            `;
+
+            const editButton = document.getElementById(`edit-btn-${recepcionId}`);
+            editButton.innerText = "Guardar";
+            editButton.onclick = function() {
+                saveChanges(recepcionId);
+            };
+        }
+
+        function saveChanges(recepcionId) {
+            const encargadoSelect = document.getElementById(`select-encargado-${recepcionId}`).value;
+            const form = document.getElementById(`edit-form-${recepcionId}`);
+            const encargadoInput = document.getElementById(`hidden-encargado-${recepcionId}`);
+            encargadoInput.value = encargadoSelect;
+            form.submit();
+        }
+    </script>
 </head>
 <body>
     <h1>Dashboard</h1>
 
-    <!-- Botones para crear cliente y vehículo solo si el usuario es administrador -->
     {% if request.user.rol == 'administrador' %}
         <a href="{% url 'crear_cliente' %}" class="btn">Crear Cliente</a>
         <a href="{% url 'crear_vehiculo' %}" class="btn">Crear Vehículo</a>
@@ -56,13 +92,11 @@
 
     <h2>Bienvenido, {{ request.user.username }}</h2>
 
-    <!-- Botón para cerrar sesión -->
     <form action="{% url 'logout' %}" method="post" style="display:inline;">
         {% csrf_token %}
         <button type="submit" class="btn btn-logout">Cerrar Sesión</button>
     </form>
 
-    <!-- Tabla de Vehículos Recepcionados -->
     <h3>Vehículos Recepcionados</h3>
     <table>
         <thead>
@@ -88,7 +122,7 @@
                 <td>{{ recepcion.placa_vehiculo.tipo_vehiculo }}</td>
                 <td>{{ recepcion.tipo_lavado }}</td>
                 <td>{{ recepcion.estado }}</td>
-                <td>
+                <td id="encargado-{{ recepcion.id }}">
                     {% if recepcion.encargado %}
                         {{ recepcion.encargado }}
                     {% else %}
@@ -112,6 +146,12 @@
                             <form action="{% url 'eliminar_recepcion' recepcion.id %}" method="post" style="display:inline;">
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-danger">Eliminar</button>
+                            </form>
+
+                            <form id="edit-form-{{ recepcion.id }}" action="{% url 'editar_encargado' recepcion.id %}" method="post" style="display:inline;">
+                                {% csrf_token %}
+                                <input type="hidden" name="encargado" id="hidden-encargado-{{ recepcion.id }}">
+                                <button type="button" class="btn" id="edit-btn-{{ recepcion.id }}" onclick="enableEdit({{ recepcion.id }})">Editar</button>
                             </form>
                         {% endif %}
 
