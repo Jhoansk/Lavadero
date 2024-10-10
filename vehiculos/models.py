@@ -11,12 +11,20 @@ class Usuario(AbstractUser):
 
 # Vehiculo Model
 class Vehiculo(models.Model):
+    TIPO_VEHICULO_CHOICES = [
+        ('Automovil', 'Automóvil'),
+        ('Moto', 'Moto'),
+        ('Taxi', 'Taxi'),
+        ('Camioneta', 'Camioneta'),
+        ('Pick-up', 'Pick-up'),
+        ('Furgon', 'Furgón'),
+    ]
     placa = models.CharField(max_length=100, primary_key=True)
     marca = models.CharField(max_length=100)
     linea = models.CharField(max_length=100)
     modelo = models.CharField(max_length=100)
     color = models.CharField(max_length=100, null=True, blank=True)
-    tipo_vehiculo = models.CharField(max_length=100, null=True, blank=True)
+    tipo_vehiculo = models.CharField(max_length=100, choices=TIPO_VEHICULO_CHOICES)
 
     def __str__(self):
         return self.placa
@@ -113,4 +121,3 @@ class Historial(models.Model):
 
     def __str__(self):
         return f"Historial de {self.placa_vehiculo.placa} - {self.tipo_lavado}"
-    

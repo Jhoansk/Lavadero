@@ -17,8 +17,8 @@ urlpatterns = [
     path('ver_lavado/<int:id>/', ver_lavado, name='ver_lavado'),#Vista para ver el lavado del vehiculo
     path('terminar_lavado/<int:id>/', terminar_lavado, name='terminar_lavado'), #terminar Lavado
     path('editar_encargado/<int:recepcion_id>/', editar_encargado, name='editar_encargado'),#Edita el encargado del lavado
-    path('historial/', historial, name='historial'),
-    path('historial/detalle/<int:id>/', ver_detalle_historial, name='detalle_historial'),
-    path('perfil/', perfil_usuario, name='perfil_usuario'),
-    path('estadistica', estadisticas, name='estadistica'),
+    path('historial/', historial, name='historial'),#Visualzia el historial del los lavados
+    path('historial/detalle/<int:id>/', ver_detalle_historial, name='detalle_historial'),# Detalles del vehiculo en historial
+    path('perfil/', perfil_usuario, name='perfil_usuario'),#Perfil del ususario
+    path('estadistica', estadisticas, name='estadistica'),#Estadisticas de los empleados
 ]
