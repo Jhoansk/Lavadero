@@ -1,26 +1,36 @@
-from django.shortcuts import render
-
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from vehiculos.models import Cliente
 from vehiculos.models import Recepcion 
 from django.db.models import Q
 from django.utils import timezone
+import os
+from django.conf import settings
 
 def estado_vehiculo(request):
     estado = None
     turno = None
     tiempo_estimado = None  # Para almacenar la hora estimada de entrega
     placa = None
-    imagen = None  # Para almacenar la imagen del vehículo
+    imagen_sin_fondo = None  # Para almacenar la imagen sin fondo del vehículo
 
     if request.method == "POST":
         placa = request.POST.get('placa')
         try:
+            # Obtener la recepción asociada a la placa
             recepcion = Recepcion.objects.get(placa_vehiculo__placa=placa)
             estado = recepcion.estado
             turno = recepcion.turno  # Obtener el turno desde el modelo
-            imagen = recepcion.imagen_1.url if recepcion.imagen_1 else None  # Obtener la imagen
+
+            # Obtener la ruta de la imagen sin fondo
+            ruta_imagen_sin_fondo = os.path.join(
+                settings.MEDIA_ROOT, 'imagenes', recepcion.placa_vehiculo.placa, 'imagen_1_sin_fondo.png'
+            )
+            # Verificar si la imagen sin fondo existe
+            if os.path.exists(ruta_imagen_sin_fondo):
+                imagen_sin_fondo = os.path.join(
+                    settings.MEDIA_URL, 'imagenes', recepcion.placa_vehiculo.placa, 'imagen_1_sin_fondo.png'
+                )
 
             # Condiciones para manejar el tiempo estimado
             if estado == "En Lavado":
@@ -38,5 +48,5 @@ def estado_vehiculo(request):
         'turno': turno,
         'placa': placa,
         'tiempo': tiempo_estimado,  # Pasa el tiempo estimado a la plantilla
-        'imagen': imagen,  # Pasa la imagen a la plantilla
+        'imagen_sin_fondo': imagen_sin_fondo,  # Pasa la imagen sin fondo a la plantilla
     })

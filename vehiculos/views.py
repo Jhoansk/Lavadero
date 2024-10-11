@@ -14,6 +14,8 @@ from django.db.models import Sum
 from django.contrib.auth.decorators import user_passes_test
 from rembg import remove
 from PIL import Image
+import os
+from django.conf import settings
 
 # Vistas para el login
 def login_view(request):
@@ -167,7 +169,7 @@ def crear_recepcion(request):
             messages.error(request, 'Formato de fecha inválido. Use dd/mm/yyyy.')
             return redirect('crear_recepcion')
 
-        # Verifica el tipo de lavado
+        # Verifica el tipo de lavado y asigna los valores
         if tipo_lavado == 'Lavado General':
             tiempo = '1:00:00'
             valor = 100000.00
@@ -201,17 +203,30 @@ def crear_recepcion(request):
             turno=nuevo_turno  # Asigna el nuevo turno
         )
 
+        # Crear la carpeta donde se almacenarán las imágenes si no existe
+        carpeta_imagenes = os.path.join(settings.MEDIA_ROOT, 'imagenes', placa_vehiculo)
+        os.makedirs(carpeta_imagenes, exist_ok=True)
+
         # Guarda las imágenes en sus respectivos campos
-        recepcion.imagen_1 = request.FILES.get('imagen_1')
+        imagen_1 = request.FILES.get('imagen_1')
+        recepcion.imagen_1 = imagen_1
         recepcion.imagen_2 = request.FILES.get('imagen_2')
         recepcion.imagen_3 = request.FILES.get('imagen_3')
         recepcion.imagen_4 = request.FILES.get('imagen_4')
+
+        # Procesar la imagen_1 para remover el fondo
+        if imagen_1:
+            input_image = Image.open(imagen_1)
+            output_image = remove(input_image)  # Remover el fondo de la imagen
+            output_image_path = os.path.join(carpeta_imagenes, 'imagen_1_sin_fondo.png')
+            output_image.save(output_image_path)  # Guardar la imagen sin fondo en la nueva ruta
 
         recepcion.save()
 
         messages.success(request, 'Recepción creada exitosamente.')
         return redirect('dashboard')
 
+    # Cargar datos adicionales para el formulario
     vehiculos = Vehiculo.objects.all()
     clientes = Cliente.objects.all()
     usuarios = Usuario.objects.filter(rol='empleado')  # Solo mostramos usuarios con rol de 'lavador'
@@ -438,6 +453,8 @@ def estadisticas(request):
     usuarios = Usuario.objects.all()  # Obtener todos los usuarios
     historiales = []
     valor_total = 0
+    valor_lavadores = 0
+    utilidad_bruta = 0
     selected_usuario = None
     fecha_inicio = None
     fecha_fin = None
@@ -459,13 +476,21 @@ def estadisticas(request):
 
         historiales = Historial.objects.filter(**filters)  # Filtrar historiales
 
-        # Calcular el valor total de los historiales filtrados
+        # Calcular el valor total de los historiales filtrados (Ingresos)
         valor_total = historiales.aggregate(Sum('valor'))['valor__sum'] or 0
+
+        # Calcular el 40% del valor total para los lavadores (Egresos)
+        valor_lavadores = valor_total * 0.4
+
+        # Calcular la utilidad bruta (Ingresos - Egresos)
+        utilidad_bruta = valor_total - valor_lavadores
 
     return render(request, 'estadistica.html', {
         'usuarios': usuarios,  # Pasar la lista de usuarios a la plantilla
         'historiales': historiales,
         'valor_total': valor_total,
+        'valor_lavadores': valor_lavadores,  # Pasar el valor a pagar a los lavadores
+        'utilidad_bruta': utilidad_bruta,  # Pasar la utilidad bruta
         'selected_usuario': selected_usuario,
         'fecha_inicio': fecha_inicio,
         'fecha_fin': fecha_fin,
@@ -492,3 +517,37 @@ def crear_convenio(request):
         form = ConvenioForm()  # Mostrar el formulario vacío en GET
 
     return render(request, 'crear_convenio.html', {'form': form})
+
+@login_required
+def reporte_diario_lavadores(request):
+    fecha = request.GET.get('fecha')  # Obtener la fecha de la solicitud GET
+    resultados = []
+    total_general = 0
+
+    if fecha:
+        # Convertir la fecha a un formato datetime para filtrar los registros
+        fecha_inicio = timezone.datetime.strptime(fecha, '%Y-%m-%d')
+        fecha_fin = fecha_inicio + timezone.timedelta(days=1)
+
+        # Filtrar los historiales del día seleccionado y agrupar por encargado
+        historiales = (
+            Historial.objects
+            .filter(fecha__gte=fecha_inicio, fecha__lt=fecha_fin)
+            .values('encargado')
+            .annotate(total=Sum('valor'))
+        )
+
+        # Calcular el 40% para cada encargado y el total general
+        for historial in historiales:
+            valor_lavadores = historial['total'] * 0.4
+            total_general += valor_lavadores
+            resultados.append({
+                'encargado': historial['encargado'],
+                'valor_lavadores': valor_lavadores,
+            })
+
+    return render(request, 'reporte_diario.html', {
+        'resultados': resultados,
+        'total_general': total_general,
+        'fecha': fecha,
+    })

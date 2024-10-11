@@ -161,7 +161,7 @@
                     <td>{{ historial.placa_vehiculo.placa }}</td>
                     <td>{{ historial.encargado }}</td>
                     <td>{{ historial.tipo_lavado }}</td>
-                    <td>{{ historial.valor }}</td>
+                    <td>{{ historial.valor|floatformat:0 }}</td>
                 </tr>
             {% empty %}
                 <tr>
@@ -171,14 +171,18 @@
         </tbody>
         <tfoot>
             <tr class="total-row">
-                <td colspan="4">Total</td>
-                <td>{{ valor_total }}</td>
+                <td colspan="4">Ingresos</td>
+                <td>{{ valor_total|floatformat:0 }}</td>
+            </tr>
+            <tr class="total-row">
+                <td colspan="4">Egresos personal</td>
+                <td>${{ valor_lavadores|floatformat:0 }}</td>
+            </tr>
+            <tr class="total-row">
+                <td colspan="4">Utilidad Bruta</td>
+                <td>${{ utilidad_bruta|floatformat:0 }}</td>
             </tr>
         </tfoot>
     </table>
-
-    <!-- Mostrar valor total -->
-    <h2>Valor Total de Lavados: {{ valor_total }}</h2>
-
 </body>
 </html>

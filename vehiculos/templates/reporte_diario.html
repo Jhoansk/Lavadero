@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reporte Diario de Lavadores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        form {
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="date"], button {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+            max-width: 300px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .total-row {
+            font-weight: bold;
+            background-color: #e2e2e2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Reporte Diario de Lavadores</h1>
+
+    <!-- Filtro por fecha -->
+    <h2>Seleccionar Fecha</h2>
+    <form method="GET">
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" value="{{ fecha }}">
+
+        <button type="submit">Filtrar</button>
+    </form>
+
+    <!-- Tabla de ingresos por lavador -->
+    <h2>Ingresos del Día</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Usuario Encargado</th>
+                <th>40% de Ingresos</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for resultado in resultados %}
+                <tr>
+                    <td>{{ resultado.encargado }}</td>
+                    <td>${{ resultado.valor_lavadores|floatformat:0 }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="2">No se encontraron registros para esta fecha.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr class="total-row">
+                <td>Total General</td>
+                <td>${{ total_general|floatformat:0 }}</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

@@ -1,4 +1,3 @@
-<!-- cliente/templates/estado_vehiculo.html -->
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
@@ -21,8 +20,10 @@
 
     {% if placa %}
         <div class="imagen-box">
-            {% if estado != "El lavado ha sido terminado" %}
-                <img src="{{ imagen }}" alt="Imagen del vehículo" style="max-width: 300px; max-height: 200px;">
+            {% if imagen_sin_fondo %}
+                <img src="{{ imagen_sin_fondo }}" alt="Imagen sin fondo del vehículo" style="max-width: 300px; max-height: 200px;">
+            {% else %}
+                <p>No se encontró la imagen para este vehículo.</p>
             {% endif %}
         </div>
 
