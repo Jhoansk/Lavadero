@@ -48,6 +48,20 @@
             background-color: #4CAF50;
             color: white;
         }
+        .placa-box {
+            background-color: #ffeb3b;
+            border: 2px solid black; 
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center; 
+            width: fit-content; 
+            margin: 0 auto; 
+            height: 25px;
+        }
+        .placa-box small {
+            font-size: 10px;
+        }
+        
     </style>
     <script>
         function enableEdit(recepcionId) {
@@ -89,7 +103,8 @@
         <a href="{% url 'crear_recepcion' %}" class="btn">Recepción</a>
         <a href="{% url 'register_employee' %}" class="btn">Crear Usuario</a>
         <a href="{% url 'historial' %}" class="btn">Historial</a>
-        <a href="{% url 'estadistica' %}" class="btn">Estadistica</a> 
+        <a href="{% url 'estadistica' %}" class="btn">Estadistica</a>
+        <a href="{% url 'crear_convenio'%}" class="btn">Crear Convenio</a>
     {% endif %}
     <a href="{% url 'perfil_usuario' %}" class="btn">Perfil</a>
 
@@ -119,7 +134,12 @@
         <tbody>
             {% for recepcion in recepciones %}
             <tr>
-                <td>{{ recepcion.placa_vehiculo.placa }}</td>
+                <td>
+                    <div class="placa-box">
+                        {{ recepcion.placa_vehiculo.placa }}<br>
+                        <small>BOGOTA</small>
+                    </div>
+                </td>
                 <td>{{ recepcion.placa_vehiculo.marca }}</td>
                 <td>{{ recepcion.placa_vehiculo.linea }}</td>
                 <td>{{ recepcion.placa_vehiculo.color }}</td>

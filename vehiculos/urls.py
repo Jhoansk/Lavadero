@@ -21,4 +21,5 @@ urlpatterns = [
     path('historial/detalle/<int:id>/', ver_detalle_historial, name='detalle_historial'),# Detalles del vehiculo en historial
     path('perfil/', perfil_usuario, name='perfil_usuario'),#Perfil del ususario
     path('estadistica', estadisticas, name='estadistica'),#Estadisticas de los empleados
+    path('crear-convenio/', crear_convenio, name='crear_convenio'), # Crear convenio
 ]

@@ -8,6 +8,16 @@ class Usuario(AbstractUser):
 
     def __str__(self):
         return self.username
+    
+
+class Convenio(models.Model):
+    cod_convenio = models.AutoField(primary_key=True)
+    nombre = models.CharField(max_length=100)
+    telefono = models.CharField(max_length=20)
+    direccion = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"{self.nombre} - {self.cod_convenio}"
 
 # Vehiculo Model
 class Vehiculo(models.Model):
@@ -96,6 +106,7 @@ class Recepcion(models.Model):
     imagen_4 = models.ImageField(upload_to=get_image_upload_path, null=True)  # Almacenamiento de la cuarta imagen
     estado = models.CharField(max_length=50, default='En Espera')
     encargado = models.CharField(max_length=100, default='Sin Asignar')
+    convenio = models.ForeignKey(Convenio, on_delete=models.SET_NULL, null=True, blank=True)  # Relación con Convenio
     en_lavado = models.BooleanField(default=False)
     inicio_lavado = models.DateTimeField(null=True, blank=True)  # Hora de inicio del lavado
     turno = models.PositiveIntegerField(default=0)  # Campo para el turno
@@ -116,8 +127,10 @@ class Historial(models.Model):
     imagen_4 = models.ImageField(upload_to=get_image_upload_path, null=True)  # Almacenamiento de la cuarta imagen
     estado = models.CharField(max_length=50, default='En Espera')
     encargado = models.CharField(max_length=100, default='Sin Asignar')
+    convenio = models.ForeignKey(Convenio, on_delete=models.SET_NULL, null=True, blank=True)  # Nueva relación
     en_lavado = models.BooleanField(default=False)
     inicio_lavado = models.DateTimeField(null=True, blank=True)  # Hora de inicio del lavado
 
     def __str__(self):
         return f"Historial de {self.placa_vehiculo.placa} - {self.tipo_lavado}"
+    

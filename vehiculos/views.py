@@ -3,8 +3,8 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Usuario, Empleado, Cliente, Vehiculo, Recepcion, Historial
-from .forms import CustomUserCreationForm
+from .models import Usuario, Empleado, Cliente, Vehiculo, Recepcion, Historial, Convenio
+from .forms import CustomUserCreationForm, ConvenioForm
 from django.utils import timezone
 from datetime import datetime, timedelta
 from django.http import HttpResponseForbidden
@@ -12,6 +12,8 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.db.models import Sum
 from django.contrib.auth.decorators import user_passes_test
+from rembg import remove
+from PIL import Image
 
 # Vistas para el login
 def login_view(request):
@@ -155,6 +157,7 @@ def crear_recepcion(request):
         tiempo = request.POST.get('tiempo')
         valor = request.POST.get('valor')
         encargado_username = request.POST.get('encargado')  # Obtener el encargado desde el formulario
+        convenio_id = request.POST.get('convenio')  # Obtener el convenio seleccionado
 
         # Procesa la fecha
         try:
@@ -178,6 +181,9 @@ def crear_recepcion(request):
         # Obtener el encargado como instancia de Usuario
         encargado = Usuario.objects.get(username=encargado_username) if encargado_username else None
 
+        # Obtener el convenio como instancia de Convenio
+        convenio = Convenio.objects.get(pk=convenio_id) if convenio_id else None
+
         # Asignar el turno incrementable
         ultimo_turno = Recepcion.objects.filter(estado='En Espera').order_by('turno').last()
         nuevo_turno = (ultimo_turno.turno + 1) if ultimo_turno else 1
@@ -191,6 +197,7 @@ def crear_recepcion(request):
             tiempo=datetime.strptime(tiempo, '%H:%M:%S').time(),
             valor=valor,
             encargado=encargado.username if encargado else 'Sin Asignar',
+            convenio=convenio,  # Asigna el convenio a la recepción
             turno=nuevo_turno  # Asigna el nuevo turno
         )
 
@@ -208,11 +215,13 @@ def crear_recepcion(request):
     vehiculos = Vehiculo.objects.all()
     clientes = Cliente.objects.all()
     usuarios = Usuario.objects.filter(rol='empleado')  # Solo mostramos usuarios con rol de 'lavador'
+    convenios = Convenio.objects.all()  # Obtener todos los convenios para el formulario
 
     return render(request, 'crear_recepcion.html', {
         'vehiculos': vehiculos,
         'clientes': clientes,
-        'usuarios': usuarios  # Pasar los encargados al template
+        'usuarios': usuarios,  # Pasar los encargados al template
+        'convenios': convenios  # Pasar los convenios al template
     })
     
 @login_required
@@ -461,3 +470,25 @@ def estadisticas(request):
         'fecha_inicio': fecha_inicio,
         'fecha_fin': fecha_fin,
     })
+    
+@login_required
+def crear_convenio(request):
+    if request.user.rol != 'administrador':
+        messages.error(request, 'No tienes permiso para crear convenios.')
+        return redirect('dashboard')  # Redirigir si no es administrador
+
+    if request.method == 'POST':
+        # Crear una instancia del formulario con los datos del POST
+        form = ConvenioForm(request.POST)
+
+        if form.is_valid():
+            # Guardar el convenio si el formulario es válido
+            form.save()
+            messages.success(request, 'Convenio creado exitosamente.')
+            return redirect('dashboard')  # Redirigir a una página tras la creación exitosa
+        else:
+            messages.error(request, 'Error al crear el convenio. Por favor verifica los datos ingresados.')
+    else:
+        form = ConvenioForm()  # Mostrar el formulario vacío en GET
+
+    return render(request, 'crear_convenio.html', {'form': form})

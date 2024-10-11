@@ -115,6 +115,16 @@
         </div>
 
         <div class="form-group">
+            <label for="convenio">Convenio:</label>
+            <select name="convenio" required>
+                <option value="">Selecciona un convenio</option>
+                {% for convenio in convenios %}
+                    <option value="{{ convenio.cod_convenio }}">{{ convenio.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
             <label for="imagen_1">Imagen Lateral Frontal Izquierdo:</label>
             <input type="file" name="imagen_1" accept="image/*" required>
         </div>
