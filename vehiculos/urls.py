@@ -2,6 +2,8 @@ from django.urls import path
 from django.contrib.auth.views import LogoutView  
 from .views import login_view, register_employee, dashboard
 from .views import *
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('login/', login_view, name='login'), #Vista de Login
@@ -23,5 +25,8 @@ urlpatterns = [
     path('estadistica', estadisticas, name='estadistica'),#Estadisticas de los empleados
     path('crear-convenio/', crear_convenio, name='crear_convenio'), # Crear convenio
     path('reporte-diario/', reporte_diario_lavadores, name='reporte-diario'),
+    path('error', vista404, name='404'),
 
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

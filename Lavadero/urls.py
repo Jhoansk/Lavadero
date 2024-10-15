@@ -22,6 +22,7 @@ from django.urls import path, include
 from django.shortcuts import redirect
 from vehiculos.views import handler404 as handler404_vehiculos
 from cliente.views import handler404 as handler404_clientes
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -32,5 +33,9 @@ urlpatterns = [
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 handler404 = 'vehiculos.views.handler404'

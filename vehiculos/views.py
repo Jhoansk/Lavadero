@@ -17,6 +17,7 @@ from PIL import Image
 import os
 from django.conf import settings
 
+
 # Vistas para el login
 def login_view(request):
     if request.method == 'POST':
@@ -330,7 +331,6 @@ def ver_lavado(request, id):
     return render(request, 'ver_lavado.html', {'recepcion': recepcion, 'tiempo_restante': tiempo_restante})
 
 @login_required
-@login_required
 def terminar_lavado(request, id):
     # Obtener la recepción correspondiente
     recepcion = get_object_or_404(Recepcion, id=id)
@@ -573,3 +573,6 @@ def landing_page(request):
     
 def handler404(request, exception):
     return render(request, '404.html', status=404)
+
+def vista404(request):
+    return render(request, '404.html')
