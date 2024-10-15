@@ -19,11 +19,18 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
+from django.shortcuts import redirect
+from vehiculos.views import handler404 as handler404_vehiculos
+from cliente.views import handler404 as handler404_clientes
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', lambda request: redirect('login')),
     path('vehiculos/', include('vehiculos.urls')),
     path('cliente/', include('cliente.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'vehiculos.views.handler404'

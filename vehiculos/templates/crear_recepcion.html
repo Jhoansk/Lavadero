@@ -61,7 +61,7 @@
 
         <div class="form-group">
             <label for="fecha">Fecha (dd/mm/yyyy):</label>
-            <input type="text" name="fecha" required placeholder="dd/mm/yyyy">
+            <input type="date" name="fecha" required placeholder="dd/mm/yyyy">
         </div>
 
         <div class="form-group">
@@ -117,7 +117,7 @@
         <div class="form-group">
             <label for="convenio">Convenio:</label>
             <select name="convenio" required>
-                <option value="">Selecciona un convenio</option>
+                <option value="">Sin Convenio</option>
                 {% for convenio in convenios %}
                     <option value="{{ convenio.cod_convenio }}">{{ convenio.nombre }}</option>
                 {% endfor %}

@@ -50,3 +50,6 @@ def estado_vehiculo(request):
         'tiempo': tiempo_estimado,  # Pasa el tiempo estimado a la plantilla
         'imagen_sin_fondo': imagen_sin_fondo,  # Pasa la imagen sin fondo a la plantilla
     })
+    
+def handler404(request, exception):
+    return render(request, '404.html', status=404)

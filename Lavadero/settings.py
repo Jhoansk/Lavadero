@@ -28,7 +28,12 @@ SECRET_KEY = 'django-insecure-fadz66j+=_8iiqgv=r(&t-2rup@3b+h$2*44r+y&k(x0vcbih=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'tu_dominio.com',
+    'www.tu_dominio.com',
+    '127.0.0.1',  # Para pruebas locales
+    'localhost',  # Para pruebas locales
+]
 
 
 # Application definition
@@ -52,6 +57,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'cliente.middleware.ErrorHandlingMiddleware',
+    'vehiculos.middleware.ErrorHandlingMiddleware',
 ]
 
 ROOT_URLCONF = 'Lavadero.urls'

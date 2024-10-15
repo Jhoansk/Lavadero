@@ -23,4 +23,5 @@ urlpatterns = [
     path('estadistica', estadisticas, name='estadistica'),#Estadisticas de los empleados
     path('crear-convenio/', crear_convenio, name='crear_convenio'), # Crear convenio
     path('reporte-diario/', reporte_diario_lavadores, name='reporte-diario'),
+
 ]

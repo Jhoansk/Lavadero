@@ -66,7 +66,7 @@ def register_employee(request):
 @login_required
 def dashboard(request):
     # Obtiene todas las recepciones
-    recepciones = Recepcion.objects.select_related('placa_vehiculo').all()  # Utiliza select_related para optimizar consultas
+    recepciones = Recepcion.objects.select_related('placa_vehiculo').all()  
 
     # Filtra usuarios con el rol de 'empleado'
     usuarios = Usuario.objects.filter(rol='empleado')
@@ -163,10 +163,10 @@ def crear_recepcion(request):
 
         # Procesa la fecha
         try:
-            fecha = datetime.strptime(fecha_str, '%d/%m/%Y')
+            fecha = datetime.strptime(fecha_str, '%Y-%m-%d')  # Cambiado a 'YYYY-MM-DD'
             fecha = fecha.replace(hour=datetime.now().hour, minute=datetime.now().minute, second=datetime.now().second)
         except ValueError:
-            messages.error(request, 'Formato de fecha inválido. Use dd/mm/yyyy.')
+            messages.error(request, 'Formato de fecha inválido. Use YYYY-MM-DD.')
             return redirect('crear_recepcion')
 
         # Verifica el tipo de lavado y asigna los valores
@@ -179,6 +179,20 @@ def crear_recepcion(request):
         elif tipo_lavado == 'Lavado y pulido':
             tiempo = '1:00:00'
             valor = 100000.00
+
+        # Verifica la existencia del vehículo
+        try:
+            vehiculo = Vehiculo.objects.get(placa=placa_vehiculo)
+        except Vehiculo.DoesNotExist:
+            messages.error(request, 'El vehículo con la placa proporcionada no existe.')
+            return redirect('crear_recepcion')
+
+        # Verifica la existencia del cliente
+        try:
+            cliente = Cliente.objects.get(cedula=cliente_vehiculo)
+        except Cliente.DoesNotExist:
+            messages.error(request, 'El cliente con la cédula proporcionada no existe.')
+            return redirect('crear_recepcion')
 
         # Obtener el encargado como instancia de Usuario
         encargado = Usuario.objects.get(username=encargado_username) if encargado_username else None
@@ -193,13 +207,13 @@ def crear_recepcion(request):
         # Crea la nueva recepción
         recepcion = Recepcion(
             fecha=fecha,
-            placa_vehiculo=Vehiculo.objects.get(placa=placa_vehiculo),
-            cliente_vehiculo=Cliente.objects.get(cedula=cliente_vehiculo),
+            placa_vehiculo=vehiculo,  # Usar el objeto Vehiculo existente
+            cliente_vehiculo=cliente,  # Usar el objeto Cliente existente
             tipo_lavado=tipo_lavado,
             tiempo=datetime.strptime(tiempo, '%H:%M:%S').time(),
             valor=valor,
             encargado=encargado.username if encargado else 'Sin Asignar',
-            convenio=convenio,  # Asigna el convenio a la recepción
+            convenio=convenio,  
             turno=nuevo_turno  # Asigna el nuevo turno
         )
 
@@ -229,14 +243,14 @@ def crear_recepcion(request):
     # Cargar datos adicionales para el formulario
     vehiculos = Vehiculo.objects.all()
     clientes = Cliente.objects.all()
-    usuarios = Usuario.objects.filter(rol='empleado')  # Solo mostramos usuarios con rol de 'lavador'
-    convenios = Convenio.objects.all()  # Obtener todos los convenios para el formulario
+    usuarios = Usuario.objects.filter(rol='empleado')  
+    convenios = Convenio.objects.all()  
 
     return render(request, 'crear_recepcion.html', {
         'vehiculos': vehiculos,
         'clientes': clientes,
-        'usuarios': usuarios,  # Pasar los encargados al template
-        'convenios': convenios  # Pasar los convenios al template
+        'usuarios': usuarios,  
+        'convenios': convenios  
     })
     
 @login_required
@@ -285,7 +299,7 @@ def eliminar_recepcion(request, id):
         recepcion.delete()  # Eliminar la recepción
         return redirect('dashboard')  # Redirigir al dashboard después de eliminar
     else:
-        # Si el usuario no es administrador, redirigir a dashboard o manejar el error
+        # Si el usuario no es administrador, redirigir a dashboard
         return redirect('dashboard')
 
 @login_required
@@ -299,7 +313,7 @@ def reiniciar_recepcion(request, id):
         recepcion.save()
         return redirect('dashboard')
     else:
-        # Si el usuario no es administrador, redirigir a dashboard o manejar el error
+        # Si el usuario no es administrador, redirigir a dashboard
         return redirect('dashboard')
 
 @login_required   
@@ -334,10 +348,10 @@ def terminar_lavado(request, id):
                 tipo_lavado=recepcion.tipo_lavado,
                 tiempo=recepcion.tiempo,
                 valor=recepcion.valor,
-                imagen_1=recepcion.imagen_1,  # Guardar la primera imagen
-                imagen_2=recepcion.imagen_2,  # Guardar la segunda imagen
-                imagen_3=recepcion.imagen_3,  # Guardar la tercera imagen
-                imagen_4=recepcion.imagen_4,  # Guardar la cuarta imagen
+                imagen_1=recepcion.imagen_1,  
+                imagen_2=recepcion.imagen_2,  
+                imagen_3=recepcion.imagen_3,  
+                imagen_4=recepcion.imagen_4,  
                 estado='Terminado',
                 encargado=get_object_or_404(Usuario, username=recepcion.encargado)  # Buscar la instancia del Usuario
             )
@@ -367,7 +381,7 @@ def editar_encargado(request, recepcion_id):
     recepcion = Recepcion.objects.get(id=recepcion_id)
 
     if request.method == 'POST':
-        encargado_username = request.POST.get('encargado')  # Cambia esto a 'encargado' para que coincida con el nombre del campo en el formulario
+        encargado_username = request.POST.get('encargado') 
 
         if encargado_username:
             encargado = Usuario.objects.get(username=encargado_username)
@@ -486,11 +500,11 @@ def estadisticas(request):
         utilidad_bruta = valor_total - valor_lavadores
 
     return render(request, 'estadistica.html', {
-        'usuarios': usuarios,  # Pasar la lista de usuarios a la plantilla
+        'usuarios': usuarios,  
         'historiales': historiales,
         'valor_total': valor_total,
-        'valor_lavadores': valor_lavadores,  # Pasar el valor a pagar a los lavadores
-        'utilidad_bruta': utilidad_bruta,  # Pasar la utilidad bruta
+        'valor_lavadores': valor_lavadores,  
+        'utilidad_bruta': utilidad_bruta,  
         'selected_usuario': selected_usuario,
         'fecha_inicio': fecha_inicio,
         'fecha_fin': fecha_fin,
@@ -510,7 +524,7 @@ def crear_convenio(request):
             # Guardar el convenio si el formulario es válido
             form.save()
             messages.success(request, 'Convenio creado exitosamente.')
-            return redirect('dashboard')  # Redirigir a una página tras la creación exitosa
+            return redirect('dashboard')  # Redirigir a una página tras la creación
         else:
             messages.error(request, 'Error al crear el convenio. Por favor verifica los datos ingresados.')
     else:
@@ -551,3 +565,11 @@ def reporte_diario_lavadores(request):
         'total_general': total_general,
         'fecha': fecha,
     })
+    
+def landing_page(request):
+    if request.user.is_authenticated:
+        return redirect('login') 
+    return redirect('login')
+    
+def handler404(request, exception):
+    return render(request, '404.html', status=404)
