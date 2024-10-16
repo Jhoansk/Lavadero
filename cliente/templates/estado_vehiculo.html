@@ -19,21 +19,23 @@
     </form>
 
     {% if placa %}
-        <div class="imagen-box">
-            {% if imagen_sin_fondo %}
-                <img src="{{ imagen_sin_fondo }}" alt="Imagen sin fondo del vehículo" style="max-width: 300px; max-height: 200px;">
-            {% else %}
-                <p>No se encontró la imagen para este vehículo.</p>
-            {% endif %}
-        </div>
+    <div class="imagen-box">
+        {% if imagen_sin_fondo %}
+            <img src="{{ imagen_sin_fondo }}" alt="Imagen sin fondo del vehículo" style="max-width: 300px; max-height: 200px;">
+        {% else %}
+            <p>No se encontró la imagen para este vehículo.</p>
+        {% endif %}
+    </div>
 
+    <div class="vehicle-info-box">
         <h2>Información del Vehículo</h2>
         <p><strong>Estado:</strong> {{ estado }}</p>
         <p><strong>Turno:</strong> {% if estado == "En Lavado" %} En Proceso {% else %} {{ turno }} {% endif %}</p>
-        
+
         {% if estado == "En Lavado" %}
             <p><strong>Hora estimada de entrega:</strong> {{ tiempo }}</p>
         {% endif %}
-    {% endif %}
+    </div>
+{% endif %}
 </body>
 </html>

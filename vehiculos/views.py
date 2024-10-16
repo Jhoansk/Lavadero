@@ -576,3 +576,6 @@ def handler404(request, exception):
 
 def vista404(request):
     return render(request, '404.html')
+
+def inicio(request):
+    return render(request, 'layout.html')

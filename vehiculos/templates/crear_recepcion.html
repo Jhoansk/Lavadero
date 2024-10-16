@@ -1,62 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Crear Recepción</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-    </style>
-    <script>
-        // Valores de lavado por tipo de vehículo y tipo de lavado
-        const valoresLavado = {
-            'Automovil': {
-                'Lavado General': 25000,
-                'Lavado con Motor': 50000
-            },
-            'Moto': {
-                'Lavado General': 15000,
-                'Lavado con Motor': 30000
-            },
-            'Taxi': {
-                'Lavado General': 25000,
-                'Lavado con Motor': 50000
-            },
-            'Camioneta': {
-                'Lavado General': 35000,
-                'Lavado con Motor': 85000
-            },
-            'Pick-up': {
-                'Lavado General': 35000,
-                'Lavado con Motor': 85000
-            },
-            'Furgon': {
-                'Lavado General': 40000,
-                'Lavado con Motor': 90000
-            }
-        };
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'vehiculos/css/form.css' %}">
 
-        // Función para actualizar el valor del lavado
-        function actualizarValor() {
-            const tipoVehiculo = document.getElementById('tipo_vehiculo').value;
-            const tipoLavado = document.getElementById('tipo_lavado').value;
-
-            // Obtener el valor del diccionario
-            const valor = valoresLavado[tipoVehiculo][tipoLavado];
-
-            // Actualizar el campo de valor
-            document.getElementById('valor').value = valor;
-        }
-    </script>
-</head>
-<body>
+<div class="container">
     <h1>Crear Recepción</h1>
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data" class="responsive-form">
         {% csrf_token %}
 
         <div class="form-group">
@@ -146,5 +95,47 @@
 
         <button type="submit">Crear Recepción</button>
     </form>
-</body>
-</html>
+</div>
+
+<script>
+    // Valores de lavado por tipo de vehículo y tipo de lavado
+    const valoresLavado = {
+        'Automovil': {
+            'Lavado General': 25000,
+            'Lavado con Motor': 50000
+        },
+        'Moto': {
+            'Lavado General': 15000,
+            'Lavado con Motor': 30000
+        },
+        'Taxi': {
+            'Lavado General': 25000,
+            'Lavado con Motor': 50000
+        },
+        'Camioneta': {
+            'Lavado General': 35000,
+            'Lavado con Motor': 85000
+        },
+        'Pick-up': {
+            'Lavado General': 35000,
+            'Lavado con Motor': 85000
+        },
+        'Furgon': {
+            'Lavado General': 40000,
+            'Lavado con Motor': 90000
+        }
+    };
+
+    // Función para actualizar el valor del lavado
+    function actualizarValor() {
+        const tipoVehiculo = document.getElementById('tipo_vehiculo').value;
+        const tipoLavado = document.getElementById('tipo_lavado').value;
+
+        // Obtener el valor del diccionario
+        const valor = valoresLavado[tipoVehiculo][tipoLavado];
+
+        // Actualizar el campo de valor
+        document.getElementById('valor').value = valor;
+    }
+</script>
+{% endblock %}

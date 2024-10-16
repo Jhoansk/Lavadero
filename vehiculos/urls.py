@@ -24,8 +24,9 @@ urlpatterns = [
     path('perfil/', perfil_usuario, name='perfil_usuario'),#Perfil del ususario
     path('estadistica', estadisticas, name='estadistica'),#Estadisticas de los empleados
     path('crear-convenio/', crear_convenio, name='crear_convenio'), # Crear convenio
-    path('reporte-diario/', reporte_diario_lavadores, name='reporte-diario'),
-    path('error', vista404, name='404'),
+    path('reporte-diario/', reporte_diario_lavadores, name='reporte-diario'),#Muestra el reporte diario
+    path('error', vista404, name='404'),#Link para prueba de la vista del error 404
+    path('layout',inicio,name='layout'),#Link para la prueba del layout
 
 ]
 if settings.DEBUG:

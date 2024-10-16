@@ -1,34 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Historial de Lavados</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
-</head>
-<body>
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'vehiculos/css/form.css' %}">
+<div class="container">
     <h1>Historial de Lavados</h1>
-    <form method="post">
+    <form method="post" class="responsive-form">
         {% csrf_token %}
-        <div>
+        <div class="form-group">
             <label for="placa_vehiculo">Placa del Vehículo:</label>
             <input type="text" name="placa_vehiculo" required>
             <button type="submit">Consultar</button>
@@ -66,5 +44,5 @@
             </tbody>
         </table>
     {% endif %}
-</body>
-</html>
+</div>
+{% endblock %}

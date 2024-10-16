@@ -1,82 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Registrar Empleado</title>
-    <style>
-        /* Estilo básico */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        form {
-            margin-top: 20px;
-        }
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-        input, select {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            box-sizing: border-box;
-        }
-        button {
-            margin-top: 20px;
-            padding: 10px 15px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
-</head>
-<body>
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'vehiculos/css/form.css' %}">
+<div class="container">
     <h2>Registrar Empleado</h2>
-    <form method="post">
+    <form method="post" class="responsive-form">
         {% csrf_token %}
         
         <!-- Campos del formulario de usuario -->
-        <label for="username">Nombre de Usuario:</label>
-        <input type="text" name="username" required>
+        <div class="form-group">
+            <label for="username">Nombre de Usuario:</label>
+            <input type="text" name="username" required>
+        </div>
 
-        <label for="password1">Contraseña:</label>
-        <input type="password" name="password1" required>
+        <div class="form-group">
+            <label for="password1">Contraseña:</label>
+            <input type="password" name="password1" required>
+        </div>
 
-        <label for="password2">Confirmar Contraseña:</label>
-        <input type="password" name="password2" required>
+        <div class="form-group">
+            <label for="password2">Confirmar Contraseña:</label>
+            <input type="password" name="password2" required>
+        </div>
 
         <!-- Campos adicionales del empleado -->
-        <label for="cedula">Cédula:</label>
-        <input type="text" name="cedula" required>
+        <div class="form-group">
+            <label for="cedula">Cédula:</label>
+            <input type="text" name="cedula" required>
+        </div>
 
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" required>
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" required>
+        </div>
 
-        <label for="s_nombre">Segundo Nombre:</label>
-        <input type="text" name="s_nombre">
+        <div class="form-group">
+            <label for="s_nombre">Segundo Nombre:</label>
+            <input type="text" name="s_nombre">
+        </div>
 
-        <label for="apellido">Apellido:</label>
-        <input type="text" name="apellido" required>
+        <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="apellido" required>
+        </div>
 
-        <label for="s_apellido">Segundo Apellido:</label>
-        <input type="text" name="s_apellido">
+        <div class="form-group">
+            <label for="s_apellido">Segundo Apellido:</label>
+            <input type="text" name="s_apellido">
+        </div>
 
-        <label for="telefono">Teléfono:</label>
-        <input type="text" name="telefono" required>
+        <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="text" name="telefono" required>
+        </div>
 
-        <label for="direccion">Dirección:</label>
-        <input type="text" name="direccion" required>
+        <div class="form-group">
+            <label for="direccion">Dirección:</label>
+            <input type="text" name="direccion" required>
+        </div>
 
-        <label for="rol">Rol:</label>
-        <select name="rol" required>
-            <option value="empleado">Empleado</option>
-            <option value="administrador">Administrador</option>
-        </select>
+        <div class="form-group">
+            <label for="rol">Rol:</label>
+            <select name="rol" required>
+                <option value="empleado">Empleado</option>
+                <option value="administrador">Administrador</option>
+            </select>
+        </div>
 
         <button type="submit">Registrar</button>
     </form>
@@ -88,5 +77,5 @@
             {% endfor %}
         </div>
     {% endif %}
-</body>
-</html>
+</div>
+{% endblock %}

@@ -1,143 +1,16 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Perfil de Usuario</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
-        }
-
-        h1, h2 {
-            color: #333;
-        }
-
-        h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-        }
-
-        form {
-            margin-bottom: 30px;
-        }
-
-        label {
-            font-weight: bold;
-        }
-
-        input[type="date"], input[type="password"], button {
-            padding: 10px;
-            margin: 5px 0;
-            width: 100%;
-            max-width: 300px;
-            font-size: 1em;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-
-        .error-message {
-            color: red;
-            font-weight: bold;
-        }
-
-        .success-message {
-            color: green;
-            font-weight: bold;
-        }
-
-        /* Estilos para los mensajes */
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 10px 0;
-        }
-
-        ul li {
-            margin-bottom: 5px;
-        }
-
-        /* Ocultar el formulario de cambiar contraseña por defecto */
-        #password-form {
-            display: none;
-            margin-top: 20px;
-        }
-
-        /* Estilos del botón Cambiar Contraseña */
-        .toggle-btn {
-            background-color: #2196F3;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .toggle-btn:hover {
-            background-color: #1976D2;
-        }
-
-    </style>
-
-    <script>
-        function togglePasswordForm() {
-            var form = document.getElementById("password-form");
-            form.style.display = form.style.display === "none" ? "block" : "none";
-        }
-    </script>
-</head>
-<body>
-
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'vehiculos/css/form.css' %}">
+<script src="{% static 'vehiculos/js/app.js' %}"></script>
+<div class="container">
     <h1>Perfil de {{ request.user.username }}</h1>
 
     <!-- Botón para desplegar el formulario de cambiar contraseña -->
     <button class="toggle-btn" onclick="togglePasswordForm()">Cambiar Contraseña</button>
 
     <!-- Formulario para cambiar contraseña (oculto por defecto) -->
-    <div id="password-form">
+    <div id="password-form" style="display: none;"> <!-- Aquí se asegura que esté oculto -->
         <h2>Cambiar contraseña</h2>
         <form method="POST">
             {% csrf_token %}
@@ -202,7 +75,7 @@
                     <td>{{ historial.fecha|date:"Y-m-d H:i" }}</td>
                     <td>{{ historial.placa_vehiculo.placa }}</td>
                     <td>{{ historial.tipo_lavado }}</td>
-                    <td>{{ historial.valor }}</td>
+                    <td>{{ historial.valor|floatformat:0 }}</td>
                 </tr>
             {% empty %}
                 <tr>
@@ -217,6 +90,12 @@
             </tr>
         </tfoot>
     </table>
+</div>
 
-</body>
-</html>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        
+    </script>
+{% endblock %}
