@@ -89,9 +89,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'lavadero',
-        'USER':  'root',
+        'USER':  'admin',
         'PASSWORD': 'Taxi2024',
-        'HOST': 'localhost',
+        'HOST': 'lavadero.c9aeu8uo6hvv.us-east-2.rds.amazonaws.com',
         'PORT': '3306',
         
     }
