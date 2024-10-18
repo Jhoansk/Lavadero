@@ -26,15 +26,22 @@ AUTH_USER_MODEL = 'vehiculos.Usuario'
 SECRET_KEY = 'django-insecure-fadz66j+=_8iiqgv=r(&t-2rup@3b+h$2*44r+y&k(x0vcbih='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'tu_dominio.com',
     'www.tu_dominio.com',
     '127.0.0.1',  # Para pruebas locales
     'localhost',  # Para pruebas locales
+    '52.14.67.156',
 ]
 
+
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_SSL_REDIRECT = True  # Para redirigir todo el tráfico a HTTPS
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 # Application definition
 
