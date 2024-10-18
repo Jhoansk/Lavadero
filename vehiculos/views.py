@@ -146,31 +146,28 @@ def crear_vehiculo(request):
 
 @login_required
 def crear_recepcion(request):
-    # Verifica si el usuario que intenta crear es un administrador
     if request.user.rol != 'administrador':
         messages.error(request, 'No tienes permiso para crear recepciones.')
-        return redirect('dashboard')  # Redirige a la vista de inicio si no es administrador
+        return redirect('dashboard')
 
     if request.method == 'POST':
-        # Obtiene los datos del formulario
         fecha_str = request.POST.get('fecha')
         placa_vehiculo = request.POST.get('placa_vehiculo')
         cliente_vehiculo = request.POST.get('cliente_vehiculo')
+        tipo_vehiculo = request.POST.get('tipo_vehiculo')  # Obtener el tipo de vehículo
         tipo_lavado = request.POST.get('tipo_lavado')
         tiempo = request.POST.get('tiempo')
         valor = request.POST.get('valor')
-        encargado_username = request.POST.get('encargado')  # Obtener el encargado desde el formulario
-        convenio_id = request.POST.get('convenio')  # Obtener el convenio seleccionado
+        encargado_username = request.POST.get('encargado')
+        convenio_id = request.POST.get('convenio')
 
-        # Procesa la fecha
         try:
-            fecha = datetime.strptime(fecha_str, '%Y-%m-%d')  # Cambiado a 'YYYY-MM-DD'
+            fecha = datetime.strptime(fecha_str, '%Y-%m-%d')
             fecha = fecha.replace(hour=datetime.now().hour, minute=datetime.now().minute, second=datetime.now().second)
         except ValueError:
             messages.error(request, 'Formato de fecha inválido. Use YYYY-MM-DD.')
             return redirect('crear_recepcion')
 
-        # Verifica el tipo de lavado y asigna los valores
         if tipo_lavado == 'Lavado General':
             tiempo = '1:00:00'
             valor = 100000.00
@@ -181,77 +178,71 @@ def crear_recepcion(request):
             tiempo = '1:00:00'
             valor = 100000.00
 
-        # Verifica la existencia del vehículo
-        try:
-            vehiculo = Vehiculo.objects.get(placa=placa_vehiculo)
-        except Vehiculo.DoesNotExist:
-            messages.error(request, 'El vehículo con la placa proporcionada no existe.')
-            return redirect('crear_recepcion')
+        # Verificar si el vehículo existe, si no, crearlo con solo la placa y el tipo de vehículo
+        vehiculo, created = Vehiculo.objects.get_or_create(
+            placa=placa_vehiculo,
+            defaults={'modelo': 'Desconocido', 'marca': 'Desconocida', 'tipo_vehiculo': tipo_vehiculo}
+        )
 
-        # Verifica la existencia del cliente
+        # Si el vehículo ya existe, actualiza el tipo de vehículo en caso haya cambiado
+        if not created and vehiculo.tipo_vehiculo != tipo_vehiculo:
+            vehiculo.tipo_vehiculo = tipo_vehiculo
+            vehiculo.save()
+
         try:
             cliente = Cliente.objects.get(cedula=cliente_vehiculo)
         except Cliente.DoesNotExist:
             messages.error(request, 'El cliente con la cédula proporcionada no existe.')
             return redirect('crear_recepcion')
 
-        # Obtener el encargado como instancia de Usuario
         encargado = Usuario.objects.get(username=encargado_username) if encargado_username else None
-
-        # Obtener el convenio como instancia de Convenio
         convenio = Convenio.objects.get(pk=convenio_id) if convenio_id else None
 
-        # Asignar el turno incrementable
         ultimo_turno = Recepcion.objects.filter(estado='En Espera').order_by('turno').last()
         nuevo_turno = (ultimo_turno.turno + 1) if ultimo_turno else 1
 
-        # Crea la nueva recepción
         recepcion = Recepcion(
             fecha=fecha,
-            placa_vehiculo=vehiculo,  # Usar el objeto Vehiculo existente
-            cliente_vehiculo=cliente,  # Usar el objeto Cliente existente
+            placa_vehiculo=vehiculo,
+            cliente_vehiculo=cliente,
             tipo_lavado=tipo_lavado,
             tiempo=datetime.strptime(tiempo, '%H:%M:%S').time(),
             valor=valor,
             encargado=encargado.username if encargado else 'Sin Asignar',
-            convenio=convenio,  
-            turno=nuevo_turno  # Asigna el nuevo turno
+            convenio=convenio,
+            turno=nuevo_turno
         )
 
-        # Crear la carpeta donde se almacenarán las imágenes si no existe
+        # Manejo de imágenes
         carpeta_imagenes = os.path.join(settings.MEDIA_ROOT, 'imagenes', placa_vehiculo)
         os.makedirs(carpeta_imagenes, exist_ok=True)
 
-        # Guarda las imágenes en sus respectivos campos
-        imagen_1 = request.FILES.get('imagen_1')
-        recepcion.imagen_1 = imagen_1
+        recepcion.imagen_1 = request.FILES.get('imagen_1')
         recepcion.imagen_2 = request.FILES.get('imagen_2')
         recepcion.imagen_3 = request.FILES.get('imagen_3')
         recepcion.imagen_4 = request.FILES.get('imagen_4')
 
-        # Procesar la imagen_1 para remover el fondo
-        if imagen_1:
-            input_image = Image.open(imagen_1)
-            output_image = remove(input_image)  # Remover el fondo de la imagen
+        # Guardar imágenes procesadas
+        if recepcion.imagen_1:
+            input_image = Image.open(recepcion.imagen_1)
+            output_image = remove(input_image)
             output_image_path = os.path.join(carpeta_imagenes, 'imagen_1_sin_fondo.png')
-            output_image.save(output_image_path)  # Guardar la imagen sin fondo en la nueva ruta
+            output_image.save(output_image_path)
 
         recepcion.save()
-
         messages.success(request, 'Recepción creada exitosamente.')
         return redirect('dashboard')
 
-    # Cargar datos adicionales para el formulario
     vehiculos = Vehiculo.objects.all()
     clientes = Cliente.objects.all()
-    usuarios = Usuario.objects.filter(rol='empleado')  
-    convenios = Convenio.objects.all()  
+    usuarios = Usuario.objects.filter(rol='empleado')
+    convenios = Convenio.objects.all()
 
     return render(request, 'crear_recepcion.html', {
         'vehiculos': vehiculos,
         'clientes': clientes,
-        'usuarios': usuarios,  
-        'convenios': convenios  
+        'usuarios': usuarios,
+        'convenios': convenios
     })
     
 @login_required
@@ -267,19 +258,18 @@ def empezar_lavado(request, id):
         # Verifica que la recepción esté en estado 'En Espera' antes de comenzar el lavado
         if recepcion.estado == "En Espera":
             recepcion.estado = "En Lavado"
-            # Si el usuario es controlador, el encargado permanece igual
-            # El encargado solo se puede cambiar por el usuario que inició el lavado si es administrador
-            if request.user.rol == 'administrador':
-                recepcion.encargado = request.user.username  # Asigna el nombre de usuario del administrador
 
-            # Establece el tiempo estimado (1 hora más desde ahora) solo con la parte del tiempo (no datetime completo)
+            # El encargado permanece igual, independientemente de quién inicie el lavado
+            # Solo se modifica el estado y el tiempo estimado del lavado
+
+            # Establece el tiempo estimado (1 hora desde el momento actual)
             tiempo_estimado = timezone.now() + timedelta(hours=1)
-            recepcion.tiempo = tiempo_estimado.time()  # Almacena solo la parte del tiempo
-            
+            recepcion.tiempo = tiempo_estimado.time()  # Almacena solo la parte de la hora
+
             recepcion.inicio_lavado = timezone.now()  # Guarda la hora de inicio del lavado en UTC
-            
+
             recepcion.en_lavado = True  # Marca que el lavado ha comenzado
-            
+
             recepcion.save()  # Guarda los cambios en la base de datos
 
             # Actualiza los turnos de las recepciones en espera

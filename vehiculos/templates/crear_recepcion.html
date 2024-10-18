@@ -38,8 +38,7 @@
         <div class="form-group">
             <label for="tipo_lavado">Tipo de Lavado:</label>
             <select id="tipo_lavado" name="tipo_lavado" required onchange="actualizarValor()">
-                <option value="Lavado General">Lavado General</option>
-                <option value="Lavado con Motor">Lavado con Motor</option>
+                <option value="Lavado General">Seleccione el tipo de vehiculo y luego una opcion</option>
             </select>
         </div>
 
@@ -101,30 +100,71 @@
     // Valores de lavado por tipo de vehículo y tipo de lavado
     const valoresLavado = {
         'Automovil': {
-            'Lavado General': 25000,
-            'Lavado con Motor': 50000
+            'Enjuague': 16000,
+            'Especial': 25000,
+            'Enjuague y Motor': 40000,
+            'Enjuague y Chasis': 40000,
+            'Porcelanizado sin tapiceria': 180000,
+            'Porcelanizado con tapiceria': 320000,
+            'Polichado a Maquina':120000,
+            'Polichado a Maquina Motor y Chasis': 160000,
+            'Lavado Tapiceria': 420000
         },
         'Moto': {
-            'Lavado General': 15000,
-            'Lavado con Motor': 30000
+            'Enjuague': 14000,
+            'Enjuague Desmanchada': 22000,
+            'Enjuague Desmanchada y encerada': 35000
+
         },
         'Taxi': {
-            'Lavado General': 25000,
-            'Lavado con Motor': 50000
+            'Enjuague': 15000,
         },
         'Camioneta': {
-            'Lavado General': 35000,
-            'Lavado con Motor': 85000
+            'Lavado General': 25000,
+            'Especial': 35000,
+            'Enjuague y Motor': 50000,
+            'Enjuague y Chasis': 50000,
+            'Porcelanizado sin Tapiceria': 190000,
+            'Porcelanizado con Tapiceria': 330000,
+            'Polichado a Maquina': 120000,
+            'Polichado a Maquina Motor y Chasis': 160000,
+            'Lavado Tapiceria': 430000
         },
         'Pick-up': {
-            'Lavado General': 35000,
-            'Lavado con Motor': 85000
+            'Enjuague': 27000,
+            'Especial': 35000,
+            'Enjuague y Motor': 50000,
+            'Enjuague y Chasis': 50000,
+            'Porcelanizado sin Tapiceria': 190000,
+            'Porcelanizado con Tapiceria': 330000,
+            'Polichado a Maquina': 120000,
+            'Polichado a Maquina Motor Y Chasis': 160000,
+            'Lavado de Tapiceria': 430000
         },
-        'Furgon': {
-            'Lavado General': 40000,
-            'Lavado con Motor': 90000
-        }
     };
+
+    // Función para actualizar las opciones del tipo de lavado
+    function actualizarLavado() {
+        const tipoVehiculo = document.getElementById('tipo_vehiculo').value;
+        const tipoLavadoSelect = document.getElementById('tipo_lavado');
+
+        // Limpiar las opciones actuales
+        tipoLavadoSelect.innerHTML = '';
+
+        // Obtener los tipos de lavado correspondientes al tipo de vehículo seleccionado
+        const tiposLavado = Object.keys(valoresLavado[tipoVehiculo]);
+
+        // Agregar las nuevas opciones
+        tiposLavado.forEach(lavado => {
+            const option = document.createElement('option');
+            option.value = lavado;
+            option.textContent = lavado;
+            tipoLavadoSelect.appendChild(option);
+        });
+
+        // Actualizar el valor del lavado
+        actualizarValor();
+    }
 
     // Función para actualizar el valor del lavado
     function actualizarValor() {
@@ -137,5 +177,11 @@
         // Actualizar el campo de valor
         document.getElementById('valor').value = valor;
     }
+    window.onload = function() {
+        actualizarLavado();  // Cargar las opciones de lavado por defecto
+    };
+
+    // Asignar el evento onchange para actualizar el tipo de lavado
+    document.getElementById('tipo_vehiculo').addEventListener('change', actualizarLavado);
 </script>
 {% endblock %}
