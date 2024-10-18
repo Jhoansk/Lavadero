@@ -33,7 +33,7 @@ ALLOWED_HOSTS = [
     'www.tu_dominio.com',
     '127.0.0.1',  # Para pruebas locales
     'localhost',  # Para pruebas locales
-    '52.14.67.156',
+    '3.20.204.214',
 ]
 
 
