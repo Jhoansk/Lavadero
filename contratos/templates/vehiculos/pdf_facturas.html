@@ -1,0 +1,43 @@
+<!-- pdf_facturas.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Facturas</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Facturas para el Vehículo {{ vehiculo.placa }}</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Placa</th>
+          <th>#Factura</th>
+          <th>Descripción</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for factura in facturas %}
+        <tr>
+          <td>{{ vehiculo.placa }}</td>
+          <td>{{ factura.n_factura }}</td>
+          <td>{{ factura.descripcion }}</td>
+          <td>{{ factura.total }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Seleccionar Usuarios, Vehículos y Tipo de Contrato
+{% endblock %}
+
+{% block content %}
+<div class="recent-orders">
+    <div class="vehicle_search">
+        <form action="{% url 'vehiculos:generar_pdf' %}" method="get">
+            <div>
+                <label for="usuario1">Selecciona Usuario 1:</label>
+                <select name="usuario1_id" id="usuario1" required>
+                    <option value="">Selecciona un usuario</option>
+                    {% for usuario in usuarios %}
+                        <option value="{{ usuario.id }}">{{ usuario.nombre }} {{ usuario.pApellido }} {{ usuario.sApellido }} - {{ usuario.cedula }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div>
+                <label for="usuario2">Selecciona Usuario 2:</label>
+                <select name="usuario2_id" id="usuario2" required>
+                    <option value="">Selecciona un usuario</option>
+                    {% for usuario in usuarios %}
+                        <option value="{{ usuario.id }}">{{ usuario.nombre }} {{ usuario.pApellido }} {{ usuario.sApellido }} - {{ usuario.cedula }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div>
+                <label for="vehiculo">Selecciona Vehículo:</label>
+                <select name="vehiculo_id" id="vehiculo" required>
+                    <option value="">Selecciona un vehículo</option>
+                    {% for vehiculo in vehiculos %}
+                        <option value="{{ vehiculo.id }}">{{ vehiculo.placa }} - {{ vehiculo.marca }} {{ vehiculo.modelo }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div>
+                <label for="tipo_contrato">Selecciona Tipo de Contrato:</label>
+                <select name="tipo_contrato" id="tipo_contrato" required>
+                    <option value="">Selecciona el tipo de contrato</option>
+                    <option value="venta">Venta</option>
+                    <option value="Compra_Cupo">Compra Cupo</option>
+                    <option value="compra_Particular">Compra Particular</option>
+                    <option value="compra_usado">Compra Usado</option>
+                    <option value="permuta">Permuta</option>
+                    <option value="chatarizacion_con_venta">Chatarrizacion con venta</option>
+                    <option value="servicio_chatarrizacion">Servicio Chatarrizacion</option>
+                    <option value="venta_cupo">Venta Cupo</option>
+                    <option value="venta_particular">Venta Particular</option>
+                    <option value="venta_usado">Venta Usado</option>
+                </select>
+            </div>
+
+            <button type="submit">Generar Contrato PDF</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

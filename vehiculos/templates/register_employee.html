@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'vehiculos/css/form.css' %}">
+<div class="container">
+    <h2>Registrar Empleado</h2>
+    <form method="post" class="responsive-form">
+        {% csrf_token %}
+        
+        <!-- Campos del formulario de usuario -->
+        <div class="form-group">
+            <label for="username">Nombre de Usuario:</label>
+            <input type="text" name="username" required oninput="this.value = this.value.toUpperCase();">
+        </div>
+
+        <div class="form-group">
+            <label for="password1">Contraseña:</label>
+            <input type="password" name="password1" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password2">Confirmar Contraseña:</label>
+            <input type="password" name="password2" required>
+        </div>
+
+        <!-- Campos adicionales del empleado -->
+        <div class="form-group">
+            <label for="cedula">Cédula:</label>
+            <input type="text" name="cedula" required>
+        </div>
+
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" required oninput="this.value = this.value.toUpperCase();">
+        </div>
+
+        <div class="form-group">
+            <label for="s_nombre">Segundo Nombre:</label>
+            <input type="text" name="s_nombre" oninput="this.value = this.value.toUpperCase();">
+        </div>
+
+        <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="apellido" required oninput="this.value = this.value.toUpperCase();">
+        </div>
+
+        <div class="form-group">
+            <label for="s_apellido">Segundo Apellido:</label>
+            <input type="text" name="s_apellido" oninput="this.value = this.value.toUpperCase();">
+        </div>
+
+        <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="text" name="telefono" required>
+        </div>
+
+        <div class="form-group">
+            <label for="direccion">Dirección:</label>
+            <input type="text" name="direccion" required>
+        </div>
+
+        <div class="form-group">
+            <label for="rol">Rol:</label>
+            <select name="rol" required>
+                <option value="empleado">Empleado</option>
+                <option value="administrador">Administrador</option>
+            </select>
+        </div>
+
+        <button type="submit">Registrar</button>
+    </form>
+
+    {% if messages %}
+        <div>
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

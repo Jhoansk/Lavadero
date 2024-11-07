@@ -1,0 +1,223 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .btn {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .btn-logout {
+            background-color: #f44336;
+        }
+        .btn-logout:hover {
+            background-color: #d32f2f;
+        }
+        .btn-danger {
+            background-color: #f44336;
+            color: white;
+        }
+        .btn-danger:hover {
+            background-color: #d32f2f;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            overflow: hidden; /* Ocultar la barra de desplazamiento */
+            display: block;
+            max-width: 100%; /* Limitar el ancho */
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .placa-box {
+            background-color: #ffeb3b;
+            border: 2px solid black; 
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center; 
+            width: fit-content; 
+            margin: 0 auto; 
+            height: 25px;
+            color: black; /* Cambiar el color del texto a negro */
+        }
+        .placa-box small {
+            font-size: 10px;
+            margin-top: -5px; /* Ajustar la posición del texto BOGOTA */
+            display: block; /* Asegurarse de que ocupe toda la línea */
+        }
+        
+    </style>
+    <script>
+        function enableEdit(recepcionId) {
+            const encargado1Td = document.getElementById(`encargado1-${recepcionId}`);
+            const encargado2Td = document.getElementById(`encargado2-${recepcionId}`);
+
+            const currentEncargado1 = encargado1Td.innerText.trim();
+            const currentEncargado2 = encargado2Td.innerText.trim();
+
+            encargado1Td.innerHTML = `
+                <select id="select-encargado1-${recepcionId}">
+                    <option value="">Sin asignar</option>
+                    {% for usuario in usuarios %}
+                        <option value="{{ usuario.username }}" ${currentEncargado1 === '{{ usuario.username }}' ? 'selected' : ''}>
+                            {{ usuario.username }}
+                        </option>
+                    {% endfor %}
+                </select>
+            `;
+            
+            encargado2Td.innerHTML = `
+                <select id="select-encargado2-${recepcionId}">
+                    <option value="">Sin asignar</option>
+                    {% for usuario in usuarios %}
+                        <option value="{{ usuario.username }}" ${currentEncargado2 === '{{ usuario.username }}' ? 'selected' : ''}>
+                            {{ usuario.username }}
+                        </option>
+                    {% endfor %}
+                </select>
+            `;
+
+            const editButton = document.getElementById(`edit-btn-${recepcionId}`);
+            editButton.innerText = "Guardar";
+            editButton.onclick = function() {
+                saveChanges(recepcionId);
+            };
+        }
+
+        function saveChanges(recepcionId) {
+            const encargado1Select = document.getElementById(`select-encargado1-${recepcionId}`).value;
+            const encargado2Select = document.getElementById(`select-encargado2-${recepcionId}`).value;
+
+            const form = document.getElementById(`edit-form-${recepcionId}`);
+            const encargado1Input = document.getElementById(`hidden-encargado1-${recepcionId}`);
+            const encargado2Input = document.getElementById(`hidden-encargado2-${recepcionId}`);
+
+            encargado1Input.value = encargado1Select;
+            encargado2Input.value = encargado2Select;
+
+            form.submit();
+        }
+    </script>
+</head>
+<body>
+    <h1>Dashboard</h1>
+
+    <br>
+    <br>
+
+    <h2>Bienvenido, {{ request.user.username }}</h2>
+
+    <br>
+    <br>
+
+    <h3>Vehículos Recepcionados</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Placa</th>
+                <th>Tipo Vehiculo</th>
+                <th>Tipo de Lavado</th>
+                <th>Estado</th>
+                <th>Encargado 1</th>
+                <th>Encargado 2</th>
+                <th>Turno</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for recepcion in recepciones %}
+            <tr>
+                <td>
+                    <div class="placa-box">
+                        {{ recepcion.placa_vehiculo.placa }}<br>
+                        <small>BOGOTA</small>
+                    </div>
+                </td>
+                <td>{{ recepcion.placa_vehiculo.tipo_vehiculo }}</td>
+                <td>{{ recepcion.tipo_lavado }}</td>
+                <td>{{ recepcion.estado }}</td>
+                <td id="encargado1-{{ recepcion.id }}">
+                    {% if recepcion.encargado_1 %}
+                        {{ recepcion.encargado_1 }}
+                    {% else %}
+                        Sin asignar
+                    {% endif %}
+                </td>
+                <td id="encargado2-{{ recepcion.id }}">
+                    {% if recepcion.encargado_2 %}
+                        {{ recepcion.encargado_2 }}
+                    {% else %}
+                        Sin asignar
+                    {% endif %}
+                </td>
+                <td>
+                    {% if recepcion.estado == 'En Espera' %}
+                        {{ recepcion.turno }}
+                    {% else %}
+                        En Proceso
+                    {% endif %}
+                </td>
+                <td>
+                    {% if recepcion.estado == 'En Espera' %}
+                        <form action="{% url 'empezar_lavado' recepcion.id %}" method="post" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn">Empezar</button>
+                        </form>
+                    {% endif %}
+
+                    {% if recepcion.estado == 'En Lavado' %}
+                        <a href="{% url 'ver_lavado' recepcion.id %}" class="btn">Ver</a>
+                    {% endif %}
+
+                    {% if request.user.rol == 'administrador' %}
+                        {% if recepcion.estado == 'En Espera' %}
+                            <form action="{% url 'eliminar_recepcion' recepcion.id %}" method="post" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                            </form>
+
+                            <form id="edit-form-{{ recepcion.id }}" action="{% url 'editar_encargado' recepcion.id %}" method="post" style="display:inline;">
+                                {% csrf_token %}
+                                <input type="hidden" name="encargado_1" id="hidden-encargado1-{{ recepcion.id }}">
+                                <input type="hidden" name="encargado_2" id="hidden-encargado2-{{ recepcion.id }}">
+                                <button type="button" class="btn" id="edit-btn-{{ recepcion.id }}" onclick="enableEdit({{ recepcion.id }})">Editar</button>
+                            </form>
+                        {% endif %}
+
+                        {% if recepcion.estado == 'En Lavado' %}
+                            <form action="{% url 'reiniciar_recepcion' recepcion.id %}" method="post" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger">Reiniciar</button>
+                            </form>
+                        {% endif %}
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+{% endblock %}

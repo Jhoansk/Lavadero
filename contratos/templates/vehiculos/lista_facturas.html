@@ -1,0 +1,72 @@
+{% extends 'base.html' %} {% block content %}
+<div class="recent-orders">
+  <h1>Lista de Facturas</h1>
+  <a
+    href="{% url 'vehiculos:descargar_excel_facturas' %}"
+    class="btn btn-primary"
+    >Descargar Excel</a
+  >
+  <a href="{% url 'vehiculos:descargar_pdf_facturas' %}" class="btn btn-primary"
+    >Descargar PDF</a
+  >
+  <table>
+    <thead>
+      <tr>
+        <th>Número de Factura</th>
+        <th>Placa</th>
+        <th>NIT</th>
+        <th>Nombre del Local</th>
+        <th>Fecha</th>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Valor</th>
+        <th>Total</th>
+        <th>Acciones</th>
+        <!-- Nueva columna para el botón -->
+      </tr>
+    </thead>
+    <tbody>
+      {% for factura in page_obj %}
+      <tr>
+        <td style="color: red">{{ factura.n_factura }}</td>
+        <td>{{ factura.id_placa.placa }}</td>
+        <td>{{ factura.nit }}</td>
+        <td>{{ factura.nombre_local }}</td>
+        <td>{{ factura.fecha }}</td>
+        <td>{{ factura.descripcion }}</td>
+        <td>{{ factura.cantidad }}</td>
+        <td>{{ factura.valor }}</td>
+        <td>{{ factura.total }}</td>
+        <td>
+          {% if factura.imagen %}
+          <a
+            href="{% url 'vehiculos:ver_factura' factura.id %}"
+            class="btn btn-secondary"
+            >Ver factura</a
+          >
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div class="pagination">
+    <span class="step-links">
+      {% if page_obj.has_previous %}
+      <a href="?page=1">&laquo; primera</a>
+      <a href="?page={{ page_obj.previous_page_number }}">anterior</a>
+      {% endif %}
+      <span class="current">
+        Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+      </span>
+      {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.next_page_number }}">siguiente</a>
+      <a href="?page={{ page_obj.paginator.num_pages }}">última &raquo;</a>
+      {% endif %}
+    </span>
+  </div>
+  <a href="{% url 'vehiculos:agregar_factura' %}">Agregar nueva factura</a>
+</div>
+<!-- End of Vehicles Section -->
+
+{% endblock %}

@@ -1,0 +1,40 @@
+<!-- grafico_valores_vehiculo.html -->
+<div id="grafico" style="width: 100%; height: 500px"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+<script type="text/javascript">
+  // Obtiene los datos de la vista y los pasa a JavaScript
+  var fechas = JSON.parse("{{ fechas|escapejs }}");
+  var valores = JSON.parse("{{ valores|escapejs }}");
+
+  // Inicializa el gráfico
+  var myChart = echarts.init(document.getElementById("grafico"));
+
+  // Configuración del gráfico
+  var option = {
+    title: {
+      text: "Valores por Fecha",
+    },
+    tooltip: {},
+    legend: {
+      data: ["Valor"],
+    },
+    xAxis: {
+      type: "category",
+      data: fechas,
+    },
+    yAxis: {
+      type: "value",
+    },
+    series: [
+      {
+        name: "Valor",
+        type: "bar",
+        data: valores,
+      },
+    ],
+  };
+
+  // Usa la configuración especificada para mostrar el gráfico
+  myChart.setOption(option);
+</script>

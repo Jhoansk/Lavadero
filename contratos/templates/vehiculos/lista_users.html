@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block title %}Lista de Users{% endblock %}
+{%block content %}
+<div class="container">
+  <h1>Lista de Users</h1>
+  <a href="{% url 'vehiculos:agregar_user' %}" class="btn btn-primary"
+    >Agregar User</a
+  >
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID User</th>
+        <th>Nombre Usuario</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Rol</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td>{{ user.id_user }}</td>
+        <td>{{ user.nombre_usuario }}</td>
+        <td>{{ user.nombre_u }}</td>
+        <td>{{ user.apellido_u }}</td>
+        <td>{{ user.rol }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

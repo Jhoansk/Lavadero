@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estado del Vehículo</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <h1>Consultar Estado del Vehículo</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label for="placa">Ingrese la Placa:</label>
+            <input type="text" id="placa" name="placa" required>
+            <button type="submit">Consultar</button>
+        </div>
+    </form>
+
+    {% if placa %}
+    <div class="imagen-box">
+        {% if imagen_sin_fondo %}
+            <img src="{{ imagen_sin_fondo }}" alt="Imagen sin fondo del vehículo" style="max-width: 300px; max-height: 200px;">
+        {% else %}
+            <p>No se encontró la imagen para este vehículo.</p>
+        {% endif %}
+    </div>
+
+    <div class="vehicle-info-box">
+        <h2>Información del Vehículo</h2>
+        <p><strong>Estado:</strong> {{ estado }}</p>
+        <p><strong>Turno:</strong> {% if estado == "En Lavado" %} En Proceso {% else %} {{ turno }} {% endif %}</p>
+
+        {% if estado == "En Lavado" %}
+            <p><strong>Hora estimada de entrega:</strong> {{ tiempo }}</p>
+        {% endif %}
+    </div>
+{% endif %}
+</body>
+</html>

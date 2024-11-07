@@ -1,0 +1,197 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'vehiculos/css/form.css' %}">
+
+<div class="container">
+    <h1>Crear Recepción</h1>
+    <form method="post" enctype="multipart/form-data" class="responsive-form">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="fecha">Fecha (dd/mm/yyyy):</label>
+            <input type="date" name="fecha" required placeholder="dd/mm/yyyy">
+        </div>
+
+        <div class="form-group">
+            <label for="placa_vehiculo">Placa del Vehículo:</label>
+            <input type="text" name="placa_vehiculo" required maxlength="6" oninput="this.value = this.value.toUpperCase();">
+        </div>
+
+        <div class="form-group">
+            <label for="cliente_vehiculo">Cédula del Cliente:</label>
+            <input type="text" name="cliente_vehiculo" required inputmode="numeric" pattern="[0-9]*">
+        </div>
+
+        <div class="form-group">
+            <label for="tipo_vehiculo">Tipo de Vehículo:</label>
+            <select id="tipo_vehiculo" name="tipo_vehiculo" required onchange="actualizarValor()">
+                <option value="Automovil">Seleccione una Opcion</option>
+                <option value="Automovil">Automóvil</option>
+                <option value="Moto">Moto</option>
+                <option value="Taxi">Taxi</option>
+                <option value="Camioneta">Camioneta</option>
+                <option value="Pick-up">Pick-up</option>
+                <option value="Furgon">Furgón</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="tipo_lavado">Tipo de Lavado:</label>
+            <select id="tipo_lavado" name="tipo_lavado" required onchange="actualizarValor()">
+                <option value="Lavado General">Seleccione el tipo de vehiculo y luego una opcion</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="tiempo">Tiempo:</label>
+            <input type="text" name="tiempo" value="1:00:00" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="valor">Valor:</label>
+            <input type="text" id="valor" name="valor" value="25000" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="encargado_1">Encargado del Lavado 1:</label>
+            <select name="encargado_1">
+                <option value="">Sin asignar</option>
+                {% for usuario in usuarios %}
+                    <option value="{{ usuario.username }}">{{ usuario.username }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="encargado_2">Encargado del Lavado 2:</label>
+            <select name="encargado_2">
+                <option value="">Sin asignar</option>
+                {% for usuario in usuarios %}
+                    <option value="{{ usuario.username }}">{{ usuario.username }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="convenio">Convenio:</label>
+            <select name="convenio">
+                <option value="">Sin convenio</option>
+                {% for convenio in convenios %}
+                    <option value="{{ convenio.cod_convenio }}">{{ convenio.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="imagen_1">Imagen Lateral Frontal Izquierdo:</label>
+            <input type="file" name="imagen_1" accept="image/*">
+        </div>
+
+        <div class="form-group">
+            <label for="imagen_2">Imagen Lateral Frontal Derecho:</label>
+            <input type="file" name="imagen_2" accept="image/*">
+        </div>
+
+        <div class="form-group">
+            <label for="imagen_3">Imagen Lateral Posterior Izquierdo:</label>
+            <input type="file" name="imagen_3" accept="image/*">
+        </div>
+
+        <div class="form-group">
+            <label for="imagen_4">Imagen Lateral Posterior Derecho:</label>
+            <input type="file" name="imagen_4" accept="image/*">
+        </div>
+
+        <button type="submit">Crear Recepción</button>
+    </form>
+</div>
+
+<script>
+    // Valores de lavado por tipo de vehículo y tipo de lavado
+    const valoresLavado = {
+        'Automovil': {
+            'Enjuague': 16000,
+            'Especial': 25000,
+            'Enjuague y Motor': 40000,
+            'Enjuague y Chasis': 40000,
+            'Porcelanizado sin tapiceria': 180000,
+            'Porcelanizado con tapiceria': 320000,
+            'Polichado a Maquina': 120000,
+            'Polichado a Maquina Motor y Chasis': 160000,
+            'Lavado Tapiceria': 420000
+        },
+        'Moto': {
+            'Enjuague': 14000,
+            'Enjuague Desmanchada': 22000,
+            'Enjuague Desmanchada y encerada': 35000
+        },
+        'Taxi': {
+            'Enjuague': 15000,
+        },
+        'Camioneta': {
+            'Lavado General': 25000,
+            'Especial': 35000,
+            'Enjuague y Motor': 50000,
+            'Enjuague y Chasis': 50000,
+            'Porcelanizado sin Tapiceria': 190000,
+            'Porcelanizado con Tapiceria': 330000,
+            'Polichado a Maquina': 120000,
+            'Polichado a Maquina Motor y Chasis': 160000,
+            'Lavado Tapiceria': 430000
+        },
+        'Pick-up': {
+            'Enjuague': 27000,
+            'Especial': 35000,
+            'Enjuague y Motor': 50000,
+            'Enjuague y Chasis': 50000,
+            'Porcelanizado sin Tapiceria': 190000,
+            'Porcelanizado con Tapiceria': 330000,
+            'Polichado a Maquina': 120000,
+            'Polichado a Maquina Motor Y Chasis': 160000,
+            'Lavado de Tapiceria': 430000
+        },
+    };
+
+    // Función para actualizar las opciones del tipo de lavado
+    function actualizarLavado() {
+        const tipoVehiculo = document.getElementById('tipo_vehiculo').value;
+        const tipoLavadoSelect = document.getElementById('tipo_lavado');
+
+        // Limpiar las opciones actuales
+        tipoLavadoSelect.innerHTML = '';
+
+        // Obtener los tipos de lavado correspondientes al tipo de vehículo seleccionado
+        const tiposLavado = Object.keys(valoresLavado[tipoVehiculo]);
+
+        // Agregar las nuevas opciones
+        tiposLavado.forEach(lavado => {
+            const option = document.createElement('option');
+            option.value = lavado;
+            option.textContent = lavado;
+            tipoLavadoSelect.appendChild(option);
+        });
+
+        // Actualizar el valor del lavado
+        actualizarValor();
+    }
+
+    // Función para actualizar el valor del lavado
+    function actualizarValor() {
+        const tipoVehiculo = document.getElementById('tipo_vehiculo').value;
+        const tipoLavado = document.getElementById('tipo_lavado').value;
+
+        // Obtener el valor del diccionario
+        const valor = valoresLavado[tipoVehiculo][tipoLavado];
+
+        // Actualizar el campo de valor
+        document.getElementById('valor').value = valor;
+    }
+    window.onload = function() {
+        actualizarLavado();  // Cargar las opciones de lavado por defecto
+    };
+
+    // Asignar el evento onchange para actualizar el tipo de lavado
+    document.getElementById('tipo_vehiculo').addEventListener('change', actualizarLavado);
+</script>
+{% endblock %}

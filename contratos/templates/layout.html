@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Mi Aplicación{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+    }
+    .navbar a:hover {
+      background-color: #0056b3;
+    }
+    .container {
+      padding: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    .btn-submit {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    .btn-submit:hover {
+      background-color: #0056b3;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+  <body>
+    <div class="navbar">
+      <a href="{% url 'vehiculos:agregar_vehiculo' %}">Agregar Vehículo</a>
+      <a href="{% url 'vehiculos:lista_vehiculos' %}">Lista de Vehículos</a>
+      <a href="{% url 'vehiculos:agregar_factura' %}">Agregar Factura</a>
+      <a href="{% url 'vehiculos:lista_facturas' %}">Lista de Facturas</a>
+      <a href="{% url 'vehiculos:buscar_vehiculo' %}">Buscar Vehículo</a>
+      <a href="{% url 'vehiculos:buscar_factura' %}">Buscar Factura</a>
+    </div>
+
+    <div class="container">
+      {% block content %}
+      <!-- El contenido específico de cada página se insertará aquí -->
+      {% endblock %}
+    </div>
+  </body>
+</html>

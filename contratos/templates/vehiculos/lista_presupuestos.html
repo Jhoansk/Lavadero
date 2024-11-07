@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block title %}Lista de Presupuestos{% endblock %}
+{% block content %}
+<div class="container">
+  <h1>Lista de Presupuestos</h1>
+  <a href="{% url 'vehiculos:agregar_presupuesto' %}" class="btn btn-primary"
+    >Agregar Presupuesto</a
+  >
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Placa</th>
+        <th>Valor del Presupuesto</th>
+        <th>Acciones</th>
+        <!-- Columna para los botones de acción -->
+      </tr>
+    </thead>
+    <tbody>
+      {% for presupuesto in presupuestos %}
+      <tr>
+        <td>{{ presupuesto.id_placa.placa }}</td>
+        <td>{{ presupuesto.valor_p }}</td>
+        <td>
+          <a
+            href="{% url 'vehiculos:editar_presupuesto' presupuesto.id %}"
+            class="btn btn-warning btn-sm"
+            >Editar</a
+          >
+          <a
+            href="{% url 'vehiculos:eliminar_presupuesto' presupuesto.id %}"
+            class="btn btn-danger btn-sm"
+            onclick="return confirm('¿Estás seguro de que deseas eliminar este presupuesto?');"
+            >Eliminar</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

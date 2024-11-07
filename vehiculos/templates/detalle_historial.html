@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'vehiculos/css/form.css' %}">
+<div class="container">
+    <h1>Detalles del Lavado</h1>
+    <p><strong>Fecha:</strong> {{ historial.fecha }}</p>
+    <p><strong>Tipo de Lavado:</strong> {{ historial.tipo_lavado }}</p>
+    <p><strong>Estado:</strong> {{ historial.estado }}</p>
+    <p><strong>Valor:</strong> ${{ historial.valor }}</p>
+    <p><strong>Encargado 1:</strong> {{ historial.encargado_1 }}</p>
+    <p><strong>Encargado 2:</strong> {{ historial.encargado_2 }}</p>
+
+    <h2>Imágenes del Lavado</h2>
+    <div class="image-gallery">
+        {% if historial.imagen_1 %}
+            <img src="{{ historial.imagen_1.url }}" alt="Imagen 1" class="thumbnail" onclick="showImage(this.src)">
+        {% endif %}
+        {% if historial.imagen_2 %}
+            <img src="{{ historial.imagen_2.url }}" alt="Imagen 2" class="thumbnail" onclick="showImage(this.src)">
+        {% endif %}
+        {% if historial.imagen_3 %}
+            <img src="{{ historial.imagen_3.url }}" alt="Imagen 3" class="thumbnail" onclick="showImage(this.src)">
+        {% endif %}
+        {% if historial.imagen_4 %}
+            <img src="{{ historial.imagen_4.url }}" alt="Imagen 4" class="thumbnail" onclick="showImage(this.src)">
+        {% endif %}
+    </div>
+
+    <div class="modal" id="modal" onclick="this.style.display='none'">
+        <img id="modalImage" src="" alt="Imagen a tamaño completo">
+    </div>
+</div>
+
+<script>
+    function showImage(src) {
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = src; 
+        modal.style.display = 'flex'; 
+    }
+</script>
+
+<style>
+    .image-gallery {
+        margin: 20px 0;
+    }
+
+    img {
+        max-width: 150px; /* Ajusta el tamaño de las imágenes pequeñas */
+        height: auto; /* Mantiene la proporción de la imagen */
+        margin: 5px;
+        cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+        transition: transform 0.2s; /* Suaviza el efecto al pasar el cursor */
+    }
+
+    img:hover {
+        transform: scale(1.05); /* Aumenta un poco el tamaño al pasar el cursor */
+    }
+
+    .modal {
+        display: none; /* Oculta la ventana modal por defecto */
+        position: fixed; /* Permite que la modal permanezca fija en la pantalla */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+        justify-content: center; /* Centra la imagen */
+        align-items: center; /* Centra la imagen */
+        z-index: 1000; /* Asegura que la imagen esté por encima de otros elementos */
+    }
+
+    .modal img {
+        max-width: 90%; /* Ancho máximo de la imagen en pantalla completa */
+        max-height: 90%; /* Alto máximo de la imagen en pantalla completa */
+    }
+</style>
+{% endblock %}

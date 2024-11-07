@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contrato Compra de Cupo</title>
+    <style>
+      @page {
+        size: legal; /* Tamaño del papel */
+        margin: 10mm; /* Márgenes de la página */
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        font-size: 8pt; /* Tamaño del texto ajustado a 5pt */
+        line-height: 1.5; /* Mejorar legibilidad */
+      }
+
+      table {
+        page-break-inside: avoid; /* Evita que las tablas se dividan entre páginas */
+        width: 100%;
+        font-size: 6.5pt; /* Tamaño del texto dentro de la tabla */
+        border-collapse: collapse;
+      }
+
+      p,
+      ul,
+      table {
+        page-break-after: auto; /* Permite que el contenido se divida entre páginas */
+        page-break-before: auto;
+        page-break-inside: avoid;
+        font-size: 12px; /* Aplicar tamaño de texto a párrafos, listas y tablas */
+        margin: 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        page-break-after: avoid; /* Evitar que los encabezados queden divididos en dos páginas */
+        margin-top: 0;
+        font-size: 6.5pt; /* Ajustar el tamaño de los encabezados a 5pt */
+      }
+
+      td {
+        border: 1px solid black;
+        text-align: center;
+        padding: 5px; /* Agregar espacio para mayor legibilidad */
+        font-size: 6.5pt; /* Ajustar el tamaño del texto en celdas */
+      }
+
+      tr,
+      td {
+        page-break-inside: avoid; /* Evita que filas y celdas se dividan */
+        font-size: 6.5pt;
+      }
+
+      .header-title {
+        width: 150px;
+        font-weight: bold;
+        text-align: left;
+        font-size: 6.5pt;
+      }
+
+      .header-row {
+        height: 25px;
+        font-size: 6.5pt;
+        font-weight: bold;
+      }
+
+      table tr td.clase-vehiculo {
+        border: none;
+        text-align: left;
+        padding: 0px;
+        font-size: 6.5pt;
+      }
+
+      #signature-table {
+        width: 100%;
+        font-size: 6.5pt;
+      }
+
+      .p-footer-table {
+        font-weight: bold;
+        font-size: 6.5pt;
+      }
+
+      .content {
+        width: 400px;
+        height: auto; /* Ajustar automáticamente la altura según el contenido */
+        text-align: left;
+        font-size: 6.5pt;
+      }
+
+      .borde {
+        margin-right: 10%;
+        padding: 4px;
+        height: 50px;
+        width: 50px;
+        vertical-align: top;
+        background-color: black;
+        align-items: center;
+        font-size: 6.5pt;
+      }
+
+      .huella {
+        height: 50px;
+        width: 50px;
+        background-color: white;
+        font-size: 6.5pt;
+      }
+
+      .texto_huella {
+        color: white;
+        width: 100px;
+        height: 10px;
+        font-size: 6.5pt;
+        text-align: center;
+      }
+
+      .informacion {
+        padding-top: 10px;
+        margin-bottom: 10px; /* Agregar espacio entre secciones de información */
+        font-size: 6.5pt;
+      }
+
+      .informacion p {
+        padding: 0;
+        margin: 0;
+        font-size: 6.5pt;
+      }
+
+      .signes {
+        display: inline-grid;
+        font-size: 6.5pt;
+        grid-template-columns: repeat(
+          2,
+          1fr
+        ); /* Dos columnas de igual tamaño */
+        gap: 5px; /* Espacio entre los elementos */
+        width: 1px;
+        height: 1px;
+      }
+
+      .signe-cont {
+        display: flex;
+        font-size: 6.5pt;
+        width: 350px;
+        height: 70px;
+      }
+
+      .claus-list {
+        list-style: num;
+      }
+
+      /* Ajustar la paginación en tablas largas */
+      table.long-table {
+        page-break-after: always;
+        font-size: 6.5pt;
+      }
+
+      /* Forzar salto de página para secciones importantes */
+      .page-break {
+        page-break-before: always;
+        font-size: 6.5pt;
+      }
+      .justificado {
+        text-align: justify; /* Justificación del texto */
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <!-- Primera parte: Fecha, Elaboro, Reviso, Asesor, Refiero -->
+      <tr>
+        <td rowspan="2" class="header-title">CONTRATO COMPRA DE CUPO</td>
+        <td class="header-row">Fecha:</td>
+        <td class="header-row">Elaboro:</td>
+        <td class="header-row">Reviso:</td>
+        <td class="header-row">Asesor:</td>
+        <td class="header-row">Refiere:</td>
+        <td rowspan="2" class="header-row">
+          <div>Código: SGC/CCC</div>
+          <div>Versión: 03</div>
+          <div>Fecha: 21/01/2020</div>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <!-- Fecha espacio -->
+        <td></td>
+        <!-- Elaboro espacio -->
+        <td></td>
+        <!-- Reviso espacio -->
+        <td></td>
+        <!-- Asesor espacio -->
+        <td></td>
+        <!-- Refiere espacio -->
+      </tr>
+    </table>
+
+    <p style="font-size: 18px; text-align: center;">
+      <strong
+        >CONTRATO DE SERVICIO DE CHATARRIZACION Y MATRICULA INICIAL CON VENTA DE
+        CARRO TIPO TAXI</strong
+      >
+    </p>
+    <p>&nbsp;</p>
+    <p style="text-align: justify">
+      Entre los suscritos <strong>___________________<em>,</em></strong> mayor
+      de edad, identificado con la c&eacute;dula de ciudadan&iacute;a No.
+      ____________ de Bogot&aacute;, actuando como _______________ de la empresa
+      TAXI CUPOS S.A.S. identificada con Nit. <strong>900486003-2</strong> con
+      sede en la direcci&oacute;n calle 13 No. 46-03 de Bogot&aacute;,
+      tel&eacute;fono 7443963 / ___________, Email:
+      <a href="mailto:____________@taxicupos.com">____________@taxicupos.com</a
+      ><u>.co</u>, quien para efectos de este contrato se denominara
+      <strong>EL TRAMITADOR</strong>, y de la otra parte:
+      <strong>________________</strong> mayor de edad, identificado (a) con la
+      c&eacute;dula de ciudadan&iacute;a No. _________ de ______, quien
+      podr&aacute; ser notificado (a) o contactado (a) en la siguiente
+      direcci&oacute;n, _______ No. _____, Tel. _____________ Email:
+      <a href="mailto:jimenezemperatriz0@gmail.com">__________________</a> quien
+      en adelante se denominar&aacute; como <strong>PROPIETARIO</strong>,
+      hacemos constar que de mutuo acuerdo hemos convenido en celebrar un
+      <strong>CONTRATO DE SERVICIO DE CHATARRIZACION </strong>del
+      veh&iacute;culo de placas_____<strong>
+        y MATRICULA INICIAL CON VENTA DE CARRO TIPO TAXI </strong
+      >marca _____ l&iacute;nea ______, modelo<strong> ______ </strong>con doble
+      airbag y frenos A.B.S, ____ aire acondicionado, ____ gas MOTOR _____c.c.,
+      que se regir&aacute; por las normas aplicables a la materia y
+      especialmente por las siguientes cl&aacute;usulas: -------------
+    </p>
+    <p style="text-align: justify">
+      <strong>PRIMERA -</strong> <strong>OBJETO</strong>: El tramitador se
+      compromete a efectuar todos los tr&aacute;mites de chatarrizaci&oacute;n,
+      cancelaci&oacute;n de matr&iacute;cula, cancelaci&oacute;n de la tarjeta
+      de operaci&oacute;n, matricula inicial del veh&iacute;culo a reponer y
+      compra del carro nuevo, ante los organismos competentes
+      <strong
+        >DIJIN, SIDERURGICA NACIONAL SIDENAL O DIACO, VENTANILLA UNICA DE
+        SERVICIOS &ldquo;VUS&rdquo;, y SECRETARIA DE MOVILIDAD Y</strong
+      >
+      <strong>_____</strong>.
+      ------------------------------------------------------------------------</p><p><strong
+        >SEGUNDA </strong
+      >- PRECIO: Las partes han acordado como precio del bien objeto, la suma
+      de:<strong>
+        ________________&shy;&shy;&shy;&shy;&shy;&shy; DE PESOS M/CTE
+        ($________________)</strong
+      >
+      valor que PROPIETARIO pagar&aacute; al tramitador de la siguiente manera:
+      -----------
+    </p>
+    <ul style="text-align: justify" class="claus-list">
+      <li>
+        El propietario se compromete a cancelar la suma de
+        <strong
+          >&shy;&shy;&shy;&shy;&shy;_____________________ DE PESOS M/CTE
+          ($________________) </strong
+        >dentro de los ______ (__) d&iacute;as h&aacute;biles siguientes
+        a&hellip;&hellip;&hellip;&hellip;.---------------------
+      </li>
+      <li>
+        El propietario se compromete a cancelar la suma de
+        <strong
+          >&shy;&shy;&shy;&shy;&shy;_____________________ DE PESOS M/CTE
+          ($________________) </strong
+        >dentro de los ______ (__) d&iacute;as h&aacute;biles siguientes
+        a&hellip;&hellip;&hellip;&hellip;.---------------------
+      </li>
+    </ul>
+    <p style="text-align: justify">
+      Los pagos deben hacerse con cheque de gerencia a nombre de TAXI CUPOS
+      S.A.S. con Nit. 900486003-2, consignaci&oacute;n o transferencia a la
+      cuenta corriente No.
+      <strong>007269996471 del banco DAVIVIENDA</strong> y/o a la cuenta
+      corriente. No. <strong>67924347842 de Bancolombia</strong>. A nombre de
+      TAXI CUPOS S.A.S. identificada con Nit. 900486003-2, y/o en la Cuenta
+      corriente No. <strong>232836122 del Banco de Occidente</strong> a nombre
+      de TAXI CUPOS SAS o a donde designe la empresa TAXI CUPOS SAS a
+      trav&eacute;s de su representante. El comprador de realizar transferencia
+      o consignaci&oacute;n deber&aacute; emitir el soporte de pago al correo
+      <a href="mailto:subgerencia@taxicupos.com.co"
+        >subgerencia@taxicupos.com.co</a
+      >&nbsp; y
+      <a href="mailto:jefecomercial@taxicupos.com.co"
+        >jefecomercial@taxicupos.com.co</a
+      >&nbsp; para realizar la respectiva aplicaci&oacute;n.
+      ------------------------</p>
+      <p>
+        <strong>TERCERA. </strong>CLAUSULA PENAL: Se acuerda como sanci&oacute;n por incumplimiento del
+      contrato el 10% del valor de este a cargo de la parte que incumpla y a
+      favor de la otra, valor que ser&aacute; exigible sin necesidad de
+      requerimientos, constituciones en mora ni declaraciones judiciales, para
+      lo cual el presente contrato constituye t&iacute;tulo ejecutivo, para lo
+      cual bastar&aacute; con la manifestaci&oacute;n expresa en la demanda
+      ejecutiva por parte incumplida sobre el incumplimiento predicado
+      ------------------------------------------------------------------------------------------------------------------------------------------------
+      <br />
+      </p><p><strong>CUARTA. </strong>GASTOS Los gastos incluidos en el servicio de
+      chatarrizaci&oacute;n son:, Certificado de tradici&oacute;n,
+      revisi&oacute;n Dijin, Cancelaci&oacute;n de matr&iacute;cula,
+      cancelaci&oacute;n de la&nbsp; tarjeta de operaci&oacute;n, servicio de
+      gr&uacute;a a Sidenal o Diaco solicitud &ldquo;CREI&rdquo; y por el
+      servicio de matr&iacute;cula del veh&iacute;culo a reponer con carro nuevo
+      los gastos incluidos son: carro nuevo marca ______&nbsp; l&iacute;nea
+      ______ modelo<strong> _____</strong>, pago de derechos ante la VENTANILLA
+      UNICA DE SERVICIOS &ldquo;VUS&rdquo;, &nbsp;de la matricula inicial del
+      nuevo veh&iacute;culo, impuesto del a&ntilde;o en curso, un a&ntilde;o de
+      rodamiento cancelado ante la empresa Taxicupos, soat por un a&ntilde;o,
+      avisos reglamentarios, tax&iacute;metro, seguros contra y extra con fecha
+      de corte de la empresa afiliadora, tarjeta de operaci&oacute;n tapetes y
+      kit de carretera. ------------------
+    </p>
+    <p style="text-align: justify">
+      <strong>CLAUSULA QUINTA</strong>. <strong>EL PROPIETARIO</strong>, en
+      nombre propio o en nombre de la entidad que representa, declara que la
+      informaci&oacute;n suministrada es ver&iacute;dica y da su consentimiento
+      irrevocable a EL TR&Aacute;MITADOR, o a quien en un futuro haga sus veces
+      como titular del cr&eacute;dito solicitado para: a) Consultar, en
+      cualquier tiempo, en DATACR&Eacute;DITO EXPERIAN o en cualquier otra base
+      de datos manejada por un operador, toda la informaci&oacute;n relevante
+      para conocer su desempe&ntilde;o como deudor, su capacidad de pago, la
+      viabilidad&nbsp; para entablar o mantener una relaci&oacute;n contractual
+      y en general para la gesti&oacute;n del riesgo financiero y crediticio,
+      esto es, la iniciaci&oacute;n, mantenimiento y recuperaci&oacute;n de
+      cartera, actividades relacionadas con la prevenci&oacute;n del lavado de
+      activos, y financiaci&oacute;n del terrorismo, y prevenci&oacute;n del
+      fraude. b) Reportar a DATACR&Eacute;DITO EXPERIAN o a cualquier otra base
+      de datos manejada por un operador de datos, tratados o sin tratar, sobre
+      el cumplimiento o incumplimiento de las obligaciones crediticias , sus
+      deberes legales de contenido patrimonial, sus datos de ubicaci&oacute;n y
+      contacto, sus solicitudes de cr&eacute;dito, as&iacute; como otros
+      atinentes a sus relaciones comerciales, financieras y en general
+      socioecon&oacute;micas que haya entregado o que consten en los registros
+      p&uacute;blicos, bases de datos p&uacute;blicas o documentos
+      p&uacute;blicos. El reporte de la mencionada informaci&oacute;n
+      tendr&aacute; como finalidad que los diferentes usuarios realicen
+      actividades relacionadas con la gesti&oacute;n del riesgo financiero y
+      crediticio, esto es, la iniciaci&oacute;n, mantenimiento y
+      recuperaci&oacute;n de cartera, actividades relacionadas con la
+      prevenci&oacute;n del lavado de activos y financiaci&oacute;n del
+      terrorismo, prevenci&oacute;n del fraude y los dem&aacute;s autorizados
+      por la Ley. PARAGRAFO 1: La autorizaci&oacute;n concedida por EL
+      PROPIETARIO, no le impedir&aacute; a este o su representada, a ejercer el
+      derecho a corroborar en cualquier tiempo por EL TRAMITADOR, en
+      DATACR&Eacute;DITO EXPERIAN o en la central de riesgo que se hallan
+      suministrado los datos, que la informaci&oacute;n suministrada es veraz,
+      completa, exacta y actualizada, y en caso que no lo sea, a que se deje
+      constancia de su desacuerdo, a exigir la rectificaci&oacute;n y a ser
+      informado sobre las correcciones respectivas efectuadas, en constancia de
+      haber sido suficientemente informado sobre los efectos de esta
+      cl&aacute;usula, se firma el presente contrato y se acepta la presente
+      autorizaci&oacute;n.
+      -------------
+    </p>
+    <p style="text-align: justify">
+      <strong
+        >CL&Aacute;USULA SEXTA. AUTORIZACI&Oacute;N TRATAMIENTO DE DATOS- HABEAS
+        DATA.-</strong
+      >
+      Conforme a lo dispuesto por la Ley 1580 de 2012, con la firma del presente
+      contrato, autorizo a LA EMPRESA, sus filiales, socias y accionistas,
+      as&iacute; como proveedores, el uso y tratamiento de mis datos personales
+      conforme a la pol&iacute;tica de tratamiento de datos que se puede
+      visualizar en el siguiente link:
+      <a href="http://www.taxicupos.com/politica-de-datos"
+        >www.taxicupos.com/politica-de-datos</a
+      >
+      para el envi&oacute; de informaci&oacute;n comercial y general,
+      manifestando en todo caso la aceptaci&oacute;n y conocimiento de la
+      pol&iacute;tica de la empresa con la firma del presente
+      contrato.----------------------
+    </p>
+    <p style="text-align: justify">
+      <strong>CL&Aacute;USULA SEPTIMA.</strong>
+      <strong
+        >PREVENCI&Oacute;N DE LAVADO DE ACTIVOS Y FINANCIACI&Oacute;N DEL
+        TERRORISMO:</strong
+      >
+      EL PROPIETARIO manifiesta bajo la gravedad de juramento, que se entiende
+      prestado con la suscripci&oacute;n del presente contrato, que los recursos
+      que componen su patrimonio no provienen de lavado de activos,
+      financiaci&oacute;n del terrorismo, narcotr&aacute;fico, captaci&oacute;n
+      ilegal de dineros y en general de cualquier actividad il&iacute;cita; de
+      igual manera manifiesta que los recursos recibidos en desarrollo de
+      &eacute;ste contrato, no ser&aacute;n destinados a ninguna de las
+      actividades antes descritas. Para efectos de lo anterior, el propietario
+      autoriza expresamente a TAXI CUPOS S.A.S., para que consulte los listados,
+      sistemas de informaci&oacute;n y bases de datos a los que haya lugar y, de
+      encontrar alg&uacute;n reporte, TAXI CUPOS S.A.S. proceder&aacute; a
+      adelantar las acciones contractuales y/o legales que correspondan. EL
+      PROPIETARIO se obliga a realizar todas las actividades encaminadas a
+      asegurar que todos sus socios, administradores, clientes, proveedores,
+      empleados, etc., y los recursos de estos, no se encuentren relacionados o
+      provengan, de actividades il&iacute;citas, particularmente, de las
+      anteriormente enunciadas.
+    </p>
+    <p style="text-align: justify">
+      <strong>CL&Aacute;USULA &Oacute;CTAVA.</strong>
+      <strong>AUTORIZACI&Oacute;N DE DESCUENTO:</strong> El PROPIETARIO autoriza
+      expresamente a TAXI CUPOS S.A.S. a realizar los descuentos a que haya
+      lugar, con ocasi&oacute;n al pago de impuestos, comparendos, sanciones
+      administrativas, rodamientos, p&oacute;lizas e indemnizaciones que impidan
+      la comercializaci&oacute;n del veh&iacute;culo objeto del presente acuerdo
+      o que puedan afectar la entrega en las condiciones descritas.
+    </p>
+    <p style="text-align: justify">
+      <strong>CL&Aacute;USULA NOVENA</strong>:
+      <strong>CHATARRIZACI&Oacute;N</strong>: En caso que el veh&iacute;culo
+      deba ser destinado a chatarrizarse, el PROPIETARIO acepta que
+      entregar&aacute; a TAXI CUPOS S.A.S. por lo menos con las siguientes
+      condiciones: ----------------
+    </p>
+    <ul style="text-align: justify" class="claus-list">
+      <li>
+        El veh&iacute;culo deber&aacute; ingresar por sus propios medios, en
+        caso de encontrarse siniestrado pero funcional, se deber&aacute; aportar
+        el croquis del siniestro; en caso que no pueda movilizarse se
+        deber&aacute; adjuntar permiso expedido por movilidad para que el
+        veh&iacute;culo ingrese a Diaco.
+        ------------------------------------------------------------------------------
+      </li>
+      <li>
+        La pintura del chasis debe coincidir en tono y los tres n&uacute;meros
+        de orden y placa (Puertas laterales y trasera) deben coincidir.
+        -----------------------------------------------------------------------------------------------------------------------------
+      </li>
+      <li>
+        Debe tener todos sus componentes mec&aacute;nicos completos partiendo
+        del motor, bater&iacute;a, pila de gasolina, alternador, arranque,
+        culata, radiador, sistema de frenos, llantas y caja de cambios
+        (funcional cambio de primera, segunda marcha y reversa).
+        -------------------------------------------------------------------------------------------------
+      </li>
+    </ul>
+    <p style="text-align: justify">&nbsp;</p>
+    <p style="text-align: justify">
+      <strong
+        >OBSERVACIONES:
+        -------------------------------------------------------------------------------------------------------------------</strong
+      >
+    </p>
+    <ul style="text-align: justify" class="claus-list">
+      <li>
+        se aclara que el veh&iacute;culo debe ser entregado funcionando, en el
+        mismo estado visto y los gastos que se ocasione fuera de lo estipulado
+        en el contrato ser&aacute; asumido por el propietario como comparendos,
+        y lo que se requiera para solicitud de la paz y salvo de la empresa
+        afiliadora ________________ y ser&aacute; afiliado a la empresa
+        ---------------------------------------
+      </li>
+      <li>
+        El veh&iacute;culo ser&aacute; entregado dentro de los tres d&iacute;as
+        h&aacute;biles siguientes al hacerse efectivo el pago total de este
+        contrato. ----------------
+      </li>
+      <li>
+        Los seguros contra y extra junto con la tarjeta de operaci&oacute;n
+        ser&aacute; asumida por el PROPIETARIO. ------------------
+      </li>
+      <li>
+        Si el veh&iacute;culo queda afiliado a TAXICUPOS S.A.S. se
+        entregar&aacute; con factura cancelada ante TAXICUPOS por un a&ntilde;o
+        de rodamiento.
+        -------------------------------------------------------------------------------------------------------------------
+      </li>
+    </ul>
+    <p style="text-align: justify">&nbsp;</p>
+    <p style="text-align: justify">
+      Sala de venta:
+      <strong
+        >TAXI CUPOS
+        S.A.S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong
+      >Asesor:
+      <strong>&shy;&shy;&shy;&shy;&shy;&shy;&shy;&shy;________________</strong>
+    </p>
+    <p style="text-align: justify">&nbsp;</p>
+    <p style="text-align: justify">
+      En constancia de aceptaci&oacute;n se suscribe, una vez le&iacute;do, en
+      dos copias del mismo tenor y contenido con destino a cada una de las
+      partes, en la ciudad de Bogot&aacute;, a los ___________ (__) d&iacute;as
+      del mes de _______ del a&ntilde;o dos mil veintitr&eacute;s (2023).
+    </p>
+    <p><strong>&nbsp;</strong></p>
+    <div class="flex" style="display: inline-block; margin-right: 60px;">
+      <p>
+        <strong
+          >EL PROPIETARIO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </strong>
+        <br><br><br><br>
+        <p>_________________________________</p>
+        <br/>
+        <p>CC. No</p>
+        <p>
+          TEL: 3378230 -
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </p>
+        <p>CALLE 13 No. 46-03</p>
+      </p>
+    </div>
+    <div class="flex" style="display: inline-block; margin-right: 0;">
+      <p>
+        <strong
+          >EL TRAMITADOR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </strong>
+        <br><br><br><br>
+        <p>_________________________________</p>
+        <br/>
+        <p>CC. No</p>
+        <p>
+          TEL: 3378230 -
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </p>
+        <p>CALLE 13 No. 46-03</p>
+      </p>
+    </div>
+    
+  </body>
+</html>

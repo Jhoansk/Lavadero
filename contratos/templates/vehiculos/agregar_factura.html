@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block content %} {% load humanize %}
+<!-- Analyses -->
+
+<div class="recent-orders">
+  <div class="vehicle_search">
+    <h1>Buscar Vehículo</h1>
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="placa">Placa del Vehículo:</label>
+        <input
+          type="text"
+          id="placa"
+          name="placa"
+          value="{{ placa }}"
+          placeholder="Ingresa la placa"
+        />
+      </div>
+      <div class="form-group">
+        <button type="submit" name="buscar">Buscar Vehículo</button>
+      </div>
+      {% if error %}
+      <p class="error-message">{{ error }}</p>
+      {% endif %}
+    </form>
+  </div>
+  {% endblock %}
+</div>

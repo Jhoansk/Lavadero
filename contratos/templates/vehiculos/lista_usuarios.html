@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Usuarios{% endblock %}
+
+{% block content %}
+    <div class="recent-orders">
+        <div class= "vehicle_search">
+            <h1>Lista de Usuarios</h1>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Primer Apellido</th>
+                        <th>Segundo Apellido</th>
+                        <th>Cédula</th>
+                        <th>Teléfono</th>
+                        <th>Dirección</th>
+                        <th>Correo</th>
+                        <th>Ciudad</th>
+                        <th>Barrio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for usuario in usuarios %}
+                    <tr>
+                        <td>{{ usuario.nombre }}</td>
+                        <td>{{ usuario.p_apellido }}</td>
+                        <td>{{ usuario.s_apellido }}</td>
+                        <td>{{ usuario.cedula }}</td>
+                        <td>{{ usuario.telefono }}</td>
+                        <td>{{ usuario.direccion }}</td>
+                        <td>{{ usuario.correo }}</td>
+                        <td>{{ usuario.ciudad }}</td>
+                        <td>{{ usuario.barrio }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <a href="{% url 'vehiculos:agregar_usuario' %}" class="btn btn-primary">Agregar Usuario</a>
+        </div>
+    </div>
+{% endblock %}

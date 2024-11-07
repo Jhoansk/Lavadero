@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block title %}Editar Presupuesto{% endblock %} {%
+block content %}
+<div class="container">
+  <h1>Editar Presupuesto</h1>
+  <form method="post">
+    {% csrf_token %} {{ form.as_p }}
+    <!-- Muestra los campos del formulario -->
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a href="{% url 'vehiculos:lista_presupuestos' %}" class="btn btn-secondary"
+      >Cancelar</a
+    >
+  </form>
+</div>
+{% endblock %}

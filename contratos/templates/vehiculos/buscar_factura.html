@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block content %} {% load humanize %}
+<!-- Analyses -->
+
+<div class="recent-orders">
+  <div class="vehicle_search">
+    <h2>Buscar Vehículo</h2>
+    <form method="POST">
+      {% csrf_token %}
+      <label for="n_factura">Número de Factura:</label>
+      <input type="text" name="n_factura" id="n_factura" required />
+      <button type="submit">Buscar</button>
+    </form>
+  </div>
+  {% if error %}
+  <p class="text-danger">{{ error }}</p>
+  {% endif %} {% if factura %}
+  <div class="vehicle-info">
+    <h2>Detalles de la Factura</h2>
+    <p>Número de Factura: {{ factura.n_factura }}</p>
+    <p>Vehículo: {{ factura.id_placa.placa }}</p>
+    <p>Fecha: {{ factura.fecha }}</p>
+    <p>Descripción: {{ factura.descripcion }}</p>
+    <p>Cantidad: {{ factura.cantidad }}</p>
+    <p>Valor: {{ factura.valor }}</p>
+    <p>IVA: {{ factura.iva }}</p>
+    {% elif error %}
+    <p>{{ error }}</p>
+    {% endif %} {% endblock %}
+  </div>
+</div>

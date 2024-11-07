@@ -1,0 +1,105 @@
+{% extends 'layout.html' %} {% block title %}Buscar Vehículo{% endblock %} {%
+block content %}
+<h1>Buscar Vehículo</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="placa">Placa:</label>
+    <input
+      type="text"
+      name="placa"
+      id="placa"
+      value="{{ request.POST.placa }}"
+      class="form-control"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+{% if error %}
+<p class="text-danger">{{ error }}</p>
+{% endif %} {% if vehiculo %}
+<h2>Información del Vehículo</h2>
+<p><strong>Placa:</strong> {{ vehiculo.placa }}</p>
+<p><strong>Marca:</strong> {{ vehiculo.marca }}</p>
+<p><strong>Línea:</strong> {{ vehiculo.linea }}</p>
+<p><strong>Modelo:</strong> {{ vehiculo.modelo }}</p>
+
+<!-- Botones de descarga -->
+<form method="post" style="display: inline">
+  {% csrf_token %}
+  <input type="hidden" name="placa" value="{{ vehiculo.placa }}" />
+  <button type="submit" name="descargar_excel" class="btn btn-success">
+    Descargar Excel
+  </button>
+</form>
+<form method="post" style="display: inline">
+  {% csrf_token %}
+  <input type="hidden" name="placa" value="{{ vehiculo.placa }}" />
+  <button type="submit" name="descargar_pdf" class="btn btn-danger">
+    Descargar PDF
+  </button>
+</form>
+
+<!-- Gráfico -->
+<div id="grafico" style="width: 100%; height: 500px"></div>
+<script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+<script type="text/javascript">
+  var fechas = JSON.parse("{{ fechas|escapejs }}");
+  var valores = JSON.parse("{{ valores|escapejs }}");
+
+  var myChart = echarts.init(document.getElementById("grafico"));
+
+  var option = {
+    title: {
+      text: "Valores por Fecha",
+    },
+    tooltip: {},
+    legend: {
+      data: ["Valor"],
+    },
+    xAxis: {
+      type: "category",
+      data: fechas,
+    },
+    yAxis: {
+      type: "value",
+    },
+    series: [
+      {
+        name: "Valor",
+        type: "bar",
+        data: valores,
+      },
+    ],
+  };
+
+  myChart.setOption(option);
+</script>
+
+{% if facturas %}
+<h3>Facturas Asociadas</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Factura #</th>
+      <th>Descripción</th>
+      <th>Valor</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for factura in facturas %}
+    <tr>
+      <td>{{ factura.n_factura }}</td>
+      <td>{{ factura.descripcion }}</td>
+      <td>{{ factura.valor }}</td>
+      <td>{{ factura.total }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>No hay facturas asociadas a este vehículo.</p>
+{% endif %} {% endif %} {% endblock %}

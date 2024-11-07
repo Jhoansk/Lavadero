@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <title>Inicio TC</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="{% static 'images/logo.png' %}" alt="Logo">
+                    <h2>Taxi<span class="danger">Cupos</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="#">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h3>Inicio</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>Usuarios</h3>
+                </a>
+                <a href="#" class="active">
+                    <span class="material-icons-sharp">receipt_long</span>
+                    <h3>Vehículos</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">insights</span>
+                    <h3>Contratos</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">mail_outline</span>
+                    <h3>Informes</h3>
+                    <span class="message-count">27</span>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">inventory</span>
+                    <h3>Inventario</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">report_gmailerrorred</span>
+                    <h3>Reportes</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Configuraciones</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">add</span>
+                    <h3>Crear usuario</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Salir</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of Sidebar Section -->
+
+        <!-- Main Content -->
+        <main>
+            {% load humanize %}
+            <h1>Analítica</h1>
+
+            <!-- Analyses -->
+            <div class="analyse">
+                <div class="sales">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Total Gastos</h3>
+                            <h1>${{ total_gastos|intcomma }}</h1>
+                        </div>
+                        <div class="progresss">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="percentage">
+                                <p>+81%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="visits">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Presupuesto</h3>
+                            <h1>${{ presupuesto_total|intcomma }}</h1>
+                        </div>
+                        <div class="progresss">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="percentage">
+                                <p>-78%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="searches">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Ganancias</h3>
+                            <h1>14,147</h1>
+                        </div>
+                        <div class="progresss">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="percentage">
+                                <p>+21%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Analyses -->
+
+            <div class="recent-orders">
+                <div class="vehicle_search">
+                    <h2>Buscar Vehículo</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="placa">Placa:</label>
+                            <input type="text" name="placa" id="placa" value="{{ request.POST.placa }}" class="form-control">
+                        </div>
+                        <button type="submit" svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Buscar</button>
+                    </form>
+                </div>
+                {% if error %}
+                    <p class="text-danger">{{ error }}</p>
+                {% endif %}
+
+                {% if vehiculo %}
+                    <div class="vehicle-info">
+                        <h2>Información del Vehículo</h2>
+                        <p><strong>Placa:</strong> {{ vehiculo.placa }}</p>
+                        <p><strong>Marca:</strong> {{ vehiculo.marca }}</p>
+                        <p><strong>Línea:</strong> {{ vehiculo.linea }}</p>
+                        <p><strong>Modelo:</strong> {{ vehiculo.modelo }}</p>
+
+                        <!-- Botones de descarga -->
+                        <div class="btn-group">
+                            <form method="post" style="display:inline;">
+                                {% csrf_token %}
+                                <input type="hidden" name="placa" value="{{ vehiculo.placa }}">
+                                <button type="submit" name="descargar_excel" class="btn btn-success">Descargar Excel</button>
+                            </form>
+                            <form method="post" style="display:inline;">
+                                {% csrf_token %}
+                                <input type="hidden" name="placa" value="{{ vehiculo.placa }}">
+                                <button type="submit" name="descargar_pdf" class="btn btn-danger">Descargar PDF</button>
+                            </form>
+                        </div>
+
+                        <!-- Gráfico -->
+                        <div class="grapih">
+                            <h2>Gráfico de Gastos y Presupuesto</h2>
+                            <div id="grafico" style="width: 100%; height: 500px;"></div>
+                            <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+                            <script type="text/javascript">
+                                var total_gastos = {{ total_gastos }};
+                                var presupuesto_total = {{ presupuesto_total }};
+                        
+                                var myChart = echarts.init(document.getElementById('grafico'));
+                        
+                                var option = {
+                                    title: {
+                                        text: 'Total Gastos y Presupuesto Total'
+                                    },
+                                    tooltip: {},
+                                    legend: {
+                                        data: ['Total Gastos', 'Presupuesto Total']
+                                    },
+                                    xAxis: {
+                                        type: 'category',
+                                        data: ['Gastos', 'Presupuesto']
+                                    },
+                                    yAxis: {
+                                        type: 'value'
+                                    },
+                                    series: [{
+                                        name: 'Total Gastos',
+                                        type: 'bar',
+                                        data: [total_gastos]
+                                    }, {
+                                        name: 'Presupuesto Total',
+                                        type: 'bar',
+                                        data: [presupuesto_total]
+                                    }]
+                                };
+                        
+                                myChart.setOption(option);
+                            </script>
+                        </div>
+
+                        {% if facturas %}
+                            <h3>Facturas Asociadas</h3>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Factura #</th>
+                                        <th>Descripción</th>
+                                        <th>Valor</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for factura in facturas %}
+                                        <tr>
+                                            <td>{{ factura.n_factura }}</td>
+                                            <td>{{ factura.descripcion }}</td>
+                                            <td>${{ factura.valor|intcomma }}</td>
+                                            <td>${{ factura.total|intcomma }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <p>No hay facturas asociadas a este vehículo.</p>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+        </main>
+        <!-- End of Main Content -->
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Reza</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="{% static 'images/profile-1.jpg' %}" alt="Profile Photo">
+                    </div>
+                </div>
+            </div>
+            <!-- End of Nav -->
+
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="{% static 'images/logo.png' %}" alt="Logo">
+                    <h2>Usuario</h2>
+                    <p>Nombre_Usuario</p>
+                </div>
+            </div>
+
+            <div class="reminders">
+                <div class="header">
+                    <h2>Recordatorios</h2>
+                    <span class="material-icons-sharp">notifications_none</span>
+                </div>
+
+                <div class="notification">
+                    <div class="icon">
+                        <span class="material-icons-sharp">volume_up</span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>1</h3>
+                            <small class="text_muted">08:00 AM - 12:00 PM</small>
+                        </div>
+                        <span class="material-icons-sharp">more_vert</span>
+                    </div>
+                </div>
+
+                <div class="notification deactive">
+                    <div class="icon">
+                        <span class="material-icons-sharp">edit</span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>2</h3>
+                            <small class="text_muted">08:00 AM - 12:00 PM</small>
+                        </div>
+                        <span class="material-icons-sharp">more_vert</span>
+                    </div>
+                </div>
+
+                <div class="notification add-reminder">
+                    <div>
+                        <span class="material-icons-sharp">add</span>
+                        <h3>Añadir recordatorio</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Right Section -->
+
+    </div>
+
+    <script src="{% static 'index.js' %}"></script>
+</body>
+
+</html>

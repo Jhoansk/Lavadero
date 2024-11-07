@@ -1,0 +1,185 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'vehiculos/css/form.css' %}">
+<div class="container">
+    <h1>Detalles del Lavado</h1>
+
+    <h3>Información del Vehículo</h3>
+    <table>
+        <tr>
+            <th>Placa</th>
+            <td>{{ recepcion.placa_vehiculo.placa }}</td>
+        </tr>
+    </table>
+
+    <h3>Información del Lavado</h3>
+    <table>
+        <tr>
+            <th>Tipo de Lavado</th>
+            <td>{{ recepcion.tipo_lavado }}</td>
+        </tr>
+        <tr>
+            <th>Tiempo Estimado</th>
+            <td>{{ recepcion.tiempo }}</td>
+        </tr>
+        <tr>
+            <th>Valor</th>
+            <td>${{ recepcion.valor }}</td>
+        </tr>
+        <tr>
+            <th>Estado</th>
+            <td>{{ recepcion.estado }}</td>
+        </tr>
+        <tr>
+            <th>Encargado 1</th>
+            <td>
+                {% if recepcion.encargado_1 %}
+                    {{ recepcion.encargado_1 }}
+                {% else %}
+                    Sin asignar
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Encargado 2</th>
+            <td>
+                {% if recepcion.encargado_2 %}
+                    {{ recepcion.encargado_2 }}
+                {% else %}
+                    Sin asignar
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+
+    <h3>Contador de Lavado</h3>
+    <div class="contador" id="contador"></div>
+
+    <h3>Imágenes del Vehículo</h3>
+    <div class="imagenes">
+        {% if recepcion.imagen_1 %}
+            <img src="{{ recepcion.imagen_1.url }}" alt="Lateral Frontal Izquierdo" class="thumbnail" onclick="showImage(this.src)">
+        {% else %}
+            <p>No hay imagen lateral frontal izquierdo disponible.</p>
+        {% endif %}
+
+        {% if recepcion.imagen_2 %}
+            <img src="{{ recepcion.imagen_2.url }}" alt="Lateral Frontal Derecho" class="thumbnail" onclick="showImage(this.src)">
+        {% else %}
+            <p>No hay imagen lateral frontal derecho disponible.</p>
+        {% endif %}
+
+        {% if recepcion.imagen_3 %}
+            <img src="{{ recepcion.imagen_3.url }}" alt="Lateral Posterior Izquierdo" class="thumbnail" onclick="showImage(this.src)">
+        {% else %}
+            <p>No hay imagen lateral posterior izquierdo disponible.</p>
+        {% endif %}
+
+        {% if recepcion.imagen_4 %}
+            <img src="{{ recepcion.imagen_4.url }}" alt="Lateral Posterior Derecho" class="thumbnail" onclick="showImage(this.src)">
+        {% else %}
+            <p>No hay imagen lateral posterior derecho disponible.</p>
+        {% endif %}
+    </div>
+
+    <br>
+
+    {% if request.user.rol == 'administrador' or request.user.username == recepcion.encargado_1 or request.user.username == recepcion.encargado_2 or request.user.rol == 'controlador' %}
+    <form action="{% url 'terminar_lavado' recepcion.id %}" method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-terminar" onclick="return confirm('¿Estás seguro de que deseas terminar el lavado?')">Terminar Lavado</button>
+    </form>
+    {% endif %}
+
+    <br>
+</div>
+
+<div class="modal" id="modal" onclick="this.style.display='none'">
+    <img id="modalImage" src="" alt="Imagen a tamaño completo">
+</div>
+
+<script>
+    function startCountdown(duration) {
+        var timer = duration, hours, minutes, seconds;
+        var display = document.getElementById('contador');
+
+        setInterval(function () {
+            hours = parseInt(timer / 3600, 10);
+            minutes = parseInt((timer % 3600) / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            // Formatea el tiempo
+            display.textContent = hours + " horas " + minutes + " minutos " + seconds + " segundos";
+
+            // Si el contador llega a 0, detiene la cuenta
+            if (--timer < 0) {
+                timer = 0;
+            }
+        }, 1000);
+    }
+
+    window.onload = function () {
+        // Usa el tiempo restante que pasamos desde la vista
+        var tiempoRestante = {{ tiempo_restante|default:0 }};
+        startCountdown(tiempoRestante);
+    };
+
+    function showImage(src) {
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = src; 
+        modal.style.display = 'flex'; 
+    }
+</script>
+
+<style>
+    .imagenes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+        gap: 20px; /* Espacio entre las imágenes */
+        margin-top: 20px;
+    }
+
+    .imagenes img {
+        width: 100%; /* Ajusta el tamaño para ocupar el 100% del contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+        border: 1px solid #ccc;
+        cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+        transition: transform 0.2s; /* Suaviza el efecto al pasar el cursor */
+    }
+
+    .imagenes img:hover {
+        transform: scale(1.05); /* Aumenta un poco el tamaño al pasar el cursor */
+    }
+
+    .contador {
+        font-size: 24px;
+        margin-top: 20px;
+        color: white; /* Cambia el color del contador a blanco */
+    }
+
+    .modal {
+        display: none; /* Oculta la ventana modal por defecto */
+        position: fixed; /* Permite que la modal permanezca fija en la pantalla */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+        justify-content: center; /* Centra la imagen */
+        align-items: center; /* Centra la imagen */
+        z-index: 1000; /* Asegura que la imagen esté por encima de otros elementos */
+    }
+
+    .modal img {
+        max-width: 90%; /* Ancho máximo de la imagen en pantalla completa */
+        max-height: 90%; /* Alto máximo de la imagen en pantalla completa */
+        transition: transform 0.2s; /* Suaviza el efecto al pasar el cursor */
+    }
+
+    .modal img:hover {
+        transform: scale(1.05); /* Efecto de zoom en la imagen del modal */
+    }
+</style>
+{% endblock %}

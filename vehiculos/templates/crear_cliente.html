@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Cliente</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'vehiculos/css/form.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Crear Cliente</h1>
+        <form method="post" class="responsive-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="cedula">Cédula:</label>
+                <input type="text" name="cedula" required inputmode="numeric" pattern="[0-9]*">
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" required oninput="this.value = this.value.toUpperCase();">
+            </div>
+            <div class="form-group">
+                <label for="s_nombre">Segundo Nombre:</label>
+                <input type="text" name="s_nombre" oninput="this.value = this.value.toUpperCase();">
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido:</label>
+                <input type="text" name="apellido" required oninput="this.value = this.value.toUpperCase();">
+            </div>
+            <div class="form-group">
+                <label for="s_apellido">Segundo Apellido:</label>
+                <input type="text" name="s_apellido" oninput="this.value = this.value.toUpperCase();">
+            </div>
+            <div class="form-group">
+                <label for="celular">Celular:</label>
+                <input type="text" name="celular" required >
+            </div>
+            <div class="form-group">
+                <label for="direccion">Dirección:</label>
+                <input type="text" name="direccion" required oninput="this.value = this.value.toUpperCase();">
+            </div>
+            <button type="submit">Crear Cliente</button>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock %}
