@@ -26,10 +26,10 @@ AUTH_USER_MODEL = 'vehiculos.Usuario'
 SECRET_KEY = 'django-insecure-fadz66j+=_8iiqgv=r(&t-2rup@3b+h$2*44r+y&k(x0vcbih='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1',
-                'localhost',]
+ALLOWED_HOSTS = ['srv632707.hstgr.cloud',
+                '145.223.79.151',]
 
 # Application definition
 
