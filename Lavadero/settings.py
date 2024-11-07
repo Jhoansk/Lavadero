@@ -87,8 +87,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'lavadero_contratos',
-        'USER':  'root',
-        'PASSWORD': 'root',
+        'USER':  'jhoansk',
+        'PASSWORD': 'jhoan2033',
         'HOST': 'localhost',
         'PORT': '3306',
         
