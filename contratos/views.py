@@ -628,25 +628,38 @@ def eliminar_presupuesto(request, presupuesto_id):
 
 @login_required
 def generar_pdf(request):
-    # Obtener los IDs desde los parámetros de consulta (GET)
-    usuario1_id = request.GET.get('usuario1_id')
-    usuario2_id = request.GET.get('usuario2_id')
-    vehiculo_id = request.GET.get('vehiculo_id')
-    tipo_contrato = request.GET.get('tipo_contrato')  # Obtener tipo de contrato
+    # Obtener los valores de cédula y placa desde los parámetros GET
+    usuario1_cedula = request.GET.get('usuario1_cedula')
+    usuario2_cedula = request.GET.get('usuario2_cedula')
+    vehiculo_placa = request.GET.get('vehiculo_placa')
+    tipo_contrato = request.GET.get('tipo_contrato')
 
     # Verifica que los parámetros estén presentes
-    if not usuario1_id or not vehiculo_id or not tipo_contrato:
+    if not usuario1_cedula or not vehiculo_placa or not tipo_contrato:
         return HttpResponse("Error: Faltan parámetros.", status=400)
 
     # Buscar el usuario y el vehículo en la base de datos
-    user1 = get_object_or_404(usuario, id=usuario1_id)
-    vehiculo = get_object_or_404(Vehiculo_contratos, id=vehiculo_id)
-    user2 = get_object_or_404(usuario, id=usuario2_id)
+    try:
+        user1 = usuario.objects.get(cedula=usuario1_cedula)
+    except usuario.DoesNotExist:
+        return HttpResponse("Error: Usuario 1 no encontrado.", status=404)
+
+    try:
+        vehiculo = Vehiculo_contratos.objects.get(placa=vehiculo_placa)
+    except Vehiculo_contratos.DoesNotExist:
+        return HttpResponse("Error: Vehículo no encontrado.", status=404)
+
+    user2 = None
+    if usuario2_cedula:  # Verificar si hay un segundo usuario
+        try:
+            user2 = usuario.objects.get(cedula=usuario2_cedula)
+        except usuario.DoesNotExist:
+            return HttpResponse("Error: Usuario 2 no encontrado.", status=404)
 
     # Crear el contexto con los datos del usuario y vehículo
     context = {
         'usuario1': user1,
-        'usuario2': user2,
+        'usuario2': user2,  # Puede ser None si no se selecciona usuario2
         'vehiculo': vehiculo,
     }
 
@@ -686,26 +699,35 @@ def generar_pdf(request):
 
 @login_required
 def seleccionar_datos_contrato(request):
-    # Recuperar todos los usuarios y vehículos
-    usuarios = usuario.objects.all()
-    vehiculos = Vehiculo_contratos.objects.all()
+    if request.method == 'GET':
+        # Recuperar los parámetros cedula y placa
+        usuario1_cedula = request.GET.get('usuario1_cedula')
+        usuario2_cedula = request.GET.get('usuario2_cedula')
+        vehiculo_placa = request.GET.get('vehiculo_placa')
 
-    if request.method == 'POST':
-        usuario1_id = request.POST.get('usuario1')
-        usuario2_id = request.POST.get('usuario2')
-        vehiculo_id = request.POST.get('vehiculo')
-        tipo_contrato = request.POST.get('tipo_contrato')
+        # Buscar los usuarios y vehículos si las cédulas y placas son válidas
+        usuarios = usuario.objects.all()
+        vehiculos = Vehiculo_contratos.objects.all()
 
-        # Redirigir a la vista de generación de PDF con los parámetros seleccionados
-        return redirect(f'/generar_pdf/?usuario1_id={usuario1_id}&usuario2_id={usuario2_id}&vehiculo_id={vehiculo_id}&tipo_contrato={tipo_contrato}')
+        if usuario1_cedula:
+            try:
+                usuarios = usuarios.filter(cedula=usuario1_cedula)
+            except usuario.DoesNotExist:
+                usuarios = []
 
-    # Pasar los datos a la plantilla
-    context = {
-        'usuarios': usuarios,
-        'vehiculos': vehiculos,
-    }
+        if vehiculo_placa:
+            try:
+                vehiculos = vehiculos.filter(placa=vehiculo_placa)
+            except Vehiculo_contratos.DoesNotExist:
+                vehiculos = []
 
-    return render(request, 'seleccionar_datos_contrato.html', context)
+        # Pasar los datos a la plantilla
+        context = {
+            'usuarios': usuarios,
+            'vehiculos': vehiculos,
+        }
+
+        return render(request, 'seleccionar_datos_contrato.html', context)
 
 @login_required
 def vista_dashboard(request):

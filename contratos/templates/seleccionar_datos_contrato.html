@@ -10,32 +10,17 @@
         <form action="{% url 'vehiculos:generar_pdf' %}" method="get">
             <div>
                 <label for="usuario1">Selecciona Usuario 1:</label>
-                <select name="usuario1_id" id="usuario1" required>
-                    <option value="">Selecciona un usuario</option>
-                    {% for usuario in usuarios %}
-                        <option value="{{ usuario.id }}">{{ usuario.nombre }} {{ usuario.pApellido }} {{ usuario.sApellido }} - {{ usuario.cedula }}</option>
-                    {% endfor %}
-                </select>
+                <input type="text" name="usuario1_cedula" id="usuario1" placeholder="Ingrese la cédula del usuario 1" required>
             </div>
 
             <div>
                 <label for="usuario2">Selecciona Usuario 2:</label>
-                <select name="usuario2_id" id="usuario2" required>
-                    <option value="">Selecciona un usuario</option>
-                    {% for usuario in usuarios %}
-                        <option value="{{ usuario.id }}">{{ usuario.nombre }} {{ usuario.pApellido }} {{ usuario.sApellido }} - {{ usuario.cedula }}</option>
-                    {% endfor %}
-                </select>
+                <input type="text" name="usuario2_cedula" id="usuario2" placeholder="Ingrese la cédula del usuario 2" required>
             </div>
 
             <div>
                 <label for="vehiculo">Selecciona Vehículo:</label>
-                <select name="vehiculo_id" id="vehiculo" required>
-                    <option value="">Selecciona un vehículo</option>
-                    {% for vehiculo in vehiculos %}
-                        <option value="{{ vehiculo.id }}">{{ vehiculo.placa }} - {{ vehiculo.marca }} {{ vehiculo.modelo }}</option>
-                    {% endfor %}
-                </select>
+                <input type="text" name="vehiculo_placa" id="vehiculo" placeholder="Ingrese la placa del vehículo" required>
             </div>
 
             <div>
@@ -47,16 +32,40 @@
                     <option value="compra_Particular">Compra Particular</option>
                     <option value="compra_usado">Compra Usado</option>
                     <option value="permuta">Permuta</option>
-                    <option value="chatarizacion_con_venta">Chatarrizacion con venta</option>
-                    <option value="servicio_chatarrizacion">Servicio Chatarrizacion</option>
+                    <option value="chatarizacion_con_venta">Chatarrización con venta</option>
+                    <option value="servicio_chatarrizacion">Servicio Chatarrización</option>
                     <option value="venta_cupo">Venta Cupo</option>
                     <option value="venta_particular">Venta Particular</option>
                     <option value="venta_usado">Venta Usado</option>
                 </select>
             </div>
 
+            <div id="checkboxes" style="display: none;">
+                <label>
+                    <input type="checkbox" name="mandato"> Mandato
+                </label>
+                <label>
+                    <input type="checkbox" name="fun"> FUN
+                </label>
+                <label>
+                    <input type="checkbox" name="diaco"> Diaco
+                </label>
+            </div>
+
             <button type="submit">Generar Contrato PDF</button>
         </form>
     </div>
 </div>
+
+<script>
+    // Función para mostrar u ocultar los checkboxes
+    document.getElementById('tipo_contrato').addEventListener('change', function() {
+        var checkboxes = document.getElementById('checkboxes');
+        if (this.value !== "") {
+            checkboxes.style.display = "block";
+        } else {
+            checkboxes.style.display = "none";
+        }
+    });
+</script>
 {% endblock %}
