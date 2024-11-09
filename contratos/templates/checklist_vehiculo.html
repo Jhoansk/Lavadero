@@ -1,0 +1,36 @@
+<!-- checklist_vehiculo.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Checklist de Vehículo</h2>
+
+<form method="get">
+    <label for="placa">Buscar por Placa:</label>
+    <input type="text" id="placa" name="placa" required>
+    <button type="submit">Buscar</button>
+</form>
+
+{% if vehiculo %}
+    <h3>Vehículo: {{ vehiculo.placa }} - {{ vehiculo.marca }} {{ vehiculo.modelo }}</h3>
+    <form method="post">
+        {% csrf_token %}
+        <label for="es_nuevo">Condición:</label>
+        <select name="es_nuevo">
+            <option value="nuevo" {% if checklist.es_nuevo %}selected{% endif %}>Nuevo</option>
+            <option value="usado" {% if not checklist.es_nuevo %}selected{% endif %}>Usado</option>
+        </select>
+
+        <div>
+            {{ form.as_p }}
+        </div>
+        
+        <button type="submit">Guardar Progreso</button>
+    </form>
+
+    {% if checklist.listo_para_entrega %}
+        <p><strong>¡Listo para la entrega!</strong></p>
+    {% else %}
+        <p><strong>Progreso:</strong> Completa todos los pasos para marcarlo como "Listo para la entrega".</p>
+    {% endif %}
+{% endif %}
+{% endblock %}

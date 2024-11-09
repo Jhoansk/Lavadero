@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Sum, Q
 from .forms import VehiculoForm
-from .models import Factura, Vehiculo_contratos
-from .forms import FacturaForm
+from .models import Factura, Vehiculo_contratos,Checklist
+from .forms import FacturaForm, ChecklistForm
 from .models import usuario, user, estado, documentos, presupuesto
 from .forms import UsuarioForm, UserForm, EstadoForm, DocumentosForm, PresupuestoForm
 from django.core.exceptions import ObjectDoesNotExist
@@ -771,3 +771,25 @@ def crear_usuario_desde_contratos(request):
         form = UserForm()
 
     return render(request, 'vehiculos/crear_usuario.html', {'form': form})
+
+def checklist_vehiculo(request):
+    vehiculo = None
+    checklist = None
+    if 'placa' in request.GET:
+        placa = request.GET['placa']
+        vehiculo = get_object_or_404(Vehiculo_contratos, placa=placa)
+        checklist, created = Checklist.objects.get_or_create(vehiculo=vehiculo)
+
+    if request.method == 'POST' and checklist:
+        checklist.es_nuevo = request.POST.get('es_nuevo') == 'nuevo'
+        form = ChecklistForm(request.POST, instance=checklist)
+        if form.is_valid():
+            form.save()
+            return redirect('vehiculos:checklist_vehiculo')
+
+    context = {
+        'vehiculo': vehiculo,
+        'checklist': checklist,
+        'form': ChecklistForm(instance=checklist),
+    }
+    return render(request, 'checklist_vehiculo.html', context)

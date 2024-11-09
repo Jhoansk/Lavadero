@@ -1,7 +1,7 @@
 from django import forms
 from .models import Vehiculo_contratos
 from .models import Factura
-from .models import usuario, user, estado, documentos, presupuesto, contrato_venta_cupo, contrato_compra_cupo, contrato_compra, contrato_venta
+from .models import usuario, user, estado, documentos, presupuesto, contrato_venta_cupo, contrato_compra_cupo, contrato_compra, contrato_venta,Checklist
 from vehiculos.models import Usuario
 import difflib
 
@@ -144,3 +144,9 @@ class ContratoVentaForm(forms.ModelForm):
     class Meta:
         model = contrato_venta
         fields = ['id_placa', 'cc_comprador', 'cc_vendedor', 'valor_v', 'primer_abono', 'archivos']
+        
+
+class ChecklistForm(forms.ModelForm):
+    class Meta:
+        model = Checklist
+        fields = ['traspaso', 'documentos_al_dia', 'entrega_comercial', 'desembolso', 'saldo']

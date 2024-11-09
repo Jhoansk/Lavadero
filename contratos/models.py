@@ -179,3 +179,19 @@ class contrato_venta(models.Model):
     
     def __str__(self):
         return f'{self.cc_comprador}'
+    
+class Checklist(models.Model):
+    vehiculo = models.ForeignKey(Vehiculo_contratos, on_delete=models.CASCADE)
+    es_nuevo = models.BooleanField(default=True)
+    traspaso = models.BooleanField(default=False)
+    documentos_al_dia = models.BooleanField(default=False)
+    entrega_comercial = models.BooleanField(default=False)
+    desembolso = models.BooleanField(default=False)
+    saldo = models.BooleanField(default=False)
+
+    @property
+    def listo_para_entrega(self):
+        return all([self.traspaso, self.documentos_al_dia, self.entrega_comercial, self.desembolso, self.saldo])
+
+    def __str__(self):
+        return f'Checklist para {self.vehiculo.placa}'
