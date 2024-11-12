@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carta de Solicitud, Autorización y Responsabilidad</title>
+    <style>
+      @page {
+        size: letter; /* Tamaño del papel */
+        margin: 10mm; /* Márgenes de la página */
+      }
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 7.5pt;
+      }
+      p.center-text {
+        text-align: center;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      p {
+        text-align: justify;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Carta de Solicitud, Autorización y Responsabilidad</h1>
+      </div>
+      <div class="main">
+        <p>Bogotá D.C [fecha]</p>
+        <p>
+          <strong>Señores <br />[empSoat] <br />Ciudad</strong>
+        </p>
+
+        <p class="center-text">
+          <strong
+            >Ref: Devolución excedente prima SOAT por chatarrización</strong
+          >
+        </p>
+
+        <p>
+          Por medio de la presente yo
+          <strong>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</strong> mayor de edad
+          identificado con {{ usuario1.tipo_doc }} <strong>{{ usuario1.cedula }}</strong>, como tomador de
+          la poliza No. <strong>[nSoat]</strong> del vehiculo de placa
+          <strong>{{ vehiculo.placa }} AUTORIZO</strong> bajo mi absoluta responsabilidad sea
+          consignado el dinero de esta poliza a la cuenta de ahorros número
+          037305257 del banco BOGOTA a nombre de
+          <strong>WILSON ENRIQUE BERNAL ROBLES</strong> identificado con C.C
+          80062363 de Bogotá; debido a que él fue quien me compro el vehículo
+          anteriormente mencionado que era de mi propiedad.
+        </p>
+
+        <p>P.D.:adjunto:</p>
+        <p>
+          Soat original. <br />
+          Fotocopia de la cedula de ciudadania del tomador. <br />
+          Fotocopia de la cedula de ciudadania del autorizado. <br />
+          Copia del contrato de compraventa.
+        </p>
+
+        <p>Agradezco la colaboración prestada.</p>
+
+        <p>Cordialmente,</p>
+
+        <p><strong>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</strong></p>
+        <p><strong>{{ usuario1.cedula }}</strong></p>
+      </div>
+    </div>
+  </body>
+</html>

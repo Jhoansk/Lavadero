@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CMatricula</title>
+    <style>
+      @page {
+        size: letter;
+        margin: 10mm;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        font-size: 12pt;
+        line-height: 1.5;
+      }
+
+      table {
+        page-break-inside: avoid;
+        width: 100%;
+        font-size: 10pt;
+        border-collapse: collapse;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        margin-top: 0;
+        font-size: 14pt;
+      }
+
+      td {
+        border: 1px solid black;
+        text-align: center;
+        padding: 8px;
+        font-size: 10pt;
+      }
+
+      .header {
+        text-align: left;
+      }
+
+      .header-title, .header-row, .informacion, .p-footer-table, .content, .borde, .huella, .texto_huella, .signes, .signe-cont, .justificado, .container {
+        font-size: 12pt;
+      }
+
+      .page-break {
+        page-break-before: always;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <p>Bogotá D.C., 2023-11-08</p>
+        <br />
+        <p><strong>SEÑORES<br />SERVICIOS INTEGRALES PARA LA MOVILIDAD<br />CIUDAD</strong></p>
+      </div>
+      <br />
+      <div class="main">
+        <p>Respetados señores</p>
+        <br />
+        <p>
+          Yo <strong>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</strong> identificado(a) con 
+          <strong>{{ usuario1.tipo_doc }} {{ usuario1.cedula }}</strong> {{ usuario1.ciudad_exp }} se solicita a el consorcio SIM, 
+          de curso a la solicitud de <strong>CANCELACIÓN DE MATRICULA Y TARJETA DE OPERACIÓN</strong> ya
+          que el vehículo de placas <strong>{{ vehiculo.placa }}</strong> fue desintegrado física y totalmente, su
+          <strong>MOTOR, CHASIS, Y CON TODAS SUS PARTES</strong> por <strong><u>DIACO</u></strong>. 
+          Por lo anteriormente expuesto, solicitamos la respectiva cancelación del mencionado vehículo.
+        </p>
+        <p>Agradezco su amable atención y colaboración.</p>
+        <br />
+        <h3><u>El cupo se usará en reposición</u></h3>
+        <br />
+        <p>Atentamente</p>
+        <br />
+        <p><strong>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}<br />{{ usuario1.tipo_doc }} {{ usuario1.cedula }}</strong></p>
+      </div>
+    </div>
+  </body>
+</html>

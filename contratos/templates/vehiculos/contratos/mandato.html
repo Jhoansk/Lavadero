@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contrato de Mandato</title>
+    <style>
+      @page {
+        size: letter; /* Tamaño del papel */
+        margin: 10mm; /* Márgenes de la página */
+      }
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 11pt;
+      }
+      .container{
+
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      p {
+        text-align: justify;
+        margin-bottom: 10px;
+      }
+      .flex-container{
+        display: flex;
+        width: 600px;
+      }
+      .left-margin{
+        margin-right: 150px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>CONTRATO DE MANDATO</h1>
+      </div>
+
+      <div class="main">
+        <p>
+          Entre los suscritos {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }} identificado con
+          {{ usuario1.tipo_doc }} número {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }} mayor(es) de edad, con
+          residencia en Bogotá D.C quien para los efectos del presente contrato se
+          denominara EL MANDANTE y de otra parte {{ usuario2.nombre }} {{ usuario2.p_apellido }} 
+          {{ usuario2.s_apellido }} mayor(es) de edad con residencia en Bogotá D.C
+          identificado(s) con {{ usuario2.tipo_doc }} numero {{ usuario2.cedula }} quien para efectos
+          del presente contrato se denominara EL MANDATARIO, hemos acordado
+          suscribir el siguiente contrato de mandato que se regirán por las
+          siguientes clausulas y en lo previsto en ellas por las disposiciones del
+          código de comercio y el código civil colombiano aplicables a la materia
+          que ocupa este contrato.
+        </p>
+  
+        <p>
+          PRIMERO. OBJETO DE CONTRATO: EL MANDANTE le confía a EL MANDATARIO la
+          gestión de realizar, radicar y reclamar ante el organismo de transito
+          los siguientes tramites:
+          _________________________________________________________ del vehiculo
+          de placas: {{ vehiculo.placa }}.
+        </p>
+  
+        <p>
+          PARRAFO PRIMERO. Como consecuencia EL MANDATARIO queda facultado para
+          representar a EL MANDANTE en todos los efectos como radicar recibir y
+          realizar su culminación el resultado del trámite en mención del presente
+          MANDATO que da cumplimiento a la resolución número 0012379 del 28 de
+          Diciembre de 2012 en su artículo 5 del ministerio de transporte. De
+          igual forma EL MANDATARIO tiene la facultad de sustituir el presente
+          CONTRATO DE MANDATO sin que en ningún momento EL MANDATO quede sin
+          representación alguna ante el organismo de tránsito en lo que tiene que
+          ver con las facultades conferidas por este mandato.
+        </p>
+  
+        <p>
+          PARRAFO SEGUNDO. Los encargados dados por EL MANDATARIO serán por cuenta
+          y riesgo del MANDANTE SEGUNDO. DURACION DEL CONTRATO. El contrato tendrá
+          su cumplimiento una vez el organismo de transito competente haga entrega
+          de la gestión final para el cual fue otorgado dicho MANDATO.
+        </p>
+  
+        <p>
+          Tanto EL MANDATARIO como EL MANDANTE aceptan las condiciones del
+          presente contrato y para su efecto firman ante sus nombres en la ciudad
+          de Bogotá el dia( )del mes( ) año( )
+        </p>
+        <div class="flex-container">
+          <div class="flex-content left-margin">
+            <p>EL MANDANTE</p>
+            <p>_________________________________</p>
+            <p>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p>
+            <p>{{ usuario1.tipo_doc }} {{ usuario1.cedula }}</p>
+          </div>
+  
+          <div class="flex-content">
+            <p>EL MANDATARIO</p>
+            <p>_________________________________</p>
+            <p>{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p>
+            <p>{{ usuario2.tipo_doc }} {{ usuario2.cedula }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

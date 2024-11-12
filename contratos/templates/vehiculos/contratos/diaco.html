@@ -1,0 +1,232 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solicitud de Desintegración Física Total</title>
+    <style>
+      @page {
+        size: letter; /* Tamaño del papel */
+        margin: 10mm; /* Márgenes de la página */
+      }
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 7.5pt;
+      }
+      h1,
+      h2 {
+        text-align: center;
+      }
+      .logo {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .logo img {
+        max-width: 40%;
+        height: auto;
+        display: flex;
+      }
+      table {
+        width: auto;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        width: 50%;
+        border: solid 1px black;
+        padding: 8px;
+        text-align: left;
+      }
+      .inline-container p {
+        display: inline;
+        justify-content: start;
+      }
+      .inline-container {
+        width: 450px;
+      }
+      .flex-container,
+      .inline-container {
+        align-items: center;
+        justify-content: center;
+      }
+      .flex-container {
+        display: flex;
+        width: 40%;
+        height: 100px;
+        justify-content: space-between;
+      }
+      .huella {
+        border: solid 1px black;
+        width: 100px;
+        height: 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">
+            <img src="https://checklistpesv.taxicupos.com/img/logo_diaco.jpeg" alt="Logo de Diaco S.A." />
+        </div>
+
+        <p style="display: inline; margin-right: 10%">Ciudad: Bogotá D.C</p>
+        <p style="display: inline">Fecha: 2023-11-08</p>
+
+        <p>
+          Señores<br />
+          Diaco S.A.<br />
+          Ciudad
+        </p>
+      </div>
+
+      <div class="main">
+        <p>Ref: CARTA DE SOLICITUD, AUTORIZACIÓN Y RESPONSABILIDAD</p>
+
+        <p>
+          Yo, {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }} identificado con cédula de
+          ciudadania {{ usuario1.tipo_doc }} {{ usuario1.cedula }} en calidad de propietario, solicito a
+          ustedes se sirvan efectuar la DESINTEGRACIÓN FISICA TOTAL del vehículo
+          que a continuación relaciono; de la misma manera declaro que bajo la
+          gravedad del juramento, asumo cualquier autorización que se origine
+          por la información que estoy suministrando e igualmente me hago
+          responsable de todas las acciones penales, civiles y fiscales que
+          surjan con relación a dicha desintegración.
+        </p>
+
+        <p><strong>PROTECCIÓN DE DATOS</strong></p>
+
+        <p>
+          En virtud de la Ley 1581 de 2012, los firmantes del presente
+          documento, titulares de los datos públicos, privados y/o sensibles
+          voluntariamente suministrados, autoriza a DIACO S.A. para hacer uso de
+          los mismos con fines comerciales, de control, registro y los demás que
+          sean necesarios para la ejecución de las actividades de desintegración
+          física total del vehículo. El titular declara conocer los derechos y
+          condiciones del tratamiento de sus datos.
+        </p>
+
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                Tipo de Vehículo (camioneta, bus, buseta, microbús, taxi,
+                masivo).
+              </td>
+              <td><strong>Taxi</strong></td>
+            </tr>
+            <tr>
+              <td>No. de Placa</td>
+              <td><strong>{{ vehiculo.placa }}</strong></td>
+            </tr>
+            <tr>
+              <td>Fin de la Desintegración:</td>
+              <td><strong>REPOSICIÓN</strong></td>
+            </tr>
+            <tr>
+              <td>No. de Chasis</td>
+              <td><strong>{{ vehiculo.n_chasis }}</strong></td>
+            </tr>
+            <tr>
+              <td>No. de Motor</td>
+              <td><strong>{{ vehiculo.n_motor }}</strong></td>
+            </tr>
+            <tr>
+              <td>No. de Matricula / Licencia</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>No. de Tarjeta de Operación</td>
+              <td><strong>[tarjetaOp]</strong></td>
+            </tr>
+            <tr>
+              <td>Marca</td>
+              <td><strong>{{ vehiculo.marca }}</strong></td>
+            </tr>
+            <tr>
+              <td>Modelo Vehículo</td>
+              <td><strong>{{ vehiculo.modelo }}</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Adicionalmente autorizo a
+          <strong>GERMAN DAVID LONDOÑO SANCHEZ</strong>, con número de
+          identificación 79.638.795 de Bogotá y número de celular 3213190085
+          para realizar los siguientes trámites.
+        </p>
+
+        <ul>
+          <li>Desintegración física del vehículo</li>
+          <li>Recibir el valor del bono del vehículo</li>
+        </ul>
+
+        <p>Cordialmente,</p>
+        <br />
+        <p>(PROPIETARIO)</p>
+        <p>Firma</p>
+        <div class="flex-container">
+          <div class="inline-container">
+            <p>Nombre</p>
+            <p style="margin-left: 17%">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p>
+            <br />
+            <p>Doc. Identificación</p>
+            <p style="margin-left: 0.5%">{{ usuario1.tipo_doc }} {{ usuario1.cedula }} {{ usuario1.ciudad_exp }}</p>
+            <br />
+            <p>Telefono Celular</p>
+            <p style="margin-left: 4%">{{ usuario1.telefono }}</p>
+            <br />
+            <p>Correo Electronico</p>
+            <p style="margin-left: 0.2%">{{ usuario1.correo }}</p>
+            <br />
+          </div>
+          <div class="text-huella">
+            <div class="huella"></div>
+            <p>Huella dactilar</p>
+          </div>
+        </div>
+
+        <br />
+        <br />
+
+        <p>(APODERADO)</p>
+        <p>Firma</p>
+        <div class="inline-container">
+          <p>Nombre</p>
+          <p style="margin-left: 9%">GERMAN DAVID LONDOÑO SANCHEZ</p>
+          <br />
+          <p>Doc. Identificación</p>
+          <p style="margin-left: 0.5%">CC 79638795 BOGOTA</p>
+          <br />
+          <p>Telefono Celular</p>
+          <p style="margin-left: 4%">7446963 EXT 105 3213190085</p>
+          <br />
+          <p>Correo Electronico</p>
+          <p style="margin-left: 0.2%">jefeoperativa@taxicupos.com.co</p>
+          <br />
+        </div>
+      </div>
+
+      <br />
+      <br />
+      <div class="footer">
+        <div class="center-text">
+          <p>
+            <strong
+              >ESTE DOCUMENTO ES VALIDO ÚNICAMENTE EN ORIGINAL Y FIRMA
+              AUTENTICADA</strong
+            >
+          </p>
+          <p>
+            <strong
+              >ESTE DOCUMENTO NO ES VÁLIDO EN CASO DE PRESENTAR CUALQUIER TIPO
+              DE ALTERACIÓN O EMENDADURA</strong
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

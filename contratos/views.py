@@ -684,6 +684,14 @@ def generar_pdf(request):
         template = 'vehiculos/contratos/CONTRATO_VENTA_DE_PARTICULAR-CVP.html'
     elif tipo_contrato == 'venta_usado':
         template = 'vehiculos/contratos/CONTRATO_VENTA_DE_USADO-CVU-1.html'
+    elif tipo_contrato == 'diaco':
+        template = 'vehiculos/contratos/diaco.html'
+    elif tipo_contrato == 'compra_venta':
+        template = 'vehiculos/contratos/compraventa.html'
+    elif tipo_contrato == 'cmatricula':
+        template = 'vehiculos/contratos/cmatricula.html'
+    elif tipo_contrato == 'mandato':
+        template = 'vehiculos/contratos/mandato.html'
     else:
         return HttpResponse("Error: Tipo de contrato no válido.", status=400)
 
