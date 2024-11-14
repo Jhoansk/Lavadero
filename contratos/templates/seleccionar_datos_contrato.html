@@ -39,21 +39,24 @@
                     <option value="venta_usado">Venta Usado</option>
                     <option value="diaco">Diaco</option>
                     <option value="compra_venta">Compra Venta</option>
-                    <option value="cmatricula">Cancelacion Matricula</option>
+                    <option value="cmatricula">Cancelación Matrícula</option>
                     <option value="mandato">Mandato</option>
                 </select>
             </div>
 
+            <!-- Cláusulas de la octava (Gastos) que solo se mostrarán si se selecciona "Permuta" -->
             <div id="checkboxes" style="display: none;">
-                <label>
-                    <input type="checkbox" name="mandato"> Mandato
-                </label>
-                <label>
-                    <input type="checkbox" name="fun"> FUN
-                </label>
-                <label>
-                    <input type="checkbox" name="diaco"> Diaco
-                </label>
+                <!-- Se llenarán dinámicamente -->
+            </div>
+
+            <div id="opciones" style="display: none;">
+                <p style="text-align: justify">
+                    <strong>Observaciones: </strong>
+                    --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                </p>
+                <ul style="text-align: justify" class="claus-list">
+                    <!-- Se llenarán dinámicamente -->
+                </ul>
             </div>
 
             <button type="submit">Generar Contrato PDF</button>
@@ -61,15 +64,253 @@
     </div>
 </div>
 
+<button type="button" id="add_clausula">Agregar Cláusula</button>
+<button type="button" id="add_opcion">Agregar Opción</button>
+
 <script>
-    // Función para mostrar u ocultar los checkboxes
+    // Definir las cláusulas y opciones para cada tipo de contrato
+    const clausulasPorContrato = {
+        "permuta": [
+            { texto: "La retención en la fuente y el traspaso del vehículo de placas _______ la asume EL PRIMER PERMUTANTE." },
+            { texto: "La chatarrización y cancelación de matrícula del vehículo de placas _____ será asumida por EL SEGUNDO PERMUTANTE." },
+            { texto: "La retención en la fuente y el traspaso del vehículo de placas ______ la asume EL SEGUNDO PERMUTANTE." },
+            { texto: "EL PRIMER PERMUTANTE cancelará los gastos ocasionados por pasar el vehículo por sidenal sin funcionar por valor de xxxxxx xxxx MIL PESOS M/CTE($xxx.xxx)." }
+        ],
+        "venta": [
+            { texto: "El vendedor garantiza que el vehículo no tiene gravámenes ni cargas." },
+            { texto: "El comprador se compromete a pagar el precio acordado en las condiciones estipuladas." }
+        ],
+        "compra": [
+            { texto: "El comprador tiene derecho a realizar inspección del vehículo antes de la compra." },
+            { texto: "El vendedor se compromete a entregar todos los documentos legales del vehículo." }
+        ],
+        "Compra_Cupo": [
+            { texto: "Los gastos de traspaso serán asumidos 50% por el comprador y 50% por el vendedor." },
+            { texto: "La chatarrización y derechos de cancelación de matrícula serán asumidos en su totalidad por el comprador." },
+            { texto: "La retención en la fuente será asumida por el vendedor en su totalidad." }
+        ],
+        "compra_Particular": [
+            { texto: "La retención en la fuente será asumida por el vendedor en su totalidad." },
+            { texto: "Derechos de traspaso ante el VENTANILLA UNICA DE SERVICIOS “VUS”, será asumida 50% por cada una de las partes." }
+        ],
+        "compra_usado": [
+            { texto: "Los gastos de traspaso serán asumidos 50% por el comprador y 50% por el vendedor." },
+            { texto: "La retención en la fuente será asumida por el vendedor en su totalidad." },
+            { texto: "CLAUSULA EXTRA" }
+        ],
+        "venta_particular": [
+            { texto: "La retención en la fuente será asumida por el vendedor en su totalidad." },
+            { texto: "Derechos de traspaso ante el VENTANILLA UNICA DE SERVICIOS 'VUS', será asumida 50% por cada una de las partes." }
+        ],
+        "venta_usado": [
+            { texto: "Los gastos de traspaso serán asumidos 50% por el comprador y 50% por el vendedor." },
+            { texto: "La retención en la fuente será asumida por el vendedor en su totalidad." },
+            { texto: "CLAUSULA EXTRA" }
+        ]
+        // Agregar más tipos de contrato según sea necesario
+    };
+
+    const opcionesPorContrato = {
+        "permuta": [
+            { texto: "Se aclara que los vehículos son dos taxis del cual los PERMUTANTES ceden todos los derechos de reposición del cupo y del taxi." },
+            { texto: "LOS PERMUTANTES entregarán los vehículos en mención a paz y salvo por todo concepto." },
+            { texto: "EL SEGUNDO PERMUTANTE solicitará los paz y salvos de movilidad, de accidentes y comparendos administrativos." },
+            { texto: "El taxi nuevo se entregará con emblemas reglamentarios, derechos de matrícula cancelados ante el SIM, soat por un año, un año de rodamiento cancelado ante la empresa Taxi Cupos a partir de la entrega del vehículo, impuesto año en curso, la tarjeta de operación y los seguros contractual y extracontractual se entregarán cancelados hasta la fecha de corte de la empresa afiliadora." },
+            { texto: "El cambio de vehículos se realizará al tener los documentos firmados y autenticados junto con revisión DIJIN del vehículo." }
+        ],
+        "venta": [
+            { texto: "El comprador se compromete a pagar el 20% del valor total como anticipo." },
+            { texto: "El vendedor se compromete a entregar el vehículo dentro de los 10 días hábiles posteriores a la firma." }
+        ],
+        "compra": [
+            { texto: "El comprador aceptará la venta con base en la inspección realizada." }
+        ],
+        "Compra_Cupo": [
+            { texto: "Se aclara que el vehículo es un taxi del cual el vendedor cede al comprador todos los derechos de reposición del cupo y del taxi." },
+            { texto: "El vehículo se entregará por parte del vendedor al comprador a paz y salvo por todo concepto respecto al carro y al cupo." },
+            { texto: "El vehículo se entregará al comprador en el mismo estado visto y funcionando." },
+            { texto: "El vendedor se compromete a asistir a cualquier llamado por parte de cualquier entidad competente respecto al taxi y su cupo." },
+            { texto: "El vehículo será traspasado a nombre del comprador o a quien este designe." },
+            { texto: "El vendedor se compromete a completar la documentación y requisitos solicitados para realizar el primer pago de este contrato en un tiempo máximo de cinco (5) días hábiles siguientes a la firma de este contrato." }
+        ],
+        "compra_Particular": [
+            { texto: "Se aclara que el vehículo es un ________________ del cual el vendedor cede al comprador todos los derechos." },
+            { texto: "El vehículo se entregará por parte del vendedor al comprador a paz y salvo por todo concepto respecto al carro." },
+            { texto: "El vehículo se entregará al comprador en el mismo estado visto, funcionando y a entera satisfacción por parte del vendedor al comprador y no tiene garantía por ser un vehículo usado." }
+        ],
+        "compra_usado": [
+            { texto: "Se aclara que el vehículo es un taxi del cual el vendedor cede al comprador todos los derechos de reposición del cupo y del taxi." },
+            { texto: "El vehículo se entregará por parte del vendedor al comprador a paz y salvo por todo concepto respecto al carro y al cupo." },
+            { texto: "El vehículo se entregará al comprador en el mismo estado visto y funcionando." },
+            { texto: "El vendedor se compromete a asistir a cualquier llamado por parte de cualquier entidad competente respecto al taxi y su cupo." },
+            { texto: "El vehículo será traspasado a nombre del comprador o a quien este designe." },
+            { texto: "El vendedor se compromete a completar la documentación y requisitos solicitados para realizar el primer pago de este contrato en un tiempo máximo de cinco (5) días hábiles siguientes a la firma de este contrato." }
+        ],
+        "venta_particular": [
+            { texto: "Se aclara que el vehículo es un ________________ del cual el vendedor cede al comprador todos los derechos." },
+            { texto: "El vehículo se entregará por parte del vendedor al comprador a paz y salvo por todo concepto respecto al carro." },
+            { texto: "El vehículo se entregará al comprador en el mismo estado visto, funcionando y a entera satisfacción por parte del vendedor al comprador y no tiene garantía por ser un vehículo usado." },
+            { texto: "El vehículo será entregado al estar cancelado en su totalidad." }
+        ],
+        "venta_usado": [
+            { texto: "Se aclara que el vehículo es un taxi del cual el vendedor cede al comprador todos los derechos de reposición del cupo y del taxi." },
+            { texto: "El vehículo se entregará por parte del vendedor al comprador a paz y salvo por todo concepto respecto al carro y al cupo." },
+            { texto: "El vehículo se entregará al comprador en el mismo estado visto y funcionando." },
+            { texto: "El vehículo se entregará al comprador en el mismo estado visto, funcionando y a entera satisfacción sin garantía por parte del vendedor al comprador, esto por ser un vehículo usado." },
+            { texto: "El vehículo será entregado al estar cancelado en su totalidad." }
+        ]
+        // Agregar más opciones por contrato según sea necesario
+    };
+
+
     document.getElementById('tipo_contrato').addEventListener('change', function() {
-        var checkboxes = document.getElementById('checkboxes');
-        if (this.value !== "") {
-            checkboxes.style.display = "block";
+        var tipoContrato = this.value;
+        var checkboxesContainer = document.getElementById('checkboxes');
+        var opcionesContainer = document.getElementById('opciones');
+
+        // Limpiar los elementos anteriores
+        checkboxesContainer.innerHTML = '';
+        opcionesContainer.querySelector('ul').innerHTML = '';
+
+        // Mostrar las cláusulas y opciones según el tipo de contrato
+        if (tipoContrato && clausulasPorContrato[tipoContrato]) {
+            // Mostrar las cláusulas
+            clausulasPorContrato[tipoContrato].forEach(function(clausula, index) {
+                var clausulaDiv = document.createElement('div');
+                clausulaDiv.classList.add('clausula');
+                
+                var checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.name = `gasto_${index + 1}`;
+                checkbox.id = `gasto_${index + 1}`;
+
+                var inputText = document.createElement('input');
+                inputText.type = 'text';
+                inputText.name = `gasto_${index + 1}_text`;
+                inputText.id = `gasto_${index + 1}_text`;
+                inputText.value = clausula.texto;
+                inputText.disabled = true;
+                inputText.style.width = "100%";
+                inputText.style.marginTop = "5px";
+
+                clausulaDiv.appendChild(checkbox);
+                clausulaDiv.appendChild(inputText);
+                checkboxesContainer.appendChild(clausulaDiv);
+
+                checkbox.addEventListener('change', function() {
+                    inputText.disabled = !checkbox.checked;
+                });
+            });
+
+            // Mostrar las opciones
+            opcionesPorContrato[tipoContrato].forEach(function(opcion, index) {
+                var opcionLi = document.createElement('li');
+                
+                var checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.name = `opcion_${index + 1}`;
+                checkbox.id = `opcion_${index + 1}`;
+
+                var inputText = document.createElement('input');
+                inputText.type = 'text';
+                inputText.name = `opcion_${index + 1}_text`;
+                inputText.id = `opcion_${index + 1}_text`;
+                inputText.value = opcion.texto;
+                inputText.disabled = true;
+                inputText.style.width = "100%";
+                inputText.style.marginTop = "5px";
+
+                opcionLi.appendChild(checkbox);
+                opcionLi.appendChild(inputText);
+                opcionesContainer.querySelector('ul').appendChild(opcionLi);
+
+                checkbox.addEventListener('change', function() {
+                    inputText.disabled = !checkbox.checked;
+                });
+            });
+
+            checkboxesContainer.style.display = 'block';
+            opcionesContainer.style.display = 'block';
         } else {
-            checkboxes.style.display = "none";
+            checkboxesContainer.style.display = 'none';
+            opcionesContainer.style.display = 'none';
+        }
+    });
+
+    // Agregar una cláusula dinámica
+    document.getElementById('add_clausula').addEventListener('click', function() {
+        var tipoContrato = document.getElementById('tipo_contrato').value;
+        if (tipoContrato && clausulasPorContrato[tipoContrato]) {
+            var checkboxesContainer = document.getElementById('checkboxes');
+            var clausulaIndex = clausulasPorContrato[tipoContrato].length + 1;
+            var nuevaClausula = { texto: "Nueva cláusula dinámica" };
+
+            // Crear los elementos HTML para la nueva cláusula
+            var clausulaDiv = document.createElement('div');
+            clausulaDiv.classList.add('clausula');
+
+            var checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.name = `gasto_${clausulaIndex}`;
+            checkbox.id = `gasto_${clausulaIndex}`;
+
+            var inputText = document.createElement('input');
+            inputText.type = 'text';
+            inputText.name = `gasto_${clausulaIndex}_text`;
+            inputText.id = `gasto_${clausulaIndex}_text`;
+            inputText.value = nuevaClausula.texto;
+            inputText.disabled = true;
+            inputText.style.width = "100%";
+            inputText.style.marginTop = "5px";
+
+            clausulaDiv.appendChild(checkbox);
+            clausulaDiv.appendChild(inputText);
+            checkboxesContainer.appendChild(clausulaDiv);
+
+            checkbox.addEventListener('change', function() {
+                inputText.disabled = !checkbox.checked;
+            });
+
+            clausulasPorContrato[tipoContrato].push(nuevaClausula);
+        }
+    });
+
+    // Agregar una opción dinámica
+    document.getElementById('add_opcion').addEventListener('click', function() {
+        var tipoContrato = document.getElementById('tipo_contrato').value;
+        if (tipoContrato && opcionesPorContrato[tipoContrato]) {
+            var opcionesContainer = document.getElementById('opciones').querySelector('ul');
+            var opcionIndex = opcionesPorContrato[tipoContrato].length + 1;
+            var nuevaOpcion = { texto: "Nueva opción dinámica" };
+
+            // Crear los elementos HTML para la nueva opción
+            var opcionLi = document.createElement('li');
+
+            var checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.name = `opcion_${opcionIndex}`;
+            checkbox.id = `opcion_${opcionIndex}`;
+
+            var inputText = document.createElement('input');
+            inputText.type = 'text';
+            inputText.name = `opcion_${opcionIndex}_text`;
+            inputText.id = `opcion_${opcionIndex}_text`;
+            inputText.value = nuevaOpcion.texto;
+            inputText.disabled = true;
+            inputText.style.width = "100%";
+            inputText.style.marginTop = "5px";
+
+            opcionLi.appendChild(checkbox);
+            opcionLi.appendChild(inputText);
+            opcionesContainer.appendChild(opcionLi);
+
+            checkbox.addEventListener('change', function() {
+                inputText.disabled = !checkbox.checked;
+            });
+
+            opcionesPorContrato[tipoContrato].push(nuevaOpcion);
         }
     });
 </script>
+
 {% endblock %}

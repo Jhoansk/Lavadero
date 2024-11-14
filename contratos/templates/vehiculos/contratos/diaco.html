@@ -44,7 +44,7 @@
         justify-content: start;
       }
       .inline-container {
-        width: 450px;
+        width: 550px;
       }
       .flex-container,
       .inline-container {
@@ -53,7 +53,7 @@
       }
       .flex-container {
         display: flex;
-        width: 40%;
+        width: 90%;
         height: 100px;
         justify-content: space-between;
       }
@@ -61,6 +61,12 @@
         border: solid 1px black;
         width: 100px;
         height: 120px;
+      }
+      .huella.right{
+        margin-right: 20px;
+      }
+      .text-huella{
+        text-align: center;
       }
     </style>
   </head>
@@ -80,10 +86,8 @@
           Ciudad
         </p>
       </div>
-
       <div class="main">
         <p>Ref: CARTA DE SOLICITUD, AUTORIZACIÓN Y RESPONSABILIDAD</p>
-
         <p>
           Yo, {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }} identificado con cédula de
           ciudadania {{ usuario1.tipo_doc }} {{ usuario1.cedula }} en calidad de propietario, solicito a
@@ -94,9 +98,7 @@
           responsable de todas las acciones penales, civiles y fiscales que
           surjan con relación a dicha desintegración.
         </p>
-
         <p><strong>PROTECCIÓN DE DATOS</strong></p>
-
         <p>
           En virtud de la Ley 1581 de 2012, los firmantes del presente
           documento, titulares de los datos públicos, privados y/o sensibles
@@ -106,7 +108,6 @@
           física total del vehículo. El titular declara conocer los derechos y
           condiciones del tratamiento de sus datos.
         </p>
-
         <table>
           <tbody>
             <tr>
@@ -150,37 +151,38 @@
             </tr>
           </tbody>
         </table>
-
         <p>
           Adicionalmente autorizo a
           <strong>GERMAN DAVID LONDOÑO SANCHEZ</strong>, con número de
           identificación 79.638.795 de Bogotá y número de celular 3213190085
           para realizar los siguientes trámites.
         </p>
-
         <ul>
           <li>Desintegración física del vehículo</li>
           <li>Recibir el valor del bono del vehículo</li>
         </ul>
 
         <p>Cordialmente,</p>
-        <br />
         <p>(PROPIETARIO)</p>
         <p>Firma</p>
         <div class="flex-container">
           <div class="inline-container">
             <p>Nombre</p>
-            <p style="margin-left: 17%">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p>
+            <p style="margin-left: 55px">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p>
             <br />
             <p>Doc. Identificación</p>
-            <p style="margin-left: 0.5%">{{ usuario1.tipo_doc }} {{ usuario1.cedula }} {{ usuario1.ciudad_exp }}</p>
+            <p style="margin-left: 10px">{{ usuario1.tipo_doc }} {{ usuario1.cedula }} {{ usuario1.ciudad_exp }}</p>
             <br />
             <p>Telefono Celular</p>
-            <p style="margin-left: 4%">{{ usuario1.telefono }}</p>
+            <p style="margin-left: 20px">{{ usuario1.telefono }}</p>
             <br />
             <p>Correo Electronico</p>
-            <p style="margin-left: 0.2%">{{ usuario1.correo }}</p>
+            <p style="margin-left: 10px">{{ usuario1.correo }}</p>
             <br />
+          </div>
+          <div class="text-huella">
+            <div class="huella right"></div>
+            <p>Huella dactilar</p>
           </div>
           <div class="text-huella">
             <div class="huella"></div>
@@ -188,23 +190,20 @@
           </div>
         </div>
 
-        <br />
-        <br />
-
         <p>(APODERADO)</p>
         <p>Firma</p>
         <div class="inline-container">
           <p>Nombre</p>
-          <p style="margin-left: 9%">GERMAN DAVID LONDOÑO SANCHEZ</p>
+          <p style="margin-left: 55px">GERMAN DAVID LONDOÑO SANCHEZ</p>
           <br />
           <p>Doc. Identificación</p>
-          <p style="margin-left: 0.5%">CC 79638795 BOGOTA</p>
+          <p style="margin-left: 10px">CC 79638795 BOGOTA</p>
           <br />
           <p>Telefono Celular</p>
-          <p style="margin-left: 4%">7446963 EXT 105 3213190085</p>
+          <p style="margin-left: 20px">7446963 EXT 105 3213190085</p>
           <br />
           <p>Correo Electronico</p>
-          <p style="margin-left: 0.2%">jefeoperativa@taxicupos.com.co</p>
+          <p style="margin-left: 10px">jefeoperativa@taxicupos.com.co</p>
           <br />
         </div>
       </div>

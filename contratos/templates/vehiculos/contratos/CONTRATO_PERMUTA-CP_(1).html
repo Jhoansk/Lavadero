@@ -15,7 +15,7 @@
         margin: 0;
         padding: 0;
         font-size: 8pt; /* Tamaño del texto ajustado a 5pt */
-        line-height: 1.5; /* Mejorar legibilidad */
+        line-height: 1.2;
       }
 
       table {
@@ -99,28 +99,25 @@
 
       .borde {
         margin-right: 10%;
-        padding: 4px;
-        height: 50px;
-        width: 50px;
+        height: 70px;
+        width: 60px;
         vertical-align: top;
-        background-color: black;
+        /* background-color: black; */
+        border: 4px solid black;
         align-items: center;
         font-size: 6.5pt;
       }
 
       .huella {
-        height: 50px;
-        width: 50px;
+        height: 70px;
+        width: 60px;
         background-color: white;
         font-size: 6.5pt;
       }
 
       .texto_huella {
-        color: white;
-        width: 100px;
-        height: 10px;
+        margin-top: 5px;
         font-size: 6.5pt;
-        text-align: center;
       }
 
       .informacion {
@@ -150,8 +147,8 @@
       .signe-cont {
         display: flex;
         font-size: 6.5pt;
-        width: 350px;
-        height: 70px;
+        width: 355px;
+        height: 98px;
       }
 
       .claus-list {
@@ -171,6 +168,12 @@
       }
       .justificado {
         text-align: justify; /* Justificación del texto */
+      }
+      .primer-espacio{
+        margin-top: 8px;
+      }
+      .inline-container p {
+        display: inline;
       }
     </style>
   </head>
@@ -207,64 +210,26 @@
     <p>
       <strong>LUGAR CELEBRACI&Oacute;N DEL CONTRATO: BOGOT&Aacute; D.C.</strong>
     </p>
-    <p>&nbsp;</p>
-    <p>
-      PRIMER PERMUTANTE
-      (ES): {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}
-    </p>
-    <p>
-      IDENTIFICACI&Oacute;N: {{ usuario1.cedula }}
-    </p>
-    <p>
-      DOMICILIO
-      CONTRACTUAL: {{usuario1.direccion}}
-    </p>
-    <p>
-      BARRI&Oacute;: {{ usuario1.barrio }}
-    </p>
-    <p>
-      CIUDAD: {{usuario1.ciudad }}
-    </p>
-    <p>
-      TEL&Eacute;FONO: {{ usuario1.telefono }}
-    </p>
-    <p>
-      CORREO
-      ELECTR&Oacute;NICO: {{ usuario1.correo }}
-    </p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>
-      SEGUNDO
-      PERMUTANTE: {{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}
-    </p>
-    <p>
-      IDENTIFICACI&Oacute;N:
-      C.C. No. {{ usuario2.cedula }}
-    </p>
-    <p>
-      DOMICILIO
-      CONTRACTUAL:
-      {{usuario2.direccion}}
-    </p>
-    <p>
-      BARRI&Oacute;: {{ usuario2.barrio }}
-      
-    </p>
-    <p>
-      CIUDAD: {{usuario2.ciudad }}
-    </p>
-    <p>
-      TEL&Eacute;FONO: {{ usuario2.telefono }}
-    </p>
-    <p>
-      CORREO
-      ELECTR&Oacute;NICO: {{ usuario2.correo }}
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </p>
-    <p style="text-align: justify">
+    <div class="inline-container primer-espacio">
+      <p>PRIMER PERMUTANTE(ES):</p><p style="margin-left: 100px;">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p><br>
+      <p>IDENTIFICACI&Oacute;N:</p><p style="margin-left: 149px;">C.C. No. {{ usuario1.cedula }}</p><br>
+      <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 100px;">{{usuario1.direccion}}</p><br>
+      <p>BARRI&Oacute;:</p><p style="margin-left: 191px;">{{ usuario1.barrio }}</p><br>
+      <p>CIUDAD:</p><p style="margin-left: 191px;">{{usuario1.ciudad }}</p><br>
+      <p>TEL&Eacute;FONO:</p><p style="margin-left: 176px;">{{ usuario1.telefono }}</p><br>
+      <p>CORREO ELECTR&Oacute;NICO:</p><p style="margin-left: 111px;">{{ usuario1.correo }}</p><br>
+    </div>
+    <div class="inline-container primer-espacio">
+      <p>SEGUNDO PERMUTANTE:</p><p style="margin-left: 108px;">{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p><br>
+      <p>IDENTIFICACI&Oacute;N:</p><p style="margin-left: 149px;">C.C. No.{{ usuario2.cedula }}</p><br>
+      <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 97px;"> {{usuario2.direccion}}</p><br>
+      <p>BARRI&Oacute;:</p><p style="margin-left: 188px;"> {{ usuario2.barrio }}</p><br>
+      <p>CIUDAD:</p><p style="margin-left: 188px;"> {{usuario2.ciudad }}</p><br>
+      <p>TEL&Eacute;FONO:</p><p style="margin-left: 173px;"> {{ usuario2.telefono }}</p><br>
+      <p>CORREO ELECTR&Oacute;NICO:</p><p style="margin-left: 108px;"> {{ usuario2.correo }}</p><br>
+    </div>
+    
+    <p style="text-align: justify" class="primer-espacio">
       Las partes convienen celebrar el presente contrato de permuta, que se
       regir&aacute; por las anteriores estipulaciones, las normas aplicables a
       la materia y en especial por las siguientes cl&aacute;usulas:
@@ -276,8 +241,7 @@
       veh&iacute;culo automotor con cupo que a continuaci&oacute;n se
       identifica:
     </p>
-    <p>&nbsp;</p>
-    <table>
+    <table class="primer-espacio">
       <tbody>
         <tr>
           <td width="279" class="clase-vehiculo">
@@ -358,15 +322,13 @@
         </tr>
       </tbody>
     </table>
-    <p>&nbsp;</p>
-    <p>
+    <p class="primer-espacio">
       EL, (LOS) SEGUNDO(S) PERMUTANTE (S) transfiere (n) a t&iacute;tulo de
       venta y EL (LOS) PRIMER (OS) PERMUTANTE (ES) adquiere (n) la propiedad del
       veh&iacute;culo automotor con cupo que a continuaci&oacute;n se
       identifica:
     </p>
-    <p>&nbsp;</p>
-    <table>
+    <table class="primer-espacio">
       <tbody>
         <tr>
           <td width="279" class="clase-vehiculo">
@@ -447,8 +409,7 @@
         </tr>
       </tbody>
     </table>
-    <p>&nbsp;</p>
-    <p style="text-align: justify">
+    <p style="text-align: justify" class="primer-espacio">
       <strong>CLAUSULA SEGUNDA. PRECIO.- </strong>EL SEGUNDO PERMUTANTE
       transfiere a t&iacute;tulo de venta al PRIMER PERMUTANTE un
       veh&iacute;culo tipo taxi&nbsp; marca _____, l&iacute;nea _____, modelos
@@ -520,12 +481,14 @@
       con los elementos que constan en inventario firmado por las partes y este
       (os) as&iacute; lo acepta (n) y declara (n) que conoce (n) el estado en el
       que se encuentra el bien objeto de este contrato.
-      --------------------------<strong>SEXTA - RESERVA DEL DOMINIO: </strong>EL
+      --------------------------
+    </p>
+    <p style="text-align: justify">
+      <strong>SEXTA - RESERVA DEL DOMINIO: </strong>EL
       (LOS) SEGUNDO PERMUTANTE (ES) se reserva (n) la propiedad del
       veh&iacute;culo identificado en la cl&aacute;usula primera del presente
       contrato, hasta el momento en que se pague el precio estipulado en su
       totalidad, de conformidad con el Art. 952 del C&oacute;digo de Comercio.
-      -----------------------------------------------
     </p>
     <p style="text-align: justify">
       <strong>S&Eacute;PTIMA - CL&Aacute;USULA PENAL: </strong>: Se acuerda como
@@ -539,36 +502,17 @@
       renuncia al requerimiento de constituci&oacute;n en
       mora.----------------------------------------------------------
     </p>
-    <p style="text-align: justify">
-      <strong>OCTAVA - GASTOS: </strong>Los gastos que se ocasionen con motivo
-      de la firma de esta compraventa ser&aacute;n cubiertos de la siguiente
-      manera. -----
+    <strong>OCTAVA - GASTOS: </strong>Los gastos que se ocasionen con motivo
+      de la firma de esta compraventa serán cubiertos de la siguiente manera. -----
     </p>
     <ul style="text-align: justify" class="claus-list">
-      <li>
-        La retenci&oacute;n en la fuente y el traspaso del veh&iacute;culo de
-        placas _______ la asume EL PRIMER PERMUTANTE.
-        ------------------------------
-      </li>
-      <li>
-        La chatarrizaci&oacute;n y cancelaci&oacute;n de matr&iacute;cula del
-        veh&iacute;culo de placas _____ ser&aacute; asumida por EL SEGUNDO
-        PERMUTANTE. ---------
-      </li>
-      <li>
-        La retenci&oacute;n en la fuente y el traspaso del veh&iacute;culo de
-        placas ______ la asume EL SEGUNDO PERMUTANTE.
-        ---------------------------
-      </li>
-      <li>
-        EL PRIMER PERMUTANTE cancelara los gastos ocasionados por pasar el
-        veh&iacute;culo por sidenal sin funcionar por valor de xxxxxx xxxx MIL
-        PESOS M/CTE($xxx.xxx).
-        -------------------------------------------------------------------------------------------------------------------------------------
-      </li>
+        {% for clausula in clausulas %}
+            <li>
+                {{ clausula.texto }}
+            </li>
+        {% endfor %}
     </ul>
-    <p style="text-align: justify">&nbsp;</p>
-    <p style="text-align: justify">
+    <p style="text-align: justify" class="primer-espacio">
       <strong>NOVENA - CLAUSULA COMPROMISOR&Iacute;A: </strong>Las partes
       acuerdan que, de existir un conflicto con ocasi&oacute;n a la existencia
       del presente contrato, se obligar&aacute;n las mismas a dirimirlo a
@@ -660,49 +604,23 @@
       anteriormente enunciadas. --------------------------------------
     </p>
     <p style="text-align: justify">
-      <strong>Observaciones: </strong
-      >--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      <strong>Observaciones: </strong>
+      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
     </p>
     <ul style="text-align: justify" class="claus-list">
-      <li>
-        Se aclara que los veh&iacute;culos son dos taxis del cual los
-        PERMUTANTES ceden todos los derechos de reposici&oacute;n del cupo y del
-        taxi.
-      </li>
-      <li>
-        LOS PERMUTANTES entregaran los veh&iacute;culos en menci&oacute;n a paz
-        y salvo por todo concepto.
-        ----------------------------------------------------
-      </li>
-      <li>
-        EL SEGUNDO PERMUTANTE solicitara los paz y salvos de movilidad, de
-        accidentes y comparendos administrativos<strong>. </strong
-        >----------------
-      </li>
-      <li>
-        El taxi nuevo se entregar&aacute; con emblemas reglamentarios, derechos
-        de matr&iacute;cula cancelados ante el SIM, soat por un a&ntilde;o, un
-        a&ntilde;o de rodamiento cancelado ante la empresa Taxi Cupos a partir
-        de la entrega del veh&iacute;culo, impuesto a&ntilde;o en curso, la
-        tarjeta de operaci&oacute;n y los seguros contractual y extracontractual
-        se entregaran cancelados hasta la fecha de corte de la empresa
-        afiliadora. -
-      </li>
-      <li>
-        El cambio de veh&iacute;culos se realizara al tener los documentos
-        firmados y autenticados junto revisi&oacute;n dijin del
-      </li>
+      {% for opcion in opciones %}
+        <li>
+            {{ opcion.texto }}
+        </li>
+      {% endfor %}
     </ul>
-    <p style="text-align: justify">XXX111</p>
-    <p style="text-align: justify">&nbsp;</p>
-    <p style="text-align: justify">
+    <p style="text-align: justify" class="primer-espacio">
       En se&ntilde;al de conformidad las partes contratantes suscriben el
       presente documento en la ciudad de Bogot&aacute; D.C, a los ________ (___)
       d&iacute;as del mes de _______ del a&ntilde;o dos mil veintitr&eacute;s
       (2023). Se extienden dos copias del mismo tenor y valor.
     </p>
-    <p style="text-align: justify">&nbsp;</p>
-    <p style="text-align: justify">&nbsp;</p>
+    <p class="primer-espacio"></p>
     <table id="signature-table">
       <tr class="signes">
         <!-- Vendedor -->

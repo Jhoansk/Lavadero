@@ -15,7 +15,7 @@
         margin: 0;
         padding: 0;
         font-size: 8pt; /* Tamaño del texto ajustado a 5pt */
-        line-height: 1.5; /* Mejorar legibilidad */
+        line-height: 1.2;
       }
 
       table {
@@ -31,8 +31,9 @@
         page-break-after: auto; /* Permite que el contenido se divida entre páginas */
         page-break-before: auto;
         page-break-inside: avoid;
-        font-size: 12px; /* Aplicar tamaño de texto a párrafos, listas y tablas */
-        margin: 0;
+        font-size: 10px; /* Aplicar tamaño de texto a párrafos, listas y tablas */
+        margin: 2px;
+        text-align: justify;
       }
 
       h1,
@@ -98,28 +99,25 @@
 
       .borde {
         margin-right: 10%;
-        padding: 4px;
-        height: 50px;
-        width: 50px;
+        height: 70px;
+        width: 60px;
         vertical-align: top;
-        background-color: black;
+        /* background-color: black; */
+        border: 4px solid black;
         align-items: center;
         font-size: 6.5pt;
       }
 
       .huella {
-        height: 50px;
-        width: 50px;
+        height: 70px;
+        width: 60px;
         background-color: white;
         font-size: 6.5pt;
       }
 
       .texto_huella {
-        color: white;
-        width: 100px;
-        height: 10px;
+        margin-top: 5px;
         font-size: 6.5pt;
-        text-align: center;
       }
 
       .informacion {
@@ -149,8 +147,8 @@
       .signe-cont {
         display: flex;
         font-size: 6.5pt;
-        width: 350px;
-        height: 70px;
+        width: 355px;
+        height: 98px;
       }
 
       .claus-list {
@@ -170,6 +168,9 @@
       }
       .justificado {
         text-align: justify; /* Justificación del texto */
+      }
+      .primer-espacio{
+        margin-top: 8px;
       }
     </style>
   </head>
@@ -439,7 +440,6 @@
         -------------------------------------------------------------------------------------------------
       </li>
     </ul>
-    <p style="text-align: justify">&nbsp;</p>
     <p style="text-align: justify">
       <strong
         >OBSERVACIONES:
@@ -471,7 +471,6 @@
         -------------------------------------------------------------------------------------------------------------------
       </li>
     </ul>
-    <p style="text-align: justify">&nbsp;</p>
     <p style="text-align: justify">
       Sala de venta:
       <strong
@@ -480,15 +479,13 @@
       >Asesor:
       <strong>&shy;&shy;&shy;&shy;&shy;&shy;&shy;&shy;________________</strong>
     </p>
-    <p style="text-align: justify">&nbsp;</p>
     <p style="text-align: justify">
       En constancia de aceptaci&oacute;n se suscribe, una vez le&iacute;do, en
       dos copias del mismo tenor y contenido con destino a cada una de las
       partes, en la ciudad de Bogot&aacute;, a los ___________ (__) d&iacute;as
       del mes de _______ del a&ntilde;o dos mil veintitr&eacute;s (2023).
     </p>
-    <p><strong>&nbsp;</strong></p>
-    <div class="flex" style="display: inline-block; margin-right: 60px;">
+    <div class="flex primer-espacio" style="display: inline-block; margin-right: 60px;">
       <p>
         <strong
           >EL PROPIETARIO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

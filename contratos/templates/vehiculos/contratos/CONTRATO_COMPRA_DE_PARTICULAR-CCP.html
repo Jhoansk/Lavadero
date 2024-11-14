@@ -15,7 +15,7 @@
         margin: 0;
         padding: 0;
         font-size: 8pt; /* Tamaño del texto ajustado a 5pt */
-        line-height: 1.5; /* Mejorar legibilidad */
+        line-height: 1.2;
       }
 
       table {
@@ -31,7 +31,7 @@
         page-break-after: auto; /* Permite que el contenido se divida entre páginas */
         page-break-before: auto;
         page-break-inside: avoid;
-        font-size: 11px; /* Aplicar tamaño de texto a párrafos, listas y tablas */
+        font-size: 10px; /* Aplicar tamaño de texto a párrafos, listas y tablas */
         margin: 2px;
         text-align: justify;
       }
@@ -99,28 +99,25 @@
 
       .borde {
         margin-right: 10%;
-        padding: 4px;
-        height: 50px;
-        width: 50px;
+        height: 70px;
+        width: 60px;
         vertical-align: top;
-        background-color: black;
+        /* background-color: black; */
+        border: 4px solid black;
         align-items: center;
         font-size: 6.5pt;
       }
 
       .huella {
-        height: 50px;
-        width: 50px;
+        height: 70px;
+        width: 60px;
         background-color: white;
         font-size: 6.5pt;
       }
 
       .texto_huella {
-        color: white;
-        width: 100px;
-        height: 10px;
+        margin-top: 5px;
         font-size: 6.5pt;
-        text-align: center;
       }
 
       .informacion {
@@ -150,8 +147,8 @@
       .signe-cont {
         display: flex;
         font-size: 6.5pt;
-        width: 350px;
-        height: 70px;
+        width: 355px;
+        height: 98px;
       }
 
       .claus-list {
@@ -171,6 +168,12 @@
       }
       .justificado {
         text-align: justify; /* Justificación del texto */
+      }
+      .primer-espacio {
+        margin-top: 8px;
+      }
+      .inline-container p {
+        display: inline;
       }
     </style>
   </head>
@@ -203,7 +206,7 @@
         <!-- Refiere espacio -->
       </tr>
     </table>
-    <p style="font-size: 18px; text-align: center;">
+    <p style="font-size: 18px; text-align: center">
       <strong
         >&nbsp;CONTRATO DE COMPRAVENTA DE VEH&Iacute;CULO AUTOMOTOR TIPO TAXI
         CON CESION DE DERECHOS DE REPOSICION CUPO</strong
@@ -211,45 +214,56 @@
     </p>
     <p>
       <strong
-        >LUGAR CELEBRACI&Oacute;N DEL CONTRATO: BOGOT&Aacute; D,
-        C.,&nbsp;&nbsp;&nbsp;
+        >LUGAR CELEBRACI&Oacute;N DEL CONTRATO: BOGOT&Aacute; D, C.
       </strong>
     </p>
-    <p>
-      VENDEDOR: {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}
-    </p>
-    <p>
-      IDENTIFICACI&Oacute;N: 
-      CC. No. {{ usuario1.cedula }}
-    </p>
-    <p>DOMICILIO CONTRACTUAL: {{usuario1.direccion}}</p>
-    <p>BARRIO: {{ usuario1.barrio }}</p>
-    <p>
-      TELEFONO: {{ usuario1.telefono }}
-    </p>
-    <p>
-      CORREO ELECTRONICO: {{ usuario1.correo }}
-    </p>
-    <p>&nbsp;</p>
-    <p>
-      COMPRADOR: {{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}
-    </p>
-    <p>
-      IDENTIFICACION: 
-      CC No. {{ usuario2.cedula }}
-    </p>
-    <p>DOMICILIO ACTUAL: {{usuario2.direccion}}</p>
-    <p>
-      BARRIO: {{ usuario2.barrio }}
-    </p>
-    <p>
-      TELEFONO: {{ usuario2.telefono }}
-    </p>
-    <p>
-      CORREO ELECTRONICO: {{ usuario2.correo }}
-    </p>
-    <p>&nbsp;</p>
-    <p style="text-align: justify">
+    <div class="inline-container primer-espacio">
+      <p>VENDEDOR:</p>
+      <p style="margin-left: 100px;">
+        {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido
+        }}
+      </p>
+      <br />
+      <p>IDENTIFICACI&Oacute;N:</p>
+      <p style="margin-left: 76px;">CC. No. {{ usuario1.cedula }}</p>
+      <br />
+      <p>DOMICILIO CONTRACTUAL:</p>
+      <p style="margin-left: 27px;">{{usuario1.direccion}}</p>
+      <br />
+      <p>BARRIO:</p>
+      <p style="margin-left: 119px;">{{ usuario1.barrio }}</p>
+      <br />
+      <p>TELEFONO:</p>
+      <p style="margin-left: 104px;">{{ usuario1.telefono }}</p>
+      <br />
+      <p>CORREO ELECTRONICO:</p>
+      <p style="margin-left: 39px;">{{ usuario1.correo }}</p>
+      <br />
+    </div>
+    <div class="inline-container primer-espacio">
+      <p>COMPRADOR:</p>
+      <p style="margin-left: 91px;">
+        {{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido
+        }}
+      </p>
+      <br />
+      <p>IDENTIFICACION:</p>
+      <p style="margin-left: 76px;">CC No. {{ usuario2.cedula }}</p>
+      <br />
+      <p>DOMICILIO ACTUAL:</p>
+      <p style="margin-left: 63px;">{{usuario2.direccion}}</p>
+      <br />
+      <p>BARRIO:</p>
+      <p style="margin-left: 119px;">{{ usuario2.barrio }}</p>
+      <br />
+      <p>TELEFONO:</p>
+      <p style="margin-left: 104px;">{{ usuario2.telefono }}</p>
+      <br />
+      <p>CORREO ELECTRONICO:</p>
+      <p style="margin-left: 39px;">{{ usuario2.correo }}</p>
+      <br />
+    </div>
+    <p style="text-align: justify" class="primer-espacio">
       Las partes convienen celebrar el presente contrato de compraventa, que se
       regir&aacute; por las anteriores estipulaciones, las normas aplicables a
       la materia y en especial por las siguientes cl&aacute;usulas:
@@ -266,11 +280,19 @@
         <tr>
           <td class="clase-vehiculo">
             <p><strong>CLASE:</strong>: {{ vehiculo.clase }}</p>
-            <p><strong>Tipo De Carrocer&iacute;a</strong>: {{ vehiculo.tipo_carroceria }}</p>
+            <p>
+              <strong>Tipo De Carrocer&iacute;a</strong>: {{
+              vehiculo.tipo_carroceria }}
+            </p>
             <p><strong>Chasis</strong>: {{ vehiculo.n_chasis }}</p>
             <p><strong>Capacidad</strong>: {{ vehiculo.capacidad }}PSJ</p>
-            <p><strong>Acta, manifiesto</strong>: {{ vehiculo.n_acta_matricula }}</p>
-            <p><strong>Sitio de matr&iacute;cula</strong>: {{ vehiculo.sitio_matricula }}</p>
+            <p>
+              <strong>Acta, manifiesto</strong>: {{ vehiculo.n_acta_matricula }}
+            </p>
+            <p>
+              <strong>Sitio de matr&iacute;cula</strong>: {{
+              vehiculo.sitio_matricula }}
+            </p>
             <p>&nbsp;</p>
           </td>
           <td class="clase-vehiculo">
@@ -286,25 +308,15 @@
             <p><strong>MOTOR</strong>: {{ vehiculo.n_motor }}</p>
             <p><strong>PUERTAS</strong>: {{ vehiculo.puertas }}</p>
             <p><strong>SERVICIO</strong>: {{ vehiculo.tipo_servicio }}</p>
-            <p><strong>FECHA</strong>:<strong>&nbsp;</strong> {{ vehiculo.fecha_matricula }}</p>
+            <p>
+              <strong>FECHA</strong>:<strong>&nbsp;</strong> {{
+              vehiculo.fecha_matricula }}
+            </p>
             <p>&nbsp;</p>
           </td>
         </tr>
       </tbody>
     </table>
-
-    <!-- <p>&nbsp;</p>
-    <p><strong>&nbsp;</strong></p>
-    <p><strong>&nbsp;</strong></p>
-    <p><strong>&nbsp;</strong></p>
-    <p><strong>&nbsp;</strong></p>
-    <p>&nbsp;</p>
-    <p>
-      <strong
-        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;</strong
-      >
-    </p> -->
     <p style="text-align: justify">
       <strong>SEGUNDA - PRECIO: </strong>Como precio del automotor descrito las
       partes acuerdan la suma de
@@ -353,9 +365,8 @@
       >&nbsp; para realizar la respectiva aplicaci&oacute;n.
       --------------------------------------------------------------------------------------------------------------------------------------------------
     </p>
-      <p><strong
-        >CUARTA - OBLIGACIONES DE EL (LOS) VENDEDOR (ES):</strong
-      >
+    <p>
+      <strong>CUARTA - OBLIGACIONES DE EL (LOS) VENDEDOR (ES):</strong>
       EL (LOS) VENDEDOR (ES) hace(n) entrega del veh&iacute;culo EL (LOS)
       VENDEDOR (ES) hace (n) entrega del veh&iacute;culo en buen estado, libre
       de grav&aacute;menes, embargos, multas, impuestos, comparendos de
@@ -367,12 +378,12 @@
       o el (EL COMPRADOR) se obligan a realizar las gestiones de traspaso ante
       las autoridades de tr&aacute;nsito dentro de los ____________ (___)
       d&iacute;as h&aacute;biles posteriores a la firma del presente contrato.
-      </p>
-      <p>
-      <strong>PARAGRAFO 1:</strong>  El vendedor asumir&aacute; la responsabilidad ante TAXI CUPOS
-      SAS, o ante TERCEROS por las irregularidades legales o vicios legales que
-      pueda tener el bien objeto del presente contrato, como la procedencia
-      legal del mismo.
+    </p>
+    <p>
+      <strong>PARAGRAFO 1:</strong> El vendedor asumir&aacute; la
+      responsabilidad ante TAXI CUPOS SAS, o ante TERCEROS por las
+      irregularidades legales o vicios legales que pueda tener el bien objeto
+      del presente contrato, como la procedencia legal del mismo.
       -----------------------------------------------------------------
     </p>
     <p style="text-align: justify">
@@ -404,22 +415,18 @@
       que renuncia al requerimiento de constituci&oacute;n en mora.
       -----------------------------------------------
     </p>
-    <p><strong>OCTAVA</strong> -
-      GASTOS: Los gastos que se ocasionen con motivo de la firma de esta compra
-      venta ser&aacute;n cubiertos de la siguiente manera.
+    <p>
+      <strong>OCTAVA</strong> - GASTOS: Los gastos que se ocasionen con motivo
+      de la firma de esta compra venta ser&aacute;n cubiertos de la siguiente
+      manera.
       -----------------------------------------------------------------------------------------------------------------------------------------
     </p>
     <ul style="text-align: justify" class="claus-list">
-      <li>
-        La retenci&oacute;n en la fuente ser&aacute; asumida por &eacute;l
-        vendedor en su totalidad.
-        --------------------------------------------------------
-      </li>
-      <li>
-        Derechos de traspaso ante el VENTANILLA UNICA DE SERVICIOS
-        &ldquo;VUS&rdquo;, ser&aacute; asumida 50% por cada una de las partes.
-        ------------------------------------------
-      </li>
+      {% for clausula in clausulas %}
+          <li>
+              {{ clausula.texto }}
+          </li>
+      {% endfor %}
     </ul>
     <p style="text-align: justify">
       <strong>NOVENA - CLAUSULA COMPROMISOR&Iacute;A: </strong>Las partes
@@ -430,23 +437,25 @@
       existentes con ocasi&oacute;n a la activaci&oacute;n de la Cl&aacute;usula
       compromisoria ser&aacute;n asumidos por la parte vencida.
       --------------------------------------------
-      <p>
-      <strong>D&Eacute;CIMA</strong>.
-      EL COMPRADOR, en nombre propio o en nombre de la entidad que representa,
-      declara que la informaci&oacute;n suministrada es ver&iacute;dica y da su
-      consentimiento irrevocable a EL VENDEDOR, o a quien en un futuro haga sus
-      veces como titular del cr&eacute;dito solicitado para: a) Consultar, en
-      cualquier tiempo, en DATACR&Eacute;DITO EXPERIAN o en cualquier otra base
-      de datos manejada por un operador, toda la informaci&oacute;n relevante
-      para conocer su desempe&ntilde;o como deudor, su capacidad de pago, la
-      viabilidad&nbsp; para entablar o mantener una relaci&oacute;n contractual
-      y en general para la gesti&oacute;n del riesgo financiero y crediticio,
-      esto es, la iniciaci&oacute;n, mantenimiento y recuperaci&oacute;n de
-      cartera, actividades relacionadas con la prevenci&oacute;n del lavado de
-      activos, y financiaci&oacute;n del terrorismo, y prevenci&oacute;n del
-      fraude. b) Reportar a DATACR&Eacute;DITO EXPERIAN o a cualquier otra base
-      de datos manejada por un operador de datos, tratados o sin tratar, sobre
-      el cumplimiento o incumplimiento de las obligaciones crediticias , sus
+    </p>
+
+    <p>
+      <strong>D&Eacute;CIMA</strong>. EL COMPRADOR, en nombre propio o en nombre
+      de la entidad que representa, declara que la informaci&oacute;n
+      suministrada es ver&iacute;dica y da su consentimiento irrevocable a EL
+      VENDEDOR, o a quien en un futuro haga sus veces como titular del
+      cr&eacute;dito solicitado para: a) Consultar, en cualquier tiempo, en
+      DATACR&Eacute;DITO EXPERIAN o en cualquier otra base de datos manejada por
+      un operador, toda la informaci&oacute;n relevante para conocer su
+      desempe&ntilde;o como deudor, su capacidad de pago, la viabilidad&nbsp;
+      para entablar o mantener una relaci&oacute;n contractual y en general para
+      la gesti&oacute;n del riesgo financiero y crediticio, esto es, la
+      iniciaci&oacute;n, mantenimiento y recuperaci&oacute;n de cartera,
+      actividades relacionadas con la prevenci&oacute;n del lavado de activos, y
+      financiaci&oacute;n del terrorismo, y prevenci&oacute;n del fraude. b)
+      Reportar a DATACR&Eacute;DITO EXPERIAN o a cualquier otra base de datos
+      manejada por un operador de datos, tratados o sin tratar, sobre el
+      cumplimiento o incumplimiento de las obligaciones crediticias , sus
       deberes legales de contenido patrimonial, sus datos de ubicaci&oacute;n y
       contacto, sus solicitudes de cr&eacute;dito, as&iacute; como otros
       atinentes a sus relaciones comerciales, financieras y en general
@@ -472,12 +481,14 @@
       informado sobre las correcciones respectivas efectuadas, en constancia de
       haber sido suficientemente informado sobre los efectos de esta
       cl&aacute;usula, se firma el presente contrato y se acepta la presente
-      autorizaci&oacute;n.
-      --------------------------------------------------
-      <p>
+      autorizaci&oacute;n. --------------------------------------------------
+    </p>
+
+    <p>
       <strong
         >D&Eacute;CIMA PRIMERA. AUTORIZACI&Oacute;N TRATAMIENTO DE DATOS- HABEAS
-        DATA.-</strong>
+        DATA.-</strong
+      >
       Conforme a lo dispuesto por la Ley 1580 de 2012, con la firma del presente
       contrato, autorizo a EL VENDEDOR, sus filiales, socias y accionistas,
       as&iacute; como proveedores, el uso y tratamiento de mis datos personales
@@ -523,8 +534,7 @@
       objeto del presente acuerdo o que puedan afectar la entrega en las
       condiciones descritas.
     </p>
-    <p>&nbsp;</p>
-    <p>
+    <p class="primer-espacio">
       <strong>Observaciones: </strong
       >-------------------------------------------------------------------------------------------------------------------------------------------
     </p>
@@ -558,7 +568,12 @@
           <div class="content">
             <div>
               <p class="p-footer-table">Vendedor</p>
-              <p><strong>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</strong></p>
+              <p>
+                <strong
+                  >{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{
+                  usuario1.s_apellido }}</strong
+                >
+              </p>
               <p>C.C No. {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }}</p>
             </div>
           </div>
@@ -572,7 +587,12 @@
           <div class="content">
             <div>
               <p class="p-footer-table">Comprador</p>
-              <p><strong>{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</strong></p>
+              <p>
+                <strong
+                  >{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{
+                  usuario2.s_apellido }}</strong
+                >
+              </p>
               <p>C.C No. {{ usuario2.cedula }} de {{ usuario2.ciudad_exp }}</p>
             </div>
           </div>

@@ -663,11 +663,35 @@ def generar_pdf(request):
         'vehiculo': vehiculo,
     }
 
+    # Recoger las cláusulas octavas (checkbox y texto) de la solicitud GET
+    clausulas = []
+    i = 1
+    while f'gasto_{i}' in request.GET:  # Iterar hasta que no existan más cláusulas
+        checkbox = request.GET.get(f'gasto_{i}')
+        texto = request.GET.get(f'gasto_{i}_text')
+        if checkbox and texto:  # Solo agregar si ambos valores existen
+            clausulas.append({'checkbox': checkbox, 'texto': texto})
+        i += 1
+
+    # Recoger las opciones (observaciones) de la solicitud GET
+    opciones = []
+    i = 1
+    while f'opcion_{i}' in request.GET:  # Iterar hasta que no existan más opciones
+        checkbox = request.GET.get(f'opcion_{i}')
+        texto = request.GET.get(f'opcion_{i}_text')
+        if checkbox and texto:  # Solo agregar si ambos valores existen
+            opciones.append({'checkbox': checkbox, 'texto': texto})
+        i += 1
+
+    # Agregar cláusulas y opciones al contexto
+    context['clausulas'] = clausulas if clausulas else []
+    context['opciones'] = opciones if opciones else []
+
     # Seleccionar la plantilla según el tipo de contrato
     if tipo_contrato == 'venta':
         template = 'vehiculos/contratos/VENTA_TAXI_CON_CUPO-VTCC-2023.html'
     elif tipo_contrato == 'Compra_Cupo':
-        template = 'vehiculos/contratos/CONTRATO_COMPRA_DE _CUPO-CCC_2023.html'
+        template = 'vehiculos/contratos/CONTRATO_COMPRA_DE_CUPO-CCC_2023.html'
     elif tipo_contrato == 'compra_Particular':
         template = 'vehiculos/contratos/CONTRATO_COMPRA_DE_PARTICULAR-CCP.html'
     elif tipo_contrato == 'compra_usado':

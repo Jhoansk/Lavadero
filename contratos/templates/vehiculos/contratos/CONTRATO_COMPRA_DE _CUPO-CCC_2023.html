@@ -15,7 +15,7 @@
         margin: 0;
         padding: 0;
         font-size: 8pt; /* Tamaño del texto ajustado a 5pt */
-        line-height: 1.5; /* Mejorar legibilidad */
+        line-height: 1.2;
       }
 
       table {
@@ -31,8 +31,8 @@
         page-break-after: auto; /* Permite que el contenido se divida entre páginas */
         page-break-before: auto;
         page-break-inside: avoid;
-        font-size: 11px; /* Aplicar tamaño de texto a párrafos, listas y tablas */
-        margin: 0;
+        font-size: 10px; /* Aplicar tamaño de texto a párrafos, listas y tablas */
+        margin: 2px;
         text-align: justify;
       }
 
@@ -99,28 +99,25 @@
 
       .borde {
         margin-right: 10%;
-        padding: 4px;
-        height: 50px;
-        width: 50px;
+        height: 70px;
+        width: 60px;
         vertical-align: top;
-        background-color: black;
+        /* background-color: black; */
+        border: 4px solid black;
         align-items: center;
         font-size: 6.5pt;
       }
 
       .huella {
-        height: 50px;
-        width: 50px;
+        height: 70px;
+        width: 60px;
         background-color: white;
         font-size: 6.5pt;
       }
 
       .texto_huella {
-        color: white;
-        width: 100px;
-        height: 10px;
+        margin-top: 5px;
         font-size: 6.5pt;
-        text-align: center;
       }
 
       .informacion {
@@ -138,7 +135,10 @@
       .signes {
         display: inline-grid;
         font-size: 6.5pt;
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+        grid-template-columns: repeat(
+          2,
+          1fr
+        ); /* Dos columnas de igual tamaño */
         gap: 5px; /* Espacio entre los elementos */
         width: 1px;
         height: 1px;
@@ -147,8 +147,8 @@
       .signe-cont {
         display: flex;
         font-size: 6.5pt;
-        width: 350px;
-        height: 70px;
+        width: 355px;
+        height: 98px;
       }
 
       .claus-list {
@@ -168,6 +168,13 @@
       }
       .justificado {
         text-align: justify; /* Justificación del texto */
+      }
+      .primer-espacio{
+        margin-top: 8px;
+      }
+      .inline-container p {
+        display: inline;
+        justify-content: start;
       }
     </style>
   </head>
@@ -203,32 +210,30 @@
       </table>
 
       <p style="font-size: 18px; text-align: center;"><strong>COMPRAVENTA DE VEH&Iacute;CULO AUTOMOTOR TIPO TAXI CON CESION DE DERECHOS DE REPOSICI&Oacute;N CUPO</strong></p>
-
-      <div class="informacion">
-        <p><strong>&nbsp;</strong></p>
+  
         <p><strong>LUGAR CELEBRACI&Oacute;N DEL CONTRATO: BOGOT&Aacute; D.C.</strong></p>
-        <p>&nbsp;</p>
-        <p>VENDEDOR: {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p>
-        <p>IDENTIFICACI&Oacute;N: &nbsp;&nbsp; C.C. No. {{ usuario1.cedula }}</p>
-        <p>DOMICILIO CONTRACTUAL: {{usuario1.direccion}}</p>
-        <p>BARRI&Oacute;: {{ usuario1.barrio }}</p>
-        <p>CIUDAD: {{usuario1.ciudad }}</p>
-        <p>TEL&Eacute;FONO: {{ usuario1.telefono }}</p>
-        <p>CORREO ELECTR&Oacute;NICO: {{ usuario1.correo }}</p>
-      </div>
+        <div class="inline-container primer-espacio">
+          <p>VENDEDOR:</p><p style="margin-left: 100px;">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p><br>
+          <p>IDENTIFICACI&Oacute;N:</p><p style="margin-left: 76px;">C.C. No. {{ usuario1.cedula }}</p><br> 
+          <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{usuario1.direccion}}</p><br> 
+          <p>BARRI&Oacute;:</p><p style="margin-left: 119px;">{{ usuario1.barrio }}</p><br>
+          <p>CIUDAD:</p><p style="margin-left: 119px;">{{usuario1.ciudad }}</p><br> 
+          <p>TEL&Eacute;FONO:</p><p style="margin-left: 104px;">{{ usuario1.telefono }}</p><br> 
+          <p>CORREO ELECTR&Oacute;NICO:</p><p style="margin-left: 39px;">{{ usuario1.correo }}</p>
+        </div> 
+        <div class="inline-container primer-espacio">
+          <p>COMPRADOR:</p><p style="margin-left: 91px;">{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p><br> 
+          <p>IDENTIFICACI&Oacute;N:</p><p style="margin-left: 76px;">C.C. No. {{ usuario2.cedula }}</p><br> 
+         <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{usuario2.direccion}}</p><br> 
+          <p>BARRI&Oacute;:</p><p style="margin-left: 119px;">{{ usuario2.barrio }}</p><br> 
+          <p>CIUDAD:</p><p style="margin-left: 119px;">{{usuario2.ciudad }}</p><br> 
+          <p>TEL&Eacute;FONO:</p><p style="margin-left: 104px;">{{ usuario2.telefono }}</p><br> 
+          <p>CORREO ELECTR&Oacute;NICO:</p><p style="margin-left: 39px;">{{ usuario2.correo }}</p> 
+        </div>
+          
+             
 
-      <div class="informacion">
-        <p>&nbsp;</p>
-        <p>COMPRADOR: {{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p>
-        <p>IDENTIFICACI&Oacute;N: &nbsp;&nbsp; C.C. No. {{ usuario2.cedula }}</p>
-        <p>DOMICILIO CONTRACTUAL: {{usuario2.direccion}}</p>
-        <p>BARRI&Oacute;: {{ usuario2.barrio }}</p>
-        <p>CIUDAD: {{usuario2.ciudad }}</p>
-        <p>TEL&Eacute;FONO: {{ usuario2.telefono }}</p>
-        <p>CORREO ELECTR&Oacute;NICO: {{ usuario2.correo }}</p>
-      </div>
-
-      <p><strong>PRIMERA - OBJETO DEL CONTRATO: </strong>mediante el presente contrato, EL(LOS) VENDEDOR(ES) transfiere(n) a t&iacute;tulo de venta y EL(LOS) COMPRADOR(ES) adquiere(n) la propiedad del veh&iacute;culo automotor junto con los derechos de reposici&oacute;n del cupo de Bogot&aacute; que a continuaci&oacute;n se identifican:</p>
+      <p class="primer-espacio"><strong>PRIMERA - OBJETO DEL CONTRATO: </strong>mediante el presente contrato, EL(LOS) VENDEDOR(ES) transfiere(n) a t&iacute;tulo de venta y EL(LOS) COMPRADOR(ES) adquiere(n) la propiedad del veh&iacute;culo automotor junto con los derechos de reposici&oacute;n del cupo de Bogot&aacute; que a continuaci&oacute;n se identifican:</p>
 
       <table style="width: 100%; border-collapse: collapse;">
         <tbody>
@@ -351,22 +356,12 @@
         de la firma de esta compraventa ser&aacute;n cubiertos de la siguiente
         manera.
       </p>
-      <ul class="justificado claus-list">
-        <li>
-          Los gastos de traspaso ser&aacute;n asumidos 50% por el comprador y
-          50% por el vendedor.---------------------------------------
-        </li>
-        <li class="justificado">
-          La chatarrizaci&oacute;n y derechos de cancelaci&oacute;n de
-          matr&iacute;cula ser&aacute;n asumidos en su totalidad por el
-          comprador. ----------
-        </li>
-        <li class="justificado">
-          La retenci&oacute;n en la fuente ser&aacute; asumida por el vendedor
-          en su totalidad.
-          -----------------------------------------------------------
-        </li>
-        <li>CLAUSULA EXTRA</li>
+      <ul style="text-align: justify" class="claus-list">
+        {% for clausula in clausulas %}
+            <li>
+                {{ clausula.texto }}
+            </li>
+        {% endfor %}
       </ul>
       <p class="justificado">
         <strong >NOVENA - CLAUSULA COMPROMISOR&Iacute;A: </strong>Las partes
@@ -524,36 +519,12 @@
         <strong>Observaciones: </strong
         >---------------------------------------------------------------------------------------------------------------------------------------
       </p>
-      <ul class="claus-list">
-        <li class="justificado">
-          Se aclara que el veh&iacute;culo es un taxi del cual el vendedor cede
-          al comprador todos los derechos de reposici&oacute;n del cupo y del
-          taxi.
-        </li>
-        <li class="justificado">
-          El veh&iacute;culo se entregar&aacute; por parte del vendedor al
-          comprador a paz y salvo por todo concepto respecto al carro y al cupo.
-          ------
-        </li>
-        <li class="justificado">
-          El veh&iacute;culo se entregar&aacute; al comprador en el mismo estado
-          visto y funcionando. ----------------------------------------------
-        </li>
-        <li class="justificado">
-          El vendedor se compromete a asistir a cualquier llamado por parte de
-          cualquier entidad competente respecto al taxi y su cupo. -
-        </li>
-        <li class="justificado">
-          El veh&iacute;culo ser&aacute; traspasado a nombre del comprador o a
-          quien este designe. --------------------------------------------------
-        </li>
-        <li class="justificado">
-          El vendedor se compromete a completar la documentaci&oacute;n y
-          requisitos solicitados para realizar el primer pago de este contrato
-          en un tiempo m&aacute;ximo de cinco (5) d&iacute;as h&aacute;biles
-          siguientes a la firma de este contrato.
-          ---------------------------------------------
-        </li>
+      <ul style="text-align: justify" class="claus-list">
+        {% for opcion in opciones %}
+          <li>
+              {{ opcion.texto }}
+          </li>
+        {% endfor %}
       </ul>
       <p class="justificado">
         En se&ntilde;al de conformidad las partes contratantes suscriben el

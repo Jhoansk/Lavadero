@@ -15,7 +15,7 @@
         margin: 0;
         padding: 0;
         font-size: 8pt; /* Tamaño del texto ajustado a 5pt */
-        line-height: 1.5; /* Mejorar legibilidad */
+        line-height: 1.2;
       }
 
       table {
@@ -31,8 +31,8 @@
         page-break-after: auto; /* Permite que el contenido se divida entre páginas */
         page-break-before: auto;
         page-break-inside: avoid;
-        font-size: 11px; /* Aplicar tamaño de texto a párrafos, listas y tablas */
-        margin: 0;
+        font-size: 10px; /* Aplicar tamaño de texto a párrafos, listas y tablas */
+        margin: 2px;
         text-align: justify;
       }
 
@@ -99,28 +99,25 @@
 
       .borde {
         margin-right: 10%;
-        padding: 4px;
-        height: 50px;
-        width: 50px;
+        height: 70px;
+        width: 60px;
         vertical-align: top;
-        background-color: black;
+        /* background-color: black; */
+        border: 4px solid black;
         align-items: center;
         font-size: 6.5pt;
       }
 
       .huella {
-        height: 50px;
-        width: 50px;
+        height: 70px;
+        width: 60px;
         background-color: white;
         font-size: 6.5pt;
       }
 
       .texto_huella {
-        color: white;
-        width: 100px;
-        height: 10px;
+        margin-top: 5px;
         font-size: 6.5pt;
-        text-align: center;
       }
 
       .informacion {
@@ -150,8 +147,8 @@
       .signe-cont {
         display: flex;
         font-size: 6.5pt;
-        width: 350px;
-        height: 70px;
+        width: 355px;
+        height: 98px;
       }
 
       .claus-list {
@@ -171,6 +168,12 @@
       }
       .justificado {
         text-align: justify; /* Justificación del texto */
+      }
+      .primer-espacio{
+        margin-top: 8px;
+      }
+      .inline-container p {
+        display: inline;
       }
     </style>
   </head>
@@ -209,47 +212,26 @@
         DE UN &ldquo;CUPO&rdquo; DE TAXI PARA BOGOT&Aacute;</strong
       >
     </p>
-    <p>
-      CEDENTE: {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}
-    </p>
-    <p>
-      IDENTIFICACI&Oacute;N:
-      C.C. No.{{ usuario1.cedula }}
-    </p>
-    <p>
-      DOMICILIO CONTRACTUAL: {{usuario1.direccion}}
-    </p>
-    <p>
-      BARRI&Oacute;: {{ usuario1.barrio }}
-    </p>
-    <p>
-      CIUDAD: {{usuario1.ciudad }}
-    </p>
-    <p>
-      TEL&Eacute;FONO: {{ usuario1.telefono }}
-    </p>
-    <p>
-      CORREO
-      ELECTR&Oacute;NICO: {{ usuario1.correo }}
-    </p>
-    <p>&nbsp;</p>
-    <p>
-      CESIONARIO: {{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}
-    </p>
-    <p>
-      IDENTIFICACI&Oacute;N:
-      C.C. No.{{ usuario2.cedula }}
-    </p>
-    <p>DOMICILIO CONTRACTUAL: {{usuario2.direccion}}</p>
-    <p>
-      BARRIO: {{ usuario2.barrio }}
-    </p>
-    <p>
-      TEL&Eacute;FONO: {{ usuario2.telefono }}
-    </p>
-    <p>CORREO ELECTR&Oacute;NICO: {{ usuario2.correo }} </p>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-    <p style="text-align: justify">
+    <div class="inline-container primer-espacio">
+      <p>CEDENTE:</p><p style="margin-left: 109px;">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p><br>
+      <p>IDENTIFICACI&Oacute;N:</p><p style="margin-left: 76px;">C.C. No. {{ usuario1.cedula }}</p><br>
+      <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{usuario1.direccion}}</p><br>
+      <p>BARRI&Oacute;:</p><p style="margin-left: 119px;">{{ usuario1.barrio }}</p><br>
+      <p>CIUDAD:</p><p style="margin-left: 119px;">{{usuario1.ciudad }}</p><br>
+      <p>TEL&Eacute;FONO:</p><p style="margin-left: 104px;">{{ usuario1.telefono }}</p><br>
+      <p>CORREO ELECTR&Oacute;NICO:</p><p style="margin-left: 39px;">{{ usuario1.correo }}</p><br>
+    </div>
+    <div class="inline-container primer-espacio">
+      <p>CESIONARIO:</p><p style="margin-left: 95px;">{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p><br>
+      <p>IDENTIFICACI&Oacute;N:</p><p style="margin-left: 76px;">C.C. No.{{ usuario2.cedula }}</p><br>
+      <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{usuario2.direccion}}</p><br>
+      <p>BARRI&Oacute;:</p><p style="margin-left: 119px;">{{ usuario2.barrio }}</p><br>
+      <p>CIUDAD:</p><p style="margin-left: 119px;">{{usuario2.ciudad }}</p><br>
+      <p>TEL&Eacute;FONO:</p><p style="margin-left: 104px;">{{ usuario2.telefono }}</p><br>
+      <p>CORREO ELECTR&Oacute;NICO:</p><p style="margin-left: 39px;">{{ usuario2.correo }}</p><br>
+    </div>
+    
+    <p style="text-align: justify" class="primer-espacio">
       Las partes acordamos celebrar el presente contrato, conforme a las
       siguientes cl&aacute;usulas: --------------------------------------
     </p>
@@ -492,9 +474,8 @@
         vendedor.
         ----------------------------------------------------------------------------------------------------
       </li>
-    </ul>
-    <p style="text-align: justify">&nbsp;</p>
-    <p style="text-align: justify">
+    </ul> 
+    <p style="text-align: justify" class="primer-espacio">
       En se&ntilde;al de conformidad las partes contratantes suscriben el
       presente documento en la ciudad de Bogot&aacute; D.C, a los ________ (___)
       d&iacute;as del mes de _______ del a&ntilde;o dos mil veintitr&eacute;s

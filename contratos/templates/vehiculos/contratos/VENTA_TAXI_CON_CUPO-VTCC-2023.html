@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulario de Compra</title>
     <style>
-      @page {
+     @page {
         size: legal; /* Tamaño del papel */
         margin: 10mm; /* Márgenes de la página */
       }
@@ -15,7 +15,7 @@
         margin: 0;
         padding: 0;
         font-size: 8pt; /* Tamaño del texto ajustado a 5pt */
-        line-height: 1.5; /* Mejorar legibilidad */
+        line-height: 1.2;
       }
 
       table {
@@ -31,8 +31,9 @@
         page-break-after: auto; /* Permite que el contenido se divida entre páginas */
         page-break-before: auto;
         page-break-inside: avoid;
-        font-size: 12px; /* Aplicar tamaño de texto a párrafos, listas y tablas */
+        font-size: 10px; /* Aplicar tamaño de texto a párrafos, listas y tablas */
         margin: 2px;
+        text-align: justify;
       }
 
       h1,
@@ -98,28 +99,25 @@
 
       .borde {
         margin-right: 10%;
-        padding: 4px;
-        height: 50px;
-        width: 50px;
+        height: 70px;
+        width: 60px;
         vertical-align: top;
-        background-color: black;
+        /* background-color: black; */
+        border: 4px solid black;
         align-items: center;
         font-size: 6.5pt;
       }
 
       .huella {
-        height: 50px;
-        width: 50px;
+        height: 70px;
+        width: 60px;
         background-color: white;
         font-size: 6.5pt;
       }
 
       .texto_huella {
-        color: white;
-        width: 100px;
-        height: 10px;
+        margin-top: 5px;
         font-size: 6.5pt;
-        text-align: center;
       }
 
       .informacion {
@@ -149,8 +147,8 @@
       .signe-cont {
         display: flex;
         font-size: 6.5pt;
-        width: 350px;
-        height: 70px;
+        width: 355px;
+        height: 98px;
       }
 
       .claus-list {
@@ -170,6 +168,9 @@
       }
       .justificado {
         text-align: justify; /* Justificación del texto */
+      }
+      .primer-espacio{
+        margin-top: 8px;
       }
     </style>
   </head>
@@ -207,12 +208,10 @@
         >CONTRATO DE COMPRAVENTA DE UN TAXI CON CUPO PARA BOGOT&Aacute;</strong
       >
     </p>
-    <p><strong>&nbsp;</strong></p>
     <p>
       <strong>LUGAR CELEBRACI&Oacute;N DEL CONTRATO: BOGOT&Aacute; D.C.</strong>
     </p>
-    <p>&nbsp;</p>
-    <p>
+    <p class="primer-espacio">
       VENDEDOR: {{usuario1.nombre}} {{usuario1.p_apellido}} {{usuario1.s_apellido}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </p>
     <p>
@@ -235,9 +234,7 @@
       CORREO
       ELECTR&Oacute;NICO: {{usuario1.correo}}
     </p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>
+    <p class="primer-espacio">
       COMPRADOR: {{usuario2.nombre}} {{usuario2.p_apellido}} {{usuario1.s_apellido}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </p>
     <p>
@@ -256,8 +253,8 @@
       CORREO
       ELECTR&Oacute;NICO: {{usuario2.correo}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </p>
-    <p>&nbsp;</p>
-    <p style="text-align: justify">
+
+    <p style="text-align: justify" class="primer-espacio">
       Las partes celebramos el presente contrato de compraventa de un taxi nuevo
       con cupo de uso urbano para la ciudad de Bogot&aacute;, el cual se
       regir&aacute; por las siguientes cl&aacute;usulas:
