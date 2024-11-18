@@ -181,7 +181,7 @@
     <table>
       <!-- Primera parte: Fecha, Elaboro, Reviso, Asesor, Refiero -->
       <tr>
-        <td rowspan="2" class="header-title">CONTRATO COMPRA DE CUPO</td>
+        <td rowspan="2" class="header-title">CONTRATO VENTA DE USADO</td>
         <td class="header-row">Fecha:</td>
         <td class="header-row">Elaboro:</td>
         <td class="header-row">Reviso:</td>
@@ -211,7 +211,7 @@
     <table>
     <p style="font-size: 18px; text-align: center;">
       <strong
-        >COMPRAVENTA DE VEH&Iacute;CULO AUTOMOTOR TIPO TAXI CON CESION DE
+        >CONTRATO DE COMPRAVENTA DE VEH&Iacute;CULO AUTOMOTOR TIPO TAXI CON CESION DE
         DERECHOS DE REPOSICI&Oacute;N CUPO</strong
       >
     </p>
@@ -249,7 +249,7 @@
       automotor junto con los derechos de reposici&oacute;n del cupo de
       Bogot&aacute; que a continuaci&oacute;n se identifican:
     </p>
-    <table>
+    <table class="primer-espacio">
       <tbody>
         <tr>
           <td width="279" class="clase-vehiculo">
@@ -297,21 +297,21 @@
         </tr>
         <tr>
           <td width="279" class="clase-vehiculo">
-            <p>ACTA O MANIFIESTO: {{ vehiculo.n_acta_matricula }}</p>
+            <p>ACTA O MANIFIESTO:</p>
           </td>
           <td width="184" class="clase-vehiculo">
-            <p>FECHA: {{ vehiculo.fecha_matricula }}</p>
+            <p>FECHA:</p>
           </td>
           <td width="215" class="clase-vehiculo">
-            <p>CIUDAD: {{ vehiculo.ciudad_vehiculo }}</p>
+            <p>CIUDAD:</p>
           </td>
         </tr>
         <tr>
           <td width="279" class="clase-vehiculo">
-            <p>SITIO DE MATR&Iacute;CULA: {{ vehiculo.sitio_matricula }}</p>
+            <p>SITIO DE MATR&Iacute;CULA:</p>
           </td>
           <td width="184" class="clase-vehiculo">
-            <p>PLACA No.: {{ vehiculo.placa }}</p>
+            <p>PLACA No.:</p>
           </td>
           <td width="215" class="clase-vehiculo">
             <p>No. ORDEN:</p>
@@ -325,6 +325,7 @@
             <p>TRJTA/OP:</p>
           </td>
           <td width="215" class="clase-vehiculo">
+            <p>&nbsp;</p>
           </td>
         </tr>
       </tbody>
@@ -334,7 +335,7 @@
       los derechos de reposici&oacute;n cupo de Bogot&aacute;, se pacta la suma
       de:
       <strong
-        >___________________ MILLONES DE PESOS MC/TE ($___.000.000).</strong
+        >{{ pacta_suma_letras }} MILLONES DE PESOS MC/TE (${{ pacta_suma }}).</strong
       >
       ------------------------------
     </p>
@@ -347,13 +348,13 @@
     </p>
     <ul style="text-align: justify" class="claus-list">
       <li>
-        El comprador se compromete a cancelar la suma de ________________
-        ($_________), posteriores a los______ (___) d&iacute;as h&aacute;biles
+        El comprador se compromete a cancelar la suma de {{ primer_pago_letras }}
+        (${{ primer_pago }}), posteriores a los______ (___) d&iacute;as h&aacute;biles
         siguientes a...
       </li>
       <li>
-        El comprador se compromete a cancelar la suma de ________________
-        ($_________), posteriores a los______ (___) d&iacute;as h&aacute;biles
+        El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }}
+        (${{ segundo_pago }}), posteriores a los______ (___) d&iacute;as h&aacute;biles
         siguientes a...
       </li>
     </ul>
@@ -378,7 +379,7 @@
     </p>
     <p style="text-align: justify">
       <strong>CUARTA - OBLIGACIONES DE EL (LOS) VENDEDOR (ES): </strong>EL(LOS)
-      VENDEDOR(ES) hace(n) entrega del veh&iacute;culo en regular estado, libre
+      VENDEDOR(ES) hace(n) entrega del veh&iacute;culo en buen estado, libre
       de grav&aacute;menes, embargos, multas, impuestos, comparendos de
       tr&aacute;nsito y/o administrativos, pactos de reserva de dominio y
       cualquier otra circunstancia que afecte el libre comercio del bien objeto
@@ -422,16 +423,15 @@
       Comercio.-------------------------------------------------------------------------------------------------------------------
     </p>
     <p style="text-align: justify">
-      <strong>S&Eacute;PTIMA - CL&Aacute;USULA PENAL: </strong>: Se acuerda como
-      sanci&oacute;n por incumplimiento del contrato el 10% del valor de este a
-      cargo de la parte que incumpla y a favor de la otra, valor que ser&aacute;
-      exigible sin necesidad de requerimientos, constituciones en mora ni
-      declaraciones judiciales, para lo cual el presente contrato constituye
-      t&iacute;tulo ejecutivo, para lo cual bastar&aacute; con la
-      manifestaci&oacute;n expresa en la demanda ejecutiva por parte incumplida
-      sobre el incumplimiento predicado PAR&Aacute;GRAFO: EL COMPRADOR
-      manifiesta que renuncia al requerimiento de constituci&oacute;n en mora.
-      -----------------------------------------------------------------------------------------------------------------------------------------------------------
+      <strong>S&Eacute;PTIMA - CL&Aacute;USULA PENAL: </strong>: Se acuerda como sanci&oacute;n
+      por incumplimiento del contrato el 10% del valor de este a cargo de la
+      parte que incumpla y a favor de la otra, valor que ser&aacute; exigible
+      sin necesidad de requerimientos, constituciones en mora ni declaraciones
+      judiciales, para lo cual el presente contrato constituye t&iacute;tulo
+      ejecutivo, para lo cual bastar&aacute; con la manifestaci&oacute;n expresa
+      en la demanda ejecutiva por parte incumplida sobre el incumplimiento
+      predicado PAR&Aacute;GRAFO: EL COMPRADOR manifiesta que renuncia al
+      requerimiento de constituci&oacute;n en mora.-
     </p>
     <p style="text-align: justify">
       <strong>OCTAVA - GASTOS: </strong>Los gastos que se ocasionen con motivo
@@ -564,6 +564,10 @@
           <div class="content">
             <div>
               <p class="p-footer-table">Vendedor</p>
+              <br>
+                <br>
+                <br>
+                <p>____________________________________________</p>
                 <p><strong>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</strong></p>
                 <p>C.C No. {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }}</p>
               </div>
@@ -578,6 +582,10 @@
             <div class="content">
               <div>
                 <p class="p-footer-table">Comprador</p>
+                <br>
+                <br>
+                <br>
+                <p>____________________________________________</p>
                 <p><strong>{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</strong></p>
                 <p>C.C No. {{ usuario2.cedula }} de {{ usuario2.ciudad_exp }}</p>
             </div>
@@ -592,6 +600,10 @@
           <div class="content">
             <div>
               <p class="p-footer-table">Comprador</p>
+              <br>
+                <br>
+                <br>
+                <p>____________________________________________</p>
               <span class="signature"></span>
               <span class="cc-text">C.C No.</span>
             </div>
@@ -606,6 +618,10 @@
           <div class="content">
             <div>
               <p class="p-footer-table">Testigo</p>
+              <br>
+                <br>
+                <br>
+                <p>____________________________________________</p>
               <span class="signature"></span>
               <span class="cc-text">C.C No.</span>
             </div>

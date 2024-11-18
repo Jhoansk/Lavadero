@@ -178,7 +178,7 @@
     <table>
       <!-- Primera parte: Fecha, Elaboro, Reviso, Asesor, Refiero -->
       <tr>
-        <td rowspan="2" class="header-title">CONTRATO COMPRA DE CUPO</td>
+        <td rowspan="2" class="header-title">CONTRATO VENTA DE USADO CON CUPO</td>
         <td class="header-row">Fecha:</td>
         <td class="header-row">Elaboro:</td>
         <td class="header-row">Reviso:</td>
@@ -211,8 +211,8 @@
     <p>
       <strong>LUGAR CELEBRACI&Oacute;N DEL CONTRATO: BOGOT&Aacute; D.C.</strong>
     </p>
-    <p class="primer-espacio">
-      VENDEDOR: {{usuario1.nombre}} {{usuario1.p_apellido}} {{usuario1.s_apellido}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p class="primer-espacio" >
+      VENDEDOR: {{usuario1.nombre}} {{usuario1.p_apellido}} {{usuario1.s_apellido}}
     </p>
     <p>
       IDENTIFICACI&Oacute;N: {{usuario1.tipo_doc}} C.C. No. {{usuario1.cedula}} de {{usuario1.ciudad_exp}}
@@ -271,7 +271,7 @@
       <strong>CLAUSULA SEGUNDA.- PRECIO: </strong>Las partes han acordado como
       valor del referido taxi con su respectivo cupo, de la ciudad de
       Bogot&aacute;, la suma de
-      <strong>_____________ MILLONES DE PESOS MC/TE ($__.000.000).</strong>
+      <strong>{{ pacta_suma_letras }} MILLONES DE PESOS MC/TE (${{ pacta_suma }}).</strong>
       ------------------------------
     </p>
     <p style="text-align: justify">
@@ -282,13 +282,13 @@
     </p>
     <ul style="text-align: justify" class="claus-list">
       <li class="list-item">
-        El comprador se compromete a cancelar la suma de ________________
-        ($_________), posteriores a los______ (___) d&iacute;as h&aacute;biles
+        El comprador se compromete a cancelar la suma de {{ primer_pago_letras }}
+        (${{ primer_pago }}), posteriores a los______ (___) d&iacute;as h&aacute;biles
         siguientes a...
       </li>
       <li>
-        El comprador se compromete a cancelar la suma de ________________
-        ($_________), posteriores a los______ (___) d&iacute;as h&aacute;biles
+        El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }}
+        (${{ segundo_pago }}), posteriores a los______ (___) d&iacute;as h&aacute;biles
         siguientes a...
       </li>
     </ul>
@@ -357,10 +357,15 @@
     </p>
     </p>
     <p style="text-align: justify">
-      <strong>CLAUSULA SEXTA.- CLAUSULA PENAL: </strong>Las partes establecen
-      como sanci&oacute;n a cargo de qui&eacute;n incumpla en una o en varias
-      cl&aacute;usulas el presente acuerdo, la suma correspondiente al DIEZ por
-      ciento (10%) del valor total del presente contrato.
+      <strong>CLAUSULA SEXTA.- CLAUSULA PENAL: </strong> Se acuerda como sanci&oacute;n
+      por incumplimiento del contrato el 10% del valor de este a cargo de la
+      parte que incumpla y a favor de la otra, valor que ser&aacute; exigible
+      sin necesidad de requerimientos, constituciones en mora ni declaraciones
+      judiciales, para lo cual el presente contrato constituye t&iacute;tulo
+      ejecutivo, para lo cual bastar&aacute; con la manifestaci&oacute;n expresa
+      en la demanda ejecutiva por parte incumplida sobre el incumplimiento
+      predicado PAR&Aacute;GRAFO: EL COMPRADOR manifiesta que renuncia al
+      requerimiento de constituci&oacute;n en mora.-
     </p>
     <p style="text-align: justify">
       <strong>CLAUSULA SEPTIMA.- ENTREGA DEL TAXI CON CUPO.- </strong>Se
@@ -518,22 +523,31 @@
         <td class="signe-cont">
           <div class="content">
             <div>
-              <p class="p-footer-table">Vendedor: {{usuario1.nombre}} {{usuario1.p_apellido}} {{usuario1.s_apellido}}</p>
-              <span></span>
-              <span>{{usuario1.tipo_doc}} No. {{usuario1.cedula}} de {{usuario1.ciudad}}</span>
+              <p class="p-footer-table">Vendedor</p>
+              <br>
+                <br>
+                <br>
+                <p>____________________________________________</p>
+                <p><strong>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</strong></p>
+                <p>C.C No. {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }}</p>
+              </div>
             </div>
-          </div>
-          <div class="borde">
-            <div class="huella"></div>
-            <div class="texto_huella">Huella</div>
-          </div>
-        </td>
-        <!-- Comprador -->
-        <td class="signe-cont">
-          <div class="content">
-            <div>
-              <p class="p-footer-table">Comprador: {{usuario2.nombre}} {{usuario2.p_apellido}} {{usuario2.s_apellido}}</p>
-              <p>{{usuario2.tipo_doc}} No. {{usuario2.cedula}} de {{usuario2.ciudad}}</p>
+            <div class="borde">
+              <div class="huella"></div>
+              <div class="texto_huella">Huella</div>
+            </div>
+          </td>
+          <!-- Comprador -->
+          <td class="signe-cont">
+            <div class="content">
+              <div>
+                <p class="p-footer-table">Comprador</p>
+                <br>
+                <br>
+                <br>
+                <p>____________________________________________</p>
+                <p><strong>{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</strong></p>
+                <p>C.C No. {{ usuario2.cedula }} de {{ usuario2.ciudad_exp }}</p>
             </div>
           </div>
           <div class="borde">
@@ -545,9 +559,13 @@
         <td class="signe-cont">
           <div class="content">
             <div>
-              <p class="p-footer-table">Comprador: {{usuario2.nombre}} {{usuario2.p_apellido}} {{usuario2.s_apellido}}</p>
+              <p class="p-footer-table">Comprador</p>
+              <br>
+                <br>
+                <br>
+                <p>____________________________________________</p>
               <span class="signature"></span>
-              <span class="cc-text">{{usuario2.tipo_doc}} No. {{usuario2.cedula}} de {{usuario2.ciudad}}</span>
+              <span class="cc-text">C.C No.</span>
             </div>
           </div>
           <div class="borde">
@@ -560,6 +578,10 @@
           <div class="content">
             <div>
               <p class="p-footer-table">Testigo</p>
+              <br>
+                <br>
+                <br>
+                <p>____________________________________________</p>
               <span class="signature"></span>
               <span class="cc-text">C.C No.</span>
             </div>

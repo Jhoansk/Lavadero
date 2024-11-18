@@ -178,7 +178,7 @@
     <table>
       <!-- Primera parte: Fecha, Elaboro, Reviso, Asesor, Refiero -->
       <tr>
-        <td rowspan="2" class="header-title">CONTRATO COMPRA DE CUPO</td>
+        <td rowspan="2" class="header-title">CONTRATO DE CHATARRIZACION</td>
         <td class="header-row">Fecha:</td>
         <td class="header-row">Elaboro:</td>
         <td class="header-row">Reviso:</td>
@@ -211,24 +211,23 @@
     </p>
     <p>&nbsp;</p>
     <p style="text-align: justify">
-      Entre los suscritos <strong>___________________<em>,</em></strong> mayor
+      Entre los suscritos <strong>{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}<em>,</em></strong> mayor
       de edad, identificado con la c&eacute;dula de ciudadan&iacute;a No.
-      ____________ de Bogot&aacute;, actuando como _______________ de la empresa
+      {{ usuario2.cedula }} de Bogot&aacute;, actuando como _______________ de la empresa
       TAXI CUPOS S.A.S. identificada con Nit. <strong>900486003-2</strong> con
       sede en la direcci&oacute;n calle 13 No. 46-03 de Bogot&aacute;,
       tel&eacute;fono 7443963 / ___________, Email:
-      <a href="mailto:____________@taxicupos.com">____________@taxicupos.com</a
-      ><u>.co</u>, quien para efectos de este contrato se denominara
+      {{ usuario2.correo }}, quien para efectos de este contrato se denominara
       <strong>EL TRAMITADOR</strong>, y de la otra parte:
-      <strong>________________</strong> mayor de edad, identificado (a) con la
-      c&eacute;dula de ciudadan&iacute;a No. _________ de ______, quien
+      <strong>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</strong> mayor de edad, identificado (a) con la
+      c&eacute;dula de ciudadan&iacute;a No. {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }}, quien
       podr&aacute; ser notificado (a) o contactado (a) en la siguiente
-      direcci&oacute;n, _______ No. _____, Tel. _____________ Email:
-      <a href="mailto:jimenezemperatriz0@gmail.com">__________________</a> quien
+      direcci&oacute;n, {{usuario1.direccion}}, Tel. {{ usuario1.telefono }} Email:
+      {{ usuario1.correo }} quien
       en adelante se denominar&aacute; como <strong>PROPIETARIO</strong>,
       hacemos constar que de mutuo acuerdo hemos convenido en celebrar un
       <strong>CONTRATO DE SERVICIO DE CHATARRIZACION </strong>del
-      veh&iacute;culo de placas _____ que se regir&aacute; por las normas
+      veh&iacute;culo de placas {{vehiculo.placa}} que se regir&aacute; por las normas
       aplicables a la materia y especialmente por las siguientes
       cl&aacute;usulas: --------------------------------
     </p>
@@ -246,8 +245,8 @@
         >SEGUNDA </strong
       >- PRECIO: Las partes han acordado como precio del bien objeto, la suma
       de:<strong>
-        ________________&shy;&shy;&shy;&shy;&shy;&shy; DE PESOS M/CTE
-        ($________________)</strong
+        {{ pacta_suma_letras }}&shy;&shy;&shy;&shy;&shy;&shy; DE PESOS M/CTE
+        (${{ pacta_suma }})</strong
       >
       valor que PROPIETARIO pagar&aacute; al tramitador de la siguiente manera:
       -----------
@@ -256,16 +255,16 @@
       <li>
         El propietario se compromete a cancelar la suma de
         <strong
-          >&shy;&shy;&shy;&shy;&shy;_____________________ DE PESOS M/CTE
-          ($________________) </strong
+          >&shy;&shy;&shy;&shy;&shy;{{ primer_pago_letras }} DE PESOS M/CTE
+          (${{ primer_pago }}) </strong
         >dentro de los ______ (__) d&iacute;as h&aacute;biles siguientes
         a&hellip;&hellip;&hellip;&hellip;.---------------------
       </li>
       <li>
         El propietario se compromete a cancelar la suma de
         <strong
-          >&shy;&shy;&shy;&shy;&shy;_____________________ DE PESOS M/CTE
-          ($________________) </strong
+          >&shy;&shy;&shy;&shy;&shy;{{ segundo_pago_letras }} DE PESOS M/CTE
+          (${{ segundo_pago }}) </strong
         >dentro de los ______ (__) d&iacute;as h&aacute;biles siguientes
         a&hellip;&hellip;&hellip;&hellip;.---------------------
       </li>
@@ -289,12 +288,16 @@
       >&nbsp; para realizar la respectiva aplicaci&oacute;n.
       ---------------------------------------------------------------------------------------------------------------------------------</p><p><strong
         >TERCERA. </strong
-      >CLAUSULA PENAL: Se acuerda como sanci&oacute;n por incumplimiento del
-      contrato el 10% del valor de este a cargo de la parte que incumpla y a
-      favor de la otra, valor que ser&aacute; exigible sin necesidad de
-      requerimientos, constituciones en mora ni declaraciones judiciales, para
-      lo cual el presente contrato constituye t&iacute;tulo ejecutivo.
-      ----------- <br />
+      >CLAUSULA PENAL: Se acuerda como sanci&oacute;n
+      por incumplimiento del contrato el 10% del valor de este a cargo de la
+      parte que incumpla y a favor de la otra, valor que ser&aacute; exigible
+      sin necesidad de requerimientos, constituciones en mora ni declaraciones
+      judiciales, para lo cual el presente contrato constituye t&iacute;tulo
+      ejecutivo, para lo cual bastar&aacute; con la manifestaci&oacute;n expresa
+      en la demanda ejecutiva por parte incumplida sobre el incumplimiento
+      predicado PAR&Aacute;GRAFO: EL COMPRADOR manifiesta que renuncia al
+      requerimiento de constituci&oacute;n en mora.- <br />
+      
       </p><p><strong>CUARTA. </strong>GASTOS Los gastos incluidos en el servicio de
       chatarrizaci&oacute;n son: Certificado de tradici&oacute;n,
       revisi&oacute;n Dijin, Cancelaci&oacute;n de matr&iacute;cula,
@@ -437,31 +440,12 @@
         ----------------------------------------------------------------------------------------------------------------------------------</strong
       >
     </p>
-    <ul class="claus-list">
-      <li style="text-align: justify">
-        se aclara que el veh&iacute;culo debe ser entregado funcionando, en el
-        mismo estado visto y los gastos que se ocasione fuera de lo estipulado
-        en el contrato ser&aacute; asumido por el propietario como comparendos,
-        y lo que se requiera para solicitud de la paz y salvo de la empresa
-        afiliadora ________________ y ser&aacute; afiliado a la empresa
-        --------------------------------------------------------------------------------------------------------------------------
-      </li>
-      <li style="text-align: justify">
-        Los seguros contra y extra junto con la tarjeta de operaci&oacute;n
-        ser&aacute; asumida por el PROPIETARIO. ------------------
-      </li>
-      <li style="text-align: justify">
-        Si el veh&iacute;culo queda afiliado a TAXICUPOS S.A.S. se
-        entregar&aacute; con factura cancelada ante TAXICUPOS por un a&ntilde;o
-        de rodamiento.
-        --------------------------------------------------------------------------------------------------------------------
-      </li>
-      <li style="text-align: justify">
-        Los documentos y placas del taxi nuevo ser&aacute;n entregados dentro de
-        los tres d&iacute;as h&aacute;biles siguientes a salir la matricula y al
-        hacerse efectivo el pago total de este contrato.
-        ---------------------------------------------------------------
-      </li>
+    <ul style="text-align: justify" class="claus-list">
+      {% for opcion in opciones %}
+        <li>
+            {{ opcion.texto }}
+        </li>
+      {% endfor %}
     </ul>
     <p>
       Sala de venta:

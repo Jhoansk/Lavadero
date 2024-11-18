@@ -181,7 +181,7 @@
     <table>
       <!-- Primera parte: Fecha, Elaboro, Reviso, Asesor, Refiero -->
       <tr>
-        <td rowspan="2" class="header-title">CONTRATO COMPRA DE CUPO</td>
+        <td rowspan="2" class="header-title">CONTRATO COMPRA DE USADO</td>
         <td class="header-row">Fecha:</td>
         <td class="header-row">Elaboro:</td>
         <td class="header-row">Reviso:</td>
@@ -246,7 +246,7 @@
       automotor junto con los derechos de reposici&oacute;n del cupo de
       Bogot&aacute; que a continuaci&oacute;n se identifican:
     </p>
-    <table style="font-size: 10px; padding: 0;">
+    <table class="primer-espacio">
       <tbody>
         <tr>
           <td width="279" class="clase-vehiculo">
@@ -305,10 +305,10 @@
         </tr>
         <tr>
           <td width="279" class="clase-vehiculo">
-            <p>SITIO DE MATR&Iacute;CULA: {{ vehiculo.sitio_matricula }}</p>
+            <p>SITIO DE MATR&Iacute;CULA:</p>
           </td>
           <td width="184" class="clase-vehiculo">
-            <p>PLACA No.: {{ vehiculo.placa }}</p>
+            <p>PLACA No.:</p>
           </td>
           <td width="215" class="clase-vehiculo">
             <p>No. ORDEN:</p>
@@ -332,7 +332,7 @@
       los derechos de reposici&oacute;n cupo de Bogot&aacute;, se pacta la suma
       de:
       <strong
-        >___________________ MILLONES DE PESOS MC/TE ($___.000.000).</strong
+        >{{ pacta_suma_letras }} DE PESOS MC/TE (${{ pacta_suma }}).</strong
       >
       ------------------------------
     </p>
@@ -344,8 +344,8 @@
     </p>
     <ul style="text-align: justify" class="claus-list">
       <li>
-        El comprador se compromete a cancelar la suma de ________________
-        ($_________), posteriores a los______ (___) d&iacute;as h&aacute;biles
+        El comprador se compromete a cancelar la suma de {{ primer_pago_letras }}
+        (${{ primer_pago }}), posteriores a los______ (___) d&iacute;as h&aacute;biles
         siguientes a realizar la entrega del veh&iacute;culo con sus respectivos
         documentos originales, al tener el resultado f&iacute;sico de la DIJIN,
         certificado de tradici&oacute;n sin pendientes, paz y salvo de traspaso
@@ -354,8 +354,8 @@
         comprador o quien este designe. ----------------------
       </li>
       <li>
-        El comprador se compromete a cancelar la suma de ________________
-        ($_________), posteriores a los______ (___) d&iacute;as h&aacute;biles
+        El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }}
+        (${{ segundo_pago }}), posteriores a los______ (___) d&iacute;as h&aacute;biles
         siguientes a la expedici&oacute;n de paz y salvos de movilidad del
         veh&iacute;culo y los derechos de reposici&oacute;n, sin ning&uacute;n
         pendiente respeto a (COMPARENDOS, ADMINISTRATIVOS, ACCIDENTES DE
@@ -402,25 +402,25 @@
       en inventario firmado por las partes y este (os) as&iacute; lo acepta (n)
       y declara (n) que conoce (n) el estado en el que se encuentra el bien
       objeto de este contrato.
-      ---------------------------------------------------------<strong
-        >SEXTA - RESERVA DEL DOMINIO: </strong
+    </p> 
+    <p style="text-align: justify">
+      <strong>SEXTA - RESERVA DEL DOMINIO: </strong
       >EL(LOS) VENDEDOR(ES) se reserva(n) la propiedad del veh&iacute;culo
       identificado en la cl&aacute;usula primera del presente contrato, hasta el
-      momento en que se pague el precio de ______________ MILLONES DE PESOS
-      ($___.000.000), de conformidad con el Art. 952 del C&oacute;digo de
+      momento en que se pague el precio de {{ pacta_suma_letras }} MILLONES DE PESOS
+      (${{ pacta_suma }}), de conformidad con el Art. 952 del C&oacute;digo de
       Comercio.-----------------------------------------------------------------------------------------------------------------
     </p>
     <p style="text-align: justify">
-      <strong>S&Eacute;PTIMA - CL&Aacute;USULA PENAL: </strong>: Se acuerda como
-      sanci&oacute;n por incumplimiento del contrato el 10% del valor de este a
-      cargo de la parte que incumpla y a favor de la otra, valor que ser&aacute;
-      exigible sin necesidad de requerimientos, constituciones en mora ni
-      declaraciones judiciales, para lo cual el presente contrato constituye
-      t&iacute;tulo ejecutivo, para lo cual bastar&aacute; con la
-      manifestaci&oacute;n expresa en la demanda ejecutiva por parte incumplida
-      sobre el incumplimiento predicado PAR&Aacute;GRAFO: EL VENDEDOR manifiesta
-      que renuncia al requerimiento de constituci&oacute;n en
-      mora.------------------------------------
+      <strong>S&Eacute;PTIMA - CL&Aacute;USULA PENAL: </strong>: Se acuerda como sanci&oacute;n
+      por incumplimiento del contrato el 10% del valor de este a cargo de la
+      parte que incumpla y a favor de la otra, valor que ser&aacute; exigible
+      sin necesidad de requerimientos, constituciones en mora ni declaraciones
+      judiciales, para lo cual el presente contrato constituye t&iacute;tulo
+      ejecutivo, para lo cual bastar&aacute; con la manifestaci&oacute;n expresa
+      en la demanda ejecutiva por parte incumplida sobre el incumplimiento
+      predicado PAR&Aacute;GRAFO: EL COMPRADOR manifiesta que renuncia al
+      requerimiento de constituci&oacute;n en mora.-
     </p>
     <p style="text-align: justify">
       <strong>OCTAVA - GASTOS: </strong>Los gastos que se ocasionen con motivo
@@ -562,6 +562,10 @@
           <div class="content">
             <div>
               <p class="p-footer-table">Vendedor</p>
+              <br>
+                <br>
+                <br>
+                <p>____________________________________________</p>
               <p><strong>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</strong></p>
               <p>C.C No. {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }}</p>
             </div>
@@ -576,6 +580,10 @@
           <div class="content">
             <div>
               <p class="p-footer-table">Comprador</p>
+              <br>
+                <br>
+                <br>
+                <p>____________________________________________</p>
               <p><strong>{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</strong></p>
                 <p>C.C No. {{ usuario2.cedula }} de {{ usuario2.ciudad_exp }}</p>
             </div>
@@ -590,6 +598,10 @@
           <div class="content">
             <div>
               <p class="p-footer-table">Comprador</p>
+              <br>
+                <br>
+                <br>
+                <p>____________________________________________</p>
               <span class="signature"></span>
               <span class="cc-text">C.C No.</span>
             </div>
@@ -604,6 +616,10 @@
           <div class="content">
             <div>
               <p class="p-footer-table">Testigo</p>
+              <br>
+                <br>
+                <br>
+                <p>____________________________________________</p>
               <span class="signature"></span>
               <span class="cc-text">C.C No.</span>
             </div>

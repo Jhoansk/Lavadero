@@ -1,25 +1,114 @@
 {% extends 'base.html' %}
-
 {% block title %}
     Seleccionar Usuarios, Vehículos y Tipo de Contrato
 {% endblock %}
 
 {% block content %}
+<style>
+    #checkboxes {
+        display: block;
+        margin: 20px 0; /* Ajusta los márgenes de todo el contenedor */
+        padding: 10px;  /* Si deseas más espaciado interno */
+        border-radius: 5px;  /* Bordes redondeados */
+        width: 100%;
+    }
+    
+    /* Estilo para cada cláusula dentro de #checkboxes */
+    .clausula {
+        margin-bottom: 15px; /* Margen entre las cláusulas */
+    }
+    
+    /* Estilo para los inputs de tipo checkbox */
+    .clausula input[type="checkbox"] {
+        margin-right: 10px; /* Espaciado entre checkbox y el campo de texto */
+    }
+    
+    /* Estilo para los inputs de tipo texto */
+    .clausula input[type="text"] {
+        width: 100%;         /* Hace que el campo de texto ocupe todo el ancho disponible */
+        margin-top: 5px;     /* Margen superior */
+        margin-bottom: 10px; /* Margen inferior */
+        padding: 8px;        /* Padding dentro del campo de texto */
+        box-sizing: border-box; /* Para que el padding no afecte el ancho */
+    }
+</style>
 <div class="recent-orders">
     <div class="vehicle_search">
         <form action="{% url 'vehiculos:generar_pdf' %}" method="get">
+
             <div>
-                <label for="usuario1">Selecciona Usuario 1:</label>
-                <input type="text" name="usuario1_cedula" id="usuario1" placeholder="Ingrese la cédula del usuario 1" required>
+                <label for="persona">Seleccione el tipo de persona:</label>
+                <select name="persona" id="persona" required>
+                    <option value="">Seleccione el tipo de persona</option>
+                    <option value="Natural">Natural</option>
+                    <option value="Juridica">Jurídica</option>
+                </select>
+            </div>
+            
+            <!-- Menú desplegable para Vendedor -->
+            <div id="vendedores_section">
+                <label for="vendedores">Selecciona Vendedor:</label>
+                <select name="vendedor" id="vendedores">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </div>
+            
+            
+            <!-- Menú desplegable para Comprador -->
+            <div id="compradores_section">
+                <label for="compradores">Selecciona Comprador:</label>
+                <select name="comprador" id="compradores">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </div>
+            
+            <!-- Apartado para Tipo de Persona Jurídica -->
+            <div id="tipo_persona_juridica" style="display: none; margin-top: 20px;">
+                <label for="tipo_juridica">Tipo de Persona Jurídica:</label>
+                <select name="tipo_juridica" id="tipo_juridica" required>
+                    <option value="">Seleccione</option>
+                    <option value="Comprador">Comprador</option>
+                    <option value="Vendedor">Vendedor</option>
+                </select>
+            </div>
+            
+            <!-- Campos dinámicos para NIT y Nombre -->
+            <div id="campos_juridica" style="display: none; margin-top: 20px;">
+                <div style="margin-bottom: 10px;">
+                    <label for="nit">NIT:</label>
+                    <input type="text" name="nit" id="nit" placeholder="Ingrese el NIT" required>
+                </div>
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre" placeholder="Ingrese el Nombre" required>
+                </div>
             </div>
 
             <div>
-                <label for="usuario2">Selecciona Usuario 2:</label>
-                <input type="text" name="usuario2_cedula" id="usuario2" placeholder="Ingrese la cédula del usuario 2" required>
+                <label for="usuario1">Ingrese la cedula del Vendedor:</label>
+                <input type="text" name="usuario1_cedula" id="usuario1" placeholder="Ingrese la cédula del Vendedor" required>
+            </div>
+
+            <!-- Campo para la segunda cédula del vendedor -->
+            <div id="cedula_vendedor_2" style="display: none; margin-top: 10px;">
+                <label for="vendedor_cedula_2">Digite la segunda cédula del Vendedor:</label>
+                <input type="text" name="vendedor_cedula_2" id="vendedor_cedula_2" placeholder="Ingrese la segunda cédula del Vendedor">
             </div>
 
             <div>
-                <label for="vehiculo">Selecciona Vehículo:</label>
+                <label for="usuario2">Ingrese la cedula del Comprador:</label>
+                <input type="text" name="usuario2_cedula" id="usuario2" placeholder="Ingrese la cédula del comprador" required>
+            </div>
+
+            <div id="cedula_comprador_2" style="display: none; margin-top: 10px;">
+                <label for="comprador_cedula_2">Digite la segunda cédula del Comprador:</label>
+                <input type="text" name="comprador_cedula_2" id="comprador_cedula_2" placeholder="Ingrese la segunda cédula del Comprador">
+            </div>
+
+            <div>
+                <label for="vehiculo">Ingrese la placa del vehiculo:</label>
                 <input type="text" name="vehiculo_placa" id="vehiculo" placeholder="Ingrese la placa del vehículo" required>
             </div>
 
@@ -27,7 +116,7 @@
                 <label for="tipo_contrato">Selecciona Tipo de Contrato:</label>
                 <select name="tipo_contrato" id="tipo_contrato" required>
                     <option value="">Selecciona el tipo de contrato</option>
-                    <option value="venta">Venta</option>
+                    <option value="venta">Venta de Taxi con Cupo</option>
                     <option value="Compra_Cupo">Compra Cupo</option>
                     <option value="compra_Particular">Compra Particular</option>
                     <option value="compra_usado">Compra Usado</option>
@@ -44,11 +133,46 @@
                 </select>
             </div>
 
-            <!-- Cláusulas de la octava (Gastos) que solo se mostrarán si se selecciona "Permuta" -->
-            <div id="checkboxes" style="display: none;">
-                <!-- Se llenarán dinámicamente -->
+            <div id="compra_cupo_campos" style="display: none;">
+                <div>
+                    <label for="pacta_suma">Se pacta la suma de:</label>
+                    <input type="number" id="pacta_suma" name="pacta_suma" placeholder="Ingrese el monto pactado">
+                </div>
+                <div>
+                    <label for="primer_pago">Primer pago:</label>
+                    <input type="number" id="primer_pago" name="primer_pago" placeholder="Ingrese el primer pago">
+                </div>
+                <div>
+                    <label for="segundo_pago">Segundo pago:</label>
+                    <input type="number" id="segundo_pago" name="segundo_pago" placeholder="Ingrese el segundo pago">
+                </div>
             </div>
 
+            <br>
+            <br>
+            <br>
+
+            <div id="clausula3" style="display: none;">
+                <p style="text-align: justify">
+                    <strong>Cláusulas 3: </strong>
+                    --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                </p>
+                <ul style="text-align: justify" class="claus-list-3">
+                    <!-- Se llenarán dinámicamente -->
+                </ul>
+            </div>
+
+            <!-- Cláusulas de la octava (Gastos) que solo se mostrarán si se selecciona "Permuta" -->
+            <div id="checkboxes" style="display: none;">
+                <p style="text-align: justify">
+                    <strong>Cláusulas: </strong>
+                    --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                </p>
+                <ul style="text-align: justify" class="claus-list">
+                    <!-- Se llenarán dinámicamente con las cláusulas -->
+                </ul>
+            </div>
+            
             <div id="opciones" style="display: none;">
                 <p style="text-align: justify">
                     <strong>Observaciones: </strong>
@@ -66,6 +190,7 @@
 
 <button type="button" id="add_clausula">Agregar Cláusula</button>
 <button type="button" id="add_opcion">Agregar Opción</button>
+<button type="button" id="add_clausula3">Agregar Cláusula 3</button>
 
 <script>
     // Definir las cláusulas y opciones para cada tipo de contrato
@@ -106,7 +231,13 @@
             { texto: "Los gastos de traspaso serán asumidos 50% por el comprador y 50% por el vendedor." },
             { texto: "La retención en la fuente será asumida por el vendedor en su totalidad." },
             { texto: "CLAUSULA EXTRA" }
-        ]
+        ],
+        "chatarizacion_con_venta": [
+            ],
+        "servicio_chatarrizacion": [
+            ],
+        "venta_cupo": [
+            ],
         // Agregar más tipos de contrato según sea necesario
     };
 
@@ -158,59 +289,82 @@
             { texto: "El vehículo se entregará al comprador en el mismo estado visto y funcionando." },
             { texto: "El vehículo se entregará al comprador en el mismo estado visto, funcionando y a entera satisfacción sin garantía por parte del vendedor al comprador, esto por ser un vehículo usado." },
             { texto: "El vehículo será entregado al estar cancelado en su totalidad." }
-        ]
+        ],
+        "chatarizacion_con_venta": [
+            { texto: "Se aclara que el vehículo debe ser entregado funcionando, en el mismo estado visto y los gastos que se ocasionen fuera de lo estipulado en el contrato serán asumidos por el propietario, como comparendos, y lo que se requiera para solicitud de la paz y salvo de la empresa afiliadora ________________. Además, será afiliado a la empresa ---------------------------------------." },
+            { texto: "El vehículo será entregado dentro de los tres días hábiles siguientes al hacerse efectivo el pago total de este contrato. ----------------" },
+            { texto: "Los seguros contra y extra junto con la tarjeta de operación serán asumidos por el PROPIETARIO. ------------------" },
+            { texto: "Si el vehículo queda afiliado a TAXICUPOS S.A.S., se entregará con factura cancelada ante TAXICUPOS por un año de rodamiento. -------------------------------------------------------------------------------------------------------------------" }
+        ],
+        "servicio_chatarrizacion": [
+            { texto: "Se aclara que el vehículo debe ser entregado funcionando, en el mismo estado visto y los gastos que se ocasionen fuera de lo estipulado en el contrato serán asumidos por el propietario, como comparendos, y lo que se requiera para solicitud de la paz y salvo de la empresa afiliadora ________________. Además, será afiliado a la empresa --------------------------------------------------------------------------------------------------------------------------." },
+            { texto: "Los seguros contra y extra junto con la tarjeta de operación serán asumidos por el PROPIETARIO. ------------------" },
+            { texto: "Si el vehículo queda afiliado a TAXICUPOS S.A.S., se entregará con factura cancelada ante TAXICUPOS por un año de rodamiento. --------------------------------------------------------------------------------------------------------------------" },
+            { texto: "Los documentos y placas del taxi nuevo serán entregados dentro de los tres días hábiles siguientes a salir la matrícula y al hacerse efectivo el pago total de este contrato. ---------------------------------------------------------------" }
+        ],
+        "venta_cupo": [
+            { texto: "Cualquier gasto adicional no estipulado en este contrato será asumido por el comprador. --------------------------------" },
+            { texto: "La cesión de derechos de reposición 'cupo' será entregada dentro de los tres días hábiles siguientes al hacerse efectivo el pago total de este contrato. -------------------------------------------------------------------------------------------------------" },
+            { texto: "Si el comprador solicita la instalación del equipo de gas, el costo será asumido por este ante la empresa instaladora. El vendedor se compromete a gestionar este trámite ante el SIM para que la tarjeta de propiedad salga gas - gasolina y cancelará los derechos ante tránsito. --------------------------------------------------------------------------------------------------------" },
+            { texto: "El comprador se compromete a firmar los compromisos de consumo del vehículo ante la entidad que realizó o realizará la transformación a gas, bajo las condiciones que establezca la empresa transformadora y/o el convenio que estos presenten. --------------------------------------------------------------------------------------------------------------------------------------" },
+            { texto: "El vendedor y el comprador han pactado que el tiempo de demora, dilación, atraso, subsanación, negligencia, impericia, fuerza mayor o caso fortuito, atribuible a la autoridad administrativa, judicial y/o de tránsito no será responsabilidad asumida por el vendedor. ----------------------------------------------------------------------------------------------------" }
+        ],
         // Agregar más opciones por contrato según sea necesario
     };
 
 
-    document.getElementById('tipo_contrato').addEventListener('change', function() {
+    document.getElementById('tipo_contrato').addEventListener('change', function () {
         var tipoContrato = this.value;
         var checkboxesContainer = document.getElementById('checkboxes');
         var opcionesContainer = document.getElementById('opciones');
-
+        var compraCupoCampos = document.getElementById('compra_cupo_campos');
+        
         // Limpiar los elementos anteriores
         checkboxesContainer.innerHTML = '';
         opcionesContainer.querySelector('ul').innerHTML = '';
-
+    
         // Mostrar las cláusulas y opciones según el tipo de contrato
         if (tipoContrato && clausulasPorContrato[tipoContrato]) {
             // Mostrar las cláusulas
-            clausulasPorContrato[tipoContrato].forEach(function(clausula, index) {
+            clausulasPorContrato[tipoContrato].forEach(function (clausula, index) {
                 var clausulaDiv = document.createElement('div');
-                clausulaDiv.classList.add('clausula');
-                
+                clausulaDiv.classList.add('clausula');  // Asegúrate de que se añada la clase
+    
                 var checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
                 checkbox.name = `gasto_${index + 1}`;
                 checkbox.id = `gasto_${index + 1}`;
-
+    
                 var inputText = document.createElement('input');
                 inputText.type = 'text';
                 inputText.name = `gasto_${index + 1}_text`;
                 inputText.id = `gasto_${index + 1}_text`;
                 inputText.value = clausula.texto;
                 inputText.disabled = true;
+    
+                // Asegúrate de aplicar el estilo correctamente
                 inputText.style.width = "100%";
                 inputText.style.marginTop = "5px";
-
+    
+                // Agregar la cláusula al contenedor
                 clausulaDiv.appendChild(checkbox);
                 clausulaDiv.appendChild(inputText);
                 checkboxesContainer.appendChild(clausulaDiv);
-
-                checkbox.addEventListener('change', function() {
+    
+                checkbox.addEventListener('change', function () {
                     inputText.disabled = !checkbox.checked;
                 });
             });
-
+    
             // Mostrar las opciones
-            opcionesPorContrato[tipoContrato].forEach(function(opcion, index) {
+            opcionesPorContrato[tipoContrato]?.forEach(function (opcion, index) {
                 var opcionLi = document.createElement('li');
-                
+    
                 var checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
                 checkbox.name = `opcion_${index + 1}`;
                 checkbox.id = `opcion_${index + 1}`;
-
+    
                 var inputText = document.createElement('input');
                 inputText.type = 'text';
                 inputText.name = `opcion_${index + 1}_text`;
@@ -219,41 +373,44 @@
                 inputText.disabled = true;
                 inputText.style.width = "100%";
                 inputText.style.marginTop = "5px";
-
+    
                 opcionLi.appendChild(checkbox);
                 opcionLi.appendChild(inputText);
                 opcionesContainer.querySelector('ul').appendChild(opcionLi);
-
-                checkbox.addEventListener('change', function() {
+    
+                checkbox.addEventListener('change', function () {
                     inputText.disabled = !checkbox.checked;
                 });
             });
-
+    
+            // Mostrar los contenedores
             checkboxesContainer.style.display = 'block';
             opcionesContainer.style.display = 'block';
         } else {
             checkboxesContainer.style.display = 'none';
             opcionesContainer.style.display = 'none';
         }
+    
+        // Mostrar los campos de "compra_cupo_campos" independientemente del tipo de contrato
+        compraCupoCampos.style.display = 'block';
     });
-
+    
     // Agregar una cláusula dinámica
-    document.getElementById('add_clausula').addEventListener('click', function() {
+    document.getElementById('add_clausula').addEventListener('click', function () {
         var tipoContrato = document.getElementById('tipo_contrato').value;
         if (tipoContrato && clausulasPorContrato[tipoContrato]) {
             var checkboxesContainer = document.getElementById('checkboxes');
             var clausulaIndex = clausulasPorContrato[tipoContrato].length + 1;
             var nuevaClausula = { texto: "Nueva cláusula dinámica" };
-
-            // Crear los elementos HTML para la nueva cláusula
+    
             var clausulaDiv = document.createElement('div');
             clausulaDiv.classList.add('clausula');
-
+    
             var checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             checkbox.name = `gasto_${clausulaIndex}`;
             checkbox.id = `gasto_${clausulaIndex}`;
-
+    
             var inputText = document.createElement('input');
             inputText.type = 'text';
             inputText.name = `gasto_${clausulaIndex}_text`;
@@ -262,35 +419,34 @@
             inputText.disabled = true;
             inputText.style.width = "100%";
             inputText.style.marginTop = "5px";
-
+    
             clausulaDiv.appendChild(checkbox);
             clausulaDiv.appendChild(inputText);
             checkboxesContainer.appendChild(clausulaDiv);
-
-            checkbox.addEventListener('change', function() {
+    
+            checkbox.addEventListener('change', function () {
                 inputText.disabled = !checkbox.checked;
             });
-
+    
             clausulasPorContrato[tipoContrato].push(nuevaClausula);
         }
     });
-
+    
     // Agregar una opción dinámica
-    document.getElementById('add_opcion').addEventListener('click', function() {
+    document.getElementById('add_opcion').addEventListener('click', function () {
         var tipoContrato = document.getElementById('tipo_contrato').value;
         if (tipoContrato && opcionesPorContrato[tipoContrato]) {
             var opcionesContainer = document.getElementById('opciones').querySelector('ul');
             var opcionIndex = opcionesPorContrato[tipoContrato].length + 1;
             var nuevaOpcion = { texto: "Nueva opción dinámica" };
-
-            // Crear los elementos HTML para la nueva opción
+    
             var opcionLi = document.createElement('li');
-
+    
             var checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             checkbox.name = `opcion_${opcionIndex}`;
             checkbox.id = `opcion_${opcionIndex}`;
-
+    
             var inputText = document.createElement('input');
             inputText.type = 'text';
             inputText.name = `opcion_${opcionIndex}_text`;
@@ -299,18 +455,81 @@
             inputText.disabled = true;
             inputText.style.width = "100%";
             inputText.style.marginTop = "5px";
-
+    
             opcionLi.appendChild(checkbox);
             opcionLi.appendChild(inputText);
             opcionesContainer.appendChild(opcionLi);
-
-            checkbox.addEventListener('change', function() {
+    
+            checkbox.addEventListener('change', function () {
                 inputText.disabled = !checkbox.checked;
             });
-
+    
             opcionesPorContrato[tipoContrato].push(nuevaOpcion);
         }
     });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const personaSelect = document.getElementById('persona');
+        const vendedoresSection = document.getElementById('vendedores_section');
+        const compradoresSection = document.getElementById('compradores_section');
+        const tipoPersonaJuridica = document.getElementById('tipo_persona_juridica');
+        const tipoJuridicaSelect = document.getElementById('tipo_juridica');
+        const camposJuridica = document.getElementById('campos_juridica');
+
+        // Mostrar/ocultar secciones según selección de Persona
+        personaSelect.addEventListener('change', function () {
+            if (this.value === 'Juridica') {
+                vendedoresSection.style.display = 'none';
+                compradoresSection.style.display = 'none';
+                tipoPersonaJuridica.style.display = 'block';
+            } else {
+                vendedoresSection.style.display = 'block';
+                compradoresSection.style.display = 'block';
+                tipoPersonaJuridica.style.display = 'none';
+                camposJuridica.style.display = 'none'; // Ocultar campos si se cambia a Natural
+                tipoJuridicaSelect.value = ''; // Reiniciar selección
+            }
+        });
+
+        // Mostrar campos de NIT y Nombre dependiendo de la selección (Comprador/Vendedor)
+        tipoJuridicaSelect.addEventListener('change', function () {
+            if (this.value === 'Comprador' || this.value === 'Vendedor') {
+                camposJuridica.style.display = 'block';
+            } else {
+                camposJuridica.style.display = 'none';
+            }
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Elementos para vendedores
+        const vendedoresSelect = document.getElementById('vendedores');
+        const cedulaVendedor2 = document.getElementById('cedula_vendedor_2');
+
+        // Elementos para compradores
+        const compradoresSelect = document.getElementById('compradores');
+        const cedulaComprador2 = document.getElementById('cedula_comprador_2');
+
+        // Mostrar/Ocultar segundo campo de cédula del vendedor
+        vendedoresSelect.addEventListener('change', function () {
+            if (this.value === '2') {
+                cedulaVendedor2.style.display = 'block';
+            } else {
+                cedulaVendedor2.style.display = 'none';
+            }
+        });
+
+        // Mostrar/Ocultar segundo campo de cédula del comprador
+        compradoresSelect.addEventListener('change', function () {
+            if (this.value === '2') {
+                cedulaComprador2.style.display = 'block';
+            } else {
+                cedulaComprador2.style.display = 'none';
+            }
+        });
+    });
+
+    
 </script>
 
 {% endblock %}

@@ -181,7 +181,7 @@
     <table>
       <!-- Primera parte: Fecha, Elaboro, Reviso, Asesor, Refiero -->
       <tr>
-        <td rowspan="2" class="header-title">CONTRATO COMPRA DE CUPO</td>
+        <td rowspan="2" class="header-title">CONTRATO COMPRA DE PARTICULAR</td>
         <td class="header-row">Fecha:</td>
         <td class="header-row">Elaboro:</td>
         <td class="header-row">Reviso:</td>
@@ -220,8 +220,7 @@
     <div class="inline-container primer-espacio">
       <p>VENDEDOR:</p>
       <p style="margin-left: 100px;">
-        {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido
-        }}
+        {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}
       </p>
       <br />
       <p>IDENTIFICACI&Oacute;N:</p>
@@ -243,8 +242,7 @@
     <div class="inline-container primer-espacio">
       <p>COMPRADOR:</p>
       <p style="margin-left: 91px;">
-        {{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido
-        }}
+        {{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}
       </p>
       <br />
       <p>IDENTIFICACION:</p>
@@ -281,8 +279,7 @@
           <td class="clase-vehiculo">
             <p><strong>CLASE:</strong>: {{ vehiculo.clase }}</p>
             <p>
-              <strong>Tipo De Carrocer&iacute;a</strong>: {{
-              vehiculo.tipo_carroceria }}
+              <strong>Tipo De Carrocer&iacute;a</strong>: {{ vehiculo.tipo_carroceria }}
             </p>
             <p><strong>Chasis</strong>: {{ vehiculo.n_chasis }}</p>
             <p><strong>Capacidad</strong>: {{ vehiculo.capacidad }}PSJ</p>
@@ -290,8 +287,7 @@
               <strong>Acta, manifiesto</strong>: {{ vehiculo.n_acta_matricula }}
             </p>
             <p>
-              <strong>Sitio de matr&iacute;cula</strong>: {{
-              vehiculo.sitio_matricula }}
+              <strong>Sitio de matr&iacute;cula</strong>: {{ vehiculo.sitio_matricula }}
             </p>
             <p>&nbsp;</p>
           </td>
@@ -309,8 +305,7 @@
             <p><strong>PUERTAS</strong>: {{ vehiculo.puertas }}</p>
             <p><strong>SERVICIO</strong>: {{ vehiculo.tipo_servicio }}</p>
             <p>
-              <strong>FECHA</strong>:<strong>&nbsp;</strong> {{
-              vehiculo.fecha_matricula }}
+              <strong>FECHA</strong>:<strong>&nbsp;</strong> {{ vehiculo.fecha_matricula }}
             </p>
             <p>&nbsp;</p>
           </td>
@@ -321,7 +316,7 @@
       <strong>SEGUNDA - PRECIO: </strong>Como precio del automotor descrito las
       partes acuerdan la suma de
       <strong
-        >_________ MILLONES DE PESOS MC/TE ($____________).
+        >{{ pacta_suma_letras }} MILLONES DE PESOS MC/TE (${{ pacta_suma }}).
         ---------------------------------------------------------------------------------------------------</strong
       >
     </p>
@@ -333,8 +328,8 @@
     </p>
     <ul style="text-align: justify" class="claus-list">
       <li>
-        El comprador se compromete a cancelar la suma de ________________
-        ($_________), posteriores a los______(___) d&iacute;as h&aacute;biles
+        El comprador se compromete a cancelar la suma de 
+        (${{ primer_pago }}), posteriores a los______(___) d&iacute;as h&aacute;biles
         siguientes a...
       </li>
 
@@ -342,7 +337,7 @@
 
       <li>
         El comprador se compromete a cancelar la suma de ________________
-        ($_________), posteriores a los______(___) d&iacute;as h&aacute;biles
+        (${{ segundo_pago }}), posteriores a los______(___) d&iacute;as h&aacute;biles
         siguientes a...
       </li>
     </ul>
@@ -398,21 +393,21 @@
       <strong>SEXTA</strong> - RESERVA DEL DOMINIO: EL (LOS) VENDEDOR (ES) se
       reserva (n) la propiedad del veh&iacute;culo identificado en la
       cl&aacute;usula primera del presente contrato, hasta el momento en que se
-      pague el precio estipulado de ________________<strong>
-        ($________), </strong
+      pague el precio estipulado de {{ pacta_suma_letras }}<strong>
+        (${{ pacta_suma }}), </strong
       >de conformidad con el Art. 952 del C&oacute;digo de Comercio.
       -------------------------------------------------------------------
     </p>
     <p style="text-align: justify">
-      <strong>S&Eacute;PTIMA</strong> - CL&Aacute;USULA PENAL: : Se acuerda como
-      sanci&oacute;n por incumplimiento del contrato el 10% del valor de este a
-      cargo de la parte que incumpla y a favor de la otra, valor que ser&aacute;
-      exigible sin necesidad de requerimientos, constituciones en mora ni
-      declaraciones judiciales, para lo cual el presente contrato constituye
-      t&iacute;tulo ejecutivo, para lo cual bastar&aacute; con la
-      manifestaci&oacute;n expresa en la demanda ejecutiva por parte incumplida
-      sobre el incumplimiento predicado PAR&Aacute;GRAFO: EL VENDEDOR manifiesta
-      que renuncia al requerimiento de constituci&oacute;n en mora.
+      <strong>S&Eacute;PTIMA</strong> - CL&Aacute;USULA PENAL: Se acuerda como sanci&oacute;n
+      por incumplimiento del contrato el 10% del valor de este a cargo de la
+      parte que incumpla y a favor de la otra, valor que ser&aacute; exigible
+      sin necesidad de requerimientos, constituciones en mora ni declaraciones
+      judiciales, para lo cual el presente contrato constituye t&iacute;tulo
+      ejecutivo, para lo cual bastar&aacute; con la manifestaci&oacute;n expresa
+      en la demanda ejecutiva por parte incumplida sobre el incumplimiento
+      predicado PAR&Aacute;GRAFO: EL COMPRADOR manifiesta que renuncia al
+      requerimiento de constituci&oacute;n en mora.-
       -----------------------------------------------
     </p>
     <p>
@@ -568,12 +563,11 @@
           <div class="content">
             <div>
               <p class="p-footer-table">Vendedor</p>
-              <p>
-                <strong
-                  >{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{
-                  usuario1.s_apellido }}</strong
-                >
-              </p>
+              <br>
+                <br>
+                <br>
+                <p>____________________________________________</p>
+              <p><strong>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</strong></p>
               <p>C.C No. {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }}</p>
             </div>
           </div>
@@ -587,12 +581,11 @@
           <div class="content">
             <div>
               <p class="p-footer-table">Comprador</p>
-              <p>
-                <strong
-                  >{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{
-                  usuario2.s_apellido }}</strong
-                >
-              </p>
+              <br>
+                <br>
+                <br>
+                <p>____________________________________________</p>
+              <p><strong>{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</strong></p>
               <p>C.C No. {{ usuario2.cedula }} de {{ usuario2.ciudad_exp }}</p>
             </div>
           </div>
@@ -606,6 +599,10 @@
           <div class="content">
             <div>
               <p class="p-footer-table">Comprador</p>
+              <br>
+                <br>
+                <br>
+                <p>____________________________________________</p>
               <span class="signature"></span>
               <span class="cc-text">C.C No.</span>
             </div>
@@ -620,6 +617,10 @@
           <div class="content">
             <div>
               <p class="p-footer-table">Testigo</p>
+              <br>
+                <br>
+                <br>
+                <p>____________________________________________</p>
               <span class="signature"></span>
               <span class="cc-text">C.C No.</span>
             </div>

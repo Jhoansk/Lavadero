@@ -27,6 +27,7 @@ from django.contrib import messages
 from django.db.models import Max
 from .forms import UserForm
 from vehiculos.models import Usuario
+from num2words import num2words
 
 @login_required
 def agregar_vehiculo(request):
@@ -655,12 +656,41 @@ def generar_pdf(request):
             user2 = usuario.objects.get(cedula=usuario2_cedula)
         except usuario.DoesNotExist:
             return HttpResponse("Error: Usuario 2 no encontrado.", status=404)
+        
+    # Recoger los campos numéricos de la solicitud GET
+    pacta_suma = request.GET.get('pacta_suma', '')
+    primer_pago = request.GET.get('primer_pago', '')
+    segundo_pago = request.GET.get('segundo_pago', '')
+
+    # Convertir los números a letras
+    if pacta_suma:
+        pacta_suma_letras = num2words(int(pacta_suma), lang='es').upper()
+    else:
+        pacta_suma_letras = ''
+
+    if primer_pago:
+        primer_pago_letras = num2words(int(primer_pago), lang='es').upper()
+    else:
+        primer_pago_letras = ''
+
+    if segundo_pago:
+        segundo_pago_letras = num2words(int(segundo_pago), lang='es').upper()
+    else:
+        segundo_pago_letras = ''    
+    
 
     # Crear el contexto con los datos del usuario y vehículo
     context = {
         'usuario1': user1,
-        'usuario2': user2,  # Puede ser None si no se selecciona usuario2
+        'usuario2': user2,
         'vehiculo': vehiculo,
+        'pacta_suma': pacta_suma,
+        'primer_pago': primer_pago,
+        'segundo_pago': segundo_pago,
+        'pacta_suma_letras': pacta_suma_letras,
+        'primer_pago_letras': primer_pago_letras,
+        'segundo_pago_letras': segundo_pago_letras,
+
     }
 
     # Recoger las cláusulas octavas (checkbox y texto) de la solicitud GET
