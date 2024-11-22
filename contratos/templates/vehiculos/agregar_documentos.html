@@ -1,12 +1,24 @@
-{% extends 'base.html' %} {% block title %}Agregar Documentos{% endblock %} 
-{%block content %}
+{% extends 'base.html' %}
+{% block title %}Agregar Documentos{% endblock %}
+
+{% block content %}
 <div class="container">
   <h1>Agregar Documentos</h1>
   <form method="post" enctype="multipart/form-data">
-    {% csrf_token %} {% for field in form %}
+    {% csrf_token %}
     <div class="form-group">
-      {{ field.label_tag }} {{ field }} {{ field.errors }}
+      {{ form.placa.label_tag }} <!-- Campo para la placa -->
+      {{ form.placa }}
+      {{ form.placa.errors }}
     </div>
+    {% for field in form %}
+      {% if field.name != 'placa' %} <!-- Excluimos el campo id_placa -->
+        <div class="form-group">
+          {{ field.label_tag }}
+          {{ field }}
+          {{ field.errors }}
+        </div>
+      {% endif %}
     {% endfor %}
     <button type="submit" class="btn btn-primary">Guardar</button>
   </form>

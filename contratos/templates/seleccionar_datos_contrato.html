@@ -38,7 +38,7 @@
 
             <div>
                 <label for="persona">Seleccione el tipo de persona:</label>
-                <select name="persona" id="persona" required>
+                <select name="persona" id="persona">
                     <option value="">Seleccione el tipo de persona</option>
                     <option value="Natural">Natural</option>
                     <option value="Juridica">Jurídica</option>
@@ -48,7 +48,8 @@
             <!-- Menú desplegable para Vendedor -->
             <div id="vendedores_section">
                 <label for="vendedores">Selecciona Vendedor:</label>
-                <select name="vendedor" id="vendedores">
+                <select name="vendedores" id="vendedores">
+                    <option value="">Seleccione</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                 </select>
@@ -58,7 +59,8 @@
             <!-- Menú desplegable para Comprador -->
             <div id="compradores_section">
                 <label for="compradores">Selecciona Comprador:</label>
-                <select name="comprador" id="compradores">
+                <select name="compradores" id="compradores">
+                    <option value="">Seleccione</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                 </select>
@@ -67,7 +69,7 @@
             <!-- Apartado para Tipo de Persona Jurídica -->
             <div id="tipo_persona_juridica" style="display: none; margin-top: 20px;">
                 <label for="tipo_juridica">Tipo de Persona Jurídica:</label>
-                <select name="tipo_juridica" id="tipo_juridica" required>
+                <select name="tipo_juridica" id="tipo_juridica">
                     <option value="">Seleccione</option>
                     <option value="Comprador">Comprador</option>
                     <option value="Vendedor">Vendedor</option>
@@ -78,17 +80,17 @@
             <div id="campos_juridica" style="display: none; margin-top: 20px;">
                 <div style="margin-bottom: 10px;">
                     <label for="nit">NIT:</label>
-                    <input type="text" name="nit" id="nit" placeholder="Ingrese el NIT" required>
+                    <input type="text" name="nit" id="nit" placeholder="Ingrese el NIT">
                 </div>
                 <div>
                     <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre" placeholder="Ingrese el Nombre" required>
+                    <input type="text" name="nombre" id="nombre" placeholder="Ingrese el Nombre">
                 </div>
             </div>
 
             <div>
                 <label for="usuario1">Ingrese la cedula del Vendedor:</label>
-                <input type="text" name="usuario1_cedula" id="usuario1" placeholder="Ingrese la cédula del Vendedor" required>
+                <input type="text" name="usuario1_cedula" id="usuario1" placeholder="Ingrese la cédula del Vendedor">
             </div>
 
             <!-- Campo para la segunda cédula del vendedor -->
@@ -99,7 +101,7 @@
 
             <div>
                 <label for="usuario2">Ingrese la cedula del Comprador:</label>
-                <input type="text" name="usuario2_cedula" id="usuario2" placeholder="Ingrese la cédula del comprador" required>
+                <input type="text" name="usuario2_cedula" id="usuario2" placeholder="Ingrese la cédula del comprador">
             </div>
 
             <div id="cedula_comprador_2" style="display: none; margin-top: 10px;">
@@ -109,7 +111,7 @@
 
             <div>
                 <label for="vehiculo">Ingrese la placa del vehiculo:</label>
-                <input type="text" name="vehiculo_placa" id="vehiculo" placeholder="Ingrese la placa del vehículo" required>
+                <input type="text" name="vehiculo_placa" id="vehiculo" placeholder="Ingrese la placa del vehículo">
             </div>
 
             <div>
@@ -130,6 +132,7 @@
                     <option value="compra_venta">Compra Venta</option>
                     <option value="cmatricula">Cancelación Matrícula</option>
                     <option value="mandato">Mandato</option>
+                    <option value="fun">Fun</option>
                 </select>
             </div>
 
@@ -237,7 +240,10 @@
         "servicio_chatarrizacion": [
             ],
         "venta_cupo": [
-            ],
+            { texto: "El Cesionario se compromete a cancelar el valor acordado en los términos y plazos estipulados en la cláusula tercera." },
+            { texto: "El Cesionario deberá estar a paz y salvo por todo concepto, comparendos y / o multas de tránsito a nivel nacional y estar inscrito ante el RUNT (Registro Único Nacional de Tránsito). -----------------------------------------------------------------------" },
+            { texto: "A entregar la factura de compra con improntas, declaración y manifiesto de aduana expedida por el concesionario autorizado, prendas si es el caso para matrícula del vehículo nuevo, y se compromete a cumplir con los requisitos estipulados en la presente cláusula. -------------------------------------------------------------------------------------------------------------" }
+        ],
         // Agregar más tipos de contrato según sea necesario
     };
 

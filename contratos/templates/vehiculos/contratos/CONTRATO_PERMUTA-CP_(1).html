@@ -210,24 +210,154 @@
     <p>
       <strong>LUGAR CELEBRACI&Oacute;N DEL CONTRATO: BOGOT&Aacute; D.C.</strong>
     </p>
-    <div class="inline-container primer-espacio">
-      <p>PRIMER PERMUTANTE(ES):</p><p style="margin-left: 100px;">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p><br>
-      <p>IDENTIFICACI&Oacute;N:</p><p style="margin-left: 149px;">C.C. No. {{ usuario1.cedula }}</p><br>
-      <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 100px;">{{usuario1.direccion}}</p><br>
-      <p>BARRI&Oacute;:</p><p style="margin-left: 191px;">{{ usuario1.barrio }}</p><br>
-      <p>CIUDAD:</p><p style="margin-left: 191px;">{{usuario1.ciudad }}</p><br>
-      <p>TEL&Eacute;FONO:</p><p style="margin-left: 176px;">{{ usuario1.telefono }}</p><br>
-      <p>CORREO ELECTR&Oacute;NICO:</p><p style="margin-left: 111px;">{{ usuario1.correo }}</p><br>
-    </div>
-    <div class="inline-container primer-espacio">
-      <p>SEGUNDO PERMUTANTE:</p><p style="margin-left: 108px;">{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p><br>
-      <p>IDENTIFICACI&Oacute;N:</p><p style="margin-left: 149px;">C.C. No.{{ usuario2.cedula }}</p><br>
-      <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 97px;"> {{usuario2.direccion}}</p><br>
-      <p>BARRI&Oacute;:</p><p style="margin-left: 188px;"> {{ usuario2.barrio }}</p><br>
-      <p>CIUDAD:</p><p style="margin-left: 188px;"> {{usuario2.ciudad }}</p><br>
-      <p>TEL&Eacute;FONO:</p><p style="margin-left: 173px;"> {{ usuario2.telefono }}</p><br>
-      <p>CORREO ELECTR&Oacute;NICO:</p><p style="margin-left: 108px;"> {{ usuario2.correo }}</p><br>
-    </div>
+    {% if persona == "Natural" %}
+          {% if vendedores == "1" %}
+          <!-- Información del Vendedor (solo 1) -->
+          <div class="inline-container primer-espacio">
+              <p>VENDEDOR:</p><p style="margin-left: 100px;">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p><br>
+              <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario1.cedula }}</p><br>
+              <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario1.direccion }}</p><br>
+              <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario1.barrio }}</p><br>
+              <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario1.ciudad }}</p><br>
+              <p>TELÉFONO:</p><p style="margin-left: 104px;">{{ usuario1.telefono }}</p><br>
+              <p>CORREO ELECTRÓNICO:</p><p style="margin-left: 39px;">{{ usuario1.correo }}</p>
+          </div>
+          <div class="inline-container primer-espacio">
+            <p>COMPRADOR:</p><p style="margin-left: 91px;">{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p><br>
+            <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario2.cedula }}</p><br>
+            <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario2.direccion }}</p><br>
+            <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario2.barrio }}</p><br>
+            <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario2.ciudad }}</p><br>
+            <p>TELÉFONO:</p><p style="margin-left: 104px;">{{ usuario2.telefono }}</p><br>
+            <p>CORREO ELECTRÓNICO:</p><p style="margin-left: 39px;">{{ usuario2.correo }}</p>
+        </div>
+      {% elif vendedores == "2" %}
+          <!-- Información del Vendedor 1 -->
+          <div class="inline-container primer-espacio">
+              <p>VENDEDOR:</p><p style="margin-left: 100px;">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p><br>
+              <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario1.cedula }}</p><br>
+              <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario1.direccion }}</p><br>
+              <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario1.barrio }}</p><br>
+              <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario1.ciudad }}</p><br>
+              <p>TELÉFONO:</p><p style="margin-left: 104px;">{{ usuario1.telefono }}</p><br>
+              <p>CORREO ELECTRÓNICO:</p><p style="margin-left: 39px;">{{ usuario1.correo }}</p>
+          </div>
+          <div class="inline-container primer-espacio">
+            <p>VENDEDOR:</p><p style="margin-left: 100px;">{{ usuario3.nombre }} {{ usuario3.p_apellido }} {{ usuario3.s_apellido }}</p><br>
+            <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario3.cedula }}</p><br>
+            <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario2.direccion }}</p><br>
+            <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario3.barrio }}</p><br>
+            <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario3.ciudad }}</p><br>
+            <p>TELÉFONO:</p><p style="margin-left: 104px;">{{ usuario3.telefono }}</p><br>
+            <p>CORREO ELECTRÓNICO:</p><p style="margin-left: 39px;">{{ usuario3.correo }}</p>
+        </div>
+
+        <div class="inline-container primer-espacio">
+          <p>COMPRADOR:</p><p style="margin-left: 91px;">{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p><br>
+          <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario2.cedula }}</p><br>
+          <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario2.direccion }}</p><br>
+          <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario2.barrio }}</p><br>
+          <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario2.ciudad }}</p><br>
+          <p>TELÉFONO:</p><p style="margin-left: 104px;">{{ usuario2.telefono }}</p><br>
+          <p>CORREO ELECTRÓNICO:</p><p style="margin-left: 39px;">{{ usuario2.correo }}</p>
+      </div>
+        {% elif compradores == "1" %}
+            <!-- Información del Comprador (solo 1) -->
+            <div class="inline-container primer-espacio">
+              <p>VENDEDOR:</p><p style="margin-left: 100px;">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p><br>
+              <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario1.cedula }}</p><br>
+              <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario1.direccion }}</p><br>
+              <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario1.barrio }}</p><br>
+              <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario1.ciudad }}</p><br>
+              <p>TELÉFONO:</p><p style="margin-left: 104px;">{{ usuario1.telefono }}</p><br>
+              <p>CORREO ELECTRÓNICO:</p><p style="margin-left: 39px;">{{ usuario1.correo }}</p>
+          </div>
+            <div class="inline-container primer-espacio">
+                <p>COMPRADOR:</p><p style="margin-left: 91px;">{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p><br>
+                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario2.cedula }}</p><br>
+                <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario2.direccion }}</p><br>
+                <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario2.barrio }}</p><br>
+                <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario2.ciudad }}</p><br>
+                <p>TELÉFONO:</p><p style="margin-left: 104px;">{{ usuario2.telefono }}</p><br>
+                <p>CORREO ELECTRÓNICO:</p><p style="margin-left: 39px;">{{ usuario2.correo }}</p>
+            </div>
+        {% elif compradores == "2" %}
+            <!-- Información del Comprador 1 -->
+            <div class="inline-container primer-espacio">
+              <p>VENDEDOR:</p><p style="margin-left: 100px;">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p><br>
+              <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario1.cedula }}</p><br>
+              <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario2.direccion }}</p><br>
+              <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario1.barrio }}</p><br>
+              <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario1.ciudad }}</p><br>
+              <p>TELÉFONO:</p><p style="margin-left: 104px;">{{ usuario1.telefono }}</p><br>
+              <p>CORREO ELECTRÓNICO:</p><p style="margin-left: 39px;">{{ usuario1.correo }}</p>
+          </div>
+            <div class="inline-container primer-espacio">
+                <p>COMPRADOR:</p><p style="margin-left: 91px;">{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p><br>
+                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario2.cedula }}</p><br>
+                <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario2.direccion }}</p><br>
+                <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario2.barrio }}</p><br>
+                <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario2.ciudad }}</p><br>
+                <p>TELÉFONO:</p><p style="margin-left: 104px;">{{ usuario2.telefono }}</p><br>
+                <p>CORREO ELECTRÓNICO:</p><p style="margin-left: 39px;">{{ usuario2.correo }}</p>
+            </div>
+    
+            <!-- Información del Comprador 2 -->
+            <div class="inline-container primer-espacio">
+                <p>COMPRADOR:</p><p style="margin-left: 91px;">{{ usuario4.nombre }} {{ usuario4.p_apellido }} {{ usuario4.s_apellido }}</p><br>
+                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario4.cedula }}</p><br>
+                <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario4.direccion }}</p><br>
+                <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario4.barrio }}</p><br>
+                <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario4.ciudad }}</p><br>
+                <p>TELÉFONO:</p><p style="margin-left: 104px;">{{ usuario4.telefono }}</p><br>
+                <p>CORREO ELECTRÓNICO:</p><p style="margin-left: 39px;">{{ usuario4.correo }}</p>
+            </div>
+        {% endif %}
+    {% elif persona == "Juridica" %}
+        {% if tipo_juridica == "Comprador" %}
+            <div class="inline-container primer-espacio">
+                <p>VENDEDOR:</p><p style="margin-left: 100px;">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p><br>
+                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario1.cedula }}</p><br>
+                <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario1.direccion }}</p><br>
+                <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario1.barrio }}</p><br>
+                <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario1.ciudad }}</p><br>
+                <p>TELÉFONO:</p><p style="margin-left: 104px;">{{ usuario1.telefono }}</p><br>
+                <p>CORREO ELECTRÓNICO:</p><p style="margin-left: 39px;">{{ usuario1.correo }}</p>
+            </div>
+            <div class="inline-container primer-espacio">
+                <p>NOMBRE:</p><p style="margin-left: 110px;"> {{ nombre }}</p><br>
+                <p>NIT:</p><p style="margin-left: 140px;"> {{ nit }}</p><br>
+                <p>COMPRADOR:</p><p style="margin-left: 91px;">{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p><br>
+                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario2.cedula }}</p><br>
+                <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario2.direccion }}</p><br>
+                <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario2.barrio }}</p><br>
+                <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario2.ciudad }}</p><br>
+                <p>TELÉFONO:</p><p style="margin-left: 104px;">{{ usuario2.telefono }}</p><br>
+                <p>CORREO ELECTRÓNICO:</p><p style="margin-left: 39px;">{{ usuario2.correo }}</p>
+            </div>
+        {% elif tipo_juridica == "Vendedor" %}
+            <div class="inline-container primer-espacio">
+                <p>NOMBRE:</p><p style="margin-left: 110px;"> {{ nombre }}</p><br>
+                <p>NIT:</p><p style="margin-left: 140px;"> {{ nit }}</p><br>
+                <p>VENDEDOR:</p><p style="margin-left: 100px;">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p><br>
+                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario1.cedula }}</p><br>
+                <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario1.direccion }}</p><br>
+                <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario1.barrio }}</p><br>
+                <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario1.ciudad }}</p><br>
+                <p>TELÉFONO:</p><p style="margin-left: 104px;">{{ usuario1.telefono }}</p><br>
+                <p>CORREO ELECTRÓNICO:</p><p style="margin-left: 39px;">{{ usuario1.correo }}</p>
+            </div>
+            <div class="inline-container primer-espacio">
+                <p>COMPRADOR:</p><p style="margin-left: 91px;">{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p><br>
+                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario2.cedula }}</p><br>
+                <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario2.direccion }}</p><br>
+                <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario2.barrio }}</p><br>
+                <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario2.ciudad }}</p><br>
+                <p>TELÉFONO:</p><p style="margin-left: 104px;">{{ usuario2.telefono }}</p><br>
+                <p>CORREO ELECTRÓNICO:</p><p style="margin-left: 39px;">{{ usuario2.correo }}</p>
+            </div>
+        {% endif %}
+    {% endif %}
     
     <p style="text-align: justify" class="primer-espacio">
       Las partes convienen celebrar el presente contrato de permuta, que se
@@ -289,32 +419,32 @@
         </tr>
         <tr>
           <td width="279" class="clase-vehiculo">
-            <p>ACTA O MANIFIESTO:</p>
+            <p>ACTA O MANIFIESTO: {{ vehiculo.n_acta_matricula }}</p>
           </td>
           <td width="184" class="clase-vehiculo">
-            <p>FECHA:</p>
+            <p>FECHA: {{ vehiculo.fecha_matricula }}</p>
           </td>
           <td width="215" class="clase-vehiculo">
-            <p>CIUDAD:</p>
+            <p>CIUDAD: {{ vehiculo.ciudad_vehiculo }}</p>
           </td>
         </tr>
         <tr>
           <td width="279" class="clase-vehiculo">
-            <p>SITIO DE MATR&Iacute;CULA:</p>
+            <p>SITIO DE MATR&Iacute;CULA: {{ vehiculo.sitio_matricula }}</p>
           </td>
           <td width="184" class="clase-vehiculo">
-            <p>PLACA No.:</p>
+            <p>PLACA No.: {{ vehiculo.placa }}</p>
           </td>
           <td width="215" class="clase-vehiculo">
-            <p>No. ORDEN:</p>
+            <p>No. ORDEN: {{ documento.n_orden }}</p>
           </td>
         </tr>
         <tr>
           <td width="279" class="clase-vehiculo">
-            <p>EMP AFILIADORA:</p>
+            <p>EMP AFILIADORA: {{ documento.emp_afiliadora }}</p>
           </td>
           <td width="184" class="clase-vehiculo">
-            <p>TRJTA/OP:</p>
+            <p>TRJTA/OP: {{ documento.n_tarjeta_operacion }}</p>
           </td>
           <td width="215" class="clase-vehiculo">
             <p>&nbsp;</p>
@@ -332,76 +462,76 @@
       <tbody>
         <tr>
           <td width="279" class="clase-vehiculo">
-            <p>CLASE: AUTOM&Oacute;VIL</p>
+            <p>CLASE: {{ vehiculo.clase }}</p>
           </td>
           <td width="184" class="clase-vehiculo">
-            <p>MARCA:</p>
+            <p>MARCA: {{ vehiculo.marca }}</p>
           </td>
           <td width="215" class="clase-vehiculo">
-            <p>MODELO:</p>
+            <p>MODELO: {{ vehiculo.modelo }}</p>
           </td>
         </tr>
         <tr>
           <td width="279" class="clase-vehiculo">
-            <p>CHASIS:</p>
+            <p>CHASIS: {{ vehiculo.n_chasis }}</p>
           </td>
           <td width="184" class="clase-vehiculo">
-            <p>L&Iacute;NEA:</p>
+            <p>L&Iacute;NEA: {{ vehiculo.linea }}</p>
           </td>
           <td width="215" class="clase-vehiculo">
-            <p>MOTOR:</p>
+            <p>MOTOR: {{ vehiculo.n_motor }}</p>
           </td>
         </tr>
         <tr>
           <td width="279" class="clase-vehiculo">
-            <p>TIPO DE CARROCER&Iacute;A:</p>
+            <p>TIPO DE CARROCER&Iacute;A: {{ vehiculo2.tipo_carroceria }}</p>
           </td>
           <td width="184" class="clase-vehiculo">
-            <p>COLOR:</p>
+            <p>COLOR: {{ vehiculo2.color }}</p>
           </td>
           <td width="215" class="clase-vehiculo">
-            <p>PUERTAS:</p>
+            <p>PUERTAS: {{ vehiculo2.puertas }}</p>
           </td>
         </tr>
         <tr>
           <td width="279" class="clase-vehiculo">
-            <p>CAPACIDAD:</p>
+            <p>CAPACIDAD: {{ vehiculo2.capacidad }}</p>
           </td>
           <td width="184" class="clase-vehiculo">
-            <p>SERVICIO:</p>
+            <p>SERVICIO: {{ vehiculo2.tipo_servicio }}</p>
           </td>
           <td width="215" class="clase-vehiculo">
-            <p>SERIE/VIN:</p>
+            <p>SERIE/VIN: {{ vehiculo2.n_vin }}</p>
           </td>
         </tr>
         <tr>
           <td width="279" class="clase-vehiculo">
-            <p>ACTA O MANIFIESTO:</p>
+            <p>ACTA O MANIFIESTO: {{ vehiculo2.n_acta_matricula }}</p>
           </td>
           <td width="184" class="clase-vehiculo">
-            <p>FECHA:</p>
+            <p>FECHA: {{ vehiculo2.fecha_matricula }}</p>
           </td>
           <td width="215" class="clase-vehiculo">
-            <p>CIUDAD:</p>
+            <p>CIUDAD: {{ vehiculo2.ciudad_vehiculo }}</p>
           </td>
         </tr>
         <tr>
           <td width="279" class="clase-vehiculo">
-            <p>SITIO DE MATR&Iacute;CULA:</p>
+            <p>SITIO DE MATR&Iacute;CULA: {{ vehiculo2.sitio_matricula }}</p>
           </td>
           <td width="184" class="clase-vehiculo">
-            <p>PLACA No.:</p>
+            <p>PLACA No.: {{ vehiculo2.placa }}</p>
           </td>
           <td width="215" class="clase-vehiculo">
-            <p>No. ORDEN:</p>
+            <p>No. ORDEN: {{ documento2.n_orden }}</p>
           </td>
         </tr>
         <tr>
           <td width="279" class="clase-vehiculo">
-            <p>EMP AFILIADORA:</p>
+            <p>EMP AFILIADORA: {{ documento2.emp_afiliadora }}</p>
           </td>
           <td width="184" class="clase-vehiculo">
-            <p>TRJTA/OP:</p>
+            <p>TRJTA/OP: {{ documento2.n_tarjeta_operacion }}</p>
           </td>
           <td width="215" class="clase-vehiculo">
             <p>&nbsp;</p>
@@ -412,10 +542,10 @@
     <p style="text-align: justify" class="primer-espacio">
       <strong>CLAUSULA SEGUNDA. PRECIO.- </strong>EL SEGUNDO PERMUTANTE
       transfiere a t&iacute;tulo de venta al PRIMER PERMUTANTE un
-      veh&iacute;culo tipo taxi&nbsp; marca _____, l&iacute;nea _____, modelos
-      ______ nuevo, por un valor de _______________ MILLONES DE PESOS MCTE
+      veh&iacute;culo tipo taxi&nbsp; marca {{ vehiculo.marca }}, l&iacute;nea {{ vehiculo.linea }}, modelos
+      {{ vehiculo.modelo }} nuevo, por un valor de _______________ MILLONES DE PESOS MCTE
       ($___.000.000) del cual el PRIMER PERMUTANTE entrega al SEGUNDO PERMUTANTE
-      en parte de pago, un veh&iacute;culo tipo taxi marca _____ de placas _____
+      en parte de pago, un veh&iacute;culo tipo taxi marca {{ vehiculo2.marca }} de placas {{ vehiculo2.placa }}
       por un valor de _________ MILLONES DE PESOS M/CTE ($__.000.000),
       m&aacute;s un pago adicional de ________ MILLONES DE PESOS MCTE
       ($__.000.000).&nbsp; ---------------------------
@@ -428,13 +558,13 @@
     </p>
     <ul style="text-align: justify" class="claus-list">
       <li>
-        El comprador se compromete a cancelar la suma de ________________
-        ($_________), posteriores a los______ (___) d&iacute;as h&aacute;biles
+        El comprador se compromete a cancelar la suma de {{ primer_pago_letras }}
+        (${{ primer_pago }}), posteriores a los______ (___) d&iacute;as h&aacute;biles
         siguientes a...
       </li>
       <li>
-        El comprador se compromete a cancelar la suma de ________________
-        ($_________), posteriores a los______ (___) d&iacute;as h&aacute;biles
+        El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }}
+        (${{ segundo_pago }}), posteriores a los______ (___) d&iacute;as h&aacute;biles
         siguientes a...
       </li>
     </ul>

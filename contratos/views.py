@@ -541,10 +541,15 @@ def agregar_documentos(request):
     if request.method == 'POST':
         form = DocumentosForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            return redirect('vehiculos:lista_documentos')
+            # Obtenemos el objeto del vehículo validado
+            vehiculo = form.cleaned_data['placa']
+            documento = form.save(commit=False)
+            documento.id_placa = vehiculo  # Relacionamos el documento con el vehículo
+            documento.save()
+            return redirect('vehiculos:lista_documentos')  # Redirigimos a la lista de documentos
     else:
         form = DocumentosForm()
+
     return render(request, 'vehiculos/agregar_documentos.html', {'form': form})
 
 @login_required
@@ -629,14 +634,23 @@ def eliminar_presupuesto(request, presupuesto_id):
 
 @login_required
 def generar_pdf(request):
-    # Obtener los valores de cédula y placa desde los parámetros GET
+    # Obtener los valores de cédula, placa, tipo de contrato, tipo de persona y tipo de persona jurídica
     usuario1_cedula = request.GET.get('usuario1_cedula')
     usuario2_cedula = request.GET.get('usuario2_cedula')
     vehiculo_placa = request.GET.get('vehiculo_placa')
+    vehiculo2_placa = request.GET.get('vehiculo2_placa')
+    documento_placa = request.GET.get('vehiculo_placa')
     tipo_contrato = request.GET.get('tipo_contrato')
+    persona = request.GET.get('persona')  # Tipo de persona (Natural o Jurídica)
+    tipo_juridica = request.GET.get('tipo_juridica')  # Tipo de persona jurídica (Comprador o Vendedor)
+    vendedores = request.GET.get('vendedores')  # Selección de vendedor
+    compradores = request.GET.get('compradores')  # Selección de comprador
+    vendedor_cedula_2 = request.GET.get('vendedor_cedula_2')
+    comprador_cedula_2 = request.GET.get('comprador_cedula_2')
+    
 
     # Verifica que los parámetros estén presentes
-    if not usuario1_cedula or not vehiculo_placa or not tipo_contrato:
+    if not usuario1_cedula or not vehiculo_placa or not tipo_contrato or not persona:
         return HttpResponse("Error: Faltan parámetros.", status=400)
 
     # Buscar el usuario y el vehículo en la base de datos
@@ -649,6 +663,13 @@ def generar_pdf(request):
         vehiculo = Vehiculo_contratos.objects.get(placa=vehiculo_placa)
     except Vehiculo_contratos.DoesNotExist:
         return HttpResponse("Error: Vehículo no encontrado.", status=404)
+    
+    
+    try:
+        documento = documentos.objects.get(id_placa=documento_placa)
+    except documentos.DoesNotExist:
+        return HttpResponse("Error: Vehículo no encontrado o Documentos no asociados.", status=404)
+    
 
     user2 = None
     if usuario2_cedula:  # Verificar si hay un segundo usuario
@@ -657,10 +678,26 @@ def generar_pdf(request):
         except usuario.DoesNotExist:
             return HttpResponse("Error: Usuario 2 no encontrado.", status=404)
         
+    user3 = None
+    if vendedor_cedula_2:  # Verificar si hay un segundo usuario
+        try:
+            user3 = usuario.objects.get(cedula=vendedor_cedula_2)
+        except usuario.DoesNotExist:
+            return HttpResponse("Error: Vendedor 2 no encontrado.", status=404)
+        
+    user4 = None
+    if comprador_cedula_2:  # Verificar si hay un segundo usuario
+        try:
+            user4 = usuario.objects.get(cedula=comprador_cedula_2)
+        except usuario.DoesNotExist:
+            return HttpResponse("Error: Vendedor 2 no encontrado.", status=404)
+
     # Recoger los campos numéricos de la solicitud GET
     pacta_suma = request.GET.get('pacta_suma', '')
     primer_pago = request.GET.get('primer_pago', '')
     segundo_pago = request.GET.get('segundo_pago', '')
+    nit = request.GET.get('nit')
+    nombre = request.GET.get('nombre')
 
     # Convertir los números a letras
     if pacta_suma:
@@ -677,20 +714,27 @@ def generar_pdf(request):
         segundo_pago_letras = num2words(int(segundo_pago), lang='es').upper()
     else:
         segundo_pago_letras = ''    
-    
 
     # Crear el contexto con los datos del usuario y vehículo
     context = {
         'usuario1': user1,
         'usuario2': user2,
+        'usuario3': user3,
+        'usuario4': user4,
         'vehiculo': vehiculo,
+        'documento': documento,
         'pacta_suma': pacta_suma,
         'primer_pago': primer_pago,
         'segundo_pago': segundo_pago,
         'pacta_suma_letras': pacta_suma_letras,
         'primer_pago_letras': primer_pago_letras,
         'segundo_pago_letras': segundo_pago_letras,
-
+        'persona': persona,  # Agregar el tipo de persona
+        'tipo_juridica': tipo_juridica,  # Agregar el tipo de persona jurídica
+        'vendedores': vendedores,  # Selección de vendedores
+        'compradores': compradores,  # Selección de compradores
+        'nit': nit,  # Incluir los nuevos datos
+        'nombre': nombre,
     }
 
     # Recoger las cláusulas octavas (checkbox y texto) de la solicitud GET
@@ -746,6 +790,8 @@ def generar_pdf(request):
         template = 'vehiculos/contratos/cmatricula.html'
     elif tipo_contrato == 'mandato':
         template = 'vehiculos/contratos/mandato.html'
+    elif tipo_contrato == 'fun':
+        template = 'vehiculos/contratos/fun.html'    
     else:
         return HttpResponse("Error: Tipo de contrato no válido.", status=400)
 

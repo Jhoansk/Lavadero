@@ -106,14 +106,32 @@ class EstadoForm(forms.ModelForm):
 
 # Formulario para el modelo documentos
 class DocumentosForm(forms.ModelForm):
+    placa = forms.CharField(
+        label="Placa del Vehículo",
+        max_length=50,
+        help_text="Ingrese la placa del vehículo."
+    )
+
     class Meta:
         model = documentos
         fields = [
-            'id_placa', 'n_orden', 'emp_afiliadora', 'n_tarjeta_operacion', 
-            'tarjeta_operacion', 'fecha_inicial_to', 'fecha_final_to', 'fecha_inicio_soat', 
-            'fecha_final_soat', 'soat', 'fecha_inicio_tecno', 'fecha_final_tecno', 
-            'tecnomecanica', 'fecha_inicio_sRC', 'fecha_final_sRc', 'seguros_rc'
+            'n_orden', 'emp_afiliadora', 'n_tarjeta_operacion', 
+            'tarjeta_operacion', 'fecha_inicial_to', 'fecha_final_to', 
+            'fecha_inicio_soat', 'fecha_final_soat', 'soat', 
+            'fecha_inicio_tecno', 'fecha_final_tecno', 'tecnomecanica', 
+            'fecha_inicio_sRC', 'fecha_final_sRc', 'seguros_rc'
         ]
+
+    def clean_placa(self):
+        """
+        Valida que la placa ingresada corresponda a un vehículo existente.
+        """
+        placa = self.cleaned_data.get('placa')
+        try:
+            vehiculo = Vehiculo_contratos.objects.get(placa=placa)
+        except Vehiculo_contratos.DoesNotExist:
+            raise forms.ValidationError("El vehículo con esta placa no existe.")
+        return vehiculo
 
 # Formulario para el modelo presupuesto
 class PresupuestoForm(forms.ModelForm):

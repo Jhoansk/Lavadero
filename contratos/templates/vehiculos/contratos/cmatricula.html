@@ -63,7 +63,12 @@
         <br />
         <p>
           Yo <strong>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</strong> identificado(a) con 
-          <strong>{{ usuario1.tipo_doc }} {{ usuario1.cedula }}</strong> {{ usuario1.ciudad_exp }} se solicita a el consorcio SIM, 
+          <strong>{{ usuario1.tipo_doc }} {{ usuario1.cedula }}</strong> {{ usuario1.ciudad_exp }}
+          {% if vendedores == "2" %}
+                y <strong>{{ usuario3.nombre }} {{ usuario3.p_apellido }} {{ usuario3.s_apellido }}</strong> identificado(a) con 
+                <strong>{{ usuario3.tipo_doc }} {{ usuario3.cedula }}</strong> {{ usuario3.ciudad_exp }}
+            {% endif %}
+          se solicita a el consorcio SIM, 
           de curso a la solicitud de <strong>CANCELACIÓN DE MATRICULA Y TARJETA DE OPERACIÓN</strong> ya
           que el vehículo de placas <strong>{{ vehiculo.placa }}</strong> fue desintegrado física y totalmente, su
           <strong>MOTOR, CHASIS, Y CON TODAS SUS PARTES</strong> por <strong><u>DIACO</u></strong>. 
@@ -75,7 +80,13 @@
         <br />
         <p>Atentamente</p>
         <br />
+        <br>
         <p><strong>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}<br />{{ usuario1.tipo_doc }} {{ usuario1.cedula }}</strong></p>
+        {% if vendedores == "2" %}
+        <br>
+        <br>
+        <p><strong>{{ usuario3.nombre }} {{ usuario3.p_apellido }} {{ usuario3.s_apellido }}<br />{{ usuario3.tipo_doc }} {{ usuario3.cedula }}</strong></p>
+        {% endif %}
       </div>
     </div>
   </body>

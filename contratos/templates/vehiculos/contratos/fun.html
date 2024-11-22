@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PDF con imagen y texto</title>
+    <style>
+        @page {
+            size: letter landscape; /* Tamaño carta, orientación horizontal */
+            margin: 0; /* Sin márgenes */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center; /* Centra la imagen horizontalmente */
+            align-items: center; /* Centra la imagen verticalmente */
+        }
+
+        .background {
+            position: absolute;
+            width: 100%; /* Ajusta el tamaño de la imagen */
+            height: auto; /* Mantiene la proporción de la imagen */
+            object-fit: contain; /* Hace que la imagen se ajuste a las dimensiones sin perder su proporción */
+            z-index: 1;
+        }
+
+        .text-overlay {
+            position: absolute;
+            z-index: 2;
+            font-family: Arial, sans-serif;
+            color: black;
+        }
+        {% if vendedores == "2" %}
+
+        .field-1 {
+            top:403px;
+            left: 65px;
+            font-size: 10px;
+        }
+
+        .field-2 {
+            top:443px;
+            left: 415px;
+            font-size: 10px;
+        }
+
+        .apellido1 {
+            top:403px;
+            left: 190px;
+            font-size: 10px;
+        }
+
+        .apellido2 {
+            top:403px;
+            left: 350px;
+            font-size: 10px;
+        }
+
+        .tlfpropietario {
+            top:478px;
+            left: 415px;
+            font-size: 10px;
+        }
+
+        .direccionpropietario {
+            top:478px;
+            left: 65px;
+            font-size: 10px;
+        }
+
+        .ciudadpropietario {
+            top:478px;
+            left: 270px;
+            font-size: 10px;
+        }
+
+        .field-3 {
+            top:415px;
+            left: 65px;
+            font-size: 10px;
+        }
+
+        .field-4 {
+            top:453px;
+            left: 415px;
+            font-size: 10px;
+        }
+
+        .apellido1vendedor {
+            top:415px;
+            left: 190px;
+            font-size: 10px;
+        }
+
+        .apellido2vendedor {
+            top:415px;
+            left: 350px;
+            font-size: 10px;
+        }
+
+        .tlfvendedor {
+            top:487px;
+            left: 415px;
+            font-size: 10px;
+        }
+
+        .direccionvendedor {
+            top:487px;
+            left: 65px;
+            font-size: 10px;
+        }
+
+        .ciudadvendedor {
+            top:487px;
+            left: 270px;
+            font-size: 10px;
+        }
+
+        .nombrecomprador {
+            top:595px;
+            left: 65px;
+            font-size: 12px;
+        }
+
+        .cedulacomprador {
+            top:635px;
+            left: 415px;
+            font-size: 12px;
+        }
+
+        .apellidocomprador {
+            top:595px;
+            left: 190px;
+            font-size: 12px;
+        }
+
+        .apellido2comprador {
+            top:595px;
+            left: 350px;
+            font-size: 12px;
+        }
+
+        .tlfcomprador {
+            top:670px;
+            left: 415px;
+            font-size: 12px;
+        }
+
+        .direccioncomprador {
+            top:670px;
+            left: 65px;
+            font-size: 12px;
+        }
+
+        .ciudadcomprador {
+            top:670px;
+            left: 270px;
+            font-size: 12px;
+        }
+
+        {% endif %}
+        
+        {% if vendedores == "1" %}
+
+        .field-1 {
+            top:405px;
+            left: 65px;
+            font-size: 12px;
+        }
+
+        .field-2 {
+            top:445px;
+            left: 415px;
+            font-size: 12px;
+        }
+
+        .apellido1 {
+            top:405px;
+            left: 190px;
+            font-size: 12px;
+        }
+
+        .apellido2 {
+            top:405px;
+            left: 350px;
+            font-size: 12px;
+        }
+
+        .tlfpropietario {
+            top:480px;
+            left: 415px;
+            font-size: 12px;
+        }
+
+        .direccionpropietario {
+            top:480px;
+            left: 65px;
+            font-size: 12px;
+        }
+
+        .ciudadpropietario {
+            top:480px;
+            left: 270px;
+            font-size: 12px;
+        }
+
+        .nombrecomprador {
+            top:595px;
+            left: 65px;
+            font-size: 12px;
+        }
+
+        .cedulacomprador {
+            top:635px;
+            left: 415px;
+            font-size: 12px;
+        }
+
+        .apellidocomprador {
+            top:595px;
+            left: 190px;
+            font-size: 12px;
+        }
+
+        .apellido2comprador {
+            top:595px;
+            left: 350px;
+            font-size: 12px;
+        }
+
+        .tlfcomprador {
+            top:670px;
+            left: 415px;
+            font-size: 12px;
+        }
+
+        .direccioncomprador {
+            top:670px;
+            left: 65px;
+            font-size: 12px;
+        }
+
+        .ciudadcomprador {
+            top:670px;
+            left: 270px;
+            font-size: 12px;
+        }
+
+        {% endif %}
+
+        {% if compradores == "1" %}
+
+        .field-1 {
+            top:405px;
+            left: 65px;
+            font-size: 12px;
+        }
+
+        .field-2 {
+            top:445px;
+            left: 415px;
+            font-size: 12px;
+        }
+
+        .apellido1 {
+            top:405px;
+            left: 190px;
+            font-size: 12px;
+        }
+
+        .apellido2 {
+            top:405px;
+            left: 350px;
+            font-size: 12px;
+        }
+
+        .tlfpropietario {
+            top:480px;
+            left: 415px;
+            font-size: 12px;
+        }
+
+        .direccionpropietario {
+            top:480px;
+            left: 65px;
+            font-size: 12px;
+        }
+
+        .ciudadpropietario {
+            top:480px;
+            left: 270px;
+            font-size: 12px;
+        }
+
+        .nombrecomprador {
+            top:595px;
+            left: 65px;
+            font-size: 12px;
+        }
+
+        .cedulacomprador {
+            top:635px;
+            left: 415px;
+            font-size: 12px;
+        }
+
+        .apellidocomprador {
+            top:595px;
+            left: 190px;
+            font-size: 12px;
+        }
+
+        .apellido2comprador {
+            top:595px;
+            left: 350px;
+            font-size: 12px;
+        }
+
+        .tlfcomprador {
+            top:670px;
+            left: 415px;
+            font-size: 12px;
+        }
+
+        .direccioncomprador {
+            top:670px;
+            left: 65px;
+            font-size: 12px;
+        }
+
+        .ciudadcomprador {
+            top:670px;
+            left: 270px;
+            font-size: 12px;
+        }
+
+        {% endif %}
+
+        {% if compradores == "2" %}
+
+        .field-1 {
+            top:403px;
+            left: 65px;
+            font-size: 10px;
+        }
+
+        .field-2 {
+            top:443px;
+            left: 415px;
+            font-size: 10px;
+        }
+
+        .apellido1 {
+            top:403px;
+            left: 190px;
+            font-size: 10px;
+        }
+
+        .apellido2 {
+            top:403px;
+            left: 350px;
+            font-size: 10px;
+        }
+
+        .tlfpropietario {
+            top:478px;
+            left: 415px;
+            font-size: 10px;
+        }
+
+        .direccionpropietario {
+            top:478px;
+            left: 65px;
+            font-size: 10px;
+        }
+
+        .ciudadpropietario {
+            top:478px;
+            left: 270px;
+            font-size: 10px;
+        }
+
+        .field-3 {
+            top:415px;
+            left: 65px;
+            font-size: 10px;
+        }
+
+        .field-4 {
+            top:453px;
+            left: 415px;
+            font-size: 10px;
+        }
+
+        .apellido1vendedor {
+            top:415px;
+            left: 190px;
+            font-size: 10px;
+        }
+
+        .apellido2vendedor {
+            top:415px;
+            left: 350px;
+            font-size: 10px;
+        }
+
+        .tlfvendedor {
+            top:487px;
+            left: 415px;
+            font-size: 10px;
+        }
+
+        .direccionvendedor {
+            top:487px;
+            left: 65px;
+            font-size: 10px;
+        }
+
+        .ciudadvendedor {
+            top:487px;
+            left: 270px;
+            font-size: 10px;
+        }
+
+        .nombrecomprador {
+            top:592px;
+            left: 65px;
+            font-size: 10px;
+        }
+
+        .cedulacomprador {
+            top:632px;
+            left: 415px;
+            font-size: 10px;
+        }
+
+        .apellidocomprador {
+            top:592px;
+            left: 190px;
+            font-size: 10px;
+        }
+
+        .apellido2comprador {
+            top:592px;
+            left: 350px;
+            font-size: 10px;
+        }
+
+        .tlfcomprador {
+            top:667px;
+            left: 415px;
+            font-size: 10px;
+        }
+
+        .direccioncomprador {
+            top:667px;
+            left: 65px;
+            font-size: 10px;
+        }
+
+        .ciudadcomprador {
+            top:667px;
+            left: 270px;
+            font-size: 10px;
+        }
+
+        .nombrecomprador2 {
+            top:607px;
+            left: 65px;
+            font-size: 10px;
+        }
+
+        .cedulacomprador2 {
+            top:642px;
+            left: 415px;
+            font-size: 10px;
+        }
+
+        .apellidocomprador2 {
+            top:607px;
+            left: 190px;
+            font-size: 10px;
+        }
+
+        .apellido2comprador2 {
+            top:607px;
+            left: 350px;
+            font-size: 10px;
+        }
+
+        .tlfcomprador2 {
+            top:678px;
+            left: 415px;
+            font-size: 10px;
+        }
+
+        .direccioncomprador2 {
+            top:678px;
+            left: 65px;
+            font-size: 10px;
+        }
+
+        .ciudadcomprador2 {
+            top:678px;
+            left: 270px;
+            font-size: 10px;
+        }
+
+        {% endif %}
+
+        .marca {
+            top:175px;
+            left: 505px;
+            font-size: 12px;
+        }
+
+        .color {
+            top:205px;
+            left: 505px;
+            font-size: 12px;
+        }
+
+        .linea {
+            top:175px;
+            left: 610px;
+            font-size: 12px;
+        }
+
+        .modelo {
+            top:205px;
+            left: 840px;
+            font-size: 12px;
+        }
+
+        .cilindraje {
+            top:205px;
+            left: 910px;
+            font-size: 12px;
+        }
+
+        .carroceria {
+            top:335px;
+            left: 505px;
+            font-size: 12px;
+        }
+
+        .motor {
+            top:300px;
+            left: 770px;
+            font-size: 12px;
+        }
+
+        .chasis {
+            top:335px;
+            left: 770px;
+            font-size: 12px;
+        }
+
+        .serie {
+            top:375px;
+            left: 770px;
+            font-size: 12px;
+        }
+
+        .vin {
+            top:420px;
+            left: 770px;
+            font-size: 12px;
+        }
+
+        .capacidad {
+            top:240px;
+            left: 505px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    <div class="container">
+        <!-- Imagen de fondo ajustada -->
+        <img src="https://checklistpesv.taxicupos.com/img/fun.jpeg" alt="Background" class="background">
+        
+        <!-- Texto posicionado -->
+        {% if vendedores == "2" %}
+        <div class="text-overlay field-3">{{ usuario1.nombre }}</div>
+        <div class="text-overlay apellido1vendedor">{{ usuario1.p_apellido }}</div>
+        <div class="text-overlay apellido2vendedor">{{ usuario1.s_apellido }}</div>
+        <div class="text-overlay field-4">{{ usuario1.cedula }}</div>
+        <div class="text-overlay tlfvendedor">{{ usuario1.telefono }}</div>
+        <div class="text-overlay direccionvendedor">{{ usuario1.direccion }}</div>
+        <div class="text-overlay ciudadvendedor">{{ usuario1.ciudad }}</div>
+
+        <div class="text-overlay field-1">{{ usuario3.nombre }}</div>
+        <div class="text-overlay apellido1">{{ usuario3.p_apellido }}</div>
+        <div class="text-overlay apellido2">{{ usuario3.s_apellido }}</div>
+        <div class="text-overlay field-2">{{ usuario3.cedula }}</div>
+        <div class="text-overlay tlfpropietario">{{ usuario3.telefono }}</div>
+        <div class="text-overlay direccionpropietario">{{ usuario3.direccion }}</div>
+        <div class="text-overlay ciudadpropietario">{{ usuario3.ciudad }}</div>
+        {% endif %}
+        {% if vendedores == "1" %}
+        <!--Info vendedor-->
+        <div class="text-overlay field-1">{{ usuario1.nombre }}</div>
+        <div class="text-overlay apellido1">{{ usuario1.p_apellido }}</div>
+        <div class="text-overlay apellido2">{{ usuario1.s_apellido }}</div>
+        <div class="text-overlay field-2">{{ usuario1.cedula }}</div>
+        <div class="text-overlay tlfpropietario">{{ usuario1.telefono }}</div>
+        <div class="text-overlay direccionpropietario">{{ usuario1.direccion }}</div>
+        <div class="text-overlay ciudadpropietario">{{ usuario1.ciudad }}</div>
+
+        {% endif %}
+        <!-- Info comprador-->
+        {% if compradores == "2" %}
+
+        <div class="text-overlay field-3">{{ usuario1.nombre }}</div>
+        <div class="text-overlay apellido1vendedor">{{ usuario1.p_apellido }}</div>
+        <div class="text-overlay apellido2vendedor">{{ usuario1.s_apellido }}</div>
+        <div class="text-overlay field-4">{{ usuario1.cedula }}</div>
+        <div class="text-overlay tlfvendedor">{{ usuario1.telefono }}</div>
+        <div class="text-overlay direccionvendedor">{{ usuario1.direccion }}</div>
+        <div class="text-overlay ciudadvendedor">{{ usuario1.ciudad }}</div>
+
+        {% endif %}
+
+        {% if compradores == "1" %}
+
+        <div class="text-overlay field-1">{{ usuario1.nombre }}</div>
+        <div class="text-overlay apellido1">{{ usuario1.p_apellido }}</div>
+        <div class="text-overlay apellido2">{{ usuario1.s_apellido }}</div>
+        <div class="text-overlay field-2">{{ usuario1.cedula }}</div>
+        <div class="text-overlay tlfpropietario">{{ usuario1.telefono }}</div>
+        <div class="text-overlay direccionpropietario">{{ usuario1.direccion }}</div>
+        <div class="text-overlay ciudadpropietario">{{ usuario1.ciudad }}</div>
+
+
+        {% endif %}
+        <!--Datos Vehiculo-->
+        <div class="text-overlay marca">{{ vehiculo.marca }}</div>
+        <div class="text-overlay linea">{{ vehiculo.linea }}</div>
+        <div class="text-overlay color">{{ vehiculo.color }}</div>
+        <div class="text-overlay modelo">{{ vehiculo.modelo }}</div>
+        <div class="text-overlay cilindraje">{{ vehiculo.cilindraje }}</div>
+        <div class="text-overlay carroceria">{{ vehiculo.tipo_carroceria }}</div>
+        <div class="text-overlay motor">{{ vehiculo.n_motor }}</div>
+        <div class="text-overlay chasis">{{ vehiculo.n_chasis }}</div>
+        <div class="text-overlay serie">{{ vehiculo.n_serie }}</div>
+        <div class="text-overlay vin">{{ vehiculo.n_vin }}</div>
+        <div class="text-overlay capacidad">{{ vehiculo.capacidad }}</div>
+    </div>
+</body>
+</html>

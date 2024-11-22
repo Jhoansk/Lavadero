@@ -139,7 +139,7 @@
             </tr>
             <tr>
               <td>No. de Tarjeta de Operación</td>
-              <td><strong>[tarjetaOp]</strong></td>
+              <td><strong>{{ documento.n_tarjeta_operacion }}</strong></td>
             </tr>
             <tr>
               <td>Marca</td>
@@ -168,16 +168,16 @@
         <div class="flex-container">
           <div class="inline-container">
             <p>Nombre</p>
-            <p style="margin-left: 55px">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p>
+            <p style="margin-left: 55px">{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p>
             <br />
             <p>Doc. Identificación</p>
-            <p style="margin-left: 10px">{{ usuario1.tipo_doc }} {{ usuario1.cedula }} {{ usuario1.ciudad_exp }}</p>
+            <p style="margin-left: 10px">{{ usuario2.tipo_doc }} {{ usuario2.cedula }} {{ usuario2.ciudad_exp }}</p>
             <br />
             <p>Telefono Celular</p>
-            <p style="margin-left: 20px">{{ usuario1.telefono }}</p>
+            <p style="margin-left: 20px">{{ usuario2.telefono }}</p>
             <br />
             <p>Correo Electronico</p>
-            <p style="margin-left: 10px">{{ usuario1.correo }}</p>
+            <p style="margin-left: 10px">{{ usuario2.correo }}</p>
             <br />
           </div>
           <div class="text-huella">

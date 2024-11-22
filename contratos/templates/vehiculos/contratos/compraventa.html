@@ -1,141 +1,302 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contrato de Compraventa</title>
-    <style>
-      @page {
-        size: letter;
-        margin: 20mm;
-      }
-
-      *{
-        font-size: 10pt;
-      }
-
-      body {
-        font-family: Arial, sans-serif;
-        font-size: 12pt;
-        line-height: 1.5;
-        margin: 0;
-        padding: 0;
-      }
-
-      .container {
-        text-align: justify;
-        margin: 0 10mm;
-      }
-
-      h1 {
-        text-align: center;
-        font-size: 14pt;
-        margin-bottom: 20px;
-      }
-
-      p {
-        margin: 10px 0;
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 15px 0;
-      }
-
-      td {
-        font-size: 12pt;
-        text-align: left;
-      }
-
-      .header-title {
-        font-weight: bold;
-        font-size: 12pt;
-        text-align: left;
-      }
-
-      .caract-vehiculo{
-        font-size: 9pt;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>CONTRATO DE COMPRA-VENTA</h1>
-
-      <p>
-        Yo, {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }} identificado con {{ usuario1.tipo_doc }}
-        {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }} con residencia en la ciudad de Bogotá D.C,
-        quien para efectos de este contrato se denominará el VENDEDOR, y por
-        otra parte {{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}, mayor(es) de edad,
-        con residencia en la ciudad de Bogotá D.C identificado(s) {{ usuario2.tipo_doc }}
-        {{ usuario2.cedula }} de {{ usuario2.ciudad_exp }}. Quien para efectos del presente contrato
-        se denominará EL COMPRADOR(ES) hemos acordado suscribir el siguiente
-        contrato de COMPRA-VENTA que se regirá por las siguientes cláusulas.
-      </p>
-
-      <p>
-        <strong>CLAUSULA PRIMERA - EL VENDEDOR:</strong> Da en venta real y
-        material a EL COMPRADOR el vehículo de las siguientes características:
-      </p>
-
-      <table>
-        <tbody>
-          <tr>
-            <td class="caract-vehiculo">MARCA: {{ vehiculo.marca }}</td>
-            <td class="caract-vehiculo">LINEA: {{ vehiculo.linea }}</td>
-            <td class="caract-vehiculo">MODELO: {{ vehiculo.modelo }}</td>
-          </tr>
-          <tr>
-            <td class="caract-vehiculo">MOTOR: {{ vehiculo.n_motor }}</td>
-            <td class="caract-vehiculo">CHASIS: {{ vehiculo.n_chasis }}</td>
-            <td class="caract-vehiculo">PLACAS: {{ vehiculo.placa }}</td>
-          </tr>
-          <tr>
-            <td class="caract-vehiculo">CLASE: {{ vehiculo.clase }}</td>
-            <td class="caract-vehiculo">SERVICIO: {{ vehiculo.tipo_servicio }}</td>
-            <td class="caract-vehiculo"></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p>
-        <strong>CLAUSULA SEGUNDA:</strong> Las partes han acordado el precio de
-        venta por: ______________________________________________________
-        <strong>efectivo.</strong>
-      </p>
-
-      <p>
-        Tanto EL VENDEDOR como el COMPRADOR aceptan las condiciones del presente
-        contrato y para su efecto firman ante sus nombres en la ciudad de
-        Bogotá, el día __________________________
-      </p>
-      <br>
-      <br>
-      <table>
-        <tbody>
-          <tr>
-            <td><strong>EL VENDEDOR</strong></td>
-            <td><strong>EL COMPRADOR</strong></td>
-          </tr>
-          <tr>
-            <td><strong>NOMBRE:</strong> {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</td>
-            <td><strong>NOMBRE:</strong> {{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</td>
-          </tr>
-          <tr>
-            <td><strong>No Identificación:</strong> {{ usuario1.tipo_doc }} {{ usuario1.cedula }}</td>
-            <td><strong>No Identificación:</strong> {{ usuario2.tipo_doc }} {{ usuario2.cedula }}</td>
-          </tr>
-          <tr>
-            <td><strong>Dirección:</strong> {{ usuario1.direccion }}</td>
-            <td><strong>Dirección:</strong> {{ usuario2.direccion }}</td>
-          </tr>
-          <tr>
-            <td><strong>Teléfono:</strong> {{ usuario1.telefono }}</td>
-            <td><strong>Teléfono:</strong> {{ usuario2.telefono }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </body>
-</html>
+<!DOCTYPE html>
+
+<html lang="es">
+
+  <head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Contrato de Compraventa</title>
+
+    <style>
+
+      @page {
+
+        size: letter;
+
+        margin: 20mm;
+
+      }
+
+
+
+      *{
+
+        font-size: 10pt;
+
+      }
+
+
+
+      body {
+
+        font-family: Arial, sans-serif;
+
+        font-size: 12pt;
+
+        line-height: 1.5;
+
+        margin: 0;
+
+        padding: 0;
+
+      }
+
+
+
+      .container {
+
+        text-align: justify;
+
+        margin: 0 10mm;
+
+      }
+
+
+
+      h1 {
+
+        text-align: center;
+
+        font-size: 14pt;
+
+        margin-bottom: 20px;
+
+      }
+
+
+
+      p {
+
+        margin: 10px 0;
+
+      }
+
+
+
+      table {
+
+        width: 100%;
+
+        border-collapse: collapse;
+
+        margin: 15px 0;
+
+      }
+
+
+
+      td {
+
+        font-size: 10pt;
+
+        text-align: left;
+
+      }
+
+
+
+      .header-title {
+
+        font-weight: bold;
+
+        font-size: 12pt;
+
+        text-align: left;
+
+      }
+
+
+
+      .caract-vehiculo{
+
+        font-size: 9pt;
+
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <h1>CONTRATO DE COMPRA-VENTA</h1>
+
+
+
+      <p>
+
+        Yo, {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }} identificado con {{ usuario1.tipo_doc }}
+
+        {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }} con residencia en la ciudad de Bogotá D.C,
+
+        quien para efectos de este contrato se denominará el VENDEDOR, y por
+
+        otra parte________________________________, mayor(es) de edad,
+
+        con residencia en la ciudad de Bogotá D.C identificado(s) _____________________
+
+        _____________________ de ____________________ 
+        {% if compradores == "2" %}
+        y {{ usuario4.nombre }} {{ usuario4.p_apellido }} {{ usuario4.s_apellido }}, mayor(es) de edad,
+
+        con residencia en la ciudad de Bogotá D.C identificado(s) {{ usuario4.tipo_doc }}
+        {% endif %}
+        . Quien para efectos del presente contrato
+
+        se denominará EL COMPRADOR(ES) hemos acordado suscribir el siguiente
+
+        contrato de COMPRA-VENTA que se regirá por las siguientes cláusulas.
+
+      </p>
+
+
+
+      <p>
+
+        <strong>CLAUSULA PRIMERA - EL VENDEDOR:</strong> Da en venta real y
+
+        material a EL COMPRADOR el vehículo de las siguientes características:
+
+      </p>
+
+
+
+      <table>
+
+        <tbody>
+
+          <tr>
+
+            <td class="caract-vehiculo">MARCA: {{ vehiculo.marca }}</td>
+
+            <td class="caract-vehiculo">LINEA: {{ vehiculo.linea }}</td>
+
+            <td class="caract-vehiculo">MODELO: {{ vehiculo.modelo }}</td>
+
+          </tr>
+
+          <tr>
+
+            <td class="caract-vehiculo">MOTOR: {{ vehiculo.n_motor }}</td>
+
+            <td class="caract-vehiculo">CHASIS: {{ vehiculo.n_chasis }}</td>
+
+            <td class="caract-vehiculo">PLACAS: {{ vehiculo.placa }}</td>
+
+          </tr>
+
+          <tr>
+
+            <td class="caract-vehiculo">CLASE: {{ vehiculo.clase }}</td>
+
+            <td class="caract-vehiculo">SERVICIO: {{ vehiculo.tipo_servicio }}</td>
+
+            <td class="caract-vehiculo"></td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+
+
+      <p>
+
+        <strong>CLAUSULA SEGUNDA:</strong> Las partes han acordado el precio de
+
+        venta por: ______________________________________________________
+
+        <strong>efectivo.</strong>
+
+      </p>
+
+
+
+      <p>
+
+        Tanto EL VENDEDOR como el COMPRADOR aceptan las condiciones del presente
+
+        contrato y para su efecto firman ante sus nombres en la ciudad de
+
+        Bogotá, el día __________________________
+
+      </p>
+
+      <br>
+
+      <br>
+
+      <br>
+
+      <table>
+
+        <tbody>
+
+          <tr>
+
+            <td><strong>EL VENDEDOR</strong></td>
+
+            <td><strong>EL COMPRADOR</strong></td>
+
+          </tr>
+
+          <tr>
+
+            <td><strong>NOMBRE:</strong> {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</td>
+
+            <td><strong>NOMBRE:</strong>______________________________</td>
+
+          </tr>
+
+          <tr>
+
+            <td><strong>No Identificación:</strong> {{ usuario1.tipo_doc }} {{ usuario1.cedula }}</td>
+
+            <td><strong>No Identificación:</strong> ___________________________</td>
+
+          </tr>
+
+          <tr>
+
+            <td><strong>Dirección:</strong> {{ usuario1.direccion }}</td>
+
+            <td><strong>Dirección:</strong>______________________________</td>
+
+          </tr>
+
+          <tr>
+
+            <td><strong>Teléfono:</strong> {{ usuario1.telefono }}</td>
+
+            <td><strong>Teléfono:</strong>______________________________</td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+      {% if compradores == "2" %}
+      <br>
+      <br>
+      <br>
+        <div class="flex-content">
+          <p><strong>EL COMPRADOR</strong></p>
+            <p><strong>NOMBRE:</strong> {{ usuario4.nombre }} {{ usuario4.p_apellido }} {{ usuario4.s_apellido }}</p>
+            <p><strong>No Identificación:</strong> {{ usuario4.tipo_doc }} {{ usuario4.cedula }}</p>
+            <p><strong>Dirección:</strong> {{ usuario4.direccion }}</p>
+            <p><strong>Teléfono:</strong> {{ usuario4.telefono }}</p>
+        </div>
+        {% endif %}
+
+    </div>
+
+  </body>
+
+</html>
+

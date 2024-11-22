@@ -114,7 +114,7 @@ class estado(models.Model):
         return f"{self.id_placa.placa} - {self.estado}"
     
 class documentos(models.Model):
-    id_placa = models.ForeignKey(Vehiculo_contratos, on_delete=models.CASCADE)
+    id_placa = models.ForeignKey(Vehiculo_contratos, to_field='placa', on_delete=models.CASCADE)
     n_orden = models.CharField(max_length=50)
     emp_afiliadora = models.CharField(max_length=50)
     n_tarjeta_operacion =  models.CharField(max_length=50)

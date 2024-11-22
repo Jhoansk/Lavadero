@@ -42,18 +42,24 @@
 
       <div class="main">
         <p>
-          Entre los suscritos {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }} identificado con
-          {{ usuario1.tipo_doc }} número {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }} mayor(es) de edad, con
-          residencia en Bogotá D.C quien para los efectos del presente contrato se
-          denominara EL MANDANTE y de otra parte {{ usuario2.nombre }} {{ usuario2.p_apellido }} 
-          {{ usuario2.s_apellido }} mayor(es) de edad con residencia en Bogotá D.C
-          identificado(s) con {{ usuario2.tipo_doc }} numero {{ usuario2.cedula }} quien para efectos
-          del presente contrato se denominara EL MANDATARIO, hemos acordado
-          suscribir el siguiente contrato de mandato que se regirán por las
-          siguientes clausulas y en lo previsto en ellas por las disposiciones del
-          código de comercio y el código civil colombiano aplicables a la materia
-          que ocupa este contrato.
+            Entre los suscritos {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }} identificado con
+            {{ usuario1.tipo_doc }} número {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }} 
+            {% if vendedores == "2" %}
+                y {{ usuario3.nombre }} {{ usuario3.p_apellido }} {{ usuario3.s_apellido }} identificado con
+                {{ usuario3.tipo_doc }} número {{ usuario3.cedula }} de {{ usuario3.ciudad_exp }}
+            {% endif %}
+             mayor(es) de edad, con
+            residencia en Bogotá D.C quien para los efectos del presente contrato se
+            denominara EL MANDANTE y de otra parte ________________________________________ 
+            __________________ mayor(es) de edad con residencia en Bogotá D.C
+            identificado(s) con _________ numero ________________ quien para efectos
+            del presente contrato se denominara EL MANDATARIO, hemos acordado
+            suscribir el siguiente contrato de mandato que se regirán por las
+            siguientes clausulas y en lo previsto en ellas por las disposiciones del
+            código de comercio y el código civil colombiano aplicables a la materia
+            que ocupa este contrato.
         </p>
+    </div>
   
         <p>
           PRIMERO. OBJETO DE CONTRATO: EL MANDANTE le confía a EL MANDATARIO la
@@ -85,11 +91,13 @@
         <p>
           Tanto EL MANDATARIO como EL MANDANTE aceptan las condiciones del
           presente contrato y para su efecto firman ante sus nombres en la ciudad
-          de Bogotá el dia( )del mes( ) año( )
+          de Bogotá el dia(______)del mes(______) año(______)
         </p>
         <div class="flex-container">
           <div class="flex-content left-margin">
             <p>EL MANDANTE</p>
+            <br>
+            <br>
             <p>_________________________________</p>
             <p>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p>
             <p>{{ usuario1.tipo_doc }} {{ usuario1.cedula }}</p>
@@ -97,11 +105,24 @@
   
           <div class="flex-content">
             <p>EL MANDATARIO</p>
+            <br>
+            <br>
             <p>_________________________________</p>
-            <p>{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p>
-            <p>{{ usuario2.tipo_doc }} {{ usuario2.cedula }}</p>
-          </div>
+            <p></p>
+            <br>
+            <p>C.C _____________________________</p>
+          </div>          
         </div>
+        {% if vendedores == "2" %}
+        <div class="flex-content">
+          <p>EL MANDANTE</p>
+            <br>
+            <br>
+            <p>_________________________________</p>
+            <p>{{ usuario3.nombre }} {{ usuario3.p_apellido }} {{ usuario3.s_apellido }}</p>
+            <p>{{ usuario3.tipo_doc }} {{ usuario3.cedula }}</p>
+        </div>
+        {% endif %}
       </div>
     </div>
   </body>
