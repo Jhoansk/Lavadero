@@ -4,9 +4,33 @@ from .models import Factura
 from .models import usuario, user, estado, documentos, presupuesto, contrato_venta_cupo, contrato_compra_cupo, contrato_compra, contrato_venta,Checklist
 from vehiculos.models import Usuario
 import difflib
+from django.forms.widgets import DateInput
 
 class VehiculoForm(forms.ModelForm):
     valor_presupuesto = forms.FloatField(required=False, label="Presupuesto")
+    tipo_carroceria = forms.ChoiceField(
+        choices=[
+            ('Sedan', 'Sedan'),
+            ('Hatchback', 'Hatchback'),
+            ('Wagon', 'Wagon'),
+        ],
+        label="Tipo de Carrocería"
+    )
+    tipo_servicio = forms.ChoiceField(
+        choices=[
+            ('Particular', 'Particular'),
+            ('Publico', 'Público'),
+        ],
+        label="Tipo de Servicio"
+    )
+    
+    clase = forms.ChoiceField(
+        choices=[
+            ('Automovil', 'Automovil'),
+            ('Camioneta', 'Camioneta'),
+        ],
+        label="Clase"
+    )
 
     class Meta:
         model = Vehiculo_contratos
@@ -16,6 +40,11 @@ class VehiculoForm(forms.ModelForm):
             'n_chasis', 'n_vin', 'n_serie', 'sitio_matricula', 'n_acta_matricula',
             'fecha_matricula', 'ciudad_vehiculo', 'valor_presupuesto', 'imagen'
         ]
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['n_vin'].required = False
+        self.fields['n_serie'].required = False
         
 
 class FacturaForm(forms.ModelForm):
@@ -111,27 +140,28 @@ class DocumentosForm(forms.ModelForm):
         max_length=50,
         help_text="Ingrese la placa del vehículo."
     )
-
+    
     class Meta:
         model = documentos
         fields = [
             'n_orden', 'emp_afiliadora', 'n_tarjeta_operacion', 
-            'tarjeta_operacion', 'fecha_inicial_to', 'fecha_final_to', 
-            'fecha_inicio_soat', 'fecha_final_soat', 'soat', 
-            'fecha_inicio_tecno', 'fecha_final_tecno', 'tecnomecanica', 
-            'fecha_inicio_sRC', 'fecha_final_sRc', 'seguros_rc'
+            'tarjeta_operacion', 'fecha_expedicion_to', 'fecha_vencimiento_to',
+            'fecha_expedicion_soat', 'fecha_vencimiento_soat', 
+            'fecha_expedicion_tecno', 'fecha_vencimiento_tecno', 
+            'fecha_expedicion_sRc', 'fecha_vencimiento_sRc', 
+            'empresa_soat', 'numero_soat', 'numero_licencia',
+            'soat', 'tecnomecanica', 'seguros_rc'
         ]
-
-    def clean_placa(self):
-        """
-        Valida que la placa ingresada corresponda a un vehículo existente.
-        """
-        placa = self.cleaned_data.get('placa')
-        try:
-            vehiculo = Vehiculo_contratos.objects.get(placa=placa)
-        except Vehiculo_contratos.DoesNotExist:
-            raise forms.ValidationError("El vehículo con esta placa no existe.")
-        return vehiculo
+        widgets = {
+            'fecha_expedicion_to': DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'fecha_vencimiento_to': DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'fecha_expedicion_soat': DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'fecha_vencimiento_soat': DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'fecha_expedicion_tecno': DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'fecha_vencimiento_tecno': DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'fecha_expedicion_sRc': DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'fecha_vencimiento_sRc': DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+        }
 
 # Formulario para el modelo presupuesto
 class PresupuestoForm(forms.ModelForm):

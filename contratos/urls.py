@@ -68,6 +68,8 @@ urlpatterns = [
          name='seleccionar_datos_contrato'),
     # Ruta para generar el PDF
     path('contrato/generar-pdf/', views.generar_pdf, name='generar_pdf'),
+    path('ver-archivos/', views.ver_archivos, name='ver_archivos'),
+    path('contratos/reporte/', views.generar_reporte_contratos, name='generar_reporte_contratos'),
     
     path('perfil/', views.perfil, name='configuraciones'),
     path('crear_usuario/', views.crear_usuario_desde_contratos, name='crear_usuario_desde_contratos'),

@@ -580,6 +580,31 @@
             left: 505px;
             font-size: 12px;
         }
+
+        .acta{
+            top:480px;
+            left: 501px;
+            font-size: 12px;
+        }
+
+        .empafiliadora{
+            top:550px;
+            left: 760px;
+            font-size: 12px;
+        }
+
+        .p_parte{
+            top:115px;
+            left: 940px;
+            font-size: 12px;
+        }
+
+        .s_parte{
+            top:115px;
+            left: 980px;
+            font-size: 12px;
+        }
+
     </style>
 </head>
 <body>
@@ -654,6 +679,10 @@
         <div class="text-overlay serie">{{ vehiculo.n_serie }}</div>
         <div class="text-overlay vin">{{ vehiculo.n_vin }}</div>
         <div class="text-overlay capacidad">{{ vehiculo.capacidad }}</div>
+        <div class="text-overlay acta">{{ vehiculo.n_acta_matricula }}</div>
+        <div class="text-overlay empafiliadora">{{ documento.emp_afiliadora }}</div>
+        <div class="text-overlay p_parte">{{ placa_parte1 }}</div>
+        <div class="text-overlay s_parte">{{ placa_parte2 }}</div>
     </div>
 </body>
 </html>

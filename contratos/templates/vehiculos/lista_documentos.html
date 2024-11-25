@@ -9,47 +9,47 @@
       <a href="{% url 'vehiculos:agregar_documentos' %}" class="btn btn-primary">Agregar Documentos</a>
 
       <table class="table">
-          <thead>
-              <tr>
-                  <th>Placa</th>
-                  <th>Número de Orden</th>
-                  <th>Empresa Afiliadora</th>
-                  <th>Número Tarjeta de Operación</th>
-                  <th>Fecha Inicial TO</th>
-                  <th>Fecha Final TO</th>
-                  <th>Fecha Inicial SOAT</th>
-                  <th>Fecha Final SOAT</th>
-                  <th>Fecha Inicial Tecnomecánica</th>
-                  <th>Fecha Final Tecnomecánica</th>
-                  <th>Fecha Inicial SRC</th>
-                  <th>Fecha Final SRC</th>
-              </tr>
-          </thead>
-          <tbody>
-              {% if documentos %}
-                  {% for documento in documentos %}
-                  <tr>
-                      <td>{{ documento.id_placa.placa }}</td>
-                      <td>{{ documento.n_orden }}</td>
-                      <td>{{ documento.emp_afiliadora }}</td>
-                      <td>{{ documento.n_tarjeta_operacion }}</td>
-                      <td>{{ documento.fecha_inicial_to }}</td>
-                      <td>{{ documento.fecha_final_to }}</td>
-                      <td>{{ documento.fecha_inicio_soat }}</td>
-                      <td>{{ documento.fecha_final_soat }}</td>
-                      <td>{{ documento.fecha_inicio_tecno }}</td>
-                      <td>{{ documento.fecha_final_tecno }}</td>
-                      <td>{{ documento.fecha_inicio_sRC }}</td>
-                      <td>{{ documento.fecha_final_sRc }}</td>
-                  </tr>
-                  {% endfor %}
-              {% else %}
-                  <tr>
-                      <td colspan="12">No hay documentos disponibles.</td>
-                  </tr>
-              {% endif %}
-          </tbody>
-      </table>
+        <thead>
+            <tr>
+                <th>Placa</th>
+                <th>Número de Orden</th>
+                <th>Empresa Afiliadora</th>
+                <th>Número Tarjeta de Operación</th>
+                <th>Fecha Expedición TO</th>
+                <th>Fecha Vencimiento TO</th>
+                <th>Fecha Expedición SOAT</th>
+                <th>Fecha Vencimiento SOAT</th>
+                <th>Fecha Expedición Tecnomecánica</th>
+                <th>Fecha Vencimiento Tecnomecánica</th>
+                <th>Fecha Expedición SRC</th>
+                <th>Fecha Vencimiento SRC</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if documentos %}
+                {% for documento in documentos %}
+                <tr>
+                    <td>{{ documento.id_placa.placa }}</td>
+                    <td>{{ documento.n_orden }}</td>
+                    <td>{{ documento.emp_afiliadora }}</td>
+                    <td>{{ documento.n_tarjeta_operacion }}</td>
+                    <td>{{ documento.fecha_expedicion_to }}</td>
+                    <td>{{ documento.fecha_vencimiento_to }}</td>
+                    <td>{{ documento.fecha_expedicion_soat }}</td>
+                    <td>{{ documento.fecha_vencimiento_soat }}</td>
+                    <td>{{ documento.fecha_expedicion_tecno }}</td>
+                    <td>{{ documento.fecha_vencimiento_tecno }}</td>
+                    <td>{{ documento.fecha_expedicion_sRc }}</td>
+                    <td>{{ documento.fecha_vencimiento_sRc }}</td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="12">No hay documentos disponibles.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
     </div>
 </div>
 {% endblock %}

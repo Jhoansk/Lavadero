@@ -191,15 +191,15 @@
         </td>
       </tr>
       <tr>
-        <td></td>
-        <!-- Fecha espacio -->
-        <td></td>
-        <!-- Elaboro espacio -->
-        <td></td>
-        <!-- Reviso espacio -->
-        <td></td>
-        <!-- Asesor espacio -->
-        <td></td>
+        <td><strong>{{ fecha_hoy }}</strong></td>
+          <!-- Fecha espacio -->
+          <td><strong>{{ nombre_usuario.first_name }} {{ nombre_usuario.last_name }}</strong></td>
+          <!-- Elaboro espacio -->
+          <td><strong>WILSON BERNAL<strong></td>
+          <!-- Reviso espacio -->
+          <td><strong>{{ nombre_usuario.first_name }} {{ nombre_usuario.last_name }}</strong></td>
+          <!-- Asesor espacio -->
+          <td><strong>{{refiere}}</strong></td>
         <!-- Refiere espacio -->
       </tr>
     </table>
@@ -262,7 +262,7 @@
         <strong
           >&shy;&shy;&shy;&shy;&shy;{{ primer_pago_letras }} DE PESOS M/CTE
           (${{ primer_pago }}) </strong
-        >dentro de los ______ (__) d&iacute;as h&aacute;biles siguientes
+        >dentro de los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) d&iacute;as h&aacute;biles siguientes
         a&hellip;&hellip;&hellip;&hellip;.---------------------
       </li>
       <li>
@@ -270,7 +270,7 @@
         <strong
           >&shy;&shy;&shy;&shy;&shy;{{ segundo_pago_letras }} DE PESOS M/CTE
           (${{ segundo_pago }}) </strong
-        >dentro de los ______ (__) d&iacute;as h&aacute;biles siguientes
+        >dentro de los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) d&iacute;as h&aacute;biles siguientes
         a&hellip;&hellip;&hellip;&hellip;.---------------------
       </li>
     </ul>
@@ -461,11 +461,12 @@
       >Asesor:
       <strong>&shy;&shy;&shy;&shy;&shy;&shy;&shy;&shy;________________</strong>
     </p>
-    <p style="text-align: justify">
-      En constancia de aceptaci&oacute;n se suscribe, una vez le&iacute;do, en
-      dos copias del mismo tenor y contenido con destino a cada una de las
-      partes, en la ciudad de Bogot&aacute;, a los ___________ (__) d&iacute;as
-      del mes de _______ del a&ntilde;o dos mil veintitr&eacute;s (2023).
+    <p class="justificado">
+      En se&ntilde;al de conformidad las partes contratantes suscriben el
+      presente documento en la ciudad de Bogot&aacute; D.C, a los {{ dia_letras }}
+      ({{ dia }}) d&iacute;as del mes de {{ mes }} del a&ntilde;o {{ year_letras }} ({{ year }})
+      . Se extienden dos copias del mismo tenor y
+      valor.
     </p>
     <div class="flex primer-espacio" style="display: inline-block; margin-right: 60px;">
       <p>

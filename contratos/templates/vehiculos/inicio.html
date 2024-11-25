@@ -148,38 +148,38 @@
                     <tbody>
                         {% for doc in documentos_a_vencer %}
                             <!-- Mostrar Tarjeta de Operación si está próxima a vencer -->
-                            {% if doc.fecha_final_to and doc.fecha_final_to <= future_threshold %}
+                            {% if doc.fecha_vencimiento_to and doc.fecha_vencimiento_to <= future_threshold %}
                                 <tr>
                                     <td>{{ doc.id_placa.placa }}</td>
                                     <td>Tarjeta de Operación</td>
-                                    <td>{{ doc.fecha_final_to }}</td>
+                                    <td>{{ doc.fecha_vencimiento_to|date:"d/m/Y" }}</td>
                                 </tr>
                             {% endif %}
-            
+                    
                             <!-- Mostrar SOAT si está próximo a vencer -->
-                            {% if doc.fecha_final_soat and doc.fecha_final_soat <= future_threshold %}
+                            {% if doc.fecha_vencimiento_soat and doc.fecha_vencimiento_soat <= future_threshold %}
                                 <tr>
                                     <td>{{ doc.id_placa.placa }}</td>
                                     <td>SOAT</td>
-                                    <td>{{ doc.fecha_final_soat }}</td>
+                                    <td>{{ doc.fecha_vencimiento_soat|date:"d/m/Y" }}</td>
                                 </tr>
                             {% endif %}
-            
+                    
                             <!-- Mostrar Tecnomecánica si está próxima a vencer -->
-                            {% if doc.fecha_final_tecno and doc.fecha_final_tecno <= future_threshold %}
+                            {% if doc.fecha_vencimiento_tecno and doc.fecha_vencimiento_tecno <= future_threshold %}
                                 <tr>
                                     <td>{{ doc.id_placa.placa }}</td>
                                     <td>Tecnomecánica</td>
-                                    <td>{{ doc.fecha_final_tecno }}</td>
+                                    <td>{{ doc.fecha_vencimiento_tecno|date:"d/m/Y" }}</td>
                                 </tr>
                             {% endif %}
-            
+                    
                             <!-- Mostrar Seguro RC si está próximo a vencer -->
-                            {% if doc.fecha_final_sRc and doc.fecha_final_sRc <= future_threshold %}
+                            {% if doc.fecha_vencimiento_sRc and doc.fecha_vencimiento_sRc <= future_threshold %}
                                 <tr>
                                     <td>{{ doc.id_placa.placa }}</td>
                                     <td>Seguro RC</td>
-                                    <td>{{ doc.fecha_final_sRc }}</td>
+                                    <td>{{ doc.fecha_vencimiento_sRc|date:"d/m/Y" }}</td>
                                 </tr>
                             {% endif %}
                         {% empty %}

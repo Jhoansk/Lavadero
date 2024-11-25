@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archivos de Contratos</title>
+</head>
+<body>
+    <h1>Archivos de Contratos</h1>
+    
+    {% if archivos %}
+        <ul>
+            {% for archivo in archivos %}
+                <li>
+                    <!-- Enlace para descargar el archivo -->
+                    <a href="{{ MEDIA_URL }}contratos/{{ archivo }}" download="{{ archivo }}">
+                        Descargar {{ archivo }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron archivos disponibles.</p>
+    {% endif %}
+</body>
+</html>

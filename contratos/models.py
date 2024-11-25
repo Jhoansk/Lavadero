@@ -117,20 +117,26 @@ class documentos(models.Model):
     id_placa = models.ForeignKey(Vehiculo_contratos, to_field='placa', on_delete=models.CASCADE)
     n_orden = models.CharField(max_length=50)
     emp_afiliadora = models.CharField(max_length=50)
-    n_tarjeta_operacion =  models.CharField(max_length=50)
+    n_tarjeta_operacion = models.CharField(max_length=50)
     tarjeta_operacion = models.ImageField(upload_to='documentos/tarjeta_op/', null=True, blank=True)
-    fecha_inicial_to = models.DateField()
-    fecha_final_to = models.DateField()
-    fecha_inicio_soat = models.DateField()
-    fecha_final_soat = models.DateField()
-    soat= models.ImageField(upload_to='documentos/soat/', null=True, blank=True)
-    fecha_inicio_tecno = models.DateField()
-    fecha_final_tecno = models.DateField()
-    tecnomecanica = models.ImageField(upload_to='documentos/tecnomecanica/', null=True, blank=True)
-    fecha_inicio_sRC =models.DateField()
-    fecha_final_sRc = models.DateField()
-    seguros_rc = models.ImageField(upload_to='documentos/seguros/', null=True, blank=True)
+
+    fecha_expedicion_to = models.DateField()
+    fecha_vencimiento_to = models.DateField()
+    fecha_expedicion_soat = models.DateField()
+    fecha_vencimiento_soat = models.DateField()
+    fecha_expedicion_tecno = models.DateField()
+    fecha_vencimiento_tecno = models.DateField()
+    fecha_expedicion_sRc = models.DateField()
+    fecha_vencimiento_sRc = models.DateField()
     
+    empresa_soat = models.CharField(max_length=100, null=True, blank=True)  # Nueva columna
+    numero_soat = models.CharField(max_length=50, null=True, blank=True)    # Nueva columna
+    numero_licencia = models.CharField(max_length=50, null=True, blank=True)  # Nueva columna
+    
+    soat = models.ImageField(upload_to='documentos/soat/', null=True, blank=True)
+    tecnomecanica = models.ImageField(upload_to='documentos/tecnomecanica/', null=True, blank=True)
+    seguros_rc = models.ImageField(upload_to='documentos/seguros/', null=True, blank=True)
+
     def __str__(self):
         return f'{self.n_orden}'
     
@@ -195,3 +201,17 @@ class Checklist(models.Model):
 
     def __str__(self):
         return f'Checklist para {self.vehiculo.placa}'
+    
+
+class Contrato(models.Model):
+    fecha_hoy = models.CharField(max_length=20, null=True)  # Fecha en formato d/m/a
+    usuario1_cedula = models.CharField(max_length=20, null=True)  # Cédula del usuario 1
+    usuario2_cedula = models.CharField(max_length=20, blank=True, null=True)  # Cédula del usuario 2
+    vehiculo_placa = models.CharField(max_length=20, null=True)  # Placa del vehículo
+    vehiculo2_placa = models.CharField(max_length=20, blank=True, null=True)  # Placa del segundo vehículo
+    tipo_contrato = models.CharField(max_length=255, null=True)  # Tipo de contrato
+    pacta_suma = models.CharField(max_length=255, blank=True, null=True)  # Pacta suma
+    refiere = models.CharField(max_length=255, blank=True, null=True)  # Quién refiere
+
+    def __str__(self):
+        return f"Contrato {self.id}"

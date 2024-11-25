@@ -194,15 +194,15 @@
         </td>
       </tr>
       <tr>
-        <td></td>
-        <!-- Fecha espacio -->
-        <td></td>
-        <!-- Elaboro espacio -->
-        <td></td>
-        <!-- Reviso espacio -->
-        <td></td>
-        <!-- Asesor espacio -->
-        <td></td>
+        <td><strong>{{ fecha_hoy }}</strong></td>
+          <!-- Fecha espacio -->
+          <td><strong>{{ nombre_usuario.first_name }} {{ nombre_usuario.last_name }}</strong></td>
+          <!-- Elaboro espacio -->
+          <td><strong>WILSON BERNAL<strong></td>
+          <!-- Reviso espacio -->
+          <td><strong>{{ nombre_usuario.first_name }} {{ nombre_usuario.last_name }}</strong></td>
+          <!-- Asesor espacio -->
+          <td><strong>{{refiere}}</strong></td>
         <!-- Refiere espacio -->
       </tr>
     </table>
@@ -408,10 +408,8 @@
             <p><strong>MOTOR</strong>: {{ vehiculo.n_motor }}</p>
             <p><strong>PUERTAS</strong>: {{ vehiculo.puertas }}</p>
             <p><strong>SERVICIO</strong>: {{ vehiculo.tipo_servicio }}</p>
-            <p>
-              <strong>FECHA</strong>:<strong>&nbsp;</strong> {{ vehiculo.fecha_matricula }}
-            </p>
-            <p>&nbsp;</p>
+            <p>FECHA: {{ vehiculo.fecha_matricula|date:"d/m/Y" }}</p>
+            <p>VENCE: {{ documento.fecha_vencimiento_to|date:"d/m/Y" }} </p>
           </td>
         </tr>
       </tbody>
@@ -432,16 +430,16 @@
     </p>
     <ul style="text-align: justify" class="claus-list">
       <li>
-        El comprador se compromete a cancelar la suma de 
-        (${{ primer_pago }}), posteriores a los______(___) d&iacute;as h&aacute;biles
+        El comprador se compromete a cancelar la suma de {{ primer_pago_letras }} 
+        (${{ primer_pago }}), posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) d&iacute;as h&aacute;biles
         siguientes a...
       </li>
 
       <p style="text-align: justify">&nbsp;</p>
 
       <li>
-        El comprador se compromete a cancelar la suma de ________________
-        (${{ segundo_pago }}), posteriores a los______(___) d&iacute;as h&aacute;biles
+        El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }}
+        (${{ segundo_pago }}), posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) d&iacute;as h&aacute;biles
         siguientes a...
       </li>
     </ul>
@@ -475,7 +473,7 @@
       Revisi&oacute;n T&eacute;cnico Mec&aacute;nica requerida por las
       autoridades y seguro obligatorio soat. Igualmente, EL (LOS) VENDEDOR (ES)
       o el (EL COMPRADOR) se obligan a realizar las gestiones de traspaso ante
-      las autoridades de tr&aacute;nsito dentro de los ____________ (___)
+      las autoridades de tr&aacute;nsito dentro de los {{ cuarta_clausula_letras }} ({{ cuarta_clausula }})
       d&iacute;as h&aacute;biles posteriores a la firma del presente contrato.
     </p>
     <p>
@@ -654,11 +652,12 @@
       </li>
     </ul>
     <p><strong>&nbsp;</strong></p>
-    <p>
+    <p class="justificado">
       En se&ntilde;al de conformidad las partes contratantes suscriben el
-      presente documento en la ciudad de Bogot&aacute; D.C, a los ________ (___)
-      d&iacute;as del mes de _______ del a&ntilde;o dos mil veintitr&eacute;s
-      (2023). Se extienden dos copias del mismo tenor y valor.
+      presente documento en la ciudad de Bogot&aacute; D.C, a los {{ dia_letras }}
+      ({{ dia }}) d&iacute;as del mes de {{ mes }} del a&ntilde;o {{ year_letras }} ({{ year }})
+      . Se extienden dos copias del mismo tenor y
+      valor.
     </p>
     <table id="signature-table">
       <tr class="signes">

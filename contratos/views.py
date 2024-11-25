@@ -3,7 +3,7 @@ from django.db.models import Sum, Q
 from .forms import VehiculoForm
 from .models import Factura, Vehiculo_contratos,Checklist
 from .forms import FacturaForm, ChecklistForm
-from .models import usuario, user, estado, documentos, presupuesto
+from .models import usuario, user, estado, documentos, presupuesto, Contrato
 from .forms import UsuarioForm, UserForm, EstadoForm, DocumentosForm, PresupuestoForm
 from django.core.exceptions import ObjectDoesNotExist
 import json
@@ -28,6 +28,10 @@ from django.db.models import Max
 from .forms import UserForm
 from vehiculos.models import Usuario
 from num2words import num2words
+import os
+from django.http import JsonResponse
+from django.conf import settings
+
 
 @login_required
 def agregar_vehiculo(request):
@@ -385,10 +389,10 @@ def inicio(request):
 
     # Obtener los vehículos cuyos documentos están próximos a vencer
     documentos_a_vencer = documentos.objects.filter(
-        Q(fecha_final_to__lte=future_threshold) |
-        Q(fecha_final_soat__lte=future_threshold) |
-        Q(fecha_final_tecno__lte=future_threshold) |
-        Q(fecha_final_sRc__lte=future_threshold)
+        Q(fecha_vencimiento_to__lte=future_threshold) |
+        Q(fecha_vencimiento_soat__lte=future_threshold) |
+        Q(fecha_vencimiento_tecno__lte=future_threshold) |
+        Q(fecha_vencimiento_sRc__lte=future_threshold)
     )
 
     # Obtener todas las facturas
@@ -541,12 +545,18 @@ def agregar_documentos(request):
     if request.method == 'POST':
         form = DocumentosForm(request.POST, request.FILES)
         if form.is_valid():
-            # Obtenemos el objeto del vehículo validado
-            vehiculo = form.cleaned_data['placa']
+            # Obtenemos el valor de la placa ingresada
+            placa = form.cleaned_data['placa']
+
+            # Buscar la instancia del vehículo correspondiente
+            vehiculo = get_object_or_404(Vehiculo_contratos, placa=placa)
+
+            # Crear el documento pero no guardarlo aún
             documento = form.save(commit=False)
-            documento.id_placa = vehiculo  # Relacionamos el documento con el vehículo
-            documento.save()
-            return redirect('vehiculos:lista_documentos')  # Redirigimos a la lista de documentos
+            documento.id_placa = vehiculo  # Relacionar el documento con el vehículo
+            documento.save()  # Guardar el documento en la base de datos
+            
+            return redirect('vehiculos:lista_documentos')  # Redirigir tras guardar
     else:
         form = DocumentosForm()
 
@@ -635,25 +645,31 @@ def eliminar_presupuesto(request, presupuesto_id):
 @login_required
 def generar_pdf(request):
     # Obtener los valores de cédula, placa, tipo de contrato, tipo de persona y tipo de persona jurídica
+    usuario_empleado = request.user
+    fecha = datetime.now()
+    fecha_hoy = datetime.now().strftime("%d/%m/%Y")
     usuario1_cedula = request.GET.get('usuario1_cedula')
     usuario2_cedula = request.GET.get('usuario2_cedula')
     vehiculo_placa = request.GET.get('vehiculo_placa')
-    vehiculo2_placa = request.GET.get('vehiculo2_placa')
-    documento_placa = request.GET.get('vehiculo_placa')
+    vehiculo2_placa = request.GET.get('vehiculo2_placa')  # Segundo vehículo
+    documento_placa = request.GET.get('vehiculo_placa')  # Documento relacionado con el vehículo principal
+    documento2_placa = request.GET.get('vehiculo2_placa')  # Documento relacionado con el segundo vehículo
+    refiere = request.GET.get('refiere')
     tipo_contrato = request.GET.get('tipo_contrato')
-    persona = request.GET.get('persona')  # Tipo de persona (Natural o Jurídica)
-    tipo_juridica = request.GET.get('tipo_juridica')  # Tipo de persona jurídica (Comprador o Vendedor)
-    vendedores = request.GET.get('vendedores')  # Selección de vendedor
-    compradores = request.GET.get('compradores')  # Selección de comprador
+    persona = request.GET.get('persona')
+    tipo_juridica = request.GET.get('tipo_juridica')
+    vendedores = request.GET.get('vendedores')
+    compradores = request.GET.get('compradores')
     vendedor_cedula_2 = request.GET.get('vendedor_cedula_2')
     comprador_cedula_2 = request.GET.get('comprador_cedula_2')
-    
-
-    # Verifica que los parámetros estén presentes
+    dia_primer_pago = request.GET.get('dia_primer_pago')
+    dia_segundo_pago = request.GET.get('dia_segundo_pago')
+    cuarta_clausula = request.GET.get('cuarta_clausula')
+    # Verifica que los parámetros obligatorios estén presentes
     if not usuario1_cedula or not vehiculo_placa or not tipo_contrato or not persona:
-        return HttpResponse("Error: Faltan parámetros.", status=400)
+        return HttpResponse("Error: Faltan parámetros obligatorios.", status=400)
 
-    # Buscar el usuario y el vehículo en la base de datos
+    # Buscar el usuario y el vehículo principal en la base de datos
     try:
         user1 = usuario.objects.get(cedula=usuario1_cedula)
     except usuario.DoesNotExist:
@@ -662,35 +678,32 @@ def generar_pdf(request):
     try:
         vehiculo = Vehiculo_contratos.objects.get(placa=vehiculo_placa)
     except Vehiculo_contratos.DoesNotExist:
-        return HttpResponse("Error: Vehículo no encontrado.", status=404)
-    
-    
+        return HttpResponse("Error: Vehículo principal no encontrado.", status=404)
+
     try:
         documento = documentos.objects.get(id_placa=documento_placa)
     except documentos.DoesNotExist:
-        return HttpResponse("Error: Vehículo no encontrado o Documentos no asociados.", status=404)
-    
+        return HttpResponse("Error: Documentos no asociados al vehículo principal.", status=404)
 
-    user2 = None
-    if usuario2_cedula:  # Verificar si hay un segundo usuario
+    # Validar opcionalmente el segundo vehículo y sus documentos
+    vehiculo2 = None
+    documento2 = None
+
+    if vehiculo2_placa:  # Solo validar si se proporciona el segundo vehículo
         try:
-            user2 = usuario.objects.get(cedula=usuario2_cedula)
-        except usuario.DoesNotExist:
-            return HttpResponse("Error: Usuario 2 no encontrado.", status=404)
-        
-    user3 = None
-    if vendedor_cedula_2:  # Verificar si hay un segundo usuario
+            vehiculo2 = Vehiculo_contratos.objects.get(placa=vehiculo2_placa)
+        except Vehiculo_contratos.DoesNotExist:
+            return HttpResponse("Error: Vehículo secundario no encontrado.", status=404)
+
         try:
-            user3 = usuario.objects.get(cedula=vendedor_cedula_2)
-        except usuario.DoesNotExist:
-            return HttpResponse("Error: Vendedor 2 no encontrado.", status=404)
-        
-    user4 = None
-    if comprador_cedula_2:  # Verificar si hay un segundo usuario
-        try:
-            user4 = usuario.objects.get(cedula=comprador_cedula_2)
-        except usuario.DoesNotExist:
-            return HttpResponse("Error: Vendedor 2 no encontrado.", status=404)
+            documento2 = documentos.objects.get(id_placa=documento2_placa)
+        except documentos.DoesNotExist:
+            return HttpResponse("Error: Documentos no asociados al vehículo secundario.", status=404)
+
+    # Validar opcionalmente usuarios adicionales (vendedor y comprador)
+    user2 = usuario.objects.filter(cedula=usuario2_cedula).first() if usuario2_cedula else None
+    user3 = usuario.objects.filter(cedula=vendedor_cedula_2).first() if vendedor_cedula_2 else None
+    user4 = usuario.objects.filter(cedula=comprador_cedula_2).first() if comprador_cedula_2 else None
 
     # Recoger los campos numéricos de la solicitud GET
     pacta_suma = request.GET.get('pacta_suma', '')
@@ -698,68 +711,92 @@ def generar_pdf(request):
     segundo_pago = request.GET.get('segundo_pago', '')
     nit = request.GET.get('nit')
     nombre = request.GET.get('nombre')
+    
+    dia = fecha.day
+    mes = fecha.strftime('%B')  # Nombre completo del mes
+    mes_es = fecha.strftime('%B')
+    year = fecha.year
+    
+    meses_en_espanol = {
+        'January': 'Enero', 'February': 'Febrero', 'March': 'Marzo', 'April': 'Abril',
+        'May': 'Mayo', 'June': 'Junio', 'July': 'Julio', 'August': 'Agosto',
+        'September': 'Septiembre', 'October': 'Octubre', 'November': 'Noviembre', 'December': 'Diciembre'
+    }
+    
+    mes = meses_en_espanol[mes_es]
+    
+    if vehiculo_placa and len(vehiculo_placa) == 6:
+        primera_parte = vehiculo_placa[:3]  # Primeros 3 caracteres
+        segunda_parte = vehiculo_placa[3:]  # Últimos 3 caracteres
+    else:
+        primera_parte = ""
+        segunda_parte = ""
+    
 
     # Convertir los números a letras
-    if pacta_suma:
-        pacta_suma_letras = num2words(int(pacta_suma), lang='es').upper()
-    else:
-        pacta_suma_letras = ''
+    pacta_suma_letras = num2words(int(pacta_suma), lang='es').upper() if pacta_suma else ''
+    primer_pago_letras = num2words(int(primer_pago), lang='es').upper() if primer_pago else ''
+    segundo_pago_letras = num2words(int(segundo_pago), lang='es').upper() if segundo_pago else ''
+    dia_primer_pago_letras = num2words(int(dia_primer_pago), lang='es').upper() if dia_primer_pago else ''
+    dia_segundo_pago_letras = num2words(int(dia_segundo_pago), lang='es').upper() if dia_segundo_pago else ''
+    cuarta_clausula_letras = num2words(int(cuarta_clausula), lang='es').upper() if cuarta_clausula else ''
+    dia_contrato_letras = num2words(int(dia), lang='es').upper() if dia else ''
+    year_letras = num2words(int(year), lang='es').upper() if year else ''
 
-    if primer_pago:
-        primer_pago_letras = num2words(int(primer_pago), lang='es').upper()
-    else:
-        primer_pago_letras = ''
-
-    if segundo_pago:
-        segundo_pago_letras = num2words(int(segundo_pago), lang='es').upper()
-    else:
-        segundo_pago_letras = ''    
-
-    # Crear el contexto con los datos del usuario y vehículo
+    # Crear el contexto con los datos
     context = {
         'usuario1': user1,
         'usuario2': user2,
         'usuario3': user3,
         'usuario4': user4,
         'vehiculo': vehiculo,
+        'vehiculo2': vehiculo2,
         'documento': documento,
+        'documento2': documento2,
+        'refiere': refiere,
         'pacta_suma': pacta_suma,
         'primer_pago': primer_pago,
         'segundo_pago': segundo_pago,
         'pacta_suma_letras': pacta_suma_letras,
         'primer_pago_letras': primer_pago_letras,
         'segundo_pago_letras': segundo_pago_letras,
-        'persona': persona,  # Agregar el tipo de persona
-        'tipo_juridica': tipo_juridica,  # Agregar el tipo de persona jurídica
-        'vendedores': vendedores,  # Selección de vendedores
-        'compradores': compradores,  # Selección de compradores
-        'nit': nit,  # Incluir los nuevos datos
+        'persona': persona,
+        'tipo_juridica': tipo_juridica,
+        'vendedores': vendedores,
+        'compradores': compradores,
+        'nit': nit,
         'nombre': nombre,
+        'fecha_hoy': fecha_hoy,
+        'nombre_usuario': usuario_empleado,
+        'dia': dia,
+        'mes': mes,
+        'year': year,
+        'dia_letras': dia_contrato_letras,
+        'year_letras': year_letras,
+        'dia_primer_pago': dia_primer_pago,
+        'dia_primer_pago_letras': dia_primer_pago_letras,
+        'dia_segundo_pago': dia_segundo_pago,
+        'dia_segundo_pago_letras': dia_segundo_pago_letras,
+        'cuarta_clausula': cuarta_clausula,
+        'cuarta_clausula_letras': cuarta_clausula_letras,
+        'placa_parte1': primera_parte,
+        'placa_parte2': segunda_parte,
     }
 
-    # Recoger las cláusulas octavas (checkbox y texto) de la solicitud GET
-    clausulas = []
-    i = 1
-    while f'gasto_{i}' in request.GET:  # Iterar hasta que no existan más cláusulas
-        checkbox = request.GET.get(f'gasto_{i}')
-        texto = request.GET.get(f'gasto_{i}_text')
-        if checkbox and texto:  # Solo agregar si ambos valores existen
-            clausulas.append({'checkbox': checkbox, 'texto': texto})
-        i += 1
+    # Recoger cláusulas y opciones
+    clausulas = [
+        {'checkbox': request.GET.get(f'gasto_{i}'), 'texto': request.GET.get(f'gasto_{i}_text')}
+        for i in range(1, 100)
+        if request.GET.get(f'gasto_{i}') and request.GET.get(f'gasto_{i}_text')
+    ]
 
-    # Recoger las opciones (observaciones) de la solicitud GET
-    opciones = []
-    i = 1
-    while f'opcion_{i}' in request.GET:  # Iterar hasta que no existan más opciones
-        checkbox = request.GET.get(f'opcion_{i}')
-        texto = request.GET.get(f'opcion_{i}_text')
-        if checkbox and texto:  # Solo agregar si ambos valores existen
-            opciones.append({'checkbox': checkbox, 'texto': texto})
-        i += 1
+    opciones = [
+        {'checkbox': request.GET.get(f'opcion_{i}'), 'texto': request.GET.get(f'opcion_{i}_text')}
+        for i in range(1, 100)
+        if request.GET.get(f'opcion_{i}') and request.GET.get(f'opcion_{i}_text')
+    ]
 
-    # Agregar cláusulas y opciones al contexto
-    context['clausulas'] = clausulas if clausulas else []
-    context['opciones'] = opciones if opciones else []
+    context.update({'clausulas': clausulas, 'opciones': opciones})
 
     # Seleccionar la plantilla según el tipo de contrato
     if tipo_contrato == 'venta':
@@ -799,6 +836,32 @@ def generar_pdf(request):
     html_string = render_to_string(template, context)
     html = HTML(string=html_string)
     pdf = html.write_pdf()
+    
+    pdf_filename = f"contrato_{vehiculo_placa}_{usuario1_cedula}.pdf"
+    pdf_path = os.path.join(settings.MEDIA_ROOT, 'contratos', pdf_filename)
+
+    # Asegurarse de que el directorio de contratos existe
+    if not os.path.exists(os.path.dirname(pdf_path)):
+        os.makedirs(os.path.dirname(pdf_path))
+
+    # Guardar el archivo en el sistema de archivos
+    with open(pdf_path, 'wb') as f:
+        f.write(pdf)
+
+    # Crear un registro del contrato en la base de datos (suponiendo que tienes un modelo `Contrato`)
+    contrato = Contrato(
+        fecha_hoy = fecha_hoy,
+        usuario1_cedula=usuario1_cedula,
+        usuario2_cedula = usuario2_cedula,# Relacionamos el usuario1 con el contrato
+        vehiculo_placa=vehiculo_placa,  # Relacionamos el vehiculo con el contrato
+        vehiculo2_placa=vehiculo2_placa,  # Si existe un segundo vehículo, lo agregamos
+        tipo_contrato=tipo_contrato, 
+        pacta_suma = pacta_suma,# Tipo de contrato
+        refiere=refiere,  # Persona que refiere
+        # Aquí puedes agregar más campos según sea necesario
+    )
+    
+    contrato.save()
 
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = 'inline; filename="contrato.pdf"'
@@ -901,3 +964,100 @@ def checklist_vehiculo(request):
         'form': ChecklistForm(instance=checklist),
     }
     return render(request, 'checklist_vehiculo.html', context)
+
+def ver_archivos(request):
+    # Ruta de la carpeta de contratos
+    carpeta_contratos = os.path.join(settings.MEDIA_ROOT, 'contratos')
+    
+    # Verificar si la carpeta existe
+    if not os.path.exists(carpeta_contratos):
+        return HttpResponse("No hay archivos disponibles.", status=404)
+    
+    # Listar los archivos en la carpeta
+    archivos = os.listdir(carpeta_contratos)
+    
+    # Filtrar solo archivos PDF (opcional)
+    archivos = [archivo for archivo in archivos if archivo.endswith('.pdf')]
+    
+    # Si no hay archivos PDF, mostrar un mensaje
+    if not archivos:
+        return HttpResponse("No se encontraron archivos PDF.", status=404)
+
+    # Crear el contexto para pasar los archivos a la plantilla
+    context = {
+        'archivos': archivos,
+    }
+    
+    # Renderizar la plantilla que muestra los archivos
+    return render(request, 'ver_archivos.html', context)
+
+def generar_reporte_contratos(request):
+    try:
+        # Crear un buffer para escribir el archivo en memoria
+        output = io.BytesIO()
+
+        # Crear un libro de trabajo y una hoja con xlsxwriter
+        workbook = xlsxwriter.Workbook(output, {'in_memory': True})
+        worksheet = workbook.add_worksheet("Reporte de Contratos")
+
+        # Definir formatos
+        header_format = workbook.add_format({'bold': True, 'bg_color': '#D9E1F2', 'border': 1})
+        cell_format = workbook.add_format({'border': 1})
+
+        # Agregar encabezados
+        encabezados = [
+            "Fecha Hoy",
+            "Cédula Usuario 1",
+            "Cédula Usuario 2",
+            "Placa Vehículo 1",
+            "Placa Vehículo 2",
+            "Tipo de Contrato",
+            "Pacta Suma",
+            "Refiere",
+        ]
+
+        for col_num, encabezado in enumerate(encabezados):
+            worksheet.write(0, col_num, encabezado, header_format)
+
+        # Obtener datos de la base de datos
+        contratos = Contrato.objects.all()
+
+        # Verificar si hay datos para evitar problemas
+        if not contratos.exists():
+            # Escribir un mensaje de "No hay datos"
+            worksheet.write(1, 0, "No hay datos disponibles", cell_format)
+        else:
+            # Agregar datos a la hoja
+            for row_num, contrato in enumerate(contratos, start=1):
+                worksheet.write(row_num, 0, contrato.fecha_hoy, cell_format)
+                worksheet.write(row_num, 1, contrato.usuario1_cedula, cell_format)
+                worksheet.write(row_num, 2, contrato.usuario2_cedula, cell_format)
+                worksheet.write(row_num, 3, contrato.vehiculo_placa, cell_format)
+                worksheet.write(row_num, 4, contrato.vehiculo2_placa, cell_format)
+                worksheet.write(row_num, 5, contrato.tipo_contrato, cell_format)
+                worksheet.write(row_num, 6, contrato.pacta_suma, cell_format)
+                worksheet.write(row_num, 7, contrato.refiere, cell_format)
+
+        # Ajustar anchos de columna automáticamente
+        worksheet.set_column(0, 0, 15)  # Fecha Hoy
+        worksheet.set_column(1, 2, 20)  # Cédulas
+        worksheet.set_column(3, 4, 15)  # Placas
+        worksheet.set_column(5, 5, 30)  # Tipo de Contrato
+        worksheet.set_column(6, 7, 25)  # Pacta Suma y Refiere
+
+        # Cerrar el libro
+        workbook.close()
+
+        # Preparar la respuesta HTTP para la descarga
+        output.seek(0)
+        response = HttpResponse(
+            output,
+            content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        )
+        response['Content-Disposition'] = 'attachment; filename="Reporte_Contratos.xlsx"'
+
+        return response
+
+    except Exception as e:
+        # Manejar errores y devolver un mensaje en caso de fallo
+        return HttpResponse(f"Error al generar el reporte: {str(e)}", status=500)

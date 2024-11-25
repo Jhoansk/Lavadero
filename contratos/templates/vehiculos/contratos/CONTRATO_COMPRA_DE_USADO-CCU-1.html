@@ -194,15 +194,15 @@
         </td>
       </tr>
       <tr>
-        <td></td>
-        <!-- Fecha espacio -->
-        <td></td>
-        <!-- Elaboro espacio -->
-        <td></td>
-        <!-- Reviso espacio -->
-        <td></td>
-        <!-- Asesor espacio -->
-        <td></td>
+        <td><strong>{{ fecha_hoy }}</strong></td>
+          <!-- Fecha espacio -->
+          <td><strong>{{ nombre_usuario.first_name }} {{ nombre_usuario.last_name }}</strong></td>
+          <!-- Elaboro espacio -->
+          <td><strong>WILSON BERNAL<strong></td>
+          <!-- Reviso espacio -->
+          <td><strong>{{ nombre_usuario.first_name }} {{ nombre_usuario.last_name }}</strong></td>
+          <!-- Asesor espacio -->
+          <td><strong>{{refiere}}</strong></td>
         <!-- Refiere espacio -->
       </tr>
     </table>
@@ -427,7 +427,7 @@
             <p>ACTA O MANIFIESTO: {{ vehiculo.n_acta_matricula }}</p>
           </td>
           <td width="184" class="clase-vehiculo">
-            <p>FECHA: {{ vehiculo.fecha_matricula }}</p>
+            <p>FECHA: {{ vehiculo.fecha_matricula|date:"d/m/Y" }}</p>
           </td>
           <td width="215" class="clase-vehiculo">
             <p>CIUDAD: {{ vehiculo.ciudad_vehiculo }}</p>
@@ -452,7 +452,7 @@
             <p>TRJTA/OP: {{ documento.n_tarjeta_operacion }}</p>
           </td>
           <td width="215" class="clase-vehiculo">
-            <p>&nbsp;</p>
+            <p>VENCE: {{ documento.fecha_vencimiento_to|date:"d/m/Y" }} </p>
           </td>
         </tr>
       </tbody>
@@ -475,7 +475,7 @@
     <ul style="text-align: justify" class="claus-list">
       <li>
         El comprador se compromete a cancelar la suma de {{ primer_pago_letras }}
-        (${{ primer_pago }}), posteriores a los______ (___) d&iacute;as h&aacute;biles
+        (${{ primer_pago }}), posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) d&iacute;as h&aacute;biles
         siguientes a realizar la entrega del veh&iacute;culo con sus respectivos
         documentos originales, al tener el resultado f&iacute;sico de la DIJIN,
         certificado de tradici&oacute;n sin pendientes, paz y salvo de traspaso
@@ -485,7 +485,7 @@
       </li>
       <li>
         El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }}
-        (${{ segundo_pago }}), posteriores a los______ (___) d&iacute;as h&aacute;biles
+        (${{ segundo_pago }}), posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) d&iacute;as h&aacute;biles
         siguientes a la expedici&oacute;n de paz y salvos de movilidad del
         veh&iacute;culo y los derechos de reposici&oacute;n, sin ning&uacute;n
         pendiente respeto a (COMPARENDOS, ADMINISTRATIVOS, ACCIDENTES DE
@@ -504,7 +504,7 @@
       Revisi&oacute;n T&eacute;cnico Mec&aacute;nica requerida por las
       autoridades y los seguros obligatorios. Igualmente EL(LOS) VENDEDOR(ES) y
       EL(LOS) COMPRADOR(ES) se obligan a realizar las gestiones de traspaso ante
-      las autoridades de tr&aacute;nsito dentro de los _____________ (___)
+      las autoridades de tr&aacute;nsito dentro de los {{ cuarta_clausula_letras }} ({{ cuarta_clausula }})
       d&iacute;as calendario posteriores a la firma del presente contrato.
       ----------------------------------------------------------------------------------------------------------------------------------------------------------
     </p>
@@ -679,11 +679,12 @@
         </li>
       {% endfor %}
     </ul>
-    <p style="text-align: justify">
+    <p class="justificado">
       En se&ntilde;al de conformidad las partes contratantes suscriben el
-      presente documento en la ciudad de Bogot&aacute; D.C, a los ________ (___)
-      d&iacute;as del mes de _______ del a&ntilde;o dos mil veintitr&eacute;s
-      (2023). Se extienden dos copias del mismo tenor y valor.
+      presente documento en la ciudad de Bogot&aacute; D.C, a los {{ dia_letras }}
+      ({{ dia }}) d&iacute;as del mes de {{ mes }} del a&ntilde;o {{ year_letras }} ({{ year }})
+      . Se extienden dos copias del mismo tenor y
+      valor.
     </p>
     <table id="signature-table">
       <tr class="signes">
