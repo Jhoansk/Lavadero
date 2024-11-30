@@ -164,7 +164,6 @@
       /* Forzar salto de página para secciones importantes */
       .page-break {
         page-break-before: always;
-        font-size: 6.5pt;
       }
       .justificado {
         text-align: justify; /* Justificación del texto */
@@ -216,7 +215,7 @@
       {{ usuario2.cedula }} de Bogot&aacute;, actuando como _______________ de la empresa
       TAXI CUPOS S.A.S. identificada con Nit. <strong>900486003-2</strong> con
       sede en la direcci&oacute;n calle 13 No. 46-03 de Bogot&aacute;,
-      tel&eacute;fono 7443963 / ___________, Email:
+      tel&eacute;fono 7443963, Email:
       {{ usuario2.correo }}, quien para efectos de este contrato se denominara
       <strong>EL TRAMITADOR</strong>, y de la otra parte:
       <strong>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</strong> mayor de edad, identificado (a) con la
@@ -252,22 +251,11 @@
       -----------
     </p>
     <ul style="text-align: justify" class="claus-list">
-      <li>
-        El propietario se compromete a cancelar la suma de
-        <strong
-          >&shy;&shy;&shy;&shy;&shy;{{ primer_pago_letras }} DE PESOS M/CTE
-          (${{ primer_pago }}) </strong
-        >dentro de los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) d&iacute;as h&aacute;biles siguientes
-        a&hellip;&hellip;&hellip;&hellip;.---------------------
-      </li>
-      <li>
-        El propietario se compromete a cancelar la suma de
-        <strong
-          >&shy;&shy;&shy;&shy;&shy;{{ segundo_pago_letras }} DE PESOS M/CTE
-          (${{ segundo_pago }}) </strong
-        >dentro de los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) d&iacute;as h&aacute;biles siguientes
-        a&hellip;&hellip;&hellip;&hellip;.---------------------
-      </li>
+      {% for tercera in tercera %}
+          <li>
+              {{ tercera.texto }}
+          </li>
+      {% endfor %}
     </ul>
     <p style="text-align: justify">
       Los pagos deben hacerse con cheque de gerencia a nombre de TAXI CUPOS
@@ -286,18 +274,12 @@
       <a href="mailto:jefecomercial@taxicupos.com.co"
         >jefecomercial@taxicupos.com.co</a
       >&nbsp; para realizar la respectiva aplicaci&oacute;n.
-      ---------------------------------------------------------------------------------------------------------------------------------</p><p><strong
+      ---------------------------------------------------------------------------------------------------------------------</p><p><strong
         >TERCERA. </strong
-      >CLAUSULA PENAL: Se acuerda como sanci&oacute;n
-      por incumplimiento del contrato el 10% del valor de este a cargo de la
-      parte que incumpla y a favor de la otra, valor que ser&aacute; exigible
-      sin necesidad de requerimientos, constituciones en mora ni declaraciones
-      judiciales, para lo cual el presente contrato constituye t&iacute;tulo
-      ejecutivo, para lo cual bastar&aacute; con la manifestaci&oacute;n expresa
-      en la demanda ejecutiva por parte incumplida sobre el incumplimiento
-      predicado PAR&Aacute;GRAFO: EL COMPRADOR manifiesta que renuncia al
-      requerimiento de constituci&oacute;n en mora.- <br />
-      
+      >CLAUSULA PENAL: Las partes establecen como sanción
+      pecuniaria a cargo de quien incumpla cualquiera de las estipulaciones derivadas de este acto 
+      jurídico, la suma del VEINTE PORCIENTO DEL VALOR TOTAL DE ESTE CONTRATO (20%) sin perjuicio 
+      de la indemnizacion a que haya lugar.---      
       </p><p><strong>CUARTA. </strong>GASTOS Los gastos incluidos en el servicio de
       chatarrizaci&oacute;n son: Certificado de tradici&oacute;n,
       revisi&oacute;n Dijin, Cancelaci&oacute;n de matr&iacute;cula,
@@ -309,7 +291,7 @@
       por un a&ntilde;o, avisos reglamentarios y tax&iacute;metro.
       ------------------------------------------------------------------------------------------------------------------------
     </p>
-    <p style="text-align: justify">
+    < style="text-align: justify">
       <strong>CLAUSULA QUINTA</strong>. <strong>EL PROPIETARIO</strong>, en
       nombre propio o en nombre de la entidad que representa, declara que la
       informaci&oacute;n suministrada es ver&iacute;dica y da su consentimiento
@@ -338,8 +320,7 @@
       recuperaci&oacute;n de cartera, actividades relacionadas con la
       prevenci&oacute;n del lavado de activos y financiaci&oacute;n del
       terrorismo, prevenci&oacute;n del fraude y los dem&aacute;s autorizados
-      por la Ley. </p>
-      <p><strong>PARAGRAFO 1:</strong>  La autorizaci&oacute;n concedida por EL
+      por la Ley.<strong>PARAGRAFO 1:</strong>  La autorizaci&oacute;n concedida por EL
       PROPIETARIO, no le impedir&aacute; a este o su representada, a ejercer el
       derecho a corroborar en cualquier tiempo por EL TRAMITADOR, en
       DATACR&Eacute;DITO EXPERIAN o en la central de riesgo que se hallan
@@ -447,13 +428,13 @@
         </li>
       {% endfor %}
     </ul>
-    <p>
+    <p class="page-break">
       Sala de venta:
       <strong
         >TAXI CUPOS
         S.A.S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong
       >Asesor:
-      <strong>&shy;&shy;&shy;&shy;&shy;&shy;&shy;&shy;________________</strong>
+      <strong>&shy;&shy;&shy;&shy;&shy;&shy;&shy;&shy;{{ nombre_usuario.first_name }} {{ nombre_usuario.last_name }}</strong>
     </p>
     <p class="justificado">
       En se&ntilde;al de conformidad las partes contratantes suscriben el

@@ -31,6 +31,7 @@ from num2words import num2words
 import os
 from django.http import JsonResponse
 from django.conf import settings
+from django.template import Context, Template
 
 
 @login_required
@@ -656,6 +657,8 @@ def generar_pdf(request):
     documento2_placa = request.GET.get('vehiculo2_placa')  # Documento relacionado con el segundo vehículo
     refiere = request.GET.get('refiere')
     tipo_contrato = request.GET.get('tipo_contrato')
+    tipo_venta_usado = request.GET.get('tipo_venta_usado')
+    venta_nuevo = request.GET.get('venta_nuevo')
     persona = request.GET.get('persona')
     tipo_juridica = request.GET.get('tipo_juridica')
     vendedores = request.GET.get('vendedores')
@@ -664,6 +667,7 @@ def generar_pdf(request):
     comprador_cedula_2 = request.GET.get('comprador_cedula_2')
     dia_primer_pago = request.GET.get('dia_primer_pago')
     dia_segundo_pago = request.GET.get('dia_segundo_pago')
+    dia_tercer_pago = request.GET.get('dia_tercer_pago')
     cuarta_clausula = request.GET.get('cuarta_clausula')
     # Verifica que los parámetros obligatorios estén presentes
     if not usuario1_cedula or not vehiculo_placa or not tipo_contrato or not persona:
@@ -709,6 +713,9 @@ def generar_pdf(request):
     pacta_suma = request.GET.get('pacta_suma', '')
     primer_pago = request.GET.get('primer_pago', '')
     segundo_pago = request.GET.get('segundo_pago', '')
+    tercer_pago = request.GET.get('tercer_pago', '')
+    primero_segundo = int(primer_pago) + int(segundo_pago)
+    total = int(primer_pago)+ int(segundo_pago)+ int(tercer_pago)
     nit = request.GET.get('nit')
     nombre = request.GET.get('nombre')
     
@@ -737,8 +744,12 @@ def generar_pdf(request):
     pacta_suma_letras = num2words(int(pacta_suma), lang='es').upper() if pacta_suma else ''
     primer_pago_letras = num2words(int(primer_pago), lang='es').upper() if primer_pago else ''
     segundo_pago_letras = num2words(int(segundo_pago), lang='es').upper() if segundo_pago else ''
+    tercer_pago_letras = num2words(int(tercer_pago), lang='es').upper() if tercer_pago else ''
+    primero_segundo_letras = num2words(int(primero_segundo), lang='es').upper() if primero_segundo else ''
+    total_letras = num2words(int(total), lang='es').upper() if total else ''
     dia_primer_pago_letras = num2words(int(dia_primer_pago), lang='es').upper() if dia_primer_pago else ''
     dia_segundo_pago_letras = num2words(int(dia_segundo_pago), lang='es').upper() if dia_segundo_pago else ''
+    dia_tercero_pago_letras = num2words(int(dia_tercer_pago), lang='es').upper() if dia_tercer_pago else ''
     cuarta_clausula_letras = num2words(int(cuarta_clausula), lang='es').upper() if cuarta_clausula else ''
     dia_contrato_letras = num2words(int(dia), lang='es').upper() if dia else ''
     year_letras = num2words(int(year), lang='es').upper() if year else ''
@@ -757,11 +768,19 @@ def generar_pdf(request):
         'pacta_suma': pacta_suma,
         'primer_pago': primer_pago,
         'segundo_pago': segundo_pago,
+        'tercer_pago': tercer_pago,
+        'primero_segundo' : primero_segundo,
+        'total' : total,
         'pacta_suma_letras': pacta_suma_letras,
         'primer_pago_letras': primer_pago_letras,
         'segundo_pago_letras': segundo_pago_letras,
+        'tercer_pago_letras': tercer_pago_letras,
+        'primero_segundo_letras' : primero_segundo_letras,
+        'total_letras' : total_letras,
         'persona': persona,
         'tipo_juridica': tipo_juridica,
+        'tipo_venta_usado': tipo_venta_usado,
+        'venta_nuevo' : venta_nuevo,
         'vendedores': vendedores,
         'compradores': compradores,
         'nit': nit,
@@ -777,26 +796,45 @@ def generar_pdf(request):
         'dia_primer_pago_letras': dia_primer_pago_letras,
         'dia_segundo_pago': dia_segundo_pago,
         'dia_segundo_pago_letras': dia_segundo_pago_letras,
+        'dia_tercer_pago': dia_tercer_pago,
+        'dia_tercero_pago_letras' : dia_tercero_pago_letras,
         'cuarta_clausula': cuarta_clausula,
         'cuarta_clausula_letras': cuarta_clausula_letras,
         'placa_parte1': primera_parte,
         'placa_parte2': segunda_parte,
     }
 
-    # Recoger cláusulas y opciones
+    # Procesar cláusulas
     clausulas = [
-        {'checkbox': request.GET.get(f'gasto_{i}'), 'texto': request.GET.get(f'gasto_{i}_text')}
+        {
+            'checkbox': request.GET.get(f'gasto_{i}'),
+            'texto': render_text_with_context(request.GET.get(f'gasto_{i}_text'), context)
+        }
         for i in range(1, 100)
         if request.GET.get(f'gasto_{i}') and request.GET.get(f'gasto_{i}_text')
     ]
 
+    # Procesar opciones
     opciones = [
-        {'checkbox': request.GET.get(f'opcion_{i}'), 'texto': request.GET.get(f'opcion_{i}_text')}
+        {
+            'checkbox': request.GET.get(f'opcion_{i}'),
+            'texto': render_text_with_context(request.GET.get(f'opcion_{i}_text'), context)
+        }
         for i in range(1, 100)
         if request.GET.get(f'opcion_{i}') and request.GET.get(f'opcion_{i}_text')
     ]
 
-    context.update({'clausulas': clausulas, 'opciones': opciones})
+    # Procesar tercera
+    tercera = [
+        {
+            'checkbox': request.GET.get(f'tercera_{i}'),
+            'texto': render_text_with_context(request.GET.get(f'tercera_{i}_text'), context)
+        }
+        for i in range(1, 100)
+        if request.GET.get(f'tercera_{i}') and request.GET.get(f'tercera_{i}_text')
+    ]
+
+    context.update({'clausulas': clausulas, 'opciones': opciones, 'tercera': tercera})
 
     # Seleccionar la plantilla según el tipo de contrato
     if tipo_contrato == 'venta':
@@ -837,7 +875,7 @@ def generar_pdf(request):
     html = HTML(string=html_string)
     pdf = html.write_pdf()
     
-    pdf_filename = f"contrato_{vehiculo_placa}_{usuario1_cedula}.pdf"
+    pdf_filename = f"{tipo_contrato}_{vehiculo_placa}_{usuario1_cedula}.pdf"
     pdf_path = os.path.join(settings.MEDIA_ROOT, 'contratos', pdf_filename)
 
     # Asegurarse de que el directorio de contratos existe
@@ -968,28 +1006,34 @@ def checklist_vehiculo(request):
 def ver_archivos(request):
     # Ruta de la carpeta de contratos
     carpeta_contratos = os.path.join(settings.MEDIA_ROOT, 'contratos')
-    
+
     # Verificar si la carpeta existe
     if not os.path.exists(carpeta_contratos):
         return HttpResponse("No hay archivos disponibles.", status=404)
-    
-    # Listar los archivos en la carpeta
-    archivos = os.listdir(carpeta_contratos)
-    
-    # Filtrar solo archivos PDF (opcional)
-    archivos = [archivo for archivo in archivos if archivo.endswith('.pdf')]
-    
-    # Si no hay archivos PDF, mostrar un mensaje
-    if not archivos:
-        return HttpResponse("No se encontraron archivos PDF.", status=404)
 
-    # Crear el contexto para pasar los archivos a la plantilla
-    context = {
-        'archivos': archivos,
-    }
+    # Obtener la lista de archivos
+    archivos = [
+        {
+            "nombre": archivo,
+            "ruta": f"{settings.MEDIA_URL}contratos/{archivo}"
+        }
+        for archivo in os.listdir(carpeta_contratos) if archivo.endswith('.pdf')
+    ]
+
+    # Filtrar por búsqueda (si hay un término)
+    search_query = request.GET.get('search', '').lower()
+    if search_query:
+        archivos = [
+            archivo for archivo in archivos if search_query in archivo['nombre'].lower()
+        ]
+
+    # Verificar si hay archivos disponibles
+    if not archivos:
+        return render(request, 'ver_archivos.html', {"archivos": []})
+
+    # Renderizar la plantilla con los resultados
+    return render(request, 'ver_archivos.html', {"archivos": archivos})
     
-    # Renderizar la plantilla que muestra los archivos
-    return render(request, 'ver_archivos.html', context)
 
 def generar_reporte_contratos(request):
     try:
@@ -1019,8 +1063,9 @@ def generar_reporte_contratos(request):
         for col_num, encabezado in enumerate(encabezados):
             worksheet.write(0, col_num, encabezado, header_format)
 
-        # Obtener datos de la base de datos
-        contratos = Contrato.objects.all()
+        # Obtener datos de la base de datos excluyendo ciertos tipos de contrato
+        tipos_excluidos = ['diaco', 'compra_venta', 'cmatricula', 'mandato', 'fun']
+        contratos = Contrato.objects.exclude(tipo_contrato__in=tipos_excluidos)
 
         # Verificar si hay datos para evitar problemas
         if not contratos.exists():
@@ -1061,3 +1106,13 @@ def generar_reporte_contratos(request):
     except Exception as e:
         # Manejar errores y devolver un mensaje en caso de fallo
         return HttpResponse(f"Error al generar el reporte: {str(e)}", status=500)
+    
+def render_text_with_context(text, context):
+    """
+    Renderiza un texto sustituyendo las variables entre {{ ... }} usando el contexto.
+    """
+    try:
+        template = Template(text)
+        return template.render(Context(context))
+    except Exception as e:
+        return f"Error al procesar el texto: {e}"

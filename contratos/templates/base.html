@@ -63,6 +63,18 @@
             <span class="material-icons-sharp">add</span>
             <h3>Crear usuario</h3>
           </a>
+          <a href="{% url 'vehiculos:lista_vehiculos' %}">
+            <span class="material-icons-sharp">add</span>
+            <h3>Lista de vehiculos</h3>
+          </a>
+          <a href="{% url 'vehiculos:ver_archivos' %}">
+            <span class="material-icons-sharp">add</span>
+            <h3>Operativa</h3>
+          </a>
+          <a href="{% url 'vehiculos:lista_facturas' %}">
+            <span class="material-icons-sharp">add</span>
+            <h3>Lista de Facturas</h3>
+          </a>
           <form action="{% url 'logout' %}" method="post" style="display:inline;">
             {% csrf_token %}
             <button type="submit" style="background:none; border:none; cursor:pointer; display:flex; align-items:center; color:inherit;">

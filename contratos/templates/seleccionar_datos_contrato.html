@@ -121,7 +121,7 @@
 
             <div>
                 <label for="refiere">Refiere:</label>
-                <input type="text" name="refiere" id="refiere" placeholder="Ingrese el Referido" required>
+                <input type="text" name="refiere" id="refiere" placeholder="Ingrese el Referido">
             </div>
 
             <div>
@@ -145,8 +145,53 @@
                     <option value="fun">Fun</option>
                 </select>
             </div>
+            <div id="tipo_venta_usado-container" style="display: none;">
+                <label for="tipo_venta_usado">Selecciona el tipo de pago:</label>
+                <select name="tipo_venta_usado" id="tipo_venta_usado">
+                    <option value="contado">Contado</option>
+                    <option value="doble_garantia">Doble Garantia</option>
+                    <option value="credito">Credito</option>
+                </select>
+            </div>
+            <div id="venta_nuevo_container" style="display: none;">
+                <label for="venta_nuevo">Selecciona el pago clausula 5ta:</label>
+                <select name="venta_nuevo" id="venta_nuevo">
+                    <option value="primero">Primer Pago</option>
+                    <option value="segundo">Segundo Pago</option>
+                    <option value="tercero">Tercer Pago</option>
+                    <option value="primeroysegundo">Primer+Segundo Pago</option>
+                    <option value="totalP">Pago Total</option>
+                </select>
+            </div>
 
-            <div id="compra_cupo_campos" style="display: none;">
+            <div id="compra_cupo_campos" style="display: none; ">
+                <div id="informacion_pagos" style="user-select: text;">
+                    <p style="text-align: left;">
+                        Para Primer pago usar: &#123;&#123;primer_pago&#125;&#125;
+                        <br>
+                        Para Primer pago en letras usar &#123;&#123;primer_pago_letras&#125;&#125;
+                        <br>
+                        Para el dia del primer pago usar &#123;&#123;dia_primer_pago&#125;&#125;
+                        <br>
+                        Para el dia del primer en letras pago usar &#123;&#123;dia_primer_pago_letras&#125;&#125;
+                        <br>
+                        Para segundo pago usar: &#123;&#123;segundo_pago&#125;&#125;
+                        <br>
+                        Para segundo pago en letras usar &#123;&#123;segundo_pago_letras&#125;&#125;
+                        <br>
+                        Para el dia del segundo pago usar &#123;&#123;dia_segundo_pago&#125;&#125;
+                        <br>
+                        Para el dia del segundo en letras pago usar &#123;&#123;dia_segundo_pago_letras&#125;&#125;
+                        <br>
+                        Para tercer pago usar: &#123;&#123;tercer_pago&#125;&#125;
+                        <br>
+                        Para tercer pago en letras usar &#123;&#123;tercer_pago_letras&#125;&#125;
+                        <br>
+                        Para el dia del tercer pago usar &#123;&#123;dia_tercer_pago&#125;&#125;
+                        <br>
+                        Para el dia del tercer en letras pago usar &#123;&#123;dia_tercer_pago_letras&#125;&#125;
+                    </p>
+                </div>
                 <div>
                     <label for="pacta_suma">Se pacta la suma de:</label>
                     <input type="number" id="pacta_suma" name="pacta_suma" placeholder="Ingrese el monto pactado">
@@ -162,6 +207,12 @@
                     <input type="number" id="segundo_pago" name="segundo_pago" placeholder="Ingrese el segundo pago">
                     <label for="dia_segundo_pago">Posterior a los </label>
                     <input type="number" id="dia_segundo_pago" name="dia_segundo_pago" placeholder="Ingrese el dia">
+                </div>
+                <div>
+                    <label for="tercer_pago">Tercer pago:</label>
+                    <input type="number" id="tercer_pago" name="tercer_pago" placeholder="Ingrese el Tercer pago">
+                    <label for="dia_tercer_pago">Posterior a los </label>
+                    <input type="number" id="dia_tercer_pago" name="dia_tercer_pago" placeholder="Ingrese el dia">
                 </div>
                 <div>
                     <label for="cuarta_clausula">Cuarta Obligaciones</label>
@@ -181,6 +232,10 @@
                 <ul style="text-align: justify" class="claus-list-3">
                     <!-- Se llenarán dinámicamente -->
                 </ul>
+                <p style="text-align: justify">
+                    <strong>Cláusulas 8: </strong>
+                    --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                </p>
             </div>
 
             <!-- Cláusulas de la octava (Gastos) que solo se mostrarán si se selecciona "Permuta" -->
@@ -204,13 +259,15 @@
                 </ul>
             </div>
 
+
             <button type="submit">Generar Contrato PDF</button>
         </form>
     </div>
 </div>
 
 <button type="button" id="add_clausula">Agregar Cláusula</button>
-<button type="button" id="add_opcion">Agregar Opción</button>
+<button type="button" id="add_opcion">Agregar Observación</button>
+<button type="button" id="add_tercera">Agregar Forma de Pago</button>
 
 <script>
     // Definir las cláusulas y opciones para cada tipo de contrato
@@ -326,11 +383,61 @@
             { texto: "Los documentos y placas del taxi nuevo serán entregados dentro de los tres días hábiles siguientes a salir la matrícula y al hacerse efectivo el pago total de este contrato. ---------------------------------------------------------------" }
         ],
         "venta_cupo": [
-            { texto: "Cualquier gasto adicional no estipulado en este contrato será asumido por el comprador. --------------------------------" },
-            { texto: "La cesión de derechos de reposición 'cupo' será entregada dentro de los tres días hábiles siguientes al hacerse efectivo el pago total de este contrato. -------------------------------------------------------------------------------------------------------" },
-            { texto: "Si el comprador solicita la instalación del equipo de gas, el costo será asumido por este ante la empresa instaladora. El vendedor se compromete a gestionar este trámite ante el SIM para que la tarjeta de propiedad salga gas - gasolina y cancelará los derechos ante tránsito. --------------------------------------------------------------------------------------------------------" },
-            { texto: "El comprador se compromete a firmar los compromisos de consumo del vehículo ante la entidad que realizó o realizará la transformación a gas, bajo las condiciones que establezca la empresa transformadora y/o el convenio que estos presenten. --------------------------------------------------------------------------------------------------------------------------------------" },
-            { texto: "El vendedor y el comprador han pactado que el tiempo de demora, dilación, atraso, subsanación, negligencia, impericia, fuerza mayor o caso fortuito, atribuible a la autoridad administrativa, judicial y/o de tránsito no será responsabilidad asumida por el vendedor. ----------------------------------------------------------------------------------------------------" }
+            { "texto": "Cualquier gasto adicional no estipulado en este contrato será asumido por el comprador. --------------------------------------" },
+            { "texto": "El vehículo será entregado dentro de los tres días hábiles siguientes al hacerse efectivo el pago total de este contrato." },
+            { "texto": "El PROPIETARIO solicitará la excepción del IVA (CREI) en la factura del vehículo objeto de este contrato con la asesoría y acompañamiento del TRAMITADOR. -------------------------------------------------------------------------------------------" },
+            { "texto": "Si el comprador solicita la instalación del equipo de gas, el costo será asumido por este ante la empresa instaladora. El Vendedor se compromete a gestionar este trámite ante el SIM para que la tarjeta de propiedad salga gas - gasolina y cancelará los derechos ante tránsito. --------------------------------------------------------------------------------------------------------" },
+            { "texto": "El comprador se compromete a firmar los compromisos de consumo del vehículo ante la entidad que realizó o realizará la transformación a gas, bajo las condiciones que establezca la empresa transformadora y/o el convenio que estos presenten. --------------------------------------------------------------------------------------------------------------------------------------" },
+            { "texto": "Al estar aprobado el CREI (Descuento del IVA) el valor eximido en la factura del taxi nuevo ya está descontado del valor total de este contrato. -------------------------------------------------------------------------------------------------------------------" },
+            { "texto": "El vendedor y el comprador han pactado que el tiempo de demora, dilación, atraso, subsanación, negligencia, impericia, fuerza mayor o caso fortuito, atribuible a la autoridad administrativa, judicial y/o de tránsito no será responsabilidad atribuible a Taxi Cupos SAS. ---------------------------------------------------------------------------------------------------------------------" }
+        ],
+        // Agregar más opciones por contrato según sea necesario
+    };
+
+    const tercera_clausula = {
+        "permuta": [
+            { texto: "El comprador se compromete a cancelar la suma de {{ primer_pago_letras }} (${{ primer_pago }}), posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) días hábiles siguientes a..." },
+            { texto: "El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }} (${{ segundo_pago }}), posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) días hábiles siguientes a..." }
+        ],
+        "venta": [
+            { texto: "El comprador se compromete a cancelar la suma de {{ primer_pago_letras }} (${{ primer_pago }}), posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) días hábiles siguientes a..." },
+            { texto: "El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }} (${{ segundo_pago }}), posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) días hábiles siguientes a..." }
+        ],
+        "compra": [
+            { texto: "El comprador aceptará la venta con base en la inspección realizada." }
+        ],
+        "Compra_Cupo": [
+            { texto: "El comprador se compromete a cancelar la suma de {{ primer_pago_letras }} (${{ primer_pago }}), posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) días hábiles siguientes a realizar la entrega del vehículo con sus respectivos documentos originales, al tener el resultado físico de la DIJIN, certificado de tradición sin pendientes, paz y salvo de traspaso de la empresa afiliadora, junto con los documentos firmados y autenticados para realizar los trámites de traspaso a nombre del comprador o quien este designe. ----------------------" },
+            { texto: "El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }} (${{ segundo_pago }}), posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) días hábiles siguientes a la expedición de paz y salvos de movilidad del vehículo y los derechos de reposición, sin ningún pendiente respecto a (COMPARENDOS, ADMINISTRATIVOS, ACCIDENTES DE TRANSITO Y COBROS COACTIVOS). Junto con la tarjeta de propiedad a nombre del comprador o quien este designe aprobada ante la VENTANILLA UNICA DE SERVICIOS 'VUS'. ----------------------------------------------" }
+        ],
+        "compra_Particular": [
+            { texto: "El comprador se compromete a cancelar la suma de {{ primer_pago_letras }} (${{ primer_pago }}), posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) días hábiles siguientes a..." },
+            { texto: "El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }} (${{ segundo_pago }}), posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) días hábiles siguientes a..." }
+        ],
+        "compra_usado": [
+            { texto: "El comprador se compromete a cancelar la suma de {{ primer_pago_letras }} (${{ primer_pago }}), posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) días hábiles siguientes a realizar la entrega del vehículo con sus respectivos documentos originales, al tener el resultado físico de la DIJIN, certificado de tradición sin pendientes, paz y salvo de traspaso de la empresa afiliadora, junto con los documentos firmados y autenticados para realizar los trámites de traspaso a nombre del comprador o quien este designe. ----------------------" },
+            { texto: "El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }} (${{ segundo_pago }}), posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) días hábiles siguientes a la expedición de paz y salvos de movilidad del vehículo y los derechos de reposición, sin ningún pendiente respecto a (COMPARENDOS, ADMINISTRATIVOS, ACCIDENTES DE TRANSITO Y COBROS COACTIVOS). Junto con la tarjeta de propiedad a nombre del comprador o quien este designe aprobada ante la VENTANILLA UNICA DE SERVICIOS 'VUS'. ----------------------------------------------" }
+        ],
+        "venta_particular": [
+            { texto: "El comprador se compromete a cancelar la suma de {{ primer_pago_letras }} (${{ primer_pago }}), posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) días hábiles siguientes a..." },
+            { texto: "El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }} (${{ segundo_pago }}), posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) días hábiles siguientes a..." }
+        ],
+        "venta_usado": [
+            { texto: "El comprador se compromete a cancelar la suma de {{ primer_pago_letras }} (${{ primer_pago }}), posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) días hábiles siguientes a..." },
+            { texto: "El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }} (${{ segundo_pago }}), posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) días hábiles siguientes a..." }
+        ],
+        "chatarizacion_con_venta": [
+            { texto: "El propietario se compromete a cancelar la suma de <strong>&shy;&shy;&shy;&shy;&shy;{{ primer_pago_letras }} DE PESOS M/CTE (${{ primer_pago }})</strong> dentro de los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) días hábiles siguientes a……---------------------" },
+            { texto: "El propietario se compromete a cancelar la suma de <strong>&shy;&shy;&shy;&shy;&shy;{{ segundo_pago_letras }} DE PESOS M/CTE (${{ segundo_pago }})</strong> dentro de los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) días hábiles siguientes a……---------------------" }
+        ],
+        "servicio_chatarrizacion": [
+            { texto: "El propietario se compromete a cancelar la suma de <strong>&shy;&shy;&shy;&shy;&shy;{{ primer_pago_letras }} DE PESOS M/CTE (${{ primer_pago }})</strong> dentro de los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) días hábiles siguientes a……---------------------" },
+            { texto: "El propietario se compromete a cancelar la suma de <strong>&shy;&shy;&shy;&shy;&shy;{{ segundo_pago_letras }} DE PESOS M/CTE (${{ segundo_pago }})</strong> dentro de los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) días hábiles siguientes a……---------------------" }
+        ],
+        "venta_cupo": [
+            { texto: "El CESIONARIO se compromete a cancelar la suma de <strong>{{ primer_pago_letras }} DE PESOS M/CTE</strong><strong>(${{ primer_pago }}),</strong> posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) días hábiles siguientes a..." },
+            { texto: "El CESIONARIO se compromete a cancelar la suma de <strong>{{ segundo_pago_letras }} DE PESOS M/CTE</strong><strong>(${{ segundo_pago }}),</strong> posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) días hábiles siguientes a..." },
+            { texto: "El CESIONARIO se compromete a cancelar la suma de <strong>____________ DE PESOS M/CTE</strong><strong>( $___.000.000),</strong> posteriores a los______ (___) días hábiles siguientes a..." }
         ],
         // Agregar más opciones por contrato según sea necesario
     };
@@ -342,10 +449,14 @@
         var opcionesContainer = document.getElementById('opciones');
         var compraCupoCampos = document.getElementById('compra_cupo_campos');
         var vehiculo2Container = document.getElementById('vehiculo2-container');  // Referencia al contenedor de vehiculo2
+        var tipo_pagoContainer= document.getElementById('tipo_venta_usado-container')
+        var tipo_clausula = document.getElementById('venta_nuevo_container')
+        var terceraContainer = document.getElementById('clausula3');
         
         // Limpiar los elementos anteriores
         checkboxesContainer.innerHTML = '';
         opcionesContainer.querySelector('ul').innerHTML = '';
+        terceraContainer.querySelector('ul').innerHTML = '';
     
         // Mostrar las cláusulas y opciones según el tipo de contrato
         if (tipoContrato && clausulasPorContrato[tipoContrato]) {
@@ -406,13 +517,42 @@
                     inputText.disabled = !checkbox.checked;
                 });
             });
+
+            tercera_clausula[tipoContrato]?.forEach(function (tercera, index) {
+                var terceraLi = document.createElement('li');
+    
+                var checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.name = `tercera_${index + 1}`;
+                checkbox.id = `tercera_${index + 1}`;
+    
+                var inputText = document.createElement('input');
+                inputText.type = 'text';
+                inputText.name = `tercera_${index + 1}_text`;
+                inputText.id = `tercera_${index + 1}_text`;
+                inputText.value = tercera.texto;
+                inputText.disabled = true;
+                inputText.style.width = "100%";
+                inputText.style.marginTop = "5px";
+    
+                terceraLi.appendChild(checkbox);
+                terceraLi.appendChild(inputText);
+                terceraContainer.querySelector('ul').appendChild(terceraLi);
+    
+                checkbox.addEventListener('change', function () {
+                    inputText.disabled = !checkbox.checked;
+                });
+            });
+            
     
             // Mostrar los contenedores
             checkboxesContainer.style.display = 'block';
             opcionesContainer.style.display = 'block';
+            terceraContainer.style.display = 'block';
         } else {
             checkboxesContainer.style.display = 'none';
             opcionesContainer.style.display = 'none';
+            terceraContainer.style.display = 'none';
         }
     
         // Mostrar los campos de "compra_cupo_campos" independientemente del tipo de contrato
@@ -422,6 +562,16 @@
             vehiculo2Container.style.display = 'block';
         } else {
             vehiculo2Container.style.display = 'none';
+        }
+        if (tipoContrato === 'venta_usado'){
+            tipo_pagoContainer.style.display = 'block';
+        } else {
+            tipo_pagoContainer.style.display = 'none';
+        }
+        if (tipoContrato === 'venta') {
+            tipo_clausula.style.display = 'block'; 
+        } else {
+            tipo_clausula.style.display = 'none';
         }
     });
     
@@ -493,8 +643,47 @@
             checkbox.addEventListener('change', function () {
                 inputText.disabled = !checkbox.checked;
             });
+
+        
     
             opcionesPorContrato[tipoContrato].push(nuevaOpcion);
+        }
+    });
+
+    document.getElementById('add_tercera').addEventListener('click', function () {
+        var tipoContrato = document.getElementById('tipo_contrato').value;
+        if (tipoContrato && tercera_clausula[tipoContrato]) {
+            var terceraContainer = document.getElementById('clausula3').querySelector('ul');
+            var TerceraIndex = tercera_clausula[tipoContrato].length + 1;
+            var nuevaTercera = { texto: "Nueva forma de pago dinámica" };
+    
+            var terceraLi = document.createElement('li');
+    
+            var checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.name = `tercera_${TerceraIndex}`;
+            checkbox.id = `tercera_${TerceraIndex}`;
+    
+            var inputText = document.createElement('input');
+            inputText.type = 'text';
+            inputText.name = `tercera_${TerceraIndex}_text`;
+            inputText.id = `tercera_${TerceraIndex}_text`;
+            inputText.value = nuevaTercera.texto;
+            inputText.disabled = true;
+            inputText.style.width = "100%";
+            inputText.style.marginTop = "5px";
+    
+            terceraLi.appendChild(checkbox);
+            terceraLi.appendChild(inputText);
+            terceraContainer.appendChild(terceraLi);
+    
+            checkbox.addEventListener('change', function () {
+                inputText.disabled = !checkbox.checked;
+            });
+
+        
+    
+            tercera_clausula[tipoContrato].push(nuevaTercera);
         }
     });
 

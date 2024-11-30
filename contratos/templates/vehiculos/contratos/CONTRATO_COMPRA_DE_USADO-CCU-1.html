@@ -164,7 +164,6 @@
       /* Forzar salto de página para secciones importantes */
       .page-break {
         page-break-before: always;
-        font-size: 6.5pt;
       }
       .justificado {
         text-align: justify; /* Justificación del texto */
@@ -473,26 +472,11 @@
       >
     </p>
     <ul style="text-align: justify" class="claus-list">
-      <li>
-        El comprador se compromete a cancelar la suma de {{ primer_pago_letras }}
-        (${{ primer_pago }}), posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) d&iacute;as h&aacute;biles
-        siguientes a realizar la entrega del veh&iacute;culo con sus respectivos
-        documentos originales, al tener el resultado f&iacute;sico de la DIJIN,
-        certificado de tradici&oacute;n sin pendientes, paz y salvo de traspaso
-        de la empresa afiliadora, junto con los documentos firmados y
-        autenticados para realizar los tr&aacute;mites de traspaso a nombre del
-        comprador o quien este designe. ----------------------
-      </li>
-      <li>
-        El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }}
-        (${{ segundo_pago }}), posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) d&iacute;as h&aacute;biles
-        siguientes a la expedici&oacute;n de paz y salvos de movilidad del
-        veh&iacute;culo y los derechos de reposici&oacute;n, sin ning&uacute;n
-        pendiente respeto a (COMPARENDOS, ADMINISTRATIVOS, ACCIDENTES DE
-        TRANSITO Y COBROS COACTIVOS). Junto con la tarjeta de propiedad a nombre
-        del comprador o quien este designe aprobada ante la VENTANILLA UNICA DE
-        SERVICIOS &ldquo;VUS. ----------------------------------------------
-      </li>
+      {% for tercera in tercera %}
+          <li>
+              {{ tercera.texto }}
+          </li>
+      {% endfor %}
     </ul>
     <p style="text-align: justify">
       <strong>CUARTA - OBLIGACIONES DE EL (LOS) VENDEDOR (ES): </strong>EL(LOS)
@@ -506,9 +490,6 @@
       EL(LOS) COMPRADOR(ES) se obligan a realizar las gestiones de traspaso ante
       las autoridades de tr&aacute;nsito dentro de los {{ cuarta_clausula_letras }} ({{ cuarta_clausula }})
       d&iacute;as calendario posteriores a la firma del presente contrato.
-      ----------------------------------------------------------------------------------------------------------------------------------------------------------
-    </p>
-    <p style="text-align: justify">
       <strong>PARAGRAFO 1: </strong>EL VENDEDOR O LOS VENDEDORES se obligan a
       responder en forma exclusiva por los vicios ocultos, inconvenientes
       legales o administrativos ocultos que eventualmente, el veh&iacute;culo
@@ -517,9 +498,6 @@
       surgido hasta la fecha de entrega de los paz y salvos de movilidad del
       veh&iacute;culo y su respectiva orden y que pudieran afectar la tenencia,
       uso, goce y disfrute del citado objeto.
-      ----------------------------------------------------------
-    </p>
-    <p style="text-align: justify">
       <strong>PARAGRAFO 2: </strong>El aqu&iacute; vendedor excluye de cualquier
       responsabilidad establecida en el par&aacute;grafo 1 de la cl&aacute;usula
       cuarta a TAXI CUPOS SAS, as&iacute; como a sus representantes y empleados.
@@ -542,15 +520,10 @@
       Comercio.-----------------------------------------------------------------------------------------------------------------
     </p>
     <p style="text-align: justify">
-      <strong>S&Eacute;PTIMA - CL&Aacute;USULA PENAL: </strong>: Se acuerda como sanci&oacute;n
-      por incumplimiento del contrato el 10% del valor de este a cargo de la
-      parte que incumpla y a favor de la otra, valor que ser&aacute; exigible
-      sin necesidad de requerimientos, constituciones en mora ni declaraciones
-      judiciales, para lo cual el presente contrato constituye t&iacute;tulo
-      ejecutivo, para lo cual bastar&aacute; con la manifestaci&oacute;n expresa
-      en la demanda ejecutiva por parte incumplida sobre el incumplimiento
-      predicado PAR&Aacute;GRAFO: EL COMPRADOR manifiesta que renuncia al
-      requerimiento de constituci&oacute;n en mora.-
+      <strong>S&Eacute;PTIMA - CL&Aacute;USULA PENAL: </strong>: Las partes establecen como sanción
+      pecuniaria a cargo de quien incumpla cualquiera de las estipulaciones derivadas de este acto 
+      jurídico, la suma del VEINTE PORCIENTO DEL VALOR TOTAL DE ESTE CONTRATO (20%) sin perjuicio 
+      de la indemnizacion a que haya lugar.---
     </p>
     <p style="text-align: justify">
       <strong>OCTAVA - GASTOS: </strong>Los gastos que se ocasionen con motivo
@@ -602,8 +575,6 @@
       con la prevenci&oacute;n del lavado de activos y financiaci&oacute;n del
       terrorismo, prevenci&oacute;n del fraude y los dem&aacute;s autorizados
       por la Ley. 
-    </p>
-    <p>
       <strong>PARAGRAFO 1:</strong> La autorizaci&oacute;n concedida por EL VENDEDOR,
       no le impedir&aacute; a este o su representada, a ejercer el derecho a
       corroborar en cualquier tiempo por EL COMPRADOR, en DATACR&Eacute;DITO
@@ -633,7 +604,7 @@
       pol&iacute;tica de la empresa con la firma del presente contrato.-
       ---------------------------------------------------------------------------------
     </p>
-    <p style="text-align: justify">
+    <p style="text-align: justify" class="page-break">
       <strong>D&Eacute;CIMA SEGUNDA.</strong>
       <strong
         >PREVENCI&Oacute;N DE LAVADO DE ACTIVOS Y FINANCIACI&Oacute;N DEL

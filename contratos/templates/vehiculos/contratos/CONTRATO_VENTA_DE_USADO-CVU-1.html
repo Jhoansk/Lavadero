@@ -164,7 +164,6 @@
       /* Forzar salto de página para secciones importantes */
       .page-break {
         page-break-before: always;
-        font-size: 6.5pt;
       }
       .justificado {
         text-align: justify; /* Justificación del texto */
@@ -477,16 +476,11 @@
       >
     </p>
     <ul style="text-align: justify" class="claus-list">
-      <li>
-        El comprador se compromete a cancelar la suma de {{ primer_pago_letras }}
-        (${{ primer_pago }}), posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) d&iacute;as h&aacute;biles
-        siguientes a...
-      </li>
-      <li>
-        El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }}
-        (${{ segundo_pago }}), posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) d&iacute;as h&aacute;biles
-        siguientes a...
-      </li>
+      {% for tercera in tercera %}
+          <li>
+              {{ tercera.texto }}
+          </li>
+      {% endfor %}
     </ul>
     <p style="text-align: justify">
       Los pagos deben hacerse con cheque de gerencia a nombre de TAXI CUPOS
@@ -509,18 +503,33 @@
     </p>
     <p style="text-align: justify">
       <strong>CUARTA - OBLIGACIONES DE EL (LOS) VENDEDOR (ES): </strong>EL(LOS)
-      VENDEDOR(ES) hace(n) entrega del veh&iacute;culo en buen estado, libre
-      de grav&aacute;menes, embargos, multas, impuestos, comparendos de
-      tr&aacute;nsito y/o administrativos, pactos de reserva de dominio y
-      cualquier otra circunstancia que afecte el libre comercio del bien objeto
-      del presente contrato. Incluyendo estar al d&iacute;a con la
-      Revisi&oacute;n T&eacute;cnico Mec&aacute;nica requerida por las
-      autoridades y los seguros obligatorios. Igualmente EL(LOS) VENDEDOR(ES) y
-      EL(LOS) COMPRADOR(ES) se obligan a realizar las gestiones de traspaso ante
-      las autoridades de tr&aacute;nsito dentro de los {{ cuarta_clausula_letras }} ({{ cuarta_clausula }})
-      d&iacute;as calendario posteriores a la firma del presente contrato.
-      ----------------------------------------------------------------------------------------------------------------------------------------------------------
-    </p>
+      VENDEDOR(ES) hace(n) entrega del vehículo en buen estado, libre de
+      gravámenes, embargos, multas, impuestos, comparendos de tránsito y/o
+      administrativos, pactos de reserva de dominio y cualquier otra circunstancia
+      que afecte el libre comercio del bien objeto del presente contrato. Incluyendo
+      estar al día con la Revisión Técnico Mecánica requerida por las autoridades y
+      los seguros obligatorios. Igualmente EL(LOS) VENDEDOR(ES) y EL(LOS)
+      COMPRADOR(ES) 
+      {% if tipo_venta_usado == "contado" %}
+          se obligan a realizar las gestiones de traspaso ante las autoridades de
+          tránsito dentro de los {{ cuarta_clausula_letras }} ({{ cuarta_clausula }}) días hábiles posteriores a tener el paz y
+          salvo de traspaso de la empresa afiliadora y siguientes a hacerse efectivo
+          el pago de {{primer_pago_letras}} PESOS MC/TE (${{primer_pago}}) .
+      {% elif tipo_venta_usado == "doble_garantia" %}
+          se obligan a realizar las gestiones de traspaso ante las autoridades de
+          tránsito dentro de los {{ cuarta_clausula_letras }} ({{ cuarta_clausula }}) días hábiles posteriores a tener el paz y
+          salvo de traspaso de la empresa afiliadora y siguientes a tener firmadas
+          las prendas de la financiera.
+      {% elif tipo_venta_usado == "credito" %}
+          se obligan a realizar las gestiones de traspaso ante las autoridades de
+          tránsito dentro de los {{ cuarta_clausula_letras }} ({{ cuarta_clausula }}) días calendario posteriores a tener las
+          prendas firmadas de la financiera, paz y salvo de traspaso de la empresa
+          afiliadora y al hacerse efectivo el pago de {{primer_pago_letras}} PESOS MC/TE (${{primer_pago}}).
+      {% else %}
+          se obligan a realizar las gestiones de traspaso conforme a los términos
+          establecidos por ambas partes.
+      {% endif %}
+  </p>
     <p style="text-align: justify">
       <strong>PARAGRAFO 1: </strong>El aqu&iacute; vendedor, ha realizado una
       revisi&oacute;n general de las situaciones legales y administrativas del
@@ -535,8 +544,6 @@
       COMPRADOR (ES), con los elementos que constan en inventario firmado por
       las partes y este (os) as&iacute; lo acepta (n) y declara (n) que conoce
       (n) el estado en el que se encuentra el bien objeto de este contrato.
-    </p>
-    <p>
       <strong>PARAGRAFO 1: </strong>El presente veh&iacute;culo al ser de
       servicio p&uacute;blico y usado NO CUENTA CON GARANTIA, conforme a la
       gu&iacute;a del Consumidor, emitida por la SUPERINTENDENCIA DE INDUSTRIA Y
@@ -553,15 +560,10 @@
       Comercio.-------------------------------------------------------------------------------------------------------------------
     </p>
     <p style="text-align: justify">
-      <strong>S&Eacute;PTIMA - CL&Aacute;USULA PENAL: </strong>: Se acuerda como sanci&oacute;n
-      por incumplimiento del contrato el 10% del valor de este a cargo de la
-      parte que incumpla y a favor de la otra, valor que ser&aacute; exigible
-      sin necesidad de requerimientos, constituciones en mora ni declaraciones
-      judiciales, para lo cual el presente contrato constituye t&iacute;tulo
-      ejecutivo, para lo cual bastar&aacute; con la manifestaci&oacute;n expresa
-      en la demanda ejecutiva por parte incumplida sobre el incumplimiento
-      predicado PAR&Aacute;GRAFO: EL COMPRADOR manifiesta que renuncia al
-      requerimiento de constituci&oacute;n en mora.-
+      <strong>S&Eacute;PTIMA - CL&Aacute;USULA PENAL: </strong>: Las partes establecen como sanción
+      pecuniaria a cargo de quien incumpla cualquiera de las estipulaciones derivadas de este acto 
+      jurídico, la suma del DIEZ PORCIENTO DEL VALOR TOTAL DE ESTE CONTRATO (10%) sin perjuicio 
+      de la indemnizacion a que haya lugar.---
     </p>
     <p style="text-align: justify">
       <strong>OCTAVA - GASTOS: </strong>Los gastos que se ocasionen con motivo
@@ -612,9 +614,7 @@
       mantenimiento y recuperaci&oacute;n de cartera, actividades relacionadas
       con la prevenci&oacute;n del lavado de activos y financiaci&oacute;n del
       terrorismo, prevenci&oacute;n del fraude y los dem&aacute;s autorizados
-      por la Ley. 
-    </p>
-    <p><strong>PARAGRAFO 1:</strong>  La autorizaci&oacute;n concedida por EL
+      por la Ley. <strong>PARAGRAFO 1:</strong>  La autorizaci&oacute;n concedida por EL
       COMPRADOR, no le impedir&aacute; a este o su representada, a ejercer el
       derecho a corroborar en cualquier tiempo por EL VENDEDOR, en
       DATACR&Eacute;DITO EXPERIAN o en la central de riesgo que se hallan
@@ -625,9 +625,9 @@
       haber sido suficientemente informado sobre los efectos de esta
       cl&aacute;usula, se firma el presente contrato y se acepta la presente
       autorizaci&oacute;n.
-      --------------------------------------------------------------------------
+      ----------------------------------------------------------------------
     </p>
-    <p style="text-align: justify">
+    <p style="text-align: justify" class="page-break">
       <strong
         >DECIM&Aacute; PRIMERA. AUTORIZACI&Oacute;N TRATAMIENTO DE DATOS- HABEAS
         DATA.- </strong
@@ -642,7 +642,7 @@
       para el envi&oacute; de informaci&oacute;n comercial y general,
       manifestando en todo caso la aceptaci&oacute;n y conocimiento de la
       pol&iacute;tica de la empresa con la firma del presente contrato.-
-      ---------------------------------------------------------------------------------
+      -----------------------------------------------------
     </p>
     <p style="text-align: justify">
       <strong>D&Eacute;CIMA SEGUNDA.</strong>

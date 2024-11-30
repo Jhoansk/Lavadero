@@ -164,7 +164,6 @@
       /* Forzar salto de página para secciones importantes */
       .page-break {
         page-break-before: always;
-        font-size: 6.5pt;
       }
       .justificado {
         text-align: justify; /* Justificación del texto */
@@ -382,24 +381,11 @@
       ----------------------------------------------------------------------------------------------------
     </p>
     <ul style="text-align: justify" class="claus-list">
-      <li>
-        El CESIONARIO se compromete a cancelar la suma de
-        <strong>{{ primer_pago_letras }} DE PESOS M/CTE</strong>
-        <strong>(${{ primer_pago }}), </strong>posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }})
-        d&iacute;as h&aacute;biles siguientes a...
-      </li>
-      <li>
-        El CESIONARIO se compromete a cancelar la suma de
-        <strong>{{ segundo_pago_letras }} DE PESOS M/CTE</strong>
-        <strong>(${{ segundo_pago }}), </strong>posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }})
-        d&iacute;as h&aacute;biles siguientes a...
-      </li>
-      <li>
-        El CESIONARIO se compromete a cancelar la suma de
-        <strong>____________ DE PESOS M/CTE</strong>
-        <strong>($___.000.000), </strong>posteriores a los______ (___)
-        d&iacute;as h&aacute;biles siguientes a...
-      </li>
+      {% for tercera in tercera %}
+          <li>
+              {{ tercera.texto }}
+          </li>
+      {% endfor %}
     </ul>
     <p style="text-align: justify">
       Los pagos deben hacerse con cheque de gerencia a nombre de TAXI CUPOS
@@ -418,7 +404,7 @@
       <a href="mailto:jefecomercial@taxicupos.com.co"
         >jefecomercial@taxicupos.com.co</a
       >&nbsp; para realizar la respectiva aplicaci&oacute;n.
-      ---------------------------------------------------------------------------------------------------------------------------------
+      ---------------------------------------------------------------------------------------------------------------------------
     </p>
     <p>
       <strong
@@ -451,15 +437,10 @@
       no hubiere inventario por parte del proveedor. -------
     </p>
     <p style="text-align: justify">
-      <strong>SEXTA.- CLAUSULA PENAL</strong>: Se acuerda como sanci&oacute;n
-      por incumplimiento del contrato el 10% del valor de este a cargo de la
-      parte que incumpla y a favor de la otra, valor que ser&aacute; exigible
-      sin necesidad de requerimientos, constituciones en mora ni declaraciones
-      judiciales, para lo cual el presente contrato constituye t&iacute;tulo
-      ejecutivo, para lo cual bastar&aacute; con la manifestaci&oacute;n expresa
-      en la demanda ejecutiva por parte incumplida sobre el incumplimiento
-      predicado PAR&Aacute;GRAFO: EL COMPRADOR manifiesta que renuncia al
-      requerimiento de constituci&oacute;n en mora.-</p>
+      <strong>SEXTA.- CLAUSULA PENAL</strong>: Las partes establecen como sanción
+      pecuniaria a cargo de quien incumpla cualquiera de las estipulaciones derivadas de este acto 
+      jurídico, la suma del DIEZ PORCIENTO DEL VALOR TOTAL DE ESTE CONTRATO (10%) sin perjuicio 
+      de la indemnizacion a que haya lugar.---</p>
       <p><strong
         >SEPTIMA.- ENTREGA DEL CUPO.- </strong
       >Se entregar&aacute; este cupo con factura cancelada para la
@@ -500,7 +481,7 @@
       recuperaci&oacute;n de cartera, actividades relacionadas con la
       prevenci&oacute;n del lavado de activos y financiaci&oacute;n del
       terrorismo, prevenci&oacute;n del fraude y los dem&aacute;s autorizados
-      por la Ley.</p> <p><strong> PARAGRAFO 1:</strong>  La autorizaci&oacute;n concedida por EL
+      por la Ley.<strong> PARAGRAFO 1:</strong>  La autorizaci&oacute;n concedida por EL
       CESIONARIO, no le impedir&aacute; a este o su representada, a ejercer el
       derecho a corroborar en cualquier tiempo por EL CEDENTE, en
       DATACR&Eacute;DITO EXPERIAN o en la central de riesgo que se hallan
@@ -545,7 +526,7 @@
       provengan, de actividades il&iacute;citas, particularmente, de las
       anteriormente enunciadas.
     </p>
-    <p style="text-align: justify">
+    <p style="text-align: justify" class="page-break">
       <strong
         >Observaciones:
         ---------------------------------------------------------------------------------------------------------------------------------------</strong

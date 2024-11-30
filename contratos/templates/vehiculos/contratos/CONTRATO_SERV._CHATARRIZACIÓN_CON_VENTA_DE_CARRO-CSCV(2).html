@@ -164,7 +164,6 @@
       /* Forzar salto de página para secciones importantes */
       .page-break {
         page-break-before: always;
-        font-size: 6.5pt;
       }
       .justificado {
         text-align: justify; /* Justificación del texto */
@@ -217,7 +216,7 @@
       {{ usuario2.cedula }} de Bogot&aacute;, actuando como _______________ de la empresa
       TAXI CUPOS S.A.S. identificada con Nit. <strong>900486003-2</strong> con
       sede en la direcci&oacute;n calle 13 No. 46-03 de Bogot&aacute;,
-      tel&eacute;fono 7443963 / ___________, Email:
+      tel&eacute;fono 7443963, Email:
       {{ usuario2.correo }}, quien para efectos de este contrato se denominara
       <strong>EL TRAMITADOR</strong>, y de la otra parte:
       <strong>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</strong> mayor de edad, identificado (a) con la
@@ -257,22 +256,11 @@
       -----------
     </p>
     <ul style="text-align: justify" class="claus-list">
-      <li>
-        El propietario se compromete a cancelar la suma de
-        <strong
-          >&shy;&shy;&shy;&shy;&shy;{{ primer_pago_letras }} DE PESOS M/CTE
-          (${{ primer_pago }}) </strong
-        >dentro de los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) d&iacute;as h&aacute;biles siguientes
-        a&hellip;&hellip;&hellip;&hellip;.---------------------
-      </li>
-      <li>
-        El propietario se compromete a cancelar la suma de
-        <strong
-          >&shy;&shy;&shy;&shy;&shy;{{ segundo_pago_letras }} DE PESOS M/CTE
-          (${{ segundo_pago }}) </strong
-        >dentro de los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) d&iacute;as h&aacute;biles siguientes
-        a&hellip;&hellip;&hellip;&hellip;.---------------------
-      </li>
+      {% for tercera in tercera %}
+          <li>
+              {{ tercera.texto }}
+          </li>
+      {% endfor %}
     </ul>
     <p style="text-align: justify">
       Los pagos deben hacerse con cheque de gerencia a nombre de TAXI CUPOS
@@ -293,15 +281,10 @@
       >&nbsp; para realizar la respectiva aplicaci&oacute;n.
       ------------------------</p>
       <p>
-        <strong>TERCERA. </strong>CLAUSULA PENAL: Se acuerda como sanci&oacute;n
-        por incumplimiento del contrato el 10% del valor de este a cargo de la
-        parte que incumpla y a favor de la otra, valor que ser&aacute; exigible
-        sin necesidad de requerimientos, constituciones en mora ni declaraciones
-        judiciales, para lo cual el presente contrato constituye t&iacute;tulo
-        ejecutivo, para lo cual bastar&aacute; con la manifestaci&oacute;n expresa
-        en la demanda ejecutiva por parte incumplida sobre el incumplimiento
-        predicado PAR&Aacute;GRAFO: EL COMPRADOR manifiesta que renuncia al
-        requerimiento de constituci&oacute;n en mora.-
+        <strong>TERCERA. </strong>CLAUSULA PENAL: Las partes establecen como sanción
+        pecuniaria a cargo de quien incumpla cualquiera de las estipulaciones derivadas de este acto 
+        jurídico, la suma del VEINTE PORCIENTO DEL VALOR TOTAL DE ESTE CONTRATO (20%) sin perjuicio 
+        de la indemnizacion a que haya lugar.---
       <br />
       </p><p><strong>CUARTA. </strong>GASTOS Los gastos incluidos en el servicio de
       chatarrizaci&oacute;n son:, Certificado de tradici&oacute;n,
@@ -309,8 +292,8 @@
       cancelaci&oacute;n de la&nbsp; tarjeta de operaci&oacute;n, servicio de
       gr&uacute;a a Sidenal o Diaco solicitud &ldquo;CREI&rdquo; y por el
       servicio de matr&iacute;cula del veh&iacute;culo a reponer con carro nuevo
-      los gastos incluidos son: carro nuevo marca ______&nbsp; l&iacute;nea
-      ______ modelo<strong> _____</strong>, pago de derechos ante la VENTANILLA
+      los gastos incluidos son: carro nuevo marca {{ vehiculo.marca }}&nbsp; l&iacute;nea
+      {{ vehiculo.linea }} modelo<strong> {{ vehiculo.modelo }}</strong>, pago de derechos ante la VENTANILLA
       UNICA DE SERVICIOS &ldquo;VUS&rdquo;, &nbsp;de la matricula inicial del
       nuevo veh&iacute;culo, impuesto del a&ntilde;o en curso, un a&ntilde;o de
       rodamiento cancelado ante la empresa Taxicupos, soat por un a&ntilde;o,
@@ -453,13 +436,13 @@
         </li>
       {% endfor %}
     </ul>
-    <p style="text-align: justify">
+    <p style="text-align: justify" class="page-break">
       Sala de venta:
       <strong
         >TAXI CUPOS
         S.A.S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong
       >Asesor:
-      <strong>&shy;&shy;&shy;&shy;&shy;&shy;&shy;&shy;________________</strong>
+      <strong>&shy;&shy;&shy;&shy;&shy;&shy;&shy;&shy;{{ nombre_usuario.first_name }} {{ nombre_usuario.last_name }}</strong>
     </p>
     <p class="justificado">
       En se&ntilde;al de conformidad las partes contratantes suscriben el

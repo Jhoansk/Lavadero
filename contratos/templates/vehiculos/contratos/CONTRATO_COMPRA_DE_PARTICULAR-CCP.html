@@ -164,7 +164,6 @@
       /* Forzar salto de página para secciones importantes */
       .page-break {
         page-break-before: always;
-        font-size: 6.5pt;
       }
       .justificado {
         text-align: justify; /* Justificación del texto */
@@ -429,19 +428,11 @@
       ------------------------------------------------------------------------------------------------------------------------------------
     </p>
     <ul style="text-align: justify" class="claus-list">
-      <li>
-        El comprador se compromete a cancelar la suma de {{ primer_pago_letras }} 
-        (${{ primer_pago }}), posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) d&iacute;as h&aacute;biles
-        siguientes a...
-      </li>
-
-      <p style="text-align: justify">&nbsp;</p>
-
-      <li>
-        El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }}
-        (${{ segundo_pago }}), posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) d&iacute;as h&aacute;biles
-        siguientes a...
-      </li>
+      {% for tercera in tercera %}
+          <li>
+              {{ tercera.texto }}
+          </li>
+      {% endfor %}
     </ul>
     <p style="text-align: justify">
       Los pagos deben hacerse con cheque de gerencia a nombre de TAXI CUPOS
@@ -475,8 +466,6 @@
       o el (EL COMPRADOR) se obligan a realizar las gestiones de traspaso ante
       las autoridades de tr&aacute;nsito dentro de los {{ cuarta_clausula_letras }} ({{ cuarta_clausula }})
       d&iacute;as h&aacute;biles posteriores a la firma del presente contrato.
-    </p>
-    <p>
       <strong>PARAGRAFO 1:</strong> El vendedor asumir&aacute; la
       responsabilidad ante TAXI CUPOS SAS, o ante TERCEROS por las
       irregularidades legales o vicios legales que pueda tener el bien objeto
@@ -501,16 +490,10 @@
       -------------------------------------------------------------------
     </p>
     <p style="text-align: justify">
-      <strong>S&Eacute;PTIMA</strong> - CL&Aacute;USULA PENAL: Se acuerda como sanci&oacute;n
-      por incumplimiento del contrato el 10% del valor de este a cargo de la
-      parte que incumpla y a favor de la otra, valor que ser&aacute; exigible
-      sin necesidad de requerimientos, constituciones en mora ni declaraciones
-      judiciales, para lo cual el presente contrato constituye t&iacute;tulo
-      ejecutivo, para lo cual bastar&aacute; con la manifestaci&oacute;n expresa
-      en la demanda ejecutiva por parte incumplida sobre el incumplimiento
-      predicado PAR&Aacute;GRAFO: EL COMPRADOR manifiesta que renuncia al
-      requerimiento de constituci&oacute;n en mora.-
-      -----------------------------------------------
+      <strong>S&Eacute;PTIMA</strong> - CL&Aacute;USULA PENAL: Las partes establecen como sanción
+      pecuniaria a cargo de quien incumpla cualquiera de las estipulaciones derivadas de este acto 
+      jurídico, la suma del VEINTE PORCIENTO DEL VALOR TOTAL DE ESTE CONTRATO (20%) sin perjuicio 
+      de la indemnizacion a que haya lugar.---
     </p>
     <p>
       <strong>OCTAVA</strong> - GASTOS: Los gastos que se ocasionen con motivo
@@ -566,8 +549,6 @@
       prevenci&oacute;n del lavado de activos y financiaci&oacute;n del
       terrorismo, prevenci&oacute;n del fraude y los dem&aacute;s autorizados
       por la Ley.
-    </p>
-    <p>
       <strong>PARAGRAFO 1:</strong> La autorizaci&oacute;n concedida por EL
       COMPRADOR, no le impedir&aacute; a este o su representada, a ejercer el
       derecho a corroborar en cualquier tiempo por EL VENDEDOR, en
@@ -598,7 +579,7 @@
       manifestando en todo caso la aceptaci&oacute;n y conocimiento de la
       pol&iacute;tica de la empresa con la firma del presente contrato. &ndash;
     </p>
-    <p style="text-align: justify">
+    <p style="text-align: justify" class="page-break">
       <strong>D&Eacute;CIMA SEGUNDA.</strong>
       <strong
         >PREVENCI&Oacute;N DE LAVADO DE ACTIVOS Y FINANCIACI&Oacute;N DEL

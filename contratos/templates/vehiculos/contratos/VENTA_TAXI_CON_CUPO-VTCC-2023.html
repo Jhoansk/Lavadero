@@ -367,39 +367,37 @@
       Las partes celebramos el presente contrato de compraventa de un taxi nuevo
       con cupo de uso urbano para la ciudad de Bogot&aacute;, el cual se
       regir&aacute; por las siguientes cl&aacute;usulas:
-      ---------------------------------------------------------------------------------
+      ---------------------------------------------------------------------------------------------------------------------------
+      --------------------------------------------------------------------------------
     </p>
     <p style="text-align: justify">
       <strong>CLAUSULA PRIMERA.- OBJETO DEL NEGOCIO: </strong>El vendedor
       transfiere a t&iacute;tulo de venta al comprador un veh&iacute;culo nuevo,
       tipo taxi, marca: {{vehiculo.marca}}, L&iacute;nea: {{vehiculo.linea}}, modelo: {{vehiculo.modelo}},
       cilindraje: {{vehiculo.cilindraje}}, con su respectivo cupo de la ciudad de Bogot&aacute;.
-      --------------------------------------------------------------------------------------------------------------------------
+      ------------------------------------------------------------------------------------------------------------------
     </p>
     <p style="text-align: justify">
       <strong>CLAUSULA SEGUNDA.- PRECIO: </strong>Las partes han acordado como
       valor del referido taxi con su respectivo cupo, de la ciudad de
       Bogot&aacute;, la suma de
-      <strong>{{ pacta_suma_letras }} MILLONES DE PESOS MC/TE (${{ pacta_suma }}).</strong>
-      ------------------------------
+      <strong>{{ pacta_suma_letras }}  DE PESOS MC/TE (${{ pacta_suma }}).</strong>
+      --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      ---
     </p>
     <p style="text-align: justify">
       <strong
         >CLAUSULA TERCERA.- FECHA Y FORMA DE PAGO:
-        ---------------------------------------------------------------------------------</strong
+        --------------------------------------------------------------------------------------------------------------------------
+        -----------------</strong
       >
     </p>
     <ul style="text-align: justify" class="claus-list">
-      <li class="list-item">
-        El comprador se compromete a cancelar la suma de {{ primer_pago_letras }}
-        (${{ primer_pago }}), posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) d&iacute;as h&aacute;biles
-        siguientes a...
-      </li>
-      <li>
-        El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }}
-        (${{ segundo_pago }}), posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) d&iacute;as h&aacute;biles
-        siguientes a...
-      </li>
+      {% for tercera in tercera %}
+          <li>
+              {{ tercera.texto }}
+          </li>
+      {% endfor %}
     </ul>
     <p style="text-align: justify">
       Los pagos deben hacerse con cheque de gerencia a nombre de TAXI CUPOS
@@ -423,7 +421,7 @@
       ----------------------------------------
     </p>
     <p><strong>CLAUSULA CUARTA.- OBLIGACIONES DEL COMPRADOR:
-        ----------------------------------------------------------------------------</strong>
+        ----------------------------------------------------------------------------------------------------------------------------------------</strong>
     </p>
     <ul style="text-align: justify" class="claus-list">
       <li>
@@ -447,9 +445,20 @@
       <strong>CLAUSULA QUINTA.- OBLIGACIONES DEL VENDEDOR. </strong>1) El
       vendedor se compromete a entregar el cupo (s) bien objeto del presente
       contrato para radicar matricula y/o traspaso seg&uacute;n sea el caso, en
-      un tiempo m&aacute;ximo de _______ d&iacute;as calendario contados a
-      partir de hacerse efectivo el pago de _________ MILLONES DE PESOS M/CTE
-      ($___________). 
+      un tiempo m&aacute;ximo de {{ cuarta_clausula_letras }} ({{ cuarta_clausula }}) d&iacute;as calendario contados a
+      partir de hacerse efectivo el pago de {% if venta_nuevo == "primero" %}
+      {{primer_pago_letras}} DE PESOS M/CTE (${{primer_pago}})
+    {% elif venta_nuevo == "segundo" %}
+      {{segundo_pago_letras}} DE PESOS M/CTE (${{segundo_pago}})
+    {% elif venta_nuevo == "tercero" %}
+      {{tercer_pago_letras}} DE PESOS M/CTE (${{tercer_pago}})
+    {% elif venta_nuevo == "primeroysegundo" %}
+      {{primero_segundo_letras}} DE PESOS M/CTE (${{primero_segundo}})
+    {% elif venta_nuevo == "totalP" %}
+      {{total_letras}} DE PESOS M/CTE (${{total}})
+    {% else %}
+      _________ DE PESOS M/CTE ($___________)
+    {% endif %}
       <p><strong>PARAGRAFO 1: </strong>El aqu&iacute; vendedor, ha realizado una
       revisi&oacute;n general de las situaciones legales y administrativas del
       citado veh&iacute;culo y su respectiva orden, raz&oacute;n por la cual se
@@ -466,15 +475,10 @@
     </p>
     </p>
     <p style="text-align: justify">
-      <strong>CLAUSULA SEXTA.- CLAUSULA PENAL: </strong> Se acuerda como sanci&oacute;n
-      por incumplimiento del contrato el 10% del valor de este a cargo de la
-      parte que incumpla y a favor de la otra, valor que ser&aacute; exigible
-      sin necesidad de requerimientos, constituciones en mora ni declaraciones
-      judiciales, para lo cual el presente contrato constituye t&iacute;tulo
-      ejecutivo, para lo cual bastar&aacute; con la manifestaci&oacute;n expresa
-      en la demanda ejecutiva por parte incumplida sobre el incumplimiento
-      predicado PAR&Aacute;GRAFO: EL COMPRADOR manifiesta que renuncia al
-      requerimiento de constituci&oacute;n en mora.-
+      <strong>CLAUSULA SEXTA.- CLAUSULA PENAL: </strong> Las partes establecen como sanción
+      pecuniaria a cargo de quien incumpla cualquiera de las estipulaciones derivadas de este acto 
+      jurídico, la suma del DIEZ PORCIENTO DEL VALOR TOTAL DE ESTE CONTRATO (10%) sin perjuicio 
+      de la indemnizacion a que haya lugar.---
     </p>
     <p style="text-align: justify">
       <strong>CLAUSULA SEPTIMA.- ENTREGA DEL TAXI CON CUPO.- </strong>Se
@@ -570,55 +574,16 @@
       anteriormente enunciadas.
       -----------------------------------------------------------------------------------------------------------------------------
     </p>
-    <p style="text-align: justify">
+    <p style="text-align: justify" class="page-break">
       <strong>Observaciones: </strong
       >------------------------------------------------------------------------------------------------------------------------------------------
     </p>
-    <ul style="text-align: justify" class="claus-list">
-      <li>
-        Cualquier gasto adicional no estipulado en este contrato ser&aacute;
-        asumido por el comprador. --------------------------------------
-      </li>
-      <li>
-        El veh&iacute;culo ser&aacute; entregado dentro de los tres d&iacute;as
-        h&aacute;biles siguientes al hacerse efectivo el pago total de este
-        contrato.
-      </li>
-      <li>
-        El PROPIETARIO solicitar&aacute; la excepci&oacute;n del IVA (CREI) en
-        la factura del veh&iacute;culo objeto de este contrato con la
-        asesor&iacute;a y acompa&ntilde;amiento del TRAMITADOR.
-        -------------------------------------------------------------------------------------------
-      </li>
-      <li>
-        Si el comprador solicita la instalaci&oacute;n del equipo de gas, el
-        costo ser&aacute; asumido por este ante la empresa instaladora. el
-        Vendedor se compromete a gestionar este tr&aacute;mite ante el sim para
-        que la tarjeta de propiedad salga gas - gasolina y cancelara los
-        derechos ante tr&aacute;nsito.
-        --------------------------------------------------------------------------------------------------------
-      </li>
-      <li>
-        El comprador se compromete a firmar los compromisos de consumo del
-        veh&iacute;culo ante la entidad que realiz&oacute; o realizar&eacute; la
-        transformaci&oacute;n a gas, bajo las condiciones que establezca la
-        empresa transformadora y/o el convenio que estos presenten.
-        --------------------------------------------------------------------------------------------------------------------------------------
-      </li>
-      <li>
-        Al estar aprobado el CREI (Descuento del IVA) el valor eximido en la
-        factura del taxi nuevo ya est&aacute; descontado del valor total de este
-        contrato.
-        -------------------------------------------------------------------------------------------------------------------
-      </li>
-      <li>
-        El vendedor y el comprador han pactado que el tiempo de demora,
-        dilaci&oacute;n, atraso, subsanaci&oacute;n, negligencia, impericia,
-        fuerza mayor o caso fortuito, atribuible a la autoridad administrativa,
-        judicial y/o de transito no ser&aacute; responsabilidad atribuible a
-        Taxi Cupos SAS.
-        ---------------------------------------------------------------------------------------------------------------------
-      </li>
+    <ul style="text-align: justify; " class="claus-list">
+      {% for opcion in opciones %}
+        <li>
+            {{ opcion.texto }}
+        </li>
+      {% endfor %}
     </ul>
     <p class="justificado">
       En se&ntilde;al de conformidad las partes contratantes suscriben el

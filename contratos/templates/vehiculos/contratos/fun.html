@@ -200,9 +200,13 @@
         }
 
         .direccionpropietario {
-            top:480px;
-            left: 65px;
-            font-size: 12px;
+            top: 478px;
+            left: 43px;
+            font-size: 10px;
+            max-width: 200px; /* Ajusta el ancho máximo deseado */
+            word-wrap: break-word; /* Permite dividir palabras largas */
+            overflow-wrap: break-word; /* Asegura que las palabras se ajusten dentro del contenedor */
+            white-space: normal; /* Permite que el texto se envuelva */
         }
 
         .ciudadpropietario {
@@ -255,7 +259,7 @@
 
         {% endif %}
 
-        {% if compradores == "1" %}
+        {% if compradores == "1" or tipo_juridica == "Comprador" or tipo_juridica == "Vendedor" %}
 
         .field-1 {
             top:405px;
@@ -288,9 +292,13 @@
         }
 
         .direccionpropietario {
-            top:480px;
-            left: 65px;
-            font-size: 12px;
+            top: 478px;
+            left: 43px;
+            font-size: 10px;
+            max-width: 200px; /* Ajusta el ancho máximo deseado */
+            word-wrap: break-word; /* Permite dividir palabras largas */
+            overflow-wrap: break-word; /* Asegura que las palabras se ajusten dentro del contenedor */
+            white-space: normal; /* Permite que el texto se envuelva */
         }
 
         .ciudadpropietario {
@@ -376,9 +384,13 @@
         }
 
         .direccionpropietario {
-            top:478px;
-            left: 65px;
+            top: 487px;
+            left: 43px;
             font-size: 10px;
+            max-width: 200px; /* Ajusta el ancho máximo deseado */
+            word-wrap: break-word; /* Permite dividir palabras largas */
+            overflow-wrap: break-word; /* Asegura que las palabras se ajusten dentro del contenedor */
+            white-space: normal; /* Permite que el texto se envuelva */
         }
 
         .ciudadpropietario {
@@ -419,7 +431,7 @@
 
         .direccionvendedor {
             top:487px;
-            left: 65px;
+            left: 43px;
             font-size: 10px;
         }
 
@@ -581,10 +593,14 @@
             font-size: 12px;
         }
 
-        .acta{
-            top:480px;
+        .acta {
+            top: 465px;
             left: 501px;
             font-size: 12px;
+            max-width: 100px; /* Ajusta el ancho máximo deseado */
+            word-wrap: break-word; /* Permite dividir palabras largas */
+            overflow-wrap: break-word; /* Asegura que las palabras se ajusten dentro del contenedor */
+            white-space: normal; /* Permite que el texto se envuelva */
         }
 
         .empafiliadora{
@@ -656,6 +672,31 @@
         {% endif %}
 
         {% if compradores == "1" %}
+
+        <div class="text-overlay field-1">{{ usuario1.nombre }}</div>
+        <div class="text-overlay apellido1">{{ usuario1.p_apellido }}</div>
+        <div class="text-overlay apellido2">{{ usuario1.s_apellido }}</div>
+        <div class="text-overlay field-2">{{ usuario1.cedula }}</div>
+        <div class="text-overlay tlfpropietario">{{ usuario1.telefono }}</div>
+        <div class="text-overlay direccionpropietario">{{ usuario1.direccion }}</div>
+        <div class="text-overlay ciudadpropietario">{{ usuario1.ciudad }}</div>
+
+
+        {% endif %}
+
+        {% if tipo_juridica == "Comprador" or tipo_juridica == "Vendedor" %}
+
+        <div class="text-overlay field-1">{{ usuario1.nombre }}</div>
+        <div class="text-overlay apellido1">{{ usuario1.p_apellido }}</div>
+        <div class="text-overlay apellido2">{{ usuario1.s_apellido }}</div>
+        <div class="text-overlay field-2">{{ usuario1.cedula }}</div>
+        <div class="text-overlay tlfpropietario">{{ usuario1.telefono }}</div>
+        <div class="text-overlay direccionpropietario">{{ usuario1.direccion }}</div>
+        <div class="text-overlay ciudadpropietario">{{ usuario1.ciudad }}</div>
+
+
+        {% endif %}
+        {% if persona == "Natural" %}
 
         <div class="text-overlay field-1">{{ usuario1.nombre }}</div>
         <div class="text-overlay apellido1">{{ usuario1.p_apellido }}</div>

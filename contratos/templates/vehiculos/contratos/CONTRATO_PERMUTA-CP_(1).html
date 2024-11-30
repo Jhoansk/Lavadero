@@ -462,24 +462,24 @@
       <tbody>
         <tr>
           <td width="279" class="clase-vehiculo">
-            <p>CLASE: {{ vehiculo.clase }}</p>
+            <p>CLASE: {{ vehiculo2.clase }}</p>
           </td>
           <td width="184" class="clase-vehiculo">
-            <p>MARCA: {{ vehiculo.marca }}</p>
+            <p>MARCA: {{ vehiculo2.marca }}</p>
           </td>
           <td width="215" class="clase-vehiculo">
-            <p>MODELO: {{ vehiculo.modelo }}</p>
+            <p>MODELO: {{ vehiculo2.modelo }}</p>
           </td>
         </tr>
         <tr>
           <td width="279" class="clase-vehiculo">
-            <p>CHASIS: {{ vehiculo.n_chasis }}</p>
+            <p>CHASIS: {{ vehiculo2.n_chasis }}</p>
           </td>
           <td width="184" class="clase-vehiculo">
-            <p>L&Iacute;NEA: {{ vehiculo.linea }}</p>
+            <p>L&Iacute;NEA: {{ vehiculo2.linea }}</p>
           </td>
           <td width="215" class="clase-vehiculo">
-            <p>MOTOR: {{ vehiculo.n_motor }}</p>
+            <p>MOTOR: {{ vehiculo2.n_motor }}</p>
           </td>
         </tr>
         <tr>
@@ -534,7 +534,7 @@
             <p>TRJTA/OP: {{ documento2.n_tarjeta_operacion }}</p>
           </td>
           <td width="215" class="clase-vehiculo">
-            <p>VENCE: {{ documento.fecha_vencimiento_to|date:"d/m/Y" }} </p>
+            <p>VENCE: {{ documento2.fecha_vencimiento_to|date:"d/m/Y" }} </p>
           </td>
         </tr>
       </tbody>
@@ -557,16 +557,11 @@
       -------------------------------------------------------------------------------------------------
     </p>
     <ul style="text-align: justify" class="claus-list">
-      <li>
-        El comprador se compromete a cancelar la suma de {{ primer_pago_letras }}
-        (${{ primer_pago }}), posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) d&iacute;as h&aacute;biles
-        siguientes a...
-      </li>
-      <li>
-        El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }}
-        (${{ segundo_pago }}), posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) d&iacute;as h&aacute;biles
-        siguientes a...
-      </li>
+      {% for tercera in tercera %}
+          <li>
+              {{ tercera.texto }}
+          </li>
+      {% endfor %}
     </ul>
     <p style="text-align: justify">
       Los pagos deben hacerse con cheque de gerencia a nombre de TAXI CUPOS
@@ -621,15 +616,10 @@
       totalidad, de conformidad con el Art. 952 del C&oacute;digo de Comercio.
     </p>
     <p style="text-align: justify">
-      <strong>S&Eacute;PTIMA - CL&Aacute;USULA PENAL: </strong>: Se acuerda como sanci&oacute;n
-      por incumplimiento del contrato el 10% del valor de este a cargo de la
-      parte que incumpla y a favor de la otra, valor que ser&aacute; exigible
-      sin necesidad de requerimientos, constituciones en mora ni declaraciones
-      judiciales, para lo cual el presente contrato constituye t&iacute;tulo
-      ejecutivo, para lo cual bastar&aacute; con la manifestaci&oacute;n expresa
-      en la demanda ejecutiva por parte incumplida sobre el incumplimiento
-      predicado PAR&Aacute;GRAFO: EL COMPRADOR manifiesta que renuncia al
-      requerimiento de constituci&oacute;n en mora.-
+      <strong>S&Eacute;PTIMA - CL&Aacute;USULA PENAL: </strong>: Las partes establecen como sanción
+      pecuniaria a cargo de quien incumpla cualquiera de las estipulaciones derivadas de este acto 
+      jurídico, la suma del VEINTE PORCIENTO DEL VALOR TOTAL DE ESTE CONTRATO (20%) sin perjuicio 
+      de la indemnizacion a que haya lugar.---
     </p>
     <strong>OCTAVA - GASTOS: </strong>Los gastos que se ocasionen con motivo
       de la firma de esta compraventa serán cubiertos de la siguiente manera. -----
@@ -680,8 +670,6 @@
       prevenci&oacute;n del lavado de activos y financiaci&oacute;n del
       terrorismo, prevenci&oacute;n del fraude y los dem&aacute;s autorizados
       por la Ley.
-    </p>
-    <p>
       <strong>PARAGRAFO 1:</strong> La autorizaci&oacute;n concedida por EL PRIMER
       PERMUTANDE, no le impedir&aacute; a este o su representada, a ejercer el
       derecho a corroborar en cualquier tiempo por EL SEGUNDO PERMUTANTE, en

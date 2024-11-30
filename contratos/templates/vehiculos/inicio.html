@@ -26,43 +26,59 @@
                 </div>
             </div>
         <div class="sidebar">
-            <a href="">
+            <a href="{% url 'vehiculos:inicio' %}">
                 <span class="material-icons-sharp">dashboard</span>
                 <h3>Inicio</h3>
-            </a>
-            <a href="{% url 'vehiculos:lista_usuarios' %}">
+              </a>
+              <a href="{% url 'vehiculos:lista_usuarios' %}">
                 <span class="material-icons-sharp">person_outline</span>
                 <h3>Usuarios</h3>
-            </a>
-            <a href="{% url 'vehiculos:buscar_vehiculo' %}" class="active">
+              </a>
+              <a href="{% url 'vehiculos:buscar_vehiculo' %}" class="active">
                 <span class="material-icons-sharp">receipt_long</span>
                 <h3>Vehículos</h3>
-            </a>
-            <a href="#">
+              </a>
+              <a href="{% url 'vehiculos:seleccionar_datos_contrato' %}">
                 <span class="material-icons-sharp">insights</span>
                 <h3>Contratos</h3>
-            </a>
-            <a href="#">
+              </a>
+              <a href="{% url 'vehiculos:lista_documentos' %}">
                 <span class="material-icons-sharp">mail_outline</span>
-                <h3>Informes</h3>
+                <h3>Documentos</h3>
                 <span class="message-count">0</span>
-            </a>
-            <a href="#">
+              </a>
+              <a href="{% url 'vehiculos:agregar_vehiculo' %}">
                 <span class="material-icons-sharp">inventory</span>
-                <h3>Inventario</h3>
-            </a>
-            <a href="#">
+                <h3>Crear Vehiculo</h3>
+              </a>
+              {% if request.user.rol == 'administrador' %}
+              <a href="{% url 'vehiculos:generar_reporte_contratos' %}">
                 <span class="material-icons-sharp">report_gmailerrorred</span>
                 <h3>Reportes</h3>
-            </a>
-            <a href="#">
+              </a>
+              {% endif %}
+              <a href="{% url 'vehiculos:configuraciones' %}">
                 <span class="material-icons-sharp">settings</span>
                 <h3>Configuraciones</h3>
-            </a>
-            <a href="#">
+              </a>
+              {% if request.user.rol == 'administrador' %}
+              <a href="{% url 'vehiculos:crear_usuario_desde_contratos' %}">
                 <span class="material-icons-sharp">add</span>
                 <h3>Crear usuario</h3>
-            </a>
+              </a>
+              {% endif %}
+              <a href="{% url 'vehiculos:lista_vehiculos' %}">
+                <span class="material-icons-sharp">add</span>
+                <h3>Lista de vehiculos</h3>
+              </a>
+              <a href="{% url 'vehiculos:ver_archivos' %}">
+                <span class="material-icons-sharp">add</span>
+                <h3>Operativa</h3>
+              </a>
+              <a href="{% url 'vehiculos:lista_facturas' %}">
+                <span class="material-icons-sharp">add</span>
+                <h3>Lista de Facturas</h3>
+              </a>
             <a href="#">
                 <span class="material-icons-sharp">logout</span>
                 <h3>Salir</h3>
@@ -151,8 +167,8 @@
                             {% if doc.fecha_vencimiento_to and doc.fecha_vencimiento_to <= future_threshold %}
                                 <tr>
                                     <td>{{ doc.id_placa.placa }}</td>
-                                    <td>Tarjeta de Operación</td>
-                                    <td>{{ doc.fecha_vencimiento_to|date:"d/m/Y" }}</td>
+                                    <td style="padding: 8px; color: red;">Tarjeta de Operación</td>
+                                    <td style="padding: 8px; color: red;">{{ doc.fecha_vencimiento_to|date:"d/m/Y" }}</td>
                                 </tr>
                             {% endif %}
                     
@@ -160,8 +176,8 @@
                             {% if doc.fecha_vencimiento_soat and doc.fecha_vencimiento_soat <= future_threshold %}
                                 <tr>
                                     <td>{{ doc.id_placa.placa }}</td>
-                                    <td>SOAT</td>
-                                    <td>{{ doc.fecha_vencimiento_soat|date:"d/m/Y" }}</td>
+                                    <td style="padding: 8px; color: red;">SOAT</td>
+                                    <td style="padding: 8px; color: red;">{{ doc.fecha_vencimiento_soat|date:"d/m/Y" }}</td>
                                 </tr>
                             {% endif %}
                     
@@ -169,8 +185,8 @@
                             {% if doc.fecha_vencimiento_tecno and doc.fecha_vencimiento_tecno <= future_threshold %}
                                 <tr>
                                     <td>{{ doc.id_placa.placa }}</td>
-                                    <td>Tecnomecánica</td>
-                                    <td>{{ doc.fecha_vencimiento_tecno|date:"d/m/Y" }}</td>
+                                    <td style="padding: 8px; color: red;">Tecnomecánica</td>
+                                    <td style="padding: 8px; color: red;">{{ doc.fecha_vencimiento_tecno|date:"d/m/Y" }}</td>
                                 </tr>
                             {% endif %}
                     
@@ -178,8 +194,8 @@
                             {% if doc.fecha_vencimiento_sRc and doc.fecha_vencimiento_sRc <= future_threshold %}
                                 <tr>
                                     <td>{{ doc.id_placa.placa }}</td>
-                                    <td>Seguro RC</td>
-                                    <td>{{ doc.fecha_vencimiento_sRc|date:"d/m/Y" }}</td>
+                                    <td style="padding: 8px; color: red;">Seguro RC</td>
+                                    <td style="padding: 8px; color: red;">{{ doc.fecha_vencimiento_sRc|date:"d/m/Y" }}</td>
                                 </tr>
                             {% endif %}
                         {% empty %}

@@ -164,7 +164,6 @@
       /* Forzar salto de página para secciones importantes */
       .page-break {
         page-break-before: always;
-        font-size: 6.5pt;
       }
       .justificado {
         text-align: justify; /* Justificación del texto */
@@ -412,26 +411,20 @@
       <strong>SEGUNDA - PRECIO: </strong>Como precio del automotor descrito las
       partes acuerdan la suma de
       <strong>{{ pacta_suma_letras }} MILLONES DE PESOS MC/TE (${{ pacta_suma }}).
-        ---------------------------------------------------------------------------------------------------</strong
+        ---------------</strong
       >
     </p>
     <p>
       <strong>TERCERA - FORMA DE PAGO: </strong>EL COMPRADOR se compromete a
       pagar el precio a que se refiere la cl&aacute;usula anterior de la
       siguiente forma:
-      ------------------------------------------------------------------------------------------------------------------------------------
     </p>
-    <ul class="claus-list">
-      <li>
-        El comprador se compromete a cancelar la suma de {{ primer_pago_letras }}
-        (${{ primer_pago }}), posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) d&iacute;as h&aacute;biles
-        siguientes a...
-      </li>   
-      <li>
-        El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }}
-        (${{ segundo_pago }}), posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) d&iacute;as h&aacute;biles
-        siguientes a...
-      </li>
+    <ul style="text-align: justify" class="claus-list">
+      {% for tercera in tercera %}
+          <li>
+              {{ tercera.texto }}
+          </li>
+      {% endfor %}
     </ul>
     <p>
       Los pagos deben hacerse con cheque de gerencia a nombre de TAXI CUPOS
@@ -487,15 +480,10 @@
       -------------------------------------------------------------------
     </p>
     <p>
-      <strong>S&Eacute;PTIMA</strong> - CL&Aacute;USULA PENAL: Se acuerda como sanci&oacute;n
-      por incumplimiento del contrato el 10% del valor de este a cargo de la
-      parte que incumpla y a favor de la otra, valor que ser&aacute; exigible
-      sin necesidad de requerimientos, constituciones en mora ni declaraciones
-      judiciales, para lo cual el presente contrato constituye t&iacute;tulo
-      ejecutivo, para lo cual bastar&aacute; con la manifestaci&oacute;n expresa
-      en la demanda ejecutiva por parte incumplida sobre el incumplimiento
-      predicado PAR&Aacute;GRAFO: EL COMPRADOR manifiesta que renuncia al
-      requerimiento de constituci&oacute;n en mora.-
+      <strong>S&Eacute;PTIMA</strong> - CL&Aacute;USULA PENAL: Las partes establecen como sanción
+      pecuniaria a cargo de quien incumpla cualquiera de las estipulaciones derivadas de este acto 
+      jurídico, la suma del DIEZ PORCIENTO DEL VALOR TOTAL DE ESTE CONTRATO (10%) sin perjuicio 
+      de la indemnizacion a que haya lugar.---
     </p>
     <p>
       <strong>OCTAVA</strong> - GASTOS: Los gastos que se ocasionen con motivo
@@ -554,7 +542,7 @@
       recuperaci&oacute;n de cartera, actividades relacionadas con la
       prevenci&oacute;n del lavado de activos y financiaci&oacute;n del
       terrorismo, prevenci&oacute;n del fraude y los dem&aacute;s autorizados
-      por la Ley. </p><p><strong>PARAGRAFO 1:</strong>La autorizaci&oacute;n concedida por EL
+      por la Ley.<strong>PARAGRAFO 1:</strong>La autorizaci&oacute;n concedida por EL
       COMPRADOR, no le impedir&aacute; a este o su representada, a ejercer el
       derecho a corroborar en cualquier tiempo por EL VENDEDOR, en
       DATACR&Eacute;DITO EXPERIAN o en la central de riesgo que se hallan
@@ -583,7 +571,7 @@
       manifestando en todo caso la aceptaci&oacute;n y conocimiento de la
       pol&iacute;tica de la empresa con la firma del presente contrato.
       &ndash;------------------------------------------------------------------------------------------------------------------------------------------------
-      </p><p>
+      </p><p class="page-break">
       <strong
         >D&Eacute;CIMA SEGUNDA.</strong
       >
