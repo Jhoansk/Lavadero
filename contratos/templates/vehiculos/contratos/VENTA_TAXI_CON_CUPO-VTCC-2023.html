@@ -164,7 +164,6 @@
       /* Forzar salto de página para secciones importantes */
       .page-break {
         page-break-before: always;
-        font-size: 6.5pt;
       }
       .justificado {
         text-align: justify; /* Justificación del texto */
@@ -382,8 +381,7 @@
       valor del referido taxi con su respectivo cupo, de la ciudad de
       Bogot&aacute;, la suma de
       <strong>{{ pacta_suma_letras }}  DE PESOS MC/TE (${{ pacta_suma }}).</strong>
-      --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-      ---
+      ----------------------------------------------------------------------------------------------------------------------------------
     </p>
     <p style="text-align: justify">
       <strong
@@ -418,28 +416,17 @@
         >jefecomercial@taxicupos.com.co</a
       >
       &nbsp;para realizar la respectiva aplicaci&oacute;n.
-      ----------------------------------------
+      -------------------------------------------------------------------------------------------------------------------------
     </p>
     <p><strong>CLAUSULA CUARTA.- OBLIGACIONES DEL COMPRADOR:
         ----------------------------------------------------------------------------------------------------------------------------------------</strong>
     </p>
     <ul style="text-align: justify" class="claus-list">
-      <li>
-        El comprador se compromete a cancelar el valor acordado en los
-        t&eacute;rminos y plazos estipulados en la cl&aacute;usula tercera.
-      </li>
-      <li>
-        A estar a paz y salvo por todo concepto, comparendos y / o multas de
-        tr&aacute;nsito a nivel nacional y estar inscripto ante el runt.
-        (Registro &uacute;nico nacional de
-        tr&aacute;nsito).---------------------------------------------------------------------------------------------------
-      </li>
-      <li>
-        Por mutuo acuerdo entre las partes en veh&iacute;culo nuevo ser&aacute;
-        afiliado a la empresa OPERADORA DE TRANSPORTE DE COLOMBIA TAXI CUPOS
-        S.A.S.
-        ---------------------------------------------------------------------------------------------------------------
-      </li>
+      {% for clausula in clausulas %}
+          <li>
+              {{ clausula.texto }}
+          </li>
+      {% endfor %}
     </ul>
     <p style="text-align: justify">
       <strong>CLAUSULA QUINTA.- OBLIGACIONES DEL VENDEDOR. </strong>1) El
@@ -447,15 +434,15 @@
       contrato para radicar matricula y/o traspaso seg&uacute;n sea el caso, en
       un tiempo m&aacute;ximo de {{ cuarta_clausula_letras }} ({{ cuarta_clausula }}) d&iacute;as calendario contados a
       partir de hacerse efectivo el pago de {% if venta_nuevo == "primero" %}
-      {{primer_pago_letras}} DE PESOS M/CTE (${{primer_pago}})
+      {{primer_pago_letras}} DE PESOS M/CTE (${{primer_pago}})-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     {% elif venta_nuevo == "segundo" %}
-      {{segundo_pago_letras}} DE PESOS M/CTE (${{segundo_pago}})
+      {{segundo_pago_letras}} DE PESOS M/CTE (${{segundo_pago}})-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     {% elif venta_nuevo == "tercero" %}
-      {{tercer_pago_letras}} DE PESOS M/CTE (${{tercer_pago}})
+      {{tercer_pago_letras}} DE PESOS M/CTE (${{tercer_pago}})-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     {% elif venta_nuevo == "primeroysegundo" %}
-      {{primero_segundo_letras}} DE PESOS M/CTE (${{primero_segundo}})
+      {{primero_segundo_letras}} DE PESOS M/CTE (${{primero_segundo}})-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     {% elif venta_nuevo == "totalP" %}
-      {{total_letras}} DE PESOS M/CTE (${{total}})
+      {{total_letras}} DE PESOS M/CTE (${{total}})-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     {% else %}
       _________ DE PESOS M/CTE ($___________)
     {% endif %}
@@ -463,22 +450,21 @@
       revisi&oacute;n general de las situaciones legales y administrativas del
       citado veh&iacute;culo y su respectiva orden, raz&oacute;n por la cual se
       comercializa.
-      </p>
-      <p><strong>PARAGRAFO 2: TAXI CUPOS S.A.S. </strong>no se
+      <strong>PARAGRAFO 2: TAXI CUPOS S.A.S. </strong>no se
       har&aacute; responsable por retrasos administrativos con las autoridades
       de tr&aacute;nsito y transporte en relaci&oacute;n al tiempo de entrega
       del veh&iacute;culo. De igual manera, tampoco se responsabilizar&aacute;
       por la disponibilidad y entrega por parte del proveedor del
       veh&iacute;culo con las condiciones y tiempos pactados, si no hubiere
       inventario por parte del proveedor.
-      ------------------------------------------
+      --------------------------------------------------------------------------------------------------------------
     </p>
     </p>
     <p style="text-align: justify">
       <strong>CLAUSULA SEXTA.- CLAUSULA PENAL: </strong> Las partes establecen como sanción
       pecuniaria a cargo de quien incumpla cualquiera de las estipulaciones derivadas de este acto 
       jurídico, la suma del DIEZ PORCIENTO DEL VALOR TOTAL DE ESTE CONTRATO (10%) sin perjuicio 
-      de la indemnizacion a que haya lugar.---
+      de la indemnizacion a que haya lugar.-----------------
     </p>
     <p style="text-align: justify">
       <strong>CLAUSULA SEPTIMA.- ENTREGA DEL TAXI CON CUPO.- </strong>Se
@@ -490,7 +476,7 @@
       empresa afiliadora, un a&ntilde;o de rodamiento cancelando ante la empresa
       OPERADORA DE TRANSPORTE DE COLOMBIA TAXI CUPOS S.A.S a partir de la
       entrega del taxi, estos gastos est&aacute;n incluidos dentro del valor del
-      contrato. -------------------------------------------------------------------------
+      contrato. --------------------------------------------------------
     </p>
     <p style="text-align: justify">
       <strong>CL&Aacute;USULA OCTAVA. </strong>EL COMPRADOR, en nombre propio o
@@ -530,7 +516,7 @@
       informado sobre las correcciones respectivas efectuadas, en constancia de
       haber sido suficientemente informado sobre los efectos de esta
       cl&aacute;usula, se firma el presente contrato y se acepta la presente
-      autorizaci&oacute;n. ------------
+      autorizaci&oacute;n. -------------------------------------------------------------
     </p>
     <p style="text-align: justify">
       <strong
@@ -547,7 +533,7 @@
       para el envi&oacute; de informaci&oacute;n comercial y general,
       manifestando en todo caso la aceptaci&oacute;n y conocimiento de la
       pol&iacute;tica de la empresa con la firma del presente
-      contrato.---------------------------------------------------------------------------
+      contrato.---------------------------------------------------------
     </p>
     <p style="text-align: justify">
       <strong>CL&Aacute;USULA D&Eacute;CIMA.</strong>

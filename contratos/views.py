@@ -133,7 +133,7 @@ def lista_facturas(request):
 
 @login_required
 def buscar_vehiculo(request):
-    vehiculo = None
+    vehiculo1 = None
     facturas = None
     error = None
     fechas = []  # Lista de fechas para el gráfico
@@ -144,9 +144,9 @@ def buscar_vehiculo(request):
     if request.method == 'POST':
         placa = request.POST.get('placa')
         if placa:
-            vehiculo = Vehiculo_contratos.objects.filter(placa=placa).first()
-            if vehiculo:
-                facturas = Factura.objects.filter(id_placa=vehiculo)
+            vehiculo1 = Vehiculo_contratos.objects.filter(placa=placa).first()
+            if vehiculo1:
+                facturas = Factura.objects.filter(id_placa=vehiculo1)
                 # Calcular el total de gastos
                 total_gastos = sum(factura.valor for factura in facturas)
                 # Preparar datos para el gráfico
@@ -154,7 +154,7 @@ def buscar_vehiculo(request):
                     '%Y-%m-%d') for factura in facturas]
                 valores = [factura.valor for factura in facturas]
                 # Ajustar consulta para el total de presupuesto
-                presupuesto_obj = vehiculo.presupuesto
+                presupuesto_obj = vehiculo1.presupuesto
                 if presupuesto_obj:
                     presupuesto_total = presupuesto_obj.valor_p
                 else:
@@ -165,13 +165,13 @@ def buscar_vehiculo(request):
             error = 'Por favor, ingresa una placa para buscar.'
 
     if 'descargar_excel' in request.POST:
-        return descargar_excel(vehiculo, facturas)
+        return descargar_excel(vehiculo1, facturas)
 
     if 'descargar_pdf' in request.POST:
-        return descargar_pdf(vehiculo, facturas)
+        return descargar_pdf(vehiculo1, facturas)
 
     return render(request, 'vehiculos/buscar_vehiculo.html', {
-        'vehiculo': vehiculo,
+        'vehiculo': vehiculo1,
         'facturas': facturas,
         'error': error,
         'fechas': json.dumps(fechas),
@@ -182,13 +182,13 @@ def buscar_vehiculo(request):
     })
 
 @login_required
-def descargar_excel(vehiculo, facturas):
+def descargar_excel(vehiculo1, facturas):
     if not facturas:
         return HttpResponse("No hay facturas para este vehículo.", content_type="text/plain")
 
     # Crear un DataFrame
     data = {
-        'Placa': [vehiculo.placa] * len(facturas),
+        'Placa': [vehiculo1.placa] * len(facturas),
         'Factura #': [factura.n_factura for factura in facturas],
         'Descripción': [factura.descripcion for factura in facturas],
         'Total': [factura.total for factura in facturas],
@@ -207,13 +207,13 @@ def descargar_excel(vehiculo, facturas):
     return response
 
 @login_required
-def descargar_pdf(vehiculo, facturas):
+def descargar_pdf(vehiculo1, facturas):
     if not facturas:
         return HttpResponse("No hay facturas para este vehículo.", content_type="text/plain")
 
     template_path = 'vehiculos/pdf_facturas.html'
     context = {
-        'vehiculo': vehiculo,
+        'vehiculo': vehiculo1,
         'facturas': facturas,
     }
     response = HttpResponse(content_type='application/pdf')
@@ -646,6 +646,15 @@ def eliminar_presupuesto(request, presupuesto_id):
 @login_required
 def generar_pdf(request):
     # Obtener los valores de cédula, placa, tipo de contrato, tipo de persona y tipo de persona jurídica
+    pacta_suma = 0
+    primer_pago = 0
+    segundo_pago = 0
+    tercer_pago = 0
+    dia_primer_pago = 0
+    dia_segundo_pago = 0
+    dia_tercer_pago = 0
+    cuarta_clausula = 0
+    
     usuario_empleado = request.user
     fecha = datetime.now()
     fecha_hoy = datetime.now().strftime("%d/%m/%Y")

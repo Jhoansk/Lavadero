@@ -81,12 +81,12 @@
                         <p><strong>Modelo:</strong> {{ vehiculo.modelo }}</p>
 
                         <!-- Botones de descarga -->
+                        <!--
                         <div class="btn-group">
                             <form method="post" style="display:inline;">
                                 {% csrf_token %}
                                 <input type="hidden" name="placa" value="{{ vehiculo.placa }}">
                                 <button type="submit" name="descargar_excel" class="btn btn-success">Descargar Excel</button>
-
                             </form>
                             <form method="post" style="display:inline;">
                                 {% csrf_token %}
@@ -94,6 +94,7 @@
                                 <button type="submit" name="descargar_pdf" class="btn btn-danger">Descargar PDF</button>
                             </form>
                         </div>
+                        -->
 
                         <!-- Gráfico -->
                         <div class="grapih">
