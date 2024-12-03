@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Autoland</title>
+    <style>
+        @page {
+            size: letter; /* Tamaño carta, orientación horizontal */
+            margin: 0; /* Sin márgenes */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center; /* Centra la imagen horizontalmente */
+            align-items: center; /* Centra la imagen verticalmente */
+        }
+
+        .background {
+            position: absolute;
+            width: 90%; /* Ajusta el tamaño de la imagen */
+            height: auto; /* Mantiene la proporción de la imagen */
+            object-fit: contain; /* Hace que la imagen se ajuste a las dimensiones sin perder su proporción */
+            z-index: 1;
+            margin-left: 5%;
+        }
+
+        .text-overlay {
+            position: absolute;
+            z-index: 2;
+            font-family: Arial, sans-serif;
+            color: black;
+        }
+
+        .nombre {
+            top:115px;
+            left: 90px;
+            font-size: 12px;
+        }
+
+        .apellidos {
+            top:140px;
+            left: 90px;
+            font-size: 12px;
+        }
+
+        .cedula {
+            top:170px;
+            left: 490px;
+            font-size: 12px;
+        }
+
+        .tipodoc {
+            top:170px;
+            left: 90px;
+            font-size: 12px;
+        }
+
+        .lugarexp {
+            top:195px;
+            left: 490px;
+            font-size: 12px;
+        }
+
+        .direccion {
+            top:220px;
+            left: 490px;
+            font-size: 12px;
+        }
+
+        .telefono {
+            top:250px;
+            left: 490px;
+            font-size: 12px;
+        }
+
+        .correo {
+            top: 275px;
+            left: 90px;
+            font-size: 12px;
+        }
+
+        .cedula2{
+            top: 568px;
+            left: 110px;
+            font-size: 12px;
+        }
+
+        .concesionario {
+            top:90px;
+            left: 120px;
+            font-size: 12px;
+        }
+
+        .ciudad {
+            top:90px;
+            left: 450px;
+            font-size: 12px;
+        }
+
+        .fecha {
+            top:90px;
+            left: 670px;
+            font-size: 12px;
+        }
+
+    </style>
+</head>
+<body>
+    {% load static %}
+    <div class="container">
+        <!-- Imagen de fondo ajustada -->
+        <img src="https://checklistpesv.taxicupos.com/img/AUTOLAND.png" alt="Background" class="background">
+        <div class="text-overlay nombre">{{ usuario2.nombre }}</div>
+        <div class="text-overlay apellidos">{{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</div>
+        <div class="text-overlay cedula">{{ usuario2.cedula }}</div>
+        <div class="text-overlay tipodoc">{{ usuario1.tipo_doc }}</div>
+        <div class="text-overlay lugarexp">{{ usuario1.ciudad_exp }}</div>
+        <div class="text-overlay direccion">{{ usuario1.direccion }}</div>
+        <div class="text-overlay telefono">{{ usuario1.telefono }}</div>
+        <div class="text-overlay correo">{{ usuario1.correo }}</div>
+        <div class="text-overlay cedula2">{{ usuario1.cedula }}</div>
+        <div class="text-overlay ciudad">BOGOTÁ</div>
+        <div class="text-overlay fecha">{{ fecha_hoy }}</div>
+        <div class="text-overlay concesionario">TAXI CUPOS</div>
+    </div>
+</body>
+</html>

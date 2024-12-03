@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MetroKia</title>
+    <style>
+        @page {
+            size: letter; /* Tamaño carta, orientación horizontal */
+            margin: 0; /* Sin márgenes */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center; /* Centra la imagen horizontalmente */
+            align-items: center; /* Centra la imagen verticalmente */
+        }
+
+        .background {
+            position: absolute;
+            width: 90%; /* Ajusta el tamaño de la imagen */
+            height: auto; /* Mantiene la proporción de la imagen */
+            object-fit: contain; /* Hace que la imagen se ajuste a las dimensiones sin perder su proporción */
+            z-index: 1;
+            margin-left: 5%;
+            margin-top: 3%;
+        }
+
+        .text-overlay {
+            position: absolute;
+            z-index: 2;
+            font-family: Arial, sans-serif;
+            color: black;
+        }
+
+        .nombre {
+            top:110px;
+            left: 260px;
+            font-size: 12px;
+        }
+
+        .apellidos {
+            top:128px;
+            left: 260px;
+            font-size: 12px;
+        }
+
+        .cedula {
+            top:145px;
+            left: 590px;
+            font-size: 12px;
+        }
+
+        .tipodoc {
+            top:145px;
+            left: 260px;
+            font-size: 12px;
+        }
+
+        .lugarexp {
+            top:160px;
+            left: 590px;
+            font-size: 12px;
+        }
+
+        .direccion {
+            top:180px;
+            left: 540px;
+            font-size: 12px;
+        }
+
+        .telefono {
+            top:200px;
+            left: 540px;
+            font-size: 12px;
+        }
+
+        .correo {
+            top: 220px;
+            left: 260px;
+            font-size: 12px;
+        }
+
+        .cedula2{
+            top: 555px;
+            left: 170px;
+            font-size: 12px;
+        }
+
+        .concesionario {
+            top:90px;
+            left: 260px;
+            font-size: 12px;
+        }
+
+        .ciudad {
+            top:90px;
+            left: 450px;
+            font-size: 12px;
+        }
+
+        .fecha {
+            top:85px;
+            left: 695px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    <div class="container">
+        <!-- Imagen de fondo ajustada -->
+        <img src="https://checklistpesv.taxicupos.com/img/MetroKia.png" alt="Background" class="background">
+        <div class="text-overlay nombre">{{ usuario2.nombre }}</div>
+        <div class="text-overlay apellidos">{{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</div>
+        <div class="text-overlay cedula">{{ usuario2.cedula }}</div>
+        <div class="text-overlay tipodoc">{{ usuario1.tipo_doc }}</div>
+        <div class="text-overlay lugarexp">{{ usuario1.ciudad_exp }}</div>
+        <div class="text-overlay direccion">{{ usuario1.direccion }}</div>
+        <div class="text-overlay telefono">{{ usuario1.telefono }}</div>
+        <div class="text-overlay correo">{{ usuario1.correo }}</div>
+        <div class="text-overlay cedula2">{{ usuario1.cedula }}</div>
+        <div class="text-overlay ciudad">BOGOTÁ</div>
+        <div class="text-overlay fecha">{{ fecha_hoy }}</div>
+        <div class="text-overlay concesionario">TAXI CUPOS</div>
+    </div>
+</body>
+</html>

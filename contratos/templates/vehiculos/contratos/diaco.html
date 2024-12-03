@@ -19,13 +19,14 @@
         text-align: center;
       }
       .logo {
-        text-align: center;
-        margin-bottom: 20px;
+        display: flex;
+        justify-content: flex-start; /* Alinea el contenido a la izquierda */
       }
       .logo img {
-        max-width: 40%;
+        max-width: 90%;
         height: auto;
         display: flex;
+        text-align: right;
       }
       table {
         width: auto;
@@ -78,7 +79,7 @@
         </div>
 
         <p style="display: inline; margin-right: 10%">Ciudad: Bogotá D.C</p>
-        <p style="display: inline">Fecha: 2023-11-08</p>
+        <p style="display: inline">Fecha: {{ fecha_hoy }}</p>
 
         <p>
           Señores<br />
@@ -135,7 +136,7 @@
             </tr>
             <tr>
               <td>No. de Matricula / Licencia</td>
-              <td></td>
+              <td><strong>{{ vehiculo.n_acta_matricula }}</strong></td>
             </tr>
             <tr>
               <td>No. de Tarjeta de Operación</td>
