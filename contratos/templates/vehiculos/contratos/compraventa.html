@@ -139,7 +139,7 @@
         {{ usuario3.cedula }} de {{ usuario3.ciudad_exp }} con residencia en la ciudad de Bogotá D.C {% endif %}
 
         quien para efectos de este contrato se denominará el VENDEDOR, y por
-        otra parte {% if usuario.cedula == 1234 %}
+        otra parte {% if usuario2.cedula == "1234" %}
         __________________________________________________________, mayor(es) de edad,
     
         con residencia en la ciudad de Bogotá D.C identificado(s) con ____ _______________________
@@ -257,7 +257,7 @@
 
             <td><strong>NOMBRE:</strong> {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</td>
 
-            <td><strong>NOMBRE:</strong>{% if usuario.cedula == 1234 %}______________________________{% else %} {{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}{% endif %}</td>
+            <td><strong>NOMBRE:</strong>{% if usuario2.cedula == "1234" %}______________________________{% else %} {{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}{% endif %}</td>
 
           </tr>
 
@@ -265,7 +265,7 @@
 
             <td><strong>No Identificación:</strong> {{ usuario1.tipo_doc }} {{ usuario1.cedula }}</td>
 
-            <td><strong>No Identificación:</strong>{% if usuario.cedula == 1234 %}___________________________{% else %} {{ usuario2.cedula }}{% endif %}</td>
+            <td><strong>No Identificación:</strong>{% if usuario2.cedula == "1234" %}_______________________{% else %} {{ usuario2.cedula }}{% endif %}</td>
 
           </tr>
 
@@ -273,7 +273,7 @@
 
             <td><strong>Dirección:</strong> {{ usuario1.direccion }}</td>
 
-            <td><strong>Dirección:</strong>{% if usuario.cedula == 1234 %}___________________________{% else %} {{ usuario2.direccion }}{% endif %}</td>
+            <td><strong>Dirección:</strong>{% if usuario2.cedula == "1234" %}___________________________{% else %} {{ usuario2.direccion }}{% endif %}</td>
 
           </tr>
 
@@ -281,7 +281,7 @@
 
             <td><strong>Teléfono:</strong> {{ usuario1.telefono }}</td>
 
-            <td><strong>Teléfono:</strong>{% if usuario.cedula == 1234 %}___________________________{% else %} {{ usuario2.telefono }}{% endif %}</td>
+            <td><strong>Teléfono:</strong>{% if usuario2.cedula == "1234" %}___________________________{% else %} {{ usuario2.telefono }}{% endif %}</td>
 
           </tr>
 
