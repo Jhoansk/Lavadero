@@ -659,10 +659,10 @@ def generar_pdf(request):
     compradores = request.GET.get('compradores')
     vendedor_cedula_2 = request.GET.get('vendedor_cedula_2')
     comprador_cedula_2 = request.GET.get('comprador_cedula_2')
-    dia_primer_pago = int(request.POST.get('dia_primer_pago', 0) or 0)
-    dia_segundo_pago = int(request.POST.get('dia_segundo_pago', 0) or 0)
-    dia_tercer_pago = int(request.POST.get('dia_tercer_pago', 0) or 0)
-    cuarta_clausula = int(request.POST.get('cuarta_clausula', 0) or 0)
+    dia_primer_pago = request.GET.get('dia_primer_pago', '')
+    dia_segundo_pago = request.GET.get('dia_segundo_pago', '')
+    dia_tercer_pago = request.GET.get('dia_tercer_pago', '')
+    cuarta_clausula = request.GET.get('cuarta_clausula', '')
     
     # Verifica que los parámetros obligatorios estén presentes
     if not usuario1_cedula or not vehiculo_placa or not tipo_contrato or not persona:
@@ -706,10 +706,10 @@ def generar_pdf(request):
 
     # Recoger los campos numéricos de la solicitud GET
         
-    pacta_suma = int(request.POST.get('pacta_suma', 0) or 0)
-    primer_pago = int(request.POST.get('primer_pago', 0) or 0)
-    segundo_pago = int(request.POST.get('segundo_pago', 0) or 0)
-    tercer_pago = int(request.POST.get('tercer_pago', 0) or 0)
+    pacta_suma = request.GET.get('pacta_suma', '')
+    primer_pago = request.GET.get('primer_pago', '')
+    segundo_pago = request.GET.get('segundo_pago', '')
+    tercer_pago = request.GET.get('tercer_pago', '')
     primero_segundo = int(primer_pago) + int(segundo_pago)
     total = int(primer_pago)+ int(segundo_pago)+ int(tercer_pago)
     nit = request.GET.get('nit')

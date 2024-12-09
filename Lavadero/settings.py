@@ -26,11 +26,9 @@ AUTH_USER_MODEL = 'vehiculos.Usuario'
 SECRET_KEY = 'django-insecure-fadz66j+=_8iiqgv=r(&t-2rup@3b+h$2*44r+y&k(x0vcbih='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['srv632707.hstgr.cloud',
-                 '145.223.79.151',
-                 'admin.taxicupos.com',]
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -88,9 +86,9 @@ WSGI_APPLICATION = 'Lavadero.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'lavadero_contratos',
-        'USER':  'jhoansk',
-        'PASSWORD': 'jhoan2033',
+        'NAME': 'lav_contra',
+        'USER':  'root',
+        'PASSWORD': 'Taxi2024',
         'HOST': 'localhost',
         'PORT': '3306',
         
