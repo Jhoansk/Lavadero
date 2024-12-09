@@ -388,28 +388,21 @@ def inicio(request):
     today = timezone.now().date()
     future_threshold = today + timedelta(days=30)
 
-    # Obtener los vehículos cuyos documentos están próximos a vencer
+    # Obtener los documentos que vencen entre hoy y los próximos 30 días
     documentos_a_vencer = documentos.objects.filter(
-        Q(fecha_vencimiento_to__lte=future_threshold) |
-        Q(fecha_vencimiento_soat__lte=future_threshold) |
-        Q(fecha_vencimiento_tecno__lte=future_threshold) |
-        Q(fecha_vencimiento_sRc__lte=future_threshold)
+        Q(fecha_vencimiento_to__gte=today, fecha_vencimiento_to__lte=future_threshold) |
+        Q(fecha_vencimiento_soat__gte=today, fecha_vencimiento_soat__lte=future_threshold) |
+        Q(fecha_vencimiento_tecno__gte=today, fecha_vencimiento_tecno__lte=future_threshold) |
+        Q(fecha_vencimiento_sRc__gte=today, fecha_vencimiento_sRc__lte=future_threshold)
     )
 
-    # Obtener todas las facturas
+    # Resto del código sigue igual
     facturas = Factura.objects.all()
-
-    # Calcular la suma total del valor de las facturas
     total_valor_facturas = facturas.aggregate(total=Sum('total'))['total'] or 0
-
-    # Obtener todos los presupuestos y calcular la suma total
     presupuestos = presupuesto.objects.all()
     total_presupuestos = presupuestos.aggregate(total=Sum('valor_p'))['total'] or 0
-
-    # Obtener todos los vehículos y sus estados
     vehiculos = Vehiculo_contratos.objects.prefetch_related('estado_set').all()
 
-    # Pasar todos los resultados al contexto
     context = {
         'facturas': facturas,
         'total_valor_facturas': total_valor_facturas,
