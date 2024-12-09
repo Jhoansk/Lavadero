@@ -10,24 +10,24 @@ class VehiculoForm(forms.ModelForm):
     valor_presupuesto = forms.FloatField(required=False, label="Presupuesto")
     tipo_carroceria = forms.ChoiceField(
         choices=[
-            ('Sedan', 'Sedan'),
-            ('Hatchback', 'Hatchback'),
-            ('Wagon', 'Wagon'),
+            ('SEDAN', 'SEDAN'),
+            ('HATCHBACK', 'HATCHBACK'),
+            ('WAGON', 'WAGON'),
         ],
         label="Tipo de Carrocería"
     )
     tipo_servicio = forms.ChoiceField(
         choices=[
-            ('Particular', 'Particular'),
-            ('Publico', 'Público'),
+            ('PARTICULAR', 'Particular'),
+            ('PUBLICO', 'PUBLICO'),
         ],
         label="Tipo de Servicio"
     )
     
     clase = forms.ChoiceField(
         choices=[
-            ('Automovil', 'Automovil'),
-            ('Camioneta', 'Camioneta'),
+            ('AUTOMOVIL', 'AUTOMOVIL'),
+            ('CAMIONETA', 'CAMIONETA'),
         ],
         label="Clase"
     )
@@ -40,6 +40,10 @@ class VehiculoForm(forms.ModelForm):
             'n_chasis', 'n_vin', 'n_serie', 'sitio_matricula', 'n_acta_matricula',
             'fecha_matricula', 'ciudad_vehiculo', 'valor_presupuesto', 'imagen'
         ]
+        
+        widgets = {
+                'fecha_matricula': DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -162,6 +166,17 @@ class DocumentosForm(forms.ModelForm):
             'fecha_expedicion_sRc': DateInput(attrs={'type': 'date', 'class': 'form-control'}),
             'fecha_vencimiento_sRc': DateInput(attrs={'type': 'date', 'class': 'form-control'}),
         }
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['n_orden'].required = False
+        self.fields['emp_afiliadora'].required = False
+        self.fields['tarjeta_operacion'].required = False
+        self.fields['n_tarjeta_operacion'].required = False
+        self.fields['fecha_expedicion_to'].required = False
+        self.fields['fecha_vencimiento_to'].required = False
+        self.fields['fecha_expedicion_sRc'].required = False
+        self.fields['fecha_vencimiento_sRc'].required = False
 
 # Formulario para el modelo presupuesto
 class PresupuestoForm(forms.ModelForm):

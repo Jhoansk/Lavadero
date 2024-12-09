@@ -134,13 +134,20 @@
 
         {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }} con residencia en la ciudad de Bogotá D.C,
 
+        {% if vendedores == "2" %} y  {{ usuario3.nombre }} {{ usuario3.p_apellido }} {{ usuario3.s_apellido }} identificado con {{ usuario3.tipo_doc }}
+
+        {{ usuario3.cedula }} de {{ usuario3.ciudad_exp }} con residencia en la ciudad de Bogotá D.C {% endif %}
+
         quien para efectos de este contrato se denominará el VENDEDOR, y por
-
-        otra parte________________________________, mayor(es) de edad,
-
-        con residencia en la ciudad de Bogotá D.C identificado(s) _____________________
-
-        _____________________ de ____________________ 
+        otra parte {% if usuario.cedula == 1234 %}
+        __________________________________________________________, mayor(es) de edad,
+    
+        con residencia en la ciudad de Bogotá D.C identificado(s) con ____ _______________________
+    {% else %}
+        {{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}, mayor(es) de edad,
+    
+        con residencia en la ciudad de Bogotá D.C identificado(s) con {{ usuario2.tipo_doc }}
+    {% endif %}
         {% if compradores == "2" %}
         y {{ usuario4.nombre }} {{ usuario4.p_apellido }} {{ usuario4.s_apellido }}, mayor(es) de edad,
 
@@ -250,7 +257,7 @@
 
             <td><strong>NOMBRE:</strong> {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</td>
 
-            <td><strong>NOMBRE:</strong>______________________________</td>
+            <td><strong>NOMBRE:</strong>{% if usuario.cedula == 1234 %}______________________________{% else %} {{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</td>
 
           </tr>
 
@@ -258,7 +265,7 @@
 
             <td><strong>No Identificación:</strong> {{ usuario1.tipo_doc }} {{ usuario1.cedula }}</td>
 
-            <td><strong>No Identificación:</strong> ___________________________</td>
+            <td><strong>No Identificación:</strong>{% if usuario.cedula == 1234 %}___________________________{% else %} {{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</td>
 
           </tr>
 
@@ -266,7 +273,7 @@
 
             <td><strong>Dirección:</strong> {{ usuario1.direccion }}</td>
 
-            <td><strong>Dirección:</strong>______________________________</td>
+            <td><strong>Dirección:</strong>{% if usuario.cedula == 1234 %}___________________________{% else %} {{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</td>
 
           </tr>
 
@@ -274,7 +281,7 @@
 
             <td><strong>Teléfono:</strong> {{ usuario1.telefono }}</td>
 
-            <td><strong>Teléfono:</strong>______________________________</td>
+            <td><strong>Teléfono:</strong>{% if usuario.cedula == 1234 %}___________________________{% else %} {{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</td>
 
           </tr>
 

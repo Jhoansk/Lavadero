@@ -646,14 +646,6 @@ def eliminar_presupuesto(request, presupuesto_id):
 @login_required
 def generar_pdf(request):
     # Obtener los valores de cédula, placa, tipo de contrato, tipo de persona y tipo de persona jurídica
-    pacta_suma = 0
-    primer_pago = 0
-    segundo_pago = 0
-    tercer_pago = 0
-    dia_primer_pago = 0
-    dia_segundo_pago = 0
-    dia_tercer_pago = 0
-    cuarta_clausula = 0
     
     usuario_empleado = request.user
     fecha = datetime.now()
@@ -674,10 +666,11 @@ def generar_pdf(request):
     compradores = request.GET.get('compradores')
     vendedor_cedula_2 = request.GET.get('vendedor_cedula_2')
     comprador_cedula_2 = request.GET.get('comprador_cedula_2')
-    dia_primer_pago = request.GET.get('dia_primer_pago')
-    dia_segundo_pago = request.GET.get('dia_segundo_pago')
-    dia_tercer_pago = request.GET.get('dia_tercer_pago')
-    cuarta_clausula = request.GET.get('cuarta_clausula')
+    dia_primer_pago = int(request.POST.get('dia_primer_pago', 0) or 0)
+    dia_segundo_pago = int(request.POST.get('dia_segundo_pago', 0) or 0)
+    dia_tercer_pago = int(request.POST.get('dia_tercer_pago', 0) or 0)
+    cuarta_clausula = int(request.POST.get('cuarta_clausula', 0) or 0)
+    
     # Verifica que los parámetros obligatorios estén presentes
     if not usuario1_cedula or not vehiculo_placa or not tipo_contrato or not persona:
         return HttpResponse("Error: Faltan parámetros obligatorios.", status=400)
@@ -719,10 +712,11 @@ def generar_pdf(request):
     user4 = usuario.objects.filter(cedula=comprador_cedula_2).first() if comprador_cedula_2 else None
 
     # Recoger los campos numéricos de la solicitud GET
-    pacta_suma = request.GET.get('pacta_suma', '')
-    primer_pago = request.GET.get('primer_pago', '')
-    segundo_pago = request.GET.get('segundo_pago', '')
-    tercer_pago = request.GET.get('tercer_pago', '')
+        
+    pacta_suma = int(request.POST.get('pacta_suma', 0) or 0)
+    primer_pago = int(request.POST.get('primer_pago', 0) or 0)
+    segundo_pago = int(request.POST.get('segundo_pago', 0) or 0)
+    tercer_pago = int(request.POST.get('tercer_pago', 0) or 0)
     primero_segundo = int(primer_pago) + int(segundo_pago)
     total = int(primer_pago)+ int(segundo_pago)+ int(tercer_pago)
     nit = request.GET.get('nit')

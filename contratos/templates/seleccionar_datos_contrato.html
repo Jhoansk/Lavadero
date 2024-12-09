@@ -455,6 +455,7 @@
         var tipo_pagoContainer= document.getElementById('tipo_venta_usado-container')
         var tipo_clausula = document.getElementById('venta_nuevo_container')
         var terceraContainer = document.getElementById('clausula3');
+        var tiposOcultos = ['diaco', 'compra_venta', 'cmatricula', 'mandato', 'fun', 'metrokia', 'autoland'];
         
         // Limpiar los elementos anteriores
         checkboxesContainer.innerHTML = '';
@@ -559,7 +560,11 @@
         }
     
         // Mostrar los campos de "compra_cupo_campos" independientemente del tipo de contrato
-        compraCupoCampos.style.display = 'block';
+        if (tiposOcultos.includes(tipoContrato)) {
+            compraCupoCampos.style.display = 'none';
+        } else {
+            compraCupoCampos.style.display = 'block';
+        }
 
         if (tipoContrato === 'permuta') {
             vehiculo2Container.style.display = 'block';
