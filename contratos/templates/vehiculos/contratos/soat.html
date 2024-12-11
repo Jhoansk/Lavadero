@@ -32,9 +32,9 @@
         <h1>Carta de Solicitud, Autorización y Responsabilidad</h1>
       </div>
       <div class="main">
-        <p>Bogotá D.C [fecha]</p>
+        <p>Bogotá D.C {{ fecha_hoy }}</p>
         <p>
-          <strong>Señores <br />[empSoat] <br />Ciudad</strong>
+          <strong>Señores <br />{{ documento.empresa_soat }} <br />Ciudad</strong>
         </p>
 
         <p class="center-text">
@@ -47,7 +47,7 @@
           Por medio de la presente yo
           <strong>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</strong> mayor de edad
           identificado con {{ usuario1.tipo_doc }} <strong>{{ usuario1.cedula }}</strong>, como tomador de
-          la poliza No. <strong>[nSoat]</strong> del vehiculo de placa
+          la poliza No. <strong>{{ documento.numero_soat }}</strong> del vehiculo de placa
           <strong>{{ vehiculo.placa }} AUTORIZO</strong> bajo mi absoluta responsabilidad sea
           consignado el dinero de esta poliza a la cuenta de ahorros número
           037305257 del banco BOGOTA a nombre de

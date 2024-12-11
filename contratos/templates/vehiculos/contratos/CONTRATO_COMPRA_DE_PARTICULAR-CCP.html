@@ -368,7 +368,6 @@
       Las partes convienen celebrar el presente contrato de compraventa, que se
       regir&aacute; por las anteriores estipulaciones, las normas aplicables a
       la materia y en especial por las siguientes cl&aacute;usulas:
-      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     </p>
     <p style="text-align: justify">
       <strong>PRIMERA - OBJETO DEL CONTRATO: </strong>mediante el presente
@@ -421,7 +420,7 @@
     <p style="text-align: justify">
       <strong>TERCERA - FORMA DE PAGO: </strong>EL COMPRADOR se compromete a
       pagar el precio a que se refiere la cl&aacute;usula anterior de la
-      siguiente forma:----------------------------
+      siguiente forma:
     </p>
     <ul style="text-align: justify" class="claus-list">
       {% for tercera in tercera %}
@@ -447,7 +446,7 @@
       <a href="mailto:jefecomercial@taxicupos.com.co"
         >jefecomercial@taxicupos.com.co</a
       >&nbsp; para realizar la respectiva aplicaci&oacute;n.
-      ------------------------------------------------------------------------------------------------------------------------
+      
     </p>
     <p>
       <strong>CUARTA - OBLIGACIONES DE EL (LOS) VENDEDOR (ES):</strong>
@@ -466,7 +465,7 @@
       responsabilidad ante TAXI CUPOS SAS, o ante TERCEROS por las
       irregularidades legales o vicios legales que pueda tener el bien objeto
       del presente contrato, como la procedencia legal del mismo.
-      --------------------------------------------------------------------------------------------------------------------------------------
+      
 
     </p>
     <p style="text-align: justify">
@@ -475,7 +474,7 @@
       contrato a EL (LOS) COMPRADOR (ES), con los elementos que constan en
       inventario firmado por las partes y este (os) as&iacute; lo acepta (n) y
       declara (n) que conoce (n) el estado en el que se encuentra el bien objeto
-      de este contrato. ----------------------------------------------------------------------------------------------------------------
+      de este contrato. 
     </p>
     <p style="text-align: justify">
       <strong>SEXTA</strong> - RESERVA DEL DOMINIO: EL (LOS) VENDEDOR (ES) se
@@ -484,19 +483,19 @@
       pague el precio estipulado de {{ pacta_suma_letras }}<strong>
         (${{ pacta_suma }}), </strong
       >de conformidad con el Art. 952 del C&oacute;digo de Comercio.
-      -----------------------------------------------------------------------------------------------------------------------
+      
     </p>
     <p style="text-align: justify">
       <strong>S&Eacute;PTIMA</strong> - CL&Aacute;USULA PENAL: Las partes establecen como sanción
       pecuniaria a cargo de quien incumpla cualquiera de las estipulaciones derivadas de este acto 
       jurídico, la suma del VEINTE PORCIENTO DEL VALOR TOTAL DE ESTE CONTRATO (20%) sin perjuicio 
-      de la indemnizacion a que haya lugar.-------------------------
+      de la indemnizacion a que haya lugar
     </p>
     <p>
       <strong>OCTAVA</strong> - GASTOS: Los gastos que se ocasionen con motivo
       de la firma de esta compra venta ser&aacute;n cubiertos de la siguiente
       manera.
-      --------------------------------------
+      
     </p>
     <ul style="text-align: justify" class="claus-list">
       {% for clausula in clausulas %}
@@ -513,7 +512,7 @@
       Comercio de Bogot&aacute;, quien fallar&aacute; en Derecho. Los gastos
       existentes con ocasi&oacute;n a la activaci&oacute;n de la Cl&aacute;usula
       compromisoria ser&aacute;n asumidos por la parte vencida.
-      -----------------------------------------------------------------------------------------------------------------
+      
     </p>
 
     <p>
@@ -556,7 +555,7 @@
       informado sobre las correcciones respectivas efectuadas, en constancia de
       haber sido suficientemente informado sobre los efectos de esta
       cl&aacute;usula, se firma el presente contrato y se acepta la presente
-      autorizaci&oacute;n. --------------------------------------------------------------------
+      autorizaci&oacute;n. 
     </p>
 
     <p>
@@ -574,7 +573,7 @@
       >
       para el envi&oacute; de informaci&oacute;n comercial y general,
       manifestando en todo caso la aceptaci&oacute;n y conocimiento de la
-      pol&iacute;tica de la empresa con la firma del presente contrato.----------------------------------------------------------
+      pol&iacute;tica de la empresa con la firma del presente contrato
     </p>
     <p style="text-align: justify">
       <strong>D&Eacute;CIMA SEGUNDA.</strong>
@@ -598,7 +597,7 @@
       que todos sus socios, administradores, clientes, proveedores, empleados,
       etc., y los recursos de estos, no se encuentren relacionados o provengan,
       de actividades il&iacute;citas, particularmente, de las anteriormente
-      enunciadas.----------------------------------------------------------------------------------------------------------------------------------------------------------
+      enunciadas
     </p>
     <p style="text-align: justify">
       <strong>D&Eacute;CIMA TERCERA: AUTORIZACI&Oacute;N DE DESCUENTO: </strong
@@ -607,27 +606,18 @@
       comparendos, sanciones administrativas, rodamientos, p&oacute;lizas e
       indemnizaciones que impidan la comercializaci&oacute;n del veh&iacute;culo
       objeto del presente acuerdo o que puedan afectar la entrega en las
-      condiciones descritas.------------------------------------------------------------------------------------------------
+      condiciones descritas.
     </p>
     <p class="primer-espacio">
       <strong>Observaciones: </strong
-      >-------------------------------------------------------------------------------------------------------------------------------------------
+      >
     </p>
-    <ul class="claus-list">
-      <li>
-        Se aclara que el veh&iacute;culo es un ________________ del cual el
-        vendedor cede al comprador todos los derechos. --
-      </li>
-      <li>
-        El veh&iacute;culo se entregar&aacute; por parte del vendedor al
-        comprador a paz y salvo por todo concepto respecto al carro.----
-      </li>
-      <li>
-        El veh&iacute;culo se entregar&aacute; al comprador en el mismo estado
-        visto, funcionando y a entera satisfacci&oacute;n por parte del vendedor
-        al comprador y no tiene garant&iacute;a por ser un veh&iacute;culo
-        usado. -----------------------------------------------------------
-      </li>
+    <ul style="text-align: justify" class="claus-list">
+      {% for opcion in opciones %}
+        <li>
+            {{ opcion.texto }}
+        </li>
+      {% endfor %}
     </ul>
     <p><strong>&nbsp;</strong></p>
     <p class="justificado">

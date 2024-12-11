@@ -663,6 +663,9 @@ def generar_pdf(request):
     dia_segundo_pago = request.GET.get('dia_segundo_pago', '')
     dia_tercer_pago = request.GET.get('dia_tercer_pago', '')
     cuarta_clausula = request.GET.get('cuarta_clausula', '')
+    airbag = request.GET.get('airbag','')
+    aire = request.GET.get('aire','')
+    gas = request.GET.get('gas','')
     
     # Verifica que los parámetros obligatorios estén presentes
     if not usuario1_cedula or not vehiculo_placa or not tipo_contrato or not persona:
@@ -798,6 +801,9 @@ def generar_pdf(request):
         'cuarta_clausula_letras': cuarta_clausula_letras,
         'placa_parte1': primera_parte,
         'placa_parte2': segunda_parte,
+        'airbag': airbag,
+        'aire': aire,
+        'gas': gas,
     }
 
     # Procesar cláusulas
@@ -869,6 +875,7 @@ def generar_pdf(request):
         template = 'vehiculos/contratos/autoland.html'
     else:
         return HttpResponse("Error: Tipo de contrato no válido.", status=400)
+    
 
     # Renderizar la plantilla HTML con los datos
     html_string = render_to_string(template, context)
@@ -1116,3 +1123,4 @@ def render_text_with_context(text, context):
         return template.render(Context(context))
     except Exception as e:
         return f"Error al procesar el texto: {e}"
+    
