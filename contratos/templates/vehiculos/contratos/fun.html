@@ -347,8 +347,8 @@
 
         .direccioncomprador {
             top:670px;
-            left: 65px;
-            font-size: 12px;
+            left: 43px;
+            font-size: 10px;
         }
 
         .ciudadcomprador {
@@ -549,8 +549,8 @@
 
         .linea {
             top:175px;
-            left: 610px;
-            font-size: 12px;
+            left: 605px;
+            font-size: 10px;
         }
 
         .modelo {
@@ -738,15 +738,12 @@
         <div class="text-overlay ciudadcomprador">{{ usuario2.ciudad }}</div>
         {% endif %}
 
-
         {% endif %}
 
-        {% if tipo_juridica == "Comprador" or tipo_juridica == "Vendedor" %}
+        {% if tipo_juridica == "Comprador"%}
 
-        <div class="text-overlay field-1">{{ usuario1.p_apellido }}</div>
-        <div class="text-overlay apellido1">{{ usuario1.s_apellido }}</div>
-        <div class="text-overlay apellido2">{{ usuario1.nombre }}</div>
-        <div class="text-overlay field-2">{{ usuario1.cedula }}</div>
+        <div class="text-overlay apellido2">{{ nombre }}</div>
+        <div class="text-overlay field-2">{{ nit }}</div>
         <div class="text-overlay tlfpropietario">{{ usuario1.telefono }}</div>
         <div class="text-overlay direccionpropietario">{{ usuario1.direccion }}</div>
         <div class="text-overlay ciudadpropietario">{{ usuario1.ciudad }}</div>
@@ -761,8 +758,29 @@
         <div class="text-overlay ciudadcomprador">{{ usuario2.ciudad }}</div>
         {% endif %}
 
+        {% endif %}
+
+        {% if tipo_juridica == "Vendedor"%}
+
+        <div class="text-overlay field-1">{{ usuario1.p_apellido }}</div>
+        <div class="text-overlay apellido1">{{ usuario1.s_apellido }}</div>
+        <div class="text-overlay apellido2">{{ usuario1.nombre }}</div>
+        <div class="text-overlay field-2">{{ usuario1.cedula }}</div>
+        <div class="text-overlay tlfpropietario">{{ usuario1.telefono }}</div>
+        <div class="text-overlay direccionpropietario">{{ usuario1.direccion }}</div>
+        <div class="text-overlay ciudadpropietario">{{ usuario1.ciudad }}</div>
+
+        {% if usuario2.cedula != "1234" %}
+        <div class="text-overlay apellido2">{{ nombre }}</div>
+        <div class="text-overlay field-2">{{ nit }}</div>
+        <div class="text-overlay tlfcomprador">{{ usuario2.telefono }}</div>
+        <div class="text-overlay direccioncomprador">{{ usuario2.direccion }}</div>
+        <div class="text-overlay ciudadcomprador">{{ usuario2.ciudad }}</div>
 
         {% endif %}
+
+        {% endif %}
+
 
         <!--Datos Vehiculo-->
         <div class="text-overlay marca">{{ vehiculo.marca }}</div>

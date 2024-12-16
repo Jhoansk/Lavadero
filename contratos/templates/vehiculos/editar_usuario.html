@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Usuario{% endblock %}
+
+{% block content %}
+<div class="recent-orders">
+    <div class="vehicle_search">
+    <h1>Editar Usuario</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <a href="{% url 'vehiculos:lista_usuarios' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+    </div>
+</div>
+{% endblock %}

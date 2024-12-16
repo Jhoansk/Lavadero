@@ -1,3 +1,4 @@
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -379,7 +380,7 @@
       <strong>CLAUSULA SEGUNDA.- PRECIO: </strong>Las partes han acordado como
       valor del referido taxi con su respectivo cupo, de la ciudad de
       Bogot&aacute;, la suma de
-      <strong>{{ pacta_suma_letras }}  DE PESOS MC/TE (${{ pacta_suma }}).</strong>
+      <strong>{{ pacta_suma_letras }}  DE PESOS MC/TE (${{ pacta_suma|intcomma }}).</strong>
       -------------------------------------
     </p>
     <p style="text-align: justify">
@@ -433,13 +434,13 @@
       contrato para radicar matricula y/o traspaso seg&uacute;n sea el caso, en
       un tiempo m&aacute;ximo de {{ cuarta_clausula_letras }} ({{ cuarta_clausula }}) d&iacute;as calendario contados a
       partir de hacerse efectivo el pago de {% if venta_nuevo == "primero" %}
-      {{primer_pago_letras}} DE PESOS M/CTE (${{primer_pago}})-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      {{primer_pago_letras}} DE PESOS M/CTE (${{ pacta_suma|intcomma }})-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     {% elif venta_nuevo == "segundo" %}
-      {{segundo_pago_letras}} DE PESOS M/CTE (${{segundo_pago}})-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      {{segundo_pago_letras}} DE PESOS M/CTE (${{segundo_pago|intcomma}})-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     {% elif venta_nuevo == "tercero" %}
-      {{tercer_pago_letras}} DE PESOS M/CTE (${{tercer_pago}})-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      {{tercer_pago_letras}} DE PESOS M/CTE (${{tercer_pago|intcomma}})-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     {% elif venta_nuevo == "primeroysegundo" %}
-      {{primero_segundo_letras}} DE PESOS M/CTE (${{primero_segundo}})-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      {{primero_segundo_letras}} DE PESOS M/CTE (${{primero_segundo|intcomma}})-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     {% elif venta_nuevo == "totalP" %}
       {{total_letras}} DE PESOS M/CTE (${{total}})-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     {% else %}

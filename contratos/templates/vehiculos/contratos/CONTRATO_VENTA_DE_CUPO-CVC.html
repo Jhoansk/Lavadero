@@ -1,3 +1,4 @@
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -375,7 +376,7 @@
       <strong>&acute;&acute;CUPO&acute;&acute;</strong> la suma de
       <strong
         >{{ pacta_suma_letras }} MILLONES DE PESOS M/CTE
-        (${{ pacta_suma }}</strong>).</p>
+        (${{ pacta_suma|intcomma }}</strong>).</p>
         <p><strong>TERCERA</strong>.-
       FECHA Y FORMA DE PAGO:
       
@@ -425,7 +426,7 @@
       reposici&oacute;n cupo bien objeto del presente contrato para radicar
       matricula, en un plazo m&aacute;ximo de {{ cuarta_clausula_letras }} ({{ cuarta_clausula }}) d&iacute;as
       calendario contados a partir de que se haga efectivo el pago de
-      {{ primer_pago_letras }} DE PESOS M/CTE (${{ primer_pago }}).
+      {{ primer_pago_letras }} DE PESOS M/CTE (${{ pacta_suma|intcomma }}).
     </p>
       <p><strong>PARAGRAFO 1: </strong>TAXI<strong>
         CUPOS S.A.S. </strong

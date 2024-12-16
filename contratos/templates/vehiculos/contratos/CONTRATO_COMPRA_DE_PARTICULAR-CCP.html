@@ -1,3 +1,4 @@
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -415,7 +416,7 @@
     <p style="text-align: justify">
       <strong>SEGUNDA - PRECIO: </strong>Como precio del automotor descrito las
       partes acuerdan la suma de
-      <strong>{{ pacta_suma_letras }} MILLONES DE PESOS MC/TE (${{ pacta_suma }}).</strong>
+      <strong>{{ pacta_suma_letras }} MILLONES DE PESOS MC/TE (${{ pacta_suma|intcomma }}).</strong>
     </p>
     <p style="text-align: justify">
       <strong>TERCERA - FORMA DE PAGO: </strong>EL COMPRADOR se compromete a
@@ -481,7 +482,7 @@
       reserva (n) la propiedad del veh&iacute;culo identificado en la
       cl&aacute;usula primera del presente contrato, hasta el momento en que se
       pague el precio estipulado de {{ pacta_suma_letras }}<strong>
-        (${{ pacta_suma }}), </strong
+        (${{ pacta_suma|intcomma }}), </strong
       >de conformidad con el Art. 952 del C&oacute;digo de Comercio.
       
     </p>

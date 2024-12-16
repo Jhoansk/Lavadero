@@ -3,25 +3,29 @@
 {% block title %}Lista de Usuarios{% endblock %}
 
 {% block content %}
-    <div class="recent-orders">
-        <div class= "vehicle_search">
-            <h1>Lista de Usuarios</h1>
-            
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Primer Apellido</th>
-                        <th>Segundo Apellido</th>
-                        <th>Cédula</th>
-                        <th>Teléfono</th>
-                        <th>Dirección</th>
-                        <th>Correo</th>
-                        <th>Ciudad</th>
-                        <th>Barrio</th>
-                    </tr>
-                </thead>
-                <tbody>
+<div class="recent-orders">
+    <div class="vehicle_search">
+        <h1>Lista de Usuarios</h1>
+
+        <a href="{% url 'vehiculos:agregar_usuario' %}" class="btn btn-primary">Agregar Usuario</a>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Primer Apellido</th>
+                    <th>Segundo Apellido</th>
+                    <th>Cédula</th>
+                    <th>Teléfono</th>
+                    <th>Dirección</th>
+                    <th>Correo</th>
+                    <th>Ciudad</th>
+                    <th>Barrio</th>
+                    <th>Acciones</th> <!-- Nueva columna para acciones -->
+                </tr>
+            </thead>
+            <tbody>
+                {% if usuarios %}
                     {% for usuario in usuarios %}
                     <tr>
                         <td>{{ usuario.nombre }}</td>
@@ -33,11 +37,24 @@
                         <td>{{ usuario.correo }}</td>
                         <td>{{ usuario.ciudad }}</td>
                         <td>{{ usuario.barrio }}</td>
+                        <td>
+                            <!-- Botón Editar -->
+                            <a href="{% url 'vehiculos:editar_usuario' usuario.id %}" class="btn btn-primary btn-sm">Editar</a>
+                            <!-- Botón Eliminar -->
+                            <form action="{% url 'vehiculos:eliminar_usuario' usuario.id %}" method="POST" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?')">Eliminar</button>
+                            </form>
+                        </td>
                     </tr>
                     {% endfor %}
-                </tbody>
-            </table>
-            <a href="{% url 'vehiculos:agregar_usuario' %}" class="btn btn-primary">Agregar Usuario</a>
-        </div>
+                {% else %}
+                    <tr>
+                        <td colspan="10">No hay usuarios registrados.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
     </div>
+</div>
 {% endblock %}

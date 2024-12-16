@@ -433,23 +433,23 @@ def agregar_usuario(request):
 
 @login_required
 def editar_usuario(request, usuario_id):
-    usuario = get_object_or_404(usuario, id=usuario_id)
+    usuario_obj = get_object_or_404(usuario, id=usuario_id)  # Cambiamos el nombre de la variable local
     if request.method == 'POST':
-        form = UsuarioForm(request.POST, instance=usuario)
+        form = UsuarioForm(request.POST, instance=usuario_obj)
         if form.is_valid():
             form.save()
             return redirect('vehiculos:lista_usuarios')
     else:
-        form = UsuarioForm(instance=usuario)
-    return render(request, 'vehiculos/editar_usuario.html', {'form': form, 'usuario': usuario})
+        form = UsuarioForm(instance=usuario_obj)
+    return render(request, 'vehiculos/editar_usuario.html', {'form': form, 'usuario': usuario_obj})
 
 @login_required
 def eliminar_usuario(request, usuario_id):
-    usuario = get_object_or_404(usuario, id=usuario_id)
+    usuario_obj = get_object_or_404(usuario, id=usuario_id)  # Renombramos la variable local
     if request.method == 'POST':
-        usuario.delete()
+        usuario_obj.delete()
         return redirect('vehiculos:lista_usuarios')
-    return render(request, 'vehiculos/eliminar_usuario.html', {'usuario': usuario})
+    return render(request, 'vehiculos/eliminar_usuario.html', {'usuario': usuario_obj})
 
 # Vistas para User
 
@@ -685,7 +685,7 @@ def generar_pdf(request):
     try:
         documento = documentos.objects.get(id_placa=documento_placa)
     except documentos.DoesNotExist:
-        return HttpResponse("Error: Documentos no asociados al vehículo principal.", status=404)
+        documento = None
 
     # Validar opcionalmente el segundo vehículo y sus documentos
     vehiculo2 = None
@@ -882,7 +882,7 @@ def generar_pdf(request):
     html = HTML(string=html_string)
     pdf = html.write_pdf()
     
-    pdf_filename = f"{tipo_contrato}_{vehiculo_placa}_{usuario1_cedula}.pdf"
+    pdf_filename = f"{tipo_contrato}_{vehiculo_placa}_{usuario1_cedula}_{usuario_empleado}.pdf"
     pdf_path = os.path.join(settings.MEDIA_ROOT, 'contratos', pdf_filename)
 
     # Asegurarse de que el directorio de contratos existe

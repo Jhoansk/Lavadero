@@ -1,3 +1,5 @@
+{% load humanize %}
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -447,7 +449,7 @@
           </tr>
         </tbody>
       </table>
-      <p class="justificado"><strong>CLAUSULA SEGUNDA.- </strong>Como precio del automotor junto con los derechos de reposici&oacute;n cupo de Bogot&aacute;, se pacta la suma de: <strong>{{ pacta_suma_letras }} DE PESOS MC/TE (${{ pacta_suma }}).
+      <p class="justificado"><strong>CLAUSULA SEGUNDA.- </strong>Como precio del automotor junto con los derechos de reposici&oacute;n cupo de Bogot&aacute;, se pacta la suma de: <strong>{{ pacta_suma_letras }} DE PESOS MC/TE (${{ pacta_suma|intcomma }}).
       </strong></p>
     </div>
       </p>
@@ -504,7 +506,7 @@
         <strong>SEXTA - RESERVA DEL DOMINIO: </strong>EL(LOS) VENDEDOR(ES) se
         reserva(n) la propiedad del veh&iacute;culo identificado en la
         cl&aacute;usula primera del presente contrato, hasta el momento en que
-        se pague el precio de {{ pacta_suma_letras }} DE PESOS (${{ pacta_suma }}), de
+        se pague el precio de {{ pacta_suma_letras }} DE PESOS (${{ pacta_suma|intcomma }}), de
         conformidad con el Art. 952 del C&oacute;digo de
         Comercio.
       </p>

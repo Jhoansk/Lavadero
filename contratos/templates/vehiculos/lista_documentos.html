@@ -23,6 +23,7 @@
                 <th>Fecha Vencimiento Tecnomecánica</th>
                 <th>Fecha Expedición SRC</th>
                 <th>Fecha Vencimiento SRC</th>
+                <th>Acciones</th> <!-- Nueva columna -->
             </tr>
         </thead>
         <tbody>
@@ -41,15 +42,25 @@
                     <td>{{ documento.fecha_vencimiento_tecno }}</td>
                     <td>{{ documento.fecha_expedicion_sRc }}</td>
                     <td>{{ documento.fecha_vencimiento_sRc }}</td>
+                    <td>
+                        <!-- Botón Editar -->
+                        <a href="{% url 'vehiculos:editar_documentos' documento.id %}" class="btn btn-primary btn-sm">Editar</a>
+
+                        <!-- Botón Eliminar -->
+                        <form action="{% url 'vehiculos:eliminar_documentos' documento.id %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este documento?')">Eliminar</button>
+                        </form>
+                    </td>
                 </tr>
                 {% endfor %}
             {% else %}
                 <tr>
-                    <td colspan="12">No hay documentos disponibles.</td>
+                    <td colspan="13">No hay documentos disponibles.</td>
                 </tr>
             {% endif %}
         </tbody>
     </table>
-    </div>
+  </div>
 </div>
 {% endblock %}

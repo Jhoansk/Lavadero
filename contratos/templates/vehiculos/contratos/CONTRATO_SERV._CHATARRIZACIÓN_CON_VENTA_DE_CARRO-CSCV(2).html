@@ -1,3 +1,4 @@
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -250,7 +251,7 @@
       >- PRECIO: Las partes han acordado como precio del bien objeto, la suma
       de:<strong>
          {{ pacta_suma_letras }}&shy;&shy;&shy;&shy;&shy;&shy; DE PESOS M/CTE
-        (${{ pacta_suma }})</strong
+        (${{ pacta_suma|intcomma }})</strong
       >
       valor que PROPIETARIO pagar&aacute; al tramitador de la siguiente manera:
       -----------

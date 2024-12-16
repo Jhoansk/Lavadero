@@ -42,14 +42,20 @@
 
       <div class="main">
         <p>
-            Entre los suscritos {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }} identificado con
-            {{ usuario1.tipo_doc }} número {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }} 
-            {% if vendedores == "2" %}
-                y {{ usuario3.nombre }} {{ usuario3.p_apellido }} {{ usuario3.s_apellido }} identificado con
-                {{ usuario3.tipo_doc }} número {{ usuario3.cedula }} de {{ usuario3.ciudad_exp }}
-            {% endif %}
-             mayor(es) de edad, con
-            residencia en Bogotá D.C quien para los efectos del presente contrato se
+          {% if persona == "Natural" %}
+          Entre los suscritos {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }} identificado con
+          {{ usuario1.tipo_doc }} número {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }} mayor(es) de edad, con
+          residencia en Bogotá D.C
+          {% if vendedores == "2" %}
+              y {{ usuario3.nombre }} {{ usuario3.p_apellido }} {{ usuario3.s_apellido }} identificado con
+              {{ usuario3.tipo_doc }} número {{ usuario3.cedula }} de {{ usuario3.ciudad_exp }} mayor(es) de edad, con
+              residencia en Bogotá D.C
+          {% endif %}
+          {% elif tipo_juridica == "Vendedor" %}
+              Entre los suscritos, {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}, con número de documento
+              {{ usuario1.cedula }} actuando en mi calidad de representante legal de {{ nombre }} con número de NIT {{ nit }},
+          {% endif %}
+            Quien para los efectos del presente contrato se
             denominara EL MANDANTE y de otra parte ________________________________________ 
             __________________ mayor(es) de edad con residencia en Bogotá D.C
             identificado(s) con _________ numero ________________ quien para efectos
@@ -99,8 +105,13 @@
             <br>
             <br>
             <p>_________________________________</p>
-            <p>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p>
-            <p>{{ usuario1.tipo_doc }} {{ usuario1.cedula }}</p>
+            {% if tipo_juridica == "Vendedor" %}
+                <p>{{ nombre }}</p>
+                <p>NIT {{ nit }}</p>
+            {% else %}
+                <p>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p>
+                <p>{{ usuario1.tipo_doc }} {{ usuario1.cedula }}</p>
+            {% endif %}
           </div>
   
           <div class="flex-content">

@@ -1,3 +1,4 @@
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -477,7 +478,7 @@
       reserva (n) la propiedad del veh&iacute;culo identificado en la
       cl&aacute;usula primera del presente contrato, hasta el momento en que se
       pague el precio estipulado de {{ pacta_suma_letras }}<strong>
-        (${{ pacta_suma }}), </strong
+        (${{ pacta_suma|intcomma }}), </strong
       >de conformidad con el Art. 952 del C&oacute;digo de Comercio.
     </p>
     <p>
