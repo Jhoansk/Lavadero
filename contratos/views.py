@@ -32,6 +32,8 @@ import os
 from django.http import JsonResponse
 from django.conf import settings
 from django.template import Context, Template
+from django.template.loader import get_template
+from django.contrib.humanize.templatetags.humanize import intcomma
 
 
 @login_required
@@ -1119,8 +1121,19 @@ def render_text_with_context(text, context):
     Renderiza un texto sustituyendo las variables entre {{ ... }} usando el contexto.
     """
     try:
-        template = Template(text)
-        return template.render(Context(context))
+        # Asegúrate de cargar los filtros de humanize en el template
+        template_text = "{% load humanize %}" + text
+        
+        # Crear el template a partir del texto con el filtro cargado
+        template = Template(template_text)
+        
+        # Crear el contexto y renderizar el texto
+        context_obj = Context(context)
+
+        # Renderizamos el texto
+        return template.render(context_obj)
+    
     except Exception as e:
         return f"Error al procesar el texto: {e}"
+
     

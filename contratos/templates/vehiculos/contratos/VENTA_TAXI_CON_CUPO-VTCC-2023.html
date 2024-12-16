@@ -1,4 +1,5 @@
 {% load humanize %}
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -8,7 +9,7 @@
     <style>
      @page {
         size: legal; /* Tamaño del papel */
-        margin: 10mm; /* Márgenes de la página */
+        margin: 10mm 10mm 20mm 10mm; /* Márgenes de la página */
       }
 
       body {
@@ -367,31 +368,32 @@
       Las partes celebramos el presente contrato de compraventa de un taxi nuevo
       con cupo de uso urbano para la ciudad de Bogot&aacute;, el cual se
       regir&aacute; por las siguientes cl&aacute;usulas:
-      ---------------------------------------------------------------------------------------------------------------------------
+      
     </p>
     <p style="text-align: justify">
       <strong>CLAUSULA PRIMERA.- OBJETO DEL NEGOCIO: </strong>El vendedor
       transfiere a t&iacute;tulo de venta al comprador un veh&iacute;culo nuevo,
       tipo taxi, marca: {{vehiculo.marca}}, L&iacute;nea: {{vehiculo.linea}}, modelo: {{vehiculo.modelo}},
       cilindraje: {{vehiculo.cilindraje}}, con su respectivo cupo de la ciudad de Bogot&aacute;.
-      ------------------------------------------------------------------------------------------------------------------
+      
     </p>
     <p style="text-align: justify">
       <strong>CLAUSULA SEGUNDA.- PRECIO: </strong>Las partes han acordado como
       valor del referido taxi con su respectivo cupo, de la ciudad de
       Bogot&aacute;, la suma de
       <strong>{{ pacta_suma_letras }}  DE PESOS MC/TE (${{ pacta_suma|intcomma }}).</strong>
-      -------------------------------------
+      
     </p>
     <p style="text-align: justify">
       <strong
         >CLAUSULA TERCERA.- FECHA Y FORMA DE PAGO:
-        ---------------------------------------
-        -----------------</strong
+        </strong
       >
     </p>
     <ul style="text-align: justify" class="claus-list">
+      {% load humanize %}
       {% for tercera in tercera %}
+      {% load humanize %}
           <li>
               {{ tercera.texto }}
           </li>
@@ -416,10 +418,10 @@
         >jefecomercial@taxicupos.com.co</a
       >
       &nbsp;para realizar la respectiva aplicaci&oacute;n.
-      -------------------------------------------------------------------------------------------------------------------------
+      
     </p>
     <p><strong>CLAUSULA CUARTA.- OBLIGACIONES DEL COMPRADOR:
-        ----------------------------------------------------------------------------------------------------------------------------------------</strong>
+        </strong>
     </p>
     <ul style="text-align: justify" class="claus-list">
       {% for clausula in clausulas %}
@@ -434,15 +436,15 @@
       contrato para radicar matricula y/o traspaso seg&uacute;n sea el caso, en
       un tiempo m&aacute;ximo de {{ cuarta_clausula_letras }} ({{ cuarta_clausula }}) d&iacute;as calendario contados a
       partir de hacerse efectivo el pago de {% if venta_nuevo == "primero" %}
-      {{primer_pago_letras}} DE PESOS M/CTE (${{ pacta_suma|intcomma }})-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      {{primer_pago_letras}} DE PESOS M/CTE (${{ primer_pago|intcomma }})
     {% elif venta_nuevo == "segundo" %}
-      {{segundo_pago_letras}} DE PESOS M/CTE (${{segundo_pago|intcomma}})-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      {{segundo_pago_letras}} DE PESOS M/CTE (${{segundo_pago|intcomma}})
     {% elif venta_nuevo == "tercero" %}
-      {{tercer_pago_letras}} DE PESOS M/CTE (${{tercer_pago|intcomma}})-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      {{tercer_pago_letras}} DE PESOS M/CTE (${{tercer_pago|intcomma}})
     {% elif venta_nuevo == "primeroysegundo" %}
-      {{primero_segundo_letras}} DE PESOS M/CTE (${{primero_segundo|intcomma}})-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      {{primero_segundo_letras}} DE PESOS M/CTE (${{primero_segundo|intcomma}})
     {% elif venta_nuevo == "totalP" %}
-      {{total_letras}} DE PESOS M/CTE (${{total}})-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      {{total_letras}} DE PESOS M/CTE (${{total}})
     {% else %}
       _________ DE PESOS M/CTE ($___________)
     {% endif %}
@@ -457,7 +459,7 @@
       por la disponibilidad y entrega por parte del proveedor del
       veh&iacute;culo con las condiciones y tiempos pactados, si no hubiere
       inventario por parte del proveedor.
-      --------------------------------------------------------------------------------------------------------------
+      
     </p>
     </p>
     <p style="text-align: justify">
