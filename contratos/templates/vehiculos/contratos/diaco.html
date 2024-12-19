@@ -33,7 +33,7 @@
         display: flex;
       }
       table {
-        width: auto;
+        width: 100%;
         border-collapse: collapse;
         margin-top: 20px;
         font-size: 8.5pt;
@@ -95,6 +95,10 @@
   <body>
     <img src="https://checklistpesv.taxicupos.com/img/diaco.jpg" alt="background" id="background" />
     <div class="container">
+      <br>
+      <br>
+      <br>
+      <br>
       <div class="header">
         <p style="display: inline; margin-right: 10%">Ciudad: Bogotá D.C</p>
         <p style="display: inline">Fecha: {{ fecha_hoy }}</p>
@@ -129,43 +133,36 @@
         <table>
           <tbody>
             <tr>
-              <td>
-                Tipo de Vehículo (camioneta, bus, buseta, microbús, taxi,
-                masivo).
-              </td>
-              <td><strong>Taxi</strong></td>
-            </tr>
-            <tr>
               <td>No. de Placa</td>
               <td><strong>{{ vehiculo.placa }}</strong></td>
-            </tr>
-            <tr>
-              <td>Fin de la Desintegración:</td>
-              <td><strong>REPOSICIÓN</strong></td>
-            </tr>
-            <tr>
-              <td>No. de Chasis</td>
-              <td><strong>{{ vehiculo.n_chasis }}</strong></td>
-            </tr>
-            <tr>
-              <td>No. de Motor</td>
-              <td><strong>{{ vehiculo.n_motor }}</strong></td>
-            </tr>
-            <tr>
-              <td>No. de Matricula / Licencia</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>No. de Tarjeta de Operación</td>
-              <td><strong>{{ documento.n_tarjeta_operacion }}</strong></td>
             </tr>
             <tr>
               <td>Marca</td>
               <td><strong>{{ vehiculo.marca }}</strong></td>
             </tr>
             <tr>
-              <td>Modelo Vehículo</td>
+              <td>Modelo</td>
               <td><strong>{{ vehiculo.modelo }}</strong></td>
+            </tr>
+            <tr>
+              <td>Tipo</td>
+              <td><strong>{{ vehiculo.tipo_carroceria }}</strong></td>
+            </tr>
+            <tr>
+              <td>No. Chasis</td>
+              <td><strong>{{ vehiculo.n_chasis }}</strong></td>
+            </tr>
+            <tr>
+              <td>No. Motor</td>
+              <td><strong>{{ vehiculo.n_motor }}</strong></td>
+            </tr>
+            <tr>
+              <td>No. de Matricula/Licencia</td>
+              <td><strong>{{ documento.numero_licencia }}</strong></td>
+            </tr>
+            <tr>
+              <td>No. de Tarjeta de Operacion (si aplica) </td>
+              <td><strong>{{ documento.n_tarjeta_operacion }}</strong></td>
             </tr>
           </tbody>
         </table>
