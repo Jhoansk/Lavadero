@@ -875,6 +875,8 @@ def generar_pdf(request):
         template = 'vehiculos/contratos/metrokia.html' 
     elif tipo_contrato == 'autoland':
         template = 'vehiculos/contratos/autoland.html'
+    elif tipo_contrato == 'soat':
+        template = 'vehiculos/contratos/soat.html'
     else:
         return HttpResponse("Error: Tipo de contrato no válido.", status=400)
     

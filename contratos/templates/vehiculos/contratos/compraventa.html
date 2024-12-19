@@ -130,29 +130,33 @@
 
       <p>
 
-        Yo, {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }} identificado con {{ usuario1.tipo_doc }}
-
-        {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }} con residencia en la ciudad de Bogotá D.C,
-
-        {% if vendedores == "2" %} y  {{ usuario3.nombre }} {{ usuario3.p_apellido }} {{ usuario3.s_apellido }} identificado con {{ usuario3.tipo_doc }}
-
-        {{ usuario3.cedula }} de {{ usuario3.ciudad_exp }} con residencia en la ciudad de Bogotá D.C {% endif %}
-
-        quien para efectos de este contrato se denominará el VENDEDOR, y por
-        otra parte {% if usuario2.cedula == "1234" %}
+        {% if tipo_juridica == "Vendedor" %}
+        Entre los suscritos {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}, mayor (es) de edad con residencia en 
+        Bogotá, D.C, identificado con cédula No. {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }}, actuando en mi calidad de representante legal 
+        de {{ nombre }} con Nit {{ nit }} Que quien para efectos de este contrato se denominará EL VENDEDOR y por otra parte 
+        {{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }} Mayor (s) de edad, con reisdencia en Bogotá, D.C., identificado (s) con la cédula de ciudadanía número 
+        {{ usuario2.cedula }} de {{ usuario2.ciudad_exp }}
+        {% elif persona == "Natural" %}
+        Yo, {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}, identificado con {{ usuario1.tipo_doc }} 
+        {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }} con residencia en la ciudad de Bogotá, D.C,
+        {% if vendedores == "2" %}
+        y {{ usuario3.nombre }} {{ usuario3.p_apellido }} {{ usuario3.s_apellido }}, identificado con {{ usuario3.tipo_doc }} 
+        {{ usuario3.cedula }} de {{ usuario3.ciudad_exp }} con residencia en la ciudad de Bogotá, D.C
+        {% endif %}
+        quien para efectos de este contrato se denominará el VENDEDOR, y por otra parte 
+        {% if usuario2.cedula == "1234" %}
         __________________________________________________________, mayor(es) de edad,
-    
-        con residencia en la ciudad de Bogotá D.C identificado(s) con ____ _______________________
-    {% else %}
+        con residencia en la ciudad de Bogotá, D.C, identificado(s) con ____ _______________________
+        {% else %}
         {{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}, mayor(es) de edad,
-    
-        con residencia en la ciudad de Bogotá D.C identificado(s) con {{ usuario2.tipo_doc }}
-        {{ usuario2.cedula }} de {{ usuario2.ciudad_exp }} con residencia en la ciudad de Bogotá D.C
-    {% endif %}
+        con residencia en la ciudad de Bogotá, D.C, identificado(s) con {{ usuario2.tipo_doc }} 
+        {{ usuario2.cedula }} de {{ usuario2.ciudad_exp }} con residencia en la ciudad de Bogotá, D.C
+        {% endif %}
         {% if compradores == "2" %}
         y {{ usuario4.nombre }} {{ usuario4.p_apellido }} {{ usuario4.s_apellido }}, mayor(es) de edad,
-
-        con residencia en la ciudad de Bogotá D.C identificado(s) {{ usuario4.tipo_doc }}
+        con residencia en la ciudad de Bogotá, D.C, identificado(s) con {{ usuario4.tipo_doc }}
+        {{ usuario4.cedula }} de {{ usuario4.ciudad_exp }}
+        {% endif %}
         {% endif %}
         . Quien para efectos del presente contrato
 
