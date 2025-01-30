@@ -7,28 +7,18 @@ import difflib
 from django.forms.widgets import DateInput
 
 class VehiculoForm(forms.ModelForm):
+    imagen = forms.ImageField(required=False, label="Tarjeta de propiedad")
     valor_presupuesto = forms.FloatField(required=False, label="Presupuesto")
     tipo_carroceria = forms.ChoiceField(
-        choices=[
-            ('SEDAN', 'SEDAN'),
-            ('HATCHBACK', 'HATCHBACK'),
-            ('WAGON', 'WAGON'),
-        ],
+        choices=[('SEDAN', 'SEDAN'), ('HATCHBACK', 'HATCHBACK'), ('WAGON', 'WAGON')],
         label="Tipo de Carrocería"
     )
     tipo_servicio = forms.ChoiceField(
-        choices=[
-            ('PARTICULAR', 'Particular'),
-            ('PUBLICO', 'PUBLICO'),
-        ],
+        choices=[('PARTICULAR', 'Particular'), ('PUBLICO', 'PUBLICO')],
         label="Tipo de Servicio"
     )
-    
     clase = forms.ChoiceField(
-        choices=[
-            ('AUTOMOVIL', 'AUTOMOVIL'),
-            ('CAMIONETA', 'CAMIONETA'),
-        ],
+        choices=[('AUTOMOVIL', 'AUTOMOVIL'), ('CAMIONETA', 'CAMIONETA')],
         label="Clase"
     )
 
@@ -42,11 +32,17 @@ class VehiculoForm(forms.ModelForm):
         ]
         
         widgets = {
-                'fecha_matricula': DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'fecha_matricula': DateInput(attrs={'type': 'date', 'class': 'form-control'}),
         }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        
+        # Si el formulario está en modo edición, ocultar el campo 'valor_presupuesto'
+        if self.instance.pk:  # Verifica si el objeto existe (es un objeto editado)
+            self.fields['valor_presupuesto'].widget = forms.HiddenInput()  # Ocultar el campo
+            self.fields['valor_presupuesto'].required = False  # No hacerlo obligatorio en edición
+        
         self.fields['n_vin'].required = False
         self.fields['n_serie'].required = False
         

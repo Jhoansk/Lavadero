@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="recent-orders">
+  <div class="vehicle_search">
+    <h1>Buscar Vehículo</h1>
+    <form method="post">
+      {% csrf_token %}
+      <label for="placa">Placa del Vehículo</label>
+      <input type="text" name="placa" id="placa" required>
+      <button type="submit">Buscar</button>
+    </form>
+    
+    {% if vehiculo %}
+      <h2>Vehículo Encontrado</h2>
+      <p><strong>Marca:</strong> {{ vehiculo.marca }}</p>
+      <p><strong>Modelo:</strong> {{ vehiculo.modelo }}</p>
+      <p><strong>Color:</strong> {{ vehiculo.color }}</p>
+      
+      <!-- Mostrar la imagen del vehículo con un enlace para abrir en nueva pestaña -->
+      {% if vehiculo.imagen %}
+        <p>Tarjeta Propiedad: <a href="{{ vehiculo.imagen.url }}" target="_blank">Ver Documento</a></p>
+        <img src="{{ vehiculo.imagen.url }}" alt="SOAT" class="document-image">
+      {% else %}
+        <p>No se ha registrado una imagen para este vehículo.</p>
+      {% endif %}
+      
+      <!-- Mostrar los documentos asociados -->
+      {% if documentos %}
+        <h3>Documentos del Vehículo</h3>
+        <div class="document-gallery">
+          {% for doc in documentos %}
+            <div class="document">
+              
+              {% if doc.tarjeta_operacion %}
+                <p>Tarjeta de Operación: <a href="{{ doc.tarjeta_operacion.url }}" target="_blank">Ver Documento</a></p>
+              {% else %}
+                <p>No se ha cargado la Tarjeta de Operación.</p>
+              {% endif %}
+              
+              {% if doc.soat %}
+                <p>SOAT: <a href="{{ doc.soat.url }}" target="_blank">Ver Documento</a></p>
+                <img src="{{ doc.soat.url }}" alt="SOAT" class="document-image">
+              {% else %}
+                <p>No se ha cargado el SOAT.</p>
+              {% endif %}
+              
+              {% if doc.tecnomecanica %}
+                <p>Tecnomecánica: <a href="{{ doc.tecnomecanica.url }}" target="_blank">Ver Documento</a></p>
+                <img src="{{ doc.tecnomecanica.url }}" alt="Tecnomecánica" class="document-image">
+              {% else %}
+                <p>No se ha cargado la Tecnomecánica.</p>
+              {% endif %}
+              
+              {% if doc.seguros_rc %}
+                <p>Seguros RC: <a href="{{ doc.seguros_rc.url }}" target="_blank">Ver Documento</a></p>
+                <img src="{{ doc.seguros_rc.url }}" alt="Seguros RC" class="document-image">
+              {% else %}
+                <p>No se ha cargado el Seguro RC.</p>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p>No se encontraron documentos para este vehículo.</p>
+      {% endif %}
+      
+    {% else %}
+      <p>No se encontró un vehículo con esa placa.</p>
+    {% endif %}
+  </div>
+</div>
+
+<!-- Modal para la visualización de la imagen en tamaño completo -->
+<div id="modal" class="modal" onclick="this.style.display='none'">
+  <img id="modalImage" src="" alt="Imagen a tamaño completo">
+</div>
+
+<script>
+  // Función para mostrar la imagen en un modal
+  function showImage(src) {
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modalImage');
+    modalImage.src = src;
+    modal.style.display = 'flex';
+  }
+</script>
+
+<style>
+  .document-image {
+    max-width: 150px;
+    max-height: 150px;
+    margin: 10px;
+  }
+
+  .vehiculo-imagen {
+    max-width: 300px;
+    max-height: 300px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .vehiculo-imagen:hover {
+    transform: scale(1.05);
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .modal img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+  }
+</style>
+
+{% endblock %}

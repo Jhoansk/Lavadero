@@ -8,6 +8,7 @@ app_name = 'vehiculos'
 urlpatterns = [
     path('agregar/', views.agregar_vehiculo, name='agregar_vehiculo'),
     path('lista/', views.lista_vehiculos, name='lista_vehiculos'),
+    path('editar_vehiculo/<int:vehiculo_id>/', views.editar_vehiculo, name='editar_vehiculo'),
     path('factura/agregar/', views.agregar_factura, name='agregar_factura'),
     path('factura/agregar/formulario/', views.agregar_factura_formulario,
          name='agregar_factura_formulario'),
@@ -53,6 +54,8 @@ urlpatterns = [
          views.editar_documentos, name='editar_documentos'),
     path('documentos/eliminar/<int:documento_id>/',
          views.eliminar_documentos, name='eliminar_documentos'),
+    path('documentos/ver_documentos', views.ver_documentos, name='ver_documentos' ),
+    path('buscar_vehiculo_documentos/', views.buscar_vehiculo_documentos, name='buscar_vehiculo_documentos'),
 
     # URLs para presupuestos
     path('presupuestos/', views.lista_presupuestos, name='lista_presupuestos'),

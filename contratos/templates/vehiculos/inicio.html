@@ -34,9 +34,13 @@
                 <span class="material-icons-sharp">person_outline</span>
                 <h3>Usuarios</h3>
               </a>
+              <a href="{% url 'vehiculos:lista_vehiculos' %}">
+                <span class="material-icons-sharp">person_outline</span>
+                <h3>Vehiculos</h3>
+              </a>
               <a href="{% url 'vehiculos:buscar_vehiculo' %}" class="active">
                 <span class="material-icons-sharp">receipt_long</span>
-                <h3>Vehículos</h3>
+                <h3>Facturas Vehiculo</h3>
               </a>
               <a href="{% url 'vehiculos:seleccionar_datos_contrato' %}">
                 <span class="material-icons-sharp">insights</span>
@@ -44,8 +48,11 @@
               </a>
               <a href="{% url 'vehiculos:lista_documentos' %}">
                 <span class="material-icons-sharp">mail_outline</span>
+                <h3>Crear Documentos</h3>
+              </a>
+              <a href="{% url 'vehiculos:buscar_vehiculo_documentos' %}">
+                <span class="material-icons-sharp">mail_outline</span>
                 <h3>Documentos</h3>
-                <span class="message-count">0</span>
               </a>
               <a href="{% url 'vehiculos:agregar_vehiculo' %}">
                 <span class="material-icons-sharp">inventory</span>
@@ -104,7 +111,7 @@
                                 <circle cx="38" cy="38" r="36"></circle>
                             </svg>
                             <div class="percentage">
-                                <p>+81%</p>
+                                <p>-</p>
                             </div>
                         </div>
                     </div>
@@ -120,7 +127,7 @@
                                 <circle cx="38" cy="38" r="36"></circle>
                             </svg>
                             <div class="percentage">
-                                <p>-48%</p>
+                                <p>-</p>
                             </div>
                         </div>
                     </div>
@@ -128,15 +135,15 @@
                 <div class="searches">
                     <div class="status">
                         <div class="info">
-                            <h3>Searches</h3>
-                            <h1>14,147</h1>
+                            <h3>Proximamente</h3>
+                            <h1>-</h1>
                         </div>
                         <div class="progresss">
                             <svg>
                                 <circle cx="38" cy="38" r="36"></circle>
                             </svg>
                             <div class="percentage">
-                                <p>+21%</p>
+                                <p>-</p>
                             </div>
                         </div>
                     </div>

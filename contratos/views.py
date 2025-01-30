@@ -34,6 +34,7 @@ from django.conf import settings
 from django.template import Context, Template
 from django.template.loader import get_template
 from django.contrib.humanize.templatetags.humanize import intcomma
+from django.core.paginator import Paginator
 
 
 @login_required
@@ -61,6 +62,19 @@ def agregar_vehiculo(request):
         form = VehiculoForm()
 
     return render(request, 'vehiculos/agregar_vehiculo.html', {'form': form})
+
+def editar_vehiculo(request, vehiculo_id):
+    vehiculo_obj = get_object_or_404(Vehiculo_contratos, id=vehiculo_id)
+    
+    if request.method == 'POST':
+        form = VehiculoForm(request.POST, request.FILES, instance=vehiculo_obj)
+        if form.is_valid():
+            form.save()
+            return redirect('vehiculos:lista_vehiculos')
+    else:
+        form = VehiculoForm(instance=vehiculo_obj)
+
+    return render(request, 'vehiculos/editar_vehiculo.html', {'form': form, 'vehiculo': vehiculo_obj})
 
 @login_required
 def lista_vehiculos(request):
@@ -419,8 +433,15 @@ def inicio(request):
 
 @login_required
 def lista_usuarios(request):
-    usuarios = usuario.objects.all()
-    return render(request, 'vehiculos/lista_usuarios.html', {'usuarios': usuarios})
+    # Obtener todos los usuarios
+    all_usuarios = usuario.objects.all()
+
+    # Paginación: Mostrar 10 usuarios por página
+    paginator = Paginator(all_usuarios, 10)  # 10 usuarios por página
+    page_number = request.GET.get('page')  # Número de la página actual
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'vehiculos/lista_usuarios.html', {'usuarios': page_obj.object_list, 'page_obj': page_obj})
 
 @login_required
 def agregar_usuario(request):
@@ -533,8 +554,15 @@ def eliminar_estado(request, estado_id):
 
 @login_required
 def lista_documentos(request):
-    all_documentos = documentos.objects.all()  # Cambiado el nombre de la variable
-    return render(request, 'vehiculos/lista_documentos.html', {'documentos': all_documentos})
+    # Obtener todos los documentos
+    all_documentos = documentos.objects.all()
+
+    # Paginación: Mostrar 10 documentos por página
+    paginator = Paginator(all_documentos, 10)  # 10 documentos por página
+    page_number = request.GET.get('page')  # Número de la página actual
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'vehiculos/lista_documentos.html', {'documentos': page_obj.object_list, 'page_obj': page_obj})
 
 @login_required
 def agregar_documentos(request):
@@ -1022,11 +1050,12 @@ def ver_archivos(request):
     if not os.path.exists(carpeta_contratos):
         return HttpResponse("No hay archivos disponibles.", status=404)
 
-    # Obtener la lista de archivos
+    # Obtener la lista de archivos junto con su fecha de creación (modificación)
     archivos = [
         {
             "nombre": archivo,
-            "ruta": f"{settings.MEDIA_URL}contratos/{archivo}"
+            "ruta": f"{settings.MEDIA_URL}contratos/{archivo}",
+            "fecha_creacion": os.path.getmtime(os.path.join(carpeta_contratos, archivo))
         }
         for archivo in os.listdir(carpeta_contratos) if archivo.endswith('.pdf')
     ]
@@ -1038,12 +1067,20 @@ def ver_archivos(request):
             archivo for archivo in archivos if search_query in archivo['nombre'].lower()
         ]
 
+    # Ordenar los archivos por fecha de creación (más recientes primero)
+    archivos = sorted(archivos, key=lambda x: x['fecha_creacion'], reverse=True)
+
+    # Paginación: Mostrar 10 archivos por página
+    paginator = Paginator(archivos, 10)  # 10 archivos por página
+    page_number = request.GET.get('page')  # Número de la página actual
+    page_obj = paginator.get_page(page_number)
+
     # Verificar si hay archivos disponibles
     if not archivos:
-        return render(request, 'ver_archivos.html', {"archivos": []})
+        return render(request, 'ver_archivos.html', {"archivos": [], "page_obj": page_obj})
 
-    # Renderizar la plantilla con los resultados
-    return render(request, 'ver_archivos.html', {"archivos": archivos})
+    # Renderizar la plantilla con los resultados y la paginación
+    return render(request, 'ver_archivos.html', {"archivos": page_obj.object_list, "page_obj": page_obj})
     
 
 def generar_reporte_contratos(request):
@@ -1138,4 +1175,26 @@ def render_text_with_context(text, context):
     except Exception as e:
         return f"Error al procesar el texto: {e}"
 
+def ver_documentos(request):
+    return render(request, 'vehiculos/ver_documentos.html')
+
+def buscar_vehiculo_documentos(request):
+    vehiculo = None
+    documentos_vehiculo = None
+    
+    if request.method == 'POST':
+        placa = request.POST.get('placa')  # Obtenemos la placa enviada desde el formulario
+        try:
+            # Buscar el vehículo por placa
+            vehiculo = Vehiculo_contratos.objects.get(placa=placa)
+            # Buscar los documentos asociados a ese vehículo
+            documentos_vehiculo = documentos.objects.filter(id_placa=vehiculo)
+        except Vehiculo_contratos.DoesNotExist:
+            raise Http404("Vehículo no encontrado")
+    
+    # Pasamos el vehículo y los documentos a la plantilla
+    return render(request, 'vehiculos/buscar_vehiculo_documentos.html', {
+        'vehiculo': vehiculo,
+        'documentos': documentos_vehiculo
+    })
     
