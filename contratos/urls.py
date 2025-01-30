@@ -54,7 +54,6 @@ urlpatterns = [
          views.editar_documentos, name='editar_documentos'),
     path('documentos/eliminar/<int:documento_id>/',
          views.eliminar_documentos, name='eliminar_documentos'),
-    path('documentos/ver_documentos', views.ver_documentos, name='ver_documentos' ),
     path('buscar_vehiculo_documentos/', views.buscar_vehiculo_documentos, name='buscar_vehiculo_documentos'),
 
     # URLs para presupuestos
