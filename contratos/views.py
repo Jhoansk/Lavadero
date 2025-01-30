@@ -1175,9 +1175,6 @@ def render_text_with_context(text, context):
     except Exception as e:
         return f"Error al procesar el texto: {e}"
 
-def ver_documentos(request):
-    return render(request, 'vehiculos/ver_documentos.html')
-
 def buscar_vehiculo_documentos(request):
     vehiculo = None
     documentos_vehiculo = None
