@@ -35,6 +35,7 @@ from django.template import Context, Template
 from django.template.loader import get_template
 from django.contrib.humanize.templatetags.humanize import intcomma
 from django.core.paginator import Paginator
+from django.contrib import messages
 
 
 @login_required
@@ -524,10 +525,24 @@ def agregar_estado(request):
     if request.method == 'POST':
         form = EstadoForm(request.POST)
         if form.is_valid():
-            form.save()
+            id_placa = form.cleaned_data['id_placa']
+            nuevo_estado = form.cleaned_data['estado']
+
+            # Busca si ya existe un estado para la placa
+            estado_obj, creado = estado.objects.update_or_create(
+                id_placa=id_placa,
+                defaults={'estado': nuevo_estado}
+            )
+
+            if creado:
+                messages.success(request, 'Estado creado exitosamente.')
+            else:
+                messages.success(request, 'Estado actualizado exitosamente.')
+
             return redirect('vehiculos:lista_estados')
     else:
         form = EstadoForm()
+
     return render(request, 'vehiculos/agregar_estado.html', {'form': form})
 
 @login_required
@@ -696,6 +711,10 @@ def generar_pdf(request):
     airbag = request.GET.get('airbag','')
     aire = request.GET.get('aire','')
     gas = request.GET.get('gas','')
+    placaC = request.GET.get('placaC', '')
+    v_primer_vehiculo= request.GET.get('v_primer_vehiculo', '')
+    v_segundo_vehiculo = request.GET.get('v_segundo_vehiculo', '')
+    p_adicional = request.GET.get('p_adicional', '')
     
     # Verifica que los parámetros obligatorios estén presentes
     if not usuario1_cedula or not vehiculo_placa or not tipo_contrato or not persona:
@@ -782,6 +801,9 @@ def generar_pdf(request):
     cuarta_clausula_letras = num2words(int(cuarta_clausula), lang='es').upper() if cuarta_clausula else ''
     dia_contrato_letras = num2words(int(dia), lang='es').upper() if dia else ''
     year_letras = num2words(int(year), lang='es').upper() if year else ''
+    v_primer_vehiculo_letras = num2words(int(v_primer_vehiculo), lang='es').upper() if v_primer_vehiculo else ''
+    v_segundo_vehiculo_letras = num2words(int(v_segundo_vehiculo), lang='es').upper() if v_segundo_vehiculo else ''
+    p_adicional_letras = num2words(int(p_adicional), lang='es').upper() if p_adicional else ''
 
     # Crear el contexto con los datos
     context = {
@@ -834,6 +856,13 @@ def generar_pdf(request):
         'airbag': airbag,
         'aire': aire,
         'gas': gas,
+        'placaC': placaC,
+        'v_primer_vehiculo': v_primer_vehiculo,
+        'v_primer_vehiculo_letras': v_primer_vehiculo_letras,
+        'v_segundo_vehiculo': v_segundo_vehiculo,
+        'v_segundo_vehiculo_letras': v_segundo_vehiculo_letras,
+        'p_adicional': p_adicional,
+        'p_adicional_letras': p_adicional_letras,
     }
 
     # Procesar cláusulas

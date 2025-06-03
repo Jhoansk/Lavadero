@@ -124,6 +124,21 @@
                 <input type="text" name="refiere" id="refiere" placeholder="Ingrese el Referido">
             </div>
 
+            <div id="campos_adicionales_permuta" style="display: none; margin-top: 20px;">
+                <div>
+                    <label for="v_primer_vehiculo">Valor primer vehiculo</label>
+                    <input type="text" id="v_primer_vehiculo" name="v_primer_vehiculo" placeholder="Ingrese el valor 1">
+                </div>
+                <div>
+                    <label for="v_segundo_vehiculo">Valor segundo vehiculo</label>
+                    <input type="text" id="v_segundo_vehiculo" name="v_segundo_vehiculo" placeholder="Ingrese el valor 2">
+                </div>
+                <div>
+                    <label for="p_adicional">Pago adicional</label>
+                    <input type="text" id="p_adicional" name="p_adicional" placeholder="Ingrese el pago adicional">
+                </div>
+            </div>
+
             <div>
                 <label for="tipo_contrato">Selecciona Tipo de Contrato:</label>
                 <select name="tipo_contrato" id="tipo_contrato" required>
@@ -167,6 +182,8 @@
                 </select>
             </div>
             <div id="serv_chatarrizacion" style="display: none;">
+                <label for="placaC">Placa a Chararrizar</label>
+                <input type="text", name="placaC", id="placaC", placeholder="Ingrese la placa del vehiculo a chatarrizar">
                 <input type="text", name="airbag", id="airbag", placeholder="Campo para especificar si tiene airbag">
                 <label for="airbag">airbag y frenos A.B.S,</label>
                 <input type="text", name="aire", id="aire", placeholder="Campo para especificar si tiene aire acodicionado">
@@ -466,6 +483,7 @@
         var terceraContainer = document.getElementById('clausula3');
         var serv_container = document.getElementById('serv_chatarrizacion')
         var tiposOcultos = ['diaco', 'compra_venta', 'cmatricula', 'mandato', 'fun', 'metrokia', 'autoland', 'soat'];
+        var camposPermutaAdicionales = document.getElementById('campos_adicionales_permuta');
         
         // Limpiar los elementos anteriores
         checkboxesContainer.innerHTML = '';
@@ -473,6 +491,11 @@
         terceraContainer.querySelector('ul').innerHTML = '';
     
         // Mostrar las cláusulas y opciones según el tipo de contrato
+        if (tipoContrato === 'permuta') {
+            camposPermutaAdicionales.style.display = 'block';
+        } else {
+            camposPermutaAdicionales.style.display = 'none';
+        }
         if (tipoContrato && clausulasPorContrato[tipoContrato]) {
             // Mostrar las cláusulas
             clausulasPorContrato[tipoContrato].forEach(function (clausula, index) {
@@ -759,6 +782,13 @@
             } else {
                 cedulaVendedor2.style.display = 'none';
             }
+
+            // Bloquear sólo el SELECT del comprador (no los campos de cédula)
+            if (this.value !== '') {
+                compradoresSelect.disabled = true;
+            } else {
+                compradoresSelect.disabled = false;
+            }
         });
 
         // Mostrar/Ocultar segundo campo de cédula del comprador
@@ -767,6 +797,13 @@
                 cedulaComprador2.style.display = 'block';
             } else {
                 cedulaComprador2.style.display = 'none';
+            }
+
+            // Bloquear sólo el SELECT del vendedor (no los campos de cédula)
+            if (this.value !== '') {
+                vendedoresSelect.disabled = true;
+            } else {
+                vendedoresSelect.disabled = false;
             }
         });
     });

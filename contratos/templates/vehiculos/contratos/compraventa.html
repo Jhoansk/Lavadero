@@ -34,7 +34,7 @@
 
         font-family: Arial, sans-serif;
 
-        font-size: 12pt;
+        font-size: 10pt;
 
         line-height: 1.5;
 
@@ -136,7 +136,7 @@
         de {{ nombre }} con Nit {{ nit }} Que quien para efectos de este contrato se denominará EL VENDEDOR y por otra parte 
         {{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }} Mayor (s) de edad, con reisdencia en Bogotá, D.C., identificado (s) con la cédula de ciudadanía número 
         {{ usuario2.cedula }} de {{ usuario2.ciudad_exp }}
-        {% elif persona == "Natural" %}
+        {% elif persona == "Natural" or persona == "Juridica" %}
         Yo, {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}, identificado con {{ usuario1.tipo_doc }} 
         {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }} con residencia en la ciudad de Bogotá, D.C,
         {% if vendedores == "2" %}
@@ -244,8 +244,6 @@
 
       <br>
 
-      <br>
-
       <table>
 
         <tbody>
@@ -293,8 +291,7 @@
         </tbody>
 
       </table>
-      {% if compradores == "2" %}
-      <br>
+      {% if compradores == "2" %}	
       <br>
       <br>
         <div class="flex-content">
@@ -303,6 +300,18 @@
             <p><strong>No Identificación:</strong> {{ usuario4.tipo_doc }} {{ usuario4.cedula }}</p>
             <p><strong>Dirección:</strong> {{ usuario4.direccion }}</p>
             <p><strong>Teléfono:</strong> {{ usuario4.telefono }}</p>
+        </div>
+        {% endif %}
+
+	{% if vendedores == "2" %}
+      <br>
+	<br>
+        <div class="flex-content">
+          <p><strong>EL VENDEDOR</strong></p>
+            <p><strong>NOMBRE:</strong> {{ usuario3.nombre }} {{ usuario3.p_apellido }} {{ usuario3.s_apellido }}</p>
+            <p><strong>No Identificación:</strong> {{ usuario3.tipo_doc }} {{ usuario3.cedula }}</p>
+            <p><strong>Dirección:</strong> {{ usuario3.direccion }}</p>
+            <p><strong>Teléfono:</strong> {{ usuario3.telefono }}</p>
         </div>
         {% endif %}
 

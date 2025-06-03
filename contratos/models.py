@@ -49,10 +49,11 @@ class Factura(models.Model):
     imagen = models.ImageField(upload_to='facturas/', null=True, blank=True)  # Campo para la imagen
 
     def save(self, *args, **kwargs):
+        subtotal = self.valor * self.cantidad
         if self.iva:
-            self.total = self.valor * 1.19
+            self.total = subtotal * 1.19
         else:
-            self.total = self.valor
+            self.total = subtotal
         super(Factura, self).save(*args, **kwargs)
 
     def __str__(self):
