@@ -111,13 +111,23 @@
       </div>
       <div class="main">
         <p>Ref: CARTA DE SOLICITUD, AUTORIZACIÓN Y RESPONSABILIDAD</p>
-        <p>
-          Yo, {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }} identificado con cédula de ciudadania {{ usuario1.tipo_doc }} {{ usuario1.cedula }} 
-          expedida en {{ usuario1.ciudad_exp }}, actuando como representante legal de TAXI CUPOS SAS NIT 900.486.003 autorizo la DESINTEGRACIÓN FISICA TOTAL del vehículo que a continuación
-          relaciono; que cuenta con todos sus elementos estructurales y los conjuntos correspondientes a la configuración técnica. De la misma manera declaro bajo graverdad de juramento, que asumo
-          cualquier responsabilidad que se origine por la información que estoy suministrando e igualmente me hago responsable de todas las acciones penales, civiles y fiscales que surjan
-          con relación a dicha desintegración 
-        </p>
+        {% if persona == "Juridica" %}
+          <p>
+            Yo, {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }} identificado con cédula de ciudadania {{ usuario1.tipo_doc }} {{ usuario1.cedula }} 
+            expedida en {{ usuario1.ciudad_exp }}, actuando como representante legal de TAXI CUPOS SAS NIT 900.486.003 autorizo la DESINTEGRACIÓN FISICA TOTAL del vehículo que a continuación
+            relaciono; que cuenta con todos sus elementos estructurales y los conjuntos correspondientes a la configuración técnica. De la misma manera declaro bajo gravedad de juramento, que asumo
+            cualquier responsabilidad que se origine por la información que estoy suministrando e igualmente me hago responsable de todas las acciones penales, civiles y fiscales que surjan
+            con relación a dicha desintegración.
+          </p>
+        {% elif persona == "Natural" %}
+          <p>
+            Yo, {{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }} identificado con cédula de ciudadania {{ usuario1.tipo_doc }} {{ usuario1.cedula }} 
+            expedida en {{ usuario1.ciudad_exp }}, autorizo la DESINTEGRACIÓN FISICA TOTAL del vehículo que a continuación
+            relaciono; que cuenta con todos sus elementos estructurales y los conjuntos correspondientes a la configuración técnica. De la misma manera declaro bajo gravedad de juramento, que asumo
+            cualquier responsabilidad que se origine por la información que estoy suministrando e igualmente me hago responsable de todas las acciones penales, civiles y fiscales que surjan
+            con relación a dicha desintegración.
+          </p>
+        {% endif %}
         <p><strong>PROTECCIÓN DE DATOS</strong></p>
         <p>
           En virtud de la Ley 1581 de 2012, los firmantes del presente

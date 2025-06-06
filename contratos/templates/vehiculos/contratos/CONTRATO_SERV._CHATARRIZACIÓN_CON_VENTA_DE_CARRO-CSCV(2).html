@@ -245,12 +245,12 @@
         >DIJIN, SIDERURGICA NACIONAL SIDENAL O DIACO, VENTANILLA UNICA DE
         SERVICIOS &ldquo;VUS&rdquo;, y SECRETARIA DE MOVILIDAD Y</strong
       >
-      <strong>_____</strong>.
+      <strong>{{vehiculo.marca}}</strong>.
       ------------------------------------------------------------------------</p><p><strong
         >SEGUNDA </strong
       >- PRECIO: Las partes han acordado como precio del bien objeto, la suma
       de:<strong>
-         {{ pacta_suma_letras }}&shy;&shy;&shy;&shy;&shy;&shy; DE PESOS M/CTE
+         {{ pacta_suma_letras }}&shy;&shy;&shy;&shy;&shy;&shy; PESOS M/CTE
         (${{ pacta_suma|intcomma }})</strong
       >
       valor que PROPIETARIO pagar&aacute; al tramitador de la siguiente manera:
@@ -459,13 +459,13 @@
           </strong>
         <br><br><br><br>
         <p>_________________________________</p>
-        <br/>
-        <p>CC. No</p>
+        <p>{{usuario2.nombre}} {{usuario2.p_apellido}} {{usuario2.s_apellido}}</p>
+        <p>CC. No {{usuario2.cedula}} {{usuario2.ciudad_exp}}</p>
         <p>
-          TEL: 3378230 -
+          TEL: {{usuario2.telefono}}
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </p>
-        <p>CALLE 13 No. 46-03</p>
+        <p>{{usuario2.direccion}}</p>
       </p>
     </div>
     <div class="flex" style="display: inline-block; margin-right: 0;">
@@ -477,13 +477,13 @@
           </strong>
         <br><br><br><br>
         <p>_________________________________</p>
-        <br/>
-        <p>CC. No</p>
+        <p>{{usuario1.nombre}} {{usuario1.p_apellido}} {{usuario1.s_apellido}}</p>
+        <p>CC. No {{usuario1.cedula}} {{usuario1.ciudad_exp}}</p>
         <p>
-          TEL: 3378230 -
+          TEL: {{usuario1.telefono}}
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </p>
-        <p>CALLE 13 No. 46-03</p>
+        <p>{{usuario1.direccion}}</p>
       </p>
     </div>
     
