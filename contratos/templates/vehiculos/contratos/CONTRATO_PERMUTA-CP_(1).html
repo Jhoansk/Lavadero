@@ -244,7 +244,7 @@
               <p>CORREO ELECTRÓNICO:</p><p style="margin-left: 39px;">{{ usuario1.correo }}</p>
           </div>
           <div class="inline-container primer-espacio">
-            <p>SEGUNDO PERMUTANTE:</p><p style="margin-left: 37px;">{{ usuario3.nombre }} {{ usuario3.p_apellido }} {{ usuario3.s_apellido }}</p><br>
+            <p>PRIMER PERMUTANTE:</p><p style="margin-left: 48px;">{{ usuario3.nombre }} {{ usuario3.p_apellido }} {{ usuario3.s_apellido }}</p><br>
             <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario3.cedula }} de {{usuario3.ciudad_exp}}</p><br>
             <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario3.direccion }}</p><br>
             <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario3.barrio }}</p><br>
@@ -254,7 +254,7 @@
         </div>
 
         <div class="inline-container primer-espacio">
-          <p>TERCER PERMUTANTE:</p><p style="margin-left: 47px;">{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p><br>
+          <p>SEGUNDO PERMUTANTE:</p><p style="margin-left: 35px;">{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p><br>
           <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario2.cedula }} de {{usuario2.ciudad_exp}}</p><br>
           <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario2.direccion }}</p><br>
           <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario2.barrio }}</p><br>
@@ -305,7 +305,7 @@
     
             <!-- Información del Comprador 2 -->
             <div class="inline-container primer-espacio">
-                <p>TERCER PERMUTANTE:</p><p style="margin-left: 35px;">{{ usuario4.nombre }} {{ usuario4.p_apellido }} {{ usuario4.s_apellido }}</p><br>
+                <p>SEGUNDO PERMUTANTE:</p><p style="margin-left: 35px;">{{ usuario4.nombre }} {{ usuario4.p_apellido }} {{ usuario4.s_apellido }}</p><br>
                 <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario4.cedula }} de {{usuario4.ciudad_exp}}</p><br>
                 <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario4.direccion }}</p><br>
                 <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario4.barrio }}</p><br>
@@ -543,10 +543,10 @@
     <p style="text-align: justify" class="primer-espacio">
       <strong>CLAUSULA SEGUNDA. PRECIO.- </strong>EL SEGUNDO PERMUTANTE
       transfiere a t&iacute;tulo de venta al PRIMER PERMUTANTE un
-      veh&iacute;culo tipo taxi&nbsp; marca {{ vehiculo.marca }}, l&iacute;nea {{ vehiculo.linea }}, modelos
-      {{ vehiculo.modelo }} nuevo, por un valor de {{ v_primer_vehiculo_letras }} DE PESOS MCTE
+      veh&iacute;culo tipo taxi&nbsp; marca {{ vehiculo2.marca }}, l&iacute;nea {{ vehiculo2.linea }}, modelos
+      {{ vehiculo2.modelo }} nuevo, por un valor de {{ v_primer_vehiculo_letras }} DE PESOS MCTE
       (${{ v_primer_vehiculo }}) del cual el PRIMER PERMUTANTE entrega al SEGUNDO PERMUTANTE
-      en parte de pago, un veh&iacute;culo tipo taxi marca {{ vehiculo2.marca }} de placas {{ vehiculo2.placa }}
+      en parte de pago, un veh&iacute;culo tipo taxi marca {{ vehiculo.marca }} de placas {{ vehiculo.placa }}
       por un valor de {{ v_segundo_vehiculo_letras }} DE PESOS M/CTE (${{ v_segundo_vehiculo }}),
       m&aacute;s un pago adicional de {{ p_adicional_letras }} DE PESOS MCTE
       (${{ p_adicional }}).&nbsp; 
@@ -592,9 +592,9 @@
       accidentes de tr&aacute;nsito y comparendos administrativos Igualmente, EL
       SEGUNDO PERMUTANTE se obliga a realizar las gestiones de traspaso ante las
       autoridades de tr&aacute;nsito dentro de los {{ cuarta_clausula_letras }} ({{ cuarta_clausula }}) d&iacute;as
-      calendario posteriores al estar cancelado el veh&iacute;culo marca ______,
-      modelo _____ y l&iacute;nea ________ en su totalidad y al estar el
-      veh&iacute;culo de placas _________ a paz y salvo por todo concepto con
+      calendario posteriores al estar cancelado el veh&iacute;culo marca {{vehiculo2.marca}},
+      modelo {{vehiculo2.modelo}} y l&iacute;nea {{vehiculo2.linea}} en su totalidad y al estar el
+      veh&iacute;culo de placas {{vehiculo.placa}} a paz y salvo por todo concepto con
       movilidad por accidentes de tr&aacute;nsito y comparendos administrativos.
       
     </p>
@@ -762,7 +762,7 @@
         <td class="signe-cont">
           <div class="content">
             <div>
-              <p class="p-footer-table">TERCER PERMUTANTE</p>
+              <p class="p-footer-table">SEGUNDO PERMUTANTE</p>
               <br>
                 <br>
                 <br>
@@ -781,7 +781,7 @@
           <div class="content">
             <div>
               {% if vendedores == '2' %}
-                  <p class="p-footer-table">SEGUNDO PERMUTANTE</p>
+                  <p class="p-footer-table">PRIMER PERMUTANTE</p>
                 {% elif compradores == '2' %}
                   <p class="p-footer-table">SEGUNDO PERMUTANTE</p>
                 {% else %}

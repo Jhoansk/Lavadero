@@ -157,6 +157,8 @@ def buscar_vehiculo(request):
     valores = []  # Lista de valores para el gráfico
     total_gastos = 0  # Inicializa el total de gastos
     presupuesto_total = 0  # Inicializa el total de presupuesto
+    ganancia = 0
+    porcentaje_ganancia = 0
 
     if request.method == 'POST':
         placa = request.POST.get('placa')
@@ -173,9 +175,14 @@ def buscar_vehiculo(request):
                 # Ajustar consulta para el total de presupuesto
                 presupuesto_obj = vehiculo1.presupuesto
                 if presupuesto_obj:
-                    presupuesto_total = presupuesto_obj.valor_p
+                    presupuesto_total = float(presupuesto_obj.valor_p)
+                    ganancia = presupuesto_total - total_gastos
+                    if presupuesto_total > 0:
+                        porcentaje_ganancia = (ganancia / presupuesto_total)*100
                 else:
                     presupuesto_total = 0
+                    ganancia = 0
+                    porcentaje_ganancia = 0
             else:
                 error = 'No se encontró un vehículo con esa placa.'
         else:
@@ -196,6 +203,8 @@ def buscar_vehiculo(request):
         'total_gastos': total_gastos,
         # Agrega el total de presupuesto al contexto
         'presupuesto_total': presupuesto_total,
+        'ganancia': ganancia,
+        'porcentaje_ganancia': porcentaje_ganancia,
     })
 
 @login_required
@@ -415,10 +424,15 @@ def inicio(request):
 
     # Resto del código sigue igual
     facturas = Factura.objects.all()
-    total_valor_facturas = facturas.aggregate(total=Sum('total'))['total'] or 0
+    total_valor_facturas = float(facturas.aggregate(total=Sum('total'))['total'] or 0)
     presupuestos = presupuesto.objects.all()
-    total_presupuestos = presupuestos.aggregate(total=Sum('valor_p'))['total'] or 0
+    total_presupuestos = float(presupuestos.aggregate(total=Sum('valor_p'))['total'] or 0)
     vehiculos = Vehiculo_contratos.objects.prefetch_related('estado_set').all()
+    restante = total_presupuestos - total_valor_facturas
+    if total_presupuestos >0:
+        porcentaje_ganancia = (restante/total_presupuestos)*100
+    else:
+        porcentaje_ganancia = 0.0
 
     context = {
         'facturas': facturas,
@@ -428,6 +442,8 @@ def inicio(request):
         'future_threshold': future_threshold,
         'vehiculos': vehiculos,
         'total_presupuestos': total_presupuestos,
+        'restante': restante,
+        'porcentaje_ganancia': porcentaje_ganancia,
     }
 
     return render(request, 'vehiculos/inicio.html', context)

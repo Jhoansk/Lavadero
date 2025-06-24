@@ -41,14 +41,14 @@
                     <div class="status">
                         <div class="info">
                             <h3>Ganancias</h3>
-                            <h1>14,147</h1>
+                            <h1>${{ ganancia|floatformat:0|intcomma }}</h1>
                         </div>
                         <div class="progresss">
                             <svg>
                                 <circle cx="38" cy="38" r="36"></circle>
                             </svg>
                             <div class="percentage">
-                                <p>+21%</p>
+                                <p>{{ porcentaje_ganancia|floatformat:0 }}%</p>
                             </div>
                         </div>
                     </div>
