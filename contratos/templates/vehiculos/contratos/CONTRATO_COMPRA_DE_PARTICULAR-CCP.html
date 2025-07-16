@@ -8,7 +8,7 @@
     <style>
       @page {
         size: legal; /* Tamaño del papel */
-        margin: 10mm; /* Márgenes de la página */
+        margin: 5mm 10mm; /* Márgenes de la página */
       }
 
       body {
@@ -365,12 +365,12 @@
             </div>
         {% endif %}
     {% endif %}
-    <p style="text-align: justify" class="primer-espacio" style="font-size: 13px";>
+    <p style="text-align: justify; font-size: 13px;" class="primer-espacio">
       Las partes convienen celebrar el presente contrato de compraventa, que se
       regir&aacute; por las anteriores estipulaciones, las normas aplicables a
       la materia y en especial por las siguientes cl&aacute;usulas:
     </p>
-    <p style="text-align: justify" style="font-size: 13px";>
+    <p style="text-align: justify; font-size: 13px;">
       <strong>PRIMERA - OBJETO DEL CONTRATO: </strong>mediante el presente
       contrato, EL(LOS) VENDEDOR(ES) transfiere(n) a t&iacute;tulo de venta y
       EL(LOS) COMPRADOR(ES) adquiere(n) la propiedad del veh&iacute;culo
@@ -413,24 +413,24 @@
         </tr>
       </tbody>
     </table>
-    <p style="text-align: justify" style="font-size: 13px";>
+    <p style="text-align: justify; font-size: 13px;">
       <strong>SEGUNDA - PRECIO: </strong>Como precio del automotor descrito las
       partes acuerdan la suma de
       <strong>{{ pacta_suma_letras }} MILLONES DE PESOS MC/TE (${{ pacta_suma|intcomma }}).</strong>
     </p>
-    <p style="text-align: justify" style="font-size: 13px";>
+    <p style="text-align: justify; font-size: 13px;">
       <strong>TERCERA - FORMA DE PAGO: </strong>EL COMPRADOR se compromete a
       pagar el precio a que se refiere la cl&aacute;usula anterior de la
       siguiente forma:
     </p>
-    <ul style="text-align: justify" class="claus-list">
+    <ul style="text-align: justify; font-size: 13px;" class="claus-list">
       {% for tercera in tercera %}
           <li>
               {{ tercera.texto }}
           </li>
       {% endfor %}
     </ul>
-    <p style="text-align: justify" style="font-size: 13px";>
+    <p style="text-align: justify; font-size: 13px;">
       Los pagos deben hacerse con cheque de gerencia a nombre de TAXI CUPOS
       S.A.S. con Nit. 900486003-2, consignaci&oacute;n o transferencia a la
       cuenta corriente No.
@@ -467,7 +467,7 @@
       
 
     </p>
-    <p style="text-align: justify" style="font-size: 13px";>
+    <p style="text-align: justify; font-size: 13px;">
       <strong>QUINTA </strong>- ENTREGA: En la fecha, EL VENDEDOR (ES) hace (n)
       entrega material en buen estado del veh&iacute;culo objeto del presente
       contrato a EL (LOS) COMPRADOR (ES), con los elementos que constan en
@@ -475,7 +475,7 @@
       declara (n) que conoce (n) el estado en el que se encuentra el bien objeto
       de este contrato. 
     </p>
-    <p style="text-align: justify" style="font-size: 13px";>
+    <p style="text-align: justify; font-size: 13px;">
       <strong>SEXTA</strong> - RESERVA DEL DOMINIO: EL (LOS) VENDEDOR (ES) se
       reserva (n) la propiedad del veh&iacute;culo identificado en la
       cl&aacute;usula primera del presente contrato, hasta el momento en que se
@@ -484,26 +484,26 @@
       >de conformidad con el Art. 952 del C&oacute;digo de Comercio.
       
     </p>
-    <p style="text-align: justify" style="font-size: 13px";>
+    <p style="text-align: justify; font-size: 13px;">
       <strong>S&Eacute;PTIMA</strong> - CL&Aacute;USULA PENAL: Las partes establecen como sanción
       pecuniaria a cargo de quien incumpla cualquiera de las estipulaciones derivadas de este acto 
       jurídico, la suma del VEINTE PORCIENTO DEL VALOR TOTAL DE ESTE CONTRATO (20%) sin perjuicio 
       de la indemnizacion a que haya lugar
     </p>
-    <p style="font-size: 13px";>
+    <p style="font-size: 13px;">
       <strong>OCTAVA</strong> - GASTOS: Los gastos que se ocasionen con motivo
       de la firma de esta compra venta ser&aacute;n cubiertos de la siguiente
       manera.
       
     </p>
-    <ul style="text-align: justify" class="claus-list" style="font-size: 13px";>
+    <ul style="text-align: justify; font-size: 13px;" class="claus-list">
       {% for clausula in clausulas %}
           <li>
               {{ clausula.texto }}
           </li>
       {% endfor %}
     </ul>
-    <p style="text-align: justify" style="font-size: 13px";>
+    <p style="text-align: justify; font-size: 13px;">
       <strong>NOVENA - CLAUSULA COMPROMISOR&Iacute;A: </strong>Las partes
       acuerdan que, de existir un conflicto con ocasi&oacute;n a la existencia
       del presente contrato, se obligar&aacute;n las mismas a dirimirlo a
@@ -514,7 +514,7 @@
       
     </p>
 
-    <p style="font-size: 13px";>
+    <p style="font-size: 13px;">
       <strong>D&Eacute;CIMA</strong>. EL COMPRADOR, en nombre propio o en nombre
       de la entidad que representa, declara que la informaci&oacute;n
       suministrada es ver&iacute;dica y da su consentimiento irrevocable a EL
@@ -557,7 +557,7 @@
       autorizaci&oacute;n. 
     </p>
 
-    <p style="font-size: 13px";>
+    <p style="font-size: 13px;">
       <strong
         >D&Eacute;CIMA PRIMERA. AUTORIZACI&Oacute;N TRATAMIENTO DE DATOS- HABEAS
         DATA.-</strong
@@ -574,7 +574,7 @@
       manifestando en todo caso la aceptaci&oacute;n y conocimiento de la
       pol&iacute;tica de la empresa con la firma del presente contrato
     </p>
-    <p style="text-align: justify" style="font-size: 13px";>
+    <p style="text-align: justify; font-size: 13px;">
       <strong>D&Eacute;CIMA SEGUNDA.</strong>
       <strong
         >PREVENCI&Oacute;N DE LAVADO DE ACTIVOS Y FINANCIACI&Oacute;N DEL
@@ -598,7 +598,7 @@
       de actividades il&iacute;citas, particularmente, de las anteriormente
       enunciadas
     </p>
-    <p style="text-align: justify" style="font-size: 13px";>
+    <p style="text-align: justify; font-size: 13px;">
       <strong>D&Eacute;CIMA TERCERA: AUTORIZACI&Oacute;N DE DESCUENTO: </strong
       >El VENDEDOR autoriza expresamente a TAXI CUPOS S.A.S. a realizar los
       descuentos a que haya lugar, con ocasi&oacute;n al pago de impuestos,
@@ -607,11 +607,11 @@
       objeto del presente acuerdo o que puedan afectar la entrega en las
       condiciones descritas.
     </p>
-    <p class="primer-espacio" style="font-size: 13px";>
+    <p class="primer-espacio" style="font-size: 13px;">
       <strong>Observaciones: </strong
       >
     </p>
-    <ul style="text-align: justify" class="claus-list" style="font-size: 13px";>
+    <ul style="text-align: justify; font-size: 13px;" class="claus-list">
       {% for opcion in opciones %}
         <li>
             {{ opcion.texto }}
@@ -619,7 +619,7 @@
       {% endfor %}
     </ul>
     <p><strong>&nbsp;</strong></p>
-    <p class="justificado" style="font-size: 13px";>
+    <p class="justificado" style="font-size: 13px;">
       En se&ntilde;al de conformidad las partes contratantes suscriben el
       presente documento en la ciudad de Bogot&aacute; D.C, a los {{ dia_letras }}
       ({{ dia }}) d&iacute;as del mes de {{ mes }} del a&ntilde;o {{ year_letras }} ({{ year }})

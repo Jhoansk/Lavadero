@@ -8,7 +8,7 @@
     <style>
       @page {
         size: legal; /* Tamaño del papel */
-        margin: 10mm; /* Márgenes de la página */
+        margin: 5mm 10mm; /* Márgenes de la página */
       }
 
       body {
@@ -361,17 +361,17 @@
         {% endif %}
     {% endif %}
     
-    <p style="text-align: justify" class="primer-espacio" style="font-size: 13px";>
+    <p style="text-align: justify; font-size: 13px;" class="primer-espacio">
       Las partes acordamos celebrar el presente contrato, conforme a las
       siguientes cl&aacute;usulas: 
     </p>
-    <p style="text-align: justify" style="font-size: 13px";>
+    <p style="text-align: justify; font-size: 13px;">
       <strong>PRIMERA.- Objeto del negocio.- CEDER</strong> a t&iacute;tulo de
       venta al cesionario una &nbsp;cesi&oacute;n de derechos para
       reposici&oacute;n de <strong>&acute;&acute;CUPO&acute;&acute;</strong> de
       veh&iacute;culo tipo taxi de la ciudad de Bogot&aacute;.
       
-    </p><p style="font-size: 13px";><strong>SEGUNDA</strong>.- Las partes han acordado como valor de los
+    </p><p style="font-size: 13px;"><strong>SEGUNDA</strong>.- Las partes han acordado como valor de los
       mencionados derechos de reposici&oacute;n
       <strong>&acute;&acute;CUPO&acute;&acute;</strong> la suma de
       <strong
@@ -381,14 +381,14 @@
       FECHA Y FORMA DE PAGO:
       
     </p>
-    <ul style="text-align: justify" class="claus-list" style="font-size: 13px";>
+    <ul style="text-align: justify; font-size: 13px;" class="claus-list">
       {% for tercera in tercera %}
           <li>
               {{ tercera.texto }}
           </li>
       {% endfor %}
     </ul>
-    <p style="text-align: justify" style="font-size: 13px";>
+    <p style="text-align: justify; font-size: 13px;">
       Los pagos deben hacerse con cheque de gerencia a nombre de TAXI CUPOS
       S.A.S. con Nit. 900486003-2, consignaci&oacute;n o transferencia a la
       cuenta corriente No.
@@ -405,20 +405,20 @@
       >&nbsp; para realizar la respectiva aplicaci&oacute;n.
       
     </p>
-    <p style="font-size: 13px";>
+    <p style="font-size: 13px;">
       <strong
         >CUARTA.-</strong
       ><strong>OBLIGACIONES DEL CESIONARIO</strong>:
       
     </p>
-    <ul style="text-align: justify" class="claus-list" style="font-size: 13px";>
+    <ul style="text-align: justify; font-size: 13px;" class="claus-list">
       {% for clausula in clausulas %}
           <li>
               {{ clausula.texto }}
           </li>
       {% endfor %}
     </ul>
-    <p style="text-align: justify" style="font-size: 13px";>
+    <p style="text-align: justify; font-size: 13px;">
       <strong>QUINTA</strong><strong>.- OBLIGACIONES DEL CEDENTE</strong>. 1) El
       Cedente se compromete a entregar la cesi&oacute;n de derechos para
       reposici&oacute;n cupo bien objeto del presente contrato para radicar
@@ -426,7 +426,7 @@
       calendario contados a partir de que se haga efectivo el pago de
       {{ primer_pago_letras }} DE PESOS M/CTE (${{ pacta_suma|intcomma }}).
     </p>
-      <p style="font-size: 13px";><strong>PARAGRAFO 1: </strong>TAXI<strong>
+      <p style="font-size: 13px;"><strong>PARAGRAFO 1: </strong>TAXI<strong>
         CUPOS S.A.S. </strong
       >no se har&aacute; responsable por inconvenientes administrativos con las
       autoridades de tr&aacute;nsito y transporte en relaci&oacute;n al tiempo
@@ -435,12 +435,12 @@
       proveedor del veh&iacute;culo con las condiciones y tiempos pactados, si
       no hubiere inventario por parte del proveedor. 
     </p>
-    <p style="text-align: justify" style="font-size: 13px";>
+    <p style="text-align: justify; font-size: 13px;">
       <strong>SEXTA.- CLAUSULA PENAL</strong>: Las partes establecen como sanción
       pecuniaria a cargo de quien incumpla cualquiera de las estipulaciones derivadas de este acto 
       jurídico, la suma del DIEZ PORCIENTO DEL VALOR TOTAL DE ESTE CONTRATO (10%) sin perjuicio 
       de la indemnizacion a que haya lugar.</p>
-      <p style="font-size: 13px";><strong
+      <p style="font-size: 13px;"><strong
         >SEPTIMA.- ENTREGA DEL CUPO.- </strong
       >Se entregar&aacute; este cupo con factura cancelada para la
       instalaci&oacute;n de tax&iacute;metro y emblemas reglamentarios, derechos
@@ -451,7 +451,7 @@
       con la fecha de corte que indique la empresa afiliadora, estos gastos
       est&aacute;n incluidos dentro del valor del contrato.
       
-    </p><p style="font-size: 13px";>
+    </p><p style="font-size: 13px;">
       <strong>OCTAVA</strong>. EL CESIONARIO, en nombre propio o en nombre
       de la entidad que representa, declara que la informaci&oacute;n
       suministrada es ver&iacute;dica y da su consentimiento irrevocable a EL
@@ -492,7 +492,7 @@
       cl&aacute;usula, se firma el presente contrato y se acepta la presente
       autorizaci&oacute;n.
       
-      </p><p style="font-size: 13px";>
+      </p><p style="font-size: 13px;">
       <strong>NOVENA</strong>.
       AUTORIZACI&Oacute;N TRATAMIENTO DE DATOS- HABEAS DATA.- Conforme a lo
       dispuesto por la Ley 1580 de 2012, con la firma del presente contrato,
@@ -504,7 +504,7 @@
       aceptaci&oacute;n y conocimiento de la pol&iacute;tica de la empresa con
       la firma del presente contrato.
     </p>
-      <p style="font-size: 13px";>
+      <p style="font-size: 13px;">
         <strong>D&Eacute;CIMA</strong>
       PREVENCI&Oacute;N DE LAVADO DE ACTIVOS Y FINANCIACI&Oacute;N DEL
       TERRORISMO: EL COMPRADOR manifiesta bajo la gravedad de juramento, que se
@@ -525,20 +525,20 @@
       provengan, de actividades il&iacute;citas, particularmente, de las
       anteriormente enunciadas.
     </p>
-    <p style="text-align: justify" style="font-size: 13px";>
+    <p style="text-align: justify; font-size: 13px;">
       <strong
         >Observaciones:
         </strong
       >
     </p>
-    <ul style="text-align: justify" class="claus-list" style="font-size: 13px";>
+    <ul style="text-align: justify; font-size: 13px;" class="claus-list">
       {% for opcion in opciones %}
         <li>
             {{ opcion.texto }}
         </li>
       {% endfor %}
     </ul>
-    <p class="justificado" style="font-size: 13px";>
+    <p class="justificado" style="font-size: 13px;">
       En se&ntilde;al de conformidad las partes contratantes suscriben el
       presente documento en la ciudad de Bogot&aacute; D.C, a los {{ dia_letras }}
       ({{ dia }}) d&iacute;as del mes de {{ mes }} del a&ntilde;o {{ year_letras }} ({{ year }})
