@@ -8,8 +8,8 @@
     <title>Formulario de Compra</title>
     <style>
      @page {
-        size: legal; /* Tamaño del papel */
-        margin: 5mm 10mm; /* Márgenes de la página */
+        size: legal portrait;
+        margin: 20mm 15mm;
       }
 
       body {
@@ -176,7 +176,33 @@
       .inline-container p {
         display: inline;
       }
-    </style>
+    
+body {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+.inline-container, .signe-cont, .content {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.content {
+  width: 100%;
+  max-width: 400px;
+}
+
+.signe-cont {
+  width: 100%;
+  max-width: 355px;
+}
+
+table {
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+</style>
   </head>
   <body>
     <table>
