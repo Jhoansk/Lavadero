@@ -649,8 +649,13 @@ table {
                 <br>
                 <br>
                 <p>____________________________________________</p>
-              <span class="signature"></span>
-              <span class="cc-text">C.C No.</span>
+              {% if compradores == 2 %}
+                <p><strong>{{ usuario4.nombre }} {{ usuario4.p_apellido }} {{ usuario4.s_apellido }}</strong></p> 
+                <p>C.C No. {{ usuario4.cedula }} de {{ usuario4.ciudad_exp }}</p>
+            {% else %}
+                <span class="signature"></span>
+                <span class="cc-text">C.C No.</span>
+            {% endif %}
             </div>
           </div>
           <div class="borde">
