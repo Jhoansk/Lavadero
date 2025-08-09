@@ -231,9 +231,11 @@ table {
           <!-- Elaboro espacio -->
           <td><strong>WILSON BERNAL<strong></td>
           <!-- Reviso espacio -->
-          {% if not (nombre_usuario.first_name == "Juliana" and nombre_usuario.last_name == "Montoya") %}
-              <td><strong>{{ nombre_usuario.first_name }} {{ nombre_usuario.last_name }}</strong></td>
-          {% endif %}
+          {% if not (nombre_usuario.first_name|lower == "juliana" and nombre_usuario.last_name|lower == "montoya") %}
+            <td><strong>{{ nombre_usuario.first_name }} {{ nombre_usuario.last_name }}</strong></td>
+        {% else %}
+            <td></td>
+        {% endif %}
           <!-- Asesor espacio -->
           <td><strong>{{refiere}}</strong></td>
           <!-- Refiere espacio -->
