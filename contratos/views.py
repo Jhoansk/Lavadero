@@ -38,6 +38,18 @@ from django.core.paginator import Paginator
 from django.contrib import messages
 
 
+def format_number_with_dots(value):
+    """Formatea números con puntos como separadores de miles"""
+    if not value or value == '':
+        return '0'
+    try:
+        # Convertir a entero
+        num = int(float(value))
+        # Formatear con puntos
+        return f"{num:,}".replace(',', '.')
+    except (ValueError, TypeError):
+        return str(value)
+
 @login_required
 def agregar_vehiculo(request):
     if request.method == 'POST':
@@ -731,6 +743,8 @@ def generar_pdf(request):
     v_primer_vehiculo= request.GET.get('v_primer_vehiculo', '')
     v_segundo_vehiculo = request.GET.get('v_segundo_vehiculo', '')
     p_adicional = request.GET.get('p_adicional', '')
+    revisado = request.GET.get('revisado', '')
+    asesors = request.GET.get('asesors', '')
     
     # Verifica que los parámetros obligatorios estén presentes
     if not usuario1_cedula or not vehiculo_placa or not tipo_contrato or not persona:
@@ -782,6 +796,19 @@ def generar_pdf(request):
     total = int(primer_pago)+ int(segundo_pago)+ int(tercer_pago)
     nit = request.GET.get('nit')
     nombre = request.GET.get('nombre')
+
+    pacta_suma_formatted = format_number_with_dots(pacta_suma)
+    primer_pago_formatted = format_number_with_dots(primer_pago)
+    segundo_pago_formatted = format_number_with_dots(segundo_pago)
+    tercer_pago_formatted = format_number_with_dots(tercer_pago)
+
+    # Calcular totales
+    primero_segundo = int(primer_pago) + int(segundo_pago) if primer_pago and segundo_pago else 0
+    total = int(primer_pago) + int(segundo_pago) + int(tercer_pago) if all([primer_pago, segundo_pago, tercer_pago]) else 0
+    
+    # Formatear totales calculados
+    primero_segundo_formatted = format_number_with_dots(str(primero_segundo))
+    total_formatted = format_number_with_dots(str(total))
     
     dia = fecha.day
     mes = fecha.strftime('%B')  # Nombre completo del mes
@@ -838,6 +865,12 @@ def generar_pdf(request):
         'tercer_pago': tercer_pago,
         'primero_segundo' : primero_segundo,
         'total' : total,
+        'pacta_suma_formatted': pacta_suma_formatted,
+        'primer_pago_formatted': primer_pago_formatted,
+        'segundo_pago_formatted': segundo_pago_formatted,
+        'tercer_pago_formatted': tercer_pago_formatted,
+        'primero_segundo_formatted': primero_segundo_formatted,
+        'total_formatted': total_formatted,
         'pacta_suma_letras': pacta_suma_letras,
         'primer_pago_letras': primer_pago_letras,
         'segundo_pago_letras': segundo_pago_letras,
@@ -879,6 +912,8 @@ def generar_pdf(request):
         'v_segundo_vehiculo_letras': v_segundo_vehiculo_letras,
         'p_adicional': p_adicional,
         'p_adicional_letras': p_adicional_letras,
+        'revisado': revisado,
+        'asesors': asesors,
     }
 
     # Procesar cláusulas

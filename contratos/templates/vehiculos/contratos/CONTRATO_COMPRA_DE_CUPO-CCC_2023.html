@@ -229,13 +229,9 @@ table {
           <!-- Fecha espacio -->
           <td><strong>{{ nombre_usuario.first_name }} {{ nombre_usuario.last_name }}</strong></td>
           <!-- Elaboro espacio -->
-          <td><strong>WILSON BERNAL</strong></td>
+          <td><strong>{{ revisado }}</strong></td>
           <!-- Reviso espacio -->
-          {% if nombre_usuario.first_name|lower != "juliana" or nombre_usuario.last_name|lower != "montoya" %}
-              <td><strong>{{ nombre_usuario.first_name }} {{ nombre_usuario.last_name }}</strong></td>
-          {% else %}
-              <td></td>
-          {% endif %}
+          <td><strong>{{ asesors }}</strong></td>
           <!-- Asesor espacio -->
           <td><strong>{{ refiere }}</strong></td>
           <!-- Refiere espacio -->

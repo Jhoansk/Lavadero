@@ -10,7 +10,7 @@ class VehiculoForm(forms.ModelForm):
     imagen = forms.ImageField(required=False, label="Tarjeta de propiedad")
     valor_presupuesto = forms.FloatField(required=False, label="Presupuesto")
     tipo_carroceria = forms.ChoiceField(
-        choices=[('SEDAN', 'SEDAN'), ('HATCHBACK', 'HATCHBACK'), ('WAGON', 'WAGON')],
+        choices=[('SEDAN', 'SEDAN'), ('HATCHBACK', 'HATCHBACK'), ('WAGON', 'WAGON'), ('STATION WAGON', 'STATION WAGON')],
         label="Tipo de Carrocería"
     )
     tipo_servicio = forms.ChoiceField(
