@@ -422,27 +422,32 @@ def descargar_pdf_facturas(request):
 
 @login_required
 def inicio(request):
-    # Obtener la fecha actual
+    # Obtener la fecha actual y el umbral de 30 días
     today = timezone.now().date()
     future_threshold = today + timedelta(days=30)
 
-    # Obtener los documentos que vencen entre hoy y los próximos 30 días
+    # Excluir vehículos con estado "Vendido" o "Chatarrizado"
+    estados_excluidos = ['Vendido', 'Chatarrizado']
+    placas_excluidas = estado.objects.filter(estado__in=estados_excluidos).values_list('id_placa__placa', flat=True)
+
+    # Obtener documentos que vencen pronto, pero excluyendo las placas anteriores
     documentos_a_vencer = documentos.objects.filter(
         Q(fecha_vencimiento_to__gte=today, fecha_vencimiento_to__lte=future_threshold) |
         Q(fecha_vencimiento_soat__gte=today, fecha_vencimiento_soat__lte=future_threshold) |
         Q(fecha_vencimiento_tecno__gte=today, fecha_vencimiento_tecno__lte=future_threshold) |
         Q(fecha_vencimiento_sRc__gte=today, fecha_vencimiento_sRc__lte=future_threshold)
-    )
+    ).exclude(id_placa__placa__in=placas_excluidas)
 
-    # Resto del código sigue igual
+    # Resto del código
     facturas = Factura.objects.all()
     total_valor_facturas = float(facturas.aggregate(total=Sum('total'))['total'] or 0)
     presupuestos = presupuesto.objects.all()
     total_presupuestos = float(presupuestos.aggregate(total=Sum('valor_p'))['total'] or 0)
     vehiculos = Vehiculo_contratos.objects.prefetch_related('estado_set').all()
     restante = total_presupuestos - total_valor_facturas
-    if total_presupuestos >0:
-        porcentaje_ganancia = (restante/total_presupuestos)*100
+
+    if total_presupuestos > 0:
+        porcentaje_ganancia = (restante / total_presupuestos) * 100
     else:
         porcentaje_ganancia = 0.0
 
