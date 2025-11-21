@@ -1,0 +1,55 @@
+{% extends "layout_creditos.html" %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Generar Aprobación</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container py-5">
+    <div class="card shadow-lg p-4">
+        <h3 class="text-center mb-4">Generar Aprobación de Crédito</h3>
+        <form id="formAprobacion" method="POST" action="{% url 'generar_aprobacion_auto' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="cedula" class="form-label">Cédula del Cliente</label>
+                <input type="text" id="cedula" name="cedula" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="placa" class="form-label">Placa del Vehículo</label>
+                <input type="text" id="placa" name="placa" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Generar Aprobación</button>
+        </form>
+        <div id="mensaje" class="mt-3 text-center text-muted"></div>
+    </div>
+</div>
+
+<script>
+document.getElementById('formAprobacion').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    document.getElementById('mensaje').innerText = "Procesando solicitud...";
+
+    const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        // 🔥 Abrir PDF en nueva pestaña
+        window.open(data.pdf_url, '_blank');
+        // ✅ Redirigir a lista de aprobaciones
+        window.location.href = data.redirect_url;
+    } else {
+        document.getElementById('mensaje').innerText = "❌ Ocurrió un error al generar la aprobación.";
+    }
+});
+</script>
+</body>
+</html>

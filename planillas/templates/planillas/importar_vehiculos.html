@@ -1,0 +1,60 @@
+{% extends "layout_taxis.html" %}
+{% load static %}
+
+{% block title %}Importar Vehículos{% endblock %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <!-- Título -->
+    <div class="d-flex align-items-center mb-4">
+        <h2 class="fw-bold mb-0">
+            <i class="fas fa-file-import text-warning"></i> Importar Vehículos
+        </h2>
+    </div>
+
+    <!-- Mensajes -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} shadow-sm">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <!-- Card principal -->
+    <div class="card shadow-lg border-0 card-hover">
+        <div class="card-body p-4">
+
+            <form method="POST" enctype="multipart/form-data" class="row g-3">
+                {% csrf_token %}
+
+                <!-- Input de archivo -->
+                <div class="col-12">
+                    <label class="form-label fw-bold">Seleccionar archivo CSV o XLSX</label>
+                    <input type="file" name="archivo" accept=".csv, .xlsx" 
+                           class="form-control form-control-lg shadow-sm" required>
+                </div>
+
+                <!-- Botón -->
+                <div class="col-12 mt-3">
+                    <button class="btn btn-warning text-dark fw-bold px-4 shadow-sm">
+                        <i class="fas fa-upload"></i> Subir archivo
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Nota Informativa -->
+    <div class="alert alert-info mt-4 shadow-sm">
+        <i class="fas fa-info-circle"></i>
+        El archivo debe contener las columnas requeridas para actualizar la base de datos de vehículos.
+    </div>
+
+</div>
+
+{% endblock %}

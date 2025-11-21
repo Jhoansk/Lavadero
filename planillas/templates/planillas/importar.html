@@ -1,0 +1,81 @@
+{% extends "layout_taxis.html" %}
+
+{% block title %}Importar Planillas{% endblock %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <!-- TÍTULO -->
+    <div class="d-flex align-items-center mb-4">
+        <h2 class="fw-bold mb-0">
+            <i class="fas fa-file-arrow-up text-warning"></i> Importar Planillas
+        </h2>
+    </div>
+
+    <!-- MENSAJES -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show shadow-sm" role="alert">
+                <i class="fas fa-info-circle"></i> {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <!-- CARD PRINCIPAL -->
+    <div class="card shadow-lg border-0 card-hover">
+        <div class="card-body p-4">
+
+            <form method="POST" enctype="multipart/form-data" class="row g-3">
+                {% csrf_token %}
+
+                <!-- INPUT FILE -->
+                <div class="col-12">
+                    <label class="form-label fw-bold">
+                        Seleccione archivo (.xlsx o .csv)
+                    </label>
+                    {{ form.archivo }}
+                </div>
+
+                <!-- BOTÓN -->
+                <div class="col-12 mt-3">
+                    <button class="btn btn-warning text-dark fw-bold px-4 shadow-sm" type="submit">
+                        <i class="fas fa-upload"></i> Importar Datos
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <!-- NOTA SOBRE FORMATOS -->
+    <div class="card mt-4 shadow-sm border-0">
+        <div class="card-body">
+            <h5 class="fw-bold mb-2">
+                <i class="fas fa-list-check text-secondary"></i> Formato esperado del archivo
+            </h5>
+            <p class="text-muted">El archivo debe contener columnas según el tipo de planilla:</p>
+
+            <ul class="mb-1">
+                <li>
+                    <strong>Planillas Venta</strong>:
+                    <em>codigo_factura, empresa, placa, subtotal, total_factura, cantidad…</em>
+                </li>
+                <li>
+                    <strong>Planillas RUNT</strong>:
+                    <em>numero_planilla, placa, fecha_solicitud, origen, destino, cedula_conductor…</em>
+                </li>
+            </ul>
+
+            <p class="text-muted mt-3">
+                Si el archivo contiene columnas combinadas (por ejemplo <em>"Tipo y número documento conductor"</em>),
+                el sistema las procesará automáticamente.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

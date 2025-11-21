@@ -1,0 +1,46 @@
+{% extends "layout_creditos.html" %}
+{% load humanize %}
+
+{% block title %}Cambiar Estado Solicitud{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="card shadow-sm mb-4" style="max-width: 600px; margin: 0 auto;">
+        <div class="card-header bg-warning text-dark text-center">
+            <h4 class="mb-0">Cambiar Estado de la Solicitud</h4>
+        </div>
+
+        <div class="card-body">
+
+            <p class="mb-3">
+                <strong>Solicitud #{{ solicitud.id }}</strong><br>
+                <span>Cliente: {{ solicitud.usuario.nombre }} {{ solicitud.usuario.p_apellido }}</span><br>
+                <span>Vehículo: {{ solicitud.vehiculo.placa }}</span><br>
+                <span>Valor: ${{ solicitud.valor|intcomma }}</span>
+            </p>
+
+            <form method="post">
+                {% csrf_token %}
+
+                <label class="form-label">Seleccione el nuevo estado:</label>
+                <select name="estado" class="form-select mb-3" required>
+                    <option value="Estudio" {% if solicitud.estado == "Estudio" %}selected{% endif %}>En Estudio</option>
+                    <option value="Aprobado" {% if solicitud.estado == "Aprobado" %}selected{% endif %}>Aprobado</option>
+                    <option value="Rechazado" {% if solicitud.estado == "Rechazado" %}selected{% endif %}>Rechazado</option>
+                </select>
+
+                <button type="submit" class="btn btn-primary w-100">Guardar Cambios</button>
+            </form>
+
+            <div class="text-center mt-3">
+                <a href="{% url 'solicitudes_credito' %}" class="btn btn-secondary btn-sm">Volver al listado</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

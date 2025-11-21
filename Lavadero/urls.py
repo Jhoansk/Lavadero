@@ -37,6 +37,9 @@ urlpatterns = [
     path('register/', register_employee, name='register_employee'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('tinymce/', include('tinymce.urls')),
+    path('creditos/', include('creditos.urls')),
+    path('planillas/', include('planillas.urls')),
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

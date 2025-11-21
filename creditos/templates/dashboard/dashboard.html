@@ -1,0 +1,370 @@
+{% extends "layout_creditos.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+
+<div class="container-fluid py-4">
+
+    <!-- ===================== TITULO ===================== -->
+    <h2 class="mb-4 fw-bold">
+        📊 Dashboard General de Créditos
+    </h2>
+
+    <!-- ===================== TARJETAS PRINCIPALES ===================== -->
+    <div class="row g-4">
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 p-3">
+                <div class="card-body">
+                    <h6>Total Créditos</h6>
+                    <h2 class="fw-bold text-primary">{{ total_creditos }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 p-3">
+                <div class="card-body">
+                    <h6>Total Prestado</h6>
+                    <h3 class="fw-bold text-success">${{ total_prestado|floatformat:0|intcomma }}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 p-3">
+                <div class="card-body">
+                    <h6>Total Pagado</h6>
+                    <h3 class="fw-bold text-info">${{ total_pagado|floatformat:0|intcomma }}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 p-3">
+                <div class="card-body">
+                    <h6>Recuperación</h6>
+                    <h3 class="fw-bold text-warning">{{ recuperacion }}%</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===================== ESTADISTICAS SECUNDARIAS ===================== -->
+    <div class="row g-4 mt-1">
+
+        <div class="col-md-3">
+            <div class="card bg-primary text-white shadow-sm border-0 p-3">
+                <div class="card-body">
+                    <h6>Activos</h6>
+                    <h2 class="fw-bold">{{ activos }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card bg-danger text-white shadow-sm border-0 p-3">
+                <div class="card-body">
+                    <h6>En Mora</h6>
+                    <h2 class="fw-bold">{{ mora }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card bg-dark text-white shadow-sm border-0 p-3">
+                <div class="card-body">
+                    <h6>Cobro Jurídico</h6>
+                    <h2 class="fw-bold">{{ juridico }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card bg-success text-white shadow-sm border-0 p-3">
+                <div class="card-body">
+                    <h6>Finalizados</h6>
+                    <h2 class="fw-bold">{{ finalizados }}</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===================== GRAFICA ESTADOS ===================== -->
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 p-3">
+                <h5 class="fw-bold">Créditos por Estado</h5>
+
+                <!-- Highcharts necesita DIV, NO CANVAS -->
+                <div id="estadosChart" style="height: 300px;"></div>
+
+            </div>
+        </div>
+
+        <!-- PAGOS MENSUALES -->
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 p-3">
+                <h5 class="fw-bold">Pagos Mensuales</h5>
+                <canvas id="pagosChart" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== GRAFICAS SECUNDARIAS ===================== -->
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 p-3">
+                <h5 class="fw-bold">Créditos Otorgados por Mes</h5>
+                <canvas id="creditosChart" height="250"></canvas>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 p-3">
+                <h5 class="fw-bold">Mora Mensual Acumulada</h5>
+                <canvas id="moraChart" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- ===================== ALERTAS ===================== -->
+    <div class="row mt-5">
+
+        <!-- Próximas a vencer -->
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-warning fw-bold">
+                    📅 Cuotas Próximas a Vencer (7 días)
+                </div>
+                <div class="card-body">
+                    {% if cuotas_proximas %}
+                        <table class="table table-sm table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Cliente</th>
+                                    <th>Crédito</th>
+                                    <th>Cuota</th>
+                                    <th>Fecha Venc.</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for c in cuotas_proximas %}
+                                <tr>
+                                    <td>{{ c.credito.usuario.nombre }} {{ c.credito.usuario.p_apellido }}</td>
+                                    <td>#{{ c.credito.id }}</td>
+                                    <td>{{ c.cuota_numero }}</td>
+                                    <td>{{ c.fecha_vencimiento }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <p class="text-muted">No hay cuotas próximas a vencimiento.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Mora +30 días -->
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-danger text-white fw-bold">
+                    ⚠ Créditos en Mora +30 días
+                </div>
+                <div class="card-body">
+                    {% if mora_mas_30 %}
+                        <table class="table table-sm table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Cliente</th>
+                                    <th>Crédito</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for cr in mora_mas_30 %}
+                                <tr>
+                                    <td>{{ cr.usuario.nombre }} {{ cr.usuario.p_apellido }}</td>
+                                    <td>#{{ cr.id }}</td>
+                                    <td>{{ cr.estado }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <p class="text-muted">No hay créditos con mora prolongada.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===================== ÚLTIMOS REGISTROS ===================== -->
+    <div class="row mt-5">
+
+        <!-- Últimos pagos -->
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-secondary text-white fw-bold">
+                    Últimos Pagos Registrados
+                </div>
+                <div class="card-body">
+                    <table class="table table-sm table-striped">
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Crédito</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for p in ultimos_pagos %}
+                            <tr>
+                                <td>{{ p.credito.usuario.nombre }}</td>
+                                <td>#{{ p.credito.id }}</td>
+                                <td>${{ p.valor_pagado|floatformat:0|intcomma }}</td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="3">No hay pagos registrados.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Últimos créditos -->
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white fw-bold">
+                    Últimos Créditos Otorgados
+                </div>
+                <div class="card-body">
+                    <table class="table table-sm table-striped">
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Valor</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for c in ultimos_creditos %}
+                            <tr>
+                                <td>{{ c.usuario.nombre }} {{ c.usuario.p_apellido }}</td>
+                                <td>${{ c.valor_inicial|floatformat:0|intcomma }}</td>
+                                <td>{{ c.estado }}</td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="3">No hay créditos recientes.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ===================== SCRIPTS ===================== -->
+
+<!-- Highcharts SOLO para el pie 3D -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+
+<!-- Chart.js para los demás gráficos -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    /* =================== PIE 3D HIGHCHARTS =================== */
+    Highcharts.chart('estadosChart', {
+        chart: {
+            type: 'pie',
+            backgroundColor: null,
+            options3d: {
+                enabled: true,
+                alpha: 50,
+                beta: 10,
+                depth: 70
+            }
+        },
+        title: { text: '' },
+        plotOptions: {
+            pie: {
+                depth: 70,
+                dataLabels: { enabled: true, format: '{point.name}: {point.y}' }
+            }
+        },
+        series: [{
+            name: "Créditos",
+            data: [
+                ["Activos", {{ activos }}],
+                ["En Mora", {{ mora }}],
+                ["Cobro Jurídico", {{ juridico }}],
+                ["Finalizados", {{ finalizados }}],
+            ]
+        }]
+    });
+
+
+    /* =================== CHART JS =================== */
+
+    // Pagos Mensuales
+    new Chart(document.getElementById("pagosChart"), {
+        type: "line",
+        data: {
+            labels: {{ pagos_labels|safe }},
+            datasets: [{
+                label: "Pagos",
+                data: {{ pagos_data|safe }},
+                borderWidth: 2,
+                fill: false
+            }]
+        }
+    });
+
+    // Créditos Mensuales
+    new Chart(document.getElementById("creditosChart"), {
+        type: "bar",
+        data: {
+            labels: {{ creditos_labels|safe }},
+            datasets: [{
+                label: "Créditos",
+                data: {{ creditos_data|safe }},
+                borderWidth: 2
+            }]
+        }
+    });
+
+    // Mora Mensual
+    new Chart(document.getElementById("moraChart"), {
+        type: "bar",
+        data: {
+            labels: {{ mora_labels|safe }},
+            datasets: [{
+                label: "Mora",
+                data: {{ mora_data|safe }},
+                borderWidth: 2
+            }]
+        }
+    });
+
+});
+</script>
+
+{% endblock %}

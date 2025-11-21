@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Aprobación de Crédito</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            color: #000;
+        }
+        p {
+            margin: 5px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        td, th {
+            border: 1px solid #000;
+            padding: 6px;
+            vertical-align: top;
+            font-size: 13px;
+        }
+        .section {
+            margin-top: 15px;
+        }
+        .observaciones {
+            border: 1px solid #000;
+            padding: 8px;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 12px;
+        }
+        .firma {
+            margin-top: 60px;
+            text-align: left;
+        }
+        .titulo {
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Bogotá D.C.,</p>
+    <p>Señores:<br>
+    Taxi Cupos<br>
+    Bogotá</p>
+
+    <p class="titulo"><b>Apreciados señores:</b><br>
+    Después del estudio de la solicitud de crédito remitida por ustedes nos permitimos informar:</p>
+
+    <table>
+        <tr>
+            <td><b>Solicitud Numero:</b> {{ credito.id|stringformat:"04d" }}</td>
+            <td><b>Ciudad:</b> Bogotá</td>
+            <td><b>Estado Solicitud:</b> APROBADO</td>
+        </tr>
+        <tr>
+            <td colspan="2"><b>Nombre Titular:</b> {{ usuario.nombre|upper }}</td>
+            <td><b>Identificación:</b> {{ usuario.cedula }} DE BOGOTA</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><b>Fecha de Aprobación:</b> {{ fecha_aprobacion }}</td>
+            <td><b>Valor Aprobado:</b> ${{ credito.valor_aprobado|floatformat:0 }}</td>
+        </tr>
+        <tr>
+            <td colspan="2"><b>Aprobación válida únicamente para vehículo:</b> Taxi de Bogotá</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><b>Tasa mensual:</b> N/A</td>
+            <td><b>Plazo:</b> 60</td>
+        </tr>
+        <tr>
+            <td><b>Tipo vehículo:</b> Taxi</td>
+            <td><b>Placa:</b> {{ vehiculo.placa }}</td>
+            <td><b>Marca:</b> {{ vehiculo.marca }}</td>
+            <td><b>Línea:</b> {{ vehiculo.linea }}</td>
+            <td><b>Modelo:</b> {{ vehiculo.modelo }}</td>
+        </tr>
+    </table>
+
+    <div class="observaciones">
+        <p>Para la firma de prendas el cliente debe estar al día en su totalidad por comparendos, no se aceptan acuerdos de pago.</p>
+        <p><b>Observaciones:</b> Tasa 2,3</p>
+        <p>Para realizar el desembolso no se requiere la póliza todo riesgo.</p>
+    </div>
+
+    <div class="section">
+        <p><b>ESTA APROBACIÓN ES VÁLIDA ÚNICAMENTE PARA VEHÍCULOS MATRICULADOS EN LA CIUDAD DE BOGOTÁ.</b><br>
+        Esta comunicación tiene una validez de sesenta (60) días calendario contados a partir de la fecha de expedición de esta carta.
+        El valor antes mencionado no incluye costos ni gastos inherentes al crédito, seguro de vida o póliza todo riesgo.
+        En todo caso, el desembolso del crédito se encuentra condicionado al diligenciamiento de todos y cada uno de los documentos del préstamo y garantía requeridos por la financiera,
+        y el cumplimiento de todos los estándares previstos en las políticas de crédito, en especial la ausencia de cualquier limitación al derecho de dominio del vehículo
+        y de cualquier pleito que pueda afectar la calidad de la garantía ofrecida.
+        Por tanto, no obliga al desembolso hasta tanto no se hayan satisfecho todos los requisitos antes mencionados.
+        Pasado el término señalado sin cumplimiento de dichos requisitos, se entenderá que el beneficiario del crédito ha desistido de su solicitud.</p>
+    </div>
+
+    <p class="titulo">Cordialmente,</p>
+
+    <div class="firma">
+        <p>_________________________<br>
+        <b>Wilson Bernal</b><br>
+        Jefe Comercial<br>
+        Tel: 3134244415</p>
+    </div>
+
+</body>
+</html>

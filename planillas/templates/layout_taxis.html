@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Panel Empresa de Taxis{% endblock %}</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body { background: #f7f7f7; }
+        .navbar-brand { font-weight: 700; font-size: 1.25rem; }
+        .card-hover:hover {
+            transform: scale(1.02);
+            transition: .18s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        .nav-link.active {
+            font-weight: 600;
+            color: #ffc107 !important;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand text-warning" href="{% url 'dashboard_vehiculos' %}">
+            <i class="fas fa-taxi"></i> Taxi Cupos Planillas
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+
+            {% with request.resolver_match.url_name as url_name %}
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <!-- Dashboard -->
+                <li class="nav-item">
+                    <a class="nav-link {% if url_name == 'dashboard_vehiculos' %}active{% endif %}"
+                       href="{% url 'dashboard_vehiculos' %}">
+                        <i class="fas fa-chart-line"></i> Dashboard
+                    </a>
+                </li>
+
+                <!-- Consulta planillas -->
+                <li class="nav-item">
+                    <a class="nav-link {% if url_name == 'consultar_planillas' %}active{% endif %}"
+                       href="{% url 'consultar_planillas' %}">
+                        <i class="fas fa-clipboard-list"></i> Consulta Planillas
+                    </a>
+                </li>
+
+                <!-- Consultar autorizados -->
+                <li class="nav-item">
+                    <a class="nav-link {% if url_name == 'consultar_autorizados' %}active{% endif %}"
+                       href="{% url 'consultar_autorizados' %}">
+                        <i class="fas fa-id-card-alt"></i> Conductores Autorizados
+                    </a>
+                </li>
+
+                <!-- Autorizaciones → Solo ADMIN y OPERADORA -->
+                {% if request.user.rol == "administrador" or request.user.sede == "Operadora" %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle {% if url_name in 'crear_autorizacion editar_autorizacion eliminar_autorizacion' %}active{% endif %}"
+                       href="#" id="autorizacionesDropdown" data-bs-toggle="dropdown">
+                        <i class="fas fa-user-shield"></i> Autorizaciones
+                    </a>
+                    <ul class="dropdown-menu">
+
+                        <li><a class="dropdown-item" href="{% url 'consultar_autorizados' %}">
+                            Listar por placa</a>
+                        </li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li><a class="dropdown-item" href="{% url 'crear_conductor' %}">
+                            Crear Conductor</a>
+                        </li>
+                    </ul>
+                </li>
+                {% endif %}
+
+                <!-- Importar Planillas → SOLO ADMIN -->
+                {% if request.user.rol == "administrador" %}
+                <li class="nav-item">
+                    <a class="nav-link {% if url_name == 'importar_planillas' %}active{% endif %}"
+                       href="{% url 'importar_planillas' %}">
+                        <i class="fas fa-file-import"></i> Importar Planillas
+                    </a>
+                </li>
+                {% endif %}
+
+                <!-- Importar Vehículos → SOLO ADMIN -->
+                {% if request.user.rol == "administrador" %}
+                <li class="nav-item">
+                    <a class="nav-link {% if url_name == 'importar_vehiculos' %}active{% endif %}"
+                       href="{% url 'importar_vehiculos' %}">
+                        <i class="fas fa-car-side"></i> Importar Vehículos
+                    </a>
+                </li>
+                {% endif %}
+
+            </ul>
+            {% endwith %}
+
+            <!-- Buscador -->
+            <form class="d-flex ms-auto" method="GET" action="{% url 'consultar_planillas' %}">
+                <input class="form-control form-control-sm me-2" type="search" name="placa" placeholder="Buscar placa...">
+                <button class="btn btn-sm btn-warning" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+
+            <!-- Usuario -->
+            <ul class="navbar-nav ms-3">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        <i class="fas fa-user"></i> {{ request.user.nombre }}
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+                        <li><a class="dropdown-item" href="#">Ajustes</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'logout' %}">Salir</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    {% block content %}{% endblock %}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

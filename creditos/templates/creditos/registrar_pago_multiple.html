@@ -1,0 +1,309 @@
+{% extends "layout_creditos.html" %}
+
+{% block title %} Registrar Pagos | Crédito #{{ credito.id }} {% endblock %}
+
+{% block content %}
+
+<style>
+    .card-financiera {
+        border-radius: 14px !important;
+        border: none;
+        background: white;
+        padding: 25px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+
+    .tabla-financiera thead {
+        background: #2ecc71 !important;
+        color: white;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .tabla-financiera tbody tr td {
+        vertical-align: middle;
+    }
+
+    .btn-add {
+        border-radius: 8px;
+        font-size: 15px;
+        padding: 6px 14px;
+    }
+
+    .btn-pago {
+        background: #0d6efd;
+        color: white;
+        border-radius: 6px;
+        font-weight: 600;
+    }
+
+    .btn-abono {
+        background: #198754;
+        color: white;
+        border-radius: 6px;
+        font-weight: 600;
+    }
+
+    .btn-eliminar {
+        border-radius: 6px;
+    }
+
+    .total-box {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #198754;
+    }
+</style>
+
+
+<div class="container mt-4">
+
+    <div class="card card-financiera">
+
+        <!-- Encabezado -->
+        <h3 class="fw-bold text-success mb-3">
+            💵 Registrar Pagos — Crédito #{{ credito.id }}
+        </h3>
+
+        <p class="fs-5"><strong>Saldo actual:</strong> ${{ saldo|floatformat:2 }}</p>
+
+        <form method="post" id="pagoForm">
+            {% csrf_token %}
+            {{ formset.management_form }}
+
+            <div class="table-responsive">
+                <table class="table tabla-financiera table-bordered" id="pagosTable">
+                    <thead>
+                        <tr>
+                            <th>Cuota</th>
+                            <th>Valor a pagar</th>
+                            <th>Observación</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for form in formset %}
+                        <tr class="pago-row">
+                            <td>{{ form.cuota_numero }}</td>
+                            <td>{{ form.valor_pagado }}</td>
+                            <td>{{ form.observacion }}</td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-danger btn-sm eliminar-fila btn-eliminar">
+                                    ✕
+                                </button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Botón agregar -->
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <button type="button" class="btn btn-outline-success btn-add" id="agregarFila">
+                    ➕ Agregar Cuota
+                </button>
+
+                <div class="total-box">
+                    Total a pagar: <span id="totalPagar">$0.00</span>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Botones de acción principal -->
+            <div class="d-flex justify-content-between">
+
+                <div class="d-flex gap-2">
+                    <button type="submit" name="accion" value="pago" class="btn btn-pago">
+                        💵 Registrar Pagos
+                    </button>
+                    <button type="submit" name="accion" value="abono" class="btn btn-abono">
+                        🟩 Abono a Capital
+                    </button>
+                </div>
+
+                <div class="total-box">
+                    Total: <span id="totalPagar">$0.00</span>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <!-- Botones finales -->
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary">Guardar Pagos</button>
+                <a href="{% url 'detalle_credito' credito.id %}" class="btn btn-secondary">Volver</a>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ===================== -->
+<!--  JAVASCRIPT ORIGINAL  -->
+<!-- ===================== -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const tableBody = document.querySelector("#pagosTable tbody");
+  const agregarFilaBtn = document.getElementById("agregarFila");
+  const totalForms = document.getElementById("id_form-TOTAL_FORMS");
+  const totalPagarEls = document.querySelectorAll("#totalPagar");
+  const pagoForm = document.getElementById("pagoForm");
+
+  function actualizarTotal() {
+    let total = 0;
+    document.querySelectorAll("input[name$='valor_pagado']").forEach(input => {
+      const val = parseFloat(input.value);
+      if (!isNaN(val)) total += val;
+    });
+    const txt = "$" + total.toLocaleString("es-CO", {minimumFractionDigits: 2});
+    totalPagarEls.forEach(el => el.textContent = txt);
+  }
+
+  document.addEventListener("input", (e) => {
+    if (e.target.name && e.target.name.endsWith("valor_pagado")) {
+      actualizarTotal();
+    }
+  });
+
+  // OBTENER VALOR DE CUOTA (cuando cambie el select)
+  tableBody.addEventListener("change", async (e) => {
+    if (e.target.name && e.target.name.includes("cuota_numero")) {
+      const fila = e.target.closest("tr");
+      const valorInput = fila.querySelector("input[name$='valor_pagado']");
+      const cuota = e.target.value;
+
+      if (cuota) {
+        try {
+          const res = await fetch(`/creditos/{{ credito.id }}/valor_cuota/?cuota=${cuota}`);
+          const data = await res.json();
+          if (data.valor_cuota) {
+            valorInput.value = parseFloat(data.valor_cuota).toFixed(2);
+            actualizarTotal();
+          }
+        } catch (err) { console.error(err); }
+      } else {
+        valorInput.value = "";
+      }
+    }
+  });
+
+  // AGREGAR FILA
+  agregarFilaBtn.addEventListener("click", () => {
+    const formIndex = parseInt(totalForms.value);
+    const plantilla = document.querySelector(".pago-row"); // la primera fila como plantilla
+    const nuevaFila = plantilla.cloneNode(true);
+
+    // limpiar valores y renombrar índices
+    nuevaFila.querySelectorAll("input, select, textarea").forEach(el => {
+      // renombrar con el nuevo índice
+      if (el.name) {
+        const name = el.name.replace(/-\d+-/, `-${formIndex}-`);
+        const id = "id_" + name;
+        el.name = name;
+        el.id = id;
+      }
+      // limpiar valor
+      if (el.tagName === "SELECT") {
+        el.selectedIndex = 0;
+      } else {
+        el.value = "";
+      }
+    });
+
+    tableBody.appendChild(nuevaFila);
+    totalForms.value = formIndex + 1;
+    actualizarTotal();
+  });
+
+  // ELIMINAR FILA
+  tableBody.addEventListener("click", (e) => {
+    if (e.target.classList.contains("eliminar-fila")) {
+      const fila = e.target.closest("tr");
+      if (document.querySelectorAll(".pago-row").length > 1) {
+        fila.remove();
+        // reindexar forms: ajustar TOTAL_FORMS y renombrar índices para evitar huecos
+        const filas = document.querySelectorAll(".pago-row");
+        filas.forEach((f, idx) => {
+          f.querySelectorAll("input, select, textarea").forEach(el => {
+            if (!el.name) return;
+            const newName = el.name.replace(/-\d+-/, `-${idx}-`);
+            el.name = newName;
+            el.id = "id_" + newName;
+          });
+        });
+        totalForms.value = filas.length;
+        actualizarTotal();
+      }
+    }
+  });
+
+  actualizarTotal();
+
+  // INTERCEPTAR SUBMIT -> enviar por fetch y recibir URL del recibo en JSON
+  pagoForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Determinar cual botón submit se pulsó (accion)
+    // Si tu UI tiene botones con name="accion", el browser solo envía el valor del botón clickeado.
+    // Aquí leemos el valor del botón pulsado si es posible:
+    const btn = document.activeElement;
+    let accion = null;
+    if (btn && btn.name === 'accion') {
+      accion = btn.value;
+    }
+
+    const formData = new FormData(pagoForm);
+    // marcar que es petición ajax
+    formData.append('ajax', '1');
+    if (accion) formData.set('accion', accion);
+
+    try {
+      const res = await fetch(pagoForm.action || window.location.href, {
+        method: 'POST',
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: formData
+      });
+
+      // Si viene JSON con url del recibo
+      if (res.headers.get('content-type') && res.headers.get('content-type').includes('application/json')) {
+        const data = await res.json();
+        if (data.ok && data.recibo_url) {
+          // Abrir recibo en nueva pestaña
+          window.open(data.recibo_url, '_blank');
+
+          // luego redirigir al detalle del crédito (si la vista devolvió redirect_url)
+          if (data.redirect_url) {
+            window.location.href = data.redirect_url;
+          } else {
+            // fallback: recargar la página de detalle
+            window.location.reload();
+          }
+          return;
+        } else {
+          alert("Error generando recibo.");
+          console.error(data);
+        }
+      } else {
+        // Si la respuesta no es JSON probablemente sea un redirect -> seguirlo
+        const text = await res.text();
+        // Para simplicidad recargamos la página
+        window.location.reload();
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Ocurrió un error al enviar los pagos. Revisa la consola.");
+    }
+  });
+
+});
+</script>
+
+{% endblock %}

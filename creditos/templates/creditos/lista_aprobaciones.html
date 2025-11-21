@@ -1,0 +1,137 @@
+{% extends "layout_creditos.html" %}
+
+{% block title %} Lista de Aprobaciones | Sistema de Créditos {% endblock %}
+
+{% block content %}
+
+<style>
+    .titulo-financiera {
+        font-weight: 700;
+        color: #2c3e50;
+        text-align: center;
+    }
+
+    .table-financiera th {
+        background: #2c3e50;
+        color: white;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .table-financiera td {
+        vertical-align: middle;
+    }
+
+    .badge {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+
+    .acciones-btns .btn {
+        margin-bottom: 4px;
+    }
+
+    .card-financiera {
+        border-radius: 12px !important;
+        border: none;
+        background: white;
+        padding: 25px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+</style>
+
+<div class="container mt-4">
+
+    <div class="card card-financiera">
+
+        <h2 class="titulo-financiera mb-4">📄 Aprobaciones de Crédito</h2>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered align-middle table-financiera">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cédula</th>
+                        <th>Vehículo</th>
+                        <th>Estado</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for a in aprobaciones %}
+                    <tr>
+                        <td class="text-center fw-bold">{{ a.id }}</td>
+                        <td>{{ a.usuario.cedula }}</td>
+                        <td>{{ a.vehiculo.placa }}</td>
+
+                        <!-- Estado -->
+                        <td class="text-center">
+                            {% if a.estado == 'Aprobado' %}
+                                <span class="badge bg-success">Aprobado</span>
+                            {% elif a.estado == 'Rechazado' %}
+                                <span class="badge bg-danger">Rechazado</span>
+                            {% else %}
+                                <span class="badge bg-warning text-dark">En Estudio</span>
+                            {% endif %}
+                        </td>
+
+                        <td class="text-center">
+                            {{ a.fecha|date:"d/m/Y H:i" }}
+                        </td>
+
+                        <!-- Acciones -->
+                        <td class="text-center acciones-btns">
+
+                            {% if a.archivo_pdf %}
+                                <a href="{{ a.archivo_pdf.url }}" class="btn btn-sm btn-outline-success" target="_blank">
+                                    📄 Ver PDF
+                                </a>
+                            {% endif %}
+
+                            <!-- Evaluar solicitud -->
+                            {% if a.estado == 'En Estudio' %}
+                                <a href="{% url 'evaluar_aprobacion' a.id %}" 
+                                   class="btn btn-sm btn-warning">
+                                    📝 Evaluar
+                                </a>
+                            {% else %}
+                                <a href="{% url 'evaluar_aprobacion' a.id %}" 
+                                   class="btn btn-sm btn-outline-secondary">
+                                    👁 Ver Evaluación
+                                </a>
+                            {% endif %}
+
+                            <!-- Generar prenda -->
+                            {% if a.estado == 'Aprobado' %}
+                                <a href="{% url 'generar_prenda_auto' a.id %}" 
+                                   class="btn btn-sm btn-primary">
+                                    🚘 Generar Prenda
+                                </a>
+                            {% else %}
+                                <button class="btn btn-sm btn-secondary" disabled>
+                                    Prenda no disponible
+                                </button>
+                            {% endif %}
+
+                        </td>
+                    </tr>
+
+                    {% empty %}
+                    <tr>
+                        <td colspan="6" class="text-center text-muted py-3">
+                            No hay aprobaciones registradas.
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

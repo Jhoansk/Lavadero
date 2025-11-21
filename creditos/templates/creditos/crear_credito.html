@@ -1,0 +1,78 @@
+{% extends "layout_creditos.html" %}
+
+{% block title %} Crear Crédito | Sistema de Créditos {% endblock %}
+
+{% block content %}
+
+<style>
+    .titulo-financiera {
+        font-weight: 700;
+        color: #2c3e50;
+    }
+    .card-financiera {
+        border-radius: 12px !important;
+        border: none;
+        background: white;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+    .card-header-financiera {
+        background: #0d6efd;
+        color: white;
+        border-radius: 12px 12px 0 0 !important;
+    }
+    .btn-financiera {
+        background: #198754;
+        color: white;
+        border-radius: 6px;
+    }
+    .btn-financiera:hover {
+        background: #146c43;
+        color: white;
+    }
+</style>
+
+<div class="container">
+
+    <div class="card card-financiera mt-4">
+
+        <!-- Encabezado -->
+        <div class="card-header card-header-financiera">
+            <h4 class="mb-0">➕ Crear Crédito</h4>
+        </div>
+
+        <!-- Cuerpo del formulario -->
+        <div class="card-body">
+
+            <form method="post" class="needs-validation" novalidate>
+                {% csrf_token %}
+
+                <div class="row">
+                    {% for field in form %}
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold">{{ field.label }}</label>
+                            {{ field }}
+
+                            {% if field.errors %}
+                                <div class="text-danger small">{{ field.errors }}</div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-financiera">
+                        💾 Guardar Crédito
+                    </button>
+
+                    <a href="{% url 'lista_creditos' %}" class="btn btn-secondary">
+                        Cancelar
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Solicitud de Crédito</title>
+  <style>
+    @page { size: A4; margin: 0; }
+    body { margin: 0; font-family: Arial, sans-serif; }
+    .pagina {
+      width: 210mm; height: 297mm;
+      background-size: cover;
+      background-repeat: no-repeat;
+      page-break-after: always;
+      position: relative;
+    }
+    .pagina1 {
+      background-image: url("{% static 'creditos/img/plantilla_aprobacion_1.jpg' %}");
+    }
+    .pagina2 {
+      background-image: url("{% static 'creditos/img/plantilla_aprobacion_2.jpg' %}");
+    }
+    .campo {
+      position: absolute;
+      font-size: 13px;
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* Vehículo principal */
+    .vehiculo_marca { top: 155px; left: 180px; }
+    .vehiculo_linea { top: 155px; left: 335px; }
+    .vehiculo_modelo { top: 155px; left: 445px; }
+    .vehiculo_placa { top: 155px; left: 610px; }
+    .pnombre { top: 280px; left: 440px; } 
+    .s_nombre { top: 160px; left: 150px; } 
+    .p_apellido { top: 280px; left: 110px; } 
+    .s_apellido { top: 280px; left: 280px; } 
+    .cedula { top: 312px; left: 360px; } 
+    .telefono { top: 356px; left: 615px; } 
+    .direccion { top: 340px; left: 130px; }
+
+    /* Vehículo garantía adicional */
+    .garantia_marca { top: 240px; left: 160px; }
+    .garantia_linea { top: 240px; left: 310px; }
+    .garantia_modelo { top: 240px; left: 420px; }
+    .garantia_placa { top: 240px; left: 520px; }
+  </style>
+</head>
+<body>
+
+  <div class="pagina pagina1">
+    <div class="campo pnombre">{{ p_nombre }}</div>
+    <div class="campo s_nombre">{{ s_nombre }}</div>
+    <div class="campo p_apellido">{{ p_apellido }}</div>
+    <div class="campo s_apellido">{{ s_apellido }}</div>
+    <div class="campo cedula">{{ cedula }}</div>
+    <div class="campo telefono">{{ telefono }}</div>
+    <div class="campo direccion">{{ direccion }}</div>
+
+    <!-- Vehículo principal -->
+    <div class="campo vehiculo_marca">{{ marca }}</div>
+    <div class="campo vehiculo_linea">{{ linea }}</div>
+    <div class="campo vehiculo_modelo">{{ modelo }}</div>
+    <div class="campo vehiculo_placa">{{ placa }}</div>
+
+    <!-- Vehículo garantía adicional -->
+    {% if garantia_placa %}
+      <div class="campo garantia_marca">{{ garantia_marca }}</div>
+      <div class="campo garantia_linea">{{ garantia_linea }}</div>
+      <div class="campo garantia_modelo">{{ garantia_modelo }}</div>
+      <div class="campo garantia_placa">{{ garantia_placa }}</div>
+    {% endif %}
+  </div>
+
+  <div class="pagina pagina2">
+    <div class="campo" style="top:700px; left:200px;"></div>
+  </div>
+
+</body>
+</html>

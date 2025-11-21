@@ -71,6 +71,10 @@ class usuario(models.Model):
     barrio = models.CharField(max_length=50)
     ciudad_exp = models.CharField(max_length=50)
     tipo_doc = models.CharField(max_length=50)
+    documento1 = models.FileField(upload_to="documentos/", null=True, blank=True)
+    documento2 = models.FileField(upload_to="documentos/", null=True, blank=True)
+    documento3 = models.FileField(upload_to="documentos/", null=True, blank=True)
+    documento4 = models.FileField(upload_to="documentos/", null=True, blank=True)
     
     def __str__(self):
         return f'{self.cedula}'
@@ -86,6 +90,8 @@ class user(models.Model):
     SEDE_CHOICES = [
         ('Taxi Cupos', 'Taxi Cupos'),
         ('Green Wash', 'Green Wash'),
+        ('Operadora', 'Operadora'),
+        ('Financiera', 'Financiera'),
     ]
 
     id_user = models.IntegerField(unique=True)

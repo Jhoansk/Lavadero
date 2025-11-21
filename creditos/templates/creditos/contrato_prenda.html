@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prenda</title>
+<style>
+        /* Estilo básico para WeasyPrint */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10mm; /* Márgenes de la página */
+            line-height: 1.5;
+        }
+
+        .container {
+            width: 100%;
+            text-align: center;
+        }
+
+        p {
+            font-size: 13px;
+            line-height: 13px;
+        }
+
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            margin-left: 5%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 0px;
+            text-align: left;
+            height: 1px;
+            font-size: 11px;
+        }
+
+        strong {
+            font-size: 13px;
+        }
+
+        /* Aseguramos que la página se vea correctamente al imprimirse */
+        @page {
+            size: letter;
+            margin: 10mm 5mm 20mm 5mm;
+        }
+
+        @page {
+            @top-center {
+                content: "";
+                border-top: 2px solid #646464; /* Línea superior */
+                width: 90%; /* La línea ocupará solo el 80% del ancho */
+                margin: auto; /* Centra la línea horizontalmente */
+                margin-top: 50px;
+            }
+        
+            @bottom-center {
+                content: "Página " counter(page);
+                border-bottom: 2px solid #646464; /* Línea inferior */
+                width: 90%; /* La línea ocupará solo el 80% del ancho */
+                margin: auto; /* Centra la línea horizontalmente */
+                margin-bottom: 70px;
+            }
+        }
+        .firmas {
+            margin-top: 40px;
+        }
+        .contenedor-firmas {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .columna {
+            width: 48%;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            vertical-align: top;
+        }
+        .header {
+            font-weight: bold;
+            text-align: center;
+            background-color: yellow;
+            padding: 5px 0;
+        }
+        hr {
+            border: 1px solid black;
+            margin: 10px 0;
+            margin-top: 100px;
+        }
+        a {
+            color: blue;
+            text-decoration: underline;
+        }
+        .carta-instrucciones {
+            page-break-before: always; /* Fuerza un salto de página antes de este elemento */
+        }
+        .pagare {
+            page-break-before: always; /* Fuerza un salto de página antes de este elemento */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<p><strong>CONTRATO DE GARANTÍA MOVILIARIA (PRENDA SIN TENENCIA DEL ACREEDOR)</strong></p>
+<p style="text-align: justify;">	Entre   ERIKA ANDREA ACHURY SANCHEZ, mayor de edad identificada con cédula de ciudadanía 53.027.841  actuando como representante legal de la 
+            empresa PROMOTORA DE INVERSIONES JAMED SAS identificada con NIT 901.039.293 y  quien en delante se denominara EL ACREEDOR GARANTIZADO,  
+            {{ user.nombre }} {{ user.p_apellido }} {{ user.s_apellido }}, EL (LOS) GARANTE(S) Y/O DEUDOR(ES), mayor(es) de edad, con domicilio en la ciudad de Bogotá, identificado(s) como aparece e
+            l al pie de su firma, actuando en nombre propio; y quien en delante y para efectos del presente contrato se denominarán en adelante 
+            EL(LOS) GARANTE(S) Y/O DEUDOR(ES), se celebra el presente Contrato de Garantía Mobiliaria , en adelante el Contrato de Garantía Mobiliaria, al cual 
+            se le aplicarán las disposiciones del Código de Comercio, del Código Civil, de la ley 1676 de 2013 y demás normas concordantes, reglamentarias y/o 
+            sustitutivas sobre la materia, si se regirá por las siguientes cláusulas: 
+            PRIMERA - OBJETO: En virtud del presente contrato, EL(LOS) GARANTE(S) Y/O DEUDOR(ES) constituye (e) a favor de EL ACREEDOR GARANTIZADO garantía 
+            mobiliaria sobre el bien que a continuación se describe junto con su respectivo cupo o derechos de reposición, en adelante, EL BIEN, en respaldo 
+            de la(s) obligación(es) garantizada(s) haya(n) sido adquirida(s) 
+            por EL(LOS) GARANTE(S) Y/O DEUDOR(ES) para la compra de EL BIEN, se entenderá que la garantía mobiliaria que se constituye a través del presente 
+            contrato corresponde a la denominada Garantía Mobiliaria Prioritaria de Adquisición.
+        </p>
+<table style="text-align: justify;">
+<tbody>
+<!-- 12 filas -->
+<tr>
+<td><strong>PLACA:</strong></td>
+<td>{{ vehiculo.placa }}</td>
+</tr>
+<tr>
+<td><strong>MODELO:</strong></td>
+<td>{{ vehiculo.modelo }}</td>
+</tr>
+<tr>
+<td><strong>CLASE:</strong></td>
+<td>{{ vehiculo.clase }}</td>
+</tr>
+<tr>
+<td><strong>COLOR:</strong></td>
+<td>{{ vehiculo.color }}</td>
+</tr>
+<tr>
+<td><strong>TIPO CARROCERIA:</strong></td>
+<td>{{ vehiculo.tipo_carroceria }}</td>
+</tr>
+<tr>
+<td><strong>TIPO DE SERVICIO:</strong></td>
+<td>{{ vehiculo.tipo_servicio }}</td>
+</tr>
+<tr>
+<td><strong>No de CHASIS:</strong></td>
+<td>{{ vehiculo.n_chasis }}</td>
+</tr>
+<tr>
+<td><strong>MARCA:</strong></td>
+<td>{{ vehiculo.marca }}</td>
+</tr>
+<tr>
+<td>NO DE MOTOR:</td>
+<td>{{ vehiculo.n_motor }}</td>
+</tr>
+<tr>
+<td><strong>LINEA:</strong></td>
+<td>{{ vehiculo.linea }}</td>
+</tr>
+<tr>
+<td><strong>CAPACIDAD:</strong></td>
+<td>{{ vehiculo.capacidad }}</td>
+</tr>
+<tr>
+<td><strong>PUERTAS:</strong></td>
+<td>{{ vehiculo.puertas }}</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">
+            PARÁGRAFO PRIMERO: EL(LOS) GARANTE(S) Y/O DEUDOR(ES) no podrá(n) transformar, gravar o enajenar en todo o en parte EL BIEN, no constituir otras garantías 
+            (mobiliarias sobre el mismo, sin consentimiento previo y escrito de EL ACREEDOR GARANTIZADO. PARÁGRAFO SEGUNDO:  EL(LOS) GARANTE(S) Y/O DEUDOR(ES) autorizan 
+            desde ya a El ACREEDOR GARANTIZADO, para que diligencie y/o complete los espacios que se han dejado en blanco en esta cláusula, una vez se tenga la Tarjeta 
+            de Propiedad y el Certificado de Tradición del vehículo dado en prenda, en los que figuren los datos que a la fecha de firma de este contrato estén faltantes.
+             SEGUNDA - OBLIGACIÓN(ES) GARANTIZADA(S): EL (LOS) GARANTES Y/O DEUDOR(ES) garantiza(n) a través del presenté contrato cualquier obligación presente, 
+             pasada o futura que conjunta o separadamente haya(n) adquirido o adquieran con EL ACREEDOR GARANTIZADO, conforme a los montos, condiciones, y plazos 
+             que se estipulen en los documentos que las instrumentan, sus intereses corrientes moratorios, seguros, derechos de registro del presente contrato, 
+             honorarios judiciales, gastos y costos de cobranza extrajudicial y/o judicial, gastos de ejecución de recaudo, arancel judicial o su equivalente, o cualquier 
+             otro rubro en contraprestación de servicios adicionales que le haya prestado EL ACREEDOR GARANTIZADO y demás obligaciones, asesorías, así como todos los gastos
+              a que haya lugar hasta su pago total, sumas de dinero que se obliga(n) a cancelar con dineros de proveniencia licita. PARÁGRAFO: El monto de dinero máximo
+               garantizado mediante el presente contrato asciende a la suma de TRESCIENTOS OCHENTA Y CINCO (385) SALARIOS MÍNIMOS LEGALES MENSUALES VIGENTES.TERCERA-EXTENSIÓN DE LA
+                GARANTÍA: La garantía mobiliaria constituida sobre EL BIEN comprende los mecanismos, piezas o partes que se usen accesoriamente en él, o que en el futuro se le 
+                agreguen o adicionen, así como los que se pueden identificar como provenientes de EL BIEN originalmente gravado, incluyendo el (los) bien(es)  y/o derechos que
+                 le reemplacen, en los términos del artículo 8 de la Ley 1676 de 2013 y demás normas que la reglamenten, adicionen modifiquen o sustituyan. Así mismo, 
+                 la garantía mobiliaria se extiende a la indemnización que llegare a existir por virtud del seguro contra todo riesgo que se contrate sobre EL BIEN. 
+                 PARÁGRAFO: EL(LOS) GARANTE(S) Y/O DEUDOR(ES) constituye(n) igualmente, por el presente documento Garantía Mobiliaria sobre el “derecho de reposición” o “cupo”, 
+                 razón por la cual la garantía se extiende además del vehículo a dicho derecho, por lo que, en caso de ejercicio del mecanismo del pago directo, ejecución 
+                 especial, dación en pago o adjudicación judicial del bien, EL (LOS) GARANTE(S) Y/O DEUDOR(ES) renuncia(n) a reclamar el “derecho de reposición” o “cupo “sobre 
+                 EL BIEN. CUARTA-LUGAR DE PERMANENCIA: EL BIEN permanecerá habitualmente en la dirección ({{ user.direccion }} )y en todo caso siempre dentro del 
+                 perímetro de la ciudad de Bogotá., sin perjuicio de que pueda utilizarse en el territorio nacional, previa notificación al acreedor garantizado. 
+                 QUINTA- DECLARACIONES DE EL (LOS) GARANTE(S) Y/O DEUDOR(ES): EL(LOS) GARANTE(S) Y/O DEUDOR(ES) declara(n) que a ) EL BIEN objeto del presente contrato es de su 
+                 exclusiva 
+            propiedad, que lo adquirió(rieron)  con justo título y de buena fe ,según consta en los documentos que reposan en su poder ,y no ha sido enajenado, ni en todo ni en parte,
+             por acto anterior a la celebración del presente contrato, ni tampoco prometido en venta, ni entregado en prenda con o sin tenencia, ni constituida garantía mobiliaria 
+             sobre el mismo, y lo posee(n) en forma regular ,pacífica y pública, estando libre de gravámenes y limitaciones de dominio de cualquier clase como embargos, pleitos 
+             pendientes, condiciones resolutorias, además no está sujeto a inscripción de demanda, embargo, y en todos los casos, se obliga(n) al salir al saneamiento de acuerdo con 
+             la ley) La garantía mobiliaria constituida por este instrumento  no modifica, altera, ni causa novación de obligaciones y/o garantías, reales y/o personales, constituidas
+              antes o después del otorgamiento de esta garantía a favor de El ACREEDOR GARANTIZADO, con el mismo objeto de la que por este instrumento se otorga, o con objeto similar.
+               PARÁGRAFO: EL(LOS) GARANTE(S) Y/O DEUDOR(ES) se obliga(n) expresamente y en todo tiempo con EL ACREEDOR GARANTIZADO a responder por la licitud de los documentos y 
+               placas de identificación del bien dado en garantía, así como de su debido registro y asume la responsabilidad civil o penal que se derive la falsedad o inexactitud de 
+               las de las declaraciones efectuadas a través de este contrato. SEXTA – SEGUROS : EL(LOS) GARANTE(S) Y/O DEUDOR(ES), durante la vigencia de las obligaciones garantizadas,
+                se obliga(n) a mantener vigente una póliza de seguros que ampare la vida del deudor(res) así como una póliza todo riesgo sobre EL BIEN objeto del presente contrato, con
+                 cualquiera de las compañías de seguros autorizadas por la Superintendencia Financiera de Colombia para el efecto, designado a EL ACREEDOR GARANTIZADO como primer 
+                 beneficiario de dicho seguro y estableciendo, sin excepción alguna, cláusula de renovación automática. PARÁGRAFO PRIMERO: EL(LOS) GARANTE(S) Y/O DEUDOR(ES) 
+                 expresamente manifiesta(n) que ha(n) sido informado(s) de la facultad con la que cuenta(n) de contratar directamente el seguro de EL BIEN con la aseguradora de su 
+                 elección, y autoriza(n) discrecionalmente a EL ACREEDOR GARANTIZADO para que tome la póliza de seguro mencionada u ordene su contratación cuando no le presente(n) la 
+                 póliza y su respectivo recibo de pago antes del desembolso de la(s) obligación(es) por mutuo garantizada(s) con el presente contrato, o con antelación de un (1) mes a 
+                 la fecha de vencimiento cuando se trate de su renovación, autorización esta  que no implica responsabilidad de EL ACREEDOR GARANTIZADO en caso de no hacer uso de ella, 
+                 por cuanto se trata de una facultad discrecional e la cual puede no hacer uso. PARÁGRAFO SEGUNDO: EL(LOS) GARANTE(S) Y/O DEUDOR(ES) se obliga(n) a pagar y, por tanto, 
+                 autoriza cargara la(s) obligación(es) garantizada(s) las sumas de dinero que con ocasión a la contratación del seguro anteriormente mencionado acredite haber pagado 
+                 EL ACREEDOR GARANTIZADO, así como sus intereses moratorios, aceptando para el efecto como suficiente prueba los certificados emitidos por el intermediario y/o compañía 
+                 de seguros respectiva. Así mismo, EL(LOS) GARANTE(S) Y/O DEUDOR(ES) reconoce(n) y acepta(n) que la mora en el pago de las primas genera los efectos establecidos en el 
+                 artículo 1068 del código de Comercio respecto a la terminación automática del seguro. PARÁGRAFO TECERO: EL(LOS) GARANTE(S) Y/O DEUDOR(Es) autoriza(n) a 
+                 EL ACREEDOR GARANTIZADO para que solicite y reciba de la aseguradora todas las sumas provenientes del pago de siniestros con el objeto de abonarlas a su(s) 
+                 obligación(es) en el orden convenido en el (los) pagaré(s), y colocar inmediatamente disposición de EL(LOS) GARANTE(S) Y/O DEUDOR(ES) cualquier remanente que 
+                 llegara a existir. SÉPTIMA-OBLIGACIONES DE EL (LOS)GARANTES Y/O DEUDOR (ES): las partes acuerdan como obligaciones a cargo de EL (LOS) GARANTE(S)Y/O DUDOR(ES) las 
+                 siguientes: a) Cancelar  la totalidad de los gastos que se ocasionen con el otorgamiento ,inscripción inicial, modificación, prórroga, transferencia, ejecución, 
+                 cancelación o restitución del presente contrato en el Registro de Garantías Mobiliarias; b) En caso de que el  ACREEDOR GARANTIZADO se vea precisado a promover 
+                 gestiones extrajudiciales, o cualquier acción judicial, o la ejecución de la garantía mobiliaria a través de cualquiera de los mecanismos establecidos en la Ley 
+                 1767 de 2013 y demás norma que la reglamenten, adicionen, modifiquen o sustituyan, para obtener el pago(s) de la(s) obligaciones garantizada(s), EL(LOS) GARANTE(S) 
+                 Y/O DEUDOR(ES) asumirán todos los gastos y costos que se ocasionen con ello, incluyendo pero sin limitarse a; avalúos, arancel judicial o su equivalente,  honorarios 
+                 de abogado y peritajes; c) Asumir los impuestos, gastos de matrícula, licencia de circulación, placas, tasas, contribuciones, multas, y sanciones por infracciones, 
+                 indemnizaciones a terceros por daños ocasionados con su utilización y en general, la totalidad de los gastos que puedan derivarse del uso de tenencia de EL BIEN, 
+                 conforme con su naturaleza y destinación d); Mantener EL BIEN en perfecto estado de funcionamiento y presentación , ejecutando a su costa todas las reparaciones que 
+                 para ellos fueren necesarias, teniendo en la conservación del bien gravado, las obligaciones y responsabilidades del depositario, la cuales ejercerá a título gratuito; 
+                 e) Informar al ACREEDOR GARANTIZADO cualquier cambio de domicilio o residencia dentro de los  diez(10) días siguientes a la fecha de su ocurrencia ,así como cualquier 
+                 traslado del bien fuera del país, para lo cual deberá obtener autorización expresa por parte del ACREEDOR GARANTIZADO ;f) Comunicar por escrito al ACREEDOR GARANTIZADO 
+                 sobre cualquier situación que puede poner en peligro la existencia material de EL BIEN, así como la presencia de medidas de carácter judicial que recaigan sobre el 
+                 mismo tan pronto como tenga conocimiento de la situación; g) Permitir  que en cualquier momento EL ACREEDOR GARANTIZADO, a través de sus empleados o terceras personas 
+                 contratadas para el efecto , inspeccione  EL BIEN,   para verificar su existencia, conservación, estado y condiciones, así como colocar EL BIEN a disposición de 
+                 EL ACREEDOR GARANTIZADO dentro de los tres (3) días hábiles siguientes al recibido de la comunicación dirigida a la dirección registrada por EL(LOS) GARANTE(S) 
+                 Y/O DEUDOR(ES), en la que se solicita  la presentación del BIEN para el efecto. PARÁGRAFO PRIMERO: EL(LOS) GARANTE(S) Y/O DEUDOR(ES) asumirá(n) los costos y/o gastos 
+                 que se deriven de la verificación técnica que se deriven de la verificación técnica que sea necesaria, a juicio de EL ACREEDOR GARANTIZADO, para establecer el estado 
+                 y condiciones de EL BIEN. PARÁGRAFO SEGUNDO: Queda convenido y por tanto EL(LOS) GARANTE(S) Y/O DEUDOR (ES) autoriza(n) a EL ACREEDOR GARANTIZADO para que cargue a 
+                 la(s) obligación(es) garantizada(s) las sumas de dinero derivadas de los conceptos descritos en la presente cláusula, a cuáles desde la fecha de su cancelación por 
+                 parte de EL ACREEDOR GARANTIZADO devengarán intereses corrientes y moratorios a la tasa máxima legal permitida. OCTAVA - CAUSALES DE ACELARACION  DEL PLAZO : 
+                 EL ACREEDOR GARANTIZADO podrá dar por vencido(s) el (los) plazo(s) pactado(s) con EL(LOS) GARANTE(ES) Y/O DEUDOR (ES) para la cancelación de la(s) obligación(es) , 
+                 exigiendo el pago inmediato del (los) saldo de la (s) misma(s) incluyendo y no limitando a capital, intereses, seguros, honorarios, gastos de cobranza, de recaudo o
+                 cualquier otro rubro en contraprestación de servicios adicionales que le haya prestado EL ACREEDOR GARANTIZADO y demás obligaciones accesorias, sin perjuicio de las 
+                 causales  estipuladas para el efecto en otros documentos suscritos por EL(LOS) GARANTE(ES) Y/O DEUDOR(ES) sin necesidad de requerimiento privado o judicial o 
+                 constitución en mora, y sin consideración al vencimiento y plazos pactados  a los cuales EL(LOS) GARANTE(ES) Y/O DEUDOR(ES) renuncia de manera expresa a razón a su 
+                 claro conocimiento  de los términos y condiciones  de las obligaciones adquiridas para con EL ACREEDOR GARANTIZADO, y en su oportunidad  EL ACREEDOR GARANTIZADO 
+                 podrá promover las acciones judiciales correspondientes o ejecutar la garantía mobiliaria conforme con lo previsto en el presente contrato en los siguientes casos : 
+                 a) Si EL(LOS) GARANTE(S) Y/O DEUDO R(ES)  incumple cualquier obligación legal o contractual directa o indirecta que tenga(n) para con EL ACREEDOR GARANTIZADO; 
+                 b) Si EL(LOS) GARANTE(S) Y/O DEUDOR(ES) grava(n) o enajena(n), en todo o en parte, EL BIEN sin consentimiento previo y escrito de EL ACREEDOR GARANTIZADO, o si 
+                 pierde(n) la titularidad o la posesión del mismo por cualquiera de los medios de que trata el artículo 789 del Código civil; c) Si en ejercicio de cualquier 
+                 acción , y en general si sobrevive acción judicial o extrajudicial  que en cualquier forma pueda afectar EL BIEN aquí grabado; d) Si la presente o cualquiera de las 
+                 garantías otorgadas a favor de EL ACREEDOR GARANTIZADO desaparece, se destruye o desmejora por cualquier causa o es abandonada por EL(LOS) GARANTE(ES) Y/O DEUDOR 
+                 (ES)  caso en la cual  EL ACREEDOR GARANTIZADO  podrá optar por la subsistencia del crédito  y del plazo correspondiente si EL(LOS) GARANTE(ES) Y/O DEUDOR(ES) da(n) 
+                 nuevas garantías de satisfacción  de EL ACREEDOR GARANTIZADO  ,e) Si se causan daños a terceros con EL BIEN o si es usado en forma ilícita, perjudicial o peligrosa 
+                 a los intereses de EL ACREEDOR GARANTIZADO, f) Por el giro de cheques sin provisión de fondos o el no pago de los mismos , por causa imputable al girador o 
+                 la entrega de los títulos valores aceptados por el acreedor respecto de los cuales se incumpla el pago, g) Por fallecimiento deudor o persona natural, 
+                 h) Por incurrir en reorganización empresarial, restructuración, liquidación judicial, si es persona  jurídica. Si se trata de persona natural no comerciante, 
+                 incurrir en insolvencia y liquidación patrimonial de bienes, i) Cuando cualquiera de los garantes y/o deudores llegare a ser vinculado por parte de las autoridades
+                  competentes a cualquier tipo de investigación por delitos de narcotráfico, terrorismo, secuestro, lavado de activos, financiación del terrorismo, administración 
+                  con recursos relacionados con actividades terroristas. J) Haber sido incluido(s) EL(LOS) GARANTE(ES) Y/O DEUDOR(ES) en listas para el control de lavado de activos
+                   administradas por cualquier autoridad nacional o extrajera, tales como la lista de control de activos en el exterior OFAC, emitida por el tesoro de los 
+                   Estados Unidos de Norte América , la lista de la organizaciones de la Naciones Unidas y otras listas públicas relacionadas con el tema de lavado de Activos y 
+                   Financiación del Terrorismo, o haber sido condenado por parte de las autoridades competentes en cualquier tipo de proceso judicial relacionado con la comisión 
+                   de los anteriormente señalados. PARÁGRAFO; En el evento en el que EL ACREEDOR GARANTIZADO opte por el ejercicio de las facultades previstas en la presenta 
+                   cláusula, será obligación de EL(LOS) GARANTE(S) Y/O DEUDOR(ES) entrega inmediatamente EL BIEN a EL ACREEDOR GARANTIZADO, cesando así la tenencia autorizada 
+                   en sus manos sin necesidad de construirlo(s) en mora a lo cual renuncian expresamente a través de este contrato, en caso contrario podrá el ACREEDOR GARANTIZADO, 
+                   como medida preventiva para garantizar el pago de las obligaciones y perjuicios causados, tomarlo en cualquier lugar donde se encuentre y retenerlo bajo la 
+                   responsabilidad y a costa de  EL(LOS) GARANTE(S) Y/O DEUDOR (ES) en tanto las autoridades judiciales resuelvan para lo cual EL(LOS) GARANTE(S) Y/O 
+                   DEUDOR(ES)manifiesta(n) su consentimiento, eventos en los cuales podrá EL ACREEDOR GARANTIZADO obrar por si, o recurrir a las autoridades policivas, judiciales, 
+                   administrativas o de circulación, para que mediante la simple presentación del presente contrato y sin necesidad de otra prueba, le presten protección para 
+                   recuperar la tenencia de EL BIEN. No podrá(n) EL(LOS) GARANTE(S) Y/O DEUDOR(ES) oponerse(n) en ningún caso a la toma de EL BIEN. En forma alguna, ni ejercitar 
+                   retención sobre el mismo, ni alegar u oponerse por mejoras reparaciones, adiciones, por cuanto a ellas se extiende el presente contrato de garantía. NOVENA - 
+                   EJECUCIÓN DE LA GARANTÍA MOBILIARIA: EL(LOS) GARANTE(S) Y/O DEUDOR (ES) y EL ACREEDOR GARANTIZADO acuerdan expresamente quien en caso de incumplimiento de las 
+                   obligaciones respaldadas por esta garantía mobiliaria. EL ACREEDOR GARANTIZADO estará facultado para proceder con la exigibilidad de la misma mediante cualquiera 
+                   de los siguientes mecanismo de ejecución, a elección de EL ACREEDOR GARANTIZADO, de conformidad con lo previsto en la ley 1676 de 2013 y demás normas que la 
+                   reglamenten, adicionen, modifiquen o sustituyan: a) Pago directo: en caso de incumplimiento de las obligaciones garantizadas por parte de EL(LOS) GARANTE(S) 
+                   Y/O DEUDOR(ES), EL ACREEDOR GARANTIZADO podrá recibir EL BIEN para contabilizarlo y aplicarlo a sus acreencias, mediante el pago directo según lo previsto en 
+                   el presente contrato, y el no previsto aquí, en lo regulado en la ley 1676 de 2013 y las normas que lo reglamenten, adicionen, modifiquen o sustituyan. Para 
+                   tal efecto, EL ACREEDOR GARANTIZADO le informa a él EL(LOS) GARANTE(S) Y/O DEUDOR(ES) su decisión de iniciar el trámite de pago directo, comunicación que será 
+                   remitida a la dirección física y/o electrónica indicada en el presente contrato ò a cualquiera de las direcciones de EL(LOS) GARANTE(S) Y/O DEUDOR(ES), que 
+                   figuren en los registros de EL ACREEDOR GARANTIZADO. EL(LOS) GARANTE(S) Y/O DEUDOR(ES) manifiesta(n) por medio del presente contrato que, en caso de que así lo 
+                   solicite EL ACREEDOR GARANTIZADO, procederá a hacer entrega voluntaria de EL BIEN en el lugar que EL ACREEDOR GARANTIZADO determine en la comunicación de 
+                   notificación de inicio de trámite de Pago Directo, dentro de los cinco (5) días hábiles siguientes al recibo de dicha comunicación. De no realizarse la entrega 
+                   de EL BIEN en el lugar y dentro del plazo estipulado EL(LOS) GARANTE(S) Y/O DEUDOR (ES), EL ACREEDOR GARANTIZADO, acuerdan expresamente que este podrá tomar 
+                   posesión material de EL BIEN en el lugar que se encuentre, sin necesidad de previo aviso o requerimiento alguno, directamente o por intermedio de quien 
+                   EL ACREEDOR GARANTIZADO designe. Para tal efecto EL ACREEDOR GARANTIZADO podrá deshabilitar el sistema eléctrico o electrónico de EL BIEN, a través de los 
+                   dispositivos que se le haya instalado, si es el caso, y determinar su ubicación mediante sistemas de ubicación satelital, previa información a EL(LOS) 
+                   GARANTE(S) Y/O DEUDOR (ES) 24 horas antes del uso de tal mecanismo. Una vez EL ACREEDOR GARANTIZADO tome posesión de EL BIEN, lo trasladará al lugar 
+                   establecido por él. De no lograrse la entrega voluntaria de EL BIEN, y no sea posible dar cumplimiento al procedimiento de aprehensión pactado, 
+                   EL ACREEDOR GARANTIZADO podrá solicitar a la entidad jurisdiccional competente, que libre orden de aprehensión 
+                   y entrega del bien y que el mismo se entregue y deposite en el lugar que indique EL ACREEDOR GARANTIZADO. En caso que se conozca el lugar de ubicación de 
+                   EL BIEN, así lo informará EL ACREEDOR GARANTIZADO a la autoridad jurisdiccional para efectos de su aprehensión. En tal caso EL ACREEDOR GARANTIZADO podrá 
+                   hacer uso de los medios de localización, b) Ejecución Especial: En caso de incumplimiento de las obligaciones garantizadas por parte de EL (LOS) GARANTE(S) 
+                   Y/O DEUDOR(ES), EL ACREEDOR GARANTIZADO podrá recibir EL BIEN para contabilizarlo y aplicarlo a sus acreencias, mediante mecanismo de Ejecución Especial 
+                   previstos en el artículo 62 y siguientes de la ley 1673 de 2013 y las normas que la reglamenten, adicionen, modifiquen o sustituyan. Para este efecto 
+                   EL ACREEDOR GARANTIZADO le informara a EL(LOS) GARANTE(S) Y/O DEUDOR (ES) su decisión de iniciar la ejecución especial, comunicación que será remitida a la 
+                   dirección física y/o electrónica indica en el presente contrato o a cualquiera de las direcciones de EL(LOS) GARANTE(S) Y/O DEUDOR (ES), que figuren en los 
+                   registros de EL ACREEDOR GARANTIZADO. EL ACREEDOR GARANTIZADO, podrá solicitar el inicio del procedimiento de Ejecución Especial ante el notario o el 
+                   Centro de Conciliación de la Cámara de Comercio del domicilio de EL(LOS) GARANTE(S) Y/O DEUDOR(ES), a elección de EL ACREEDOR GARANTIZADO. La autoridad 
+                   jurisdiccional que tramitará las oposiciones en caso de que se presenten, será el juez civil competente o la Súper Intendencia de Sociedades; esta última en el 
+                   evento de que EL(LOS) GARANTE(S) Y/O DEUDOR ES), sea vigilado por dicha entidad. Presentando el incumplimiento de la(s) obligación(es) garantizada(s), 
+                   EL ACREEDOR GARANTIZADO tendrá derecho de tomar posesión, aprehender, ejercer el control y tenencia de EL BIEN. En tal sentido, las partes del presente contrato 
+                   acuerdan que una vez EL ACREEDOR GARANTIZADO informe a EL (LOS) GARANTE(S) Y/O DEUDOR(ES) del incumplimiento, podrá solicitarle la entrega voluntaria de 
+                   EL BIEN por medio de la comunicación de notificación de inicio del trámite de Ejecución Especial, dentro de los cinco (5) días hábiles siguientes al recibo de 
+                   dicha comunicación. Las partes del presente contrato acuerdan que en el evento en que EL (LOS) GARANTE(S) Y/O DEUDOR(ES) no haga entrega de EL BIEN, 
+                   EL ACREEDOR GARANTIZADO podrá tomar posesión material de EL BIEN en el lugar que se encuentre, sin necesidad de previo aviso o requerimiento alguno, directamente o
+                    por intermedio de quien EL ACREEDOR GARANTIZADO designe. Para tal efecto EL ACREEDOR GARANTIZADO podrá deshabilitar el sistema eléctrico o electrónico de 
+                    EL BIEN, a través de los dispositivos que se le haya instalado y determinar su ubicación mediante sistemas de ubicación satelital, previa información a 
+                    EL (LOS) GARANTE(S) Y/O DEUDOR(ES) 24 horas antes del uso de tal mecanismo. PARÁGRAFO PRIMERO: Las partes del presente contrato acuerdan que, tanto para el 
+                    mecanismo de Pago Directo como para el Mecanismo de Ejecución Especial, EL ACREEDOR GARANTIZADO podrá apropiarse de EL BIEN y tomarlo en pago total o parcial 
+                    de las obligaciones garantizadas. PARÁGRAFO SEGUNDO: Las partes del presente contrato acuerdan que, para el mecanismo de Ejecución Especial, EL BIEN podrá ser 
+                    vendido directamente por EL ACREEDOR GARANTIZADO, por un precio equivalente al que resulte de la valoración previa de EL BIEN, conforme a lo previsto en el 
+                    parágrafo primero de esta cláusula. EL ACREEDOR GARANTIZADO podrá contratar servicios de terceros para efectos de promocionar y vender EL BIEN o acudir a los 
+                    procedimientos señalados en el artículo 69 de la Ley 1676 de 2013. PARÁGRAFO TERCERO: Sin perjuicio de lo establecido en el art2.2.2.4.2.72 del Decreto 1835 de 
+                    2015 , y además normas que lo aclaren o modifiquen, para efectos de proceder al traspaso de la propiedad de EL BIEN, cuando éste sea sujeto a registro, como 
+                    resultado del pago directo, ejecución especial de la garantía, EL(LOS) GARANTE(S) Y/O DEUDOR(ES) mediante la firma del presente contrato confiere(n) 
+                    poder especial, amplio y suficiente a EL ACREEDOR GARANTIZADO para que, a través de su representante legal o apoderado, suscriba en su(s) y representación los 
+                    documentos necesarios para el perfeccionamiento del traspaso de propiedad de EL BIEN a nombre de EL ACREEDOR GARANTIZADO, así como para que realice ante las 
+                    autoridades correspondientes los trámites tendientes a obtener el traspaso mencionado. DÉCIMA – CESIÓN: EL(LOS) GARANTE(S) Y/O DEUDOR(ES) reconoce(n) y acepta(n) 
+                    expresamente, con todas las consecuencias que la ley señala, cualquier cesión, total o parcial, que EL ACREEDOR GARANTIZADO haga de las obligaciones a su 
+                    cargo y de las garantías que las amparen, y desde ahora se da(n) por notificado(a) de la misma. DÉCIMA PRIMERA – TÉRMINO DEL CONTRATO Y VIGENCIA DE 
+                    LA INSCRIPCIÓN EN EL REGISTRO DE GARANTÍAS INMOBILIARIAS: Las partes establecen que el término del presente contrato y la vigencia de inscripción del mismo en el 
+                    Registro de Garantías Mobiliarias será de TREINTA Y SEIS  (36) meses, contados a partir de la fecha de suscripción del presente documento. A su vencimiento, 
+                    EL(LOS) GARANTE(S) Y/O DEUDORE(S) deberá(n) haber cancelado la totalidad de la(s) obligación(es) aquí garantizada(s), en caso contrario, la garantía mobiliaria 
+                    subsistirá sobre el saldo de cualquier obligación(es) pendiente(s) de cancelación por parte de EL(LOS) GARANTE(S) Y/O DEUDOR(ES). DÉCIMA SEGUNDA – INSCRIPCIÓN EN 
+                    LA OFICINA DE TRÁNSITO. Corresponde a EL (LOS) DEUDOR(ES) PRENDARIO(S) la inscripción de esta prenda ante las autoridades de Tránsito, así como entregar a 
+                    EL ACREEDOR PRENDARIO, copia de este documento debidamente registrado, un certificado de tradición y copia de la tarjeta de propiedad del vehículo donde conste 
+                    tal inscripción. DÉCIMA TERCERA – CUANTÍA PARA REGISTRO. Para efectos fiscales y de registro ante las autoridades respectivas, la cuantía de este contrato es de 
+                    ($17.000.000) DIECISIETE  MILLONES DE PESOS MCTE. DÉCIMA CUARTA – AUTORIZACIONES: EL(LOS) GARANTE(S) autoriza(n) a EL ACREEDOR GARANTIZADO para: 
+                    a) Llenar la identificación de EL BIEN, los cuales se diligenciarán conforme con la factura de venta expedida por el proveedor del mismo. En el  evento de que 
+                    en desarrollo de ésta facultad  se cometieren errores en el completamiento, EL ACREEDOR GARANTIZADO queda expresamente facultado para aclararlos , enmendarlos y 
+                    corregirlos de manera tal que el mismo responda a sus exigencias legales, b ) Entregar la información requerida por el Registro de Garantías Mobiliarias, 
+                    administrado por la Confederación Colombiana de Cámaras de Comercio ( Confecámaras) o cualquier entidad que en el futuro sea designada para ese fin, para la 
+                    inscripción del presente contrato y sus posteriores modificaciones, así como para que agregue o sustituya a los bienes dados en garantía, conforme con la 
+                    ley 1676 de 2013 y demás normas que la reglamenten, adicionen, modifiquen o sustituyan, c) Instalar en EL BIEN dispositivos de localización e inmovilización 
+                    del mismo, y utilizarlos en los eventos de incumplimiento de las obligaciones garantizadas por el presente contrato. Para tal efecto, EL ACREEDOR GARANTIZADO 
+                    informará a EL(LOS) GARANTE(S) Y/O DEUDOR(ES) con 24 horas de antelación la decisión de activar el mecanismo de inmovilización. DÉCIMA QUINTA – ACLARACIONES: 
+                    a) Por el hecho de celebrarse el presente contrato, EL ACREEDOR GARANTIZADO no adquiere obligación alguna de otorgar a EL(LOS) GARANTE(S) Y/O DEUDOR(ES) 
+                    créditos, desembolsos, prorrogas ni renovaciones de obligaciones vencidas o por vencerse antes o después de la fecha del presente documento, 
+                    b) Este contrato de garantía inmobiliaria estará vigente a partir de la fecha de su suscripción, siendo entendido que mientras no sea cancelado en forma 
+                    expresa por el presente autorizado de EL ACREEDOR GARANTIZADO, la garantías respaldará todas las obligaciones adquiridas con ocasión de su otorgamiento y 
+                    las que se causen o se  adquieran durante su vigencia por cualquier concepto, aun cuando EL(LOS) GARANTE(S) Y/O DEUDOR(ES) continúe(n) o no como propietario(a)(s) 
+                    de EL BIEN, pues el contrato produce efectos jurídicos contra terceros mientras no sea cancelada su inscripción. EL(LOS) GARANTE(S) Y/O DEUDOR(ES) DECLARA(N) 
+                    voluntaria, incondicional y expresamente que conoce(n) los términos y condiciones del presente contrato, que el mismo lo suscribe(n) después de haberlo recibido 
+                    previamente para su lectura, que las dudas sobre los términos, condiciones y conceptos en él contenidos fueron absueltas por EL ACREEDOR GARANTIZADO, y que por lo 
+                    tanto firma(n) el presente documento con pleno conocimiento de las estipulaciones que se establecen en él.  DÉCIMA QUINTA. Tratamiento de datos: EL(LOS) GARANTE(S) 
+                    Y/O DEUDOR(ES) AUTORIZA(N) a EL ACREEDOR GARANTIZADO, a utilizar los datos suministrados por el primero, con el objeto de realizar cobros, realizar notificaciones 
+                    u ofrecer productos o servicios, de forma directa o indirecta por intermedio de nuestros aliados comerciales. DÉCIMA SEXTA.  SARLAFT: EL (LOS) GARANTE(S) Y/O 
+                    DEUDOR(ES) MANIFIESTA(N) que el capital de donde proceden sus recursos es verificable y procede única y exclusivamente de actividades licitas y legales que se 
+                    pueden desarrollar dentro y fuera del ordenamiento jurídico colombiano.  
+                    En constancia de lo anterior, se firma en la ciudad de Bogotá el día  once  (28)  del mes de Noviembre  del año 2024.      
+        </p>
+<div class="firmas">
+<div class="contenedor-firmas">
+<div class="columna">
+<div class="header" style="text-align: left;">EL ACREEDOR GARANTIZADO</div>
+<hr/>
+<p style="text-align: left;">
+                        Nombre: PROMOTORA DE INVERSIONES JAMED SAS<br/>
+                        NIT: 901.039.293-9<br/>
+                        Dirección: KR 86 17 90<br/>
+                        Teléfono: 3243654879
+                    </p>
+</div>
+<div class="columna">
+<div class="header" style="text-align: left;">EL(LOS) GARANTE(S) Y/O DEUDOR(ES)</div>
+<hr/>
+<p style="text-align: left;">
+                        Nombre: {{ user.nombre }} {{ user.p_apellido }} {{ user.s_apellido }}<br/>
+                        C.C.: {{ user.cedula }} DE {{ user.ciudad_exp }}<br/>
+                        Dirección: {{ user.direccion }}<br/>
+                        Teléfono: {{ user.telefono }}<br/>
+                        Correo: <a href="mailto:rojas_marthac@hotmail.com">{{ user.correo }}</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="carta-instrucciones">
+<p style="text-align: center;"><strong>CARTA DE INSTRUCCIONES</strong></p>
+<br/>
+<p>Señor(a)</p>
+<p><strong>PROMOTORA DE INVERSIONES JAMED SAS</strong></p>
+<p>Ciudad</p>
+<br/>
+<br/>
+<p>Apreciados Señores:</p>
+<br/>
+<br/>
+<p style="text-align: justify;">Nosotros: {{ user.nombre }} {{ user.p_apellido }} {{ user.s_apellido }}, mayor(es) de edad, identificado(s) con la cédula de ciudadanía número  86.008.313 respectivamente, quien para los efectos del 
+            presente documento, me  denomino  el deudor, por medio de la presente carta de instrucciones y en los términos del artículo 622 del Código de Comercio, 
+            autorizo de manera permanente e irrevocable a PROMOTORA DE INVERSIONES JAMED SAS o al legitimo tenedor para que llene los espacios en blanco relativos a la 
+            cuantía, fecha de vencimiento y lugar de pago, contenidos en el pagaré No. 001, de acuerdo con las siguientes instrucciones.
+            <br/>
+            Puede y/o deberá ser llenado en el momento en que me (nos) coloque (coloquemos) en mora de cualquiera de mí (nuestras) obligación (es) contraída (s) con PROMOTORA DE INVERSIONES JAMED SAS
+        </p>
+<ol style="font-size: 13px; text-align: justify;">
+<li>Por concepto de cualesquiera créditos(s) o venta a largo plazo que me (nos) fue (ron) otorgado(s) o me (nos) llegaré a otorgar.</li>
+<li>La cuantía será igual al monto de todas las sumas que por concepto de cuotas, le esté (estemos) debiendo PROMOTORA DE INVERSIONES JAMED SAS, el día en que sea llenado, incluyendo los intereses pactados tanto remuneratorios como moratorios causados hasta esa fecha; y el valor del impuesto de timbre en caso de que se haya pagado.</li>
+<li>La fecha de creación del pagaré será aquella en que se completen los espacios dejados en blanco en el título, para convertirlo en título valor; así mismo será exigible a la vista o en la fecha indicada por PROMOTORA DE INVERSIONES JAMED SAS. El pagaré así llenado prestará mérito ejecutivo sin más requisitos.</li>
+<li>PROMOTORA DE INVERSIONES JAMED SAS, no tendrá que dar aviso previo para llenar los espacios en blanco dejados en el pagaré.</li>
+<li>Hago (hacemos) expreso reconocimiento de que conservo copia de estas instrucciones.</li>
+</ol>
+<p>En constancia de lo anterior, se firma en la ciudad de Bogotá el día once  (28)  del mes de Noviembre del año 2024.</p>
+</div>
+<div class="columna">
+<hr/>
+<p style="text-align: left;">
+            Nombre: {{ user.nombre }} {{ user.p_apellido }} {{ user.s_apellido }}<br/>
+            C.C.: {{ user.cedula }} DE {{ user.ciudad_exp }}<br/>
+            Dirección: {{ user.direccion }}<br/>
+            Teléfono: {{ user.telefono }}<br/>
+            Correo: <a href="mailto:rojas_marthac@hotmail.com">{{ user.correo }}</a>
+</p>
+</div>
+<div class="pagare">
+<p style="text-align: center;"><strong>PAGARE A LA ORDEN No.001</strong></p>
+<br/>
+<p>Valor:</p>
+<p>Fecha de vencimiento:</p>
+<br/>
+<p style="text-align: justify;">Nosotros {{ user.nombre }} {{ user.p_apellido }} {{ user.s_apellido }}, mayor(es) de edad, identificado(s) con la cédula de ciudadanía número  86.008.313, respectivamente, nos obligamos a pagar solidaria 
+            e incondicionalmente, a PROMOTORA DE INVERSIONES JAMED SAS o a su orden,  con domicilio principal en Bogotá, el día ___ del mes ____________del año._____ en la 
+            ciudad de __________________($______________________) capital e intereses de plazo y moratorios causados hasta la fecha de vencimiento de este pagare respecto al 
+            vehículo de placas VES562 de salir algún pendiente respecto al taxi y su cupo.
+        </p>
+<p style="text-align: justify;">
+            Durante el periodo que transcurra entre la fecha en que se diligencie el pagaré y aquella en que se cancele la obligación contraída, que instrumenta, nos obligamos 
+            a pagar intereses de mora a la máxima tasa autorizada por la ley, sin perjuicio de las acciones legales a que tenga derecho el acreedor y sin lugar a requerimiento 
+            previo.
+        </p>
+<p style="text-align: justify;">
+            Declaro (amos) que todos los gastos que cause este título valor, las costas de la cobranza y los honorarios de abogado si el cobro se hiciere judicial o 
+            extrajudicialmente, serán a mi (nuestro) cargo. PROMOTORA DE INVERSIONES JAMED SAS,  podrá ceder los derechos contenidos en este pagaré a cualquier persona natural o 
+            jurídica, haciendo declaración expresa que el acreedor queda con el derecho de dirigirse indistintamente contra cualquiera de los obligados por el presente instrumento, 
+            sin necesidad de recurrir a más notificaciones o requerimiento para constitución en mora y que la solidaridad subsiste en caso de prórroga o cualquier modificación a 
+            lo estipulado, aunque se pacte con uno sólo de los obligados.
+        </p>
+<p style="text-align: justify;">
+            Desde ahora autorizamos a PROMOTORA DE INVERSIONES JAMED SAS o a quien represente u ostente en el futuro la calidad de acreedor, a consultar, reportar, 
+            procesar, solicitar y divulgar información sobre nuestro comportamiento comercial a la central de información del Sector Financiero CIFIN que administra la 
+            Asociación Bancaria y de entidades financieras, o a cualquier otra entidad autorizada.
+        </p>
+<p style="text-align: justify;">En constancia de lo anterior, se firma en la ciudad de Bogotá el día once  (28)  del mes de Noviembre del año 2024.</p>
+</div>
+<div class="columna">
+<hr/>
+<p style="text-align: left;">
+            Nombre: {{ user.nombre }} {{ user.p_apellido }} {{ user.s_apellido }}<br/>
+            C.C.: {{ user.cedula }} DE {{ user.ciudad_exp }}<br/>
+            Dirección: {{ user.direccion }}<br/>
+            Teléfono: {{ user.telefono }}<br/>
+            Correo: <a href="mailto:rojas_marthac@hotmail.com">{{ user.correo }}</a>
+</p>
+</div>
+</body>
+</html>

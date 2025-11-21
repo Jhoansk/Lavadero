@@ -1,0 +1,167 @@
+{% extends "layout_creditos.html" %}
+{% load humanize %}
+
+{% block title %} Consulta de Cliente | Sistema de Créditos {% endblock %}
+
+{% block content %}
+
+<style>
+    .titulo-financiera {
+        font-weight: 700;
+        color: #2c3e50;
+    }
+    .card-financiera {
+        border-radius: 12px;
+        border: none;
+        background: white;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .btn-financiera {
+        background: #0d6efd;
+        color: white;
+        border-radius: 6px;
+    }
+    .btn-financiera:hover {
+        background: #084298;
+        color: white;
+    }
+</style>
+
+<div class="container">
+
+    <h2 class="titulo-financiera mb-4">👤 Consulta de Cliente</h2>
+
+    <!-- Formulario de búsqueda -->
+    <form method="get" class="row g-3 mb-4">
+        <div class="col-md-4">
+            <input 
+                type="text" 
+                name="cedula" 
+                value="{{ cedula }}" 
+                placeholder="Digite la cédula"
+                class="form-control form-control-lg">
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-financiera w-100 btn-lg">Buscar</button>
+        </div>
+    </form>
+
+    {% if user %}
+
+    <!-- Datos del cliente -->
+    <div class="card card-financiera mb-4">
+        <div class="card-body">
+            <h4 class="mb-3">📌 Datos del Cliente</h4>
+
+            <p class="fs-5"><strong>Nombre:</strong> {{ user.nombre }} {{ user.p_apellido }} {{ user.s_apellido }}</p>
+            <p><strong>Cédula:</strong> {{ user.cedula }}</p>
+            <p><strong>Teléfono:</strong> {{ user.telefono }}</p>
+        </div>
+    </div>
+
+    <!-- Documentos del cliente -->
+    <div class="card card-financiera mb-4">
+        <div class="card-body">
+
+            <h4 class="mb-3">📁 Documentos</h4>
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <div class="row g-3 mb-3">
+                    {{ form.as_p }}
+                </div>
+
+                <button class="btn btn-success">💾 Guardar documentos</button>
+            </form>
+
+            <hr class="my-4">
+
+            <h5 class="fw-bold">📥 Descargar Documentos</h5>
+
+            <ul class="list-group mt-3">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Documento 1:
+                    {% if user.documento1 %}
+                        <a href="{{ user.documento1.url }}" download class="btn btn-outline-primary btn-sm">Descargar</a>
+                    {% else %} <span class="text-muted">No subido</span> {% endif %}
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Documento 2:
+                    {% if user.documento2 %}
+                        <a href="{{ user.documento2.url }}" download class="btn btn-outline-primary btn-sm">Descargar</a>
+                    {% else %} <span class="text-muted">No subido</span> {% endif %}
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Documento 3:
+                    {% if user.documento3 %}
+                        <a href="{{ user.documento3.url }}" download class="btn btn-outline-primary btn-sm">Descargar</a>
+                    {% else %} <span class="text-muted">No subido</span> {% endif %}
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Documento 4:
+                    {% if user.documento4 %}
+                        <a href="{{ user.documento4.url }}" download class="btn btn-outline-primary btn-sm">Descargar</a>
+                    {% else %} <span class="text-muted">No subido</span> {% endif %}
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <!-- Créditos asociados -->
+    <div class="card card-financiera mb-5">
+        <div class="card-body">
+            <h4 class="mb-3">💼 Créditos del Cliente</h4>
+
+            <table class="table table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Vehículo</th>
+                        <th>Estado</th>
+                        <th>Valor</th>
+                        <th class="text-center">Detalle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in creditos %}
+                    <tr>
+                        <td>{{ c.id }}</td>
+                        <td>{{ c.vehiculo.placa }}</td>
+
+                        <td>
+                            {% if c.estado == 'Activo' %}
+                                <span class="badge bg-success">{{ c.estado }}</span>
+                            {% elif c.estado == 'En mora' %}
+                                <span class="badge bg-warning text-dark">{{ c.estado }}</span>
+                            {% elif c.estado == 'Cobro jurídico' %}
+                                <span class="badge bg-danger">{{ c.estado }}</span>
+                            {% else %}
+                                <span class="badge bg-secondary">{{ c.estado }}</span>
+                            {% endif %}
+                        </td>
+
+                        <td>${{ c.valor_inicial|floatformat:0|intcomma }}</td>
+
+                        <td class="text-center">
+                            <a class="btn btn-info btn-sm" href="{% url 'detalle_credito' c.id %}">
+                                Ver
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

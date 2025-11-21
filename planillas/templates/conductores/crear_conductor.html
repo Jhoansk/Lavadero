@@ -1,0 +1,77 @@
+{% extends "layout_taxis.html" %}
+{% load static %}
+
+{% block title %}Crear Conductor{% endblock %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <!-- Título -->
+    <div class="d-flex align-items-center mb-4">
+        <h2 class="fw-bold mb-0">
+            <i class="fas fa-id-card text-warning"></i> Crear Conductor
+        </h2>
+    </div>
+
+    <!-- Mensajes -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show shadow-sm" role="alert">
+                <i class="fas fa-info-circle"></i> {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <!-- CARD -->
+    <div class="card shadow-lg border-0 card-hover">
+        <div class="card-body p-4">
+
+            <form method="POST" class="row g-3">
+                {% csrf_token %}
+
+                <!-- Nombre -->
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Nombre</label>
+                    <input type="text" name="nombre_conductor"
+                           class="form-control form-control-lg shadow-sm" required>
+                </div>
+
+                <!-- Apellidos -->
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Apellidos</label>
+                    <input type="text" name="apellidos_conductor"
+                           class="form-control form-control-lg shadow-sm" required>
+                </div>
+
+                <!-- Cédula -->
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Cédula</label>
+                    <input type="text" name="cedula_conductor"
+                           class="form-control form-control-lg shadow-sm" required>
+                </div>
+
+                <!-- Autorización -->
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Autorización</label>
+                    <input type="text" name="autorizacion"
+                           class="form-control form-control-lg shadow-sm"
+                           placeholder="Cantidad o 'Indefinida'" required>
+                </div>
+
+                <!-- Botón -->
+                <div class="col-12 mt-3">
+                    <button class="btn btn-warning text-dark fw-bold px-4 shadow-sm">
+                        <i class="fas fa-save"></i> Guardar Conductor
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

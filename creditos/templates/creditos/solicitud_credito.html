@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Solicitud de Crédito - FINANTAXIS</title>
+<style>
+  /* Reset ligero */
+  * { box-sizing: border-box; }
+  html,body { margin:0; padding:0; font-family: "Helvetica Neue", Arial, sans-serif; color:#111; background:#fff; }
+  .page {
+    width:210mm; /* A4 */
+    min-height:297mm;
+    margin:10mm auto;
+    padding:15mm;
+    border:1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0,0,0,.1);
+  }
+
+  header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px; }
+  .brand { font-weight:700; font-size:20px; letter-spacing:1px; }
+  .small { font-size:11px; color:#555; }
+
+  h1.title { font-size:18px; margin:6px 0 12px 0; text-align:center; letter-spacing:2px; }
+  .row { display:flex; gap:12px; margin-bottom:8px; align-items:center; }
+  .col { flex:1; }
+  .col-2 { flex:2; }
+  .col-3 { flex:3; }
+  label { display:block; font-size:12px; margin-bottom:4px; color:#333; }
+  input[type="text"], input[type="date"], input[type="number"], textarea, select {
+    width:100%; padding:6px 8px; border:1px solid #bbb; border-radius:4px; font-size:13px;
+    background:transparent;
+  }
+  textarea { min-height:60px; resize:vertical; }
+
+  /* form-like boxes that look like printed lines */
+  .line {
+    border-bottom:1px solid #888;
+    padding:6px 0;
+    min-height:28px;
+  }
+
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .three-col { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; }
+
+  table { width:100%; border-collapse:collapse; margin-top:6px; }
+  th,td { padding:6px 8px; border:1px solid #ddd; font-size:13px; vertical-align:top; }
+  th { background:#f4f4f4; font-weight:600; text-align:left; }
+
+  .section { border:1px solid #e2e2e2; padding:10px; margin-bottom:12px; border-radius:6px; }
+  .section-title { font-size:14px; font-weight:700; margin-bottom:8px; color:#222; }
+
+  /* compact fields for checkboxes/radios inline like PDF */
+  .inline { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+  .inline label { margin:0; font-size:13px; }
+  .checkbox { display:inline-flex; align-items:center; gap:6px; }
+
+  /* signature area */
+  .signature {
+    display:flex; gap:20px; margin-top:14px; align-items:flex-end;
+  }
+  .sig-box { flex:1; border-top:1px solid #333; padding-top:6px; text-align:center; font-size:12px; color:#444; min-height:70px; }
+
+  /* small print */
+  .legal { font-size:11px; color:#333; margin-top:8px; line-height:1.25; }
+
+  /* responsive for screen */
+  @media (max-width:900px){
+    .page { width:100%; padding:12px; margin:6px; box-shadow:none; border:none; }
+  }
+
+  /* print tweaks */
+  @media print {
+    body { background:white; }
+    .page { box-shadow:none; border:none; margin:0; }
+    input, textarea { border:none; }
+  }
+</style>
+</head>
+<body>
+  <div class="page" role="document">
+    <header>
+      <div>
+        <div class="brand">FINANTAXIS</div>
+        <div class="small">NIT. 901.039.293-9</div>
+        <div class="small">BOGOTÁ: Carrera 86 # 17-90. Teléfono: 315 6292813</div>
+      </div>
+      <div style="text-align:right;">
+        <div class="small">SOLICITUD DE CRÉDITO</div>
+        <div style="margin-top:8px;">
+          <label>Ciudad / Fecha</label>
+          <input type="text" placeholder="Ciudad" style="width:120px; display:inline-block;" />
+          <input type="date" style="width:160px; display:inline-block;"/>
+        </div>
+      </div>
+    </header>
+
+    <h1 class="title">SOLICITUD DE CRÉDITO</h1>
+
+    <!-- Top block (Deudor / Codeudor / Vehículo / Valores) -->
+    <div class="section">
+      <div class="two-col" style="align-items:center;">
+        <div>
+          <label>Deudor</label>
+          <div class="line"><input type="text" placeholder="Nombre del deudor" style="border:none; padding:0;"/></div>
+        </div>
+        <div>
+          <label>Codeudor</label>
+          <div class="line"><input type="text" placeholder="Nombre del codeudor" style="border:none; padding:0;"/></div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:8px;">
+        <div class="col-3">
+          <label>Placa</label>
+          <div style="display:flex; gap:8px;">
+            <input type="text" placeholder="Placa" style="width:90px;" />
+          </div>
+        </div>
+
+        <div class="col">
+          <label>Valor total del vehículo</label>
+          <input type="number" placeholder="$" />
+        </div>
+
+        <div class="col">
+          <label>Valor solicitado</label>
+          <input type="number" placeholder="$" />
+        </div>
+
+        <div class="col">
+          <label>Valor cuota inicial</label>
+          <input type="number" placeholder="$" />
+        </div>
+
+        <div class="col">
+          <label>Plazo</label>
+          <input type="text" placeholder="Meses" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Datos del solicitante -->
+    <div class="section">
+      <div class="section-title">DATOS DEL SOLICITANTE</div>
+
+      <div class="three-col">
+        <div>
+          <label>Primer apellido</label>
+          <input type="text" />
+        </div>
+        <div>
+          <label>Segundo apellido</label>
+          <input type="text" />
+        </div>
+        <div>
+          <label>Primer nombre</label>
+          <input type="text" />
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:8px;">
+        <div style="flex:1;">
+          <label>Segundo nombre</label>
+          <input type="text" />
+        </div>
+        <div style="width:180px;">
+          <label>Fecha de nacimiento</label>
+          <input type="date" />
+        </div>
+        <div style="width:120px;">
+          <label>Tipo identific.</label>
+          <select>
+            <option>CC</option><option>TI</option><option>CE</option><option>PAS</option>
+          </select>
+        </div>
+        <div style="width:160px;">
+          <label>No. Documento</label>
+          <input type="text" />
+        </div>
+        <div style="width:110px;">
+          <label>Sexo</label>
+          <select><option>M</option><option>F</option></select>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:8px;">
+        <div class="col-2">
+          <label>Dirección domicilio</label>
+          <input type="text" />
+        </div>
+        <div style="width:80px;">
+          <label>Estrato</label>
+          <input type="text" />
+        </div>
+        <div style="width:200px;">
+          <label>Tipo vivienda</label>
+          <div class="inline">
+            <label class="checkbox"><input type="radio" name="vivienda"> Propia</label>
+            <label class="checkbox"><input type="radio" name="vivienda"> Arriendo</label>
+            <label class="checkbox"><input type="radio" name="vivienda"> Familia</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:8px;">
+        <div style="width:260px;">
+          <label>Tiempo de permanencia</label>
+          <input type="text" placeholder="años/meses" />
+        </div>
+        <div style="width:240px;">
+          <label>Ocupación</label>
+          <div class="inline">
+            <label class="checkbox"><input type="radio" name="ocup"> Empleado</label>
+            <label class="checkbox"><input type="radio" name="ocup"> Independ.</label>
+            <label class="checkbox"><input type="radio" name="ocup"> Pensionado</label>
+          </div>
+        </div>
+        <div style="flex:1;">
+          <label>Nivel de estudio / Profesión</label>
+          <input type="text" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Datos del cónyuge -->
+    <div class="section">
+      <div class="section-title">DATOS DEL CÓNYUGE</div>
+      <div class="row">
+        <div class="col">
+          <label>Empresa</label>
+          <input type="text" />
+        </div>
+        <div class="col">
+          <label>Dirección</label>
+          <input type="text" />
+        </div>
+        <div style="width:160px;">
+          <label>Teléfono</label>
+          <input type="text" />
+        </div>
+        <div style="width:140px;">
+          <label>Ciudad</label>
+          <input type="text" />
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:8px;">
+        <div style="width:160px;">
+          <label>Día / Mes / Año ingreso</label>
+          <input type="date" />
+        </div>
+        <div style="width:160px;">
+          <label>Tipo de contrato</label>
+          <select>
+            <option>Indepen.</option><option>Fijo</option><option>Temporal</option>
+          </select>
+        </div>
+        <div style="width:160px;">
+          <label>Personas a cargo</label>
+          <input type="number" min="0" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Información financiera -->
+    <div class="section">
+      <div class="section-title">INFORMACIÓN FINANCIERA</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Concepto</th>
+            <th>Mensuales - Solicitante</th>
+            <th>Mensuales - Cónyuge</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Salario</td>
+            <td><input type="number" style="width:100%;" /></td>
+            <td><input type="number" style="width:100%;" /></td>
+          </tr>
+          <tr>
+            <td>Arrendamientos / Honorarios / Otros</td>
+            <td><input type="number" style="width:100%;" /></td>
+            <td><input type="number" style="width:100%;" /></td>
+          </tr>
+          <tr>
+            <td><strong>TOTAL INGRESOS</strong></td>
+            <td><input type="number" style="width:100%;" /></td>
+            <td><input type="number" style="width:100%;" /></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table style="margin-top:8px;">
+        <thead>
+          <tr>
+            <th>EGRESOS</th>
+            <th>Solicitante</th>
+            <th>Cónyuge</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Gastos familiares</td><td><input type="number" /></td><td><input type="number" /></td></tr>
+          <tr><td>Arriendo</td><td><input type="number" /></td><td><input type="number" /></td></tr>
+          <tr><td>Cuotas créditos</td><td><input type="number" /></td><td><input type="number" /></td></tr>
+          <tr><td>Otros</td><td><input type="number" /></td><td><input type="number" /></td></tr>
+          <tr><td><strong>TOTAL EGRESOS</strong></td><td><input type="number" /></td><td><input type="number" /></td></tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top:8px;">
+        <label>Concepto de otros ingresos / Especifique otros egresos</label>
+        <textarea></textarea>
+      </div>
+    </div>
+
+    <!-- Bienes / Préstamos -->
+    <div class="section">
+      <div class="section-title">BIENES / PRÉSTAMOS / OTROS</div>
+
+      <div class="row">
+        <div class="col">
+          <label>Bienes raíces - Dirección / Ciudad</label>
+          <input type="text" />
+        </div>
+        <div style="width:120px;">
+          <label>Hipoteca</label>
+          <div class="inline">
+            <label class="checkbox"><input type="radio" name="hipoteca"> Sí</label>
+            <label class="checkbox"><input type="radio" name="hipoteca"> No</label>
+          </div>
+        </div>
+        <div style="width:160px;">
+          <label>Vlr. Comercial</label>
+          <input type="number" />
+        </div>
+      </div>
+
+      <div style="margin-top:8px;">
+        <label>Vehículo (Marca / Clase / Modelo / Placa / Servicio)</label>
+        <input type="text" />
+      </div>
+
+      <div style="margin-top:8px;">
+        <label>Préstamos / Otras deudas (Entidad / Monto inicial / Plazo / Saldo)</label>
+        <textarea placeholder="Ej: Banco X - $ - 24 meses - Saldo $"></textarea>
+      </div>
+    </div>
+
+    <!-- GARANTÍA ADICIONAL -->
+    <div class="section">
+      <div class="section-title">GARANTÍA ADICIONAL</div>
+
+      <div class="row">
+        <div class="col">
+          <label>Vehículo (Marca / Línea / Modelo / Placa)</label>
+          <input type="text" />
+        </div>
+        <div style="width:160px;">
+          <label>Valor total</label>
+          <input type="number" />
+        </div>
+        <div style="width:200px;">
+          <label>Ciudad / Barrio</label>
+          <input type="text" />
+        </div>
+      </div>
+
+      <div style="margin-top:8px;">
+        <label>Datos persona que garantiza (Nombres / Apellidos)</label>
+        <input type="text" />
+      </div>
+
+      <div style="margin-top:8px;">
+        <label>Dirección / Teléfono / Vlr. Crédito</label>
+        <div style="display:flex; gap:8px;">
+          <input type="text" placeholder="Dirección" />
+          <input type="text" placeholder="Teléfono" style="width:160px;" />
+          <input type="number" placeholder="Vlr. Crédito" style="width:160px;" />
+        </div>
+      </div>
+    </div>
+
+    <!-- REFERENCIAS -->
+    <div class="section">
+      <div class="section-title">REFERENCIAS FAMILIARES / PERSONALES / COMERCIALES</div>
+
+      <div>
+        <label>Referencia 1 - Nombres y apellidos / Parentesco / Dirección / Ciudad / Teléfono</label>
+        <input type="text" />
+      </div>
+      <div style="margin-top:6px;">
+        <label>Referencia 2 - Nombres y apellidos / Parentesco / Dirección / Ciudad / Teléfono</label>
+        <input type="text" />
+      </div>
+
+      <div style="margin-top:8px;">
+        <label>Referencia comercial / Empresa / Teléfono / Ciudad</label>
+        <input type="text" />
+      </div>
+    </div>
+
+    <!-- ANTECEDENTES y AUTORIZACIONES -->
+    <div class="section">
+      <div class="section-title">ANTECEDENTES / PODERES Y AUTORIZACIONES</div>
+      <p class="legal">
+        En mi calidad de titular, actuando libre y voluntariamente, autorizo de manera expresa e irrevocable a FINANTAXIS para el tratamiento de mis datos,
+        envío de comunicaciones, consulta y reporte a centrales de riesgo, y lo declarado en las secciones legales del presente formulario. Declaro que la
+        información entregada es veraz y autorizo las verificaciones necesarias.
+      </p>
+
+      <div style="margin-top:8px;">
+        <label>Poliza / GPS / Observaciones</label>
+        <input type="text" />
+      </div>
+
+      <div style="margin-top:12px;">
+        <label>Autorizo envío de comunicaciones (SMS / Email)</label>
+        <div class="inline">
+          <label class="checkbox"><input type="radio" name="comunic"> SÍ</label>
+          <label class="checkbox"><input type="radio" name="comunic"> NO</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Firma -->
+    <div class="section">
+      <div class="signature">
+        <div class="sig-box">FIRMA SOLICITANTE<br>CC. No. ___________________<br>Huella índice derecho</div>
+        <div class="sig-box">FIRMA CODEUDOR<br>CC. No. ___________________</div>
+        <div class="sig-box">APROBADO / NO APROBADO<br>Firma funcionario</div>
+      </div>
+    </div>
+
+    <footer style="margin-top:6px; font-size:11px; color:#444;">
+      <div>BOGOTÁ: Carrera 86 # 17-90. Teléfono: 315 6292813</div>
+      <div style="margin-top:6px;">Declaraciones legales: He leído, entendido y acepto las condiciones aquí consignadas.</div>
+    </footer>
+  </div>
+</body>
+</html>

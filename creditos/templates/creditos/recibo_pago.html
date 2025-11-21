@@ -1,0 +1,134 @@
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo {{ pago_operacion.consecutivo }}</title>
+
+    <style>
+        body { font-family: 'Courier New', monospace; background:#f8f9fa; font-size:12px; padding:20px; }
+        .recibo { width:300px; margin:auto; background:#fff; border:1px solid #ddd; padding:20px; }
+        .header { text-align:center; border-bottom:2px solid #000; padding-bottom:10px; margin-bottom:15px; }
+        .empresa { font-size:16px; font-weight:bold; }
+        .tipo-doc { background:black; color:white; padding:5px; text-align:center; font-weight:bold; margin-top:10px; }
+        .linea { display:flex; justify-content:space-between; }
+        .sep { border-top:1px dashed #333; margin:10px 0; }
+        table { width:100%; border-collapse:collapse; }
+        th, td { padding:3px 0; font-size:11px; }
+        .small { font-size:11px; }
+        .total-box { background:#eee; padding:8px; border:1px solid #ccc; font-weight:bold; text-align:center; margin:10px 0; }
+        .footer { text-align:center; border-top:2px solid #000; margin-top:15px; padding-top:10px; font-size:10px; }
+        @media print { body { background:white; padding:0 } .recibo { width:100%; border:none; box-shadow:none } .no-print { display:none } }
+    </style>
+</head>
+<body>
+
+<div class="recibo">
+
+    <div class="header">
+        <div class="empresa">FINANTAXIS</div>
+        <div>NIT: 901.039.293-9</div>
+        <div>Calle 13 #43-06</div>
+        <div>Tel: (601) 123-4567</div>
+    </div>
+
+    <div class="tipo-doc">RECIBO DE PAGO</div>
+    <div class="linea"><strong>No:</strong> {{ pago_operacion.consecutivo }}</div>
+
+    <!-- Cliente -->
+    <div class="linea"><strong>Cliente:</strong> {{ credito.usuario.nombre }} {{ credito.usuario.p_apellido }}</div>
+    <div class="linea"><strong>Cédula:</strong> {{ credito.usuario.cedula }}</div>
+    <div class="linea"><strong>Fecha:</strong> {{ pago_operacion.fecha_hora|date:"d/m/Y" }}</div>
+    <div class="linea"><strong>Hora:</strong> {{ pago_operacion.fecha_hora|date:"H:i:s" }}</div>
+
+    <div class="sep"></div>
+
+    <!-- Crédito -->
+    <div class="linea"><strong>Crédito:</strong> {{ credito.id }}</div>
+    <div class="linea"><strong>Monto inicial:</strong> ${{ credito.valor_inicial|floatformat:0|intcomma }}</div>
+
+    <div class="sep"></div>
+
+    <strong>Items pagados: {{ pago_operacion.items_count }}</strong>
+
+    <table>
+        <thead>
+            <tr>
+                <th class="small">Detalle</th>
+                <th class="small" style="text-align:right">Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for it in pagos_items %}
+                <tr>
+                    <td>
+                        {% if it.tipo_pago == 'cuota' %}
+                            Cuota {{ it.cuota_numero }}
+                            <div class="small">Vence: {{ it.fecha_vencimiento|date:"d/m/Y" }}</div>
+                            <div class="small">Capital: ${{ it.abono_capital|floatformat:0|intcomma }}</div>
+                            <div class="small">Interés: ${{ it.interes|floatformat:0|intcomma }}</div>
+
+                            {% if it.servicios %}
+                                <div class="small">Servicios:</div>
+                                <ul class="small" style="padding-left:15px; margin:0;">
+                                    {% for s in it.servicios %}
+                                        <li>{{ s.tipo }}: ${{ s.valor_mensual|floatformat:0|intcomma }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+
+                        {% else %}
+                            Abono a capital
+                            {% if it.observacion %}<div class="small">{{ it.observacion }}</div>{% endif %}
+                        {% endif %}
+                    </td>
+
+                    <td style="text-align:right; vertical-align:top;">
+                        ${{ it.valor_pagado|floatformat:0|intcomma }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td style="text-align:right;"><strong>TOTAL PAGADO</strong></td>
+                <td style="text-align:right;"><strong>${{ total_operacion|floatformat:0|intcomma }}</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="sep"></div>
+
+    <!-- Saldos -->
+    <div class="linea"><strong>Saldo capital:</strong> ${{ saldo_capital|floatformat:0|intcomma }}</div>
+    <div class="linea"><strong>Intereses pendientes:</strong> ${{ intereses|floatformat:0|intcomma }}</div>
+
+    <div class="total-box">
+        TOTAL ADEUDADO: ${{ saldo_total|floatformat:0|intcomma }}
+    </div>
+
+    <div class="sep"></div>
+
+    <!-- Servicios restantes -->
+    <div class="linea"><strong>Seguro TR restante:</strong> ${{ seguro_restante|floatformat:0|intcomma }}</div>
+    <div class="linea"><strong>GPS restante:</strong> ${{ gps_restante|floatformat:0|intcomma }}</div>
+
+    <div class="sep"></div>
+
+    <div class="footer">
+        <strong>¡Gracias por su pago!</strong><br>
+        Generado {{ pago_operacion.fecha_hora|date:"d/m/Y H:i:s" }}<br>
+        Sistema FINANTAXIS v1.0
+    </div>
+
+</div>
+
+<div class="no-print" style="text-align:center; margin-top:20px;">
+    <button onclick="window.print()">🖨️ Imprimir</button>
+    <button onclick="window.close()">Cerrar</button>
+</div>
+
+</body>
+</html>

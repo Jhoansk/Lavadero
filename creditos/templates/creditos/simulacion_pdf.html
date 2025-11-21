@@ -1,0 +1,145 @@
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Simulación de Crédito</title>
+
+<style>
+
+    body {
+        font-family: "DejaVu Sans", sans-serif;
+        font-size: 12px;
+        color: #2c3e50;
+        margin: 40px 40px;
+    }
+
+    .titulo-principal {
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #1a2942;
+        text-transform: uppercase;
+    }
+
+    .subtitulo {
+        text-align: center;
+        font-size: 14px;
+        color: #34495e;
+        margin-bottom: 20px;
+    }
+
+    .info-box {
+        border: 1px solid #d5dce3;
+        padding: 15px;
+        border-radius: 8px;
+        background: #f8f9fb;
+        margin-bottom: 25px;
+    }
+
+    .info-box p {
+        margin: 3px 0;
+        font-size: 13px;
+    }
+
+    .info-label {
+        font-weight: bold;
+        color: #1a2942;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        font-size: 12px;
+    }
+
+    thead th {
+        background: #1a2942;
+        color: white;
+        padding: 6px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: 1px solid #1a2942;
+    }
+
+    tbody td {
+        border: 1px solid #b5c0c8;
+        padding: 6px;
+        text-align: center;
+    }
+
+    .totales {
+        margin-top: 25px;
+        font-size: 14px;
+    }
+
+    .totales b {
+        color: #1a2942;
+    }
+
+    .footer {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 11px;
+        color: #7f8c8d;
+    }
+
+</style>
+
+</head>
+<body>
+
+    <!-- TITULO -->
+    <h1 class="titulo-principal">Simulación de Crédito</h1>
+    <p class="subtitulo">Reporte generado automáticamente</p>
+
+    <!-- INFORMACIÓN DEL CLIENTE -->
+    <div class="info-box">
+        <p><span class="info-label">Cliente:</span> {{ nombre }}</p>
+        <p><span class="info-label">Teléfono:</span> {{ telefono }}</p>
+        <p><span class="info-label">Valor solicitado:</span> ${{ valor|floatformat:2 }}</p>
+        <p><span class="info-label">Número de cuotas:</span> {{ cuotas }}</p>
+        <p><span class="info-label">Interés mensual:</span> {{ interes }}%</p>
+    </div>
+
+    <!-- TABLA DE CRONOGRAMA -->
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Capital</th>
+                <th>Interés</th>
+                <th>Cuota</th>
+                <th>Saldo</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for c in cronograma %}
+            <tr>
+                <td>{{ c.numero }}</td>
+                <td>${{ c.abono_capital|floatformat:0|intcomma }}</td>
+                <td>${{ c.interes|floatformat:0|intcomma }}</td>
+                <td>${{ c.cuota_total|floatformat:0|intcomma }}</td>
+                <td>${{ c.saldo_restante|floatformat:0|intcomma }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- TOTALES -->
+    <div class="totales">
+        <p><b>Total intereses:</b> ${{ total_intereses|floatformat:0|intcomma }}</p>
+        <p><b>Total a pagar:</b> ${{ total_pagar|floatformat:0|intcomma }}</p>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <div class="footer">
+        Sistema Financiero – Reporte generado automáticamente.  
+        Este documento no requiere firma o sello.
+    </div>
+
+</body>
+</html>
