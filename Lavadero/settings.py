@@ -44,8 +44,6 @@ INSTALLED_APPS = [
     'vehiculos',
     'cliente',
     'contratos',
-    'creditos',
-    'planillas',
     'tinymce',
     'django.contrib.humanize',
 ]
@@ -82,6 +80,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Lavadero.wsgi.application'
+
+LOGIN_REDIRECT_URL = '/redirigir-por-sede/'
 
 
 # Database
@@ -143,7 +143,6 @@ STATICFILES_DIRS = [
     BASE_DIR / "cliente" / "static",
     BASE_DIR / "vehiculos" / "static",
     BASE_DIR / "contratos" / "static",
-    BASE_DIR / "creditos" / "static",
 ]
 
 STATIC_ROOT = BASE_DIR / "staticfiles"

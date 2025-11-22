@@ -25,6 +25,8 @@ from cliente.views import handler404 as handler404_clientes
 from django.conf.urls.static import static
 from vehiculos.views import login_view,register_employee
 from django.contrib.auth.views import LogoutView 
+from vehiculos import views as vehiculos_views
+from contratos import views as contratos_views
 
 
 urlpatterns = [
@@ -39,6 +41,8 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('creditos/', include('creditos.urls')),
     path('planillas/', include('planillas.urls')),
+    path("home/", contratos_views.inicio, name="home"),
+    path('redirigir-por-sede/', vehiculos_views.redirigir_por_sede, name='redirigir_por_sede'),
 
 ]
 if settings.DEBUG:

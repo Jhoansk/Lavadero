@@ -18,7 +18,7 @@ def importar_planillas(request):
     # -----------------------------------------
     # VALIDACIÓN DE PERMISOS
     # -----------------------------------------
-    if not (request.user.sede == "Operadora" and request.user.rol == "Administrador"):
+    if not (request.user.sede == "Operadora" and request.user.rol == "administrador"):
         messages.error(request, "No tienes permisos para acceder a este módulo.")
         return redirect("home")  # Cambia por la vista adecuada
 
@@ -201,7 +201,7 @@ def importar_vehiculos(request):
     # -----------------------------------------
     # VALIDACIÓN DE PERMISOS
     # -----------------------------------------
-    if not (request.user.sede == "Operadora" and request.user.rol == "Administrador"):
+    if not (request.user.sede == "Operadora" and request.user.rol == "administrador"):
         messages.error(request, "No tienes permisos para acceder a este módulo.")
         return redirect("home")  # Cambia "home" por el destino deseado
 
@@ -345,7 +345,7 @@ def crear_autorizacion(request, placa):
     # ----------------------------------------------------
     # PERMISOS REQUERIDOS → Operadora + Administrador
     # ----------------------------------------------------
-    if not (request.user.sede == "Operadora" and request.user.rol == "Administrador"):
+    if not (request.user.sede == "Operadora" and request.user.rol == "administrador"):
         messages.error(request, "No tienes permisos para acceder a este módulo.")
         return redirect("home")   # Ajusta la vista destino
 
@@ -391,7 +391,7 @@ def editar_autorizacion(request, id):
     # ----------------------------------------------------
     # PERMISOS → Operadora + Administrador
     # ----------------------------------------------------
-    if not (request.user.sede == "Operadora" and request.user.rol == "Administrador"):
+    if not (request.user.sede == "Operadora" and request.user.rol == "administrador"):
         messages.error(request, "No tienes permisos para acceder a este módulo.")
         return redirect("home")  # Ajusta según tu proyecto
 
@@ -419,7 +419,7 @@ def eliminar_autorizacion(request, id):
     # ----------------------------------------------------
     # PERMISOS → Operadora + Administrador
     # ----------------------------------------------------
-    if not (request.user.sede == "Operadora" and request.user.rol == "Administrador"):
+    if not (request.user.sede == "Operadora" and request.user.rol == "administrador"):
         messages.error(request, "No tienes permisos para acceder a este módulo.")
         return redirect("home")
 

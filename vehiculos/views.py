@@ -23,15 +23,41 @@ from django.db.models import Q
 # Vistas para el login
 def login_view(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
+        username = request.POST.get('username')
+        password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('dashboard')  # Redirige a la vista de inicio
+            # Redirigimos al enrutador central que decide según la sede
+            return redirect('redirigir_por_sede')
         else:
             messages.error(request, 'Usuario o contraseña incorrectos.')
     return render(request, 'login.html')
+
+def redirigir_por_sede(request):
+    usuario = request.user
+    print("USUARIO LOGUEADO:", request.user.username)
+    print("SEDE DEL USUARIO:", request.user.sede)
+
+    if not usuario.is_authenticated:
+        return redirect("login")
+
+    # === SEDE TAXI CUPOS → CONTRATOS ===
+    if usuario.sede == "Taxi Cupos":
+        return redirect("inicio")  # Ruta de Contratos
+
+    # === SEDE OPERADORA → PLANILLAS ===
+    if usuario.sede == "Operadora":
+        return redirect("dashboard_vehiculos")
+
+    # === SEDE FINANCIERA → CREDITOS ===
+    if usuario.sede == "Financiera":
+        return redirect("dashboard")
+
+
+    # Si no coincide con nada
+    messages.error(request, "No tienes una sede asignada para iniciar sesión.")
+    return redirect("login")
 
 # Vista para registrar un nuevo usuario (empleado)
 @login_required

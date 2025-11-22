@@ -37,9 +37,20 @@ def requiere_sede_operadora(view_func):
     def wrapper(request, *args, **kwargs):
         usuario = request.user
 
-        # Si el usuario NO tiene sede operadora
+        # Si NO es Operadora
         if usuario.sede != "Operadora":
             messages.error(request, "No tienes permisos para acceder a este módulo.")
-            return redirect("home")  # Cambia a tu página principal
+
+            # Redirecciones según la sede del usuario
+            if usuario.sede == "Taxi Cupos":
+                return redirect("inicio")
+
+            if usuario.sede == "Financiera":
+                return redirect("dashboard")
+
+            # Si no coincide con ninguna sede conocida
+            return redirect("login")
+
+        # Si sí es Operadora
         return view_func(request, *args, **kwargs)
     return wrapper
