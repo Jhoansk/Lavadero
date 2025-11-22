@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'vehiculos',
     'cliente',
     'contratos',
+    'creditos',
+    'planillas',
     'tinymce',
     'django.contrib.humanize',
 ]
@@ -143,6 +145,8 @@ STATICFILES_DIRS = [
     BASE_DIR / "cliente" / "static",
     BASE_DIR / "vehiculos" / "static",
     BASE_DIR / "contratos" / "static",
+    BASE_DIR / "creditos" / "static",
+
 ]
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
