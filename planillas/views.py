@@ -12,7 +12,7 @@ from django.db.models import Sum, Count, F
 from django.contrib.auth.decorators import login_required
 from .utils import requiere_sede_operadora
 
-@login_required
+
 def importar_planillas(request):
 
     # -----------------------------------------
@@ -166,7 +166,7 @@ def importar_planillas(request):
 
     return render(request, "planillas/importar.html", {"form": ArchivoPlanillasForm()})
 
-@login_required
+
 def convertir_fecha(valor):
     if pd.isna(valor):
         return None

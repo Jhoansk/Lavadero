@@ -69,7 +69,7 @@ class PlanillasRunt(models.Model):
     usuario = models.CharField(max_length=100, null=True, blank=True)
     tipo_documento_conductor = models.CharField(max_length=20, null=True, blank=True)
     cedula_conductor = models.CharField(max_length=20, null=True, blank=True)
-    regresa_con_contratante = models.CharField(max_length=5, null=True, blank=True)
+    regresa_con_contratante = models.CharField(max_length=50, null=True, blank=True)
     pasajeros = models.IntegerField(null=True, blank=True)
     tipo_documento_pasajero = models.CharField(max_length=20, null=True, blank=True)
     cedula_pasajero = models.CharField(max_length=20, null=True, blank=True)
