@@ -1,5 +1,5 @@
 {% extends "layout_creditos.html" %}
-
+{% load humanize %}
 {% block title %} Registrar Pagos | Crédito #{{ credito.id }} {% endblock %}
 
 {% block content %}
@@ -65,7 +65,7 @@
             💵 Registrar Pagos — Crédito #{{ credito.id }}
         </h3>
 
-        <p class="fs-5"><strong>Saldo actual:</strong> ${{ saldo|floatformat:2 }}</p>
+        <p class="fs-5"><strong>Saldo actual:</strong> ${{ saldo|floatformat:0|intcomma }}</p>
 
         <form method="post" id="pagoForm">
             {% csrf_token %}
@@ -77,6 +77,9 @@
                         <tr>
                             <th>Cuota</th>
                             <th>Valor a pagar</th>
+                            <th>Interés mora</th>
+                            <th>Cobro jurídico</th>
+                            <th>Total</th>
                             <th>Observación</th>
                             <th>Acción</th>
                         </tr>
@@ -84,9 +87,25 @@
                     <tbody>
                         {% for form in formset %}
                         <tr class="pago-row">
+
                             <td>{{ form.cuota_numero }}</td>
+
                             <td>{{ form.valor_pagado }}</td>
+
+                            <td>
+                                <input type="number" step="0.01" class="form-control mora-input"
+                                       name="form-{{ forloop.counter0 }}-interes_moratorio_pagado" value="0">
+                            </td>
+
+                            <td>
+                                <input type="number" step="0.01" class="form-control juridico-input"
+                                       name="form-{{ forloop.counter0 }}-cobro_juridico_pagado" value="0">
+                            </td>
+
+                            <td class="fw-bold total-linea">$0.00</td>
+
                             <td>{{ form.observacion }}</td>
+
                             <td class="text-center">
                                 <button type="button" class="btn btn-danger btn-sm eliminar-fila btn-eliminar">
                                     ✕
@@ -145,161 +164,156 @@
 
 
 <!-- ===================== -->
-<!--  JAVASCRIPT ORIGINAL  -->
+<!--  JAVASCRIPT ACTUALIZADO -->
 <!-- ===================== -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
   const tableBody = document.querySelector("#pagosTable tbody");
   const agregarFilaBtn = document.getElementById("agregarFila");
   const totalForms = document.getElementById("id_form-TOTAL_FORMS");
   const totalPagarEls = document.querySelectorAll("#totalPagar");
   const pagoForm = document.getElementById("pagoForm");
 
-  function actualizarTotal() {
-    let total = 0;
-    document.querySelectorAll("input[name$='valor_pagado']").forEach(input => {
-      const val = parseFloat(input.value);
-      if (!isNaN(val)) total += val;
-    });
-    const txt = "$" + total.toLocaleString("es-CO", {minimumFractionDigits: 2});
-    totalPagarEls.forEach(el => el.textContent = txt);
+  function calcularFila(fila) {
+      const cuota = parseFloat(fila.querySelector("input[name$='valor_pagado']").value) || 0;
+      const mora = parseFloat(fila.querySelector(".mora-input").value) || 0;
+      const juridico = parseFloat(fila.querySelector(".juridico-input").value) || 0;
+
+      const total = cuota + mora + juridico;
+
+      fila.querySelector(".total-linea").textContent =
+          "$" + total.toLocaleString("es-CO", { minimumFractionDigits: 2 });
+
+      return total;
   }
 
-  document.addEventListener("input", (e) => {
-    if (e.target.name && e.target.name.endsWith("valor_pagado")) {
-      actualizarTotal();
-    }
-  });
+  function actualizarTotal() {
+      let total = 0;
+      document.querySelectorAll(".pago-row").forEach(fila => {
+          total += calcularFila(fila);
+      });
 
-  // OBTENER VALOR DE CUOTA (cuando cambie el select)
+      const txt = "$" + total.toLocaleString("es-CO", { minimumFractionDigits: 2 });
+      totalPagarEls.forEach(el => el.textContent = txt);
+  }
+
+  // Cargar valores de la cuota, mora y jurídico
   tableBody.addEventListener("change", async (e) => {
-    if (e.target.name && e.target.name.includes("cuota_numero")) {
-      const fila = e.target.closest("tr");
-      const valorInput = fila.querySelector("input[name$='valor_pagado']");
-      const cuota = e.target.value;
+      if (e.target.name.includes("cuota_numero")) {
+          const fila = e.target.closest("tr");
+          const cuota = e.target.value;
 
-      if (cuota) {
-        try {
-          const res = await fetch(`/creditos/{{ credito.id }}/valor_cuota/?cuota=${cuota}`);
-          const data = await res.json();
-          if (data.valor_cuota) {
-            valorInput.value = parseFloat(data.valor_cuota).toFixed(2);
-            actualizarTotal();
-          }
-        } catch (err) { console.error(err); }
-      } else {
-        valorInput.value = "";
+          if (!cuota) return;
+
+          try {
+              const res = await fetch(`/creditos/{{ credito.id }}/info_cuota/?cuota=${cuota}`);
+              const data = await res.json();
+
+              fila.querySelector("input[name$='valor_pagado']").value = data.valor_cuota;
+              fila.querySelector(".mora-input").value = data.mora;
+              fila.querySelector(".juridico-input").value = data.juridico;
+
+              actualizarTotal();
+          } catch (err) { console.error(err); }
       }
-    }
   });
 
+  document.addEventListener("input", (e) => {
+      if (e.target.classList.contains("mora-input") ||
+          e.target.classList.contains("juridico-input") ||
+          e.target.name.endsWith("valor_pagado")) {
+          actualizarTotal();
+      }
+  });
+
+  // ==========================
   // AGREGAR FILA
+  // ==========================
   agregarFilaBtn.addEventListener("click", () => {
-    const formIndex = parseInt(totalForms.value);
-    const plantilla = document.querySelector(".pago-row"); // la primera fila como plantilla
-    const nuevaFila = plantilla.cloneNode(true);
+      const formIndex = parseInt(totalForms.value);
+      const plantilla = document.querySelector(".pago-row");
+      const nuevaFila = plantilla.cloneNode(true);
 
-    // limpiar valores y renombrar índices
-    nuevaFila.querySelectorAll("input, select, textarea").forEach(el => {
-      // renombrar con el nuevo índice
-      if (el.name) {
-        const name = el.name.replace(/-\d+-/, `-${formIndex}-`);
-        const id = "id_" + name;
-        el.name = name;
-        el.id = id;
-      }
-      // limpiar valor
-      if (el.tagName === "SELECT") {
-        el.selectedIndex = 0;
-      } else {
-        el.value = "";
-      }
-    });
+      nuevaFila.querySelectorAll("input, select, textarea").forEach(el => {
+          if (el.name) {
+              const name = el.name.replace(/-\d+-/, `-${formIndex}-`);
+              el.name = name;
+              el.id = "id_" + name;
+          }
+          el.value = "";
+      });
 
-    tableBody.appendChild(nuevaFila);
-    totalForms.value = formIndex + 1;
-    actualizarTotal();
+      tableBody.appendChild(nuevaFila);
+      totalForms.value = formIndex + 1;
+      actualizarTotal();
   });
 
+  // ==========================
   // ELIMINAR FILA
+  // ==========================
   tableBody.addEventListener("click", (e) => {
-    if (e.target.classList.contains("eliminar-fila")) {
-      const fila = e.target.closest("tr");
-      if (document.querySelectorAll(".pago-row").length > 1) {
-        fila.remove();
-        // reindexar forms: ajustar TOTAL_FORMS y renombrar índices para evitar huecos
-        const filas = document.querySelectorAll(".pago-row");
-        filas.forEach((f, idx) => {
-          f.querySelectorAll("input, select, textarea").forEach(el => {
-            if (!el.name) return;
-            const newName = el.name.replace(/-\d+-/, `-${idx}-`);
-            el.name = newName;
-            el.id = "id_" + newName;
-          });
-        });
-        totalForms.value = filas.length;
-        actualizarTotal();
+      if (e.target.classList.contains("eliminar-fila")) {
+          const fila = e.target.closest("tr");
+          if (document.querySelectorAll(".pago-row").length > 1) {
+              fila.remove();
+
+              const filas = document.querySelectorAll(".pago-row");
+              filas.forEach((f, idx) => {
+                  f.querySelectorAll("input, select, textarea").forEach(el => {
+                      if (!el.name) return;
+                      const newName = el.name.replace(/-\d+-/, `-${idx}-`);
+                      el.name = newName;
+                      el.id = "id_" + newName;
+                  });
+              });
+
+              totalForms.value = filas.length;
+              actualizarTotal();
+          }
       }
-    }
   });
 
   actualizarTotal();
 
-  // INTERCEPTAR SUBMIT -> enviar por fetch y recibir URL del recibo en JSON
+  // ==========================
+  // SUBMIT AJAX
+  // ==========================
   pagoForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Determinar cual botón submit se pulsó (accion)
-    // Si tu UI tiene botones con name="accion", el browser solo envía el valor del botón clickeado.
-    // Aquí leemos el valor del botón pulsado si es posible:
     const btn = document.activeElement;
     let accion = null;
-    if (btn && btn.name === 'accion') {
-      accion = btn.value;
-    }
+    if (btn && btn.name === 'accion') accion = btn.value;
 
     const formData = new FormData(pagoForm);
-    // marcar que es petición ajax
     formData.append('ajax', '1');
     if (accion) formData.set('accion', accion);
 
     try {
       const res = await fetch(pagoForm.action || window.location.href, {
         method: 'POST',
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest'
-        },
+        headers: { 'X-Requested-With': 'XMLHttpRequest' },
         body: formData
       });
 
-      // Si viene JSON con url del recibo
-      if (res.headers.get('content-type') && res.headers.get('content-type').includes('application/json')) {
+      if (res.headers.get('content-type')?.includes('application/json')) {
         const data = await res.json();
         if (data.ok && data.recibo_url) {
-          // Abrir recibo en nueva pestaña
           window.open(data.recibo_url, '_blank');
-
-          // luego redirigir al detalle del crédito (si la vista devolvió redirect_url)
           if (data.redirect_url) {
             window.location.href = data.redirect_url;
-          } else {
-            // fallback: recargar la página de detalle
-            window.location.reload();
-          }
+          } else window.location.reload();
           return;
         } else {
           alert("Error generando recibo.");
-          console.error(data);
         }
       } else {
-        // Si la respuesta no es JSON probablemente sea un redirect -> seguirlo
-        const text = await res.text();
-        // Para simplicidad recargamos la página
         window.location.reload();
       }
     } catch (err) {
       console.error(err);
-      alert("Ocurrió un error al enviar los pagos. Revisa la consola.");
+      alert("Ocurrió un error al enviar los pagos.");
     }
   });
 

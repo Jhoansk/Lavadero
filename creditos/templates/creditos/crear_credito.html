@@ -47,16 +47,88 @@
                 {% csrf_token %}
 
                 <div class="row">
-                    {% for field in form %}
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label fw-bold">{{ field.label }}</label>
-                            {{ field }}
 
-                            {% if field.errors %}
-                                <div class="text-danger small">{{ field.errors }}</div>
-                            {% endif %}
-                        </div>
-                    {% endfor %}
+                    <!-- Cédula -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Cédula del cliente</label>
+                        {{ form.cedula }}
+                        {% if form.cedula.errors %}
+                            <div class="text-danger small">{{ form.cedula.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Placa -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Placa del vehículo</label>
+                        {{ form.placa }}
+                        {% if form.placa.errors %}
+                            <div class="text-danger small">{{ form.placa.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Valor inicial -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Valor inicial del crédito</label>
+                        {{ form.valor_inicial }}
+                        {% if form.valor_inicial.errors %}
+                            <div class="text-danger small">{{ form.valor_inicial.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Interés -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Interés (%)</label>
+                        {{ form.interes }}
+                        {% if form.interes.errors %}
+                            <div class="text-danger small">{{ form.interes.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Cuotas -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Número de cuotas</label>
+                        {{ form.cuotas }}
+                        {% if form.cuotas.errors %}
+                            <div class="text-danger small">{{ form.cuotas.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Fecha inicio -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Fecha de inicio</label>
+                        {{ form.fecha_inicio }}
+                        {% if form.fecha_inicio.errors %}
+                            <div class="text-danger small">{{ form.fecha_inicio.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Interés Moratorio -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Interés moratorio (%) anual</label>
+                        {{ form.interes_moratorio }}
+                        {% if form.interes_moratorio.errors %}
+                            <div class="text-danger small">{{ form.interes_moratorio.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Valor Seguro -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Valor anual Seguro (primer año)</label>
+                        {{ form.seguro_valor }}
+                        {% if form.seguro_valor.errors %}
+                            <div class="text-danger small">{{ form.seguro_valor.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Valor GPS -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Valor anual GPS (primer año)</label>
+                        {{ form.gps_valor }}
+                        {% if form.gps_valor.errors %}
+                            <div class="text-danger small">{{ form.gps_valor.errors }}</div>
+                        {% endif %}
+                    </div>
+
                 </div>
 
                 <div class="mt-4">

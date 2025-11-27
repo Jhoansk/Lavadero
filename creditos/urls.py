@@ -4,9 +4,12 @@ from . import views
 
 urlpatterns = [
     path('crear/', views.crear_credito, name='crear_credito'),
+    path("crear-cliente/", views.crear_usuario_credito, name="crear_cliente_creditos"),
+    path("crear-vehiculo/", views.crear_vehiculo_credito, name="crear_vehiculo_creditos"),
     path('<int:credito_id>/', views.detalle_credito, name='detalle_credito'),
     path('<int:credito_id>/pago/', views.registrar_pago, name='registrar_pago'),
     path('<int:credito_id>/valor_cuota/', views.obtener_valor_cuota, name='obtener_valor_cuota'),
+    path('<int:credito_id>/info_cuota/', views.obtener_valor_cuota, name='info_cuota'),
     path('generar_aprobacion_pdf/', views.generar_aprobacion_pdf, name='generar_aprobacion_pdf'),
     path('contrato-prenda/', views.contrato_prenda_view, name='contrato_prenda'),
     path('simulador/', views.simulador_credito, name='simulador_credito'),

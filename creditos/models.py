@@ -25,9 +25,23 @@ class Credito(models.Model):
     fecha_inicio = models.DateField(default=date.today)
     estado = models.CharField(max_length=20, choices=ESTADOS_CREDITO, default='Activo')
 
+    # -------------------------------
+    # NUEVO CAMPO: INTERÉS MORATORIO
+    # -------------------------------
+    interes_moratorio = models.DecimalField(
+        max_digits=5, decimal_places=2,
+        help_text="Interés moratorio anual (%)"
+    )
+
+    # -------------------------------
+    # CONSTANTES DEL SISTEMA (NO BD)
+    # -------------------------------
+    COBRO_JURIDICO_FIJO = Decimal('200000.00')
+    DIAS_PARA_COBRO_JURIDICO = 90
+
     # ------------------------------- 
     # UTILIDAD DE REDONDEO 
-    # -------------------------------
+    # ------------------------------- 
     def _q2(self, d):
         if not isinstance(d, Decimal):
             d = Decimal(str(d))
@@ -35,17 +49,30 @@ class Credito(models.Model):
 
     # ------------------------------- 
     # SERVICIOS 
-    # -------------------------------
+    # ------------------------------- 
     def total_servicios_activos(self):
         return sum(s.valor_mensual() for s in self.servicios.filter(estado='Activo'))
 
     # ------------------------------- 
     # SALDOS 
-    # -------------------------------
+    # ------------------------------- 
     def saldo_capital(self):
-        pagos = self.pagos.filter(tipo_pago='cuota').aggregate(total=models.Sum('valor_pagado'))['total'] or 0
-        abonos = self.pagos.filter(tipo_pago='abono').aggregate(total=models.Sum('valor_pagado'))['total'] or 0
-        saldo = Decimal(str(self.valor_inicial)) - pagos - abonos
+        """
+        El saldo solo debe restar:
+        - valor_pagado de pagos tipo 'cuota'
+        - valor_pagado de pagos tipo 'abono'
+        Los pagos de mora y cobro jurídico NO afectan saldo.
+        """
+        pagos_cuota = self.pagos.filter(tipo_pago='cuota').aggregate(
+            total=models.Sum('valor_pagado')
+        )['total'] or Decimal('0.00')
+
+        abonos_capital = self.pagos.filter(tipo_pago='abono').aggregate(
+            total=models.Sum('valor_pagado')
+        )['total'] or Decimal('0.00')
+
+        saldo = Decimal(str(self.valor_inicial)) - pagos_cuota - abonos_capital
+
         return max(saldo, Decimal('0.00'))
 
     def intereses_pendientes(self):
@@ -74,24 +101,103 @@ class Credito(models.Model):
     def saldo_total(self):
         return (self.saldo_capital() + self.intereses_pendientes()).quantize(Decimal('0.01'))
 
+    # -------------------------------
+    # CÁLCULO DE MORATORIOS
+    # -------------------------------
+    def calcular_moratorios_por_cuota(self, cuota, hoy=None):
+        """
+        Calcula:
+        - días de mora
+        - interés moratorio (diario)
+        - cobro jurídico único ($200.000) si pasa de 90 días
+        """
+        if hoy is None:
+            hoy = timezone.now().date()
+
+        # No está en mora
+        if cuota.pagada or cuota.fecha_vencimiento >= hoy:
+            return {
+                'dias_mora': 0,
+                'interes_moratorio': Decimal('0.00'),
+                'cobro_juridico': Decimal('0.00'),
+                'total_moratorios': Decimal('0.00'),
+            }
+
+        # Días de mora reales
+        dias_mora = (hoy - cuota.fecha_vencimiento).days
+
+        # Interés moratorio = tasa anual / 365 * días de mora
+        tasa_diaria = (Decimal(str(self.interes_moratorio)) / Decimal('100')) / Decimal('365')
+        interes_mora = (Decimal(cuota.cuota_total) * tasa_diaria * dias_mora).quantize(
+            Decimal('0.01'),
+            rounding=ROUND_HALF_UP
+        )
+
+        # Cobro jurídico único
+        cobro_juridico = (
+            self.COBRO_JURIDICO_FIJO if dias_mora > self.DIAS_PARA_COBRO_JURIDICO else Decimal('0.00')
+        )
+
+        total = (interes_mora + cobro_juridico).quantize(Decimal('0.01'))
+
+        return {
+            'dias_mora': dias_mora,
+            'interes_moratorio': interes_mora,
+            'cobro_juridico': cobro_juridico,
+            'total_moratorios': total,
+        }
+
+    def moratorios_totales(self, hoy=None):
+        if hoy is None:
+            hoy = timezone.now().date()
+
+        total_interes = Decimal('0.00')
+        total_cobro = Decimal('0.00')
+
+        for cuota in self.cuotas_credito.filter(pagada=False, fecha_vencimiento__lt=hoy):
+            info = self.calcular_moratorios_por_cuota(cuota, hoy=hoy)
+            total_interes += info['interes_moratorio']
+            total_cobro += info['cobro_juridico']
+
+        total_general = (total_interes + total_cobro).quantize(Decimal('0.01'))
+
+        return {
+            'total_interes_moratorio': total_interes.quantize(Decimal('0.01')),
+            'total_cobro_juridico': total_cobro.quantize(Decimal('0.01')),
+            'total_general': total_general,
+        }
+
     # ------------------------------- 
     # ABONO A CAPITAL 
-    # -------------------------------
+    # ------------------------------- 
     def aplicar_abono_capital(self, monto):
+        """
+        Aplica abono a capital y recalcula únicamente las cuotas pendientes,
+        sin afectar mora ni cobro jurídico.
+        """
         monto = Decimal(str(monto))
         saldo_actual = self.saldo_capital()
+
+        # Limitar abono máximo
         if monto > saldo_actual:
             monto = saldo_actual
 
         nuevo_saldo = saldo_actual - monto
+
+        # Cuotas pendientes
         cuotas_pagadas = self.cuotas_credito.filter(pagada=True).count()
         cuotas_restantes = self.cuotas - cuotas_pagadas
+
         if cuotas_restantes <= 0:
             return []
 
+        # Interés mensual real
         interes_mensual = Decimal(str(self.interes)) / Decimal('100')
+
+        # El cronograma se recalcula desde el monto nuevo
         saldo_temp = nuevo_saldo
 
+        # Eliminar solo cuotas PENDIENTES
         self.cuotas_credito.filter(pagada=False).delete()
 
         nuevas_cuotas = []
@@ -99,16 +205,20 @@ class Credito(models.Model):
         for i in range(1, cuotas_restantes + 1):
             interes_mes = saldo_temp * interes_mensual
             abono_capital = nuevo_saldo / Decimal(cuotas_restantes)
+
             fecha_venc = self.fecha_inicio + relativedelta(months=cuotas_pagadas + i)
 
-            # Servicios corregidos
+            # Servicios activos
             servicios_activos = self.servicios.filter(
                 fecha_inicio__lte=fecha_venc,
                 fecha_fin__gte=fecha_venc - relativedelta(days=1),
                 estado='Activo'
             )
 
-            total_servicios_mes = sum((s.valor_mensual() for s in servicios_activos), Decimal('0.00'))
+            total_servicios_mes = sum(
+                (s.valor_mensual() for s in servicios_activos),
+                Decimal('0.00')
+            )
 
             cuota_total = interes_mes + abono_capital + total_servicios_mes
 
@@ -123,19 +233,19 @@ class Credito(models.Model):
                     saldo_restante=self._q2(saldo_temp - abono_capital),
                 )
             )
+
             saldo_temp -= abono_capital
 
         return nuevas_cuotas
 
     # ------------------------------- 
-    # CRONOGRAMA - AMORTIZACIÓN FRANCESA 
-    # -------------------------------
+    # CRONOGRAMA 
+    # ------------------------------- 
     def generar_cronograma(self, recalcular=False):
         interes_mensual = Decimal(str(self.interes)) / Decimal('100')
         capital = Decimal(str(self.valor_inicial))
         n = self.cuotas
 
-        # Calcular cuota fija (sin servicios)
         if interes_mensual > 0:
             cuota_fija = capital * (
                 (interes_mensual * (1 + interes_mensual) ** n) /
@@ -159,7 +269,6 @@ class Credito(models.Model):
             interes_mes = (saldo * interes_mensual).quantize(Decimal('0.01'))
             abono_capital = (cuota_fija - interes_mes).quantize(Decimal('0.01'))
 
-            # CORRECCIÓN DE SERVICIOS
             servicios_activos = self.servicios.filter(
                 fecha_inicio__lte=fecha_venc,
                 fecha_fin__gte=fecha_venc - relativedelta(days=1),
@@ -190,26 +299,33 @@ class Credito(models.Model):
 
     # ------------------------------- 
     # ESTADO DEL CREDITO 
-    # -------------------------------
+    # ------------------------------- 
     def verificar_estado_credito(self):
+        """
+        Determina el estado del crédito según mora y saldo.
+        """
         cuotas = self.cuotas_credito.all()
-        cuotas_en_mora = sum(1 for c in cuotas if c.verificar_mora() or c.estado == 'Mora')
 
-        if cuotas_en_mora >= 3:
+        cuotas_en_mora = sum(
+            1 for c in cuotas
+            if c.verificar_mora() or c.estado == 'Mora'
+        )
+
+        if self.saldo_capital() <= Decimal("0.00"):
+            nuevo_estado = 'Finalizado'
+
+        elif cuotas_en_mora >= 3:
             nuevo_estado = 'Cobro jurídico'
+
         elif cuotas_en_mora >= 1:
             nuevo_estado = 'En mora'
-        elif self.cuotas_credito.filter(pagada=True).count() == self.cuotas:
-            nuevo_estado = 'Finalizado'
+
         else:
             nuevo_estado = 'Activo'
 
         if self.estado != nuevo_estado:
             self.estado = nuevo_estado
             self.save(update_fields=['estado'])
-
-    def __str__(self):
-        return f"Crédito {self.id} - {self.usuario.nombre} (${self.valor_inicial:,.0f})"
 
 
 # ----------------------------------------------------------------------
@@ -225,6 +341,11 @@ class PagoCredito(models.Model):
     credito = models.ForeignKey(Credito, on_delete=models.CASCADE, related_name='pagos')
     fecha_pago = models.DateField(auto_now_add=True)
     valor_pagado = models.DecimalField(max_digits=12, decimal_places=2)
+
+    # NUEVO
+    interes_moratorio_pagado = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    cobro_juridico_pagado = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+
     cuota_numero = models.PositiveIntegerField(blank=True, null=True)
     tipo_pago = models.CharField(max_length=10, choices=TIPO_PAGO_CHOICES, default='cuota')
     observacion = models.TextField(blank=True, null=True)

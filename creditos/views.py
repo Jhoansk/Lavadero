@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import Credito, PagoCredito, AprobacionCredito, CuotaCredito, ServicioCredito,SolicitudCredito
-from .forms import CreditoForm, PagoForm, DocumentosUsuarioForm, RenovarServicioForm
+from .forms import CreditoForm, PagoForm, DocumentosUsuarioForm, RenovarServicioForm, UsuarioCreditoForm, VehiculoCreditoForm
 from datetime import date, datetime, timedelta
 from django.http import JsonResponse
 from django import forms
@@ -47,6 +47,37 @@ def detalle_credito(request, credito_id):
     # Servicios activos
     servicios_activos = credito.servicios.filter(estado='Activo')
 
+    # -------------------------------
+    # CÁLCULO DE MORATORIOS
+    # -------------------------------
+    hoy = timezone.now().date()
+
+    cuotas_mora_info = []
+    total_interes_moratorio = Decimal('0.00')
+    total_cobro_juridico = Decimal('0.00')
+    total_general_moratorios = Decimal('0.00')
+
+    for cuota in cronograma:
+        info = credito.calcular_moratorios_por_cuota(cuota, hoy=hoy)
+
+        total_interes_moratorio += info['interes_moratorio']
+        total_cobro_juridico += info['cobro_juridico']
+        total_general_moratorios += info['total_moratorios']
+
+        cuotas_mora_info.append({
+            'cuota': cuota,
+            'moratorio': info
+        })
+
+    moratorios_acumulados = {
+        'total_interes_moratorio': total_interes_moratorio.quantize(Decimal('0.01')),
+        'total_cobro_juridico': total_cobro_juridico.quantize(Decimal('0.01')),
+        'total_general': total_general_moratorios.quantize(Decimal('0.01')),
+    }
+
+    # -------------------------------
+    # RENDER
+    # -------------------------------
     return render(request, 'creditos/detalle_credito.html', {
         'credito': credito,
         'cronograma': cronograma,
@@ -54,7 +85,11 @@ def detalle_credito(request, credito_id):
         'saldo_capital': saldo_capital,
         'intereses_pendientes': intereses_pendientes,
         'saldo': saldo_total,
-        'servicios_activos': servicios_activos,  # <-- agregado
+        'servicios_activos': servicios_activos,
+
+        # Nuevos datos para el template
+        'cuotas_mora_info': cuotas_mora_info,
+        'moratorios_acumulados': moratorios_acumulados,
     })
 
 # ----------------------------------------------------------------------
@@ -74,64 +109,95 @@ def calcular_interes_ajax(request, credito_id):
 def crear_credito(request):
     if request.method == 'POST':
         form = CreditoForm(request.POST)
+
         if form.is_valid():
-            seguro_valor = form.cleaned_data.pop('seguro_valor', None)
-            gps_valor = form.cleaned_data.pop('gps_valor', None)
 
-            credito = form.save()
+            # ===============================
+            # 1. Leer cédula y placa digitadas
+            # ===============================
+            cedula = form.cleaned_data["cedula"]
+            placa = form.cleaned_data["placa"]
 
-            # Nota: el signal post_save crea los periodos anuales Pendientes.
-            # Si en el formulario el admin indicó valor para el primer año, activamos el primer periodo correspondiente.
-            # primer periodo = fecha_inicio del credito
+            # ===============================
+            # 2. Buscar usuario
+            # ===============================
+            try:
+                usuario_obj = usuario.objects.get(cedula=cedula)
+            except usuario.DoesNotExist:
+                messages.error(request, f"No existe un cliente con cédula {cedula}.")
+                return render(request, "creditos/crear_credito.html", {"form": form})
+
+            # ===============================
+            # 3. Buscar vehículo
+            # ===============================
+            try:
+                vehiculo_obj = Vehiculo_contratos.objects.get(placa__iexact=placa)
+            except Vehiculo_contratos.DoesNotExist:
+                messages.error(request, f"No existe un vehículo con placa {placa}.")
+                return render(request, "creditos/crear_credito.html", {"form": form})
+
+            # ===============================
+            # 4. Crear el crédito
+            # ===============================
+            credito = form.save(commit=False)
+            credito.usuario = usuario_obj
+            credito.vehiculo = vehiculo_obj
+            credito.save()
+
+            # ===============================
+            # 5. Procesar Servicios (Seguro / GPS)
+            # ===============================
+            seguro_valor = form.cleaned_data.get("seguro_valor")
+            gps_valor = form.cleaned_data.get("gps_valor")
             inicio = credito.fecha_inicio
 
+            # Fecha fin obligatoria (12 meses menos 1 día)
+            fin = inicio + relativedelta(months=12) - relativedelta(days=1)
+
+            # ---- Seguro Primer Año ----
             if seguro_valor:
-                try:
-                    s = ServicioCredito.objects.get(credito=credito, tipo=ServicioCredito.TIPO_SEG, fecha_inicio=inicio)
-                    s.valor_anual = seguro_valor
-                    s.estado = ServicioCredito.ESTADO_ACTIVO
-                    s.save()
-                except ServicioCredito.DoesNotExist:
-                    # crear por si acaso
-                    fin = inicio + relativedelta(months=12) - relativedelta(days=1)
-                    ServicioCredito.objects.create(
-                        credito=credito,
-                        tipo=ServicioCredito.TIPO_SEG,
-                        valor_anual=seguro_valor,
-                        fecha_inicio=inicio,
-                        fecha_fin=fin,
-                        estado=ServicioCredito.ESTADO_ACTIVO
-                    )
+                ServicioCredito.objects.update_or_create(
+                    credito=credito,
+                    tipo=ServicioCredito.TIPO_SEG,
+                    fecha_inicio=inicio,
+                    defaults={
+                        "valor_anual": seguro_valor,
+                        "estado": ServicioCredito.ESTADO_ACTIVO,
+                        "fecha_fin": fin,           # 🔥 IMPORTANTE
+                    }
+                )
 
+            # ---- GPS Primer Año ----
             if gps_valor:
-                try:
-                    g = ServicioCredito.objects.get(credito=credito, tipo=ServicioCredito.TIPO_GPS, fecha_inicio=inicio)
-                    g.valor_anual = gps_valor
-                    g.estado = ServicioCredito.ESTADO_ACTIVO
-                    g.save()
-                except ServicioCredito.DoesNotExist:
-                    fin = inicio + relativedelta(months=12) - relativedelta(days=1)
-                    ServicioCredito.objects.create(
-                        credito=credito,
-                        tipo=ServicioCredito.TIPO_GPS,
-                        valor_anual=gps_valor,
-                        fecha_inicio=inicio,
-                        fecha_fin=fin,
-                        estado=ServicioCredito.ESTADO_ACTIVO
-                    )
+                ServicioCredito.objects.update_or_create(
+                    credito=credito,
+                    tipo=ServicioCredito.TIPO_GPS,
+                    fecha_inicio=inicio,
+                    defaults={
+                        "valor_anual": gps_valor,
+                        "estado": ServicioCredito.ESTADO_ACTIVO,
+                        "fecha_fin": fin,           # 🔥 IMPORTANTE
+                    }
+                )
 
-            # Intentar generar cronograma; si faltan renovaciones se capturará el error
+            # ===============================
+            # 6. Generar cronograma
+            # ===============================
             try:
                 credito.generar_cronograma()
             except ValueError as e:
-                # Si hay pendientes para generar cuotas, mostrar mensaje y redirigir a detalle para renovar
-                messages.warning(request, f"Crédito creado, pero faltan renovaciones/activaciones: {e}")
+                messages.warning(request, f"Crédito creado pero faltan renovaciones: {e}")
                 return redirect('detalle_credito', credito_id=credito.id)
 
-            messages.success(request, f"Crédito creado correctamente para {credito.usuario}.")
+            # ===============================
+            # 7. Éxito total
+            # ===============================
+            messages.success(request, f"Crédito creado correctamente para {usuario_obj.nombre}.")
             return redirect('detalle_credito', credito_id=credito.id)
+
     else:
         form = CreditoForm()
+
     return render(request, 'creditos/crear_credito.html', {'form': form})
 
 # ----------------------------------------------------------------------
@@ -142,7 +208,7 @@ def crear_credito(request):
 def registrar_pago(request, credito_id):
     credito = get_object_or_404(Credito, id=credito_id)
 
-    # Mostrar solo cuotas pendientes
+    # Mostrar solo cuotas no pagadas
     cuotas_disponibles = credito.cuotas_credito.filter(pagada=False).order_by('numero')
     opciones_cuotas = [
         (c.numero, f"Cuota {c.numero} - vence {c.fecha_vencimiento} - ${c.cuota_total:,.2f}")
@@ -156,21 +222,18 @@ def registrar_pago(request, credito_id):
 
         if formset.is_valid():
             tipo_operacion = request.POST.get('accion')
-
-            # guardamos lista de ids de pagos creados en esta operación
             pagos_creados_ids = []
+            hoy = date.today()
 
-            # Antes de aplicar los pagos, calculamos saldo actual (antes de la operación)
-            saldo_antes_operacion = credito.saldo_capital()
-
-            # 🟩 ABONO A CAPITAL (una sola entrada tipo 'abono')
+            # ==========================================================
+            # 🟩 ABONO DIRECTO A CAPITAL
+            # ==========================================================
             if tipo_operacion == 'abono':
                 total_abono = sum(
                     Decimal(form.cleaned_data.get('valor_pagado') or 0)
                     for form in formset if form.cleaned_data and not form.cleaned_data.get('DELETE')
                 )
                 if total_abono > 0:
-                    # aplicar abono a la lógica ya existente
                     credito.aplicar_abono_capital(total_abono)
                     pago = PagoCredito.objects.create(
                         credito=credito,
@@ -180,19 +243,24 @@ def registrar_pago(request, credito_id):
                     )
                     pagos_creados_ids.append(pago.id)
 
-                    # respuesta: si petición AJAX devolvemos JSON con URL del recibo
-                    if request.headers.get('x-requested-with') == 'XMLHttpRequest' or request.POST.get('ajax') == '1':
-                        url = reverse('generar_recibo') + f"?ids={','.join(map(str, pagos_creados_ids))}"
-                        return JsonResponse({
-                            "ok": True,
-                            "recibo_url": url,
-                            "redirect_url": reverse('detalle_credito', args=[credito.id])
-                        })
+                # Actualizar estado del crédito
+                credito.verificar_estado_credito()
 
-                    messages.success(request, f"Abono de ${total_abono:,.2f} aplicado correctamente.")
-                    return redirect('detalle_credito', credito_id=credito.id)
+                # AJAX
+                if request.headers.get('x-requested-with') == 'XMLHttpRequest' or request.POST.get('ajax') == '1':
+                    url = reverse('generar_recibo') + f"?ids={','.join(map(str, pagos_creados_ids))}"
+                    return JsonResponse({
+                        "ok": True,
+                        "recibo_url": url,
+                        "redirect_url": reverse('detalle_credito', args=[credito.id])
+                    })
 
-            # 🟦 PAGO NORMAL DE CUOTAS (varias entradas tipo 'cuota')
+                messages.success(request, f"Abono de ${total_abono:,.2f} aplicado correctamente.")
+                return redirect('detalle_credito', credito_id=credito.id)
+
+            # ==========================================================
+            # 🟦 PAGO NORMAL DE CUOTAS
+            # ==========================================================
             else:
                 for form in formset:
                     if not form.cleaned_data or form.cleaned_data.get('DELETE'):
@@ -202,29 +270,108 @@ def registrar_pago(request, credito_id):
                     valor_pagado = Decimal(form.cleaned_data.get('valor_pagado') or 0)
                     observacion = form.cleaned_data.get('observacion', '')
 
+                    # Normalizar valores de mora y jurídico
+                    interes_mora_pagado = Decimal(
+                        form.cleaned_data.get('interes_moratorio_pagado')
+                        or request.POST.get(f"form-{form.prefix.split('-')[1]}-mora")
+                        or 0
+                    )
+
+                    cobro_juridico_pagado = Decimal(
+                        form.cleaned_data.get('cobro_juridico_pagado')
+                        or request.POST.get(f"form-{form.prefix.split('-')[1]}-juridico")
+                        or 0
+                    )
+
                     if cuota_numero:
-                        cuota = credito.cuotas_credito.filter(numero=cuota_numero, pagada=False).first()
+                        cuota = credito.cuotas_credito.filter(
+                            numero=cuota_numero,
+                            pagada=False
+                        ).first()
+
                         if cuota:
-                            # Registrar el pago
+
+                            # ===============================
+                            # 🔥 Cálculo real de mora
+                            # ===============================
+                            mora_info = credito.calcular_moratorios_por_cuota(cuota, hoy=hoy)
+
+                            if interes_mora_pagado == 0:
+                                interes_mora_pagado = mora_info['interes_moratorio']
+
+                            if cobro_juridico_pagado == 0:
+                                cobro_juridico_pagado = mora_info['cobro_juridico']
+
+                            # TOTAL REAL ADEUDADO
+                            valor_total_cuota = (
+                                cuota.cuota_total +
+                                interes_mora_pagado +
+                                cobro_juridico_pagado
+                            ).quantize(Decimal("0.01"))
+
+                            # TOTAL REAL PAGADO (la corrección clave)
+                            pago_real = (
+                                valor_pagado +
+                                interes_mora_pagado +
+                                cobro_juridico_pagado
+                            ).quantize(Decimal("0.01"))
+
+                            # ===============================
+                            # Registrar pago principal
+                            # ===============================
                             pago = PagoCredito.objects.create(
                                 credito=credito,
                                 valor_pagado=valor_pagado,
                                 cuota_numero=cuota.numero,
                                 tipo_pago='cuota',
-                                observacion=observacion
+                                observacion=observacion,
+                                interes_moratorio_pagado=interes_mora_pagado,
+                                cobro_juridico_pagado=cobro_juridico_pagado
                             )
                             pagos_creados_ids.append(pago.id)
 
-                            # Marcar cuota como pagada
-                            cuota.pagada = True
-                            cuota.save()
+                            # ----- PAGO PARCIAL -----
+                            if pago_real < valor_total_cuota - Decimal("0.50"):
+                                restante = valor_total_cuota - pago_real
+
+                                cuota.cuota_total = restante
+                                cuota.pagada = False
+                                cuota.estado = "Pendiente"
+                                cuota.save()
+
+                            # ----- PAGO EXACTO -----
+                            elif abs(pago_real - valor_total_cuota) <= Decimal("0.50"):
+                                cuota.pagada = True
+                                cuota.estado = "Pagada"
+                                cuota.save(update_fields=['pagada', 'estado'])
+
+                            # ----- PAGO MAYOR -----
+                            else:
+                                excedente = pago_real - valor_total_cuota
+
+                                cuota.pagada = True
+                                cuota.estado = "Pagada"
+                                cuota.save(update_fields=['pagada', 'estado'])
+
+                                pago_exced = PagoCredito.objects.create(
+                                    credito=credito,
+                                    valor_pagado=excedente,
+                                    tipo_pago='abono',
+                                    observacion=f"Excedente pago cuota {cuota.numero}"
+                                )
+                                pagos_creados_ids.append(pago_exced.id)
+
+                                credito.aplicar_abono_capital(excedente)
 
                 # Si todas las cuotas están pagadas → finalizar crédito
                 if credito.cuotas_credito.filter(pagada=False).count() == 0:
                     credito.estado = 'Finalizado'
                     credito.save()
 
-                # Si peticion AJAX, devolvemos JSON con URL del recibo
+                # Actualizar estado general
+                credito.verificar_estado_credito()
+
+                # AJAX RESPONSE
                 if request.headers.get('x-requested-with') == 'XMLHttpRequest' or request.POST.get('ajax') == '1':
                     url = reverse('generar_recibo') + f"?ids={','.join(map(str, pagos_creados_ids))}"
                     return JsonResponse({
@@ -236,6 +383,9 @@ def registrar_pago(request, credito_id):
                 messages.success(request, "Pagos registrados correctamente.")
                 return redirect('detalle_credito', credito_id=credito.id)
 
+    # ==========================================================
+    # GET
+    # ==========================================================
     else:
         formset = PagoFormSet()
         for f in formset:
@@ -253,20 +403,22 @@ def registrar_pago(request, credito_id):
 @login_required
 def obtener_valor_cuota(request, credito_id):
     credito = get_object_or_404(Credito, id=credito_id)
-    try:
-        numero_cuota = int(request.GET.get('cuota'))
-    except (TypeError, ValueError):
-        return JsonResponse({'error': 'Número de cuota inválido'}, status=400)
+    cuota_num = request.GET.get("cuota")
 
-    cuota = credito.cuotas_credito.filter(numero=numero_cuota).first()
+    cuota = credito.cuotas_credito.filter(numero=cuota_num).first()
+    if not cuota:
+        return JsonResponse({"error": "Cuota no encontrada"}, status=404)
 
-    if cuota:
-        return JsonResponse({
-            'valor_cuota': float(cuota.cuota_total),
-            'fecha_vencimiento': cuota.fecha_vencimiento.strftime('%Y-%m-%d')
-        })
-    else:
-        return JsonResponse({'error': 'Cuota no encontrada'}, status=404)
+    # usar el cálculo EXACTO del modelo (el mismo que usa la tabla)
+    mora_info = credito.calcular_moratorios_por_cuota(cuota)
+
+    # devolver claves que el JS espera: valor_cuota, mora, juridico
+    return JsonResponse({
+        "valor_cuota": float(cuota.cuota_total),
+        "mora": float(mora_info["interes_moratorio"]),
+        "juridico": float(mora_info["cobro_juridico"]),
+        "total": float(cuota.cuota_total + mora_info["total_moratorios"]),
+    })
 
 
 @login_required
@@ -1139,10 +1291,8 @@ def generar_recibo(request):
     credito = pagos.first().credito
     fecha_hora = timezone.now()
 
-    # Total de la operación
     total_operacion = sum(p.valor_pagado for p in pagos)
 
-    # Para tabla con detalle por ítem
     pagos_items = []
 
     for p in pagos:
@@ -1151,13 +1301,22 @@ def generar_recibo(request):
             "cuota_numero": p.cuota_numero,
             "valor_pagado": p.valor_pagado,
             "observacion": p.observacion,
+            "interes_mora": p.interes_moratorio_pagado,
+            "cobro_juridico": p.cobro_juridico_pagado,
+            "dias_mora": 0,   # se calcula abajo
         }
 
         if p.tipo_pago == "cuota" and p.cuota_numero:
             cuota = credito.cuotas_credito.filter(numero=p.cuota_numero).first()
 
             if cuota:
-                # Obtener servicios del mes de la cuota
+
+                # ==============================
+                # 🔥 Calcular días de mora reales
+                # ==============================
+                mora_info = credito.calcular_moratorios_por_cuota(cuota)
+                item["dias_mora"] = mora_info.get("dias", 0)
+
                 servicios_mes = credito.servicios.filter(
                     fecha_inicio__lte=cuota.fecha_vencimiento,
                     fecha_fin__gte=cuota.fecha_vencimiento,
@@ -1185,13 +1344,11 @@ def generar_recibo(request):
     intereses = credito.intereses_pendientes()
     saldo_total = credito.saldo_total()
 
-    # Servicios restantes
     servicios = credito.servicios.filter(estado="Activo")
 
     seguro_restante = sum(
         s.valor_restante() for s in servicios if s.tipo == ServicioCredito.TIPO_SEG
     )
-
     gps_restante = sum(
         s.valor_restante() for s in servicios if s.tipo == ServicioCredito.TIPO_GPS
     )
@@ -1202,17 +1359,13 @@ def generar_recibo(request):
             "items_count": len(pagos_items),
             "fecha_hora": fecha_hora,
         },
-
         "pagos_items": pagos_items,
         "total_operacion": total_operacion,
-
         "saldo_capital": saldo_capital,
         "intereses": intereses,
         "saldo_total": saldo_total,
-
         "seguro_restante": seguro_restante,
         "gps_restante": gps_restante,
-
         "credito": credito,
     }
 
@@ -1291,3 +1444,29 @@ def generar_pdf(html_string, filename):
     response = HttpResponse(pdf, content_type="application/pdf")
     response["Content-Disposition"] = f'attachment; filename="{filename}"'
     return response
+
+@login_required
+def crear_vehiculo_credito(request):
+    if request.method == "POST":
+        form = VehiculoCreditoForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Vehículo creado correctamente.")
+            return redirect("crear_credito")
+    else:
+        form = VehiculoCreditoForm()
+
+    return render(request, "creditos/crear_vehiculo_credito.html", {"form": form})
+
+@login_required
+def crear_usuario_credito(request):
+    if request.method == "POST":
+        form = UsuarioCreditoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Usuario creado correctamente.")
+            return redirect("crear_credito")  # vuelve al formulario de crédito
+    else:
+        form = UsuarioCreditoForm()
+
+    return render(request, "creditos/crear_usuario_credito.html", {"form": form})

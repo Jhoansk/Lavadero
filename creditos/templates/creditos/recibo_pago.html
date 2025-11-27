@@ -7,25 +7,98 @@
     <title>Recibo {{ pago_operacion.consecutivo }}</title>
 
     <style>
-        body { font-family: 'Courier New', monospace; background:#f8f9fa; font-size:12px; padding:20px; }
-        .recibo { width:300px; margin:auto; background:#fff; border:1px solid #ddd; padding:20px; }
-        .header { text-align:center; border-bottom:2px solid #000; padding-bottom:10px; margin-bottom:15px; }
-        .empresa { font-size:16px; font-weight:bold; }
-        .tipo-doc { background:black; color:white; padding:5px; text-align:center; font-weight:bold; margin-top:10px; }
-        .linea { display:flex; justify-content:space-between; }
-        .sep { border-top:1px dashed #333; margin:10px 0; }
-        table { width:100%; border-collapse:collapse; }
-        th, td { padding:3px 0; font-size:11px; }
-        .small { font-size:11px; }
-        .total-box { background:#eee; padding:8px; border:1px solid #ccc; font-weight:bold; text-align:center; margin:10px 0; }
-        .footer { text-align:center; border-top:2px solid #000; margin-top:15px; padding-top:10px; font-size:10px; }
-        @media print { body { background:white; padding:0 } .recibo { width:100%; border:none; box-shadow:none } .no-print { display:none } }
+        /* === ESTILO ESPECIAL PARA IMPRESORA TÉRMICA POS (57mm) === */
+        body {
+            font-family: 'Courier New', monospace;
+            background: #fff;
+            font-size: 11px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .recibo {
+            width: 230px; /* PERFECTO PARA IMPRESORA 57mm */
+            margin: auto;
+            padding: 5px;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 1px dashed #000;
+            margin-bottom: 8px;
+            padding-bottom: 5px;
+        }
+
+        .empresa {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .tipo-doc {
+            background: black;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            padding: 3px 0;
+            margin: 6px 0;
+        }
+
+        .linea {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sep {
+            border-top: 1px dashed #000;
+            margin: 6px 0;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th, td {
+            font-size: 10px;
+            padding: 2px 0;
+        }
+
+        .small { font-size: 10px; }
+
+        .total-box {
+            background: #eee;
+            text-align: center;
+            font-weight: bold;
+            border: 1px solid #000;
+            margin: 8px 0;
+            padding: 4px 0;
+        }
+
+        .footer {
+            text-align: center;
+            border-top: 1px dashed #000;
+            font-size: 9px;
+            margin-top: 10px;
+            padding-top: 5px;
+        }
+
+        /* IMPRESIÓN */
+        @media print {
+            body { background: #fff; }
+            .no-print { display: none; }
+            .recibo {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        }
     </style>
 </head>
+
 <body>
 
 <div class="recibo">
 
+    <!-- ENCABEZADO -->
     <div class="header">
         <div class="empresa">FINANTAXIS</div>
         <div>NIT: 901.039.293-9</div>
@@ -34,9 +107,10 @@
     </div>
 
     <div class="tipo-doc">RECIBO DE PAGO</div>
+
     <div class="linea"><strong>No:</strong> {{ pago_operacion.consecutivo }}</div>
 
-    <!-- Cliente -->
+    <!-- CLIENTE -->
     <div class="linea"><strong>Cliente:</strong> {{ credito.usuario.nombre }} {{ credito.usuario.p_apellido }}</div>
     <div class="linea"><strong>Cédula:</strong> {{ credito.usuario.cedula }}</div>
     <div class="linea"><strong>Fecha:</strong> {{ pago_operacion.fecha_hora|date:"d/m/Y" }}</div>
@@ -44,14 +118,15 @@
 
     <div class="sep"></div>
 
-    <!-- Crédito -->
+    <!-- CRÉDITO -->
     <div class="linea"><strong>Crédito:</strong> {{ credito.id }}</div>
-    <div class="linea"><strong>Monto inicial:</strong> ${{ credito.valor_inicial|floatformat:0|intcomma }}</div>
+    <div class="linea"><strong>Monto:</strong> ${{ credito.valor_inicial|floatformat:0|intcomma }}</div>
 
     <div class="sep"></div>
 
     <strong>Items pagados: {{ pago_operacion.items_count }}</strong>
 
+    <!-- TABLA DE PAGOS -->
     <table>
         <thead>
             <tr>
@@ -59,41 +134,53 @@
                 <th class="small" style="text-align:right">Valor</th>
             </tr>
         </thead>
+
         <tbody>
             {% for it in pagos_items %}
-                <tr>
-                    <td>
-                        {% if it.tipo_pago == 'cuota' %}
-                            Cuota {{ it.cuota_numero }}
-                            <div class="small">Vence: {{ it.fecha_vencimiento|date:"d/m/Y" }}</div>
-                            <div class="small">Capital: ${{ it.abono_capital|floatformat:0|intcomma }}</div>
-                            <div class="small">Interés: ${{ it.interes|floatformat:0|intcomma }}</div>
+            <tr>
+                <td>
+                    {% if it.tipo_pago == 'cuota' %}
+                        Cuota {{ it.cuota_numero }}<br>
+                        <span class="small">Vence: {{ it.fecha_vencimiento|date:"d/m/Y" }}</span><br>
+                        <span class="small">Capital: ${{ it.abono_capital|floatformat:0|intcomma }}</span><br>
+                        <span class="small">Interés: ${{ it.interes|floatformat:0|intcomma }}</span><br>
 
-                            {% if it.servicios %}
-                                <div class="small">Servicios:</div>
-                                <ul class="small" style="padding-left:15px; margin:0;">
-                                    {% for s in it.servicios %}
-                                        <li>{{ s.tipo }}: ${{ s.valor_mensual|floatformat:0|intcomma }}</li>
-                                    {% endfor %}
-                                </ul>
-                            {% endif %}
-
-                        {% else %}
-                            Abono a capital
-                            {% if it.observacion %}<div class="small">{{ it.observacion }}</div>{% endif %}
+                        {% if it.interes_mora and it.interes_mora > 0 %}
+                            <span class="small">Mora: ${{ it.interes_mora|floatformat:0|intcomma }}</span><br>
+                            <span class="small">Días mora: {{ it.dias_mora }}</span><br>
                         {% endif %}
-                    </td>
 
-                    <td style="text-align:right; vertical-align:top;">
-                        ${{ it.valor_pagado|floatformat:0|intcomma }}
-                    </td>
-                </tr>
+                        {% if it.cobro_juridico and it.cobro_juridico > 0 %}
+                            <span class="small">Jurídico: ${{ it.cobro_juridico|floatformat:0|intcomma }}</span><br>
+                        {% endif %}
+
+                        {% if it.servicios %}
+                            <span class="small">Servicios:</span><br>
+                            <ul class="small" style="margin:0; padding-left:10px;">
+                                {% for s in it.servicios %}
+                                    <li>{{ s.tipo }}: ${{ s.valor_mensual|floatformat:0|intcomma }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+
+                    {% else %}
+                        Abono a capital<br>
+                        {% if it.observacion %}
+                            <span class="small">{{ it.observacion }}</span>
+                        {% endif %}
+                    {% endif %}
+                </td>
+
+                <td style="text-align:right; vertical-align:top;">
+                    ${{ it.valor_pagado|floatformat:0|intcomma }}
+                </td>
+            </tr>
             {% endfor %}
         </tbody>
 
         <tfoot>
             <tr>
-                <td style="text-align:right;"><strong>TOTAL PAGADO</strong></td>
+                <td style="text-align:right;"><strong>TOTAL</strong></td>
                 <td style="text-align:right;"><strong>${{ total_operacion|floatformat:0|intcomma }}</strong></td>
             </tr>
         </tfoot>
@@ -101,30 +188,31 @@
 
     <div class="sep"></div>
 
-    <!-- Saldos -->
+    <!-- SALDOS -->
     <div class="linea"><strong>Saldo capital:</strong> ${{ saldo_capital|floatformat:0|intcomma }}</div>
-    <div class="linea"><strong>Intereses pendientes:</strong> ${{ intereses|floatformat:0|intcomma }}</div>
+    <div class="linea"><strong>Intereses pend.:</strong> ${{ intereses|floatformat:0|intcomma }}</div>
 
     <div class="total-box">
-        TOTAL ADEUDADO: ${{ saldo_total|floatformat:0|intcomma }}
+        ADEUDADO: ${{ saldo_total|floatformat:0|intcomma }}
     </div>
 
     <div class="sep"></div>
 
-    <!-- Servicios restantes -->
-    <div class="linea"><strong>Seguro TR restante:</strong> ${{ seguro_restante|floatformat:0|intcomma }}</div>
-    <div class="linea"><strong>GPS restante:</strong> ${{ gps_restante|floatformat:0|intcomma }}</div>
+    <!-- SERVICIOS RESTANTES -->
+    <div class="linea"><strong>Seguro TR:</strong> ${{ seguro_restante|floatformat:0|intcomma }}</div>
+    <div class="linea"><strong>GPS:</strong> ${{ gps_restante|floatformat:0|intcomma }}</div>
 
     <div class="sep"></div>
 
     <div class="footer">
-        <strong>¡Gracias por su pago!</strong><br>
-        Generado {{ pago_operacion.fecha_hora|date:"d/m/Y H:i:s" }}<br>
-        Sistema FINANTAXIS v1.0
+        ¡Gracias por su pago!<br>
+        {{ pago_operacion.fecha_hora|date:"d/m/Y H:i:s" }}<br>
+        FINANTAXIS v1.0
     </div>
 
 </div>
 
+<!-- BOTONES (NO SE IMPRIMEN) -->
 <div class="no-print" style="text-align:center; margin-top:20px;">
     <button onclick="window.print()">🖨️ Imprimir</button>
     <button onclick="window.close()">Cerrar</button>

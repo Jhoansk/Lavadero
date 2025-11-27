@@ -52,6 +52,7 @@
             <p><strong>Vehículo (prenda):</strong> {{ credito.vehiculo }}</p>
             <p><strong>Valor del crédito:</strong> ${{ credito.valor_inicial|floatformat:0|intcomma }}</p>
             <p><strong>Interés mensual:</strong> {{ credito.interes }}%</p>
+            <p><strong>Interés moratorio:</strong> {{ credito.interes_moratorio }}%</p>
 
             <hr>
 
@@ -73,66 +74,98 @@
                     {% elif credito.estado == 'En mora' %} bg-warning text-dark
                     {% elif credito.estado == 'Cobro jurídico' %} bg-danger
                     {% else %} bg-secondary {% endif %}
-                ">
-                    {{ credito.estado }}
-                </span>
+                ">{{ credito.estado }}</span>
             </p>
+
             <p><strong>Servicios Activos:</strong> ${{ credito.total_servicios_activos|floatformat:0|intcomma }}</p>
 
-                <ul>
+            <ul>
                 {% for servicio in servicios_activos %}
-                    <li>{{ servicio.get_tipo_display }}: ${{ servicio.valor_anual|floatformat:0|intcomma }} ({{ servicio.fecha_inicio }} a {{ servicio.fecha_fin }})</li>
+                    <li>{{ servicio.get_tipo_display }} — ${{ servicio.valor_anual|floatformat:0|intcomma }} 
+                        ({{ servicio.fecha_inicio }} a {{ servicio.fecha_fin }})
+                    </li>
+                {% empty %}
+                    <li class="text-muted">Sin servicios activos</li>
                 {% endfor %}
-                </ul>
+            </ul>
 
             {% if credito.pagos.last and credito.pagos.last.tipo_pago == 'abono' %}
             <div class="alert alert-info">
-                🔄 Se realizó un <strong>abono a capital</strong> recientemente.  
-                Las cuotas fueron recalculadas según el nuevo saldo.
+                🔄 Se realizó un <strong>abono a capital</strong>. Las cuotas fueron recalculadas.
             </div>
             {% endif %}
 
-            <a href="{% url 'generar_excel_cronograma' credito.id %}" class="btn btn-success">
+            <a href="{% url 'generar_excel_cronograma' credito.id %}" class="btn btn-success mb-3">
                 📊 Descargar Excel Cuotas
             </a>
 
             <hr>
 
-            <!-- CRONOGRAMA DE PAGOS -->
-            <h5 class="titulo-financiera mb-3">📅 Cronograma de Pagos</h5>
+            <!-- ====================================================== -->
+            <!-- 🔥 TABLA COMBINADA: CRONOGRAMA + MORATORIOS -->
+            <!-- ====================================================== -->
+
+            <h5 class="titulo-financiera mb-3">📅 Cronograma de Pagos & Mora</h5>
 
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-financiera mt-3">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Fecha de vencimiento</th>
-                            <th>Abono a capital</th>
+                            <th>Fecha venc.</th>
+                            <th>Capital</th>
                             <th>Interés</th>
                             <th>Valor cuota</th>
                             <th>Saldo restante</th>
                             <th>Estado</th>
+                            <th>Días mora</th>
+                            <th>Interés mora</th>
+                            <th>Cobro jurídico</th>
+                            <th>Total moratorios</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for c in cronograma %}
-                        <tr>
-                            <td>{{ c.numero }}</td>
-                            <td>{{ c.fecha_vencimiento }}</td>
-                            <td>${{ c.abono_capital|floatformat:0|intcomma }}</td>
-                            <td>${{ c.interes|floatformat:0|intcomma }}</td>
-                            <td>${{ c.cuota_total|floatformat:0|intcomma }}</td>
-                            <td>${{ c.saldo_restante|floatformat:0|intcomma }}</td>
-                            <td>
-                                {% if c.pagada %}
-                                    <span class="badge bg-success">Pagada</span>
-                                {% else %}
-                                    <span class="badge bg-warning text-dark">Pendiente</span>
-                                {% endif %}
-                            </td>
-                        </tr>
+                        {% for item in cuotas_mora_info %}
+                            {% with c=item.cuota m=item.moratorio %}
+                            <tr>
+                                <td>{{ c.numero }}</td>
+                                <td>{{ c.fecha_vencimiento }}</td>
+                                <td>${{ c.abono_capital|floatformat:0|intcomma }}</td>
+                                <td>${{ c.interes|floatformat:0|intcomma }}</td>
+                                <td>${{ c.cuota_total|floatformat:0|intcomma }}</td>
+                                <td>${{ c.saldo_restante|floatformat:0|intcomma }}</td>
+
+                                <!-- ESTADO -->
+                                <td>
+                                    {% if c.pagada %}
+                                        <span class="badge bg-success">Pagada</span>
+                                    {% elif m.dias_mora > 90 %}
+                                        <span class="badge bg-danger">Cobro jurídico</span>
+                                    {% elif m.dias_mora > 0 %}
+                                        <span class="badge bg-warning text-dark">En mora</span>
+                                    {% else %}
+                                        <span class="badge bg-primary">Pendiente</span>
+                                    {% endif %}
+                                </td>
+
+                                <td>{{ m.dias_mora }}</td>
+                                <td>${{ m.interes_moratorio|floatformat:0|intcomma }}</td>
+                                <td>${{ m.cobro_juridico|floatformat:0|intcomma }}</td>
+                                <td class="fw-bold">${{ m.total_moratorios|floatformat:0|intcomma }}</td>
+                            </tr>
+                            {% endwith %}
                         {% endfor %}
                     </tbody>
+
+                    <!-- TOTALES -->
+                    <tfoot>
+                        <tr class="fw-bold">
+                            <td colspan="8" class="text-end">Totales moratorios:</td>
+                            <td>${{ moratorios_acumulados.total_interes_moratorio|floatformat:0|intcomma }}</td>
+                            <td>${{ moratorios_acumulados.total_cobro_juridico|floatformat:0|intcomma }}</td>
+                            <td>${{ moratorios_acumulados.total_general|floatformat:0|intcomma }}</td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
 
@@ -161,9 +194,7 @@
                         </tr>
                         {% empty %}
                         <tr>
-                            <td colspan="4" class="text-center text-muted">
-                                Sin pagos registrados
-                            </td>
+                            <td colspan="4" class="text-center text-muted">Sin pagos registrados</td>
                         </tr>
                         {% endfor %}
                     </tbody>
