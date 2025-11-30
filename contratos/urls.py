@@ -76,6 +76,8 @@ urlpatterns = [
     path('perfil/', views.perfil, name='configuraciones'),
     path('crear_usuario/', views.crear_usuario_desde_contratos, name='crear_usuario_desde_contratos'),
     path('checklist_vehiculo/', views.checklist_vehiculo, name='checklist_vehiculo'),
+    path('dashboard/', views.dashboard, name='dashboard'),
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

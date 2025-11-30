@@ -36,6 +36,8 @@ from django.template.loader import get_template
 from django.contrib.humanize.templatetags.humanize import intcomma
 from django.core.paginator import Paginator
 from django.contrib import messages
+from django.db import models
+
 
 
 def format_number_with_dots(value):
@@ -1280,3 +1282,61 @@ def buscar_vehiculo_documentos(request):
         'documentos': documentos_vehiculo
     })
     
+@login_required
+def dashboard(request):
+    # Totales principales
+    total_vehiculos = Vehiculo_contratos.objects.count()
+    total_facturas = Factura.objects.aggregate(total=Sum('total'))['total'] or 0
+    total_presupuestos = presupuesto.objects.aggregate(total=Sum('valor_p'))['total'] or 0
+    ganancia = total_presupuestos - total_facturas
+    porcentaje_ganancia = (ganancia / total_presupuestos * 100) if total_presupuestos > 0 else 0
+
+    # Vehículos por estado
+    estados = estado.objects.values('estado').annotate(cantidad=models.Count('estado'))
+
+    # Facturas por mes (últimos 6 meses)
+    facturas_por_mes = (
+        Factura.objects
+        .extra(select={'mes': 'DATE_FORMAT(fecha, "%%Y-%%m")'})
+        .values('mes')
+        .annotate(total=Sum('total'))
+        .order_by('mes')
+    )
+
+    # Top 5 vehículos con más gastos
+    top_gastos = (
+        Factura.objects
+        .values('id_placa__placa')
+        .annotate(total=Sum('total'))
+        .order_by('-total')[:5]
+    )
+
+    # Documentos próximos a vencer (30 días)
+    today = timezone.now().date()
+    future = today + timedelta(days=30)
+    documentos_vencer = documentos.objects.filter(
+        models.Q(fecha_vencimiento_to__range=[today, future]) |
+        models.Q(fecha_vencimiento_soat__range=[today, future]) |
+        models.Q(fecha_vencimiento_tecno__range=[today, future]) |
+        models.Q(fecha_vencimiento_sRc__range=[today, future])
+    )
+
+    # Últimos registros
+    ultimos_vehiculos = Vehiculo_contratos.objects.order_by('-id')[:5]
+    ultimas_facturas = Factura.objects.order_by('-id')[:5]
+
+    context = {
+        "total_vehiculos": total_vehiculos,
+        "total_facturas": total_facturas,
+        "total_presupuestos": total_presupuestos,
+        "ganancia": ganancia,
+        "porcentaje_ganancia": porcentaje_ganancia,
+        "estados": list(estados),
+        "facturas_por_mes": list(facturas_por_mes),
+        "top_gastos": list(top_gastos),
+        "documentos_vencer": documentos_vencer,
+        "ultimos_vehiculos": ultimos_vehiculos,
+        "ultimas_facturas": ultimas_facturas,
+    }
+
+    return render(request, "vehiculos/dashboard.html", context)
