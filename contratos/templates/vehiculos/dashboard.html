@@ -93,13 +93,13 @@
     <div class="row mt-4">
         <div class="col-md-12">
             <div class="card p-3">
-                <h5 class="title-section text-danger">⚠️ Documentos Próximos a Vencer</h5>
+                <h5 class="title-section text-danger">⚠️ Documentos Próximos a Vencer (30 días)</h5>
 
                 <table class="table table-sm table-hover">
                     <thead>
                         <tr>
                             <th>Placa</th>
-                            <th>TO Vencimiento</th>
+                            <th>TO</th>
                             <th>SOAT</th>
                             <th>Tecno</th>
                             <th>RC</th>
@@ -171,14 +171,13 @@
 {% block extra_js %}
 
 <script>
-    // DATA INYECTADA DESDE DJANGO (SEGURA)
+    // DATA INYECTADA DESDE DJANGO
     const meses = {{ meses_json|safe }};
     const valores = {{ valores_json|safe }};
-
     const estadosLabels = {{ estados_labels_json|safe }};
     const estadosCantidad = {{ estados_values_json|safe }};
 
-    // ------ GASTOS POR MES ------
+    // ========== GASTOS POR MES ==========
     const ctx1 = document.getElementById('gastosMesChart');
 
     new Chart(ctx1, {
@@ -197,7 +196,7 @@
         }
     });
 
-    // ------ ESTADOS ------
+    // ========== ESTADOS DE VEHICULOS ==========
     const ctx2 = document.getElementById('estadosChart');
 
     new Chart(ctx2, {
@@ -212,6 +211,13 @@
             }]
         }
     });
+
+    console.log("MESES:", meses);
+    console.log("VALORES:", valores);
+
+    console.log("ESTADOS LABELS:", estadosLabels);
+    console.log("ESTADOS CANTIDAD:", estadosCantidad);
+
 </script>
 
 {% endblock %}

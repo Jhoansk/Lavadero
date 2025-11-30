@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.db.models import Sum, Q
+from django.db.models import Sum, Q, Count
 from .forms import VehiculoForm
 from .models import Factura, Vehiculo_contratos,Checklist
 from .forms import FacturaForm, ChecklistForm
@@ -37,6 +37,7 @@ from django.contrib.humanize.templatetags.humanize import intcomma
 from django.core.paginator import Paginator
 from django.contrib import messages
 from django.db import models
+from decimal import Decimal
 
 
 
@@ -1284,17 +1285,37 @@ def buscar_vehiculo_documentos(request):
     
 @login_required
 def dashboard(request):
+
     # Totales principales
     total_vehiculos = Vehiculo_contratos.objects.count()
-    total_facturas = Factura.objects.aggregate(total=Sum('total'))['total'] or 0
-    total_presupuestos = presupuesto.objects.aggregate(total=Sum('valor_p'))['total'] or 0
+
+    raw_facturas = Factura.objects.aggregate(total=Sum('total'))['total']
+    total_facturas = Decimal(raw_facturas or 0)
+
+    raw_presupuestos = presupuesto.objects.aggregate(total=Sum('valor_p'))['total']
+    total_presupuestos = Decimal(raw_presupuestos or 0)
+
     ganancia = total_presupuestos - total_facturas
-    porcentaje_ganancia = (ganancia / total_presupuestos * 100) if total_presupuestos > 0 else 0
 
-    # Vehículos por estado
-    estados = estado.objects.values('estado').annotate(cantidad=models.Count('estado'))
+    porcentaje_ganancia = (
+        (ganancia / total_presupuestos) * Decimal(100)
+        if total_presupuestos > 0 else 0
+    )
 
-    # Facturas por mes (últimos 6 meses)
+    # =======================
+    #  ESTADOS DE VEHICULOS
+    # =======================
+    estados = estado.objects.values('estado').annotate(cantidad=Count('estado'))
+
+    estados_labels = [e['estado'] or "Sin estado" for e in estados]
+    estados_values = [e['cantidad'] for e in estados]
+
+    estados_labels_json = json.dumps(estados_labels)
+    estados_values_json = json.dumps(estados_values)
+
+    # =======================
+    #  GASTOS POR MES
+    # =======================
     facturas_por_mes = (
         Factura.objects
         .extra(select={'mes': 'DATE_FORMAT(fecha, "%%Y-%%m")'})
@@ -1303,7 +1324,43 @@ def dashboard(request):
         .order_by('mes')
     )
 
-    # Top 5 vehículos con más gastos
+    meses = [item['mes'] for item in facturas_por_mes]
+    valores = [float(item['total']) for item in facturas_por_mes]
+
+    meses_json = json.dumps(meses)
+    valores_json = json.dumps(valores)
+
+    # =======================
+    # DOCUMENTOS POR VENCER
+    # =======================
+    today = timezone.now().date()
+    future = today + timedelta(days=30)
+
+    documentos_vencer = documentos.objects.filter(
+        (
+            models.Q(fecha_vencimiento_to__isnull=False) &
+            models.Q(fecha_vencimiento_to__range=[today, future])
+        ) |
+        (
+            models.Q(fecha_vencimiento_soat__isnull=False) &
+            models.Q(fecha_vencimiento_soat__range=[today, future])
+        ) |
+        (
+            models.Q(fecha_vencimiento_tecno__isnull=False) &
+            models.Q(fecha_vencimiento_tecno__range=[today, future])
+        ) |
+        (
+            models.Q(fecha_vencimiento_sRc__isnull=False) &
+            models.Q(fecha_vencimiento_sRc__range=[today, future])
+        )
+    ).distinct()
+
+    # =======================
+    # DATOS GENERALES
+    # =======================
+    ultimos_vehiculos = Vehiculo_contratos.objects.order_by('-id')[:5]
+    ultimas_facturas = Factura.objects.order_by('-id')[:5]
+
     top_gastos = (
         Factura.objects
         .values('id_placa__placa')
@@ -1311,29 +1368,21 @@ def dashboard(request):
         .order_by('-total')[:5]
     )
 
-    # Documentos próximos a vencer (30 días)
-    today = timezone.now().date()
-    future = today + timedelta(days=30)
-    documentos_vencer = documentos.objects.filter(
-        models.Q(fecha_vencimiento_to__range=[today, future]) |
-        models.Q(fecha_vencimiento_soat__range=[today, future]) |
-        models.Q(fecha_vencimiento_tecno__range=[today, future]) |
-        models.Q(fecha_vencimiento_sRc__range=[today, future])
-    )
-
-    # Últimos registros
-    ultimos_vehiculos = Vehiculo_contratos.objects.order_by('-id')[:5]
-    ultimas_facturas = Factura.objects.order_by('-id')[:5]
-
     context = {
         "total_vehiculos": total_vehiculos,
         "total_facturas": total_facturas,
         "total_presupuestos": total_presupuestos,
         "ganancia": ganancia,
         "porcentaje_ganancia": porcentaje_ganancia,
-        "estados": list(estados),
-        "facturas_por_mes": list(facturas_por_mes),
-        "top_gastos": list(top_gastos),
+
+        # JSON para gráficos
+        "meses_json": meses_json,
+        "valores_json": valores_json,
+        "estados_labels_json": estados_labels_json,
+        "estados_values_json": estados_values_json,
+
+        # Tablas
+        "top_gastos": top_gastos,
         "documentos_vencer": documentos_vencer,
         "ultimos_vehiculos": ultimos_vehiculos,
         "ultimas_facturas": ultimas_facturas,
