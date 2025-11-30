@@ -21,14 +21,14 @@
         <div class="col-md-3">
             <div class="card p-3 text-center">
                 <h5>Total Facturas</h5>
-                <h3 class="text-danger fw-bold">${{ total_facturas|intcomma }}</h3>
+                <h3 class="text-danger fw-bold">${{ total_facturas|floatformat:0|intcomma }}</h3>
             </div>
         </div>
 
         <div class="col-md-3">
             <div class="card p-3 text-center">
                 <h5>Total Presupuestos</h5>
-                <h3 class="text-success fw-bold">${{ total_presupuestos|intcomma }}</h3>
+                <h3 class="text-success fw-bold">${{ total_presupuestos|floatformat:0|intcomma }}</h3>
             </div>
         </div>
 
@@ -77,7 +77,7 @@
                     {% for item in top_gastos %}
                         <tr>
                             <td>{{ item.id_placa__placa }}</td>
-                            <td>${{ item.total|intcomma }}</td>
+                            <td>${{ item.total|floatformat:0|intcomma }}</td>
                         </tr>
                     {% empty %}
                         <tr><td colspan="2" class="text-center text-muted">Sin información</td></tr>
@@ -95,30 +95,26 @@
             <div class="card p-3">
                 <h5 class="title-section text-danger">⚠️ Documentos Próximos a Vencer (30 días)</h5>
 
-                <table class="table table-sm table-hover">
-                    <thead>
-                        <tr>
-                            <th>Placa</th>
-                            <th>TO</th>
-                            <th>SOAT</th>
-                            <th>Tecno</th>
-                            <th>RC</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {% for doc in documentos_vencer %}
-                        <tr>
-                            <td>{{ doc.id_placa.placa }}</td>
-                            <td>{{ doc.fecha_vencimiento_to }}</td>
-                            <td>{{ doc.fecha_vencimiento_soat }}</td>
-                            <td>{{ doc.fecha_vencimiento_tecno }}</td>
-                            <td>{{ doc.fecha_vencimiento_sRc }}</td>
-                        </tr>
-                    {% empty %}
-                        <tr><td colspan="5" class="text-center text-muted">Sin registros.</td></tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
+                    <table class="table table-sm table-hover">
+                        <thead>
+                            <tr>
+                                <th>Placa</th>
+                                <th>Documento</th>
+                                <th>Fecha Vencimiento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for doc in documentos_vencer %}
+                            <tr>
+                                <td>{{ doc.placa }}</td>
+                                <td>{{ doc.tipo }}</td>
+                                <td>{{ doc.fecha }}</td>
+                            </tr>
+                        {% empty %}
+                            <tr><td colspan="3" class="text-center text-muted">Sin registros.</td></tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
 
             </div>
         </div>

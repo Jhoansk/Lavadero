@@ -1303,7 +1303,7 @@ def dashboard(request):
     )
 
     # =======================
-    #  ESTADOS DE VEHICULOS
+    # ESTADOS DE VEHICULOS
     # =======================
     estados = estado.objects.values('estado').annotate(cantidad=Count('estado'))
 
@@ -1314,7 +1314,7 @@ def dashboard(request):
     estados_values_json = json.dumps(estados_values)
 
     # =======================
-    #  GASTOS POR MES
+    # GASTOS POR MES
     # =======================
     facturas_por_mes = (
         Factura.objects
@@ -1336,24 +1336,35 @@ def dashboard(request):
     today = timezone.now().date()
     future = today + timedelta(days=30)
 
-    documentos_vencer = documentos.objects.filter(
-        (
-            models.Q(fecha_vencimiento_to__isnull=False) &
-            models.Q(fecha_vencimiento_to__range=[today, future])
-        ) |
-        (
-            models.Q(fecha_vencimiento_soat__isnull=False) &
-            models.Q(fecha_vencimiento_soat__range=[today, future])
-        ) |
-        (
-            models.Q(fecha_vencimiento_tecno__isnull=False) &
-            models.Q(fecha_vencimiento_tecno__range=[today, future])
-        ) |
-        (
-            models.Q(fecha_vencimiento_sRc__isnull=False) &
-            models.Q(fecha_vencimiento_sRc__range=[today, future])
-        )
-    ).distinct()
+    docs_raw = documentos.objects.select_related("id_placa").prefetch_related("id_placa__estado_set")
+
+    documentos_vencer = []
+
+    for d in docs_raw:
+
+        # Traer el último estado del vehículo
+        ultimo_estado = d.id_placa.estado_set.last()
+        estado_veh = ultimo_estado.estado.lower() if ultimo_estado else ""
+
+        # Excluir Vendido o Chatarrizado
+        if estado_veh in ["vendido", "chatarrizado"]:
+            continue
+
+        # Revisar qué documento vence dentro de 30 días
+        documentos_check = {
+            "TO": d.fecha_vencimiento_to,
+            "SOAT": d.fecha_vencimiento_soat,
+            "Tecno": d.fecha_vencimiento_tecno,
+            "RC": d.fecha_vencimiento_sRc,
+        }
+
+        for tipo, fecha in documentos_check.items():
+            if fecha and today <= fecha <= future:
+                documentos_vencer.append({
+                    "placa": d.id_placa.placa,
+                    "tipo": tipo,
+                    "fecha": fecha
+                })
 
     # =======================
     # DATOS GENERALES
