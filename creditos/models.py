@@ -327,6 +327,34 @@ class Credito(models.Model):
             self.estado = nuevo_estado
             self.save(update_fields=['estado'])
 
+    def intereses_al_dia(self, hoy=None):
+        hoy = hoy or date.today()
+
+        # Fecha de inicio real del crédito
+        fecha_inicio = self.fecha_inicio
+
+        # Días transcurridos
+        dias = (hoy - fecha_inicio).days
+        if dias < 0:
+            dias = 0
+
+        # Saldo real de capital aún pendiente
+        saldo_capital = self.saldo_capital()
+
+        # Tasa mensual en decimal ej: 2.9 → 0.029
+        tasa_mensual = self.interes / 100
+
+        # Interés diario (aprox mensual/30)
+        tasa_diaria = tasa_mensual / 30
+
+        # Interés real generado hasta hoy
+        interes_generado = (saldo_capital * tasa_diaria * dias).quantize(Decimal("0.01"))
+
+        return {
+            "dias": dias,
+            "interes_generado": interes_generado
+        }
+
 
 # ----------------------------------------------------------------------
 # PAGOS Y CUOTAS

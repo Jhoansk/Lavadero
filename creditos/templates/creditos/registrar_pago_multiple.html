@@ -67,6 +67,36 @@
 
         <p class="fs-5"><strong>Saldo actual:</strong> ${{ saldo|floatformat:0|intcomma }}</p>
 
+        <!-- ====================================================== -->
+        <!-- 💰 BLOQUE DE INFORMACIÓN: PAGO COMPLETO AL DÍA -->
+        <!-- ====================================================== -->
+        <div class="alert alert-info mt-2">
+            <h5 class="fw-bold mb-1">💠 Total para cancelar el crédito hoy</h5>
+
+            <p class="mb-0"><strong>Saldo capital:</strong> ${{ saldo|intcomma }}</p>
+
+            <!-- INTERÉS REAL AL DÍA -->
+            <p class="mb-0"><strong>Interés generado al día:</strong> ${{ interes_real|intcomma }}</p>
+
+            <p class="mb-0"><strong>Moratorios acumulados:</strong> ${{ moratorios.total_general|intcomma }}</p>
+
+            <hr class="my-1">
+
+            <h4 class="fw-bold text-success">
+                Total al día: ${{ total_pagar_hoy|intcomma }}
+            </h4>
+
+            <button type="submit"
+                    form="pagoForm"
+                    name="accion"
+                    value="pago_total"
+                    class="btn btn-danger mt-2 fw-bold w-100">
+                💰 Pago completo al día
+            </button>
+        </div>
+
+        <!-- ====================================================== -->
+
         <form method="post" id="pagoForm">
             {% csrf_token %}
             {{ formset.management_form }}
@@ -227,9 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   });
 
-  // ==========================
-  // AGREGAR FILA
-  // ==========================
+  // AGREGAR FILA -----------------------------
   agregarFilaBtn.addEventListener("click", () => {
       const formIndex = parseInt(totalForms.value);
       const plantilla = document.querySelector(".pago-row");
@@ -249,9 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
       actualizarTotal();
   });
 
-  // ==========================
-  // ELIMINAR FILA
-  // ==========================
+  // ELIMINAR FILA -----------------------------
   tableBody.addEventListener("click", (e) => {
       if (e.target.classList.contains("eliminar-fila")) {
           const fila = e.target.closest("tr");
@@ -276,9 +302,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   actualizarTotal();
 
-  // ==========================
-  // SUBMIT AJAX
-  // ==========================
+  // SUBMIT AJAX ------------------------------
   pagoForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 

@@ -217,6 +217,9 @@ def registrar_pago(request, credito_id):
 
     PagoFormSet = formset_factory(PagoForm, extra=1, can_delete=True)
 
+    # ==========================================================
+    # POST
+    # ==========================================================
     if request.method == 'POST':
         formset = PagoFormSet(request.POST)
 
@@ -226,6 +229,54 @@ def registrar_pago(request, credito_id):
             hoy = date.today()
 
             # ==========================================================
+            # 🟥  PAGO COMPLETO AL DÍA (INTERÉS REAL)
+            # ==========================================================
+            if tipo_operacion == "pago_total":
+
+                saldo_capital = credito.saldo_capital()
+                interes_real_info = credito.intereses_al_dia()
+                interes_real = interes_real_info["interes_generado"]
+                moratorios = credito.moratorios_totales()
+
+                total_pagar_hoy = (
+                    saldo_capital +
+                    interes_real +
+                    moratorios['total_general']
+                ).quantize(Decimal("0.01"))
+
+                # Registrar pago completo final
+                pago = PagoCredito.objects.create(
+                    credito=credito,
+                    valor_pagado=saldo_capital,
+                    interes_pagado=interes_real,
+                    interes_moratorio_pagado=moratorios["total_interes_moratorio"],
+                    cobro_juridico_pagado=moratorios["total_cobro_juridico"],
+                    tipo_pago='cuota',
+                    observacion='Pago total del crédito al día'
+                )
+
+                pagos_creados_ids.append(pago.id)
+
+                # Marcar todas las cuotas como pagadas
+                credito.cuotas_credito.update(pagada=True, estado="Pagada")
+
+                # Finalizar crédito
+                credito.estado = "Finalizado"
+                credito.save()
+
+                # AJAX
+                if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                    url = reverse('generar_recibo') + f"?ids={pago.id}"
+                    return JsonResponse({
+                        "ok": True,
+                        "recibo_url": url,
+                        "redirect_url": reverse('detalle_credito', args=[credito.id])
+                    })
+
+                messages.success(request, "Pago total del crédito registrado correctamente.")
+                return redirect('detalle_credito', credito_id=credito.id)
+
+            # ==========================================================
             # 🟩 ABONO DIRECTO A CAPITAL
             # ==========================================================
             if tipo_operacion == 'abono':
@@ -233,6 +284,7 @@ def registrar_pago(request, credito_id):
                     Decimal(form.cleaned_data.get('valor_pagado') or 0)
                     for form in formset if form.cleaned_data and not form.cleaned_data.get('DELETE')
                 )
+
                 if total_abono > 0:
                     credito.aplicar_abono_capital(total_abono)
                     pago = PagoCredito.objects.create(
@@ -243,11 +295,9 @@ def registrar_pago(request, credito_id):
                     )
                     pagos_creados_ids.append(pago.id)
 
-                # Actualizar estado del crédito
                 credito.verificar_estado_credito()
 
-                # AJAX
-                if request.headers.get('x-requested-with') == 'XMLHttpRequest' or request.POST.get('ajax') == '1':
+                if request.headers.get('x-requested-with') == 'XMLHttpRequest':
                     url = reverse('generar_recibo') + f"?ids={','.join(map(str, pagos_creados_ids))}"
                     return JsonResponse({
                         "ok": True,
@@ -261,127 +311,115 @@ def registrar_pago(request, credito_id):
             # ==========================================================
             # 🟦 PAGO NORMAL DE CUOTAS
             # ==========================================================
-            else:
-                for form in formset:
-                    if not form.cleaned_data or form.cleaned_data.get('DELETE'):
-                        continue
+            for form in formset:
+                if not form.cleaned_data or form.cleaned_data.get('DELETE'):
+                    continue
 
-                    cuota_numero = form.cleaned_data.get('cuota_numero')
-                    valor_pagado = Decimal(form.cleaned_data.get('valor_pagado') or 0)
-                    observacion = form.cleaned_data.get('observacion', '')
+                cuota_numero = form.cleaned_data.get('cuota_numero')
+                valor_pagado = Decimal(form.cleaned_data.get('valor_pagado') or 0)
+                observacion = form.cleaned_data.get('observacion', '')
 
-                    # Normalizar valores de mora y jurídico
-                    interes_mora_pagado = Decimal(
-                        form.cleaned_data.get('interes_moratorio_pagado')
-                        or request.POST.get(f"form-{form.prefix.split('-')[1]}-mora")
-                        or 0
-                    )
+                interes_mora_pagado = Decimal(
+                    form.cleaned_data.get('interes_moratorio_pagado')
+                    or request.POST.get(f"form-{form.prefix.split('-')[1]}-mora")
+                    or 0
+                )
 
-                    cobro_juridico_pagado = Decimal(
-                        form.cleaned_data.get('cobro_juridico_pagado')
-                        or request.POST.get(f"form-{form.prefix.split('-')[1]}-juridico")
-                        or 0
-                    )
+                cobro_juridico_pagado = Decimal(
+                    form.cleaned_data.get('cobro_juridico_pagado')
+                    or request.POST.get(f"form-{form.prefix.split('-')[1]}-juridico")
+                    or 0
+                )
 
-                    if cuota_numero:
-                        cuota = credito.cuotas_credito.filter(
-                            numero=cuota_numero,
-                            pagada=False
-                        ).first()
+                if cuota_numero:
+                    cuota = credito.cuotas_credito.filter(
+                        numero=cuota_numero,
+                        pagada=False
+                    ).first()
 
-                        if cuota:
+                    if cuota:
 
-                            # ===============================
-                            # 🔥 Cálculo real de mora
-                            # ===============================
-                            mora_info = credito.calcular_moratorios_por_cuota(cuota, hoy=hoy)
+                        # Cálculo real mora
+                        mora_info = credito.calcular_moratorios_por_cuota(cuota, hoy=hoy)
 
-                            if interes_mora_pagado == 0:
-                                interes_mora_pagado = mora_info['interes_moratorio']
+                        if interes_mora_pagado == 0:
+                            interes_mora_pagado = mora_info['interes_moratorio']
 
-                            if cobro_juridico_pagado == 0:
-                                cobro_juridico_pagado = mora_info['cobro_juridico']
+                        if cobro_juridico_pagado == 0:
+                            cobro_juridico_pagado = mora_info['cobro_juridico']
 
-                            # TOTAL REAL ADEUDADO
-                            valor_total_cuota = (
-                                cuota.cuota_total +
-                                interes_mora_pagado +
-                                cobro_juridico_pagado
-                            ).quantize(Decimal("0.01"))
+                        valor_total_cuota = (
+                            cuota.cuota_total +
+                            interes_mora_pagado +
+                            cobro_juridico_pagado
+                        ).quantize(Decimal("0.01"))
 
-                            # TOTAL REAL PAGADO (la corrección clave)
-                            pago_real = (
-                                valor_pagado +
-                                interes_mora_pagado +
-                                cobro_juridico_pagado
-                            ).quantize(Decimal("0.01"))
+                        pago_real = (
+                            valor_pagado +
+                            interes_mora_pagado +
+                            cobro_juridico_pagado
+                        ).quantize(Decimal("0.01"))
 
-                            # ===============================
-                            # Registrar pago principal
-                            # ===============================
-                            pago = PagoCredito.objects.create(
+                        # Registrar pago principal
+                        pago = PagoCredito.objects.create(
+                            credito=credito,
+                            valor_pagado=valor_pagado,
+                            cuota_numero=cuota.numero,
+                            tipo_pago='cuota',
+                            observacion=observacion,
+                            interes_moratorio_pagado=interes_mora_pagado,
+                            cobro_juridico_pagado=cobro_juridico_pagado
+                        )
+                        pagos_creados_ids.append(pago.id)
+
+                        # Pago parcial
+                        if pago_real < valor_total_cuota - Decimal("0.50"):
+                            restante = valor_total_cuota - pago_real
+                            cuota.cuota_total = restante
+                            cuota.pagada = False
+                            cuota.estado = "Pendiente"
+                            cuota.save()
+
+                        # Pago exacto
+                        elif abs(pago_real - valor_total_cuota) <= Decimal("0.50"):
+                            cuota.pagada = True
+                            cuota.estado = "Pagada"
+                            cuota.save(update_fields=['pagada', 'estado'])
+
+                        # Pago mayor
+                        else:
+                            excedente = pago_real - valor_total_cuota
+                            cuota.pagada = True
+                            cuota.estado = "Pagada"
+                            cuota.save(update_fields=['pagada', 'estado'])
+
+                            pago_exced = PagoCredito.objects.create(
                                 credito=credito,
-                                valor_pagado=valor_pagado,
-                                cuota_numero=cuota.numero,
-                                tipo_pago='cuota',
-                                observacion=observacion,
-                                interes_moratorio_pagado=interes_mora_pagado,
-                                cobro_juridico_pagado=cobro_juridico_pagado
+                                valor_pagado=excedente,
+                                tipo_pago='abono',
+                                observacion=f"Excedente pago cuota {cuota.numero}"
                             )
-                            pagos_creados_ids.append(pago.id)
+                            pagos_creados_ids.append(pago_exced.id)
 
-                            # ----- PAGO PARCIAL -----
-                            if pago_real < valor_total_cuota - Decimal("0.50"):
-                                restante = valor_total_cuota - pago_real
+                            credito.aplicar_abono_capital(excedente)
 
-                                cuota.cuota_total = restante
-                                cuota.pagada = False
-                                cuota.estado = "Pendiente"
-                                cuota.save()
+            # Si no hay cuotas pendientes → finalizar crédito
+            if credito.cuotas_credito.filter(pagada=False).count() == 0:
+                credito.estado = 'Finalizado'
+                credito.save()
 
-                            # ----- PAGO EXACTO -----
-                            elif abs(pago_real - valor_total_cuota) <= Decimal("0.50"):
-                                cuota.pagada = True
-                                cuota.estado = "Pagada"
-                                cuota.save(update_fields=['pagada', 'estado'])
+            credito.verificar_estado_credito()
 
-                            # ----- PAGO MAYOR -----
-                            else:
-                                excedente = pago_real - valor_total_cuota
+            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                url = reverse('generar_recibo') + f"?ids={','.join(map(str, pagos_creados_ids))}"
+                return JsonResponse({
+                    "ok": True,
+                    "recibo_url": url,
+                    "redirect_url": reverse('detalle_credito', args=[credito.id])
+                })
 
-                                cuota.pagada = True
-                                cuota.estado = "Pagada"
-                                cuota.save(update_fields=['pagada', 'estado'])
-
-                                pago_exced = PagoCredito.objects.create(
-                                    credito=credito,
-                                    valor_pagado=excedente,
-                                    tipo_pago='abono',
-                                    observacion=f"Excedente pago cuota {cuota.numero}"
-                                )
-                                pagos_creados_ids.append(pago_exced.id)
-
-                                credito.aplicar_abono_capital(excedente)
-
-                # Si todas las cuotas están pagadas → finalizar crédito
-                if credito.cuotas_credito.filter(pagada=False).count() == 0:
-                    credito.estado = 'Finalizado'
-                    credito.save()
-
-                # Actualizar estado general
-                credito.verificar_estado_credito()
-
-                # AJAX RESPONSE
-                if request.headers.get('x-requested-with') == 'XMLHttpRequest' or request.POST.get('ajax') == '1':
-                    url = reverse('generar_recibo') + f"?ids={','.join(map(str, pagos_creados_ids))}"
-                    return JsonResponse({
-                        "ok": True,
-                        "recibo_url": url,
-                        "redirect_url": reverse('detalle_credito', args=[credito.id])
-                    })
-
-                messages.success(request, "Pagos registrados correctamente.")
-                return redirect('detalle_credito', credito_id=credito.id)
+            messages.success(request, "Pagos registrados correctamente.")
+            return redirect('detalle_credito', credito_id=credito.id)
 
     # ==========================================================
     # GET
@@ -391,10 +429,27 @@ def registrar_pago(request, credito_id):
         for f in formset:
             f.fields['cuota_numero'].widget = forms.Select(choices=opciones_cuotas)
 
+    # -------------------------------
+    # VALORES PARA "PAGO COMPLETO AL DÍA"
+    # -------------------------------
+    saldo_capital = credito.saldo_capital()
+    interes_al_dia = credito.intereses_al_dia()
+    interes_real = interes_al_dia["interes_generado"]
+    moratorios = credito.moratorios_totales()
+
+    total_pagar_hoy = (
+        saldo_capital +
+        interes_real +
+        moratorios["total_general"]
+    ).quantize(Decimal("0.01"))
+
     return render(request, 'creditos/registrar_pago_multiple.html', {
         'credito': credito,
         'formset': formset,
-        'saldo': credito.saldo_capital()
+        'saldo': saldo_capital,
+        'interes_real': interes_real,
+        'moratorios': moratorios,
+        'total_pagar_hoy': total_pagar_hoy
     })
 
 # ----------------------------------------------------------------------
