@@ -244,7 +244,7 @@ table {
           <!-- Información del Vendedor (solo 1) -->
           <div class="inline-container primer-espacio">
               <p>VENDEDOR:</p><p style="margin-left: 100px;">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p><br>
-              <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario1.cedula }} de {{usuario1.ciudad_exp}}</p><br>
+              <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">{{ usuario1.tipo_doc }}. No. {{ usuario1.cedula }} de {{usuario1.ciudad_exp}}</p><br>
               <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario1.direccion }}</p><br>
               <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario1.barrio }}</p><br>
               <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario1.ciudad }}</p><br>
@@ -253,7 +253,7 @@ table {
           </div>
           <div class="inline-container primer-espacio">
             <p>COMPRADOR:</p><p style="margin-left: 91px;">{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p><br>
-            <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario2.cedula }} de {{usuario2.ciudad_exp}}</p><br>
+            <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">{{ usuario2.tipo_doc }}. No. {{ usuario2.cedula }} de {{usuario2.ciudad_exp}}</p><br>
             <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario2.direccion }}</p><br>
             <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario2.barrio }}</p><br>
             <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario2.ciudad }}</p><br>
@@ -264,7 +264,7 @@ table {
           <!-- Información del Vendedor 1 -->
           <div class="inline-container primer-espacio">
               <p>VENDEDOR:</p><p style="margin-left: 100px;">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p><br>
-              <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario1.cedula }} de {{usuario1.ciudad_exp}}</p><br>
+              <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">{{ usuario1.tipo_doc }}. No. {{ usuario1.cedula }} de {{usuario1.ciudad_exp}}</p><br>
               <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario1.direccion }}</p><br>
               <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario1.barrio }}</p><br>
               <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario1.ciudad }}</p><br>
@@ -273,7 +273,7 @@ table {
           </div>
           <div class="inline-container primer-espacio">
             <p>VENDEDOR:</p><p style="margin-left: 100px;">{{ usuario3.nombre }} {{ usuario3.p_apellido }} {{ usuario3.s_apellido }}</p><br>
-            <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario3.cedula }} de {{usuario3.ciudad_exp}}</p><br>
+            <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">{{ usuario3.tipo_doc }}. No. {{ usuario3.cedula }} de {{usuario3.ciudad_exp}}</p><br>
             <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario3.direccion }}</p><br>
             <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario3.barrio }}</p><br>
             <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario3.ciudad }}</p><br>
@@ -283,7 +283,7 @@ table {
 
         <div class="inline-container primer-espacio">
           <p>COMPRADOR:</p><p style="margin-left: 91px;">{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p><br>
-          <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario2.cedula }} de {{usuario2.ciudad_exp}}</p><br>
+          <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">{{ usuario2.tipo_doc }}. No. {{ usuario2.cedula }} de {{usuario2.ciudad_exp}}</p><br>
           <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario2.direccion }}</p><br>
           <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario2.barrio }}</p><br>
           <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario2.ciudad }}</p><br>
@@ -294,7 +294,7 @@ table {
             <!-- Información del Comprador (solo 1) -->
             <div class="inline-container primer-espacio">
               <p>VENDEDOR:</p><p style="margin-left: 100px;">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p><br>
-              <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario1.cedula }} de {{usuario1.ciudad_exp}}</p><br>
+              <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">{{ usuario1.tipo_doc }}. No. {{ usuario1.cedula }} de {{usuario1.ciudad_exp}}</p><br>
               <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario1.direccion }}</p><br>
               <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario1.barrio }}</p><br>
               <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario1.ciudad }}</p><br>
@@ -303,7 +303,7 @@ table {
           </div>
             <div class="inline-container primer-espacio">
                 <p>COMPRADOR:</p><p style="margin-left: 91px;">{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p><br>
-                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario2.cedula }} de {{usuario2.ciudad_exp}}</p><br>
+                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">{{ usuario2.tipo_doc }}. No. {{ usuario2.cedula }} de {{usuario2.ciudad_exp}}</p><br>
                 <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario2.direccion }}</p><br>
                 <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario2.barrio }}</p><br>
                 <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario2.ciudad }}</p><br>
@@ -314,7 +314,7 @@ table {
             <!-- Información del Comprador 1 -->
             <div class="inline-container primer-espacio">
               <p>VENDEDOR:</p><p style="margin-left: 100px;">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p><br>
-              <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }}</p><br>
+              <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">{{ usuario1.tipo_doc }}. No. {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }}</p><br>
               <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario1.direccion }}</p><br>
               <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario1.barrio }}</p><br>
               <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario1.ciudad }}</p><br>
@@ -323,7 +323,7 @@ table {
           </div>
             <div class="inline-container primer-espacio">
                 <p>COMPRADOR:</p><p style="margin-left: 91px;">{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p><br>
-                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario2.cedula }} de {{ usuario2.ciudad_exp }}</p><br>
+                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">{{ usuario2.tipo_doc }}. No. {{ usuario2.cedula }} de {{ usuario2.ciudad_exp }}</p><br>
                 <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario2.direccion }}</p><br>
                 <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario2.barrio }}</p><br>
                 <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario2.ciudad }}</p><br>
@@ -334,7 +334,7 @@ table {
             <!-- Información del Comprador 2 -->
             <div class="inline-container primer-espacio">
                 <p>COMPRADOR:</p><p style="margin-left: 91px;">{{ usuario4.nombre }} {{ usuario4.p_apellido }} {{ usuario4.s_apellido }}</p><br>
-                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario4.cedula }} de {{ usuario4.ciudad_exp }}</p><br>
+                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">{{ usuario4.tipo_doc }}. No. {{ usuario4.cedula }} de {{ usuario4.ciudad_exp }}</p><br>
                 <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario4.direccion }}</p><br>
                 <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario4.barrio }}</p><br>
                 <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario4.ciudad }}</p><br>
@@ -346,7 +346,7 @@ table {
         {% if tipo_juridica == "Comprador" %}
             <div class="inline-container primer-espacio">
                 <p>VENDEDOR:</p><p style="margin-left: 100px;">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p><br>
-                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }}</p><br>
+                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">{{ usuario1.tipo_doc }}. No. {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }}</p><br>
                 <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario1.direccion }}</p><br>
                 <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario1.barrio }}</p><br>
                 <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario1.ciudad }}</p><br>
@@ -357,7 +357,7 @@ table {
                 <p>NOMBRE:</p><p style="margin-left: 110px;"> {{ nombre }}</p><br>
                 <p>NIT:</p><p style="margin-left: 140px;"> {{ nit }}</p><br>
                 <p>COMPRADOR:</p><p style="margin-left: 91px;">{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p><br>
-                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario2.cedula }} de {{ usuario2.ciudad_exp }}</p><br>
+                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">{{ usuario2.tipo_doc }}. No. {{ usuario2.cedula }} de {{ usuario2.ciudad_exp }}</p><br>
                 <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario2.direccion }}</p><br>
                 <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario2.barrio }}</p><br>
                 <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario2.ciudad }}</p><br>
@@ -369,7 +369,7 @@ table {
                 <p>NOMBRE:</p><p style="margin-left: 110px;"> {{ nombre }}</p><br>
                 <p>NIT:</p><p style="margin-left: 140px;"> {{ nit }}</p><br>
                 <p>VENDEDOR:</p><p style="margin-left: 100px;">{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</p><br>
-                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }}</p><br>
+                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">{{ usuario1.tipo_doc }}. No. {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }}</p><br>
                 <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario1.direccion }}</p><br>
                 <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario1.barrio }}</p><br>
                 <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario1.ciudad }}</p><br>
@@ -378,7 +378,7 @@ table {
             </div>
             <div class="inline-container primer-espacio">
                 <p>COMPRADOR:</p><p style="margin-left: 91px;">{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</p><br>
-                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">C.C. No. {{ usuario2.cedula }} de {{usuario2.ciudad_exp }}</p><br>
+                <p>IDENTIFICACIÓN:</p><p style="margin-left: 76px;">{{ usuario2.tipo_doc }}. No. {{ usuario2.cedula }} de {{usuario2.ciudad_exp }}</p><br>
                 <p>DOMICILIO CONTRACTUAL:</p><p style="margin-left: 27px;">{{ usuario2.direccion }}</p><br>
                 <p>BARRIO:</p><p style="margin-left: 119px;">{{ usuario2.barrio }}</p><br>
                 <p>CIUDAD:</p><p style="margin-left: 119px;">{{ usuario2.ciudad }}</p><br>
@@ -614,7 +614,7 @@ table {
                 <br>
                 <p>____________________________________________</p>
                 <p><strong>{{ usuario1.nombre }} {{ usuario1.p_apellido }} {{ usuario1.s_apellido }}</strong></p>
-                <p>C.C No. {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }}</p>
+                <p>{{ usuario1.tipo_doc }} No. {{ usuario1.cedula }} de {{ usuario1.ciudad_exp }}</p>
               </div>
             </div>
             <div class="borde">
@@ -632,7 +632,7 @@ table {
                 <br>
                 <p>____________________________________________</p>
                 <p><strong>{{ usuario2.nombre }} {{ usuario2.p_apellido }} {{ usuario2.s_apellido }}</strong></p>
-                <p>C.C No. {{ usuario2.cedula }} de {{ usuario2.ciudad_exp }}</p>
+                <p>{{ usuario2.tipo_doc }} No. {{ usuario2.cedula }} de {{ usuario2.ciudad_exp }}</p>
             </div>
           </div>
           <div class="borde">
@@ -651,7 +651,7 @@ table {
                 <p>____________________________________________</p>
               {% if compradores == "2" %}
                 <p><strong>{{ usuario4.nombre }} {{ usuario4.p_apellido }} {{ usuario4.s_apellido }}</strong></p> 
-                <p>C.C No. {{ usuario4.cedula }} de {{ usuario4.ciudad_exp }}</p>
+                <p>{{ usuario4.tipo_doc }} No. {{ usuario4.cedula }} de {{ usuario4.ciudad_exp }}</p>
             {% else %}
                 <span class="signature"></span>
                 <span class="cc-text">C.C No.</span>

@@ -1,72 +1,126 @@
-{% extends 'base.html' %} {% block content %}
-<div class="recent-orders">
-  <h1>Lista de Facturas</h1>
-  <a
-    href="{% url 'vehiculos:descargar_excel_facturas' %}"
-    class="btn btn-primary"
-    >Descargar Excel</a
-  >
-  <a href="{% url 'vehiculos:descargar_pdf_facturas' %}" class="btn btn-primary"
-    >Descargar PDF</a
-  >
-  <table>
-    <thead>
-      <tr>
-        <th>Número de Factura</th>
-        <th>Placa</th>
-        <th>NIT</th>
-        <th>Nombre del Local</th>
-        <th>Fecha</th>
-        <th>Descripción</th>
-        <th>Cantidad</th>
-        <th>Valor</th>
-        <th>Total</th>
-        <th>Acciones</th>
-        <!-- Nueva columna para el botón -->
-      </tr>
-    </thead>
-    <tbody>
-      {% for factura in page_obj %}
-      <tr>
-        <td style="color: red">{{ factura.n_factura }}</td>
-        <td>{{ factura.id_placa.placa }}</td>
-        <td>{{ factura.nit }}</td>
-        <td>{{ factura.nombre_local }}</td>
-        <td>{{ factura.fecha }}</td>
-        <td>{{ factura.descripcion }}</td>
-        <td>{{ factura.cantidad }}</td>
-        <td>{{ factura.valor }}</td>
-        <td>{{ factura.total }}</td>
-        <td>
-          {% if factura.imagen %}
-          <a
-            href="{% url 'vehiculos:ver_factura' factura.id %}"
-            class="btn btn-secondary"
-            >Ver factura</a
-          >
-          {% endif %}
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-  <div class="pagination">
-    <span class="step-links">
-      {% if page_obj.has_previous %}
-      <a href="?page=1">&laquo; primera</a>
-      <a href="?page={{ page_obj.previous_page_number }}">anterior</a>
-      {% endif %}
-      <span class="current">
-        Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
-      </span>
-      {% if page_obj.has_next %}
-      <a href="?page={{ page_obj.next_page_number }}">siguiente</a>
-      <a href="?page={{ page_obj.paginator.num_pages }}">última &raquo;</a>
-      {% endif %}
-    </span>
-  </div>
-  <a href="{% url 'vehiculos:agregar_factura' %}">Agregar nueva factura</a>
+{% extends "vehiculos/layout_contratos.html" %}
+
+{% block title %}Lista de Facturas{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid py-3">
+
+    <!-- HEADER -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">🧾 Lista de Facturas</h2>
+
+        <div class="d-flex gap-2">
+            <a href="{% url 'vehiculos:descargar_excel_facturas' %}"
+               class="btn btn-outline-success">
+                📊 Excel
+            </a>
+            <a href="{% url 'vehiculos:descargar_pdf_facturas' %}"
+               class="btn btn-outline-danger">
+                📄 PDF
+            </a>
+            <a href="{% url 'vehiculos:agregar_factura' %}"
+               class="btn btn-success">
+                ➕ Nueva Factura
+            </a>
+        </div>
+    </div>
+
+    <!-- TABLE CARD -->
+    <div class="card">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th># Factura</th>
+                        <th>Placa</th>
+                        <th>NIT</th>
+                        <th>Local</th>
+                        <th>Fecha</th>
+                        <th>Descripción</th>
+                        <th>Cant.</th>
+                        <th>Valor</th>
+                        <th>Total</th>
+                        <th class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for factura in page_obj %}
+                    <tr>
+                        <td class="fw-semibold text-danger">
+                            {{ factura.n_factura }}
+                        </td>
+                        <td>{{ factura.id_placa.placa }}</td>
+                        <td>{{ factura.nit }}</td>
+                        <td>{{ factura.nombre_local }}</td>
+                        <td>{{ factura.fecha }}</td>
+                        <td>{{ factura.descripcion }}</td>
+                        <td>{{ factura.cantidad }}</td>
+                        <td>{{ factura.valor }}</td>
+                        <td>{{ factura.total }}</td>
+                        <td class="text-center">
+                            {% if factura.imagen %}
+                                <a href="{% url 'vehiculos:ver_factura' factura.id %}"
+                                   class="btn btn-sm btn-outline-secondary">
+                                    👁 Ver
+                                </a>
+                            {% else %}
+                                <span class="text-muted">—</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="10" class="text-center text-muted py-4">
+                            No hay facturas registradas
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- PAGINATION -->
+    {% if page_obj.paginator.num_pages > 1 %}
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page=1">&laquo;</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                    Anterior
+                </a>
+            </li>
+            {% endif %}
+
+            <li class="page-item active">
+                <span class="page-link">
+                    {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
+                </span>
+            </li>
+
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+                    Siguiente
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link"
+                   href="?page={{ page_obj.paginator.num_pages }}">
+                    &raquo;
+                </a>
+            </li>
+            {% endif %}
+
+        </ul>
+    </nav>
+    {% endif %}
+
 </div>
-<!-- End of Vehicles Section -->
 
 {% endblock %}

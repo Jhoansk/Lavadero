@@ -1,0 +1,212 @@
+{% extends 'vehiculos/layout_contratos.html' %}
+{% load humanize %}
+
+{% block title %}Dashboard Operativa{% endblock %}
+
+{% block content %}
+<div class="container-fluid py-3">
+
+    <!-- TÍTULO -->
+    <h2 class="fw-bold mb-3">📊 Dashboard Operativa</h2>
+
+    <!-- FILTROS -->
+    <form method="get" class="row g-2 mb-4">
+
+        <div class="col-md-3">
+            <select name="tipo" class="form-select">
+                <option value="TODOS">COMPRA + VENTA</option>
+                <option value="COMPRA" {% if tipo_filtro == 'COMPRA' %}selected{% endif %}>Solo COMPRA</option>
+                <option value="VENTA" {% if tipo_filtro == 'VENTA' %}selected{% endif %}>Solo VENTA</option>
+            </select>
+        </div>
+
+        <div class="col-md-3">
+            <select name="tipo_contrato" class="form-select">
+                <option value="TODOS">Todos los tipos</option>
+                {% for t in tipos_contrato %}
+                    <option value="{{ t }}" {% if tipo_contrato_filtro == t %}selected{% endif %}>
+                        {{ t }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <input type="date" name="desde" class="form-control" value="{{ fecha_desde }}">
+        </div>
+
+        <div class="col-md-2">
+            <input type="date" name="hasta" class="form-control" value="{{ fecha_hasta }}">
+        </div>
+
+        <div class="col-md-2">
+            <button class="btn btn-primary w-100">Aplicar</button>
+        </div>
+
+    </form>
+
+    <!-- KPIs -->
+    <div class="row g-3 mb-4">
+
+        <div class="col-md-3">
+            <div class="card p-3 text-center">
+                <h6>Total Compra</h6>
+                <h4 class="text-warning">${{ total_compra|intcomma }}</h4>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card p-3 text-center">
+                <h6>Total Venta</h6>
+                <h4 class="text-info">${{ total_venta|intcomma }}</h4>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card p-3 text-center">
+                <h6>Ganancia</h6>
+                <h4 class="{% if total_ganancia >= 0 %}text-success{% else %}text-danger{% endif %}">
+                    ${{ total_ganancia|intcomma }}
+                </h4>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card p-3 text-center">
+                <h6>Margen</h6>
+                <h4>{{ margen|floatformat:2 }}%</h4>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- GRÁFICOS -->
+    <div class="row g-3">
+
+        <div class="col-md-8">
+            <div class="card p-3">
+                <h5>📈 Comparativo Mensual Compra vs Venta</h5>
+                <canvas id="mensualChart"></canvas>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-3">
+                <h5>📊 Distribución por Tipo</h5>
+                <canvas id="tipoChart"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- PROCESO DE VEHÍCULOS (PRO) -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card p-3">
+                <h5>🚗 Estado del Proceso de Vehículos</h5>
+
+                <table class="table table-sm table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th>Placa</th>
+                            <th>Tipo</th>
+                            <th>Proceso Actual</th>
+                            <th>Progreso</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for c in checklists %}
+                        <tr>
+                            <td>{{ c.vehiculo.placa }}</td>
+                            <td>
+                                {% if c.es_nuevo %}
+                                    Nuevo
+                                {% else %}
+                                    Usado
+                                {% endif %}
+                            </td>
+                            <td>{{ c.proceso_actual }}</td>
+                            <td style="width: 220px;">
+                                <div class="progress">
+                                    <div class="progress-bar
+                                        {% if c.progreso == 100 %}
+                                            bg-success
+                                        {% else %}
+                                            bg-info
+                                        {% endif %}"
+                                        style="width: {{ c.progreso }}%">
+                                        {{ c.progreso }}%
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                {% if c.listo_para_entrega %}
+                                    <span class="badge bg-success">Listo</span>
+                                {% else %}
+                                    <span class="badge bg-warning text-dark">En proceso</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="5" class="text-center text-muted">
+                                Sin información de procesos
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const meses = {{ meses_json|safe }};
+    const compras = {{ compras_mes_json|safe }};
+    const ventas = {{ ventas_mes_json|safe }};
+
+    const tipoLabels = {{ tipos_labels_json|safe }};
+    const tipoValues = {{ tipos_values_json|safe }};
+
+    // COMPARATIVO MENSUAL
+    new Chart(document.getElementById('mensualChart'), {
+        type: 'line',
+        data: {
+            labels: meses,
+            datasets: [
+                {
+                    label: 'Compras',
+                    data: compras,
+                    borderColor: '#ffc107',
+                    tension: 0.3
+                },
+                {
+                    label: 'Ventas',
+                    data: ventas,
+                    borderColor: '#0dcaf0',
+                    tension: 0.3
+                }
+            ]
+        }
+    });
+
+    // DISTRIBUCIÓN POR TIPO
+    new Chart(document.getElementById('tipoChart'), {
+        type: 'pie',
+        data: {
+            labels: tipoLabels,
+            datasets: [{
+                data: tipoValues
+            }]
+        }
+    });
+</script>
+{% endblock %}

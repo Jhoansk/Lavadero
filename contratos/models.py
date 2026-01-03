@@ -203,6 +203,31 @@ class Checklist(models.Model):
     saldo = models.BooleanField(default=False)
 
     @property
+    def proceso_actual(self):
+        if not self.traspaso:
+            return "Traspaso pendiente"
+        if not self.documentos_al_dia:
+            return "Documentos pendientes"
+        if not self.entrega_comercial:
+            return "Entrega comercial pendiente"
+        if not self.desembolso:
+            return "Desembolso pendiente"
+        if not self.saldo:
+            return "Saldo pendiente"
+        return "Listo para entrega"
+
+    @property
+    def progreso(self):
+        pasos = [
+            self.traspaso,
+            self.documentos_al_dia,
+            self.entrega_comercial,
+            self.desembolso,
+            self.saldo
+        ]
+        return int((sum(pasos) / len(pasos)) * 100)
+
+    @property
     def listo_para_entrega(self):
         return all([self.traspaso, self.documentos_al_dia, self.entrega_comercial, self.desembolso, self.saldo])
 

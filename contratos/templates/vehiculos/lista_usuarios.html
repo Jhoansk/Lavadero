@@ -1,74 +1,108 @@
-{% extends 'base.html' %}
+{% extends "vehiculos/layout_contratos.html" %}
 
 {% block title %}Lista de Usuarios{% endblock %}
 
 {% block content %}
-<div class="recent-orders">
-    <div class="vehicle_search">
-        <h1>Lista de Usuarios</h1>
 
-        <a href="{% url 'vehiculos:agregar_usuario' %}" class="btn btn-primary">Agregar Usuario</a>
+<div class="container-fluid py-3">
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Primer Apellido</th>
-                    <th>Segundo Apellido</th>
-                    <th>Cédula</th>
-                    <th>Teléfono</th>
-                    <th>Dirección</th>
-                    <th>Correo</th>
-                    <th>Ciudad</th>
-                    <th>Barrio</th>
-                    <th>Acciones</th> <!-- Nueva columna para acciones -->
-                </tr>
-            </thead>
-            <tbody>
-                {% if usuarios %}
-                    {% for usuario in usuarios %}
+    <!-- TÍTULO + BOTÓN -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">👥 Lista de Usuarios</h2>
+        <a href="{% url 'vehiculos:agregar_usuario' %}" class="btn btn-success">
+            ➕ Agregar Usuario
+        </a>
+    </div>
+
+    <!-- TABLA -->
+    <div class="card p-3">
+        <div class="table-responsive">
+            <table class="table table-hover table-striped align-middle">
+                <thead class="table-dark">
                     <tr>
-                        <td>{{ usuario.nombre }}</td>
+                        <th>Nombre</th>
+                        <th>Apellido 1</th>
+                        <th>Apellido 2</th>
+                        <th>Cédula</th>
+                        <th>Teléfono</th>
+                        <th>Correo</th>
+                        <th>Ciudad</th>
+                        <th>Barrio</th>
+                        <th class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                {% for usuario in usuarios %}
+                    <tr>
+                        <td class="fw-bold">{{ usuario.nombre }}</td>
                         <td>{{ usuario.p_apellido }}</td>
                         <td>{{ usuario.s_apellido }}</td>
                         <td>{{ usuario.cedula }}</td>
                         <td>{{ usuario.telefono }}</td>
-                        <td>{{ usuario.direccion }}</td>
                         <td>{{ usuario.correo }}</td>
                         <td>{{ usuario.ciudad }}</td>
                         <td>{{ usuario.barrio }}</td>
-                        <td>
-                            <!-- Botón Editar -->
-                            <a href="{% url 'vehiculos:editar_usuario' usuario.id %}" class="btn btn-primary btn-sm">Editar</a>
-                            <!-- Botón Eliminar -->
-                            <form action="{% url 'vehiculos:eliminar_usuario' usuario.id %}" method="POST" style="display:inline;">
+                        <td class="text-center">
+
+                            <a href="{% url 'vehiculos:editar_usuario' usuario.id %}"
+                               class="btn btn-primary btn-sm">
+                                ✏️ Editar
+                            </a>
+
+                            <form action="{% url 'vehiculos:eliminar_usuario' usuario.id %}"
+                                  method="POST"
+                                  class="d-inline">
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?')">Eliminar</button>
+                                <button type="submit"
+                                        class="btn btn-danger btn-sm"
+                                        onclick="return confirm('¿Seguro que deseas eliminar este usuario?')">
+                                    🗑 Eliminar
+                                </button>
                             </form>
+
                         </td>
                     </tr>
-                    {% endfor %}
-                {% else %}
+                {% empty %}
                     <tr>
-                        <td colspan="10">No hay usuarios registrados.</td>
+                        <td colspan="9" class="text-center text-muted py-3">
+                            No hay usuarios registrados.
+                        </td>
                     </tr>
-                {% endif %}
-            </tbody>
-        </table>
+                {% endfor %}
 
-        <!-- Paginación -->
-        <div style="margin-top: 20px; text-align: center;">
-            <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span><br>
-            {% if page_obj.has_previous %}
-                <a href="?page=1{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}" class="btn btn-secondary btn-sm">Primero</a>
-                <a href="?page={{ page_obj.previous_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}" class="btn btn-secondary btn-sm">Anterior</a>
-            {% endif %}
-            
-            {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}" class="btn btn-secondary btn-sm">Siguiente</a>
-                <a href="?page={{ page_obj.paginator.num_pages }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}" class="btn btn-secondary btn-sm">Último</a>
-            {% endif %}
+                </tbody>
+            </table>
         </div>
     </div>
+
+    <!-- PAGINACIÓN -->
+    {% if page_obj.paginator.num_pages > 1 %}
+    <div class="d-flex justify-content-center mt-4 gap-2">
+
+        {% if page_obj.has_previous %}
+            <a class="btn btn-outline-secondary btn-sm"
+               href="?page=1">« Primero</a>
+
+            <a class="btn btn-outline-secondary btn-sm"
+               href="?page={{ page_obj.previous_page_number }}">‹ Anterior</a>
+        {% endif %}
+
+        <span class="btn btn-light btn-sm disabled">
+            Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+        </span>
+
+        {% if page_obj.has_next %}
+            <a class="btn btn-outline-secondary btn-sm"
+               href="?page={{ page_obj.next_page_number }}">Siguiente ›</a>
+
+            <a class="btn btn-outline-secondary btn-sm"
+               href="?page={{ page_obj.paginator.num_pages }}">Último »</a>
+        {% endif %}
+
+    </div>
+    {% endif %}
+
 </div>
+
 {% endblock %}

@@ -1,68 +1,80 @@
-{% extends 'base.html' %}
+{% extends 'vehiculos/layout_contratos.html' %}
+
+{% block title %}Archivos de Contratos{% endblock %}
 
 {% block content %}
-    <title>Archivos de Contratos</title>
-
-    <body>
-        <div class="recent-orders">
-            <div class="vehicle_search">
-                <h1>Archivos de Contratos</h1>
-
-                <!-- Formulario de búsqueda -->
-                <form method="GET" action="" style="margin-bottom: 20px;">
-                    <input 
-                        type="text" 
-                        name="search" 
-                        placeholder="Buscar archivo por nombre" 
-                        value="{{ request.GET.search }}" 
-                        style="padding: 8px; width: 300px; border: 1px solid #ccc; border-radius: 4px;">
-                    <button 
-                        type="submit" 
-                        style="padding: 8px 12px; background-color: #007BFF; color: white; border: none; border-radius: 4px; cursor: pointer;">
-                        Buscar
-                    </button>
-                </form>
-
-                <!-- Tabla de resultados -->
-                {% if archivos %}
-                    <table border="1" style="width: 100%; text-align: left; border-collapse: collapse;">
-                        <thead>
-                            <tr>
-                                <th style="padding: 8px;">Nombre del Archivo</th>
-                                <th style="padding: 8px; text-align: center;">Acción</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for archivo in archivos %}
-                                <tr>
-                                    <td style="padding: 8px;">{{ archivo.nombre }}</td>
-                                    <td style="padding: 8px; text-align: center;">
-                                        <a href="{{ archivo.ruta }}" download="{{ archivo.nombre }}" style="text-decoration: none; color: #007BFF;">
-                                            <i class="fa fa-download" aria-hidden="true" style="font-size: 1.2em;"></i> Descargar
-                                        </a>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-
-                    <!-- Paginación -->
-                    <div style="margin-top: 20px; text-align: center;">
-                        <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span><br>
-                        {% if page_obj.has_previous %}
-                            <a href="?page=1{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}" style="padding: 8px 12px; background-color: #007BFF; color: white; border: none; border-radius: 4px; cursor: pointer;">Primero</a>
-                            <a href="?page={{ page_obj.previous_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}" style="padding: 8px 12px; background-color: #007BFF; color: white; border: none; border-radius: 4px; cursor: pointer;">Anterior</a>
-                        {% endif %}
-                        
-                        {% if page_obj.has_next %}
-                            <a href="?page={{ page_obj.next_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}" style="padding: 8px 12px; background-color: #007BFF; color: white; border: none; border-radius: 4px; cursor: pointer;">Siguiente</a>
-                            <a href="?page={{ page_obj.paginator.num_pages }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}" style="padding: 8px 12px; background-color: #007BFF; color: white; border: none; border-radius: 4px; cursor: pointer;">Último</a>
-                        {% endif %}
-                    </div>
-                {% else %}
-                    <p>No se encontraron archivos disponibles.</p>
-                {% endif %}
-            </div>
+<div class="container">
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-warning text-white">
+            <h3>Archivos de Contratos</h3>
         </div>
-    </body>
+        <div class="card-body">
+            <!-- Formulario de búsqueda -->
+            <form method="GET" action="" class="mb-3 d-flex gap-2">
+                <input 
+                    type="text" 
+                    name="search" 
+                    placeholder="Buscar archivo por nombre" 
+                    value="{{ request.GET.search }}" 
+                    class="form-control w-auto">
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </form>
+
+            <!-- Tabla de resultados -->
+            {% if archivos %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-warning">
+                        <tr>
+                            <th>Nombre del Archivo</th>
+                            <th class="text-center">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for archivo in archivos %}
+                        <tr>
+                            <td>{{ archivo.nombre }}</td>
+                            <td class="text-center">
+                                <a href="{{ archivo.ruta }}" download="{{ archivo.nombre }}" class="text-primary text-decoration-none">
+                                    <i class="fa fa-download" aria-hidden="true"></i> Descargar
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Paginación -->
+            <nav aria-label="Page navigation" class="mt-3">
+                <ul class="pagination justify-content-center">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page=1{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">Primero</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">Anterior</a>
+                    </li>
+                    {% endif %}
+
+                    <li class="page-item disabled">
+                        <span class="page-link">Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
+                    </li>
+
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">Siguiente</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">Último</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            {% else %}
+            <p>No se encontraron archivos disponibles.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock %}

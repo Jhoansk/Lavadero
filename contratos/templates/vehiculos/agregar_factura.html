@@ -1,28 +1,57 @@
-{% extends 'base.html' %} {% block content %} {% load humanize %}
-<!-- Analyses -->
+{% extends "vehiculos/layout_contratos.html" %}
+{% load humanize %}
 
-<div class="recent-orders">
-  <div class="vehicle_search">
-    <h1>Buscar Vehículo</h1>
-    <form method="post">
-      {% csrf_token %}
-      <div class="form-group">
-        <label for="placa">Placa del Vehículo:</label>
-        <input
-          type="text"
-          id="placa"
-          name="placa"
-          value="{{ placa }}"
-          placeholder="Ingresa la placa"
-        />
-      </div>
-      <div class="form-group">
-        <button type="submit" name="buscar">Buscar Vehículo</button>
-      </div>
-      {% if error %}
-      <p class="error-message">{{ error }}</p>
-      {% endif %}
-    </form>
-  </div>
-  {% endblock %}
+{% block title %}Buscar Vehículo{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid py-3">
+
+    <!-- HEADER -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">🔍 Buscar Vehículo</h2>
+    </div>
+
+    <!-- CARD -->
+    <div class="card p-4">
+
+        <form method="post" novalidate>
+            {% csrf_token %}
+
+            <div class="row g-3 align-items-end">
+
+                <div class="col-md-6">
+                    <label for="placa" class="form-label fw-semibold">
+                        Placa del Vehículo
+                    </label>
+                    <input
+                        type="text"
+                        id="placa"
+                        name="placa"
+                        value="{{ placa }}"
+                        class="form-control"
+                        placeholder="Ingresa la placa"
+                    />
+                </div>
+
+                <div class="col-md-3">
+                    <button type="submit" name="buscar" class="btn btn-success w-100">
+                        🔎 Buscar Vehículo
+                    </button>
+                </div>
+
+            </div>
+
+            {% if error %}
+                <div class="alert alert-danger mt-3">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+        </form>
+
+    </div>
+
 </div>
+
+{% endblock %}

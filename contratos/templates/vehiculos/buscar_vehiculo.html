@@ -1,177 +1,160 @@
-{% extends 'base.html' %}
+{% extends "vehiculos/layout_contratos.html" %}
+{% load humanize %}
+
+{% block title %}Dashboard Vehículos{% endblock %}
+
 {% block content %}
 
-            {% load humanize %}
+<div class="container-fluid py-3">
 
-            <!-- Analyses -->
-            <div class="analyse">
-                <div class="sales">
-                    <div class="status">
-                        <div class="info">
-                            <h3>Total Gastos</h3>
-                            <h1>${{ total_gastos|intcomma }}</h1>
-                        </div>
-                        <div class="progresss">
-                            <svg>
-                                <circle cx="38" cy="38" r="36"></circle>
-                            </svg>
-                            <div class="percentage">
-                                <p>+81%</p>
-                            </div>
-                        </div>
-                    </div>
+    <!-- ================= KPI ================= -->
+    <div class="row mb-4">
+
+        <div class="col-md-4">
+            <div class="card p-3">
+                <h6 class="text-muted">Total Gastos</h6>
+                <h3 class="text-danger fw-bold">
+                    ${{ total_gastos|floatformat:0|intcomma }}
+                </h3>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-3">
+                <h6 class="text-muted">Presupuesto</h6>
+                <h3 class="text-primary fw-bold">
+                    ${{ presupuesto_total|floatformat:0|intcomma }}
+                </h3>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-3">
+                <h6 class="text-muted">Ganancia</h6>
+                <h3 class="text-success fw-bold">
+                    ${{ ganancia|floatformat:0|intcomma }}
+                    <small class="text-muted">
+                        ({{ porcentaje_ganancia|floatformat:0 }}%)
+                    </small>
+                </h3>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ================= BUSCAR ================= -->
+    <div class="card p-4 mb-4">
+        <h5 class="mb-3">🔍 Buscar Vehículo</h5>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="row g-3 align-items-end">
+                <div class="col-md-4">
+                    <label class="form-label">Placa</label>
+                    <input type="text"
+                           name="placa"
+                           value="{{ request.POST.placa }}"
+                           class="form-control">
                 </div>
-                <div class="visits">
-                    <div class="status">
-                        <div class="info">
-                            <h3>Presupuesto</h3>
-                            <h1>${{ presupuesto_total|intcomma }}</h1>
-                        </div>
-                        <div class="progresss">
-                            <svg>
-                                <circle cx="38" cy="38" r="36"></circle>
-                            </svg>
-                            <div class="percentage">
-                                <p>-78%</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="searches">
-                    <div class="status">
-                        <div class="info">
-                            <h3>Ganancias</h3>
-                            <h1>${{ ganancia|floatformat:0|intcomma }}</h1>
-                        </div>
-                        <div class="progresss">
-                            <svg>
-                                <circle cx="38" cy="38" r="36"></circle>
-                            </svg>
-                            <div class="percentage">
-                                <p>{{ porcentaje_ganancia|floatformat:0 }}%</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-success w-100">
+                        Buscar
+                    </button>
                 </div>
             </div>
-            <!-- End of Analyses -->
+        </form>
 
-            <div class="recent-orders">
-                <div class="vehicle_search">
-                    <h2>Buscar Vehículo</h2>
-                    <form method="post">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <label for="placa">Placa:</label>
-                            <input type="text" name="placa" id="placa" value="{{ request.POST.placa }}" class="form-control">
-                        </div>
-                        <button type="submit" svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Buscar</button>
-                    </form>
-                </div>
-                {% if error %}
-                    <p class="text-danger">{{ error }}</p>
-                {% endif %}
-
-                {% if vehiculo %}
-                    <div class="vehicle-info">
-                        <h2>Información del Vehículo</h2>
-                        <p><strong>Placa:</strong> {{ vehiculo.placa }}</p>
-                        <p><strong>Marca:</strong> {{ vehiculo.marca }}</p>
-                        <p><strong>Línea:</strong> {{ vehiculo.linea }}</p>
-                        <p><strong>Modelo:</strong> {{ vehiculo.modelo }}</p>
-
-                        <!-- Botones de descarga -->
-                        <!--
-                        <div class="btn-group">
-                            <form method="post" style="display:inline;">
-                                {% csrf_token %}
-                                <input type="hidden" name="placa" value="{{ vehiculo.placa }}">
-                                <button type="submit" name="descargar_excel" class="btn btn-success">Descargar Excel</button>
-                            </form>
-                            <form method="post" style="display:inline;">
-                                {% csrf_token %}
-                                <input type="hidden" name="placa" value="{{ vehiculo.placa }}">
-                                <button type="submit" name="descargar_pdf" class="btn btn-danger">Descargar PDF</button>
-                            </form>
-                        </div>
-                        -->
-
-                        <!-- Gráfico -->
-                        <div class="grapih">
-                            <div id="grafico" style="width: 100%; height: 500px;"></div>
-                            <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
-                            <script type="text/javascript">
-                                var total_gastos = {{ total_gastos }};
-                                var presupuesto_total = {{ presupuesto_total }};
-                        
-                                var myChart = echarts.init(document.getElementById('grafico'));
-                        
-                                var option = {
-                                    title: {
-                                        text: 'Total Gastos y Presupuesto Total'
-                                    },
-                                    tooltip: {},
-                                    legend: {
-                                        data: ['Total Gastos', 'Presupuesto Total']
-                                    },
-                                    xAxis: {
-                                        type: 'category',
-                                        data: ['Gastos', 'Presupuesto']
-                                    },
-                                    yAxis: {
-                                        type: 'value'
-                                    },
-                                    series: [{
-                                        name: 'Total Gastos',
-                                        type: 'bar',
-                                        data: [total_gastos]
-                                    }, {
-                                        name: 'Presupuesto Total',
-                                        type: 'bar',
-                                        data: [presupuesto_total]
-                                    }]
-                                };
-                        
-                                myChart.setOption(option);
-                            </script>
-                        </div>
-
-                        {% if facturas %}
-                            <table class="table">
-                                <h3>Facturas Asociadas</h3>
-                                <thead>
-                                    <tr>
-                                        <th>Factura #</th>
-                                        <th>Descripción</th>
-                                        <th>Valor</th>
-                                        <th>Total</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for factura in facturas %}
-                                        <tr>
-                                            <td>{{ factura.n_factura }}</td>
-                                            <td>{{ factura.descripcion }}</td>
-                                            <td>${{ factura.valor|intcomma }}</td>
-                                            <td>${{ factura.total|intcomma }}</td>
-                                            <td>
-                                                {% if factura.imagen %}
-                                                <a
-                                                  href="{% url 'vehiculos:ver_factura' factura.id %}"
-                                                  class="btn btn-secondary"
-                                                  >Ver factura</a
-                                                >
-                                                {% endif %}
-                                              </td>
-                                        </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        {% else %}
-                            <p>No hay facturas asociadas a este vehículo.</p>
-                        {% endif %}
-                    </div>
-                {% endif %}
+        {% if error %}
+            <div class="alert alert-danger mt-3">
+                {{ error }}
             </div>
-        {% endblock %}
+        {% endif %}
+    </div>
+
+    {% if vehiculo %}
+    <!-- ================= VEHÍCULO ================= -->
+    <div class="card p-4 mb-4">
+        <h5 class="mb-3">🚘 Información del Vehículo</h5>
+
+        <div class="row">
+            <div class="col-md-3"><strong>Placa:</strong> {{ vehiculo.placa }}</div>
+            <div class="col-md-3"><strong>Marca:</strong> {{ vehiculo.marca }}</div>
+            <div class="col-md-3"><strong>Línea:</strong> {{ vehiculo.linea }}</div>
+            <div class="col-md-3"><strong>Modelo:</strong> {{ vehiculo.modelo }}</div>
+        </div>
+    </div>
+
+    <!-- ================= GRÁFICO ================= -->
+    <div class="card p-4 mb-4">
+        <h5 class="mb-3">📊 Gastos vs Presupuesto</h5>
+        <div id="grafico" style="height: 400px;"></div>
+    </div>
+
+    <!-- ================= FACTURAS ================= -->
+    <div class="card p-4">
+        <h5 class="mb-3">🧾 Facturas Asociadas</h5>
+
+        {% if facturas %}
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="table-light">
+                    <tr>
+                        <th>#</th>
+                        <th>Descripción</th>
+                        <th>Valor</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for factura in facturas %}
+                    <tr>
+                        <td>{{ factura.n_factura }}</td>
+                        <td>{{ factura.descripcion }}</td>
+                        <td>${{ factura.valor|intcomma }}</td>
+                        <td>${{ factura.total|intcomma }}</td>
+                        <td>
+                            {% if factura.imagen %}
+                            <a href="{% url 'vehiculos:ver_factura' factura.id %}"
+                               class="btn btn-sm btn-outline-secondary">
+                                Ver
+                            </a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+            <p class="text-muted">No hay facturas asociadas.</p>
+        {% endif %}
+    </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+
+<script>
+    const totalGastos = {{ total_gastos|default:0 }};
+    const presupuestoTotal = {{ presupuesto_total|default:0 }};
+
+    const chartDom = document.getElementById('grafico');
+    if (chartDom) {
+        const chart = echarts.init(chartDom);
+        chart.setOption({
+            tooltip: {},
+            legend: { data: ['Gastos', 'Presupuesto'] },
+            xAxis: { type: 'category', data: ['Gastos', 'Presupuesto'] },
+            yAxis: { type: 'value' },
+            series: [
+                { name: 'Gastos', type: 'bar', data: [totalGastos] },
+                { name: 'Presupuesto', type: 'bar', data: [presupuestoTotal] }
+            ]
+        });
+    }
+</script>
+{% endblock %}

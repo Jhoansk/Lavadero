@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>Inicio TC</title>
+</head>
+
+<body>
+
+    {% load custom_filters %}
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="{% static 'images/logo.png' %}" alt="Logo">
+                    <h2>Taxi<span class="danger">Cupos</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+        <div class="sidebar">
+            <a href="{% url 'vehiculos:inicio' %}">
+                <span class="material-icons-sharp">dashboard</span>
+                <h3>Inicio</h3>
+              </a>
+              <a href="{% url 'vehiculos:lista_usuarios' %}">
+                <span class="material-icons-sharp">person_outline</span>
+                <h3>Usuarios</h3>
+              </a>
+              <a href="{% url 'vehiculos:lista_vehiculos' %}">
+                <span class="material-icons-sharp">person_outline</span>
+                <h3>Vehiculos</h3>
+              </a>
+              <a href="{% url 'vehiculos:buscar_vehiculo' %}" class="active">
+                <span class="material-icons-sharp">receipt_long</span>
+                <h3>Facturas Vehiculo</h3>
+              </a>
+              <a href="{% url 'vehiculos:seleccionar_datos_contrato' %}">
+                <span class="material-icons-sharp">insights</span>
+                <h3>Contratos</h3>
+              </a>
+              <a href="{% url 'vehiculos:lista_documentos' %}">
+                <span class="material-icons-sharp">mail_outline</span>
+                <h3>Crear Documentos</h3>
+              </a>
+              <a href="{% url 'vehiculos:buscar_vehiculo_documentos' %}">
+                <span class="material-icons-sharp">mail_outline</span>
+                <h3>Documentos</h3>
+              </a>
+              <a href="{% url 'vehiculos:agregar_vehiculo' %}">
+                <span class="material-icons-sharp">inventory</span>
+                <h3>Crear Vehiculo</h3>
+              </a>
+              {% if request.user.rol == 'administrador' %}
+              <a href="{% url 'vehiculos:generar_reporte_contratos' %}">
+                <span class="material-icons-sharp">report_gmailerrorred</span>
+                <h3>Reportes</h3>
+              </a>
+              {% endif %}
+              <a href="{% url 'vehiculos:configuraciones' %}">
+                <span class="material-icons-sharp">settings</span>
+                <h3>Configuraciones</h3>
+              </a>
+              {% if request.user.rol == 'administrador' %}
+              <a href="{% url 'vehiculos:crear_usuario_desde_contratos' %}">
+                <span class="material-icons-sharp">add</span>
+                <h3>Crear usuario</h3>
+              </a>
+              {% endif %}
+              <a href="{% url 'vehiculos:lista_vehiculos' %}">
+                <span class="material-icons-sharp">add</span>
+                <h3>Lista de vehiculos</h3>
+              </a>
+              <a href="{% url 'vehiculos:ver_archivos' %}">
+                <span class="material-icons-sharp">add</span>
+                <h3>Operativa</h3>
+              </a>
+              <a href="{% url 'vehiculos:lista_facturas' %}">
+                <span class="material-icons-sharp">add</span>
+                <h3>Lista de Facturas</h3>
+              </a>
+            <a href="#">
+                <span class="material-icons-sharp">logout</span>
+                <h3>Salir</h3>
+            </a>
+        </div>
+    </aside>
+        <!-- End of Sidebar Section -->
+        
+        {% load humanize %}
+        <!-- Main Content -->
+        <main>
+            <h1>Analytics</h1>
+            <!-- Analyses -->
+            <div class="analyse">
+                <div class="sales">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Total Gastado</h3>
+                            <h1>${{ total_valor_facturas|floatformat:0|intcomma}}</h1>
+                        </div>
+                        <div class="progresss">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="percentage">
+                                <p>-</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="visits">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Total Presupuesto</h3>
+                            <h1>${{ total_presupuestos|floatformat:0|intcomma }}</h1>
+                        </div>
+                        <div class="progresss">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="percentage">
+                                <p>-</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="searches">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Ganancias</h3>
+                            <h1>{{ restante|floatformat:0|intcomma }}</h1>
+                        </div>
+                        <div class="progresss">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="percentage">
+                                <p>{{ porcentaje_ganancia|floatformat:0 }}%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Analyses -->
+
+            <!-- New Users Section -->
+            <div class="new-users">
+                <!--Para proximo uso-->
+            </div>
+            <!-- End of New Users Section -->
+
+            <!-- Recent Orders Table -->
+            <div class="recent-orders">
+                <h2>Documentos Proximos a vencer</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Placa</th>
+                            <th>Tipo de Documento</th>
+                            <th>Fecha de Vencimiento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for doc in documentos_a_vencer %}
+                            <!-- Mostrar Tarjeta de Operación si está próxima a vencer -->
+                            {% if doc.fecha_vencimiento_to and doc.fecha_vencimiento_to <= future_threshold %}
+                                <tr>
+                                    <td>{{ doc.id_placa.placa }}</td>
+                                    <td style="padding: 8px; color: red;">Tarjeta de Operación</td>
+                                    <td style="padding: 8px; color: red;">{{ doc.fecha_vencimiento_to|date:"d/m/Y" }}</td>
+                                </tr>
+                            {% endif %}
+                    
+                            <!-- Mostrar SOAT si está próximo a vencer -->
+                            {% if doc.fecha_vencimiento_soat and doc.fecha_vencimiento_soat <= future_threshold %}
+                                <tr>
+                                    <td>{{ doc.id_placa.placa }}</td>
+                                    <td style="padding: 8px; color: red;">SOAT</td>
+                                    <td style="padding: 8px; color: red;">{{ doc.fecha_vencimiento_soat|date:"d/m/Y" }}</td>
+                                </tr>
+                            {% endif %}
+                    
+                            <!-- Mostrar Tecnomecánica si está próxima a vencer -->
+                            {% if doc.fecha_vencimiento_tecno and doc.fecha_vencimiento_tecno <= future_threshold %}
+                                <tr>
+                                    <td>{{ doc.id_placa.placa }}</td>
+                                    <td style="padding: 8px; color: red;">Tecnomecánica</td>
+                                    <td style="padding: 8px; color: red;">{{ doc.fecha_vencimiento_tecno|date:"d/m/Y" }}</td>
+                                </tr>
+                            {% endif %}
+                    
+                            <!-- Mostrar Seguro RC si está próximo a vencer -->
+                            {% if doc.fecha_vencimiento_sRc and doc.fecha_vencimiento_sRc <= future_threshold %}
+                                <tr>
+                                    <td>{{ doc.id_placa.placa }}</td>
+                                    <td style="padding: 8px; color: red;">Seguro RC</td>
+                                    <td style="padding: 8px; color: red;">{{ doc.fecha_vencimiento_sRc|date:"d/m/Y" }}</td>
+                                </tr>
+                            {% endif %}
+                        {% empty %}
+                            <tr>
+                                <td colspan="3">No hay documentos próximos a vencer.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <a href="#">Show All</a>
+            </div>
+            <!-- End of Recent Orders -->
+             <!-- Vehicles and their states -->
+            <div class="vehicles">
+                <h2>Vehículos y sus Estados</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Placa</th>
+                            <th>Marca</th>
+                            <th>Línea</th>
+                            <th>Modelo</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for vehiculo in vehiculos %}
+                        <tr>
+                            <td>{{ vehiculo.placa }}</td>
+                            <td>{{ vehiculo.marca }}</td>   
+                            <td>{{ vehiculo.linea }}</td>
+                            <td>{{ vehiculo.modelo }}</td>
+                            <td>
+                                {% with vehiculo_estado=vehiculo.estado_set.first %}
+                                    {% if vehiculo_estado %}
+                                        {{ vehiculo_estado.estado }}
+                                    {% else %}
+                                        No estado disponible
+                                    {% endif %}
+                                {% endwith %}
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="5">No hay vehículos registrados.</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <!-- End of Vehicles Section -->
+
+        </main>
+        <!-- End of Main Content -->
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>{{user.username}}</b></p>
+                        <small class="text-muted">  </small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/profile-1.jpg">
+                    </div>
+                </div>
+
+            </div>
+            <!-- End of Nav --> 
+
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="{% static 'images/logo.png' %}">
+                    <h2>Taxi Cupos</h2>
+                    <p>{{ user.first_name }} {{ user.last_name }}</p>
+                </div>
+            </div>
+
+            <div class="reminders">
+                <div class="header">
+                    <h2>Reminders</h2>
+                    <span class="material-icons-sharp">
+                        notifications_none
+                    </span>
+                </div>
+
+                <div class="notification">
+                    <div class="icon">
+                        <span class="material-icons-sharp">
+                            volume_up
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Workshop</h3>
+                            <small class="text_muted">
+                                08:00 AM - 12:00 PM
+                            </small>
+                        </div>
+                        <span class="material-icons-sharp">
+                            more_vert
+                        </span>
+                    </div>
+                </div>
+
+                <div class="notification deactive">
+                    <div class="icon">
+                        <span class="material-icons-sharp">
+                            edit
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Workshop</h3>
+                            <small class="text_muted">
+                                08:00 AM - 12:00 PM
+                            </small>
+                        </div>
+                        <span class="material-icons-sharp">
+                            more_vert
+                        </span>
+                    </div>
+                </div>
+
+                <div class="notification add-reminder">
+                    <div>
+                        <span class="material-icons-sharp">
+                            add
+                        </span>
+                        <h3>Add Reminder</h3>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    
+    <script src="{% static 'index.js' %}"></script>
+</body>
+
+</html>

@@ -14,33 +14,126 @@
 
         <div class="card-body">
 
+            <!-- INFO SOLICITUD -->
             <p class="mb-3">
                 <strong>Solicitud #{{ solicitud.id }}</strong><br>
-                <span>Cliente: {{ solicitud.usuario.nombre }} {{ solicitud.usuario.p_apellido }}</span><br>
+                <span>
+                    Cliente: {{ solicitud.usuario.nombre_u }} {{ solicitud.usuario.apellido_u }}
+                </span><br>
                 <span>Vehículo: {{ solicitud.vehiculo.placa }}</span><br>
-                <span>Valor: ${{ solicitud.valor|intcomma }}</span>
+                <span>Valor solicitado: ${{ solicitud.valor|intcomma }}</span>
+
+                {% if solicitud.estado == "Aprobado" %}
+                    <br>
+                    <span class="text-success">
+                        Valor aprobado: ${{ solicitud.valor_aprobado|intcomma }}
+                    </span><br>
+                    <span class="text-success">
+                        Fecha aprobación: {{ solicitud.fecha_aprobacion }}
+                    </span>
+                {% endif %}
             </p>
 
+            <!-- FORM -->
             <form method="post">
                 {% csrf_token %}
 
-                <label class="form-label">Seleccione el nuevo estado:</label>
-                <select name="estado" class="form-select mb-3" required>
-                    <option value="Estudio" {% if solicitud.estado == "Estudio" %}selected{% endif %}>En Estudio</option>
-                    <option value="Aprobado" {% if solicitud.estado == "Aprobado" %}selected{% endif %}>Aprobado</option>
-                    <option value="Rechazado" {% if solicitud.estado == "Rechazado" %}selected{% endif %}>Rechazado</option>
-                </select>
+                <!-- ESTADO -->
+                <div class="mb-3">
+                    <label class="form-label">Seleccione el nuevo estado:</label>
+                    <select name="estado" id="estado" class="form-select" required>
+                        <option value="Estudio" {% if solicitud.estado == "Estudio" %}selected{% endif %}>
+                            En Estudio
+                        </option>
+                        <option value="Aprobado" {% if solicitud.estado == "Aprobado" %}selected{% endif %}>
+                            Aprobado
+                        </option>
+                        <option value="Rechazado" {% if solicitud.estado == "Rechazado" %}selected{% endif %}>
+                            Rechazado
+                        </option>
+                    </select>
+                </div>
 
-                <button type="submit" class="btn btn-primary w-100">Guardar Cambios</button>
+                <!-- 💰 VALOR APROBADO -->
+                <div id="valor-aprobado-container"
+                     class="mb-3"
+                     {% if solicitud.estado != "Aprobado" %}style="display:none"{% endif %}>
+                    <label class="form-label">Valor aprobado</label>
+                    <input type="number"
+                           step="0.01"
+                           name="valor_aprobado"
+                           class="form-control"
+                           value="{{ solicitud.valor_aprobado|default:solicitud.valor }}">
+                </div>
+
+                <!-- 📅 FECHA APROBACIÓN -->
+                <div id="fecha-aprobacion-container"
+                     class="mb-3"
+                     {% if solicitud.estado != "Aprobado" %}style="display:none"{% endif %}>
+                    <label class="form-label">Fecha de aprobación</label>
+                    <input type="date"
+                           name="fecha_aprobacion"
+                           class="form-control"
+                           value="{{ solicitud.fecha_aprobacion|date:'Y-m-d' }}">
+                </div>
+
+                <!-- 🔥 PRENDA -->
+                <div id="prenda-container"
+                     class="mb-3"
+                     {% if solicitud.estado != "Aprobado" %}style="display:none"{% endif %}>
+                    <label class="form-label">Persona de la Prenda</label>
+                    <select name="prenda" class="form-select">
+                        <option value="">Seleccione una persona</option>
+                        {% for prenda in prendas %}
+                            <option value="{{ prenda.id }}"
+                                {% if solicitud.prenda and solicitud.prenda.id == prenda.id %}
+                                    selected
+                                {% endif %}
+                            >
+                                {{ prenda.nombres }} {{ prenda.apellidos }} - {{ prenda.documento }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- BOTÓN -->
+                <button type="submit" class="btn btn-primary w-100">
+                    Guardar Cambios
+                </button>
             </form>
 
+            <!-- VOLVER -->
             <div class="text-center mt-3">
-                <a href="{% url 'solicitudes_credito' %}" class="btn btn-secondary btn-sm">Volver al listado</a>
+                <a href="{% url 'solicitudes_credito' %}" class="btn btn-secondary btn-sm">
+                    Volver al listado
+                </a>
             </div>
 
         </div>
     </div>
 
 </div>
+
+<!-- 🎯 JS: mostrar/ocultar campos -->
+<script>
+    const estadoSelect = document.getElementById("estado");
+    const prendaContainer = document.getElementById("prenda-container");
+    const valorAprobadoContainer = document.getElementById("valor-aprobado-container");
+    const fechaAprobacionContainer = document.getElementById("fecha-aprobacion-container");
+
+    function toggleCampos() {
+        if (estadoSelect.value === "Aprobado") {
+            prendaContainer.style.display = "block";
+            valorAprobadoContainer.style.display = "block";
+            fechaAprobacionContainer.style.display = "block";
+        } else {
+            prendaContainer.style.display = "none";
+            valorAprobadoContainer.style.display = "none";
+            fechaAprobacionContainer.style.display = "none";
+        }
+    }
+
+    estadoSelect.addEventListener("change", toggleCampos);
+</script>
 
 {% endblock %}

@@ -1,17 +1,70 @@
-{% extends 'base.html' %}
+{% extends "vehiculos/layout_contratos.html" %}
 
 {% block title %}Editar Documento{% endblock %}
 
 {% block content %}
-<div class="recent-orders">
-    <div class="vehicle_search">
-    <h1>Editar Documento</h1>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">Guardar</button>
-        <a href="{% url 'vehiculos:lista_documentos' %}" class="btn btn-secondary">Cancelar</a>
-    </form>
+
+<div class="container-fluid py-3">
+
+    <!-- HEADER -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">📄 Editar Documento</h2>
+        <a href="{% url 'vehiculos:lista_documentos' %}"
+           class="btn btn-outline-secondary">
+            ⬅ Volver
+        </a>
     </div>
+
+    <!-- CARD -->
+    <div class="card p-4">
+
+        <form method="POST" enctype="multipart/form-data" novalidate>
+            {% csrf_token %}
+
+            <div class="row g-3">
+
+                {% for field in form %}
+                <div class="col-md-6">
+
+                    <label for="{{ field.id_for_label }}"
+                           class="form-label fw-semibold">
+                        {{ field.label }}
+                    </label>
+
+                    {{ field }}
+
+                    {% if field.help_text %}
+                        <div class="form-text">
+                            {{ field.help_text }}
+                        </div>
+                    {% endif %}
+
+                    {% if field.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ field.errors|striptags }}
+                        </div>
+                    {% endif %}
+
+                </div>
+                {% endfor %}
+
+            </div>
+
+            <!-- ACTIONS -->
+            <div class="d-flex justify-content-end gap-2 mt-4">
+                <a href="{% url 'vehiculos:lista_documentos' %}"
+                   class="btn btn-secondary">
+                    ❌ Cancelar
+                </a>
+                <button type="submit" class="btn btn-success">
+                    💾 Guardar Cambios
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
 </div>
+
 {% endblock %}

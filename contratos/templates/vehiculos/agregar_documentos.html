@@ -1,26 +1,70 @@
-{% extends 'base.html' %}
+{% extends "vehiculos/layout_contratos.html" %}
+
 {% block title %}Agregar Documentos{% endblock %}
 
 {% block content %}
-<div class="container">
-  <h1>Agregar Documentos</h1>
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div class="form-group">
-      {{ form.placa.label_tag }} <!-- Campo para la placa -->
-      {{ form.placa }}
-      {{ form.placa.errors }}
+
+<div class="container-fluid py-3">
+
+    <!-- HEADER -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">📄 Agregar Documentos</h2>
+        <a href="{% url 'vehiculos:lista_documentos' %}" class="btn btn-outline-secondary">
+            ⬅ Volver
+        </a>
     </div>
-    {% for field in form %}
-      {% if field.name != 'placa' %} <!-- Excluimos el campo id_placa -->
-        <div class="form-group">
-          {{ field.label_tag }}
-          {{ field }}
-          {{ field.errors }}
-        </div>
-      {% endif %}
-    {% endfor %}
-    <button type="submit" class="btn btn-primary">Guardar</button>
-  </form>
+
+    <!-- CARD -->
+    <div class="card p-4">
+
+        <form method="post" enctype="multipart/form-data" novalidate>
+            {% csrf_token %}
+
+            <div class="row g-3">
+
+                <!-- CAMPO PLACA -->
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">
+                        {{ form.placa.label }}
+                    </label>
+                    {{ form.placa }}
+                    {% if form.placa.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ form.placa.errors|striptags }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- RESTO DE CAMPOS -->
+                {% for field in form %}
+                    {% if field.name != 'placa' %}
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">
+                            {{ field.label }}
+                        </label>
+                        {{ field }}
+                        {% if field.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ field.errors|striptags }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+
+            </div>
+
+            <!-- ACTIONS -->
+            <div class="d-flex justify-content-end gap-2 mt-4">
+                <button type="submit" class="btn btn-success">
+                    💾 Guardar
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
 </div>
+
 {% endblock %}

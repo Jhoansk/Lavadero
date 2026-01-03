@@ -1,6 +1,6 @@
 # creditos/forms.py
 from django import forms
-from .models import Credito, PagoCredito, ServicioCredito
+from .models import Credito, PagoCredito, ServicioCredito,NombrePrendas
 from contratos.models import usuario, Vehiculo_contratos
 
 class CreditoForm(forms.ModelForm):
@@ -142,3 +142,25 @@ class VehiculoCreditoForm(forms.ModelForm):
         widgets.update({
             "fecha_matricula": forms.DateInput(attrs={"type": "date", "class": "form-control"})
         })
+
+
+class NombrePrendasForm(forms.ModelForm):
+    class Meta:
+        model = NombrePrendas
+        fields = [
+            'nombres',
+            'apellidos',
+            'tipo_documento',
+            'documento',
+            'numero_telefono',
+            'direccion_prenda',
+        ]
+
+        widgets = {
+            'nombres': forms.TextInput(attrs={'class': 'form-control'}),
+            'apellidos': forms.TextInput(attrs={'class': 'form-control'}),
+            'tipo_documento': forms.Select(attrs={'class': 'form-select'}),
+            'documento': forms.TextInput(attrs={'class': 'form-control'}),
+            'numero_telefono': forms.TextInput(attrs={'class': 'form-control'}),
+            'direccion_prenda': forms.TextInput(attrs={'class': 'form-control'}),
+        }

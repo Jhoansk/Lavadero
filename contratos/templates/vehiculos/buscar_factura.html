@@ -1,30 +1,75 @@
-{% extends 'base.html' %} {% block content %} {% load humanize %}
-<!-- Analyses -->
+{% extends "vehiculos/layout_contratos.html" %}
+{% load humanize %}
 
-<div class="recent-orders">
-  <div class="vehicle_search">
-    <h2>Buscar Vehículo</h2>
-    <form method="POST">
-      {% csrf_token %}
-      <label for="n_factura">Número de Factura:</label>
-      <input type="text" name="n_factura" id="n_factura" required />
-      <button type="submit">Buscar</button>
-    </form>
-  </div>
-  {% if error %}
-  <p class="text-danger">{{ error }}</p>
-  {% endif %} {% if factura %}
-  <div class="vehicle-info">
-    <h2>Detalles de la Factura</h2>
-    <p>Número de Factura: {{ factura.n_factura }}</p>
-    <p>Vehículo: {{ factura.id_placa.placa }}</p>
-    <p>Fecha: {{ factura.fecha }}</p>
-    <p>Descripción: {{ factura.descripcion }}</p>
-    <p>Cantidad: {{ factura.cantidad }}</p>
-    <p>Valor: {{ factura.valor }}</p>
-    <p>IVA: {{ factura.iva }}</p>
-    {% elif error %}
-    <p>{{ error }}</p>
-    {% endif %} {% endblock %}
-  </div>
+{% block title %}Buscar Factura{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid py-3">
+
+    <!-- HEADER -->
+    <div class="mb-4">
+        <h2 class="fw-bold">🔎 Buscar Factura</h2>
+    </div>
+
+    <!-- SEARCH FORM -->
+    <div class="card p-4 mb-4">
+
+        <form method="post" novalidate>
+            {% csrf_token %}
+
+            <div class="row g-3 align-items-end">
+
+                <div class="col-md-4">
+                    <label for="n_factura" class="form-label fw-semibold">
+                        Número de Factura
+                    </label>
+                    <input
+                        type="text"
+                        name="n_factura"
+                        id="n_factura"
+                        class="form-control"
+                        required
+                    />
+                </div>
+
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-success w-100">
+                        🔍 Buscar
+                    </button>
+                </div>
+
+            </div>
+
+        </form>
+
+        {% if error %}
+            <div class="alert alert-danger mt-3">
+                {{ error }}
+            </div>
+        {% endif %}
+
+    </div>
+
+    <!-- RESULT -->
+    {% if factura %}
+    <div class="card p-4">
+
+        <h5 class="fw-semibold mb-3">🧾 Detalles de la Factura</h5>
+
+        <div class="row">
+            <div class="col-md-4"><strong># Factura:</strong> {{ factura.n_factura }}</div>
+            <div class="col-md-4"><strong>Vehículo:</strong> {{ factura.id_placa.placa }}</div>
+            <div class="col-md-4"><strong>Fecha:</strong> {{ factura.fecha }}</div>
+            <div class="col-md-6 mt-2"><strong>Descripción:</strong> {{ factura.descripcion }}</div>
+            <div class="col-md-3 mt-2"><strong>Cantidad:</strong> {{ factura.cantidad }}</div>
+            <div class="col-md-3 mt-2"><strong>Valor:</strong> {{ factura.valor|intcomma }}</div>
+            <div class="col-md-3 mt-2"><strong>IVA:</strong> {{ factura.iva|intcomma }}</div>
+        </div>
+
+    </div>
+    {% endif %}
+
 </div>
+
+{% endblock %}

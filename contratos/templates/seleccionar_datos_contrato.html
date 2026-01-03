@@ -1,328 +1,552 @@
-{% extends 'base.html' %}
+{% extends "vehiculos/layout_contratos.html" %}
+
 {% block title %}
     Seleccionar Usuarios, Vehículos y Tipo de Contrato
 {% endblock %}
 
 {% block content %}
 <style>
-    #checkboxes {
-        display: block;
-        margin: 20px 0; /* Ajusta los márgenes de todo el contenedor */
-        padding: 10px;  /* Si deseas más espaciado interno */
-        border-radius: 5px;  /* Bordes redondeados */
+    .card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        margin-bottom: 20px;
+    }
+    .card-header {
+        background: linear-gradient(135deg, #e4af00ff 0%, #f0c040 100%);
+        color: white;
+        font-weight: 600;
+        border-radius: 10px 10px 0 0 !important;
+        padding: 15px 20px;
+    }
+    .nav-tabs {
+        border-bottom: 2px solid #e4af00ff;
+    }
+    .nav-tabs .nav-link {
+        color: #666;
+        border: none;
+        padding: 12px 25px;
+        font-weight: 500;
+        transition: all 0.3s;
+    }
+    .nav-tabs .nav-link:hover {
+        color: #e4af00ff;
+        border: none;
+    }
+    .nav-tabs .nav-link.active {
+        color: #e4af00ff;
+        background: white;
+        border: none;
+        border-bottom: 3px solid #e4af00ff;
+        font-weight: 600;
+    }
+    .form-label {
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 8px;
+    }
+    .form-control, .form-select {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px 15px;
+        transition: all 0.3s;
+    }
+    .form-control:focus, .form-select:focus {
+        border-color: #e4af00ff;
+        box-shadow: 0 0 0 0.2rem rgba(228, 175, 0, 0.15);
+    }
+    .btn-primary {
+        background: #e4af00ff;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+    .btn-primary:hover {
+        background: #c99900;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(228, 175, 0, 0.3);
+    }
+    .btn-secondary {
+        background: #6c757d;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 8px;
+        font-weight: 500;
+        margin-right: 10px;
+    }
+    .clausula-item {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        border-left: 3px solid #e4af00ff;
+    }
+    .clausula-item input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    .clausula-item input[type="text"] {
         width: 100%;
+        margin-top: 8px;
     }
-    
-    /* Estilo para cada cláusula dentro de #checkboxes */
-    .clausula {
-        margin-bottom: 15px; /* Margen entre las cláusulas */
+    .info-box {
+        background: #e8f4f8;
+        border-left: 4px solid #17a2b8;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        font-family: monospace;
+        font-size: 13px;
+        user-select: text;
     }
-    
-    /* Estilo para los inputs de tipo checkbox */
-    .clausula input[type="checkbox"] {
-        margin-right: 10px; /* Espaciado entre checkbox y el campo de texto */
-    }
-    
-    /* Estilo para los inputs de tipo texto */
-    .clausula input[type="text"] {
-        width: 100%;         /* Hace que el campo de texto ocupe todo el ancho disponible */
-        margin-top: 5px;     /* Margen superior */
-        margin-bottom: 10px; /* Margen inferior */
-        padding: 8px;        /* Padding dentro del campo de texto */
-        box-sizing: border-box; /* Para que el padding no afecte el ancho */
+    .section-divider {
+        border-top: 2px solid #e4af00ff;
+        margin: 30px 0;
+        opacity: 0.3;
     }
 </style>
-<div class="recent-orders">
-    <div class="vehicle_search">
-        <form action="{% url 'vehiculos:generar_pdf' %}" method="get" target="_blank">
 
-            <div>
-                <label for="persona">Seleccione el tipo de persona:</label>
-                <select name="persona" id="persona">
-                    <option value="">Seleccione el tipo de persona</option>
-                    <option value="Natural">Natural</option>
-                    <option value="Juridica">Jurídica</option>
-                </select>
-            </div>
-            
-            <!-- Menú desplegable para Vendedor -->
-            <div id="vendedores_section">
-                <label for="vendedores">Selecciona Vendedor:</label>
-                <select name="vendedores" id="vendedores">
-                    <option value="">Seleccione</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                </select>
-            </div>
-            
-            
-            <!-- Menú desplegable para Comprador -->
-            <div id="compradores_section">
-                <label for="compradores">Selecciona Comprador:</label>
-                <select name="compradores" id="compradores">
-                    <option value="">Seleccione</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                </select>
-            </div>
-            
-            <!-- Apartado para Tipo de Persona Jurídica -->
-            <div id="tipo_persona_juridica" style="display: none; margin-top: 20px;">
-                <label for="tipo_juridica">Tipo de Persona Jurídica:</label>
-                <select name="tipo_juridica" id="tipo_juridica">
-                    <option value="">Seleccione</option>
-                    <option value="Comprador">Comprador</option>
-                    <option value="Vendedor">Vendedor</option>
-                </select>
-            </div>
-            
-            <!-- Campos dinámicos para NIT y Nombre -->
-            <div id="campos_juridica" style="display: none; margin-top: 20px;">
-                <div style="margin-bottom: 10px;">
-                    <label for="nit">NIT:</label>
-                    <input type="text" name="nit" id="nit" placeholder="Ingrese el NIT">
-                </div>
-                <div>
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre" placeholder="Ingrese el Nombre">
-                </div>
-            </div>
-
-            <div>
-                <label for="usuario1">Ingrese la cedula del Vendedor:</label>
-                <input type="text" name="usuario1_cedula" id="usuario1" placeholder="Ingrese la cédula del Vendedor">
-            </div>
-
-            <!-- Campo para la segunda cédula del vendedor -->
-            <div id="cedula_vendedor_2" style="display: none; margin-top: 10px;">
-                <label for="vendedor_cedula_2">Digite la segunda cédula del Vendedor:</label>
-                <input type="text" name="vendedor_cedula_2" id="vendedor_cedula_2" placeholder="Ingrese la segunda cédula del Vendedor">
-            </div>
-
-            <div>
-                <label for="usuario2">Ingrese la cedula del Comprador:</label>
-                <input type="text" name="usuario2_cedula" id="usuario2" placeholder="Ingrese la cédula del comprador">
-            </div>
-
-            <div id="cedula_comprador_2" style="display: none; margin-top: 10px;">
-                <label for="comprador_cedula_2">Digite la segunda cédula del Comprador:</label>
-                <input type="text" name="comprador_cedula_2" id="comprador_cedula_2" placeholder="Ingrese la segunda cédula del Comprador">
-            </div>
-
-            <div>
-                <label for="vehiculo">Ingrese la placa del vehiculo:</label>
-                <input type="text" name="vehiculo_placa" id="vehiculo" placeholder="Ingrese la placa del vehículo">
-            </div>
-
-            <div id="vehiculo2-container" style="display: none;">
-                <label for="vehiculo2">Ingrese la placa del segundo vehículo:</label>
-                <input type="text" name="vehiculo2_placa" id="vehiculo2" placeholder="Ingrese la placa del vehículo">
-            </div>
-
-            <div>
-                <label for="refiere">Refiere:</label>
-                <input type="text" name="refiere" id="refiere" placeholder="Ingrese el Referido">
-            </div>
-
-            <div id="reviso_lista">
-                <label for="revisado">Seleccione Quien Revisa:</label>
-                <select name="revisado" id="revisado">
-                    <option value="">Seleccione</option>
-                    <option value="Gerencia">Gerencia</option>
-                    <option value="Jefe Comercial">Jefe Comercial</option>
-                </select>
-            </div>
-
-            <div id="asesor_lista">
-                <label for="asesors">Selecciona Asesor:</label>
-                <select name="asesors" id="asesors">
-                    <option value="">Seleccione</option>
-                    <option value="David Londoño">David Londoño</option>
-                    <option value="Wilson Bernal">Wilson Bernal</option>
-                    <option value="Elizabeth Sanchez">Elizabeth Sanchez</option>
-                    <option value="Juan Mahecha">Juan Mahecha</option>
-                </select>
-            </div>
-
-            <div id="campos_adicionales_permuta" style="display: none; margin-top: 20px;">
-                <div>
-                    <label for="v_primer_vehiculo">Valor primer vehiculo</label>
-                    <input type="text" id="v_primer_vehiculo" name="v_primer_vehiculo" placeholder="Ingrese el valor 1">
-                </div>
-                <div>
-                    <label for="v_segundo_vehiculo">Valor segundo vehiculo</label>
-                    <input type="text" id="v_segundo_vehiculo" name="v_segundo_vehiculo" placeholder="Ingrese el valor 2">
-                </div>
-                <div>
-                    <label for="p_adicional">Pago adicional</label>
-                    <input type="text" id="p_adicional" name="p_adicional" placeholder="Ingrese el pago adicional">
-                </div>
-            </div>
-
-            <div>
-                <label for="tipo_contrato">Selecciona Tipo de Contrato:</label>
-                <select name="tipo_contrato" id="tipo_contrato" required>
-                    <option value="">Selecciona el tipo de contrato</option>
-                    <option value="venta">Venta de Taxi con Cupo</option>
-                    <option value="Compra_Cupo">Compra Cupo</option>
-                    <option value="compra_Particular">Compra Particular</option>
-                    <option value="compra_usado">Compra Usado</option>
-                    <option value="permuta">Permuta</option>
-                    <option value="chatarizacion_con_venta">Chatarrización con venta</option>
-                    <option value="servicio_chatarrizacion">Servicio Chatarrización</option>
-                    <option value="venta_cupo">Venta Cupo</option>
-                    <option value="venta_particular">Venta Particular</option>
-                    <option value="venta_usado">Venta Usado</option>
-                    <option value="diaco">Diaco</option>
-                    <option value="compra_venta">Compra Venta</option>
-                    <option value="cmatricula">Cancelación Matrícula</option>
-                    <option value="mandato">Mandato</option>
-                    <option value="fun">Fun</option>
-                    <option value="metrokia">Credi MetroKia</option>
-                    <option value="autoland">Credi Autoland</option>
-                    <option value="soat">Soat</option>
-                </select>
-            </div>
-            <div id="tipo_venta_usado-container" style="display: none;">
-                <label for="tipo_venta_usado">Selecciona el tipo de pago:</label>
-                <select name="tipo_venta_usado" id="tipo_venta_usado">
-                    <option value="contado">Contado</option>
-                    <option value="doble_garantia">Doble Garantia</option>
-                    <option value="credito">Credito</option>
-                </select>
-            </div>
-            <div id="venta_nuevo_container" style="display: none;">
-                <label for="venta_nuevo">Selecciona el pago clausula 5ta:</label>
-                <select name="venta_nuevo" id="venta_nuevo">
-                    <option value="primero">Primer Pago</option>
-                    <option value="segundo">Segundo Pago</option>
-                    <option value="tercero">Tercer Pago</option>
-                    <option value="primeroysegundo">Primer+Segundo Pago</option>
-                    <option value="totalP">Pago Total</option>
-                </select>
-            </div>
-            <div id="serv_chatarrizacion" style="display: none;">
-                <label for="placaC">Placa a Chararrizar</label>
-                <input type="text", name="placaC", id="placaC", placeholder="Ingrese la placa del vehiculo a chatarrizar">
-                <input type="text", name="airbag", id="airbag", placeholder="Campo para especificar si tiene airbag">
-                <label for="airbag">airbag y frenos A.B.S,</label>
-                <input type="text", name="aire", id="aire", placeholder="Campo para especificar si tiene aire acodicionado">
-                <label for="aire">aire acondicionado,</label>
-                <input type="text", name="gas", id="gas", placeholder="Campo para especificar si tiene gas">
-                <label for="gas">gas Motor...</label>
-            </div>
-
-            <div id="compra_cupo_campos" style="display: none; ">
-                <div id="informacion_pagos" style="user-select: text;">
-                    <p style="text-align: left;">
-                        Para Primer pago usar: &#123;&#123;primer_pago|intcomma&#125;&#125;
-                        <br>
-                        Para Primer pago en letras usar &#123;&#123;primer_pago_letras&#125;&#125;
-                        <br>
-                        Para el dia del primer pago usar &#123;&#123;dia_primer_pago&#125;&#125;
-                        <br>
-                        Para el dia del primer en letras pago usar &#123;&#123;dia_primer_pago_letras&#125;&#125;
-                        <br>
-                        Para segundo pago usar: &#123;&#123;segundo_pago|intcomma&#125;&#125;
-                        <br>
-                        Para segundo pago en letras usar &#123;&#123;segundo_pago_letras&#125;&#125;
-                        <br>
-                        Para el dia del segundo pago usar &#123;&#123;dia_segundo_pago&#125;&#125;
-                        <br>
-                        Para el dia del segundo en letras pago usar &#123;&#123;dia_segundo_pago_letras&#125;&#125;
-                        <br>
-                        Para tercer pago usar: &#123;&#123;tercer_pago|intcomma&#125;&#125;
-                        <br>
-                        Para tercer pago en letras usar &#123;&#123;tercer_pago_letras&#125;&#125;
-                        <br>
-                        Para el dia del tercer pago usar &#123;&#123;dia_tercer_pago&#125;&#125;
-                        <br>
-                        Para el dia del tercer en letras pago usar &#123;&#123;dia_tercer_pago_letras&#125;&#125;
-                    </p>
-                </div>
-                <div>
-                    <label for="pacta_suma">Se pacta la suma de:</label>
-                    <input type="number" id="pacta_suma" name="pacta_suma" placeholder="Ingrese el monto pactado" value="0">
-                </div>
-                <div>
-                    <label for="primer_pago">Primer pago:</label>
-                    <input type="number" id="primer_pago" name="primer_pago" placeholder="Ingrese el primer pago" value="0">
-                    <label for="dia_primer_pago">Posterior a los </label>
-                    <input type="number" id="dia_primer_pago" name="dia_primer_pago" placeholder="Ingrese el dia" value="0">
-                </div>
-                <div>
-                    <label for="segundo_pago">Segundo pago:</label>
-                    <input type="number" id="segundo_pago" name="segundo_pago" placeholder="Ingrese el segundo pago" value="0">
-                    <label for="dia_segundo_pago">Posterior a los </label>
-                    <input type="number" id="dia_segundo_pago" name="dia_segundo_pago" placeholder="Ingrese el dia" value="0">
-                </div>
-                <div>
-                    <label for="tercer_pago">Tercer pago:</label>
-                    <input type="number" id="tercer_pago" name="tercer_pago" placeholder="Ingrese el Tercer pago" value="0">
-                    <label for="dia_tercer_pago">Posterior a los </label>
-                    <input type="number" id="dia_tercer_pago" name="dia_tercer_pago" placeholder="Ingrese el dia" value="0">
-                </div>
-                <div>
-                    <label for="cuarta_clausula">Cuarta Obligaciones</label>
-                    <input type="number" id="cuarta_clausula" name="cuarta_clausula" placeholder="Posteriores a la firma" value="0">
-                </div>
-            </div>
-
-            <br>
-            <br>
-            <br>
-
-            <div id="clausula3" style="display: none;">
-                <p style="text-align: justify">
-                    <strong>Cláusulas 3: </strong>
-                    --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                </p>
-                <ul style="text-align: justify" class="claus-list-3">
-                    <!-- Se llenarán dinámicamente -->
-                </ul>
-                <p style="text-align: justify">
-                    <strong>Cláusulas 8: </strong>
-                    --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                </p>
-            </div>
-
-            <!-- Cláusulas de la octava (Gastos) que solo se mostrarán si se selecciona "Permuta" -->
-            <div id="checkboxes" style="display: none;">
-                <p style="text-align: justify">
-                    <strong>Cláusulas: </strong>
-                    --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                </p>
-                <ul style="text-align: justify" class="claus-list">
-                    <!-- Se llenarán dinámicamente con las cláusulas -->
-                </ul>
-            </div>
-            
-            <div id="opciones" style="display: none;">
-                <p style="text-align: justify">
-                    <strong>Observaciones: </strong>
-                    --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                </p>
-                <ul style="text-align: justify" class="claus-list">
-                    <!-- Se llenarán dinámicamente -->
-                </ul>
-            </div>
-
-
-            <button type="submit">Generar Contrato PDF</button>
-        </form>
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="mb-3">📄 Generador de Contratos</h2>
+            <p class="text-muted">Complete la información necesaria para generar el contrato en formato PDF</p>
+        </div>
     </div>
+
+    <form action="{% url 'vehiculos:generar_pdf' %}" method="get" target="_blank">
+        
+        <!-- TABS DE NAVEGACIÓN -->
+        <ul class="nav nav-tabs mb-4" id="contratoTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="personas-tab" data-bs-toggle="tab" data-bs-target="#personas" type="button" role="tab">
+                    👥 Personas
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="vehiculos-tab" data-bs-toggle="tab" data-bs-target="#vehiculos" type="button" role="tab">
+                    🚗 Vehículos
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contrato-tab" data-bs-toggle="tab" data-bs-target="#contrato" type="button" role="tab">
+                    📋 Tipo de Contrato
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pagos-tab" data-bs-toggle="tab" data-bs-target="#pagos" type="button" role="tab">
+                    💰 Pagos
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="clausulas-tab" data-bs-toggle="tab" data-bs-target="#clausulas" type="button" role="tab">
+                    📝 Cláusulas
+                </button>
+            </li>
+        </ul>
+
+        <!-- CONTENIDO DE TABS -->
+        <div class="tab-content" id="contratoTabsContent">
+            
+            <!-- TAB 1: PERSONAS -->
+            <div class="tab-pane fade show active" id="personas" role="tabpanel">
+                <div class="card">
+                    <div class="card-header">
+                        Información de Personas
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="persona" class="form-label">Tipo de Persona</label>
+                                <select name="persona" id="persona" class="form-select">
+                                    <option value="">Seleccione el tipo de persona</option>
+                                    <option value="Natural">Natural</option>
+                                    <option value="Juridica">Jurídica</option>
+                                </select>
+                            </div>
+
+                            <!-- Persona Natural -->
+                            <div class="col-md-6 mb-3" id="vendedores_section">
+                                <label for="vendedores" class="form-label">Número de Vendedores</label>
+                                <select name="vendedores" id="vendedores" class="form-select">
+                                    <option value="">Seleccione</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 mb-3" id="compradores_section">
+                                <label for="compradores" class="form-label">Número de Compradores</label>
+                                <select name="compradores" id="compradores" class="form-select">
+                                    <option value="">Seleccione</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </div>
+
+                            <!-- Persona Jurídica -->
+                            <div class="col-md-6 mb-3" id="tipo_persona_juridica" style="display: none;">
+                                <label for="tipo_juridica" class="form-label">Tipo de Persona Jurídica</label>
+                                <select name="tipo_juridica" id="tipo_juridica" class="form-select">
+                                    <option value="">Seleccione</option>
+                                    <option value="Comprador">Comprador</option>
+                                    <option value="Vendedor">Vendedor</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Campos Jurídica -->
+                        <div id="campos_juridica" style="display: none;">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="nit" class="form-label">NIT</label>
+                                    <input type="text" name="nit" id="nit" class="form-control" placeholder="Ingrese el NIT">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese el Nombre">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-divider"></div>
+
+                        <!-- Cédulas -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="usuario1" class="form-label">Cédula del Vendedor</label>
+                                <input type="text" name="usuario1_cedula" id="usuario1" class="form-control" placeholder="Ingrese la cédula del Vendedor">
+                            </div>
+
+                            <div class="col-md-6 mb-3" id="cedula_vendedor_2" style="display: none;">
+                                <label for="vendedor_cedula_2" class="form-label">Segunda Cédula del Vendedor</label>
+                                <input type="text" name="vendedor_cedula_2" id="vendedor_cedula_2" class="form-control" placeholder="Ingrese la segunda cédula">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="usuario2" class="form-label">Cédula del Comprador</label>
+                                <input type="text" name="usuario2_cedula" id="usuario2" class="form-control" placeholder="Ingrese la cédula del comprador">
+                            </div>
+
+                            <div class="col-md-6 mb-3" id="cedula_comprador_2" style="display: none;">
+                                <label for="comprador_cedula_2" class="form-label">Segunda Cédula del Comprador</label>
+                                <input type="text" name="comprador_cedula_2" id="comprador_cedula_2" class="form-control" placeholder="Ingrese la segunda cédula">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="refiere" class="form-label">Refiere</label>
+                                <input type="text" name="refiere" id="refiere" class="form-control" placeholder="Ingrese el Referido">
+                            </div>
+
+                            <div class="col-md-6 mb-3" id="reviso_lista">
+                                <label for="revisado" class="form-label">Quien Revisa</label>
+                                <select name="revisado" id="revisado" class="form-select">
+                                    <option value="">Seleccione</option>
+                                    <option value="Gerencia">Gerencia</option>
+                                    <option value="Jefe Comercial">Jefe Comercial</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 mb-3" id="asesor_lista">
+                                <label for="asesors" class="form-label">Asesor</label>
+                                <select name="asesors" id="asesors" class="form-select">
+                                    <option value="">Seleccione</option>
+                                    <option value="David Londoño">David Londoño</option>
+                                    <option value="Wilson Bernal">Wilson Bernal</option>
+                                    <option value="Elizabeth Sanchez">Elizabeth Sanchez</option>
+                                    <option value="Juan Mahecha">Juan Mahecha</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: VEHÍCULOS -->
+            <div class="tab-pane fade" id="vehiculos" role="tabpanel">
+                <div class="card">
+                    <div class="card-header">
+                        Información de Vehículos
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="vehiculo" class="form-label">Placa del Vehículo</label>
+                                <input type="text" name="vehiculo_placa" id="vehiculo" class="form-control" placeholder="Ingrese la placa del vehículo">
+                            </div>
+
+                            <div class="col-md-6 mb-3" id="vehiculo2-container" style="display: none;">
+                                <label for="vehiculo2" class="form-label">Placa del Segundo Vehículo</label>
+                                <input type="text" name="vehiculo2_placa" id="vehiculo2" class="form-control" placeholder="Ingrese la placa del segundo vehículo">
+                            </div>
+                        </div>
+
+                        <!-- Campos Permuta -->
+                        <div id="campos_adicionales_permuta" style="display: none;">
+                            <div class="section-divider"></div>
+                            <h5 class="mb-3">Información de Permuta</h5>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="v_primer_vehiculo" class="form-label">Valor Primer Vehículo</label>
+                                    <input type="text" id="v_primer_vehiculo" name="v_primer_vehiculo" class="form-control" placeholder="Ingrese el valor 1">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="v_segundo_vehiculo" class="form-label">Valor Segundo Vehículo</label>
+                                    <input type="text" id="v_segundo_vehiculo" name="v_segundo_vehiculo" class="form-control" placeholder="Ingrese el valor 2">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="p_adicional" class="form-label">Pago Adicional</label>
+                                    <input type="text" id="p_adicional" name="p_adicional" class="form-control" placeholder="Ingrese el pago adicional">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Servicio Chatarización -->
+                        <div id="serv_chatarrizacion" style="display: none;">
+                            <div class="section-divider"></div>
+                            <h5 class="mb-3">Información de Chatarización</h5>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="placaC" class="form-label">Placa a Chatarizar</label>
+                                    <input type="text" name="placaC" id="placaC" class="form-control" placeholder="Ingrese la placa del vehículo a chatarrizar">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="airbag" class="form-label">Airbag y Frenos A.B.S</label>
+                                    <input type="text" name="airbag" id="airbag" class="form-control" placeholder="Especifique si tiene airbag">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="aire" class="form-label">Aire Acondicionado</label>
+                                    <input type="text" name="aire" id="aire" class="form-control" placeholder="Especifique si tiene aire acondicionado">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="gas" class="form-label">Gas Motor</label>
+                                    <input type="text" name="gas" id="gas" class="form-control" placeholder="Especifique si tiene gas">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: TIPO DE CONTRATO -->
+            <div class="tab-pane fade" id="contrato" role="tabpanel">
+                <div class="card">
+                    <div class="card-header">
+                        Tipo de Contrato
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="tipo_contrato" class="form-label">Seleccione el Tipo de Contrato</label>
+                                <select name="tipo_contrato" id="tipo_contrato" class="form-select" required>
+                                    <option value="">Selecciona el tipo de contrato</option>
+                                    <option value="venta">Venta de Taxi con Cupo</option>
+                                    <option value="Compra_Cupo">Compra Cupo</option>
+                                    <option value="compra_Particular">Compra Particular</option>
+                                    <option value="compra_usado">Compra Usado</option>
+                                    <option value="permuta">Permuta</option>
+                                    <option value="chatarizacion_con_venta">Chatarización con venta</option>
+                                    <option value="servicio_chatarrizacion">Servicio Chatarización</option>
+                                    <option value="venta_cupo">Venta Cupo</option>
+                                    <option value="venta_particular">Venta Particular</option>
+                                    <option value="venta_usado">Venta Usado</option>
+                                    <option value="diaco">Diaco</option>
+                                    <option value="compra_venta">Compra Venta</option>
+                                    <option value="cmatricula">Cancelación Matrícula</option>
+                                    <option value="mandato">Mandato</option>
+                                    <option value="fun">Fun</option>
+                                    <option value="metrokia">Credi MetroKia</option>
+                                    <option value="autoland">Credi Autoland</option>
+                                    <option value="soat">Soat</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 mb-3" id="tipo_venta_usado-container" style="display: none;">
+                                <label for="tipo_venta_usado" class="form-label">Tipo de Pago</label>
+                                <select name="tipo_venta_usado" id="tipo_venta_usado" class="form-select">
+                                    <option value="contado">Contado</option>
+                                    <option value="doble_garantia">Doble Garantia</option>
+                                    <option value="credito">Credito</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 mb-3" id="venta_nuevo_container" style="display: none;">
+                                <label for="venta_nuevo" class="form-label">Pago Cláusula 5ta</label>
+                                <select name="venta_nuevo" id="venta_nuevo" class="form-select">
+                                    <option value="primero">Primer Pago</option>
+                                    <option value="segundo">Segundo Pago</option>
+                                    <option value="tercero">Tercer Pago</option>
+                                    <option value="primeroysegundo">Primer+Segundo Pago</option>
+                                    <option value="totalP">Pago Total</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: PAGOS -->
+            <div class="tab-pane fade" id="pagos" role="tabpanel">
+                <div class="card">
+                    <div class="card-header">
+                        Información de Pagos
+                    </div>
+                    <div class="card-body">
+                        <div id="compra_cupo_campos">
+                            <div class="info-box mb-4">
+                                <strong>Variables disponibles para usar en las cláusulas:</strong><br>
+                                Para Primer pago usar: &#123;&#123;primer_pago|intcomma&#125;&#125;<br>
+                                Para Primer pago en letras usar &#123;&#123;primer_pago_letras&#125;&#125;<br>
+                                Para el dia del primer pago usar &#123;&#123;dia_primer_pago&#125;&#125;<br>
+                                Para el dia del primer en letras pago usar &#123;&#123;dia_primer_pago_letras&#125;&#125;<br>
+                                Para segundo pago usar: &#123;&#123;segundo_pago|intcomma&#125;&#125;<br>
+                                Para segundo pago en letras usar &#123;&#123;segundo_pago_letras&#125;&#125;<br>
+                                Para el dia del segundo pago usar &#123;&#123;dia_segundo_pago&#125;&#125;<br>
+                                Para el dia del segundo en letras pago usar &#123;&#123;dia_segundo_pago_letras&#125;&#125;<br>
+                                Para tercer pago usar: &#123;&#123;tercer_pago|intcomma&#125;&#125;<br>
+                                Para tercer pago en letras usar &#123;&#123;tercer_pago_letras&#125;&#125;<br>
+                                Para el dia del tercer pago usar &#123;&#123;dia_tercer_pago&#125;&#125;<br>
+                                Para el dia del tercer en letras pago usar &#123;&#123;dia_tercer_pago_letras&#125;&#125;
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="pacta_suma" class="form-label">Se pacta la suma de</label>
+                                    <input type="number" id="pacta_suma" name="pacta_suma" class="form-control" placeholder="Ingrese el monto pactado" value="0">
+                                </div>
+                            </div>
+
+                            <div class="section-divider"></div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="primer_pago" class="form-label">Primer Pago</label>
+                                    <input type="number" id="primer_pago" name="primer_pago" class="form-control" placeholder="Ingrese el primer pago" value="0">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="dia_primer_pago" class="form-label">Posterior a los (días)</label>
+                                    <input type="number" id="dia_primer_pago" name="dia_primer_pago" class="form-control" placeholder="Ingrese el dia" value="0">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="segundo_pago" class="form-label">Segundo Pago</label>
+                                    <input type="number" id="segundo_pago" name="segundo_pago" class="form-control" placeholder="Ingrese el segundo pago" value="0">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="dia_segundo_pago" class="form-label">Posterior a los (días)</label>
+                                    <input type="number" id="dia_segundo_pago" name="dia_segundo_pago" class="form-control" placeholder="Ingrese el dia" value="0">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="tercer_pago" class="form-label">Tercer Pago</label>
+                                    <input type="number" id="tercer_pago" name="tercer_pago" class="form-control" placeholder="Ingrese el tercer pago" value="0">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="dia_tercer_pago" class="form-label">Posterior a los (días)</label>
+                                    <input type="number" id="dia_tercer_pago" name="dia_tercer_pago" class="form-control" placeholder="Ingrese el dia" value="0">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="cuarta_clausula" class="form-label">Cuarta Obligaciones (días posteriores a la firma)</label>
+                                    <input type="number" id="cuarta_clausula" name="cuarta_clausula" class="form-control" placeholder="Posteriores a la firma" value="0">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 5: CLÁUSULAS -->
+            <div class="tab-pane fade" id="clausulas" role="tabpanel">
+                <div class="card mb-3">
+                    <div id="compra_cupo_campos">
+                            <div class="info-box mb-4">
+                                <strong>Variables disponibles para usar en las cláusulas:</strong><br>
+                                Para Primer pago usar: &#123;&#123;primer_pago|intcomma&#125;&#125;<br>
+                                Para Primer pago en letras usar &#123;&#123;primer_pago_letras&#125;&#125;<br>
+                                Para el dia del primer pago usar &#123;&#123;dia_primer_pago&#125;&#125;<br>
+                                Para el dia del primer en letras pago usar &#123;&#123;dia_primer_pago_letras&#125;&#125;<br>
+                                Para segundo pago usar: &#123;&#123;segundo_pago|intcomma&#125;&#125;<br>
+                                Para segundo pago en letras usar &#123;&#123;segundo_pago_letras&#125;&#125;<br>
+                                Para el dia del segundo pago usar &#123;&#123;dia_segundo_pago&#125;&#125;<br>
+                                Para el dia del segundo en letras pago usar &#123;&#123;dia_segundo_pago_letras&#125;&#125;<br>
+                                Para tercer pago usar: &#123;&#123;tercer_pago|intcomma&#125;&#125;<br>
+                                Para tercer pago en letras usar &#123;&#123;tercer_pago_letras&#125;&#125;<br>
+                                Para el dia del tercer pago usar &#123;&#123;dia_tercer_pago&#125;&#125;<br>
+                                Para el dia del tercer en letras pago usar &#123;&#123;dia_tercer_pago_letras&#125;&#125;
+                            </div>
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>Formas de Pago (Cláusula 3)</span>
+                        <button type="button" id="add_tercera" class="btn btn-sm btn-secondary">+ Agregar</button>
+                    </div>
+                    <div class="card-body">
+                        <div id="clausula3">
+                            <ul class="claus-list-3">
+                                <!-- Se llenarán dinámicamente -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>Cláusulas del Contrato</span>
+                        <button type="button" id="add_clausula" class="btn btn-sm btn-secondary">+ Agregar</button>
+                    </div>
+                    <div class="card-body">
+                        <div id="checkboxes">
+                            <ul class="claus-list">
+                                <!-- Se llenarán dinámicamente -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>Observaciones</span>
+                        <button type="button" id="add_opcion" class="btn btn-sm btn-secondary">+ Agregar</button>
+                    </div>
+                    <div class="card-body">
+                        <div id="opciones">
+                            <ul class="claus-list">
+                                <!-- Se llenarán dinámicamente -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTÓN SUBMIT -->
+        <div class="text-center mt-4 mb-5">
+            <button type="submit" class="btn btn-primary btn-lg">
+                📄 Generar Contrato PDF
+            </button>
+        </div>
+    </form>
 </div>
 
-<button type="button" id="add_clausula">Agregar Cláusula</button>
-<button type="button" id="add_opcion">Agregar Observación</button>
-<button type="button" id="add_tercera">Agregar Forma de Pago</button>
-
 <script>
-    // Definir las cláusulas y opciones para cada tipo de contrato
+    console.log('🔧 Script iniciado');
+    // OBJETOS DE DATOS
     const clausulasPorContrato = {
         "permuta": [
             { texto: "La retención en la fuente y el traspaso del vehículo de placas _______ la asume EL PRIMER PERMUTANTE." },
-            { texto: "La chatarrización y cancelación de matrícula del vehículo de placas _____ será asumida por EL SEGUNDO PERMUTANTE." },
+            { texto: "La chatarización y cancelación de matrícula del vehículo de placas _____ será asumida por EL SEGUNDO PERMUTANTE." },
             { texto: "La retención en la fuente y el traspaso del vehículo de placas ______ la asume EL SEGUNDO PERMUTANTE." },
             { texto: "EL PRIMER PERMUTANTE cancelará los gastos ocasionados por pasar el vehículo por sidenal sin funcionar por valor de xxxxxx xxxx MIL PESOS M/CTE($xxx.xxx)." }
         ],
@@ -331,18 +555,14 @@
             { "texto": "A estar a paz y salvo por todo concepto, comparendos y/o multas de tránsito a nivel nacional y estar inscrito ante el RUNT (Registro único nacional de tránsito)." },
             { "texto": "Por mutuo acuerdo entre las partes, el vehículo nuevo será afiliado a la empresa OPERADORA DE TRANSPORTE DE COLOMBIA TAXI CUPOS S.A.S." }
         ],
-        "compra": [
-            { texto: "El comprador tiene derecho a realizar inspección del vehículo antes de la compra." },
-            { texto: "El vendedor se compromete a entregar todos los documentos legales del vehículo." }
-        ],
         "Compra_Cupo": [
             { texto: "Los gastos de traspaso serán asumidos 50% por el comprador y 50% por el vendedor." },
-            { texto: "La chatarrización y derechos de cancelación de matrícula serán asumidos en su totalidad por el comprador." },
+            { texto: "La chatarización y derechos de cancelación de matrícula serán asumidos en su totalidad por el comprador." },
             { texto: "La retención en la fuente será asumida por el vendedor en su totalidad." }
         ],
         "compra_Particular": [
             { texto: "La retención en la fuente será asumida por el vendedor en su totalidad." },
-            { texto: "Derechos de traspaso ante el VENTANILLA UNICA DE SERVICIOS “VUS”, será asumida 50% por cada una de las partes." }
+            { texto: "Derechos de traspaso ante el VENTANILLA UNICA DE SERVICIOS 'VUS', será asumida 50% por cada una de las partes." }
         ],
         "compra_usado": [
             { texto: "Los gastos de traspaso serán asumidos 50% por el comprador y 50% por el vendedor." },
@@ -358,16 +578,13 @@
             { texto: "La retención en la fuente será asumida por el vendedor en su totalidad." },
             { texto: "CLAUSULA EXTRA" }
         ],
-        "chatarizacion_con_venta": [
-            ],
-        "servicio_chatarrizacion": [
-            ],
+        "chatarizacion_con_venta": [],
+        "servicio_chatarrizacion": [],
         "venta_cupo": [
             { texto: "El Cesionario se compromete a cancelar el valor acordado en los términos y plazos estipulados en la cláusula tercera." },
             { texto: "El Cesionario deberá estar a paz y salvo por todo concepto, comparendos y / o multas de tránsito a nivel nacional y estar inscrito ante el RUNT (Registro Único Nacional de Tránsito). -----------------------------------------------------------------------" },
             { texto: "A entregar la factura de compra con improntas, declaración y manifiesto de aduana expedida por el concesionario autorizado, prendas si es el caso para matrícula del vehículo nuevo, y se compromete a cumplir con los requisitos estipulados en la presente cláusula. -------------------------------------------------------------------------------------------------------------" }
-        ],
-        // Agregar más tipos de contrato según sea necesario
+        ]
     };
 
     const opcionesPorContrato = {
@@ -377,13 +594,6 @@
             { texto: "EL SEGUNDO PERMUTANTE solicitará los paz y salvos de movilidad, de accidentes y comparendos administrativos." },
             { texto: "El taxi nuevo se entregará con emblemas reglamentarios, derechos de matrícula cancelados ante el SIM, soat por un año, un año de rodamiento cancelado ante la empresa Taxi Cupos a partir de la entrega del vehículo, impuesto año en curso, la tarjeta de operación y los seguros contractual y extracontractual se entregarán cancelados hasta la fecha de corte de la empresa afiliadora." },
             { texto: "El cambio de vehículos se realizará al tener los documentos firmados y autenticados junto con revisión DIJIN del vehículo." }
-        ],
-        "venta": [
-            { texto: "El comprador se compromete a pagar el 20% del valor total como anticipo." },
-            { texto: "El vendedor se compromete a entregar el vehículo dentro de los 10 días hábiles posteriores a la firma." }
-        ],
-        "compra": [
-            { texto: "El comprador aceptará la venta con base en la inspección realizada." }
         ],
         "Compra_Cupo": [
             { texto: "Se aclara que el vehículo es un taxi del cual el vendedor cede al comprador todos los derechos de reposición del cupo y del taxi." },
@@ -439,8 +649,7 @@
             { "texto": "El comprador se compromete a firmar los compromisos de consumo del vehículo ante la entidad que realizó o realizará la transformación a gas, bajo las condiciones que establezca la empresa transformadora y/o el convenio que estos presenten. --------------------------------------------------------------------------------------------------------------------------------------" },
             { "texto": "Al estar aprobado el CREI (Descuento del IVA) el valor eximido en la factura del taxi nuevo ya está descontado del valor total de este contrato. -------------------------------------------------------------------------------------------------------------------" },
             { "texto": "El vendedor y el comprador han pactado que el tiempo de demora, dilación, atraso, subsanación, negligencia, impericia, fuerza mayor o caso fortuito, atribuible a la autoridad administrativa, judicial y/o de tránsito no será responsabilidad atribuible a Taxi Cupos SAS. ---------------------------------------------------------------------------------------------------------------------" }
-        ],
-        // Agregar más opciones por contrato según sea necesario
+        ]
     };
 
     const tercera_clausula = {
@@ -451,9 +660,6 @@
         "venta": [
             { texto: "El comprador se compromete a cancelar la suma de {{ primer_pago_letras }} (${{ primer_pago }}), posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) días hábiles siguientes a..." },
             { texto: "El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }} (${{ segundo_pago }}), posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) días hábiles siguientes a..." }
-        ],
-        "compra": [
-            { texto: "El comprador aceptará la venta con base en la inspección realizada." }
         ],
         "Compra_Cupo": [
             { texto: "El comprador se compromete a cancelar la suma de {{ primer_pago_letras }} (${{ primer_pago }}), posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) días hábiles siguientes a realizar la entrega del vehículo con sus respectivos documentos originales, al tener el resultado físico de la DIJIN, certificado de tradición sin pendientes, paz y salvo de traspaso de la empresa afiliadora, junto con los documentos firmados y autenticados para realizar los trámites de traspaso a nombre del comprador o quien este designe. ----------------------" },
@@ -476,284 +682,142 @@
             { texto: "El comprador se compromete a cancelar la suma de {{ segundo_pago_letras }} (${{ segundo_pago }}), posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) días hábiles siguientes a..." }
         ],
         "chatarizacion_con_venta": [
-            { texto: "El propietario se compromete a cancelar la suma de <strong> {{ primer_pago_letras }} DE PESOS M/CTE (${{ primer_pago }})</strong> dentro de los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) días hábiles siguientes a……---------------------" },
-            { texto: "El propietario se compromete a cancelar la suma de <strong> {{ segundo_pago_letras }} DE PESOS M/CTE (${{ segundo_pago }})</strong> dentro de los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) días hábiles siguientes a……---------------------" }
+            { texto: "El propietario se compromete a cancelar la suma de <strong> {{ primer_pago_letras }} DE PESOS M/CTE (${{ primer_pago }})</strong> dentro de los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) días hábiles siguientes a…---------------------" },
+            { texto: "El propietario se compromete a cancelar la suma de <strong> {{ segundo_pago_letras }} DE PESOS M/CTE (${{ segundo_pago }})</strong> dentro de los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) días hábiles siguientes a…---------------------" }
         ],
         "servicio_chatarrizacion": [
-            { texto: "El propietario se compromete a cancelar la suma de <strong> {{ primer_pago_letras }} DE PESOS M/CTE (${{ primer_pago }})</strong> dentro de los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) días hábiles siguientes a……---------------------" },
-            { texto: "El propietario se compromete a cancelar la suma de <strong> {{ segundo_pago_letras }} DE PESOS M/CTE (${{ segundo_pago }})</strong> dentro de los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) días hábiles siguientes a……---------------------" }
+            { texto: "El propietario se compromete a cancelar la suma de <strong> {{ primer_pago_letras }} DE PESOS M/CTE (${{ primer_pago }})</strong> dentro de los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) días hábiles siguientes a…---------------------" },
+            { texto: "El propietario se compromete a cancelar la suma de <strong> {{ segundo_pago_letras }} DE PESOS M/CTE (${{ segundo_pago }})</strong> dentro de los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) días hábiles siguientes a…---------------------" }
         ],
         "venta_cupo": [
             { texto: "El CESIONARIO se compromete a cancelar la suma de <strong>{{ primer_pago_letras }} DE PESOS M/CTE</strong><strong>(${{ primer_pago }}),</strong> posteriores a los {{ dia_primer_pago_letras }} ({{ dia_primer_pago }}) días hábiles siguientes a..." },
             { texto: "El CESIONARIO se compromete a cancelar la suma de <strong>{{ segundo_pago_letras }} DE PESOS M/CTE</strong><strong>(${{ segundo_pago }}),</strong> posteriores a los {{ dia_segundo_pago_letras }} ({{ dia_segundo_pago }}) días hábiles siguientes a..." },
             { texto: "El CESIONARIO se compromete a cancelar la suma de <strong>____________ DE PESOS M/CTE</strong><strong>( $___.000.000),</strong> posteriores a los______ (___) días hábiles siguientes a..." }
-        ],
-        // Agregar más opciones por contrato según sea necesario
+        ]
     };
 
-
-    document.getElementById('tipo_contrato').addEventListener('change', function () {
-        var tipoContrato = this.value;
-        var checkboxesContainer = document.getElementById('checkboxes');
-        var opcionesContainer = document.getElementById('opciones');
-        var compraCupoCampos = document.getElementById('compra_cupo_campos');
-        var vehiculo2Container = document.getElementById('vehiculo2-container');  // Referencia al contenedor de vehiculo2
-        var tipo_pagoContainer= document.getElementById('tipo_venta_usado-container')
-        var tipo_clausula = document.getElementById('venta_nuevo_container')
-        var terceraContainer = document.getElementById('clausula3');
-        var serv_container = document.getElementById('serv_chatarrizacion')
-        var tiposOcultos = ['diaco', 'compra_venta', 'cmatricula', 'mandato', 'fun', 'metrokia', 'autoland', 'soat'];
-        var camposPermutaAdicionales = document.getElementById('campos_adicionales_permuta');
+    // FUNCIÓN AUXILIAR
+    function crearElementoClausula(tipo, index, texto) {
+        const li = document.createElement('li');
+        li.classList.add('clausula-item');
         
-        // Limpiar los elementos anteriores
-        checkboxesContainer.innerHTML = '';
-        opcionesContainer.querySelector('ul').innerHTML = '';
-        terceraContainer.querySelector('ul').innerHTML = '';
-    
-        // Mostrar las cláusulas y opciones según el tipo de contrato
-        if (tipoContrato === 'permuta') {
-            camposPermutaAdicionales.style.display = 'block';
-        } else {
-            camposPermutaAdicionales.style.display = 'none';
-        }
-        if (tipoContrato && clausulasPorContrato[tipoContrato]) {
-            // Mostrar las cláusulas
-            clausulasPorContrato[tipoContrato].forEach(function (clausula, index) {
-                var clausulaDiv = document.createElement('div');
-                clausulaDiv.classList.add('clausula');  // Asegúrate de que se añada la clase
-    
-                var checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.name = `gasto_${index + 1}`;
-                checkbox.id = `gasto_${index + 1}`;
-    
-                var inputText = document.createElement('input');
-                inputText.type = 'text';
-                inputText.name = `gasto_${index + 1}_text`;
-                inputText.id = `gasto_${index + 1}_text`;
-                inputText.value = clausula.texto;
-                inputText.disabled = true;
-    
-                // Asegúrate de aplicar el estilo correctamente
-                inputText.style.width = "100%";
-                inputText.style.marginTop = "5px";
-    
-                // Agregar la cláusula al contenedor
-                clausulaDiv.appendChild(checkbox);
-                clausulaDiv.appendChild(inputText);
-                checkboxesContainer.appendChild(clausulaDiv);
-    
-                checkbox.addEventListener('change', function () {
-                    inputText.disabled = !checkbox.checked;
-                });
-            });
-    
-            // Mostrar las opciones
-            opcionesPorContrato[tipoContrato]?.forEach(function (opcion, index) {
-                var opcionLi = document.createElement('li');
-    
-                var checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.name = `opcion_${index + 1}`;
-                checkbox.id = `opcion_${index + 1}`;
-    
-                var inputText = document.createElement('input');
-                inputText.type = 'text';
-                inputText.name = `opcion_${index + 1}_text`;
-                inputText.id = `opcion_${index + 1}_text`;
-                inputText.value = opcion.texto;
-                inputText.disabled = true;
-                inputText.style.width = "100%";
-                inputText.style.marginTop = "5px";
-    
-                opcionLi.appendChild(checkbox);
-                opcionLi.appendChild(inputText);
-                opcionesContainer.querySelector('ul').appendChild(opcionLi);
-    
-                checkbox.addEventListener('change', function () {
-                    inputText.disabled = !checkbox.checked;
-                });
-            });
-
-            tercera_clausula[tipoContrato]?.forEach(function (tercera, index) {
-                var terceraLi = document.createElement('li');
-    
-                var checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.name = `tercera_${index + 1}`;
-                checkbox.id = `tercera_${index + 1}`;
-    
-                var inputText = document.createElement('input');
-                inputText.type = 'text';
-                inputText.name = `tercera_${index + 1}_text`;
-                inputText.id = `tercera_${index + 1}_text`;
-                inputText.value = tercera.texto;
-                inputText.disabled = true;
-                inputText.style.width = "100%";
-                inputText.style.marginTop = "5px";
-    
-                terceraLi.appendChild(checkbox);
-                terceraLi.appendChild(inputText);
-                terceraContainer.querySelector('ul').appendChild(terceraLi);
-    
-                checkbox.addEventListener('change', function () {
-                    inputText.disabled = !checkbox.checked;
-                });
-            });
-            
-    
-            // Mostrar los contenedores
-            checkboxesContainer.style.display = 'block';
-            opcionesContainer.style.display = 'block';
-            terceraContainer.style.display = 'block';
-        } else {
-            checkboxesContainer.style.display = 'none';
-            opcionesContainer.style.display = 'none';
-            terceraContainer.style.display = 'none';
-        }
-    
-        // Mostrar los campos de "compra_cupo_campos" independientemente del tipo de contrato
-        if (tiposOcultos.includes(tipoContrato)) {
-            compraCupoCampos.style.display = 'none';
-        } else {
-            compraCupoCampos.style.display = 'block';
-        }
-
-        if (tipoContrato === 'permuta') {
-            vehiculo2Container.style.display = 'block';
-        } else {
-            vehiculo2Container.style.display = 'none';
-        }
-        if (tipoContrato === 'venta_usado'){
-            tipo_pagoContainer.style.display = 'block';
-        } else {
-            tipo_pagoContainer.style.display = 'none';
-        }
-        if (tipoContrato === 'venta') {
-            tipo_clausula.style.display = 'block'; 
-        } else {
-            tipo_clausula.style.display = 'none';
-        }
-        if (tipoContrato === 'chatarizacion_con_venta'){
-            serv_container.style.display = 'block';
-        } else {
-            serv_container.style.display = 'none';
-        }
-    });
-    
-    // Agregar una cláusula dinámica
-    document.getElementById('add_clausula').addEventListener('click', function () {
-        var tipoContrato = document.getElementById('tipo_contrato').value;
-        if (tipoContrato && clausulasPorContrato[tipoContrato]) {
-            var checkboxesContainer = document.getElementById('checkboxes');
-            var clausulaIndex = clausulasPorContrato[tipoContrato].length + 1;
-            var nuevaClausula = { texto: "Nueva cláusula dinámica" };
-    
-            var clausulaDiv = document.createElement('div');
-            clausulaDiv.classList.add('clausula');
-    
-            var checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.name = `gasto_${clausulaIndex}`;
-            checkbox.id = `gasto_${clausulaIndex}`;
-    
-            var inputText = document.createElement('input');
-            inputText.type = 'text';
-            inputText.name = `gasto_${clausulaIndex}_text`;
-            inputText.id = `gasto_${clausulaIndex}_text`;
-            inputText.value = nuevaClausula.texto;
-            inputText.disabled = true;
-            inputText.style.width = "100%";
-            inputText.style.marginTop = "5px";
-    
-            clausulaDiv.appendChild(checkbox);
-            clausulaDiv.appendChild(inputText);
-            checkboxesContainer.appendChild(clausulaDiv);
-    
-            checkbox.addEventListener('change', function () {
-                inputText.disabled = !checkbox.checked;
-            });
-    
-            clausulasPorContrato[tipoContrato].push(nuevaClausula);
-        }
-    });
-    
-    // Agregar una opción dinámica
-    document.getElementById('add_opcion').addEventListener('click', function () {
-        var tipoContrato = document.getElementById('tipo_contrato').value;
-        if (tipoContrato && opcionesPorContrato[tipoContrato]) {
-            var opcionesContainer = document.getElementById('opciones').querySelector('ul');
-            var opcionIndex = opcionesPorContrato[tipoContrato].length + 1;
-            var nuevaOpcion = { texto: "Nueva opción dinámica" };
-    
-            var opcionLi = document.createElement('li');
-    
-            var checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.name = `opcion_${opcionIndex}`;
-            checkbox.id = `opcion_${opcionIndex}`;
-    
-            var inputText = document.createElement('input');
-            inputText.type = 'text';
-            inputText.name = `opcion_${opcionIndex}_text`;
-            inputText.id = `opcion_${opcionIndex}_text`;
-            inputText.value = nuevaOpcion.texto;
-            inputText.disabled = true;
-            inputText.style.width = "100%";
-            inputText.style.marginTop = "5px";
-    
-            opcionLi.appendChild(checkbox);
-            opcionLi.appendChild(inputText);
-            opcionesContainer.appendChild(opcionLi);
-    
-            checkbox.addEventListener('change', function () {
-                inputText.disabled = !checkbox.checked;
-            });
-
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.name = `${tipo}_${index + 1}`;
+        checkbox.id = `${tipo}_${index + 1}`;
         
-    
-            opcionesPorContrato[tipoContrato].push(nuevaOpcion);
-        }
-    });
-
-    document.getElementById('add_tercera').addEventListener('click', function () {
-        var tipoContrato = document.getElementById('tipo_contrato').value;
-        if (tipoContrato && tercera_clausula[tipoContrato]) {
-            var terceraContainer = document.getElementById('clausula3').querySelector('ul');
-            var TerceraIndex = tercera_clausula[tipoContrato].length + 1;
-            var nuevaTercera = { texto: "Nueva forma de pago dinámica" };
-    
-            var terceraLi = document.createElement('li');
-    
-            var checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.name = `tercera_${TerceraIndex}`;
-            checkbox.id = `tercera_${TerceraIndex}`;
-    
-            var inputText = document.createElement('input');
-            inputText.type = 'text';
-            inputText.name = `tercera_${TerceraIndex}_text`;
-            inputText.id = `tercera_${TerceraIndex}_text`;
-            inputText.value = nuevaTercera.texto;
-            inputText.disabled = true;
-            inputText.style.width = "100%";
-            inputText.style.marginTop = "5px";
-    
-            terceraLi.appendChild(checkbox);
-            terceraLi.appendChild(inputText);
-            terceraContainer.appendChild(terceraLi);
-    
-            checkbox.addEventListener('change', function () {
-                inputText.disabled = !checkbox.checked;
-            });
-
+        const inputText = document.createElement('input');
+        inputText.type = 'text';
+        inputText.name = `${tipo}_${index + 1}_text`;
+        inputText.id = `${tipo}_${index + 1}_text`;
+        inputText.value = texto;
+        inputText.disabled = true;
+        inputText.classList.add('form-control');
         
-    
-            tercera_clausula[tipoContrato].push(nuevaTercera);
-        }
-    });
+        li.appendChild(checkbox);
+        li.appendChild(inputText);
+        
+        checkbox.addEventListener('change', function () {
+            inputText.disabled = !checkbox.checked;
+        });
+        
+        return li;
+    }
 
+    // TODO DENTRO DE DOMContentLoaded
     document.addEventListener('DOMContentLoaded', function () {
+        
+        // CAMBIO DE TIPO DE CONTRATO
+        document.getElementById('tipo_contrato').addEventListener('change', function () {
+            const tipoContrato = this.value;
+            const checkboxesContainer = document.getElementById('checkboxes').querySelector('ul');
+            const opcionesContainer = document.getElementById('opciones').querySelector('ul');
+            const terceraContainer = document.getElementById('clausula3').querySelector('ul');
+            const compraCupoCampos = document.getElementById('compra_cupo_campos');
+            const vehiculo2Container = document.getElementById('vehiculo2-container');
+            const tipo_pagoContainer = document.getElementById('tipo_venta_usado-container');
+            const tipo_clausula = document.getElementById('venta_nuevo_container');
+            const serv_container = document.getElementById('serv_chatarrizacion');
+            const camposPermutaAdicionales = document.getElementById('campos_adicionales_permuta');
+            const tiposOcultos = ['diaco', 'compra_venta', 'cmatricula', 'mandato', 'fun', 'metrokia', 'autoland', 'soat'];
+            
+            checkboxesContainer.innerHTML = '';
+            opcionesContainer.innerHTML = '';
+            terceraContainer.innerHTML = '';
+
+            camposPermutaAdicionales.style.display = tipoContrato === 'permuta' ? 'block' : 'none';
+
+            if (tipoContrato) {
+                if (!clausulasPorContrato[tipoContrato]) clausulasPorContrato[tipoContrato] = [];
+                if (!opcionesPorContrato[tipoContrato]) opcionesPorContrato[tipoContrato] = [];
+                if (!tercera_clausula[tipoContrato]) tercera_clausula[tipoContrato] = [];
+
+                clausulasPorContrato[tipoContrato].forEach((clausula, index) => {
+                    checkboxesContainer.appendChild(crearElementoClausula('gasto', index, clausula.texto));
+                });
+
+                opcionesPorContrato[tipoContrato].forEach((opcion, index) => {
+                    opcionesContainer.appendChild(crearElementoClausula('opcion', index, opcion.texto));
+                });
+
+                tercera_clausula[tipoContrato].forEach((tercera, index) => {
+                    terceraContainer.appendChild(crearElementoClausula('tercera', index, tercera.texto));
+                });
+            }
+
+            compraCupoCampos.style.display = tiposOcultos.includes(tipoContrato) ? 'none' : 'block';
+            vehiculo2Container.style.display = tipoContrato === 'permuta' ? 'block' : 'none';
+            tipo_pagoContainer.style.display = tipoContrato === 'venta_usado' ? 'block' : 'none';
+            tipo_clausula.style.display = tipoContrato === 'venta' ? 'block' : 'none';
+            serv_container.style.display = tipoContrato === 'chatarizacion_con_venta' ? 'block' : 'none';
+        });
+
+        // AGREGAR CLÁUSULA
+        document.getElementById('add_clausula').addEventListener('click', function () {
+            const tipoContrato = document.getElementById('tipo_contrato').value;
+            if (!tipoContrato) {
+                alert('⚠️ Por favor, seleccione primero un tipo de contrato');
+                return;
+            }
+            if (!clausulasPorContrato[tipoContrato]) clausulasPorContrato[tipoContrato] = [];
+            const checkboxesContainer = document.getElementById('checkboxes').querySelector('ul');
+            const clausulaIndex = clausulasPorContrato[tipoContrato].length;
+            const nuevaClausula = { texto: "Nueva cláusula dinámica" };
+            checkboxesContainer.appendChild(crearElementoClausula('gasto', clausulaIndex, nuevaClausula.texto));
+            clausulasPorContrato[tipoContrato].push(nuevaClausula);
+        });
+
+        // AGREGAR OPCIÓN
+        document.getElementById('add_opcion').addEventListener('click', function () {
+            const tipoContrato = document.getElementById('tipo_contrato').value;
+            if (!tipoContrato) {
+                alert('⚠️ Por favor, seleccione primero un tipo de contrato');
+                return;
+            }
+            if (!opcionesPorContrato[tipoContrato]) opcionesPorContrato[tipoContrato] = [];
+            const opcionesContainer = document.getElementById('opciones').querySelector('ul');
+            const opcionIndex = opcionesPorContrato[tipoContrato].length;
+            const nuevaOpcion = { texto: "Nueva observación dinámica" };
+            opcionesContainer.appendChild(crearElementoClausula('opcion', opcionIndex, nuevaOpcion.texto));
+            opcionesPorContrato[tipoContrato].push(nuevaOpcion);
+        });
+
+        // AGREGAR TERCERA
+        document.getElementById('add_tercera').addEventListener('click', function () {
+            const tipoContrato = document.getElementById('tipo_contrato').value;
+            if (!tipoContrato) {
+                alert('⚠️ Por favor, seleccione primero un tipo de contrato');
+                return;
+            }
+            if (!tercera_clausula[tipoContrato]) tercera_clausula[tipoContrato] = [];
+            const terceraContainer = document.getElementById('clausula3').querySelector('ul');
+            const terceraIndex = tercera_clausula[tipoContrato].length;
+            const nuevaTercera = { texto: "Nueva forma de pago dinámica" };
+            terceraContainer.appendChild(crearElementoClausula('tercera', terceraIndex, nuevaTercera.texto));
+            tercera_clausula[tipoContrato].push(nuevaTercera);
+        });
+
+        // GESTIÓN PERSONAS
         const personaSelect = document.getElementById('persona');
         const vendedoresSection = document.getElementById('vendedores_section');
         const compradoresSection = document.getElementById('compradores_section');
@@ -761,7 +825,6 @@
         const tipoJuridicaSelect = document.getElementById('tipo_juridica');
         const camposJuridica = document.getElementById('campos_juridica');
 
-        // Mostrar/ocultar secciones según selección de Persona
         personaSelect.addEventListener('change', function () {
             if (this.value === 'Juridica') {
                 vendedoresSection.style.display = 'none';
@@ -771,63 +834,30 @@
                 vendedoresSection.style.display = 'block';
                 compradoresSection.style.display = 'block';
                 tipoPersonaJuridica.style.display = 'none';
-                camposJuridica.style.display = 'none'; // Ocultar campos si se cambia a Natural
-                tipoJuridicaSelect.value = ''; // Reiniciar selección
-            }
-        });
-
-        // Mostrar campos de NIT y Nombre dependiendo de la selección (Comprador/Vendedor)
-        tipoJuridicaSelect.addEventListener('change', function () {
-            if (this.value === 'Comprador' || this.value === 'Vendedor') {
-                camposJuridica.style.display = 'block';
-            } else {
                 camposJuridica.style.display = 'none';
+                tipoJuridicaSelect.value = '';
             }
         });
-    });
 
-    document.addEventListener('DOMContentLoaded', function () {
-        // Elementos para vendedores
+        tipoJuridicaSelect.addEventListener('change', function () {
+            camposJuridica.style.display = (this.value === 'Comprador' || this.value === 'Vendedor') ? 'block' : 'none';
+        });
+
         const vendedoresSelect = document.getElementById('vendedores');
         const cedulaVendedor2 = document.getElementById('cedula_vendedor_2');
-
-        // Elementos para compradores
         const compradoresSelect = document.getElementById('compradores');
         const cedulaComprador2 = document.getElementById('cedula_comprador_2');
 
-        // Mostrar/Ocultar segundo campo de cédula del vendedor
         vendedoresSelect.addEventListener('change', function () {
-            if (this.value === '2') {
-                cedulaVendedor2.style.display = 'block';
-            } else {
-                cedulaVendedor2.style.display = 'none';
-            }
-
-            // Bloquear sólo el SELECT del comprador (no los campos de cédula)
-            if (this.value !== '') {
-                compradoresSelect.disabled = true;
-            } else {
-                compradoresSelect.disabled = false;
-            }
+            cedulaVendedor2.style.display = this.value === '2' ? 'block' : 'none';
+            compradoresSelect.disabled = this.value !== '';
         });
 
-        // Mostrar/Ocultar segundo campo de cédula del comprador
         compradoresSelect.addEventListener('change', function () {
-            if (this.value === '2') {
-                cedulaComprador2.style.display = 'block';
-            } else {
-                cedulaComprador2.style.display = 'none';
-            }
-
-            // Bloquear sólo el SELECT del vendedor (no los campos de cédula)
-            if (this.value !== '') {
-                vendedoresSelect.disabled = true;
-            } else {
-                vendedoresSelect.disabled = false;
-            }
+            cedulaComprador2.style.display = this.value === '2' ? 'block' : 'none';
+            vendedoresSelect.disabled = this.value !== '';
         });
     });
-
 </script>
 
 {% endblock %}

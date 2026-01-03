@@ -8,9 +8,15 @@ import csv
 import codecs
 from django.db import transaction
 import openpyxl
-from django.db.models import Sum, Count, F
+from django.db.models import Sum, Count, F, Count
 from django.contrib.auth.decorators import login_required
 from .utils import requiere_sede_operadora
+from django.db.models.functions import TruncMonth, TruncDay
+import calendar
+import json
+from datetime import date
+from django.utils import timezone
+from dateutil.relativedelta import relativedelta
 
 
 def importar_planillas(request):
@@ -529,12 +535,24 @@ def consultar_planillas_vehiculo(request):
 def dashboard_vehiculos(request):
 
     placa = request.GET.get("placa", "").upper().strip()
+
     vehiculo_consultado = None
     adquiridas = usadas = disponibles = None
 
-    # -----------------------------------------------------
-    # CONSULTA RÁPIDA
-    # -----------------------------------------------------
+    # =====================================================
+    # KPIs GENERALES
+    # =====================================================
+    total_vehiculos = Vehiculo.objects.count()
+
+    total_adquiridas = (
+        PlanillasVenta.objects.aggregate(total=Sum("cantidad"))["total"] or 0
+    )
+
+    total_usadas = PlanillasRunt.objects.count()
+
+    # =====================================================
+    # CONSULTA RÁPIDA POR PLACA
+    # =====================================================
     if placa:
         try:
             vehiculo_consultado = Vehiculo.objects.get(placa=placa)
@@ -546,26 +564,29 @@ def dashboard_vehiculos(request):
             )
 
             usadas = PlanillasRunt.objects.filter(placa=placa).count()
-
             disponibles = adquiridas - usadas
 
         except Vehiculo.DoesNotExist:
             messages.error(request, f"La placa {placa} no está registrada.")
 
-    # -----------------------------------------------------
+    # =====================================================
     # VEHÍCULOS CON DISPONIBLES NEGATIVOS
-    # -----------------------------------------------------
+    # =====================================================
     vehiculos_negativos = []
+    total_negativos = 0
 
     for v in Vehiculo.objects.all():
         adq = (
-            PlanillasVenta.objects.filter(placa=v.placa)
+            PlanillasVenta.objects
+            .filter(placa=v.placa)
             .aggregate(total=Sum("cantidad"))["total"] or 0
         )
+
         usa = PlanillasRunt.objects.filter(placa=v.placa).count()
         disp = adq - usa
 
         if disp < 0:
+            total_negativos += 1
             vehiculos_negativos.append({
                 "placa": v.placa,
                 "adquiridas": adq,
@@ -573,13 +594,84 @@ def dashboard_vehiculos(request):
                 "disponibles": disp
             })
 
+    # =====================================================
+    # 📊 GRÁFICO 1: USO DE PLANILLAS POR MES
+    # =====================================================
+    uso_por_mes = (
+        PlanillasRunt.objects
+        .filter(fecha_solicitud__isnull=False)
+        .annotate(mes=TruncMonth("fecha_solicitud"))
+        .values("mes")
+        .annotate(total=Sum(1))
+        .order_by("mes")
+    )
+
+    labels_mes = [u["mes"].strftime("%b %Y") for u in uso_por_mes]
+    data_mes = [u["total"] for u in uso_por_mes]
+
+    # =====================================================
+    # 📈 GRÁFICO 2: TENDENCIA (últimos 6 meses + siguiente)
+    # =====================================================
+    hoy = timezone.now()
+
+    inicio = hoy.replace(day=1) - relativedelta(months=5)
+    fin = hoy.replace(day=1) + relativedelta(months=2)
+
+    qs = (
+        PlanillasRunt.objects
+        .filter(
+            fecha_solicitud__isnull=False,
+            fecha_solicitud__gte=inicio,
+            fecha_solicitud__lt=fin
+        )
+        .annotate(mes=TruncMonth("fecha_solicitud"))
+        .values("mes")
+        .annotate(total=Count("id"))
+        .order_by("mes")
+    )
+
+    # Crear estructura completa de meses (incluye vacíos)
+    meses = []
+    actual = inicio
+
+    while actual < fin:
+        meses.append(actual)
+        actual += relativedelta(months=1)
+
+    data_map = {q["mes"].date(): q["total"] for q in qs}
+
+    labels_tendencia = []
+    data_tendencia = []
+
+    for m in meses:
+        labels_tendencia.append(m.strftime("%b %Y"))
+        data_tendencia.append(data_map.get(m.date(), 0))
+
+    # =====================================================
+    # CONTEXTO
+    # =====================================================
     contexto = {
+        # Consulta rápida
         "placa": placa,
         "vehiculo_consultado": vehiculo_consultado,
         "adquiridas": adquiridas,
         "usadas": usadas,
         "disponibles": disponibles,
+
+        # Tabla
         "vehiculos_negativos": vehiculos_negativos,
+
+        # KPIs
+        "total_vehiculos": total_vehiculos,
+        "total_adquiridas": total_adquiridas,
+        "total_usadas": total_usadas,
+        "total_negativos": total_negativos,
+
+        # Gráficos
+        "labels_mes": json.dumps(labels_mes),
+        "data_mes": json.dumps(data_mes),
+        "labels_tendencia": json.dumps(labels_tendencia),
+        "data_tendencia": json.dumps(data_tendencia),
     }
 
     return render(request, "dashboard_vehiculos.html", contexto)

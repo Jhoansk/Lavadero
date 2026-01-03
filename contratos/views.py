@@ -38,6 +38,7 @@ from django.core.paginator import Paginator
 from django.contrib import messages
 from django.db import models
 from decimal import Decimal
+from collections import Counter, defaultdict
 
 
 
@@ -422,7 +423,7 @@ def descargar_pdf_facturas(request):
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=facturas.pdf'
     return response
-
+"""
 @login_required
 def inicio(request):
     # Obtener la fecha actual y el umbral de 30 días
@@ -467,7 +468,7 @@ def inicio(request):
     }
 
     return render(request, 'vehiculos/inicio.html', context)
-
+"""
 @login_required
 def lista_usuarios(request):
     # Obtener todos los usuarios
@@ -583,15 +584,24 @@ def agregar_estado(request):
 
 @login_required
 def editar_estado(request, estado_id):
-    estado = get_object_or_404(estado, id=estado_id)
+    estado_obj = get_object_or_404(estado, id=estado_id)
+
     if request.method == 'POST':
-        form = EstadoForm(request.POST, instance=estado)
+        form = EstadoForm(request.POST, instance=estado_obj)
         if form.is_valid():
             form.save()
             return redirect('vehiculos:lista_estados')
     else:
-        form = EstadoForm(instance=estado)
-    return render(request, 'vehiculos/editar_estado.html', {'form': form, 'estado': estado})
+        form = EstadoForm(instance=estado_obj)
+
+    return render(
+        request,
+        'vehiculos/editar_estado.html',
+        {
+            'form': form,
+            'estado': estado_obj
+        }
+    )
 
 @login_required
 def eliminar_estado(request, estado_id):
@@ -1284,7 +1294,7 @@ def buscar_vehiculo_documentos(request):
     })
     
 @login_required
-def dashboard(request):
+def inicio(request):
 
     # Totales principales
     total_vehiculos = Vehiculo_contratos.objects.count()
@@ -1399,4 +1409,212 @@ def dashboard(request):
         "ultimas_facturas": ultimas_facturas,
     }
 
-    return render(request, "vehiculos/dashboard.html", context)
+    return render(request, "vehiculos/inicio.html", context)
+
+def dashboard_operativa(request):
+
+    # ======================
+    # FILTROS
+    # ======================
+    tipo_filtro = request.GET.get('tipo', 'TODOS')  # TODOS | COMPRA | VENTA
+    tipo_contrato_filtro = request.GET.get('tipo_contrato', 'TODOS')
+    fecha_desde = request.GET.get('desde')
+    fecha_hasta = request.GET.get('hasta')
+
+    contratos_qs = Contrato.objects.all()
+
+    # Filtro COMPRA / VENTA
+    if tipo_filtro == 'COMPRA':
+        contratos_qs = contratos_qs.filter(tipo_contrato__istartswith='COMPRA')
+    elif tipo_filtro == 'VENTA':
+        contratos_qs = contratos_qs.filter(tipo_contrato__istartswith='VENTA')
+
+    # Filtro tipo contrato específico
+    if tipo_contrato_filtro != 'TODOS':
+        contratos_qs = contratos_qs.filter(tipo_contrato=tipo_contrato_filtro)
+
+    # ======================
+    # FILTRO POR FECHAS (fecha_hoy es string)
+    # ======================
+    contratos = []
+
+    for c in contratos_qs:
+        if not c.fecha_hoy:
+            continue
+
+        try:
+            fecha = datetime.strptime(c.fecha_hoy, "%d/%m/%Y").date()
+        except:
+            continue
+
+        if fecha_desde:
+            if fecha < datetime.strptime(fecha_desde, "%Y-%m-%d").date():
+                continue
+
+        if fecha_hasta:
+            if fecha > datetime.strptime(fecha_hasta, "%Y-%m-%d").date():
+                continue
+
+        contratos.append(c)
+
+    # ======================
+    # KPIs FINANCIEROS
+    # ======================
+    total_compra = 0
+    total_venta = 0
+
+    for c in contratos:
+        try:
+            valor = float(c.pacta_suma)
+        except:
+            valor = 0
+
+        if c.tipo_contrato and c.tipo_contrato.upper().startswith('COMPRA'):
+            total_compra += valor
+        elif c.tipo_contrato and c.tipo_contrato.upper().startswith('VENTA'):
+            total_venta += valor
+
+    total_ganancia = total_venta - total_compra
+    margen = (total_ganancia / total_venta * 100) if total_venta > 0 else 0
+
+    # ======================
+    # DISTRIBUCIÓN POR TIPO (EXCLUYENDO ALGUNOS)
+    # ======================
+    excluir_tipos = [
+        'diaco',
+        'cmatricula',
+        'mandato',
+        'fun',
+        'metrokia',
+        'autoland',
+        'soat'
+    ]
+
+    tipos_counter = Counter(
+        c.tipo_contrato
+        for c in contratos
+        if c.tipo_contrato
+        and c.tipo_contrato.lower() not in excluir_tipos
+    )
+
+    tipos_labels = list(tipos_counter.keys())
+    tipos_values = list(tipos_counter.values())
+
+    # ======================
+    # ESTADO DE PROCESO VEHÍCULOS
+    # ======================
+    checklists = (
+        Checklist.objects
+        .select_related('vehiculo')
+        .order_by('-id')[:10]  # últimos 10
+    )
+
+    # ======================
+    # COMPARATIVO MENSUAL AUTOMÁTICO
+    # ======================
+    compras_mes = defaultdict(float)
+    ventas_mes = defaultdict(float)
+
+    for c in contratos:
+        try:
+            fecha = datetime.strptime(c.fecha_hoy, "%d/%m/%Y")
+            mes = fecha.strftime("%Y-%m")
+            valor = float(c.pacta_suma or 0)
+        except:
+            continue
+
+        if c.tipo_contrato.upper().startswith('COMPRA'):
+            compras_mes[mes] += valor
+        elif c.tipo_contrato.upper().startswith('VENTA'):
+            ventas_mes[mes] += valor
+
+    meses = sorted(set(compras_mes.keys()) | set(ventas_mes.keys()))
+    compras_mes_data = [compras_mes.get(m, 0) for m in meses]
+    ventas_mes_data = [ventas_mes.get(m, 0) for m in meses]
+
+    # ======================
+    # TIPOS DE CONTRATO (PARA FILTRO)
+    # ======================
+    tipos_contrato = (
+        Contrato.objects
+        .values_list('tipo_contrato', flat=True)
+        .distinct()
+        .order_by('tipo_contrato')
+    )
+
+    # ======================
+    # USUARIO DEL SISTEMA (ROL)
+    # ======================
+    user_sistema = None
+    if request.user.is_authenticated:
+        try:
+            user_sistema = user.objects.get(id_user=request.user.id)
+        except user.DoesNotExist:
+            user_sistema = None
+
+    context = {
+        # Usuario
+        'user_sistema': user_sistema,
+        # Filtros
+        'tipo_filtro': tipo_filtro,
+        'tipo_contrato_filtro': tipo_contrato_filtro,
+        'fecha_desde': fecha_desde,
+        'fecha_hasta': fecha_hasta,
+        'tipos_contrato': tipos_contrato,
+
+        # KPIs
+        'total_compra': total_compra,
+        'total_venta': total_venta,
+        'total_ganancia': total_ganancia,
+        'margen': margen,
+
+        # Gráficos
+        'tipos_labels_json': json.dumps(tipos_labels),
+        'tipos_values_json': json.dumps(tipos_values),
+
+        'meses_json': json.dumps(meses),
+        'compras_mes_json': json.dumps(compras_mes_data),
+        'ventas_mes_json': json.dumps(ventas_mes_data),
+        'checklists': checklists,
+    }
+
+    return render(request, 'vehiculos/dashboard_operativa.html', context)
+
+def anular_contrato(request, contrato_id):
+    contrato = get_object_or_404(Contrato, id=contrato_id)
+
+    if request.method == 'POST':
+        contrato.delete()
+        messages.success(request, 'Contrato anulado correctamente.')
+        return redirect('vehiculos:lista_contratos')
+
+    return render(request, 'vehiculos/anular_contrato.html', {
+        'contrato': contrato
+    })
+
+def lista_contratos(request):
+    tipo = request.GET.get('tipo', '')
+    placa = request.GET.get('placa', '')
+    cedula = request.GET.get('cedula', '')
+
+    contratos = Contrato.objects.all().order_by('-id')
+
+    if tipo:
+        contratos = contratos.filter(tipo_contrato__icontains=tipo)
+
+    if placa:
+        contratos = contratos.filter(vehiculo_placa__icontains=placa)
+
+    if cedula:
+        contratos = contratos.filter(
+            usuario1_cedula__icontains=cedula
+        ) | contratos.filter(
+            usuario2_cedula__icontains=cedula
+        )
+
+    return render(request, 'vehiculos/lista_contratos.html', {
+        'contratos': contratos,
+        'tipo': tipo,
+        'placa': placa,
+        'cedula': cedula,
+    })

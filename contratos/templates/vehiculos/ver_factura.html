@@ -1,26 +1,30 @@
-{% extends 'base.html' %} {% block content %}
-<div class="recent-orders">
-  <div class="vehicle_search">
-    <h1>Factura {{ factura.n_factura }}</h1>
-    <p><strong>Placa:</strong> {{ factura.id_placa.placa }}</p>
-    <p><strong>Nombre del Local:</strong> {{ factura.nombre_local }}</p>
-    <p><strong>Fecha:</strong> {{ factura.fecha }}</p>
-    <p><strong>Descripción:</strong> {{ factura.descripcion }}</p>
-    <p><strong>Cantidad:</strong> {{ factura.cantidad }}</p>
-    <p><strong>Valor:</strong> {{ factura.valor }}</p>
-    <p><strong>IVA:</strong> {{ factura.iva|yesno:"Sí,No" }}</p>
-    <p><strong>Total:</strong> {{ factura.total }}</p>
+{% extends 'vehiculos/layout_contratos.html' %}
 
-    {% if factura.imagen %}
-    <h2>Imagen adjunta:</h2>
-    <img
-      src="{{ factura.imagen.url }}"
-      alt="Factura"
-      style="max-width: 100%; height: auto"
-    />
-    {% else %}
-    <p>No hay imagen adjunta.</p>
-    {% endif %}
-  </div>
+{% block title %}Factura {{ factura.n_factura }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-warning text-white">
+            <h3>Factura {{ factura.n_factura }}</h3>
+        </div>
+        <div class="card-body">
+            <p><strong>Placa:</strong> {{ factura.id_placa.placa }}</p>
+            <p><strong>Nombre del Local:</strong> {{ factura.nombre_local }}</p>
+            <p><strong>Fecha:</strong> {{ factura.fecha }}</p>
+            <p><strong>Descripción:</strong> {{ factura.descripcion }}</p>
+            <p><strong>Cantidad:</strong> {{ factura.cantidad }}</p>
+            <p><strong>Valor:</strong> {{ factura.valor }}</p>
+            <p><strong>IVA:</strong> {{ factura.iva|yesno:"Sí,No" }}</p>
+            <p><strong>Total:</strong> {{ factura.total }}</p>
+
+            {% if factura.imagen %}
+                <h5>Imagen adjunta:</h5>
+                <img src="{{ factura.imagen.url }}" alt="Factura" class="img-fluid rounded shadow-sm"/>
+            {% else %}
+                <p>No hay imagen adjunta.</p>
+            {% endif %}
+        </div>
+    </div>
 </div>
 {% endblock %}

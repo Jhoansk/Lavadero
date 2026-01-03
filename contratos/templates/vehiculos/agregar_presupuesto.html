@@ -1,14 +1,60 @@
-{% extends 'base.html' %} {% block title %}Agregar Presupuesto{% endblock %}
+{% extends "vehiculos/layout_contratos.html" %}
+
+{% block title %}Agregar Presupuesto{% endblock %}
+
 {% block content %}
-<div class="container">
-  <h1>Agregar Presupuesto</h1>
-  <form method="post">
-    {% csrf_token %} {% for field in form %}
-    <div class="form-group">
-      {{ field.label_tag }} {{ field }} {{ field.errors }}
+
+<div class="container-fluid py-3">
+
+    <!-- HEADER -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">📦 Agregar Presupuesto</h2>
+        <a href="{% url 'vehiculos:lista_presupuestos' %}"
+           class="btn btn-outline-secondary">
+            ⬅ Volver
+        </a>
     </div>
-    {% endfor %}
-    <button type="submit" class="btn btn-primary">Guardar</button>
-  </form>
+
+    <!-- CARD -->
+    <div class="card p-4">
+
+        <form method="post" novalidate>
+            {% csrf_token %}
+
+            <div class="row g-3">
+
+                {% for field in form %}
+                <div class="col-md-6">
+
+                    <label for="{{ field.id_for_label }}"
+                           class="form-label fw-semibold">
+                        {{ field.label }}
+                    </label>
+
+                    {{ field }}
+
+                    {% if field.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ field.errors|striptags }}
+                        </div>
+                    {% endif %}
+
+                </div>
+                {% endfor %}
+
+            </div>
+
+            <!-- ACTIONS -->
+            <div class="d-flex justify-content-end mt-4">
+                <button type="submit" class="btn btn-success">
+                    💾 Guardar
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
 </div>
+
 {% endblock %}

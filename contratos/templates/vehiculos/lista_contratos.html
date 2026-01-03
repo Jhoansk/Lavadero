@@ -1,0 +1,87 @@
+{% extends "vehiculos/layout_contratos.html" %}
+{% load humanize %}
+
+{% block title %}Lista de Contratos{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+
+    <h3 class="mb-3">📄 Lista de Contratos</h3>
+
+    <!-- FILTROS -->
+    <form method="get" class="row g-2 mb-3">
+        <div class="col-md-3">
+            <input type="text" name="tipo" value="{{ tipo }}"
+                   class="form-control"
+                   placeholder="Tipo contrato">
+        </div>
+
+        <div class="col-md-3">
+            <input type="text" name="placa" value="{{ placa }}"
+                   class="form-control"
+                   placeholder="Placa vehículo">
+        </div>
+
+        <div class="col-md-3">
+            <input type="text" name="cedula" value="{{ cedula }}"
+                   class="form-control"
+                   placeholder="Cédula usuario">
+        </div>
+
+        <div class="col-md-3 d-flex gap-2">
+            <button class="btn btn-primary w-100">
+                🔍 Filtrar
+            </button>
+            <a href="{% url 'vehiculos:lista_contratos' %}" class="btn btn-secondary w-100">
+                Limpiar
+            </a>
+        </div>
+    </form>
+
+    <!-- TABLA -->
+    <table class="table table-sm table-bordered table-hover align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Cédula 1</th>
+                <th>Cédula 2</th>
+                <th>Placa</th>
+                <th>Tipo</th>
+                <th>Valor</th>
+                <th>Refiere</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        {% for contrato in contratos %}
+            <tr>
+                <td>{{ contrato.id }}</td>
+                <td>{{ contrato.fecha_hoy }}</td>
+                <td>{{ contrato.usuario1_cedula }}</td>
+                <td>{{ contrato.usuario2_cedula|default:"—" }}</td>
+                <td>{{ contrato.vehiculo_placa }}</td>
+                <td>{{ contrato.tipo_contrato }}</td>
+                <td>${{ contrato.pacta_suma|default:0|intcomma }}</td>
+                <td>{{ contrato.refiere|default:"—" }}</td>
+                <td>
+                    <a href="{% url 'vehiculos:anular_contrato' contrato.id %}"
+                       class="btn btn-sm btn-danger">
+                        🗑️ Anular
+                    </a>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="9" class="text-center text-muted">
+                    No hay contratos con los filtros seleccionados
+                </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}

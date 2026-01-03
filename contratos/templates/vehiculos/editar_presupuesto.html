@@ -1,14 +1,31 @@
-{% extends 'base.html' %} {% block title %}Editar Presupuesto{% endblock %} {%
-block content %}
-<div class="container">
-  <h1>Editar Presupuesto</h1>
-  <form method="post">
-    {% csrf_token %} {{ form.as_p }}
-    <!-- Muestra los campos del formulario -->
-    <button type="submit" class="btn btn-success">Guardar</button>
-    <a href="{% url 'vehiculos:lista_presupuestos' %}" class="btn btn-secondary"
-      >Cancelar</a
-    >
-  </form>
+{% extends "vehiculos/layout_contratos.html" %}
+
+{% block title %}Editar Presupuesto{% endblock %}
+
+{% block content %}
+<div class="recent-orders">
+    <div class="vehicle_search">
+
+        <h1>Editar Presupuesto</h1>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="card p-4">
+                {{ form.as_p }}
+            </div>
+
+            <div class="mt-3">
+                <button type="submit" class="btn btn-success">
+                    Guardar Cambios
+                </button>
+
+                <a href="{% url 'vehiculos:lista_presupuestos' %}" class="btn btn-secondary">
+                    Cancelar
+                </a>
+            </div>
+        </form>
+
+    </div>
 </div>
 {% endblock %}

@@ -1,40 +1,75 @@
-{% extends 'base.html' %} {% block title %}Lista de Presupuestos{% endblock %}
+{% extends "vehiculos/layout_contratos.html" %}
+{% load humanize %}
+
+{% block title %}Lista de Presupuestos{% endblock %}
+
 {% block content %}
-<div class="container">
-  <h1>Lista de Presupuestos</h1>
-  <a href="{% url 'vehiculos:agregar_presupuesto' %}" class="btn btn-primary"
-    >Agregar Presupuesto</a
-  >
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Placa</th>
-        <th>Valor del Presupuesto</th>
-        <th>Acciones</th>
-        <!-- Columna para los botones de acción -->
-      </tr>
-    </thead>
-    <tbody>
-      {% for presupuesto in presupuestos %}
-      <tr>
-        <td>{{ presupuesto.id_placa.placa }}</td>
-        <td>{{ presupuesto.valor_p }}</td>
-        <td>
-          <a
-            href="{% url 'vehiculos:editar_presupuesto' presupuesto.id %}"
-            class="btn btn-warning btn-sm"
-            >Editar</a
-          >
-          <a
-            href="{% url 'vehiculos:eliminar_presupuesto' presupuesto.id %}"
-            class="btn btn-danger btn-sm"
-            onclick="return confirm('¿Estás seguro de que deseas eliminar este presupuesto?');"
-            >Eliminar</a
-          >
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+
+<div class="container-fluid py-3">
+
+    <!-- TÍTULO + BOTÓN -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">💰 Presupuestos</h2>
+        <a href="{% url 'vehiculos:agregar_presupuesto' %}" class="btn btn-success">
+            ➕ Agregar Presupuesto
+        </a>
+    </div>
+
+    <!-- TABLA -->
+    <div class="card p-3">
+        <div class="table-responsive">
+            <table class="table table-hover table-striped align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Placa</th>
+                        <th>Valor del Presupuesto</th>
+                        <th class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                {% for presupuesto in presupuestos %}
+                    <tr>
+                        <td class="fw-bold">
+                            {{ presupuesto.id_placa }}
+                        </td>
+                        <td>
+                            <span class="badge bg-primary fs-6">
+                                ${{ presupuesto.valor_p|floatformat:0|intcomma }}
+                            </span>
+                        </td>
+                        <td class="text-center">
+                            <a href="{% url 'vehiculos:editar_presupuesto' presupuesto.id %}"
+                               class="btn btn-sm btn-warning">
+                                ✏️ Editar
+                            </a>
+
+                            <form action="{% url 'vehiculos:eliminar_presupuesto' presupuesto.id %}"
+                                  method="POST"
+                                  class="d-inline">
+                                {% csrf_token %}
+                                <button type="submit"
+                                        class="btn btn-sm btn-danger"
+                                        onclick="return confirm('¿Estás seguro de eliminar este presupuesto?');">
+                                    🗑️ Eliminar
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+
+                {% empty %}
+                    <tr>
+                        <td colspan="3" class="text-center text-muted py-3">
+                            No hay presupuestos registrados.
+                        </td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 </div>
+
 {% endblock %}

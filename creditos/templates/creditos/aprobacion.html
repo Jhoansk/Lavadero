@@ -1,3 +1,4 @@
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -76,7 +77,7 @@
     <table>
         <tr>
             <td><b>Fecha de Aprobación:</b> {{ fecha_aprobacion }}</td>
-            <td><b>Valor Aprobado:</b> ${{ credito.valor_aprobado|floatformat:0 }}</td>
+            <td><b>Valor Aprobado:</b> ${{ valor_aprobado|floatformat:0|intcomma }}</td>
         </tr>
         <tr>
             <td colspan="2"><b>Aprobación válida únicamente para vehículo:</b> Taxi de Bogotá</td>

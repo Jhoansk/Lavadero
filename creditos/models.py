@@ -1,9 +1,10 @@
 from django.db import models
 from contratos.models import usuario, Vehiculo_contratos
 from datetime import date
-from decimal import Decimal, ROUND_HALF_UP
+from decimal import Decimal, ROUND_HALF_UP, ROUND_UP
 from dateutil.relativedelta import relativedelta
 from django.utils import timezone
+
 
 
 # ----------------------------------------------------------------------
@@ -46,6 +47,20 @@ class Credito(models.Model):
         if not isinstance(d, Decimal):
             d = Decimal(str(d))
         return d.quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
+
+    def _redondear_millar(self, valor):
+        """
+        Redondea SIEMPRE hacia arriba al millar más cercano.
+        Ej: 1,851,182 -> 1,852,000
+        """
+        if not isinstance(valor, Decimal):
+            valor = Decimal(str(valor))
+
+        return (valor / Decimal('1000')).quantize(
+            Decimal('1'),
+            rounding=ROUND_UP
+        ) * Decimal('1000')
+
 
     # ------------------------------- 
     # SERVICIOS 
@@ -221,6 +236,11 @@ class Credito(models.Model):
             )
 
             cuota_total = interes_mes + abono_capital + total_servicios_mes
+            cuota_total = self._redondear_millar(cuota_total)
+
+            saldo_restante = saldo_temp - abono_capital
+            if saldo_restante < 0:
+                saldo_restante = Decimal('0.00')
 
             nuevas_cuotas.append(
                 CuotaCredito.objects.create(
@@ -229,12 +249,12 @@ class Credito(models.Model):
                     fecha_vencimiento=fecha_venc,
                     abono_capital=self._q2(abono_capital),
                     interes=self._q2(interes_mes),
-                    cuota_total=self._q2(cuota_total),
-                    saldo_restante=self._q2(saldo_temp - abono_capital),
+                    cuota_total=cuota_total,
+                    saldo_restante=self._q2(saldo_restante),
                 )
             )
 
-            saldo_temp -= abono_capital
+            saldo_temp = saldo_restante
 
         return nuevas_cuotas
 
@@ -254,7 +274,7 @@ class Credito(models.Model):
         else:
             cuota_fija = capital / n
 
-        cuota_fija = cuota_fija.quantize(Decimal('0.01'))
+        cuota_fija = self._redondear_millar(cuota_fija)
 
         if recalcular:
             self.cuotas_credito.filter(pagada=False).delete()
@@ -263,11 +283,20 @@ class Credito(models.Model):
 
         saldo = capital
 
+        saldo = capital
+
         for i in range(1, n + 1):
             fecha_venc = self.fecha_inicio + relativedelta(months=i)
 
             interes_mes = (saldo * interes_mensual).quantize(Decimal('0.01'))
-            abono_capital = (cuota_fija - interes_mes).quantize(Decimal('0.01'))
+            abono_capital = cuota_fija - interes_mes
+
+            # ÚLTIMA CUOTA → AJUSTE FINAL
+            if i == n:
+                abono_capital = saldo
+                cuota_base = interes_mes + abono_capital
+            else:
+                cuota_base = interes_mes + abono_capital
 
             servicios_activos = self.servicios.filter(
                 fecha_inicio__lte=fecha_venc,
@@ -278,19 +307,23 @@ class Credito(models.Model):
             total_servicios_mes = sum(
                 (s.valor_mensual() for s in servicios_activos),
                 Decimal('0.00')
-            ).quantize(Decimal('0.01'))
+            )
 
-            cuota_total = (cuota_fija + total_servicios_mes).quantize(Decimal('0.01'))
-            saldo_restante = (saldo - abono_capital).quantize(Decimal('0.01'))
+            cuota_total = cuota_base + total_servicios_mes
+            cuota_total = self._redondear_millar(cuota_total)
+
+            saldo_restante = saldo - abono_capital
+            if saldo_restante < 0:
+                saldo_restante = Decimal('0.00')
 
             CuotaCredito.objects.create(
                 credito=self,
                 numero=i,
                 fecha_vencimiento=fecha_venc,
-                abono_capital=abono_capital,
-                interes=interes_mes,
+                abono_capital=self._q2(abono_capital),
+                interes=self._q2(interes_mes),
                 cuota_total=cuota_total,
-                saldo_restante=saldo_restante,
+                saldo_restante=self._q2(saldo_restante),
             )
 
             saldo = saldo_restante
@@ -488,6 +521,33 @@ class ServicioCredito(models.Model):
         return self.valor_mensual() * self.meses_restantes()
 
 
+class NombrePrendas(models.Model):
+
+    TIPO_DOCUMENTO_CHOICES = [
+        ('C.C', 'Cédula de Ciudadanía'),
+        ('T.I', 'Tarjeta de Identidad'),
+        ('NIT', 'NIT'),
+        ('P.T', 'Pasaporte'),
+    ]
+
+    nombres = models.CharField(max_length=100)
+    apellidos = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True
+    )
+    tipo_documento = models.CharField(
+        max_length=5,
+        choices=TIPO_DOCUMENTO_CHOICES
+    )
+    documento = models.CharField(max_length=20, unique=True)
+    numero_telefono = models.CharField(max_length=20)
+    direccion_prenda = models.CharField(max_length=200)
+
+    def __str__(self):
+        return f"{self.nombres} {self.apellidos or ''} - {self.documento}"
+
+
 # ----------------------------------------------------------------------
 # SOLICITUD DE CRÉDITO
 # ----------------------------------------------------------------------
@@ -500,11 +560,62 @@ class SolicitudCredito(models.Model):
 
     usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
     vehiculo = models.ForeignKey(Vehiculo_contratos, on_delete=models.CASCADE)
+
     valor = models.DecimalField(max_digits=12, decimal_places=2)
+    valor_aprobado = models.DecimalField(
+        max_digits=12,
+        decimal_places=2,
+        null=True,
+        blank=True
+    )
+
     cuotas = models.PositiveIntegerField()
     interes = models.DecimalField(max_digits=5, decimal_places=2)
+
     fecha_solicitud = models.DateField(auto_now_add=True)
-    estado = models.CharField(max_length=20, choices=ESTADOS, default='Estudio')
+    fecha_aprobacion = models.DateField(
+        null=True,
+        blank=True
+    )
+
+    prenda = models.ForeignKey(
+        NombrePrendas,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='solicitudes'
+    )
+
+    estado = models.CharField(
+        max_length=20,
+        choices=ESTADOS,
+        default='Estudio'
+    )
+
+    def save(self, *args, **kwargs):
+        """
+        Lógica automática:
+        - Si se aprueba y no tiene fecha_aprobacion → se asigna hoy
+        - Si se rechaza → limpia fecha y valor aprobado
+        """
+        if self.estado == 'Aprobado':
+            if not self.fecha_aprobacion:
+                self.fecha_aprobacion = timezone.now().date()
+        else:
+            self.fecha_aprobacion = None
+            self.valor_aprobado = None
+
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"Solicitud {self.id} - {self.usuario}"
+
+class ReciboPago(models.Model):
+    credito = models.ForeignKey(Credito, on_delete=models.CASCADE, related_name="recibos")
+    pagos = models.ManyToManyField(PagoCredito, related_name="recibos")
+    archivo = models.FileField(upload_to="recibos/")
+    total = models.DecimalField(max_digits=12, decimal_places=2)
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Recibo #{self.id} - Crédito {self.credito.id}"

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Contratos{% endblock %}</title>
@@ -52,30 +53,58 @@
 <body>
 
 <!-- SIDEBAR -->
+<!-- Sidebar -->
 <div class="sidebar">
     <div class="title">🚕 Taxi Cupos</div>
 
-    <a href="{% url 'vehiculos:inicio' %}">🏠 Inicio</a>
-    <a href="{% url 'vehiculos:dashboard' %}">📊 Dashboard</a>
-
+    <a href="{% url 'vehiculos:inicio' %}">🏠 Inicio Vehiculos</a>
+    <a href="{% url 'vehiculos:dashboard_operativa' %}">🏠 Inicio Comercial</a>
     <hr style="border-color: rgba(255,255,255,0.3);">
 
-    <a href="{% url 'vehiculos:lista_vehiculos' %}">🚘 Vehículos</a>
+    <!-- Vehículos con submenú -->
+    <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="vehiculosDropdown" role="button" data-bs-toggle="collapse" data-bs-target="#vehiculosSubmenu" aria-expanded="false" aria-controls="vehiculosSubmenu">
+            🚘 Vehículos
+        </a>
+        <div class="collapse" id="vehiculosSubmenu">
+            <a href="{% url 'vehiculos:lista_vehiculos' %}" class="dropdown-item ps-4">Lista de Vehículos</a>
+            <a href="{% url 'vehiculos:agregar_vehiculo' %}" class="dropdown-item ps-4">Agregar Vehículo</a>
+            <a href="{% url 'vehiculos:buscar_vehiculo' %}" class="dropdown-item ps-4">Buscar Vehículo</a>
+            <a href="{% url 'vehiculos:lista_facturas' %}" class="dropdown-item ps-4">Facturas</a>
+        </div>
+    </div>
+
     <a href="{% url 'vehiculos:lista_usuarios' %}">👥 Usuarios</a>
-    <a href="{% url 'vehiculos:lista_users' %}">👨‍💼 Empleados</a>
     <a href="{% url 'vehiculos:lista_estados' %}">📍 Estados</a>
-    <a href="{% url 'vehiculos:lista_documentos' %}">📄 Documentos</a>
-    <a href="{% url 'vehiculos:lista_presupuestos' %}">📦 Presupuestos</a>
+    <div class="nav-item">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="collapse" href="#documentosSubmenu" role="button" aria-expanded="false" aria-controls="documentosSubmenu">
+            📄 Documentos
+        </a>
+        <div class="collapse" id="documentosSubmenu">
+            <a href="{% url 'vehiculos:lista_documentos' %}" class="dropdown-item ps-4">Lista Documentos</a>
+            <a href="{% url 'vehiculos:buscar_vehiculo_documentos' %}" class="dropdown-item ps-4">Buscar Vehículo</a>
+            <a href="{% url 'vehiculos:ver_archivos' %}" class="dropdown-item ps-4">Operativa</a>
+        </div>
+    </div>
 
     <hr style="border-color: rgba(255,255,255,0.3);">
 
     <a href="{% url 'vehiculos:seleccionar_datos_contrato' %}">📝 Crear Contrato</a>
-    <a href="{% url 'vehiculos:generar_reporte_contratos' %}">📑 Reportes</a>
+       <a href="{% url 'vehiculos:checklist_vehiculo' %}">📋 Checklist Vehículo</a>
 
     <hr style="border-color: rgba(255,255,255,0.3);">
 
-    <a href="{% url 'vehiculos:checklist_vehiculo' %}">📋 Checklist Vehículo</a>
     <a href="{% url 'vehiculos:configuraciones' %}">⚙️ Perfil / Configuración</a>
+
+    {% if request.user.rol == 'administrador' %}
+    <hr style="border-color: rgba(255,255,255,0.3);">
+
+    <a href="{% url 'vehiculos:generar_reporte_contratos' %}">📑 Reportes</a>
+    <a href="{% url 'vehiculos:lista_presupuestos' %}">📦 Presupuestos</a>
+    <a href="{% url 'vehiculos:lista_users' %}">👨‍💼 Empleados</a>
+    <a href="{% url 'vehiculos:lista_contratos' %}">🏢 Administrativo</a>
+    {% endif %}
+
 
     <hr style="border-color: rgba(255,255,255,0.3);">
 

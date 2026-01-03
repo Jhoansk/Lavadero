@@ -1,80 +1,114 @@
-{% extends 'base.html' %}
+{% extends "vehiculos/layout_contratos.html" %}
+{% load humanize %}
 
 {% block title %}Lista de Documentos{% endblock %}
 
 {% block content %}
-<div class="recent-orders">
-  <div class="vehicle_search">
-      <h1>Lista de Documentos</h1>
-      <a href="{% url 'vehiculos:agregar_documentos' %}" class="btn btn-primary">Agregar Documentos</a>
 
-      <table class="table">
-        <thead>
-            <tr>
-                <th>Placa</th>
-                <th>Número de Orden</th>
-                <th>Empresa Afiliadora</th>
-                <th>Número Tarjeta de Operación</th>
-                <th>Fecha Expedición TO</th>
-                <th>Fecha Vencimiento TO</th>
-                <th>Fecha Expedición SOAT</th>
-                <th>Fecha Vencimiento SOAT</th>
-                <th>Fecha Expedición Tecnomecánica</th>
-                <th>Fecha Vencimiento Tecnomecánica</th>
-                <th>Fecha Expedición SRC</th>
-                <th>Fecha Vencimiento SRC</th>
-                <th>Acciones</th> <!-- Nueva columna -->
-            </tr>
-        </thead>
-        <tbody>
-            {% if documentos %}
-                {% for documento in documentos %}
-                <tr>
-                    <td>{{ documento.id_placa.placa }}</td>
-                    <td>{{ documento.n_orden }}</td>
-                    <td>{{ documento.emp_afiliadora }}</td>
-                    <td>{{ documento.n_tarjeta_operacion }}</td>
-                    <td>{{ documento.fecha_expedicion_to }}</td>
-                    <td>{{ documento.fecha_vencimiento_to }}</td>
-                    <td>{{ documento.fecha_expedicion_soat }}</td>
-                    <td>{{ documento.fecha_vencimiento_soat }}</td>
-                    <td>{{ documento.fecha_expedicion_tecno }}</td>
-                    <td>{{ documento.fecha_vencimiento_tecno }}</td>
-                    <td>{{ documento.fecha_expedicion_sRc }}</td>
-                    <td>{{ documento.fecha_vencimiento_sRc }}</td>
-                    <td>
-                        <!-- Botón Editar -->
-                        <a href="{% url 'vehiculos:editar_documentos' documento.id %}" class="btn btn-primary btn-sm">Editar</a>
+<div class="container-fluid py-3">
 
-                        <!-- Botón Eliminar -->
-                        <form action="{% url 'vehiculos:eliminar_documentos' documento.id %}" method="POST" style="display:inline;">
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este documento?')">Eliminar</button>
-                        </form>
-                    </td>
-                </tr>
-                {% endfor %}
-            {% else %}
-                <tr>
-                    <td colspan="13">No hay documentos disponibles.</td>
-                </tr>
-            {% endif %}
-        </tbody>
-    </table>
-
-    <!-- Paginación -->
-    <div style="margin-top: 20px; text-align: center;">
-        <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span><br>
-        {% if page_obj.has_previous %}
-            <a href="?page=1{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}" class="btn btn-secondary btn-sm">Primero</a>
-            <a href="?page={{ page_obj.previous_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}" class="btn btn-secondary btn-sm">Anterior</a>
-        {% endif %}
-        
-        {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}" class="btn btn-secondary btn-sm">Siguiente</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}" class="btn btn-secondary btn-sm">Último</a>
-        {% endif %}
+    <!-- TÍTULO + BOTÓN -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">📄 Documentos de Vehículos</h2>
+        <a href="{% url 'vehiculos:agregar_documentos' %}" class="btn btn-success">
+            ➕ Agregar Documentos
+        </a>
     </div>
-  </div>
+
+    <!-- TABLA -->
+    <div class="card p-3">
+        <div class="table-responsive">
+            <table class="table table-hover table-striped align-middle small">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Placa</th>
+                        <th>Orden</th>
+                        <th>Empresa</th>
+                        <th>Tarjeta Op.</th>
+                        <th>Exp. TO</th>
+                        <th>Venc. TO</th>
+                        <th>Exp. SOAT</th>
+                        <th>Venc. SOAT</th>
+                        <th>Exp. Tecno</th>
+                        <th>Venc. Tecno</th>
+                        <th>Exp. RC</th>
+                        <th>Venc. RC</th>
+                        <th class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                {% if documentos %}
+                    {% for documento in documentos %}
+                    <tr>
+                        <td class="fw-bold">{{ documento.id_placa.placa }}</td>
+                        <td>{{ documento.n_orden }}</td>
+                        <td>{{ documento.emp_afiliadora }}</td>
+                        <td>{{ documento.n_tarjeta_operacion }}</td>
+
+                        <td>{{ documento.fecha_expedicion_to|date:"Y-m-d" }}</td>
+                        <td>{{ documento.fecha_vencimiento_to|date:"Y-m-d" }}</td>
+
+                        <td>{{ documento.fecha_expedicion_soat|date:"Y-m-d" }}</td>
+                        <td>{{ documento.fecha_vencimiento_soat|date:"Y-m-d" }}</td>
+
+                        <td>{{ documento.fecha_expedicion_tecno|date:"Y-m-d" }}</td>
+                        <td>{{ documento.fecha_vencimiento_tecno|date:"Y-m-d" }}</td>
+
+                        <td>{{ documento.fecha_expedicion_sRc|date:"Y-m-d" }}</td>
+                        <td>{{ documento.fecha_vencimiento_sRc|date:"Y-m-d" }}</td>
+
+                        <td class="text-center">
+                            <a href="{% url 'vehiculos:editar_documentos' documento.id %}"
+                               class="btn btn-sm btn-primary">
+                                ✏️
+                            </a>
+
+                            <form action="{% url 'vehiculos:eliminar_documentos' documento.id %}"
+                                  method="POST"
+                                  style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit"
+                                        class="btn btn-sm btn-danger"
+                                        onclick="return confirm('¿Seguro que deseas eliminar este documento?')">
+                                    🗑️
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="13" class="text-center text-muted py-3">
+                            No hay documentos registrados.
+                        </td>
+                    </tr>
+                {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- PAGINACIÓN -->
+    {% if page_obj %}
+    <div class="mt-4 text-center">
+        <span class="text-muted">
+            Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+        </span>
+        <div class="mt-2">
+            {% if page_obj.has_previous %}
+                <a href="?page=1" class="btn btn-outline-secondary btn-sm">⏮ Primero</a>
+                <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-secondary btn-sm">◀ Anterior</a>
+            {% endif %}
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-secondary btn-sm">Siguiente ▶</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-secondary btn-sm">Último ⏭</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+
 </div>
+
 {% endblock %}

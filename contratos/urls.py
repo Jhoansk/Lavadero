@@ -76,7 +76,9 @@ urlpatterns = [
     path('perfil/', views.perfil, name='configuraciones'),
     path('crear_usuario/', views.crear_usuario_desde_contratos, name='crear_usuario_desde_contratos'),
     path('checklist_vehiculo/', views.checklist_vehiculo, name='checklist_vehiculo'),
-    path('dashboard/', views.dashboard, name='dashboard'),
+    path('dashboard/operativa/', views.dashboard_operativa, name='dashboard_operativa'),
+    path('contratos/anular/<int:contrato_id>/', views.anular_contrato, name='anular_contrato'),
+    path('contratos/', views.lista_contratos, name='lista_contratos'),
 
 ]
 if settings.DEBUG:

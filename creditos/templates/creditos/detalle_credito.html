@@ -95,9 +95,27 @@
             </div>
             {% endif %}
 
-            <a href="{% url 'generar_excel_cronograma' credito.id %}" class="btn btn-success mb-3">
-                📊 Descargar Excel Cuotas
-            </a>
+            <form method="get" action="{% url 'generar_excel_cronograma' credito.id %}">
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <label class="form-label"><strong>Persona de la Prenda</strong></label>
+                        <select name="prenda_id" class="form-select" required>
+                            <option value="">Seleccione una persona</option>
+                            {% for prenda in prendas %}
+                                <option value="{{ prenda.id }}">
+                                    {{ prenda.nombres }} {{ prenda.apellidos }} - {{ prenda.documento }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 d-flex align-items-end">
+                        <button type="submit" class="btn btn-success w-100">
+                            📊 Descargar Excel Cuotas
+                        </button>
+                    </div>
+                </div>
+            </form>
 
             <hr>
 
@@ -182,6 +200,7 @@
                             <th>Cuota</th>
                             <th>Valor</th>
                             <th>Observación</th>
+                            <th>Recibo</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -191,6 +210,23 @@
                             <td>{{ p.cuota_numero }}</td>
                             <td>${{ p.valor_pagado|floatformat:0|intcomma }}</td>
                             <td>{{ p.observacion }}</td>
+                            <td class="text-center">
+                                {% if p.recibos.exists %}
+                                    {% for r in p.recibos.all %}
+                                        {% if r.archivo %}
+                                            <a href="{{ r.archivo.url }}" 
+                                            class="btn btn-sm btn-outline-primary" 
+                                            target="_blank">
+                                                📄 Descargar
+                                            </a>
+                                        {% else %}
+                                            <span class="text-muted">Sin archivo</span>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% else %}
+                                    <span class="text-muted">—</span>
+                                {% endif %}
+                            </td>
                         </tr>
                         {% empty %}
                         <tr>

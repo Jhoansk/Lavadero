@@ -1,67 +1,168 @@
-{% extends 'base.html' %} {% block content %} {% load humanize %}
+{% extends "vehiculos/layout_contratos.html" %}
+{% load humanize %}
 
-<div class="recent-orders">
-  <div class="vehicle_search">
-    <h1>Agregar Factura</h1>
-    <h2>Información del Vehículo</h2>
-    <p><strong>Placa:</strong> {{ vehiculo.placa }}</p>
-    <p><strong>Marca:</strong> {{ vehiculo.marca }}</p>
-    <p><strong>Línea:</strong> {{ vehiculo.linea }}</p>
-    <p><strong>Modelo:</strong> {{ vehiculo.modelo }}</p>
+{% block title %}Agregar Factura{% endblock %}
 
-    <form method="post" enctype="multipart/form-data">
-      <!-- Añadido enctype -->
-      {% csrf_token %}
-      <div class="form-group">
-        <label for="{{ form.n_factura.id_for_label }}"
-          >Número de Factura:</label
-        >
-        {{ form.n_factura }} {{ form.n_factura.errors }}
-      </div>
-      <div class="form-group">
-        <label for="{{ form.nit.id_for_label }}">NIT:</label>
-        {{ form.nit }} {{ form.nit.errors }}
-      </div>
-      <div class="form-group">
-        <label for="{{ form.nombre_local.id_for_label }}"
-          >Nombre del Local:</label
-        >
-        {{ form.nombre_local }} {{ form.nombre_local.errors }}
-      </div>
-      <div class="form-group">
-        <label for="{{ form.fecha.id_for_label }}">Fecha:</label>
-        {{ form.fecha }} {{ form.fecha.errors }}
-      </div>
-      <div class="form-group">
-        <label for="{{ form.descripcion.id_for_label }}">Descripción:</label>
-        {{ form.descripcion }} {{ form.descripcion.errors }}
-      </div>
-      <div class="form-group">
-        <label for="{{ form.cantidad.id_for_label }}">Cantidad:</label>
-        {{ form.cantidad }} {{ form.cantidad.errors }}
-      </div>
-      <div class="form-group">
-        <label for="{{ form.valor.id_for_label }}">Valor:</label>
-        {{ form.valor }} {{ form.valor.errors }}
-      </div>
-      <div class="form-group">
-        <label for="{{ form.iva.id_for_label }}">IVA:</label>
-        {{ form.iva }} {{ form.iva.errors }}
-      </div>
-      <div class="form-group">
-        <label for="{{ form.imagen.id_for_label }}">Imagen (PNG, JPG):</label>
-        {{ form.imagen }} {{ form.imagen.errors }}
-      </div>
-      <div class="form-group">
-        <input type="submit" value="Guardar Factura" class="btn-submit" />
-      </div>
-    </form>
+{% block content %}
 
-    {% if error_message %}
-    <script>
-      alert("{{ error_message|escapejs }}");
-    </script>
-    {% endif %}
-  </div>
+<div class="container-fluid py-3">
+
+    <!-- HEADER -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">🧾 Agregar Factura</h2>
+        <a href="javascript:history.back()" class="btn btn-outline-secondary">
+            ⬅ Volver
+        </a>
+    </div>
+
+    <!-- INFO VEHÍCULO -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="fw-semibold mb-3">🚘 Información del Vehículo</h5>
+            <div class="row">
+                <div class="col-md-3"><strong>Placa:</strong> {{ vehiculo.placa }}</div>
+                <div class="col-md-3"><strong>Marca:</strong> {{ vehiculo.marca }}</div>
+                <div class="col-md-3"><strong>Línea:</strong> {{ vehiculo.linea }}</div>
+                <div class="col-md-3"><strong>Modelo:</strong> {{ vehiculo.modelo }}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="card p-4">
+
+        <form method="post" enctype="multipart/form-data" novalidate>
+            {% csrf_token %}
+
+            <div class="row g-3">
+
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">
+                        {{ form.n_factura.label }}
+                    </label>
+                    {{ form.n_factura }}
+                    {% if form.n_factura.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ form.n_factura.errors|striptags }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">
+                        {{ form.nit.label }}
+                    </label>
+                    {{ form.nit }}
+                    {% if form.nit.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ form.nit.errors|striptags }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">
+                        {{ form.nombre_local.label }}
+                    </label>
+                    {{ form.nombre_local }}
+                    {% if form.nombre_local.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ form.nombre_local.errors|striptags }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="col-md-3">
+                    <label class="form-label fw-semibold">
+                        {{ form.fecha.label }}
+                    </label>
+                    {{ form.fecha }}
+                    {% if form.fecha.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ form.fecha.errors|striptags }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="col-md-3">
+                    <label class="form-label fw-semibold">
+                        {{ form.cantidad.label }}
+                    </label>
+                    {{ form.cantidad }}
+                    {% if form.cantidad.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ form.cantidad.errors|striptags }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="col-md-3">
+                    <label class="form-label fw-semibold">
+                        {{ form.valor.label }}
+                    </label>
+                    {{ form.valor }}
+                    {% if form.valor.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ form.valor.errors|striptags }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="col-md-3">
+                    <label class="form-label fw-semibold">
+                        {{ form.iva.label }}
+                    </label>
+                    {{ form.iva }}
+                    {% if form.iva.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ form.iva.errors|striptags }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="col-md-12">
+                    <label class="form-label fw-semibold">
+                        {{ form.descripcion.label }}
+                    </label>
+                    {{ form.descripcion }}
+                    {% if form.descripcion.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ form.descripcion.errors|striptags }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">
+                        {{ form.imagen.label }}
+                    </label>
+                    {{ form.imagen }}
+                    {% if form.imagen.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ form.imagen.errors|striptags }}
+                        </div>
+                    {% endif %}
+                </div>
+
+            </div>
+
+            <!-- ACTIONS -->
+            <div class="d-flex justify-content-end mt-4">
+                <button type="submit" class="btn btn-success">
+                    💾 Guardar Factura
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
 </div>
+
+{% if error_message %}
+<script>
+    alert("{{ error_message|escapejs }}");
+</script>
+{% endif %}
+
 {% endblock %}

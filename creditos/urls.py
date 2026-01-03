@@ -30,5 +30,7 @@ urlpatterns = [
     path('solicitud/<int:solicitud_id>/estado/', views.cambiar_estado_solicitud, name='cambiar_estado_solicitud'),
     path('solicitud/<int:solicitud_id>/pdf-aprobacion/', views.generar_pdf_aprobacion, name='generar_pdf_aprobacion'),
     path('solicitud/<int:solicitud_id>/pdf-prenda/', views.generar_pdf_prenda, name='generar_pdf_prenda'),
+    path('creditos/estado/<str:estado>/', views.creditos_por_estado, name='creditos_por_estado'),
+    path('prenda/crear/', views.crear_prenda, name='crear_prenda'),
 
 ]

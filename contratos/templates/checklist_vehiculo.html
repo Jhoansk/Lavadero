@@ -1,36 +1,55 @@
-<!-- checklist_vehiculo.html -->
-{% extends 'base.html' %}
+{% extends 'vehiculos/layout_contratos.html' %}
+
+{% block title %}Checklist de Vehículo{% endblock %}
 
 {% block content %}
-<h2>Checklist de Vehículo</h2>
-
-<form method="get">
-    <label for="placa">Buscar por Placa:</label>
-    <input type="text" id="placa" name="placa" required>
-    <button type="submit">Buscar</button>
-</form>
-
-{% if vehiculo %}
-    <h3>Vehículo: {{ vehiculo.placa }} - {{ vehiculo.marca }} {{ vehiculo.modelo }}</h3>
-    <form method="post">
-        {% csrf_token %}
-        <label for="es_nuevo">Condición:</label>
-        <select name="es_nuevo">
-            <option value="nuevo" {% if checklist.es_nuevo %}selected{% endif %}>Nuevo</option>
-            <option value="usado" {% if not checklist.es_nuevo %}selected{% endif %}>Usado</option>
-        </select>
-
-        <div>
-            {{ form.as_p }}
+<div class="container">
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-warning text-white">
+            <h3>Checklist de Vehículo</h3>
         </div>
-        
-        <button type="submit">Guardar Progreso</button>
-    </form>
+        <div class="card-body">
 
-    {% if checklist.listo_para_entrega %}
-        <p><strong>¡Listo para la entrega!</strong></p>
-    {% else %}
-        <p><strong>Progreso:</strong> Completa todos los pasos para marcarlo como "Listo para la entrega".</p>
-    {% endif %}
-{% endif %}
+            <!-- Formulario de búsqueda -->
+            <form method="get" class="mb-4 d-flex gap-2 align-items-center">
+                <label for="placa" class="mb-0">Buscar por Placa:</label>
+                <input type="text" id="placa" name="placa" required class="form-control w-auto">
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </form>
+
+            {% if vehiculo %}
+            <h4>Vehículo: {{ vehiculo.placa }} - {{ vehiculo.marca }} {{ vehiculo.modelo }}</h4>
+
+            <!-- Formulario del checklist -->
+            <form method="post" class="mt-3">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label for="es_nuevo" class="form-label">Condición:</label>
+                    <select name="es_nuevo" id="es_nuevo" class="form-select w-auto">
+                        <option value="nuevo" {% if checklist.es_nuevo %}selected{% endif %}>Nuevo</option>
+                        <option value="usado" {% if not checklist.es_nuevo %}selected{% endif %}>Usado</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    {{ form.as_p }}
+                </div>
+
+                <button type="submit" class="btn btn-success">Guardar Progreso</button>
+            </form>
+
+            <!-- Estado del checklist -->
+            <div class="mt-3">
+                {% if checklist.listo_para_entrega %}
+                    <p class="text-success fw-bold">¡Listo para la entrega!</p>
+                {% else %}
+                    <p class="text-warning fw-bold">Progreso: Completa todos los pasos para marcarlo como "Listo para la entrega".</p>
+                {% endif %}
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
 {% endblock %}

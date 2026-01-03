@@ -1,132 +1,133 @@
-{% extends "base.html" %}
+{% extends "vehiculos/layout_contratos.html" %}
+
+{% block title %}Buscar Vehículo{% endblock %}
 
 {% block content %}
-<div class="recent-orders">
-  <div class="vehicle_search">
-    <h1>Buscar Vehículo</h1>
-    <form method="post">
-      {% csrf_token %}
-      <label for="placa">Placa del Vehículo</label>
-      <input type="text" name="placa" id="placa" required>
-      <button type="submit">Buscar</button>
-    </form>
-    
-    {% if vehiculo %}
-      <h2>Vehículo Encontrado</h2>
-      <p><strong>Marca:</strong> {{ vehiculo.marca }}</p>
-      <p><strong>Modelo:</strong> {{ vehiculo.modelo }}</p>
-      <p><strong>Color:</strong> {{ vehiculo.color }}</p>
-      
-      <!-- Mostrar la imagen del vehículo con un enlace para abrir en nueva pestaña -->
-      {% if vehiculo.imagen %}
-        <p>Tarjeta Propiedad: <a href="{{ vehiculo.imagen.url }}" target="_blank">Ver Documento</a></p>
-        <img src="{{ vehiculo.imagen.url }}" alt="SOAT" class="document-image">
-      {% else %}
-        <p>No se ha registrado una imagen para este vehículo.</p>
-      {% endif %}
-      
-      <!-- Mostrar los documentos asociados -->
-      {% if documentos %}
-        <h3>Documentos del Vehículo</h3>
-        <div class="document-gallery">
-          {% for doc in documentos %}
-            <div class="document">
-              
-              {% if doc.tarjeta_operacion %}
-                <p>Tarjeta de Operación: <a href="{{ doc.tarjeta_operacion.url }}" target="_blank">Ver Documento</a></p>
-              {% else %}
-                <p>No se ha cargado la Tarjeta de Operación.</p>
-              {% endif %}
-              
-              {% if doc.soat %}
-                <p>SOAT: <a href="{{ doc.soat.url }}" target="_blank">Ver Documento</a></p>
-                <img src="{{ doc.soat.url }}" alt="SOAT" class="document-image">
-              {% else %}
-                <p>No se ha cargado el SOAT.</p>
-              {% endif %}
-              
-              {% if doc.tecnomecanica %}
-                <p>Tecnomecánica: <a href="{{ doc.tecnomecanica.url }}" target="_blank">Ver Documento</a></p>
-                <img src="{{ doc.tecnomecanica.url }}" alt="Tecnomecánica" class="document-image">
-              {% else %}
-                <p>No se ha cargado la Tecnomecánica.</p>
-              {% endif %}
-              
-              {% if doc.seguros_rc %}
-                <p>Seguros RC: <a href="{{ doc.seguros_rc.url }}" target="_blank">Ver Documento</a></p>
-                <img src="{{ doc.seguros_rc.url }}" alt="Seguros RC" class="document-image">
-              {% else %}
-                <p>No se ha cargado el Seguro RC.</p>
-              {% endif %}
+
+<div class="container-fluid py-3">
+
+    <!-- HEADER -->
+    <div class="mb-4">
+        <h2 class="fw-bold">🔍 Buscar Vehículo</h2>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="card p-4 mb-4">
+
+        <form method="post" novalidate>
+            {% csrf_token %}
+
+            <div class="row g-3 align-items-end">
+                <div class="col-md-4">
+                    <label for="placa" class="form-label fw-semibold">
+                        Placa del Vehículo
+                    </label>
+                    <input type="text"
+                           name="placa"
+                           id="placa"
+                           class="form-control"
+                           required>
+                </div>
+
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-success w-100">
+                        🔍 Buscar
+                    </button>
+                </div>
             </div>
-          {% endfor %}
+        </form>
+
+    </div>
+
+    {% if vehiculo %}
+    <!-- VEHICLE INFO -->
+    <div class="card p-4 mb-4">
+
+        <h5 class="fw-semibold mb-3">🚘 Vehículo Encontrado</h5>
+
+        <div class="row mb-3">
+            <div class="col-md-4"><strong>Marca:</strong> {{ vehiculo.marca }}</div>
+            <div class="col-md-4"><strong>Modelo:</strong> {{ vehiculo.modelo }}</div>
+            <div class="col-md-4"><strong>Color:</strong> {{ vehiculo.color }}</div>
         </div>
-      {% else %}
-        <p>No se encontraron documentos para este vehículo.</p>
-      {% endif %}
-      
-    {% else %}
-      <p>No se encontró un vehículo con esa placa.</p>
+
+        {% if vehiculo.imagen %}
+        <div class="mb-3">
+            <p class="fw-semibold">📄 Tarjeta de Propiedad</p>
+            <a href="{{ vehiculo.imagen.url }}" target="_blank"
+               class="btn btn-sm btn-outline-primary mb-2">
+                Ver Documento
+            </a>
+            <div class="image-container">
+                <img src="{{ vehiculo.imagen.url }}"
+                     class="vehiculo-imagen"
+                     onclick="showImage(this.src)">
+            </div>
+        </div>
+        {% else %}
+            <p class="text-muted">No se ha registrado imagen del vehículo.</p>
+        {% endif %}
+
+    </div>
+
+    <!-- DOCUMENTS -->
+    <div class="card p-4">
+
+        <h5 class="fw-semibold mb-3">📂 Documentos del Vehículo</h5>
+
+        {% if documentos %}
+        <div class="row">
+            {% for doc in documentos %}
+            <div class="col-md-6 mb-4">
+
+                {% if doc.tarjeta_operacion %}
+                    <p>
+                        Tarjeta de Operación:
+                        <a href="{{ doc.tarjeta_operacion.url }}" target="_blank">Ver</a>
+                    </p>
+                {% endif %}
+
+                {% if doc.soat %}
+                    <p>SOAT:</p>
+                    <img src="{{ doc.soat.url }}"
+                         class="document-image"
+                         onclick="showImage(this.src)">
+                {% endif %}
+
+                {% if doc.tecnomecanica %}
+                    <p>Tecnomecánica:</p>
+                    <img src="{{ doc.tecnomecanica.url }}"
+                         class="document-image"
+                         onclick="showImage(this.src)">
+                {% endif %}
+
+                {% if doc.seguros_rc %}
+                    <p>Seguros RC:</p>
+                    <img src="{{ doc.seguros_rc.url }}"
+                         class="document-image"
+                         onclick="showImage(this.src)">
+                {% endif %}
+
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+            <p class="text-muted">No se encontraron documentos para este vehículo.</p>
+        {% endif %}
+
+    </div>
+
+    {% elif request.method == "POST" %}
+        <div class="alert alert-warning">
+            No se encontró un vehículo con esa placa.
+        </div>
     {% endif %}
-  </div>
+
 </div>
 
-<!-- Modal para la visualización de la imagen en tamaño completo -->
+<!-- MODAL -->
 <div id="modal" class="modal" onclick="this.style.display='none'">
-  <img id="modalImage" src="" alt="Imagen a tamaño completo">
+    <img id="modalImage" src="">
 </div>
-
-<script>
-  // Función para mostrar la imagen en un modal
-  function showImage(src) {
-    const modal = document.getElementById('modal');
-    const modalImage = document.getElementById('modalImage');
-    modalImage.src = src;
-    modal.style.display = 'flex';
-  }
-</script>
-
-<style>
-  .document-image {
-    max-width: 150px;
-    max-height: 150px;
-    margin: 10px;
-  }
-
-  .vehiculo-imagen {
-    max-width: 300px;
-    max-height: 300px;
-    margin: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-
-  .vehiculo-imagen:hover {
-    transform: scale(1.05);
-  }
-
-  .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-
-  .modal img {
-    max-width: 90%;
-    max-height: 90%;
-  }
-
-  .image-container {
-    display: flex;
-    justify-content: center;
-  }
-</style>
 
 {% endblock %}

@@ -65,21 +65,25 @@
         </div>
 
         <div class="col-md-3">
-            <div class="card bg-danger text-white shadow-sm border-0 p-3">
-                <div class="card-body">
-                    <h6>En Mora</h6>
-                    <h2 class="fw-bold">{{ mora }}</h2>
+            <a href="{% url 'creditos_por_estado' 'En mora' %}" class="text-decoration-none">
+                <div class="card bg-danger text-white shadow-sm border-0 p-3">
+                    <div class="card-body">
+                        <h6>En Mora</h6>
+                        <h2 class="fw-bold">{{ mora }}</h2>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
 
         <div class="col-md-3">
-            <div class="card bg-dark text-white shadow-sm border-0 p-3">
-                <div class="card-body">
-                    <h6>Cobro Jurídico</h6>
-                    <h2 class="fw-bold">{{ juridico }}</h2>
+            <a href="{% url 'creditos_por_estado' 'Cobro Jurídico' %}" class="text-decoration-none">
+                <div class="card bg-dark text-white shadow-sm border-0 p-3">
+                    <div class="card-body">
+                        <h6>Cobro Jurídico</h6>
+                        <h2 class="fw-bold">{{ juridico }}</h2>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
 
         <div class="col-md-3">

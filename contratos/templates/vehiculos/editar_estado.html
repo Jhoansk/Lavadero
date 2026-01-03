@@ -1,0 +1,39 @@
+{% extends "vehiculos/layout_contratos.html" %}
+
+{% block title %}Editar Estado{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid py-3">
+
+    <h2 class="fw-bold mb-4">✏️ Editar Estado del Vehículo</h2>
+
+    <div class="card p-4 col-md-6">
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label class="form-label">Placa</label>
+                <input type="text"
+                       class="form-control"
+                       value="{{ estado.id_placa.placa }}"
+                       disabled>
+            </div>
+
+            {{ form.as_p }}
+
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary">
+                    💾 Guardar Cambios
+                </button>
+                <a href="{% url 'vehiculos:lista_estados' %}"
+                   class="btn btn-secondary ms-2">
+                    ↩️ Cancelar
+                </a>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

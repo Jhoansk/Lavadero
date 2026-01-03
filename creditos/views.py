@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .models import Credito, PagoCredito, AprobacionCredito, CuotaCredito, ServicioCredito,SolicitudCredito
-from .forms import CreditoForm, PagoForm, DocumentosUsuarioForm, RenovarServicioForm, UsuarioCreditoForm, VehiculoCreditoForm
+from .models import Credito, PagoCredito, AprobacionCredito, CuotaCredito, ServicioCredito,SolicitudCredito, NombrePrendas, ReciboPago
+from .forms import CreditoForm, PagoForm, DocumentosUsuarioForm, RenovarServicioForm, UsuarioCreditoForm, VehiculoCreditoForm, NombrePrendasForm
 from datetime import date, datetime, timedelta
 from django.http import JsonResponse
 from django import forms
@@ -28,6 +28,7 @@ from num2words import num2words
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from .utils import requiere_sede_financiera, requiere_sede_financiera_admin
+from django.core.files.base import ContentFile
 
 
 # ----------------------------------------------------------------------
@@ -39,6 +40,9 @@ def detalle_credito(request, credito_id):
     credito = get_object_or_404(Credito, id=credito_id)
     cronograma = credito.cuotas_credito.all().order_by('numero')
     pagos = credito.pagos.all().order_by('fecha_pago')
+    prendas = NombrePrendas.objects.all()
+    recibos = credito.recibos.prefetch_related("pagos")
+
 
     saldo_capital = credito.saldo_capital()
     intereses_pendientes = credito.intereses_pendientes()
@@ -90,6 +94,8 @@ def detalle_credito(request, credito_id):
         # Nuevos datos para el template
         'cuotas_mora_info': cuotas_mora_info,
         'moratorios_acumulados': moratorios_acumulados,
+        'prendas': prendas,
+        'recibos': recibos,
     })
 
 # ----------------------------------------------------------------------
@@ -840,6 +846,15 @@ def generar_excel_cronograma(request, credito_id):
     if not cuotas.exists():
         return HttpResponse("No hay cuotas pendientes para generar el Excel")
 
+    # ---------------------------
+    # 🔥 OBTENER PRENDA DESDE EL SELECT
+    # ---------------------------
+    prenda_id = request.GET.get("prenda_id")
+    if not prenda_id:
+        return HttpResponse("Debe seleccionar una persona de la prenda")
+
+    prenda = get_object_or_404(NombrePrendas, id=prenda_id)
+
     cedula_cliente = credito.usuario.cedula
     archivo_entrada = os.path.join(settings.MEDIA_ROOT, "plantillas", "plantilla.xlsx")
 
@@ -849,7 +864,7 @@ def generar_excel_cronograma(request, credito_id):
     # ---------------------------
     # Función que replica la plantilla por cada cuota
     # ---------------------------
-    def replicar_plantilla(archivo_entrada, cuotas, cedula_cliente, credito):
+    def replicar_plantilla(archivo_entrada, cuotas, cedula_cliente, credito, prenda):
         wb = openpyxl.load_workbook(archivo_entrada)
         ws = wb.active
 
@@ -862,64 +877,74 @@ def generar_excel_cronograma(request, credito_id):
         user = credito.usuario
         nombre_completo = f"{user.nombre} {user.p_apellido} {user.s_apellido}".strip()
 
+        # --- 🔥 DATOS DE LA PRENDA ---
+        nombre_prenda = f"{prenda.nombres} {prenda.apellidos}".strip()
+
         # --- PRIMERA CUOTA ---
         primera_cuota = cuotas[0]
         fecha = primera_cuota.fecha_vencimiento
 
-        # Helper del mes en español
-        meses_es = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-                    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+        meses_es = [
+            "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        ]
 
         # ------------------------------
-        # UBICAR TODOS LOS DATOS NUEVOS
+        # UBICAR DATOS BASE
         # ------------------------------
+        ws.cell(row=1, column=4).value = credito.id
+        ws.cell(row=3, column=11).value = nombre_completo
+        ws.cell(row=12, column=10).value = user.direccion
+        ws.cell(row=12, column=14).value = user.telefono
+        ws.cell(row=1, column=6).value = credito.vehiculo.placa
 
-        ws.cell(row=1, column=4).value = credito.id                 # D1 → ID Crédito
-        ws.cell(row=3, column=11).value = nombre_completo           # K3 → Nombre completo
-        ws.cell(row=12, column=10).value = user.direccion           # J12 → Dirección
-        ws.cell(row=12, column=14).value = user.telefono            # N12 → Teléfono
+        # 🔥 H7 → NOMBRES Y APELLIDOS DE LA PRENDA
+        ws.cell(row=7, column=8).value = nombre_prenda
 
-        # Fecha de la cuota
-        ws.cell(row=4, column=10).value = fecha.day                 # J4 → Día
-        ws.cell(row=4, column=12).value = meses_es[fecha.month-1]   # L4 → Mes español
-        ws.cell(row=4, column=16).value = fecha.year                # P4 → Año
+        # Fecha primera cuota
+        ws.cell(row=4, column=10).value = fecha.day
+        ws.cell(row=4, column=12).value = meses_es[fecha.month - 1]
+        ws.cell(row=4, column=16).value = fecha.year
 
-        # Valor en letras
-        ws.cell(row=8, column=11).value = numero_a_letras(primera_cuota.cuota_total)  # K8
+        ws.cell(row=8, column=11).value = numero_a_letras(primera_cuota.cuota_total)
 
-        # DATOS DE LA PRIMERA CUOTA
         ws.cell(row=2, column=15).value = primera_cuota.numero
         ws.cell(row=2, column=17).value = float(primera_cuota.cuota_total)
         ws.cell(row=8, column=17).value = float(primera_cuota.cuota_total)
+
         c = ws.cell(row=2, column=11)
         c.value = fecha
         c.number_format = "DD/MM/YYYY"
+
         ws.cell(row=4, column=2).value = f"Céd. o NIT: {cedula_cliente}"
 
         # ----------------------------------------------
-        # GUARDAR PLANTILLA BASE PARA RÉPLICAS
+        # GUARDAR PLANTILLA BASE
         # ----------------------------------------------
-        celdas_combinadas_originales = []
-        for rango in ws.merged_cells.ranges:
-            if rango.min_row >= inicio_fila and rango.max_row <= fin_fila:
-                celdas_combinadas_originales.append(rango)
+        celdas_combinadas_originales = [
+            r for r in ws.merged_cells.ranges
+            if r.min_row >= inicio_fila and r.max_row <= fin_fila
+        ]
 
         plantilla = []
-        for fila in ws.iter_rows(min_row=inicio_fila, max_row=fin_fila,
-                                min_col=inicio_columna, max_col=fin_columna):
-            plantilla.append([(cell.value, cell.font, cell.fill, cell.border,
-                            cell.alignment, cell.number_format) for cell in fila])
+        for fila in ws.iter_rows(
+            min_row=inicio_fila,
+            max_row=fin_fila,
+            min_col=inicio_columna,
+            max_col=fin_columna
+        ):
+            plantilla.append([
+                (cell.value, cell.font, cell.fill, cell.border,
+                 cell.alignment, cell.number_format)
+                for cell in fila
+            ])
 
         # -----------------------------------
-        # RÉPLICAS DESDE LA SEGUNDA CUOTA
+        # RÉPLICAS
         # -----------------------------------
         fila_actual = fin_fila + 3
 
         for cuota in cuotas[1:]:
-
-            # -----------------------------
-            # Copiar la plantilla completa
-            # -----------------------------
             for i, fila in enumerate(plantilla):
                 for j, (valor, font, fill, border, alignment, number_format) in enumerate(fila):
                     nueva = ws.cell(row=fila_actual + i, column=inicio_columna + j)
@@ -930,48 +955,31 @@ def generar_excel_cronograma(request, credito_id):
                     nueva.alignment = copy(alignment)
                     nueva.number_format = number_format
 
-            # -------------------------------------
-            # 🔥 Datos propios de ESTA cuota
-            # -------------------------------------
-
-            # Número de cuota
             ws.cell(row=fila_actual + 1, column=15).value = cuota.numero
-
-            # Valor numérico
             ws.cell(row=fila_actual + 1, column=17).value = float(cuota.cuota_total)
             ws.cell(row=fila_actual + 7, column=17).value = float(cuota.cuota_total)
 
-            # Fecha real de esta cuota
             celda_fecha = ws.cell(row=fila_actual + 1, column=11)
-            celda_fecha.value = cuota.fecha_vencimiento          # objeto date real
-            celda_fecha.number_format = "DD/MM/YYYY"             # formato correcto para Excel
+            celda_fecha.value = cuota.fecha_vencimiento
+            celda_fecha.number_format = "DD/MM/YYYY"
 
-            # --- ACTUALIZAR J4, L4 y P4 para ESTA RÉPLICA ---
             fecha = cuota.fecha_vencimiento
-
-            # J4 → Día
             ws.cell(row=fila_actual + 3, column=10).value = fecha.day
-
-            # L4 → Mes en texto
             ws.cell(row=fila_actual + 3, column=12).value = meses_es[fecha.month - 1]
-
-            # P4 → Año
             ws.cell(row=fila_actual + 3, column=16).value = fecha.year
 
-            # 🔥 Valor EN LETRAS (K8 de la réplica)
             ws.cell(row=fila_actual + 7, column=11).value = numero_a_letras(cuota.cuota_total)
-
-            # Cédula
             ws.cell(row=fila_actual + 3, column=2).value = f"Céd. o NIT: {cedula_cliente}"
 
-            # 🔄 Mantener celdas combinadas
+            # 🔄 Combinar celdas
             for rango in celdas_combinadas_originales:
                 new_min_row = rango.min_row + fila_actual - inicio_fila
                 new_max_row = rango.max_row + fila_actual - inicio_fila
-                nuevo_rango = f"{get_column_letter(rango.min_col)}{new_min_row}:{get_column_letter(rango.max_col)}{new_max_row}"
-                ws.merge_cells(nuevo_rango)
+                ws.merge_cells(
+                    f"{get_column_letter(rango.min_col)}{new_min_row}:"
+                    f"{get_column_letter(rango.max_col)}{new_max_row}"
+                )
 
-            # Pasar a la siguiente réplica
             fila_actual += len(plantilla) + 2
 
         temp_file = NamedTemporaryFile(delete=False, suffix=".xlsx")
@@ -979,9 +987,20 @@ def generar_excel_cronograma(request, credito_id):
         temp_file.seek(0)
         return temp_file
 
-    archivo_temporal = replicar_plantilla(archivo_entrada, cuotas, cedula_cliente, credito)
+    archivo_temporal = replicar_plantilla(
+        archivo_entrada,
+        cuotas,
+        cedula_cliente,
+        credito,
+        prenda
+    )
+
     filename = f"Cronograma_{credito.usuario.cedula}_{credito.id}.xlsx"
-    return FileResponse(open(archivo_temporal.name, "rb"), as_attachment=True, filename=filename)
+    return FileResponse(
+        open(archivo_temporal.name, "rb"),
+        as_attachment=True,
+        filename=filename
+    )
 
 
 # -----------------------------------------------------------------------------------
@@ -1345,7 +1364,6 @@ def generar_recibo(request):
 
     credito = pagos.first().credito
     fecha_hora = timezone.now()
-
     total_operacion = sum(p.valor_pagado for p in pagos)
 
     pagos_items = []
@@ -1358,55 +1376,16 @@ def generar_recibo(request):
             "observacion": p.observacion,
             "interes_mora": p.interes_moratorio_pagado,
             "cobro_juridico": p.cobro_juridico_pagado,
-            "dias_mora": 0,   # se calcula abajo
+            "dias_mora": 0,
         }
 
         if p.tipo_pago == "cuota" and p.cuota_numero:
             cuota = credito.cuotas_credito.filter(numero=p.cuota_numero).first()
-
             if cuota:
-
-                # ==============================
-                # 🔥 Calcular días de mora reales
-                # ==============================
                 mora_info = credito.calcular_moratorios_por_cuota(cuota)
                 item["dias_mora"] = mora_info.get("dias", 0)
 
-                servicios_mes = credito.servicios.filter(
-                    fecha_inicio__lte=cuota.fecha_vencimiento,
-                    fecha_fin__gte=cuota.fecha_vencimiento,
-                    estado='Activo'
-                )
-
-                servicios_detalle = []
-                for s in servicios_mes:
-                    servicios_detalle.append({
-                        "tipo": s.get_tipo_display(),
-                        "valor_mensual": s.valor_mensual(),
-                    })
-
-                item.update({
-                    "fecha_vencimiento": cuota.fecha_vencimiento,
-                    "abono_capital": cuota.abono_capital,
-                    "interes": cuota.interes,
-                    "servicios": servicios_detalle,
-                })
-
         pagos_items.append(item)
-
-    # Saldos del crédito
-    saldo_capital = credito.saldo_capital()
-    intereses = credito.intereses_pendientes()
-    saldo_total = credito.saldo_total()
-
-    servicios = credito.servicios.filter(estado="Activo")
-
-    seguro_restante = sum(
-        s.valor_restante() for s in servicios if s.tipo == ServicioCredito.TIPO_SEG
-    )
-    gps_restante = sum(
-        s.valor_restante() for s in servicios if s.tipo == ServicioCredito.TIPO_GPS
-    )
 
     context = {
         "pago_operacion": {
@@ -1416,15 +1395,34 @@ def generar_recibo(request):
         },
         "pagos_items": pagos_items,
         "total_operacion": total_operacion,
-        "saldo_capital": saldo_capital,
-        "intereses": intereses,
-        "saldo_total": saldo_total,
-        "seguro_restante": seguro_restante,
-        "gps_restante": gps_restante,
         "credito": credito,
     }
 
-    return render(request, "creditos/recibo_pago.html", context)
+    # -------------------------
+    # 🔥 GENERAR PDF
+    # -------------------------
+    html_string = render_to_string("creditos/recibo_pago.html", context)
+    pdf_file = HTML(string=html_string, base_url=request.build_absolute_uri()).write_pdf()
+
+    # -------------------------
+    # 🔥 GUARDAR RECIBO
+    # -------------------------
+    recibo = ReciboPago.objects.create(
+        credito=credito,
+        total=total_operacion
+    )
+    recibo.pagos.set(pagos)
+
+    nombre_archivo = f"recibo_credito_{credito.id}_{recibo.id}.pdf"
+    recibo.archivo.save(nombre_archivo, ContentFile(pdf_file))
+    recibo.save()
+
+    # -------------------------
+    # 🔥 DEVOLVER PDF
+    # -------------------------
+    response = HttpResponse(pdf_file, content_type="application/pdf")
+    response["Content-Disposition"] = f'inline; filename="{nombre_archivo}"'
+    return response
 
 
 @login_required
@@ -1437,17 +1435,53 @@ def solicitudes_credito(request):
 @requiere_sede_financiera_admin
 def cambiar_estado_solicitud(request, solicitud_id):
     solicitud = get_object_or_404(SolicitudCredito, id=solicitud_id)
+    prendas = NombrePrendas.objects.all()
 
     if request.method == "POST":
         nuevo_estado = request.POST.get("estado")
+        prenda_id = request.POST.get("prenda")
+        valor_aprobado = request.POST.get("valor_aprobado")
+        fecha_aprobacion = request.POST.get("fecha_aprobacion")
+
         solicitud.estado = nuevo_estado
+
+        # ✅ SI SE APRUEBA
+        if nuevo_estado == 'Aprobado':
+
+            # FECHA DE APROBACIÓN MANUAL
+            if fecha_aprobacion:
+                solicitud.fecha_aprobacion = fecha_aprobacion
+            else:
+                solicitud.fecha_aprobacion = timezone.now().date()
+
+            # VALOR APROBADO
+            try:
+                solicitud.valor_aprobado = float(valor_aprobado)
+            except (TypeError, ValueError):
+                solicitud.valor_aprobado = solicitud.valor
+
+            # PRENDA
+            if prenda_id:
+                solicitud.prenda = get_object_or_404(NombrePrendas, id=prenda_id)
+            else:
+                solicitud.prenda = None
+
+        # ❌ SI NO ESTÁ APROBADO
+        else:
+            solicitud.fecha_aprobacion = None
+            solicitud.valor_aprobado = None
+            solicitud.prenda = None
+
         solicitud.save()
-        messages.success(request, "Estado actualizado correctamente.")
+        messages.success(request, "Estado de la solicitud actualizado correctamente.")
         return redirect("solicitudes_credito")
 
-    return render(request, "creditos/cambiar_estado_solicitud.html", {"solicitud": solicitud})
+    return render(request, "creditos/cambiar_estado_solicitud.html", {
+        "solicitud": solicitud,
+        "prendas": prendas
+    })
 
-@login_required
+
 def generar_pdf_aprobacion(request, solicitud_id):
     solicitud = get_object_or_404(SolicitudCredito, id=solicitud_id)
 
@@ -1459,41 +1493,63 @@ def generar_pdf_aprobacion(request, solicitud_id):
         "solicitud": solicitud,
         "usuario": solicitud.usuario,
         "vehiculo": solicitud.vehiculo,
+        "prenda": solicitud.prenda,
+
+        # 👉 NUEVOS DATOS
+        "valor_aprobado": solicitud.valor_aprobado,
+        "fecha_aprobacion": solicitud.fecha_aprobacion,
     }
 
     html = render_to_string("creditos/aprobacion.html", contexto)
     return generar_pdf(html, f"aprobacion_{solicitud.id}.pdf")
 
-@login_required
+
 def generar_pdf_prenda(request, solicitud_id):
-    """
-    Genera la prenda del vehículo solo si la aprobación está en estado 'Aprobado'.
-    """
     solicitud = get_object_or_404(SolicitudCredito, id=solicitud_id)
 
     if solicitud.estado != 'Aprobado':
-        messages.error(request, "No puedes generar la prenda hasta que la aprobación sea aprobada.")
-        return redirect('lista_aprobaciones')
+        messages.error(
+            request,
+            "No puedes generar la prenda hasta que la solicitud sea aprobada."
+        )
+        return redirect('solicitudes_credito')
 
-    user = solicitud.usuario
-    vehiculo = solicitud.vehiculo
+    if not solicitud.prenda:
+        messages.error(
+            request,
+            "Esta solicitud no tiene una persona de prenda asociada."
+        )
+        return redirect('solicitudes_credito')
 
     context = {
-        'user': user,
-        'vehiculo': vehiculo,
-        'fecha': datetime.now()
+        'solicitud': solicitud,
+        'user': solicitud.usuario,
+        'vehiculo': solicitud.vehiculo,
+        'prenda': solicitud.prenda,
+
+        # 👉 NUEVOS CAMPOS
+        'valor_aprobado': solicitud.valor_aprobado,
+        'fecha_aprobacion': solicitud.fecha_aprobacion,
     }
 
-    html_string = render_to_string('creditos/contrato_prenda.html', context)
-    html = HTML(string=html_string, base_url=request.build_absolute_uri())
+    html_string = render_to_string(
+        'creditos/contrato_prenda.html',
+        context
+    )
+
+    html = HTML(
+        string=html_string,
+        base_url=request.build_absolute_uri()
+    )
     pdf = html.write_pdf()
 
-    filename = f"Prenda_{user.cedula}_{vehiculo.placa}.pdf"
+    filename = f"Prenda_{solicitud.prenda.documento}_{solicitud.vehiculo.placa}.pdf"
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = f'inline; filename="{filename}"'
+
     return response
 
-@login_required
+
 def generar_pdf(html_string, filename):
     pdf = HTML(string=html_string).write_pdf()
     response = HttpResponse(pdf, content_type="application/pdf")
@@ -1525,3 +1581,28 @@ def crear_usuario_credito(request):
         form = UsuarioCreditoForm()
 
     return render(request, "creditos/crear_usuario_credito.html", {"form": form})
+
+@login_required
+def creditos_por_estado(request, estado):
+    creditos = Credito.objects.filter(estado=estado).select_related("usuario")
+
+    context = {
+        "creditos": creditos,
+        "estado": estado,
+    }
+    return render(request, "creditos/creditos_por_estado.html", context)
+
+@login_required
+def crear_prenda(request):
+    if request.method == 'POST':
+        form = NombrePrendasForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Prenda creada correctamente.')
+            return redirect('crear_prenda')
+    else:
+        form = NombrePrendasForm()
+
+    return render(request, 'creditos/crear_prenda.html', {
+        'form': form
+    })

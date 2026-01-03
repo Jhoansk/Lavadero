@@ -1,65 +1,80 @@
-{% extends "base.html" %}
+{% extends 'vehiculos/layout_contratos.html' %}
+
+{% block title %}Documentos{% endblock %}
+
 {% block content %}
-{% load static %}
-  
-  <!-- Contenido principal -->
-  <div class="recent-orders">
-    <div class="vehicle_search">
-
-    <h2>Docuentos</h2>
-    <div class="image-gallery">
-       
+<div class="container">
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-warning text-white">
+            <h3>Documentos</h3>
+        </div>
+        <div class="card-body">
+            <div class="image-gallery">
+                {% comment %} Aquí irán tus imágenes, por ejemplo: {% endcomment %}
+                {% for doc in documentos %}
+                    <img src="{{ doc.imagen.url }}" alt="Documento {{ forloop.counter }}" class="thumbnail" onclick="showImage('{{ doc.imagen.url }}')">
+                {% empty %}
+                    <p>No hay documentos disponibles.</p>
+                {% endfor %}
+            </div>
+        </div>
     </div>
+</div>
 
-    <div class="modal" id="modal" onclick="this.style.display='none'">
-        <img id="modalImage" src="" alt="Imagen a tamaño completo">
-    </div>
-    </div>
-  </div>
+<!-- Modal para imagen a tamaño completo -->
+<div class="modal" id="modal" onclick="this.style.display='none'">
+    <img id="modalImage" src="" alt="Imagen a tamaño completo">
+</div>
+{% endblock %}
 
-  <script>
-    function showImage(src) {
-        const modal = document.getElementById('modal');
-        const modalImage = document.getElementById('modalImage');
-        modalImage.src = src; 
-        modal.style.display = 'flex'; 
-    }
-  </script>
+{% block extra_js %}
+<script>
+function showImage(src) {
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modalImage');
+    modalImage.src = src; 
+    modal.style.display = 'flex'; 
+}
+</script>
 
-  <style>
-    .image-gallery {
-        margin: 20px 0;
-        display: flex;
-        flex-wrap: wrap;
-    }
+<style>
+.image-gallery {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
 
-    .thumbnail {
-        max-width: 150px;
-        margin: 10px;
-        cursor: pointer;
-        transition: transform 0.2s;
-    }
+.thumbnail {
+    max-width: 150px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
 
-    .thumbnail:hover {
-        transform: scale(1.05);
-    }
+.thumbnail:hover {
+    transform: scale(1.05);
+}
 
-    .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    }
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
 
-    .modal img {
-        max-width: 90%;
-        max-height: 90%;
-    }
-  </style>
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+</style>
 {% endblock %}

@@ -1,0 +1,48 @@
+{% extends "vehiculos/layout_contratos.html" %}
+
+{% block title %}Anular Contrato{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+
+    <div class="card shadow-sm border-danger">
+        <div class="card-body text-center">
+
+            <h4 class="text-danger mb-3">⚠️ Confirmar Anulación</h4>
+
+            <p>
+                ¿Estás seguro de que deseas anular el contrato
+                <strong>#{{ contrato.id }}</strong>?
+            </p>
+
+            <ul class="list-group mb-3 text-start">
+                <li class="list-group-item">
+                    <strong>Fecha:</strong> {{ contrato.fecha_hoy }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Placa:</strong> {{ contrato.vehiculo_placa }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Tipo:</strong> {{ contrato.tipo_contrato }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Valor:</strong> ${{ contrato.pacta_suma }}
+                </li>
+            </ul>
+
+            <form method="post" class="d-inline">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">
+                    🗑️ Sí, anular contrato
+                </button>
+            </form>
+
+            <a href="{% url 'vehiculos:lista_contratos' %}" class="btn btn-secondary ms-2">
+                Cancelar
+            </a>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

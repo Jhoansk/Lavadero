@@ -1,141 +1,58 @@
-{% extends 'base.html' %}
+{% extends "vehiculos/layout_contratos.html" %}
 {% load static %}
+
+{% block title %}Perfil de Usuario{% endblock %}
+
 {% block content %}
-<div class="recent-orders">
-    <div class="vehicle_search">
-        <h1>Perfil de {{ request.user.username }}</h1>
+<div class="container py-4">
 
-        <!-- Formulario para cambiar contraseña siempre visible -->
-        <div id="password-form">
-            <h2>Cambiar contraseña</h2>
-            <form method="POST">
+    <div class="card shadow-sm mx-auto" style="max-width: 500px;">
+        <div class="card-body">
+
+            <h3 class="text-center mb-4">
+                👤 Perfil de {{ request.user.username }}
+            </h3>
+
+            <!-- FORMULARIO -->
+            <form method="POST" action="">
                 {% csrf_token %}
-                <div class="form-group">
-                    <label for="old_password">Contraseña anterior:</label>
-                    <input type="password" name="old_password" required>
+
+                <div class="mb-3">
+                    <label class="form-label">Contraseña actual</label>
+                    <input type="password" name="old_password" class="form-control" required>
                 </div>
 
-                <div class="form-group">
-                    <label for="new_password">Nueva contraseña:</label>
-                    <input type="password" name="new_password" required>
+                <div class="mb-3">
+                    <label class="form-label">Nueva contraseña</label>
+                    <input type="password" name="new_password" class="form-control" required>
                 </div>
 
-                <div class="form-group">
-                    <label for="confirm_password">Confirmación de la nueva contraseña:</label>
-                    <input type="password" name="confirm_password" required>
+                <div class="mb-3">
+                    <label class="form-label">Confirmar nueva contraseña</label>
+                    <input type="password" name="confirm_password" class="form-control" required>
                 </div>
 
-                <button type="submit" class="btn-submit">Guardar Cambios</button>
+                <button type="submit" class="btn btn-success w-100">
+                    Guardar cambios
+                </button>
             </form>
+
+            <!-- MENSAJES -->
+            {% if messages %}
+                <div class="mt-4">
+                    {% for message in messages %}
+                        <div class="alert 
+                            {% if message.tags == 'success' %}alert-success
+                            {% elif message.tags == 'error' %}alert-danger
+                            {% else %}alert-info{% endif %}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
         </div>
     </div>
 
-    <!-- Mostrar mensajes de éxito/error -->
-    {% if messages %}
-        <ul class="message-list">
-            {% for message in messages %}
-                <li class="message-item {% if message.tags %}{{ message.tags }}-message{% endif %}">{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
 </div>
-{% endblock %}
-
-{% block styles %}
-    <style>
-        /* Estilo general de la página */
-        .recent-orders {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .vehicle_search {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Estilo para los encabezados */
-        h1 {
-            font-size: 24px;
-            color: #333;
-        }
-
-        h2 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: #444;
-        }
-
-        /* Estilo para los campos del formulario */
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 8px;
-            color: #555;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-            color: #333;
-        }
-
-        .form-group small {
-            display: block;
-            font-size: 12px;
-            color: #888;
-            margin-top: 5px;
-        }
-
-        /* Estilo para el botón */
-        .btn-submit {
-            background-color: #28a745;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        .btn-submit:hover {
-            background-color: #218838;
-        }
-
-        /* Estilo para mensajes */
-        .message-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .message-item {
-            margin-bottom: 10px;
-            padding: 10px;
-            border-radius: 4px;
-            background-color: #f8f9fa;
-        }
-
-        .message-item.success-message {
-            background-color: #d4edda;
-            color: #155724;
-        }
-
-        .message-item.error-message {
-            background-color: #f8d7da;
-            color: #721c24;
-        }
-    </style>
 {% endblock %}
