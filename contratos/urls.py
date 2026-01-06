@@ -79,6 +79,7 @@ urlpatterns = [
     path('dashboard/operativa/', views.dashboard_operativa, name='dashboard_operativa'),
     path('contratos/anular/<int:contrato_id>/', views.anular_contrato, name='anular_contrato'),
     path('contratos/', views.lista_contratos, name='lista_contratos'),
+    path('contratos/anular-multiples/', views.anular_contratos_multiples, name='anular_contratos_multiples'),
 
 ]
 if settings.DEBUG:

@@ -1618,3 +1618,16 @@ def lista_contratos(request):
         'placa': placa,
         'cedula': cedula,
     })
+
+@login_required
+def anular_contratos_multiples(request):
+    if request.method == 'POST':
+        ids = request.POST.getlist('contratos_ids')
+
+        if ids:
+            Contrato.objects.filter(id__in=ids).delete()
+            messages.success(request, 'Contratos seleccionados anulados correctamente.')
+        else:
+            messages.warning(request, 'No seleccionaste ningún contrato.')
+
+    return redirect('vehiculos:lista_contratos')
