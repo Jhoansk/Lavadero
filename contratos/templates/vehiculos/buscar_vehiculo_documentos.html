@@ -13,7 +13,6 @@
 
     <!-- SEARCH -->
     <div class="card p-4 mb-4">
-
         <form method="post" novalidate>
             {% csrf_token %}
 
@@ -36,7 +35,6 @@
                 </div>
             </div>
         </form>
-
     </div>
 
     {% if vehiculo %}
@@ -54,10 +52,12 @@
         {% if vehiculo.imagen %}
         <div class="mb-3">
             <p class="fw-semibold">📄 Tarjeta de Propiedad</p>
-            <a href="{{ vehiculo.imagen.url }}" target="_blank"
+            <a href="{{ vehiculo.imagen.url }}"
+               target="_blank"
                class="btn btn-sm btn-outline-primary mb-2">
                 Ver Documento
             </a>
+
             <div class="image-container">
                 <img src="{{ vehiculo.imagen.url }}"
                      class="vehiculo-imagen"
@@ -67,10 +67,9 @@
         {% else %}
             <p class="text-muted">No se ha registrado imagen del vehículo.</p>
         {% endif %}
-
     </div>
 
-    <!-- DOCUMENTS -->
+    <!-- DOCUMENTOS -->
     <div class="card p-4">
 
         <h5 class="fw-semibold mb-3">📂 Documentos del Vehículo</h5>
@@ -82,30 +81,44 @@
 
                 {% if doc.tarjeta_operacion %}
                     <p>
-                        Tarjeta de Operación:
-                        <a href="{{ doc.tarjeta_operacion.url }}" target="_blank">Ver</a>
+                        📄 Tarjeta de Operación:
+                        <a href="{{ doc.tarjeta_operacion.url }}" target="_blank">
+                            Ver
+                        </a>
                     </p>
                 {% endif %}
 
                 {% if doc.soat %}
-                    <p>SOAT:</p>
+                    <p>🛡️ SOAT:</p>
                     <img src="{{ doc.soat.url }}"
                          class="document-image"
                          onclick="showImage(this.src)">
                 {% endif %}
 
                 {% if doc.tecnomecanica %}
-                    <p>Tecnomecánica:</p>
+                    <p>🔧 Tecnomecánica:</p>
                     <img src="{{ doc.tecnomecanica.url }}"
                          class="document-image"
                          onclick="showImage(this.src)">
                 {% endif %}
 
                 {% if doc.seguros_rc %}
-                    <p>Seguros RC:</p>
+                    <p>📑 Seguros RC:</p>
                     <img src="{{ doc.seguros_rc.url }}"
                          class="document-image"
                          onclick="showImage(this.src)">
+                {% endif %}
+
+                <!-- ✅ ARCHIVO ADICIONAL -->
+                {% if doc.archivo_adicional %}
+                    <p class="mt-2">
+                        📎 Archivo adicional:
+                        <a href="{{ doc.archivo_adicional.url }}"
+                           target="_blank"
+                           class="btn btn-sm btn-outline-primary">
+                            Descargar / Ver
+                        </a>
+                    </p>
                 {% endif %}
 
             </div>
@@ -114,7 +127,6 @@
         {% else %}
             <p class="text-muted">No se encontraron documentos para este vehículo.</p>
         {% endif %}
-
     </div>
 
     {% elif request.method == "POST" %}
@@ -130,4 +142,47 @@
     <img id="modalImage" src="">
 </div>
 
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function showImage(src) {
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modalImage');
+    modalImage.src = src;
+    modal.style.display = 'flex';
+}
+</script>
+
+<style>
+.document-image {
+    max-width: 100%;
+    max-height: 200px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.vehiculo-imagen {
+    max-width: 300px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 6px;
+}
+</style>
 {% endblock %}

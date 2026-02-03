@@ -1,30 +1,117 @@
 {% extends 'vehiculos/layout_contratos.html' %}
 
-{% block title %}Documentos{% endblock %}
+{% block title %}Documentos del Vehículo{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="card shadow-sm mb-4">
-        <div class="card-header bg-warning text-white">
-            <h3>Documentos</h3>
-        </div>
-        <div class="card-body">
-            <div class="image-gallery">
-                {% comment %} Aquí irán tus imágenes, por ejemplo: {% endcomment %}
-                {% for doc in documentos %}
-                    <img src="{{ doc.imagen.url }}" alt="Documento {{ forloop.counter }}" class="thumbnail" onclick="showImage('{{ doc.imagen.url }}')">
-                {% empty %}
-                    <p>No hay documentos disponibles.</p>
-                {% endfor %}
+<div class="container-fluid py-3">
+
+    <!-- HEADER -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">
+            📄 Documentos del vehículo {{ vehiculo.placa }}
+        </h2>
+
+        <a href="{% url 'vehiculos:lista_documentos' %}"
+           class="btn btn-outline-secondary">
+            ⬅ Volver
+        </a>
+    </div>
+
+    {% if documentos %}
+    <div class="row g-4">
+
+        {% for doc in documentos %}
+
+        <!-- TARJETA OPERACIÓN -->
+        {% if doc.tarjeta_operacion %}
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <img src="{{ doc.tarjeta_operacion.url }}"
+                     class="card-img-top thumbnail"
+                     onclick="showImage('{{ doc.tarjeta_operacion.url }}')">
+                <div class="card-body text-center">
+                    <small class="fw-semibold">Tarjeta de Operación</small>
+                </div>
             </div>
         </div>
+        {% endif %}
+
+        <!-- SOAT -->
+        {% if doc.soat %}
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <img src="{{ doc.soat.url }}"
+                     class="card-img-top thumbnail"
+                     onclick="showImage('{{ doc.soat.url }}')">
+                <div class="card-body text-center">
+                    <small class="fw-semibold">SOAT</small>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- TECNOMECÁNICA -->
+        {% if doc.tecnomecanica %}
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <img src="{{ doc.tecnomecanica.url }}"
+                     class="card-img-top thumbnail"
+                     onclick="showImage('{{ doc.tecnomecanica.url }}')">
+                <div class="card-body text-center">
+                    <small class="fw-semibold">Tecnomecánica</small>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- SEGUROS RC -->
+        {% if doc.seguros_rc %}
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <img src="{{ doc.seguros_rc.url }}"
+                     class="card-img-top thumbnail"
+                     onclick="showImage('{{ doc.seguros_rc.url }}')">
+                <div class="card-body text-center">
+                    <small class="fw-semibold">Seguro RC</small>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- ARCHIVO ADICIONAL -->
+        {% if doc.archivo_adicional %}
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h1>📎</h1>
+                    <p class="fw-semibold">Archivo adicional</p>
+
+                    <a href="{{ doc.archivo_adicional.url }}"
+                       target="_blank"
+                       class="btn btn-outline-primary btn-sm">
+                        Abrir archivo
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% endfor %}
     </div>
+
+    {% else %}
+        <div class="alert alert-warning text-center">
+            Este vehículo no tiene documentos registrados.
+        </div>
+    {% endif %}
+
 </div>
 
-<!-- Modal para imagen a tamaño completo -->
+<!-- MODAL -->
 <div class="modal" id="modal" onclick="this.style.display='none'">
-    <img id="modalImage" src="" alt="Imagen a tamaño completo">
+    <img id="modalImage">
 </div>
+
 {% endblock %}
 
 {% block extra_js %}
@@ -32,49 +119,33 @@
 function showImage(src) {
     const modal = document.getElementById('modal');
     const modalImage = document.getElementById('modalImage');
-    modalImage.src = src; 
-    modal.style.display = 'flex'; 
+
+    modalImage.src = src;
+    modal.style.display = 'flex';
 }
 </script>
 
 <style>
-.image-gallery {
-    margin: 20px 0;
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .thumbnail {
-    max-width: 150px;
-    margin: 10px;
     cursor: pointer;
-    transition: transform 0.2s;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.thumbnail:hover {
-    transform: scale(1.05);
+    max-height: 200px;
+    object-fit: cover;
 }
 
 .modal {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    inset: 0;
+    background: rgba(0,0,0,0.85);
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 1050;
 }
 
 .modal img {
     max-width: 90%;
     max-height: 90%;
-    border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    border-radius: 6px;
 }
 </style>
 {% endblock %}

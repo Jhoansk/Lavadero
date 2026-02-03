@@ -95,8 +95,34 @@ def editar_vehiculo(request, vehiculo_id):
 
 @login_required
 def lista_vehiculos(request):
-    vehiculos = Vehiculo_contratos.objects.all()
-    return render(request, 'vehiculos/lista_vehiculos.html', {'vehiculos': vehiculos})
+    placa = request.GET.get('placa', '').strip().upper()
+    marca = request.GET.get('marca', '').strip()
+    modelo = request.GET.get('modelo', '').strip()
+
+    vehiculos = Vehiculo_contratos.objects.all().order_by('-id')
+
+    if placa:
+        vehiculos = vehiculos.filter(placa__icontains=placa)
+
+    if marca:
+        vehiculos = vehiculos.filter(marca__icontains=marca)
+
+    if modelo:
+        vehiculos = vehiculos.filter(modelo__icontains=modelo)
+
+    paginator = Paginator(vehiculos, 10)  # 🔹 10 por página
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'vehiculos': page_obj,
+        'page_obj': page_obj,
+        'placa': placa,
+        'marca': marca,
+        'modelo': modelo,
+    }
+
+    return render(request, 'vehiculos/lista_vehiculos.html', context)
 
 @login_required
 def agregar_factura(request):
@@ -471,15 +497,24 @@ def inicio(request):
 """
 @login_required
 def lista_usuarios(request):
-    # Obtener todos los usuarios
-    all_usuarios = usuario.objects.all()
+    cedula = request.GET.get('cedula', '').strip()
 
-    # Paginación: Mostrar 10 usuarios por página
-    paginator = Paginator(all_usuarios, 10)  # 10 usuarios por página
-    page_number = request.GET.get('page')  # Número de la página actual
+    usuarios_qs = usuario.objects.all().order_by('-id')
+
+    if cedula:
+        usuarios_qs = usuarios_qs.filter(cedula__icontains=cedula)
+
+    paginator = Paginator(usuarios_qs, 10)  # 10 por página
+    page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
-    return render(request, 'vehiculos/lista_usuarios.html', {'usuarios': page_obj.object_list, 'page_obj': page_obj})
+    context = {
+        'usuarios': page_obj,
+        'page_obj': page_obj,
+        'cedula': cedula,
+    }
+
+    return render(request, 'vehiculos/lista_usuarios.html', context)
 
 @login_required
 def agregar_usuario(request):
@@ -615,15 +650,24 @@ def eliminar_estado(request, estado_id):
 
 @login_required
 def lista_documentos(request):
-    # Obtener todos los documentos
-    all_documentos = documentos.objects.all()
+    placa = request.GET.get('placa', '').strip().upper()
 
-    # Paginación: Mostrar 10 documentos por página
-    paginator = Paginator(all_documentos, 10)  # 10 documentos por página
-    page_number = request.GET.get('page')  # Número de la página actual
+    documentos_qs = documentos.objects.select_related('id_placa').order_by('-id')
+
+    if placa:
+        documentos_qs = documentos_qs.filter(id_placa__placa__icontains=placa)
+
+    paginator = Paginator(documentos_qs, 10)  # 10 por página
+    page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
-    return render(request, 'vehiculos/lista_documentos.html', {'documentos': page_obj.object_list, 'page_obj': page_obj})
+    context = {
+        'documentos': page_obj,
+        'page_obj': page_obj,
+        'placa': placa,
+    }
+
+    return render(request, 'vehiculos/lista_documentos.html', context)
 
 @login_required
 def agregar_documentos(request):

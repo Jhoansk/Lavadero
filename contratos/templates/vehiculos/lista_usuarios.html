@@ -14,6 +14,32 @@
         </a>
     </div>
 
+    <!-- FILTRO POR CÉDULA -->
+    <form method="get" class="row g-2 mb-3">
+        <div class="col-md-4 col-sm-6">
+            <input type="text"
+                name="cedula"
+                class="form-control"
+                placeholder="🔍 Buscar por cédula"
+                value="{{ cedula }}">
+        </div>
+
+        <div class="col-md-2 col-sm-6">
+            <button type="submit" class="btn btn-dark w-100">
+                Buscar
+            </button>
+        </div>
+
+        {% if cedula %}
+        <div class="col-md-2 col-sm-6">
+            <a href="{% url 'vehiculos:lista_usuarios' %}"
+            class="btn btn-outline-secondary w-100">
+                Limpiar
+            </a>
+        </div>
+        {% endif %}
+    </form>
+
     <!-- TABLA -->
     <div class="card p-3">
         <div class="table-responsive">

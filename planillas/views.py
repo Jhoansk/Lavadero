@@ -586,7 +586,7 @@ def dashboard_vehiculos(request):
         disp = adq - usa
 
         if disp < 0:
-            total_negativos += 1
+            total_negativos += disp
             vehiculos_negativos.append({
                 "placa": v.placa,
                 "adquiridas": adq,

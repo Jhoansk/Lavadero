@@ -143,6 +143,7 @@ class documentos(models.Model):
     soat = models.ImageField(upload_to='documentos/soat/', null=True, blank=True)
     tecnomecanica = models.ImageField(upload_to='documentos/tecnomecanica/', null=True, blank=True)
     seguros_rc = models.ImageField(upload_to='documentos/seguros/', null=True, blank=True)
+    archivo_adicional = models.FileField(upload_to='documentos/adicionales/', null=True, blank=True)
 
     def __str__(self):
         return f'{self.n_orden}'

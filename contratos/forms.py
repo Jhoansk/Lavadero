@@ -206,7 +206,7 @@ class DocumentosForm(forms.ModelForm):
             'fecha_expedicion_tecno', 'fecha_vencimiento_tecno',
             'fecha_expedicion_sRc', 'fecha_vencimiento_sRc',
             'empresa_soat', 'numero_soat', 'numero_licencia',
-            'soat', 'tecnomecanica', 'seguros_rc'
+            'soat', 'tecnomecanica', 'seguros_rc','archivo_adicional',
         ]
 
         widgets = {

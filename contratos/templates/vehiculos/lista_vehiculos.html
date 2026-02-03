@@ -14,6 +14,39 @@
         </a>
     </div>
 
+    <!-- FILTROS -->
+    <form method="get" class="row g-2 mb-3">
+        <div class="col-md-3 col-sm-6">
+            <input type="text" name="placa" class="form-control"
+                placeholder="🔍 Placa" value="{{ placa }}">
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <input type="text" name="marca" class="form-control"
+                placeholder="🚗 Marca" value="{{ marca }}">
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <input type="text" name="modelo" class="form-control"
+                placeholder="📅 Modelo" value="{{ modelo }}">
+        </div>
+
+        <div class="col-md-2 col-sm-6">
+            <button type="submit" class="btn btn-dark w-100">
+                Buscar
+            </button>
+        </div>
+
+        {% if placa or marca or modelo %}
+        <div class="col-md-1 col-sm-6">
+            <a href="{% url 'vehiculos:lista_vehiculos' %}"
+            class="btn btn-outline-secondary w-100">
+                ✖
+            </a>
+        </div>
+        {% endif %}
+    </form>
+
     <!-- TABLA -->
     <div class="card p-3">
         <div class="table-responsive">
@@ -54,6 +87,37 @@
             </table>
         </div>
     </div>
+    
+    <!-- PAGINACIÓN -->
+    <nav aria-label="Paginación">
+        <ul class="pagination justify-content-center mt-3">
+
+            {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link"
+                    href="?page={{ page_obj.previous_page_number }}&placa={{ placa }}&marca={{ marca }}&modelo={{ modelo }}">
+                    Anterior
+                    </a>
+                </li>
+            {% endif %}
+
+            <li class="page-item disabled">
+                <span class="page-link">
+                    Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+                </span>
+            </li>
+
+            {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link"
+                    href="?page={{ page_obj.next_page_number }}&placa={{ placa }}&marca={{ marca }}&modelo={{ modelo }}">
+                    Siguiente
+                    </a>
+                </li>
+            {% endif %}
+
+        </ul>
+    </nav>
 
 </div>
 
