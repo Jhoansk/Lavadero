@@ -29,7 +29,7 @@ INSERT INTO contratos_vehiculo_contratos (
 )
 SELECT
     '838725',
-    'inmueble',
+    'None',
     'None',
     NULL,
     'None',
@@ -82,7 +82,7 @@ INSERT INTO contratos_vehiculo_contratos (
 )
 SELECT
     'APTOFI',
-    'inmue',
+    'None',
     'None',
     NULL,
     'None',
