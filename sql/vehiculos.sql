@@ -28,7 +28,7 @@ INSERT INTO contratos_vehiculo_contratos (
     presupuesto_id
 )
 SELECT
-    '50C-1838725',
+    '838725',
     'inmueble',
     'None',
     NULL,
@@ -52,7 +52,7 @@ SELECT
     NULL
 WHERE NOT EXISTS (
     SELECT 1 FROM contratos_vehiculo_contratos
-    WHERE placa = '50C-1838725'
+    WHERE placa = '838725'
 );
 
 
@@ -81,7 +81,7 @@ INSERT INTO contratos_vehiculo_contratos (
     presupuesto_id
 )
 SELECT
-    'APTO FIDELIGNO',
+    'APTOFI',
     'inmueble',
     'None',
     NULL,
