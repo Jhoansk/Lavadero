@@ -14,7 +14,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    2289384.0,
+    2289384.00,
     '2025-12-28',
     '2026-12-28',
     'Activo',
@@ -35,7 +35,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    3034440.0,
+    3034440.00,
     '2025-04-14',
     '2026-04-14',
     'Activo',
@@ -56,7 +56,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    2814000.0,
+    2814000.00,
     '2025-05-07',
     '2026-05-07',
     'Activo',
@@ -77,7 +77,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    1666800.0,
+    1666800.00,
     '2025-10-01',
     '2026-10-01',
     'Activo',
@@ -98,7 +98,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    1743000.0,
+    1743000.00,
     '2025-10-07',
     '2026-10-07',
     'Activo',
@@ -119,7 +119,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    2622000.0,
+    2622000.00,
     '2025-06-28',
     '2026-06-28',
     'Activo',
@@ -140,7 +140,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    4352316.0,
+    4352316.00,
     '2026-01-07',
     '2027-01-07',
     'Activo',
@@ -161,7 +161,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    3237600.0,
+    3237600.00,
     '2025-07-21',
     '2026-07-21',
     'Activo',
@@ -182,7 +182,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    3288000.0,
+    3288000.00,
     '2025-10-21',
     '2026-10-21',
     'Activo',
@@ -203,7 +203,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    1806000.0,
+    1806000.00,
     '2025-05-01',
     '2026-05-01',
     'Activo',
@@ -224,7 +224,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    2256000.0,
+    2256000.00,
     '2025-09-28',
     '2026-09-28',
     'Activo',
@@ -245,7 +245,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    2232000.0,
+    2232000.00,
     '2025-12-07',
     '2026-12-07',
     'Activo',
@@ -266,7 +266,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    1620000.0,
+    1620000.00,
     '2025-10-07',
     '2027-01-02',
     'Activo',
@@ -287,7 +287,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    1608000.0,
+    1608000.00,
     '2025-04-14',
     '2026-04-14',
     'Activo',
@@ -308,7 +308,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    1590924.0,
+    1590924.00,
     '2025-06-28',
     '2026-06-28',
     'Activo',
@@ -329,7 +329,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    2635800.0,
+    2635800.00,
     '2025-06-21',
     '2026-06-21',
     'Activo',
@@ -350,7 +350,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    1608000.0,
+    1608000.00,
     '2025-11-07',
     '2026-11-07',
     'Activo',
@@ -371,7 +371,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    1608000.0,
+    1608000.00,
     '2025-09-07',
     '2026-09-07',
     'Activo',
@@ -392,7 +392,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    1800000.0,
+    1800000.00,
     '2025-08-07',
     '2026-08-07',
     'Activo',
@@ -413,7 +413,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    1410048.0,
+    1410048.00,
     '2025-07-07',
     '2026-07-07',
     'Activo',
@@ -434,7 +434,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    2412000.0,
+    2412000.00,
     '2025-06-30',
     '2026-06-30',
     'Activo',
@@ -455,7 +455,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    3448200.0,
+    3448200.00,
     '2025-02-21',
     '2026-02-21',
     'Activo',
@@ -476,7 +476,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    2410800.0,
+    2410800.00,
     '2025-11-21',
     '2026-11-21',
     'Activo',
@@ -497,7 +497,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    1572000.0,
+    1572000.00,
     '2025-11-28',
     '2026-11-28',
     'Activo',
@@ -518,7 +518,7 @@ INSERT INTO creditos_serviciocredito (
     credito_id
 ) VALUES (
     'seguro',
-    1902000.0,
+    1902000.00,
     '2025-09-07',
     '2026-09-07',
     'Activo',
