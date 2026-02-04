@@ -12,22 +12,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-23',
-    657000,
+    6570000.0,
     1,
     'Pago',
-    c.id,
+    1,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -39,22 +33,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-07',
-    657000,
+    6570000.0,
     2,
     'Pago',
-    c.id,
+    1,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -66,22 +54,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-10',
-    657000,
+    6570000.0,
     3,
     'Pago',
-    c.id,
+    1,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -93,22 +75,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-10',
-    657000,
+    6570000.0,
     4,
     'Pago',
-    c.id,
+    1,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -120,22 +96,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-10',
-    657000,
+    6570000.0,
     5,
     'Pago',
-    c.id,
+    1,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -147,22 +117,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-04',
-    657000,
+    6570000.0,
     6,
     'Pago',
-    c.id,
+    1,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -174,22 +138,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-09',
-    657000,
+    6570000.0,
     7,
     'Pago',
-    c.id,
+    1,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -201,22 +159,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-13',
-    657000,
+    6570000.0,
     8,
     'Pago',
-    c.id,
+    1,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -228,22 +180,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-10',
-    657000,
+    6570000.0,
     9,
     'Pago',
-    c.id,
+    1,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -255,22 +201,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-02',
-    657000,
+    6570000.0,
     10,
     'Pago',
-    c.id,
+    1,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -282,22 +222,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-04',
-    657000,
+    6570000.0,
     11,
     'Pago',
-    c.id,
+    1,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -309,22 +243,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-08',
-    657000,
+    6570000.0,
     12,
     'Pago',
-    c.id,
+    1,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -336,22 +264,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-16',
-    657000,
+    6570000.0,
     13,
     'Pago',
-    c.id,
+    1,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -363,22 +285,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-07',
-    657000,
+    6570000.0,
     14,
     'Pago',
-    c.id,
+    1,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -390,22 +306,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-09',
-    657000,
+    6570000.0,
     15,
     'Pago',
-    c.id,
+    1,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -417,22 +327,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-07',
-    657000,
+    6570000.0,
     16,
     'Pago',
-    c.id,
+    1,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -444,22 +348,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-01',
-    1970000,
+    19700000.0,
     1,
     'Pago',
-    c.id,
+    2,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -471,22 +369,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-30',
-    1970000,
+    19700000.0,
     2,
     'Pago',
-    c.id,
+    2,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -498,22 +390,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-08',
-    1970000,
+    19700000.0,
     3,
     'Pago',
-    c.id,
+    2,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -525,22 +411,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-30',
-    1970000,
+    19700000.0,
     4,
     'Pago',
-    c.id,
+    2,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -552,22 +432,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-30',
-    1970000,
+    19700000.0,
     5,
     'Pago',
-    c.id,
+    2,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -579,22 +453,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-05',
-    1970000,
+    19700000.0,
     6,
     'Pago',
-    c.id,
+    2,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -606,22 +474,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-06',
-    1970000,
+    19700000.0,
     7,
     'Pago',
-    c.id,
+    2,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -633,22 +495,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-20',
-    1175166,
+    11751660.0,
     1,
     'Pago',
-    c.id,
+    3,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -660,22 +516,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-27',
-    1110000,
+    11100000.0,
     2,
     'Pago',
-    c.id,
+    3,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -687,22 +537,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-27',
-    1110000,
+    11100000.0,
     3,
     'Pago',
-    c.id,
+    3,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -714,22 +558,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-25',
-    1110000,
+    11100000.0,
     4,
     'Pago',
-    c.id,
+    3,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -741,22 +579,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-28',
-    1110000,
+    11100000.0,
     5,
     'Pago',
-    c.id,
+    3,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -768,22 +600,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-24',
-    1110000,
+    11100000.0,
     6,
     'Pago',
-    c.id,
+    3,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -795,22 +621,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-28',
-    1110000,
+    11100000.0,
     7,
     'Pago',
-    c.id,
+    3,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -822,22 +642,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-26',
-    1110000,
+    11100000.0,
     8,
     'Pago',
-    c.id,
+    3,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -849,22 +663,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-28',
-    1110000,
+    11100000.0,
     9,
     'Pago',
-    c.id,
+    3,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -876,22 +684,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-27',
-    1110000,
+    11100000.0,
     10,
     'Pago',
-    c.id,
+    3,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -903,22 +705,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-27',
-    1110000,
+    11100000.0,
     11,
     'Pago',
-    c.id,
+    3,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -930,22 +726,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-26',
-    1110000,
+    11100000.0,
     12,
     'Pago',
-    c.id,
+    3,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -957,22 +747,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-22',
-    1110000,
+    11100000.0,
     13,
     'Pago',
-    c.id,
+    3,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -984,22 +768,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-24',
-    1121000,
+    11210000.0,
     14,
     'Pago',
-    c.id,
+    3,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1011,22 +789,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-29',
-    1121000,
+    11210000.0,
     15,
     'Pago',
-    c.id,
+    3,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1038,22 +810,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-21',
-    288000,
+    2880000.0,
     1,
     'Pago',
-    c.id,
+    4,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1065,22 +831,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-10',
-    288000,
+    2880000.0,
     2,
     'Pago',
-    c.id,
+    4,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1092,22 +852,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-07',
-    288000,
+    2880000.0,
     3,
     'Pago',
-    c.id,
+    4,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1119,22 +873,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-20',
-    1867000,
+    18670000.0,
     1,
     'Pago',
-    c.id,
+    5,
     'cuota',
-    0,
-    12607
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    126070.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1146,22 +894,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-29',
-    4014000,
+    40140000.0,
     1,
     'Pago',
-    c.id,
+    6,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1173,22 +915,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2020-09-29',
-    7318000,
+    73180000.0,
     1,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1200,22 +936,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2020-10-30',
-    2318000,
+    23180000.0,
     2,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1227,22 +957,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2020-12-04',
-    2168000,
+    21680000.0,
     3,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1254,22 +978,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-01-04',
-    2168000,
+    21680000.0,
     4,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1281,22 +999,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-02-09',
-    2168000,
+    21680000.0,
     5,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1308,22 +1020,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-03-09',
-    2168000,
+    21680000.0,
     6,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1335,22 +1041,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-04-07',
-    2168000,
+    21680000.0,
     7,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1362,22 +1062,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-06-09',
-    2168000,
+    21680000.0,
     8,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1389,22 +1083,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-06-30',
-    2168000,
+    21680000.0,
     9,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1416,22 +1104,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-07-21',
-    2168000,
+    21680000.0,
     10,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1443,22 +1125,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-08-24',
-    2168000,
+    21680000.0,
     11,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1470,22 +1146,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-09-22',
-    2168000,
+    21680000.0,
     12,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1497,22 +1167,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-10-15',
-    2168000,
+    21680000.0,
     13,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1524,22 +1188,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-11-17',
-    2168000,
+    21680000.0,
     14,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1551,22 +1209,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-12-21',
-    2168000,
+    21680000.0,
     15,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1578,22 +1230,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-01-24',
-    2168000,
+    21680000.0,
     16,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1605,22 +1251,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-02-28',
-    2168000,
+    21680000.0,
     17,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1632,22 +1272,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-03-15',
-    2168000,
+    21680000.0,
     18,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1659,22 +1293,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-04-13',
-    2168000,
+    21680000.0,
     19,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1686,22 +1314,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-05-31',
-    2168000,
+    21680000.0,
     20,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1713,22 +1335,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-07-12',
-    2168000,
+    21680000.0,
     21,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1740,22 +1356,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-07-12',
-    2168000,
+    21680000.0,
     22,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1767,22 +1377,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-08-16',
-    2168000,
+    21680000.0,
     23,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1794,22 +1398,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-09-19',
-    2168000,
+    21680000.0,
     24,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1821,22 +1419,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-10-18',
-    2168000,
+    21680000.0,
     25,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1848,22 +1440,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-11-25',
-    2168000,
+    21680000.0,
     26,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1875,22 +1461,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-12-21',
-    2168000,
+    21680000.0,
     27,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1902,22 +1482,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-01-16',
-    2168000,
+    21680000.0,
     28,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1929,22 +1503,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-02-13',
-    2168000,
+    21680000.0,
     29,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1956,22 +1524,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-02-28',
-    2168000,
+    21680000.0,
     30,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -1983,22 +1545,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-04-04',
-    2168000,
+    21680000.0,
     31,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2010,22 +1566,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-05-10',
-    2168000,
+    21680000.0,
     32,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2037,22 +1587,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-06-16',
-    2168000,
+    21680000.0,
     33,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2064,22 +1608,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-07-11',
-    2185199,
+    21851990.0,
     34,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    17199
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    171990.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2091,22 +1629,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-08-10',
-    2185199,
+    21851990.0,
     35,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    17199
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    171990.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2118,22 +1650,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-09-07',
-    2190114,
+    21901140.0,
     36,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    22114
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    221140.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2145,22 +1671,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-10-06',
-    2182742,
+    21827420.0,
     37,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    14742
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    147420.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2172,22 +1692,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-09',
-    2197000,
+    21970000.0,
     38,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    29000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    290000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2199,22 +1713,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-12-12',
-    2168000,
+    21680000.0,
     39,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
+    0.0,
     0.00
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2226,22 +1734,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-01-11',
-    2202399,
+    22023990.0,
     40,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    34399
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    343990.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2253,22 +1755,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-02-12',
-    2204856,
+    22048560.0,
     41,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    36856
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    368560.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2280,22 +1776,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-03-12',
-    2199942,
+    21999420.0,
     42,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    31942
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    319420.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2307,22 +1797,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-12',
-    2187657,
+    21876570.0,
     43,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    19657
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    196570.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2334,22 +1818,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-05-16',
-    2190114,
+    21901140.0,
     44,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    22114
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    221140.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2361,22 +1839,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-06-11',
-    2187657,
+    21876570.0,
     45,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    19657
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    196570.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2388,22 +1860,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-07-11',
-    2199942,
+    21999420.0,
     46,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    31942
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    319420.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2415,22 +1881,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-08-28',
-    2197485,
+    21974850.0,
     47,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    29485
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    294850.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2442,22 +1902,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-25',
-    2236798,
+    22367980.0,
     48,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    68798
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    687980.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2469,22 +1923,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-23',
-    2271427,
+    22714270.0,
     49,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    103427
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1034270.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2496,22 +1944,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-19',
-    2222055,
+    22220550.0,
     50,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    54055
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    540550.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2523,22 +1965,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-10',
-    2222055,
+    22220550.0,
     51,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    54055
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    540550.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2550,22 +1986,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-18',
-    2295767,
+    22957670.0,
     52,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    127767
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1277670.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2577,22 +2007,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-13',
-    2276111,
+    22761110.0,
     53,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    108111
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1081110.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2604,22 +2028,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-23',
-    2300682,
+    23006820.0,
     54,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    132682
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1326820.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2631,22 +2049,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-29',
-    2246626,
+    22466260.0,
     55,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    78626
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    786260.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2658,22 +2070,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-31',
-    2249083,
+    22490830.0,
     56,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    81083
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    810830.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2685,22 +2091,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-01',
-    2249083,
+    22490830.0,
     57,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    81083
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    810830.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2712,22 +2112,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-01',
-    2251540,
+    22515400.0,
     58,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    83540
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    835400.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2739,22 +2133,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-08',
-    2271197,
+    22711970.0,
     59,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    103197
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1031970.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2766,22 +2154,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-22',
-    646842,
+    6468420.0,
     60,
     'Pago',
-    c.id,
+    7,
     'cuota',
-    0,
-    135139
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1351390.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2793,22 +2175,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-06',
-    11901000,
+    119010000.0,
     1,
     'Pago',
-    c.id,
+    8,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2820,22 +2196,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-10',
-    1901000,
+    19010000.0,
     2,
     'Pago',
-    c.id,
+    8,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2847,22 +2217,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-09',
-    1901000,
+    19010000.0,
     3,
     'Pago',
-    c.id,
+    8,
     'cuota',
-    0,
-    5000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    50000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2874,22 +2238,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-22',
-    1901000,
+    19010000.0,
     4,
     'Pago',
-    c.id,
+    8,
     'cuota',
-    0,
-    32317
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    323170.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2901,22 +2259,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-04',
-    1901000,
+    19010000.0,
     5,
     'Pago',
-    c.id,
+    8,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2928,22 +2280,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-10',
-    1901000,
+    19010000.0,
     6,
     'Pago',
-    c.id,
+    8,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2955,22 +2301,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-12',
-    1901000,
+    19010000.0,
     7,
     'Pago',
-    c.id,
+    8,
     'cuota',
-    0,
-    11000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    110000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -2982,22 +2322,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-07',
-    1901000,
+    19010000.0,
     8,
     'Pago',
-    c.id,
+    8,
     'cuota',
-    0,
-    64634
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    646340.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3009,22 +2343,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-07',
-    1901000,
+    19010000.0,
     9,
     'Pago',
-    c.id,
+    8,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3036,22 +2364,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-03',
-    1901000,
+    19010000.0,
     10,
     'Pago',
-    c.id,
+    8,
     'cuota',
-    0,
-    58960
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    589600.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3063,22 +2385,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-16',
-    1901000,
+    19010000.0,
     11,
     'Pago',
-    c.id,
+    8,
     'cuota',
-    0,
-    84024
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    840240.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3090,22 +2406,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-20',
-    1901000,
+    19010000.0,
     12,
     'Pago',
-    c.id,
+    8,
     'cuota',
-    0,
-    94960
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    949600.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3117,22 +2427,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-08-17',
-    2282000,
+    22820000.0,
     1,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3144,22 +2448,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-09-16',
-    2282000,
+    22820000.0,
     2,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3171,22 +2469,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-10-20',
-    2282000,
+    22820000.0,
     3,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3198,22 +2490,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-20',
-    2282000,
+    22820000.0,
     4,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3225,22 +2511,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-12-30',
-    2282000,
+    22820000.0,
     5,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3252,22 +2532,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-01-19',
-    2282000,
+    22820000.0,
     6,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3279,22 +2553,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-02-15',
-    2282000,
+    22820000.0,
     7,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3306,22 +2574,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-03-19',
-    2282000,
+    22820000.0,
     8,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3333,22 +2595,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-05-06',
-    2282000,
+    22820000.0,
     9,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3360,22 +2616,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-06-06',
-    2282000,
+    22820000.0,
     10,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3387,22 +2637,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-07-16',
-    2282000,
+    22820000.0,
     11,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3414,22 +2658,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-08-01',
-    2282000,
+    22820000.0,
     12,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3441,22 +2679,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-08-16',
-    2282000,
+    22820000.0,
     13,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3468,22 +2700,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-13',
-    2282000,
+    22820000.0,
     14,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3495,22 +2721,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-01',
-    2282000,
+    22820000.0,
     15,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3522,22 +2742,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-04',
-    2282000,
+    22820000.0,
     16,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3549,22 +2763,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-09',
-    2282000,
+    22820000.0,
     17,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3576,22 +2784,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-07',
-    2303000,
+    23030000.0,
     18,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3603,22 +2805,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-22',
-    2303000,
+    23030000.0,
     19,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3630,22 +2826,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-19',
-    2303000,
+    23030000.0,
     20,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3657,22 +2847,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-12',
-    2346000,
+    23460000.0,
     21,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3684,22 +2868,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-03',
-    2346000,
+    23460000.0,
     22,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3711,22 +2889,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-07',
-    2346000,
+    23460000.0,
     23,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3738,22 +2910,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-21',
-    2346000,
+    23460000.0,
     24,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3765,22 +2931,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-03',
-    2346000,
+    23460000.0,
     25,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3792,22 +2952,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-28',
-    2346000,
+    23460000.0,
     26,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3819,22 +2973,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-19',
-    2346000,
+    23460000.0,
     27,
     'Pago',
-    c.id,
+    9,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3846,22 +2994,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-09-09',
-    1567000,
+    15670000.0,
     1,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3873,22 +3015,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-10-10',
-    1427000,
+    14270000.0,
     2,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3900,22 +3036,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-11-12',
-    1427000,
+    14270000.0,
     3,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3927,22 +3057,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-12-20',
-    1442075.7385144731961190700531005859375,
+    1.4420757385144732e+16,
     4,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    15000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    150000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3954,22 +3078,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-01-18',
-    1444000,
+    14440000.0,
     5,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    16924.261485526687465608119964599609375
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1.6924261485526688e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -3981,22 +3099,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-03-13',
-    1470741.7385144731961190700531005859375,
+    1.4707417385144732e+16,
     6,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    43666
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    436660.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4008,22 +3120,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-03-31',
-    1465889.73851447296328842639923095703125,
+    1465889738514473.0,
     7,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    38814
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    388140.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4035,22 +3141,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-05-23',
-    1503087.80358316935598850250244140625,
+    1.5030878035831694e+16,
     8,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    76012
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    760120.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4062,22 +3162,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-06-30',
-    1944821.7385144731961190700531005859375,
+    1.9448217385144732e+16,
     9,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    193505
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1935050.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4089,22 +3183,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-09',
-    1811393.7385144731961190700531005859375,
+    1.8113937385144732e+16,
     10,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    270000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2700000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4116,22 +3204,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-09',
-    1759393.7385144731961190700531005859375,
+    1.7593937385144732e+16,
     11,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    218000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2180000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4143,22 +3225,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-09',
-    1825394,
+    18253940.0,
     12,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    284000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2840000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4170,22 +3246,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-01-11',
-    1761591.272102995775640010833740234375,
+    1.7615912721029958e+16,
     13,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    220198
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2201980.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4197,22 +3267,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-03-18',
-    1896252,
+    18962520.0,
     14,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    354859
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    3548590.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4224,22 +3288,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-25',
-    1838485.7385144731961190700531005859375,
+    1.8384857385144732e+16,
     15,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    297092
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2970920.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4251,22 +3309,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-25',
-    1786057.7385144731961190700531005859375,
+    1.7860577385144732e+16,
     16,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    244664.00000000002910383045673370361328125
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2.4466400000000004e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4278,22 +3330,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-25',
-    2019265,
+    20192650.0,
     17,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    477871
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    4778710.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4305,22 +3351,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-30',
-    1957323,
+    19573230.0,
     18,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    415929
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    4159290.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4332,22 +3372,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-06',
-    1967807,
+    19678070.0,
     19,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    426414
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    4264140.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4359,22 +3393,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-12',
-    2071545,
+    20715450.0,
     20,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    530152
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    5301520.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4386,22 +3414,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-21',
-    2269538,
+    22695380.0,
     21,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    700576
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    7005760.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4413,22 +3435,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-13',
-    2173551,
+    21735510.0,
     22,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    604588
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    6045880.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4440,22 +3456,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-13',
-    2120204,
+    21202040.0,
     23,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    551242
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    5512420.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4467,22 +3477,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-20',
-    2132650.433231779374182224273681640625,
+    2.132650433231779e+16,
     24,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    563689
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    5636890.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4494,22 +3498,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-25',
-    2086418,
+    20864180.0,
     25,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    517456
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    5174560.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4521,22 +3519,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-21',
-    2093530.7385144731961190700531005859375,
+    2.0935307385144732e+16,
     26,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    524569
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    5245690.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4548,22 +3540,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-08',
-    2111312,
+    21113120.0,
     27,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    542351
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    5423510.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4575,22 +3561,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-16',
-    2125539,
+    21255390.0,
     28,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    556577
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    5565770.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4602,22 +3582,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-29',
-    2065758.0533871664665639400482177734375,
+    2.0657580533871664e+16,
     29,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    496796
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    4967960.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4629,22 +3603,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-13',
-    2118426,
+    21184260.0,
     30,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    549464
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    5494640.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4656,22 +3624,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-29',
-    883795,
+    8837950.0,
     31,
     'Pago',
-    c.id,
+    10,
     'cuota',
-    0,
-    585027.80000000004656612873077392578125
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    5850278.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4683,22 +3645,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-04-04',
-    1387000,
+    13870000.0,
     1,
     'Pago',
-    c.id,
+    11,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4710,22 +3666,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-05-03',
-    1387000,
+    13870000.0,
     2,
     'Pago',
-    c.id,
+    11,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4737,22 +3687,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-06-04',
-    1387000,
+    13870000.0,
     3,
     'Pago',
-    c.id,
+    11,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4764,22 +3708,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-07-18',
-    1387000,
+    13870000.0,
     4,
     'Pago',
-    c.id,
+    11,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4791,22 +3729,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-10-08',
-    1464029.52237708237953484058380126953125,
+    1.4640295223770824e+16,
     5,
     'Pago',
-    c.id,
+    11,
     'cuota',
-    0,
-    77441
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    774410.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4818,22 +3750,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-10-08',
-    1309970.477622917853295803070068359375,
+    1.309970477622918e+16,
     6,
     'Pago',
-    c.id,
+    11,
     'cuota',
-    0,
-    41610
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    416100.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4845,22 +3771,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-04-13',
-    1852000,
+    18520000.0,
     1,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
+    0.0,
     0.00
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4872,22 +3792,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-05-14',
-    1852000,
+    18520000.0,
     2,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
+    0.0,
     0.00
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4899,22 +3813,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-07-02',
-    1852000,
+    18520000.0,
     3,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
+    0.0,
     0.00
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4926,22 +3834,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-07-13',
-    1852000,
+    18520000.0,
     4,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
+    0.0,
     0.00
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4953,22 +3855,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-08-31',
-    1852000,
+    18520000.0,
     5,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
+    0.0,
     0.00
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -4980,22 +3876,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-09-19',
-    1852000,
+    18520000.0,
     6,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
+    0.0,
     0.00
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5007,22 +3897,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-10-31',
-    1852000,
+    18520000.0,
     7,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
+    0.0,
     0.00
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5034,22 +3918,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-11-25',
-    1852000,
+    18520000.0,
     8,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
+    0.0,
     0.00
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5061,22 +3939,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-12-21',
-    1852000,
+    18520000.0,
     9,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
+    0.0,
     0.00
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5088,22 +3960,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-02-08',
-    1881362.25924827717244625091552734375,
+    1.8813622592482772e+16,
     10,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
+    0.0,
     0.00
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5115,22 +3981,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-02-27',
-    1887659.25924827693961560726165771484375,
+    1887659259248277.0,
     11,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    29385
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    293850.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5142,22 +4002,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-03-30',
-    1912846.169514781795442104339599609375,
+    1.9128461695147816e+16,
     12,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    35682
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    356820.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5169,22 +4023,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-05-10',
-    1891857.25924827693961560726165771484375,
+    1891857259248277.0,
     13,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    60869
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    608690.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5196,22 +4044,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-05-31',
-    1896055.229389228858053684234619140625,
+    1.896055229389229e+16,
     14,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    39880
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    398800.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5223,22 +4065,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-07-11',
-    1910747.33930424065329134464263916015625,
+    1.910747339304241e+16,
     15,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    44078
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    440780.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5250,22 +4086,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-08-10',
-    1906549.25924827717244625091552734375,
+    1.9065492592482772e+16,
     16,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    58770
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    587700.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5277,22 +4107,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-09-11',
-    1942440,
+    19424400.0,
     17,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    54572
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    545720.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5304,22 +4128,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-10-18',
-    1954736.0304350215010344982147216796875,
+    1.9547360304350216e+16,
     18,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    90463
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    904630.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5331,22 +4149,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-20',
-    1980507.11109265522100031375885009765625,
+    1.980507111092655e+16,
     19,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    102759
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1027590.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5358,22 +4170,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-12-14',
-    2001001,
+    20010010.0,
     20,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    128530
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1285300.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5385,22 +4191,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-01-18',
-    1966934,
+    19669340.0,
     21,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    149024
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1490240.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5412,22 +4212,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-02-22',
-    1923341,
+    19233410.0,
     22,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    114957
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1149570.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5439,22 +4233,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-03-18',
-    1966934,
+    19669340.0,
     23,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    71364
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    713640.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5466,22 +4254,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-18',
-    1966934,
+    19669340.0,
     24,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    114957
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1149570.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5493,22 +4275,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-05-20',
-    2006935,
+    20069350.0,
     25,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    114957
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1149570.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5520,22 +4296,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-06-22',
-    2009397,
+    20093970.0,
     26,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    154957
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1549570.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5547,22 +4317,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-08-16',
-    1986310,
+    19863100.0,
     27,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    157420
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1574200.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5574,22 +4338,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-15',
-    1993341,
+    19933410.0,
     28,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    134332
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1343320.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5601,22 +4359,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-23',
-    1986257,
+    19862570.0,
     29,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    141364
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1413640.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5628,22 +4380,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-19',
-    1977913,
+    19779130.0,
     30,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    134280
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1342800.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5655,22 +4401,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-12',
-    1994704,
+    19947040.0,
     31,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    125936
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1259360.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5682,22 +4422,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-20',
-    1992605.8316301405429840087890625,
+    1.9926058316301404e+16,
     32,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    142727
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1427270.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5709,22 +4443,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-18',
-    1969518,
+    19695180.0,
     33,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    140629
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1406290.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5736,22 +4464,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-10',
-    1950440,
+    19504400.0,
     34,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    117540
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1175400.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5763,22 +4485,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-19',
-    1933836,
+    19338360.0,
     35,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    98463
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    984630.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5790,22 +4506,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-21',
-    1931736,
+    19317360.0,
     36,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    81858
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    818580.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5817,22 +4527,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-21',
-    1931736,
+    19317360.0,
     37,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    79759
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    797590.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5844,22 +4548,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-20',
-    1884738,
+    18847380.0,
     38,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    79759
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    797590.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5871,22 +4569,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-14',
-    1917044,
+    19170440.0,
     39,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    65067
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    650670.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5898,22 +4590,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-13',
-    1914945.75625375541858375072479248046875,
+    1.914945756253755e+16,
     40,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    65067
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    650670.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5925,22 +4611,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-12',
-    1921242,
+    19212420.0,
     41,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    62968
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    629680.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5952,22 +4632,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-16',
-    1912847,
+    19128470.0,
     42,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    69265
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    692650.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -5979,22 +4653,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-11',
-    1912847,
+    19128470.0,
     43,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    60869
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    608690.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6006,22 +4674,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-12',
-    543086,
+    5430860.0,
     44,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    60869
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    608690.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6033,22 +4695,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-07',
-    1852000,
+    18520000.0,
     45,
     'Pago',
-    c.id,
+    12,
     'cuota',
-    0,
-    52109
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    521090.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6060,22 +4716,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-21',
-    1559990,
+    15599900.0,
     1,
     'Pago',
-    c.id,
+    13,
     'cuota',
-    0,
-    17990
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    179900.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6087,22 +4737,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-20',
-    1401347,
+    14013470.0,
     2,
     'Pago',
-    c.id,
+    13,
     'cuota',
-    0,
-    20347
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    203470.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6114,22 +4758,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-23',
-    1406042,
+    14060420.0,
     3,
     'Pago',
-    c.id,
+    13,
     'cuota',
-    0,
-    25042
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    250420.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6141,22 +4779,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-05',
-    1424900,
+    14249000.0,
     4,
     'Pago',
-    c.id,
+    13,
     'cuota',
-    0,
-    43900
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    439000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6168,22 +4800,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-02',
-    1466307,
+    14663070.0,
     5,
     'Pago',
-    c.id,
+    13,
     'cuota',
-    0,
-    85307
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    853070.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6195,22 +4821,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-02',
-    1421693,
+    14216930.0,
     6,
     'Pago',
-    c.id,
+    13,
     'cuota',
-    0,
-    40693
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    406930.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6222,22 +4842,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-02',
-    1381000,
+    13810000.0,
     7,
     'Pago',
-    c.id,
+    13,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6249,22 +4863,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-08',
-    1381000,
+    13810000.0,
     8,
     'Pago',
-    c.id,
+    13,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6276,22 +4884,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-11',
-    1387261,
+    13872610.0,
     9,
     'Pago',
-    c.id,
+    13,
     'cuota',
-    0,
-    6261
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    62610.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6303,22 +4905,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-01',
-    1448647,
+    14486470.0,
     10,
     'Pago',
-    c.id,
+    13,
     'cuota',
-    0,
-    67647
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    676470.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6330,22 +4926,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-07',
-    1450000,
+    14500000.0,
     11,
     'Pago',
-    c.id,
+    13,
     'cuota',
-    0,
-    70317
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    703170.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6357,22 +4947,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-13',
-    1486001,
+    14860010.0,
     12,
     'Pago',
-    c.id,
+    13,
     'cuota',
-    0,
-    106317
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1063170.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6384,22 +4968,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-26',
-    1507000,
+    15070000.0,
     13,
     'Pago',
-    c.id,
+    13,
     'cuota',
-    0,
-    126000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1260000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6411,22 +4989,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-26',
-    1507000,
+    15070000.0,
     14,
     'Pago',
-    c.id,
+    13,
     'cuota',
-    0,
-    126000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1260000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6438,22 +5010,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-07',
-    898000,
+    8980000.0,
     1,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6465,22 +5031,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-12-12',
-    811000,
+    8110000.0,
     2,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6492,22 +5052,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-01-11',
-    811000,
+    8110000.0,
     3,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6519,22 +5073,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-02-12',
-    811000,
+    8110000.0,
     4,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6546,22 +5094,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-03-12',
-    811000,
+    8110000.0,
     5,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6573,22 +5115,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-13',
-    811000,
+    8110000.0,
     6,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6600,22 +5136,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-05-14',
-    811000,
+    8110000.0,
     7,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6627,22 +5157,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-06-11',
-    811000,
+    8110000.0,
     8,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6654,22 +5178,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-07-11',
-    811000,
+    8110000.0,
     9,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6681,22 +5199,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-08-16',
-    811000,
+    8110000.0,
     10,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6708,22 +5220,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-05',
-    811000,
+    8110000.0,
     11,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6735,22 +5241,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-10',
-    811000,
+    8110000.0,
     12,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6762,22 +5262,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-07',
-    811000,
+    8110000.0,
     13,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6789,22 +5283,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-10',
-    811000,
+    8110000.0,
     14,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6816,22 +5304,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-10',
-    811000,
+    8110000.0,
     15,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6843,22 +5325,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-10',
-    811000,
+    8110000.0,
     16,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6870,22 +5346,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-10',
-    811000,
+    8110000.0,
     17,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6897,22 +5367,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-09',
-    811000,
+    8110000.0,
     18,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6924,22 +5388,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-13',
-    811000,
+    8110000.0,
     19,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6951,22 +5409,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-10',
-    811000,
+    8110000.0,
     20,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -6978,22 +5430,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-08',
-    811000,
+    8110000.0,
     21,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7005,22 +5451,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-13',
-    811000,
+    8110000.0,
     22,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7032,22 +5472,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-08',
-    811000,
+    8110000.0,
     23,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7059,22 +5493,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-16',
-    811000,
+    8110000.0,
     24,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7086,22 +5514,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-11',
-    811000,
+    8110000.0,
     25,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7113,22 +5535,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-12',
-    811000,
+    8110000.0,
     26,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7140,22 +5556,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-07',
-    811000,
+    8110000.0,
     27,
     'Pago',
-    c.id,
+    14,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7167,22 +5577,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-07-27',
-    1362000,
+    13620000.0,
     1,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7194,22 +5598,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-08-31',
-    1362000,
+    13620000.0,
     2,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7221,22 +5619,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-09-30',
-    1362000,
+    13620000.0,
     3,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7248,22 +5640,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-07',
-    1362000,
+    13620000.0,
     4,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7275,22 +5661,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-30',
-    1362000,
+    13620000.0,
     5,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7302,22 +5682,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-12-29',
-    1362000,
+    13620000.0,
     6,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7329,22 +5703,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-01-31',
-    1362000,
+    13620000.0,
     7,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7356,22 +5724,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-02-29',
-    1362000,
+    13620000.0,
     8,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7383,22 +5745,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-03-30',
-    1362000,
+    13620000.0,
     9,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7410,22 +5766,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-05-07',
-    1362000,
+    13620000.0,
     10,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7437,22 +5787,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-05-31',
-    1362000,
+    13620000.0,
     11,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7464,22 +5808,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-06-29',
-    1362000,
+    13620000.0,
     12,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7491,22 +5829,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-07-31',
-    1362000,
+    13620000.0,
     13,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7518,22 +5850,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-08-31',
-    1362000,
+    13620000.0,
     14,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7545,22 +5871,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-01',
-    1362000,
+    13620000.0,
     15,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7572,22 +5892,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-31',
-    1362000,
+    13620000.0,
     16,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7599,22 +5913,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-28',
-    1362000,
+    13620000.0,
     17,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7626,22 +5934,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-30',
-    1362000,
+    13620000.0,
     18,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7653,22 +5955,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-03',
-    1362000,
+    13620000.0,
     19,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7680,22 +5976,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-06',
-    1362000,
+    13620000.0,
     20,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7707,22 +5997,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-04',
-    1362000,
+    13620000.0,
     21,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7734,22 +6018,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-03',
-    1362000,
+    13620000.0,
     22,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7761,22 +6039,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-31',
-    1362000,
+    13620000.0,
     23,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7788,22 +6060,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-28',
-    1362000,
+    13620000.0,
     24,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7815,22 +6081,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-29',
-    1362000,
+    13620000.0,
     25,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7842,22 +6102,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-28',
-    1362000,
+    13620000.0,
     26,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7869,22 +6123,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-30',
-    1362000,
+    13620000.0,
     27,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7896,22 +6144,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-30',
-    1362000,
+    13620000.0,
     28,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7923,22 +6165,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-29',
-    1362000,
+    13620000.0,
     29,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7950,22 +6186,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-31',
-    1362000,
+    13620000.0,
     30,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -7977,22 +6207,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-29',
-    1259766,
+    12597660.0,
     31,
     'Pago',
-    c.id,
+    15,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8004,22 +6228,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-01-11',
-    2258300,
+    22583000.0,
     1,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8031,22 +6249,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-02-12',
-    2049000,
+    20490000.0,
     2,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8058,22 +6270,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-03-12',
-    2049000,
+    20490000.0,
     3,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8085,22 +6291,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-13',
-    2049000,
+    20490000.0,
     4,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8112,22 +6312,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-05-14',
-    2049000,
+    20490000.0,
     5,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8139,22 +6333,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-06-11',
-    2049000,
+    20490000.0,
     6,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8166,22 +6354,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-07-11',
-    2049000,
+    20490000.0,
     7,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8193,22 +6375,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-08-16',
-    2049000,
+    20490000.0,
     8,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8220,22 +6396,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-05',
-    2049000,
+    20490000.0,
     9,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8247,22 +6417,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-10',
-    2049000,
+    20490000.0,
     10,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8274,22 +6438,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-07',
-    2049000,
+    20490000.0,
     11,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8301,22 +6459,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-10',
-    2049000,
+    20490000.0,
     12,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8328,22 +6480,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-10',
-    2049000,
+    20490000.0,
     13,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8355,22 +6501,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-10',
-    2094000,
+    20940000.0,
     14,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8382,22 +6522,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-10',
-    2094000,
+    20940000.0,
     15,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8409,22 +6543,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-09',
-    2094000,
+    20940000.0,
     16,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8436,22 +6564,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-13',
-    2094000,
+    20940000.0,
     17,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8463,22 +6585,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-10',
-    2094000,
+    20940000.0,
     18,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8490,22 +6606,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-08',
-    2094000,
+    20940000.0,
     19,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8517,22 +6627,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-13',
-    2094000,
+    20940000.0,
     20,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8544,22 +6648,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-08',
-    2094000,
+    20940000.0,
     21,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8571,22 +6669,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-16',
-    2094000,
+    20940000.0,
     22,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8598,22 +6690,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-11',
-    2094000,
+    20940000.0,
     23,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8625,22 +6711,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-13',
-    2094000,
+    20940000.0,
     24,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8652,22 +6732,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-07',
-    2176988,
+    21769880.0,
     25,
     'Pago',
-    c.id,
+    16,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8679,22 +6753,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-08-26',
-    3132666,
+    31326660.0,
     1,
     'Pago',
-    c.id,
+    17,
     'cuota',
-    0,
-    12999
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    129990.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8706,22 +6774,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-10',
-    3068752,
+    30687520.0,
     2,
     'Pago',
-    c.id,
+    17,
     'cuota',
-    0,
-    64708
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    647080.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8733,22 +6795,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-31',
-    3041505.7863807738758623600006103515625,
+    3041505786380774.0,
     3,
     'Pago',
-    c.id,
+    17,
     'cuota',
-    0,
-    37462
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    374620.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8760,22 +6816,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-18',
-    3077075.39592415280640125274658203125,
+    3077075395924153.0,
     4,
     'Pago',
-    c.id,
+    17,
     'cuota',
-    0,
-    73032
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    730320.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8787,22 +6837,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-24',
-    3119837,
+    31198370.0,
     5,
     'Pago',
-    c.id,
+    17,
     'cuota',
-    0,
-    115793
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1157930.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8814,22 +6858,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-18',
-    3194761,
+    31947610.0,
     6,
     'Pago',
-    c.id,
+    17,
     'cuota',
-    0,
-    190717
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1907170.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8841,22 +6879,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-18',
-    3155595.747112971730530261993408203125,
+    3.1555957471129716e+16,
     7,
     'Pago',
-    c.id,
+    17,
     'cuota',
-    0,
-    151552
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1515520.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8868,22 +6900,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-21',
-    3211789.893190386705100536346435546875,
+    3.2117898931903868e+16,
     8,
     'Pago',
-    c.id,
+    17,
     'cuota',
-    0,
-    207746
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2077460.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8895,22 +6921,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-21',
-    3107170,
+    31071700.0,
     9,
     'Pago',
-    c.id,
+    17,
     'cuota',
-    0,
-    102170
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1021700.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8922,22 +6942,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-27',
-    3134415,
+    31344150.0,
     10,
     'Pago',
-    c.id,
+    17,
     'cuota',
-    0,
-    129415
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1294150.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8949,22 +6963,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-27',
-    3027883.3230826817452907562255859375,
+    3.0278833230826816e+16,
     11,
     'Pago',
-    c.id,
+    17,
     'cuota',
-    0,
-    23840
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    238400.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -8976,22 +6984,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-31',
-    3102072.779513583518564701080322265625,
+    3.1020727795135836e+16,
     12,
     'Pago',
-    c.id,
+    17,
     'cuota',
-    0,
-    98029
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    980290.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9003,22 +7005,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-30',
-    3140271.264186996035277843475341796875,
+    3140271264186996.0,
     13,
     'Pago',
-    c.id,
+    17,
     'cuota',
-    0,
-    136227
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1362270.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9030,22 +7026,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-22',
-    3109619.692130929790437221527099609375,
+    310961969213093.0,
     14,
     'Pago',
-    c.id,
+    17,
     'cuota',
-    0,
-    105576
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1055760.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9057,22 +7047,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-13',
-    3184544,
+    31845440.0,
     15,
     'Pago',
-    c.id,
+    17,
     'cuota',
-    0,
-    180500
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1805000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9084,22 +7068,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-29',
-    2771077.3617375008761882781982421875,
+    2771077361737501.0,
     16,
     'Pago',
-    c.id,
+    17,
     'cuota',
-    0,
-    238396.6666666666860692203044891357421875
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2383966666666667.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9111,22 +7089,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-01',
-    1214000,
+    12140000.0,
     1,
     'Pago',
-    c.id,
+    18,
     'cuota',
-    0,
-    33433
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    334330.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9138,22 +7110,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-26',
-    1453000,
+    14530000.0,
     2,
     'Pago',
-    c.id,
+    18,
     'cuota',
-    0,
-    431959
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    4319590.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9165,22 +7131,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-29',
-    2006000,
+    20060000.0,
     1,
     'Pago',
-    c.id,
+    19,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9192,22 +7152,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-31',
-    2006000,
+    20060000.0,
     2,
     'Pago',
-    c.id,
+    19,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9219,22 +7173,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-29',
-    2006000,
+    20060000.0,
     3,
     'Pago',
-    c.id,
+    19,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9246,22 +7194,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-07',
-    1466000,
+    14660000.0,
     1,
     'Pago',
-    c.id,
+    20,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9273,22 +7215,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-05',
-    1400000,
+    14000000.0,
     2,
     'Pago',
-    c.id,
+    20,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9300,22 +7236,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-29',
-    1400000,
+    14000000.0,
     3,
     'Pago',
-    c.id,
+    20,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9327,22 +7257,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-07',
-    1795000,
+    17950000.0,
     1,
     'Pago',
-    c.id,
+    21,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9354,22 +7278,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-05-30',
-    1043786.1409588116221129894256591796875,
+    1.0437861409588116e+16,
     1,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    5000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    50000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9381,22 +7299,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-06-04',
-    1079786.14095881185494363307952880859375,
+    1.079786140958812e+16,
     2,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    41000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    410000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9408,22 +7320,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-08-19',
-    1038786.14095881185494363307952880859375,
+    1.038786140958812e+16,
     3,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9435,22 +7341,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-08-19',
-    1103213.85904118814505636692047119140625,
+    1.103213859041188e+16,
     4,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    64427.7180823762901127338409423828125
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    6442771808237629.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9462,22 +7362,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-11-25',
-    1096000,
+    10960000.0,
     5,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    57213.859041188028641045093536376953125
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    5721385904118803.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9489,22 +7383,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-07-18',
-    2116253.407625478692352771759033203125,
+    2.1162534076254788e+16,
     6,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    1077467.2666666670702397823333740234375
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1077467266666667.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9516,22 +7404,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-07-18',
-    1348477.40762547845952212810516357421875,
+    1.3484774076254784e+16,
     7,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    309691.2666666666627861559391021728515625
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    3.0969126666666664e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9543,22 +7425,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-07-18',
-    1369974.14095881185494363307952880859375,
+    1.369974140958812e+16,
     8,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    331188
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    3311880.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9570,22 +7446,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-09-20',
-    1352010.14095881185494363307952880859375,
+    1.352010140958812e+16,
     9,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    313224
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    3132240.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9597,22 +7467,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-09',
-    1370711.14095881185494363307952880859375,
+    1.370711140958812e+16,
     10,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    331925
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    3319250.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9624,22 +7488,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-09',
-    1337786.1409588116221129894256591796875,
+    1.3377861409588116e+16,
     11,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    299000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2990000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9651,22 +7509,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-09',
-    1304786.1409588116221129894256591796875,
+    1.3047861409588116e+16,
     12,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    266000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2660000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9678,22 +7530,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-29',
-    1291955.80762547836638987064361572265625,
+    1.2919558076254784e+16,
     13,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    253169.66666666665696538984775543212890625
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2.5316966666666664e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9705,22 +7551,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-29',
-    1256629.8076254785992205142974853515625,
+    1.2566298076254786e+16,
     14,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    217843.66666666665696538984775543212890625
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2.1784366666666664e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9732,22 +7572,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-29',
-    1220126.27429214515723288059234619140625,
+    1.2201262742921452e+16,
     15,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    181340.13333333333139307796955108642578125
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1.8134013333333332e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9759,22 +7593,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-29',
-    1184800.27429214515723288059234619140625,
+    1.1848002742921452e+16,
     16,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    146014.13333333333139307796955108642578125
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1.4601413333333332e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9786,22 +7614,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-29',
-    1327281.80762547836638987064361572265625,
+    1.3272818076254784e+16,
     17,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    288495.6666666666860692203044891357421875
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2884956666666667.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9813,22 +7635,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-29',
-    1290778.2742921449244022369384765625,
+    1290778274292145.0,
     18,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    251992.13333333333139307796955108642578125
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2.5199213333333332e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9840,22 +7656,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-29',
-    1255452.2742921453900635242462158203125,
+    1.2554522742921454e+16,
     19,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    216666.13333333333139307796955108642578125
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2.1666613333333332e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9867,22 +7677,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-29',
-    1218948.74095881171524524688720703125,
+    1.2189487409588116e+16,
     20,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    180162.60000000000582076609134674072265625
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1801626.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9894,22 +7698,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-29',
-    1183622.74095881171524524688720703125,
+    1.1836227409588116e+16,
     21,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    144836.60000000000582076609134674072265625
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1448366.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9921,22 +7719,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-29',
-    1147119.2076254785060882568359375,
+    1.1471192076254784e+16,
     22,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    108333.066666666665696538984775543212890625
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1.0833306666666668e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9948,22 +7740,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-29',
-    1110615.67429214529693126678466796875,
+    1.1106156742921452e+16,
     23,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    71829.533333333325572311878204345703125
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    7182953333333333.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -9975,22 +7761,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-29',
-    1076467.2076254785060882568359375,
+    1.0764672076254784e+16,
     24,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    37681.066666666665696538984775543212890625
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    3.7681066666666664e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10002,22 +7782,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-29',
-    1039963.67429214506410062313079833984375,
+    1.0399636742921452e+16,
     25,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    1177.53333333333330301684327423572540283203125
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1.1775333333333332e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10029,22 +7803,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-05-28',
-    1039000,
+    10390000.0,
     26,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10056,22 +7824,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-07-04',
-    1045851.468307591974735260009765625,
+    1045851468307592.0,
     27,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    7065
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    70650.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10083,22 +7845,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-27',
-    1110615.67429214506410062313079833984375,
+    1110615674292145.0,
     28,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    71829.533333333325572311878204345703125
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    7182953333333333.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10110,22 +7866,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-27',
-    1074112.14095881185494363307952880859375,
+    1.074112140958812e+16,
     29,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    35326
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    353260.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10137,22 +7887,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-27',
-    1038786.14095881185494363307952880859375,
+    1.038786140958812e+16,
     30,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10164,22 +7908,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-13',
-    1057123,
+    10571230.0,
     31,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    18841
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    188410.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10191,22 +7929,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-28',
-    1288881,
+    12888810.0,
     32,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    249881
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2498810.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10218,22 +7950,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-28',
-    1253311,
+    12533110.0,
     33,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    214311
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2143110.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10245,22 +7971,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-28',
-    1216808,
+    12168080.0,
     34,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    177808
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1778080.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10272,22 +7992,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-05',
-    1188332.8742921450175344944000244140625,
+    1188332874292145.0,
     35,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    149546.7333333333372138440608978271484375
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1.4954673333333334e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10299,22 +8013,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-05',
-    1155361.940958811901509761810302734375,
+    1155361940958812.0,
     36,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    116575.800000000002910383045673370361328125
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1165758.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10326,22 +8034,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-25',
-    1142409.0742921452037990093231201171875,
+    1.1424090742921452e+16,
     37,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    103622.933333333334303461015224456787109375
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1.0362293333333332e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10353,22 +8055,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-25',
-    1107083.0742921452037990093231201171875,
+    1.1070830742921452e+16,
     38,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    68296.933333333334303461015224456787109375
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    6829693333333333.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10380,22 +8076,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-25',
-    1070579.5409588119946420192718505859375,
+    1070579540958812.0,
     39,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    31793.39999999999781721271574497222900390625
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    3.17934e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10407,22 +8097,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-25',
-    1038786.1409588116221129894256591796875,
+    1.0387861409588116e+16,
     40,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10434,22 +8118,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-26',
-    1181200,
+    11812000.0,
     41,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    142200
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1422000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10461,22 +8139,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-26',
-    1385867,
+    13858670.0,
     42,
     'Pago',
-    c.id,
+    22,
     'cuota',
-    0,
-    346867
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    3468670.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10488,22 +8160,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-07',
-    2744000,
+    27440000.0,
     1,
     'Pago',
-    c.id,
+    23,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10515,22 +8181,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-07',
-    2541000,
+    25410000.0,
     2,
     'Pago',
-    c.id,
+    23,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10542,22 +8202,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-07',
-    2541000,
+    25410000.0,
     3,
     'Pago',
-    c.id,
+    23,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10569,22 +8223,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-14',
-    1329000,
+    13290000.0,
     1,
     'Pago',
-    c.id,
+    24,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10596,22 +8244,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-16',
-    1329000,
+    13290000.0,
     2,
     'Pago',
-    c.id,
+    24,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10623,22 +8265,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-17',
-    1329000,
+    13290000.0,
     3,
     'Pago',
-    c.id,
+    24,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10650,22 +8286,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-21',
-    1340000,
+    13400000.0,
     4,
     'Pago',
-    c.id,
+    24,
     'cuota',
-    0,
-    11484
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    114840.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10677,22 +8307,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-23',
-    1340000,
+    13400000.0,
     5,
     'Pago',
-    c.id,
+    24,
     'cuota',
-    0,
-    11484
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    114840.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10704,22 +8328,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-30',
-    1340000,
+    13400000.0,
     6,
     'Pago',
-    c.id,
+    24,
     'cuota',
-    0,
-    11485
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    114850.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10731,22 +8349,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-21',
-    1340000,
+    13400000.0,
     7,
     'Pago',
-    c.id,
+    24,
     'cuota',
-    0,
-    11515
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    115150.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10758,22 +8370,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-27',
-    1330000,
+    13300000.0,
     8,
     'Pago',
-    c.id,
+    24,
     'cuota',
-    0,
-    1484
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    14840.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10785,22 +8391,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-20',
-    1342000,
+    13420000.0,
     9,
     'Pago',
-    c.id,
+    24,
     'cuota',
-    0,
-    13484
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    134840.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10812,22 +8412,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-07-31',
-    2657000,
+    26570000.0,
     1,
     'Pago',
-    c.id,
+    25,
     'cuota',
-    0,
-    132577
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1325770.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10839,22 +8433,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-08-31',
-    2705000,
+    27050000.0,
     2,
     'Pago',
-    c.id,
+    25,
     'cuota',
-    0,
-    10273
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    102730.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10866,22 +8454,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-30',
-    2696000,
+    26960000.0,
     3,
     'Pago',
-    c.id,
+    25,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10893,22 +8475,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-31',
-    2696000,
+    26960000.0,
     4,
     'Pago',
-    c.id,
+    25,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10920,22 +8496,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-10',
-    2700000,
+    27000000.0,
     5,
     'Pago',
-    c.id,
+    25,
     'cuota',
-    0,
-    5273
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    52730.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10947,22 +8517,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-30',
-    2696000,
+    26960000.0,
     6,
     'Pago',
-    c.id,
+    25,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -10974,22 +8538,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-29',
-    2696000,
+    26960000.0,
     7,
     'Pago',
-    c.id,
+    25,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11001,22 +8559,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-10',
-    2696000,
+    26960000.0,
     8,
     'Pago',
-    c.id,
+    25,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11028,22 +8580,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-09',
-    2698000,
+    26980000.0,
     9,
     'Pago',
-    c.id,
+    25,
     'cuota',
-    0,
-    2819
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    28190.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11055,22 +8601,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-13',
-    2741000,
+    27410000.0,
     10,
     'Pago',
-    c.id,
+    25,
     'cuota',
-    0,
-    45832
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    458320.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11082,22 +8622,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-05',
-    2720000,
+    27200000.0,
     11,
     'Pago',
-    c.id,
+    25,
     'cuota',
-    0,
-    24444
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    244440.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11109,22 +8643,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-08',
-    2710000,
+    27100000.0,
     12,
     'Pago',
-    c.id,
+    25,
     'cuota',
-    0,
-    15277
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    152770.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11136,22 +8664,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-04',
-    2707000,
+    27070000.0,
     13,
     'Pago',
-    c.id,
+    25,
     'cuota',
-    0,
-    12222
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    122220.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11163,22 +8685,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-08',
-    2710000,
+    27100000.0,
     14,
     'Pago',
-    c.id,
+    25,
     'cuota',
-    0,
-    15277
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    152770.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11190,22 +8706,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-16',
-    2696000,
+    26960000.0,
     15,
     'Pago',
-    c.id,
+    25,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11217,22 +8727,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-05',
-    2811000,
+    28110000.0,
     16,
     'Pago',
-    c.id,
+    25,
     'cuota',
-    0,
-    116108
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1161080.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11244,22 +8748,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-07',
-    2507000,
+    25070000.0,
     17,
     'Pago',
-    c.id,
+    25,
     'cuota',
-    0,
-    122219
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1222190.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11271,22 +8769,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-10-21',
-    2154666,
+    21546660.0,
     1,
     'Pago',
-    c.id,
+    26,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11298,22 +8790,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-30',
-    1756000,
+    17560000.0,
     2,
     'Pago',
-    c.id,
+    26,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11325,22 +8811,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-03-16',
-    1927000,
+    19270000.0,
     3,
     'Pago',
-    c.id,
+    26,
     'cuota',
-    0,
-    171151
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1711510.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11352,22 +8832,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-03-16',
-    1866000,
+    18660000.0,
     4,
     'Pago',
-    c.id,
+    26,
     'cuota',
-    0,
-    109457
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1094570.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11379,22 +8853,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-06-13',
-    1981000,
+    19810000.0,
     5,
     'Pago',
-    c.id,
+    26,
     'cuota',
-    0,
-    225088
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2250880.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11406,22 +8874,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-27',
-    2377000,
+    23770000.0,
     6,
     'Pago',
-    c.id,
+    26,
     'cuota',
-    0,
-    620922
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    6209220.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11433,22 +8895,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-27',
-    2316000,
+    23160000.0,
     7,
     'Pago',
-    c.id,
+    26,
     'cuota',
-    0,
-    559227
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    5592270.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11460,22 +8916,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-06',
-    2515000,
+    25150000.0,
     8,
     'Pago',
-    c.id,
+    26,
     'cuota',
-    0,
-    758453
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    7584530.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11487,22 +8937,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-06',
-    2532000,
+    25320000.0,
     9,
     'Pago',
-    c.id,
+    26,
     'cuota',
-    0,
-    775260
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    7752600.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11514,22 +8958,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-20',
-    1363000,
+    13630000.0,
     1,
     'Pago',
-    c.id,
+    27,
     'cuota',
-    0,
-    86768
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    867680.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11541,22 +8979,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-18',
-    1361000,
+    13610000.0,
     2,
     'Pago',
-    c.id,
+    27,
     'cuota',
-    0,
-    85322
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    853220.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11568,22 +9000,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-18',
-    1357000,
+    13570000.0,
     3,
     'Pago',
-    c.id,
+    27,
     'cuota',
-    0,
-    80983
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    809830.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11595,22 +9021,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-21',
-    1436000,
+    14360000.0,
     4,
     'Pago',
-    c.id,
+    27,
     'cuota',
-    0,
-    160000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1600000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11622,22 +9042,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-14',
-    1482000,
+    14820000.0,
     5,
     'Pago',
-    c.id,
+    27,
     'cuota',
-    0,
-    206305
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2063050.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11649,22 +9063,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-15',
-    1453000,
+    14530000.0,
     6,
     'Pago',
-    c.id,
+    27,
     'cuota',
-    0,
-    176428
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1764280.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11676,22 +9084,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-22',
-    1481000,
+    14810000.0,
     7,
     'Pago',
-    c.id,
+    27,
     'cuota',
-    0,
-    205048
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2050480.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11703,22 +9105,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-21',
-    1497000,
+    14970000.0,
     8,
     'Pago',
-    c.id,
+    27,
     'cuota',
-    0,
-    221258
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2212580.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11730,22 +9126,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-07',
-    739100,
+    7391000.0,
     1,
     'Pago',
-    c.id,
+    28,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11757,22 +9147,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-07',
-    700000,
+    7000000.0,
     2,
     'Pago',
-    c.id,
+    28,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11784,22 +9168,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-07',
-    700000,
+    7000000.0,
     3,
     'Pago',
-    c.id,
+    28,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11811,22 +9189,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-07',
-    700000,
+    7000000.0,
     4,
     'Pago',
-    c.id,
+    28,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11838,22 +9210,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-07',
-    700000,
+    7000000.0,
     5,
     'Pago',
-    c.id,
+    28,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11865,22 +9231,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-07',
-    700000,
+    7000000.0,
     6,
     'Pago',
-    c.id,
+    28,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11892,22 +9252,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-07',
-    700000,
+    7000000.0,
     7,
     'Pago',
-    c.id,
+    28,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11919,22 +9273,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-06',
-    700000,
+    7000000.0,
     8,
     'Pago',
-    c.id,
+    28,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11946,22 +9294,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-06',
-    700000,
+    7000000.0,
     9,
     'Pago',
-    c.id,
+    28,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -11973,22 +9315,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-07',
-    700000,
+    7000000.0,
     10,
     'Pago',
-    c.id,
+    28,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12000,22 +9336,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-06',
-    700000,
+    7000000.0,
     11,
     'Pago',
-    c.id,
+    28,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12027,22 +9357,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-05',
-    700000,
+    7000000.0,
     12,
     'Pago',
-    c.id,
+    28,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12054,22 +9378,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-07',
-    700000,
+    7000000.0,
     13,
     'Pago',
-    c.id,
+    28,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12081,22 +9399,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-08-06',
-    2762000,
+    27620000.0,
     1,
     'Pago',
-    c.id,
+    29,
     'cuota',
-    0,
-    35675
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    356750.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12108,22 +9420,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-08-06',
-    2726000,
+    27260000.0,
     2,
     'Pago',
-    c.id,
+    29,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12135,22 +9441,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-12',
-    2726000,
+    27260000.0,
     3,
     'Pago',
-    c.id,
+    29,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12162,22 +9462,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-23',
-    2726000,
+    27260000.0,
     4,
     'Pago',
-    c.id,
+    29,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12189,22 +9483,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-22',
-    2726000,
+    27260000.0,
     5,
     'Pago',
-    c.id,
+    29,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12216,22 +9504,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-24',
-    2726000,
+    27260000.0,
     6,
     'Pago',
-    c.id,
+    29,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12243,22 +9525,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-24',
-    2726000,
+    27260000.0,
     7,
     'Pago',
-    c.id,
+    29,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12270,22 +9546,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-28',
-    2726000,
+    27260000.0,
     8,
     'Pago',
-    c.id,
+    29,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12297,22 +9567,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-21',
-    2726000,
+    27260000.0,
     9,
     'Pago',
-    c.id,
+    29,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12324,22 +9588,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-25',
-    2726000,
+    27260000.0,
     10,
     'Pago',
-    c.id,
+    29,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12351,22 +9609,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-24',
-    2726000,
+    27260000.0,
     11,
     'Pago',
-    c.id,
+    29,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12378,22 +9630,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-28',
-    2851000,
+    28510000.0,
     12,
     'Pago',
-    c.id,
+    29,
     'cuota',
-    0,
-    16065
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    160650.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12405,22 +9651,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-29',
-    2835000,
+    28350000.0,
     13,
     'Pago',
-    c.id,
+    29,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12432,22 +9672,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-08',
-    2876000,
+    28760000.0,
     14,
     'Pago',
-    c.id,
+    29,
     'cuota',
-    0,
-    41769
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    417690.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12459,22 +9693,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-30',
-    2864000,
+    28640000.0,
     15,
     'Pago',
-    c.id,
+    29,
     'cuota',
-    0,
-    28917
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    289170.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12486,22 +9714,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-11',
-    2902000,
+    29020000.0,
     16,
     'Pago',
-    c.id,
+    29,
     'cuota',
-    0,
-    67473
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    674730.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12513,22 +9735,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-13',
-    2905000,
+    29050000.0,
     17,
     'Pago',
-    c.id,
+    29,
     'cuota',
-    0,
-    70686
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    706860.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12540,22 +9756,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-19',
-    2387000,
+    23870000.0,
     18,
     'Pago',
-    c.id,
+    29,
     'cuota',
-    0,
-    93177
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    931770.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12567,22 +9777,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-05-23',
-    2348000,
+    23480000.0,
     1,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12594,22 +9798,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-06-25',
-    2348000,
+    23480000.0,
     2,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12621,22 +9819,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-07-29',
-    2348000,
+    23480000.0,
     3,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12648,22 +9840,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-08-29',
-    2348000,
+    23480000.0,
     4,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12675,22 +9861,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-30',
-    2348000,
+    23480000.0,
     5,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12702,22 +9882,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-29',
-    2348000,
+    23480000.0,
     6,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12729,22 +9903,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-03',
-    2350000,
+    23500000.0,
     7,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    2000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    20000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12756,22 +9924,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-27',
-    2348000,
+    23480000.0,
     8,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12783,22 +9945,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-29',
-    2348000,
+    23480000.0,
     9,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12810,22 +9966,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-28',
-    2348000,
+    23480000.0,
     10,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12837,22 +9987,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-27',
-    2348000,
+    23480000.0,
     11,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12864,22 +10008,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-29',
-    2348000,
+    23480000.0,
     12,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12891,22 +10029,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-28',
-    2348000,
+    23480000.0,
     13,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12918,22 +10050,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-01',
-    2356000,
+    23560000.0,
     14,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    7983
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    79830.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12945,22 +10071,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-04',
-    2350000,
+    23500000.0,
     15,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    1984
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    19840.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12972,22 +10092,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-08',
-    2362000,
+    23620000.0,
     16,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    13305
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    133050.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -12999,22 +10113,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-30',
-    2348000,
+    23480000.0,
     17,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13026,22 +10134,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-27',
-    2348000,
+    23480000.0,
     18,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13053,22 +10155,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-28',
-    2348000,
+    23480000.0,
     19,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13080,22 +10176,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-27',
-    2348000,
+    23480000.0,
     20,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13107,22 +10197,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-29',
-    2348000,
+    23480000.0,
     21,
     'Pago',
-    c.id,
+    30,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13134,22 +10218,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-06-11',
-    1278600,
+    12786000.0,
     1,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13161,22 +10239,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-07-25',
-    1113000,
+    11130000.0,
     2,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13188,22 +10260,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-08-16',
-    1113000,
+    11130000.0,
     3,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13215,22 +10281,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-12',
-    1113000,
+    11130000.0,
     4,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13242,22 +10302,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-10',
-    1113000,
+    11130000.0,
     5,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13269,22 +10323,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-19',
-    1113000,
+    11130000.0,
     6,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13296,22 +10344,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-10',
-    1113000,
+    11130000.0,
     7,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13323,22 +10365,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-10',
-    1113000,
+    11130000.0,
     8,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13350,22 +10386,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-10',
-    1113000,
+    11130000.0,
     9,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13377,22 +10407,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-10',
-    1113000,
+    11130000.0,
     10,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13404,22 +10428,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-09',
-    1113000,
+    11130000.0,
     11,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13431,22 +10449,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-13',
-    1113000,
+    11130000.0,
     12,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13458,22 +10470,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-10',
-    1113000,
+    11130000.0,
     13,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13485,22 +10491,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-08',
-    1113000,
+    11130000.0,
     14,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13512,22 +10512,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-06',
-    1113000,
+    11130000.0,
     15,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13539,22 +10533,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-08',
-    1113000,
+    11130000.0,
     16,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13566,22 +10554,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-16',
-    1113000,
+    11130000.0,
     17,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13593,22 +10575,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-07',
-    1113000,
+    11130000.0,
     18,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13620,22 +10596,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-09',
-    1113000,
+    11130000.0,
     19,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13647,22 +10617,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-07',
-    1113000,
+    11130000.0,
     20,
     'Pago',
-    c.id,
+    31,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13674,22 +10638,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-06-30',
-    1482000,
+    14820000.0,
     1,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13701,22 +10659,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-07-18',
-    1482000,
+    14820000.0,
     2,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13728,22 +10680,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-08-30',
-    1482000,
+    14820000.0,
     3,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13755,22 +10701,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-09-29',
-    1482000,
+    14820000.0,
     4,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13782,22 +10722,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-10-30',
-    1482000,
+    14820000.0,
     5,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13809,22 +10743,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-30',
-    1482000,
+    14820000.0,
     6,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13836,22 +10764,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-12-28',
-    1482000,
+    14820000.0,
     7,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13863,22 +10785,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-01-29',
-    1482000,
+    14820000.0,
     8,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13890,22 +10806,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-02-28',
-    1482000,
+    14820000.0,
     9,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13917,22 +10827,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-03-30',
-    1482000,
+    14820000.0,
     10,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13944,22 +10848,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-29',
-    1482000,
+    14820000.0,
     11,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13971,22 +10869,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-05-22',
-    1482000,
+    14820000.0,
     12,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -13998,22 +10890,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-06-28',
-    1482000,
+    14820000.0,
     13,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14025,22 +10911,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-07-26',
-    1482000,
+    14820000.0,
     14,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14052,22 +10932,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-08-31',
-    1482000,
+    14820000.0,
     15,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14079,22 +10953,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-30',
-    1482000,
+    14820000.0,
     16,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14106,22 +10974,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-29',
-    1482000,
+    14820000.0,
     17,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14133,22 +10995,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-29',
-    1482000,
+    14820000.0,
     18,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14160,22 +11016,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-30',
-    1482000,
+    14820000.0,
     19,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14187,22 +11037,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-29',
-    1482000,
+    14820000.0,
     20,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14214,22 +11058,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-28',
-    1482000,
+    14820000.0,
     21,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14241,22 +11079,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-29',
-    1482000,
+    14820000.0,
     22,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14268,22 +11100,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-30',
-    1482000,
+    14820000.0,
     23,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14295,22 +11121,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-31',
-    1482000,
+    14820000.0,
     24,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14322,22 +11142,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-27',
-    1482000,
+    14820000.0,
     25,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14349,22 +11163,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-31',
-    1482000,
+    14820000.0,
     26,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14376,22 +11184,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-29',
-    1482000,
+    14820000.0,
     27,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14403,22 +11205,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-30',
-    1482000,
+    14820000.0,
     28,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14430,22 +11226,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-30',
-    1482000,
+    14820000.0,
     29,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14457,22 +11247,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-02',
-    1482000,
+    14820000.0,
     30,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14484,22 +11268,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-31',
-    1482000,
+    14820000.0,
     31,
     'Pago',
-    c.id,
+    32,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14511,22 +11289,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-13',
-    1814000,
+    18140000.0,
     1,
     'Pago',
-    c.id,
+    33,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14538,22 +11310,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-07',
-    1814000,
+    18140000.0,
     2,
     'Pago',
-    c.id,
+    33,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14565,22 +11331,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-10',
-    3053767,
+    30537670.0,
     1,
     'Pago',
-    c.id,
+    34,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14592,22 +11352,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-06',
-    2662000,
+    26620000.0,
     2,
     'Pago',
-    c.id,
+    34,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14619,22 +11373,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-10',
-    2662000,
+    26620000.0,
     3,
     'Pago',
-    c.id,
+    34,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14646,22 +11394,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-10',
-    2662000,
+    26620000.0,
     4,
     'Pago',
-    c.id,
+    34,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14673,22 +11415,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-18',
-    2680000,
+    26800000.0,
     5,
     'Pago',
-    c.id,
+    34,
     'cuota',
-    0,
-    18102
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    181020.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14700,22 +11436,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-18',
-    2698000,
+    26980000.0,
     6,
     'Pago',
-    c.id,
+    34,
     'cuota',
-    0,
-    35794
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    357940.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14727,22 +11457,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-13',
-    2770000,
+    27700000.0,
     7,
     'Pago',
-    c.id,
+    34,
     'cuota',
-    0,
-    108610
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1086100.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14754,22 +11478,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-05',
-    2750000,
+    27500000.0,
     8,
     'Pago',
-    c.id,
+    34,
     'cuota',
-    0,
-    87491
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    874910.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14781,22 +11499,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-08',
-    2755000,
+    27550000.0,
     9,
     'Pago',
-    c.id,
+    34,
     'cuota',
-    0,
-    93525
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    935250.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14808,22 +11520,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-04',
-    2746000,
+    27460000.0,
     10,
     'Pago',
-    c.id,
+    34,
     'cuota',
-    0,
-    84474
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    844740.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14835,22 +11541,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-16',
-    2873000,
+    28730000.0,
     11,
     'Pago',
-    c.id,
+    34,
     'cuota',
-    0,
-    211185.33333333334303461015224456787109375
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2.1118533333333336e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14862,22 +11562,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-16',
-    2779000,
+    27790000.0,
     12,
     'Pago',
-    c.id,
+    34,
     'cuota',
-    0,
-    117660.400000000008731149137020111083984375
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1.176604e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14889,22 +11583,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-07',
-    1827000,
+    18270000.0,
     13,
     'Pago',
-    c.id,
+    34,
     'cuota',
-    0,
-    277558
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2775580.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14916,22 +11604,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-21',
-    1743000,
+    17430000.0,
     1,
     'Pago',
-    c.id,
+    35,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14943,22 +11625,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-21',
-    1961000,
+    19610000.0,
     2,
     'Pago',
-    c.id,
+    35,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14970,22 +11646,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-21',
-    1961000,
+    19610000.0,
     3,
     'Pago',
-    c.id,
+    35,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -14997,22 +11667,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-13',
-    1961000,
+    19610000.0,
     4,
     'Pago',
-    c.id,
+    35,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15024,22 +11688,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-19',
-    1947661,
+    19476610.0,
     5,
     'Pago',
-    c.id,
+    35,
     'cuota',
-    0,
-    13335
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    133350.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15051,22 +11709,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-08-06',
-    1996200,
+    19962000.0,
     1,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15078,22 +11730,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-09-06',
-    1719000,
+    17190000.0,
     2,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15105,22 +11751,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-10-07',
-    1719000,
+    17190000.0,
     3,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15132,22 +11772,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-11-08',
-    1719000,
+    17190000.0,
     4,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15159,22 +11793,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-12-09',
-    1719000,
+    17190000.0,
     5,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15186,22 +11814,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-01-07',
-    1719000,
+    17190000.0,
     6,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15213,22 +11835,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-02-07',
-    1719000,
+    17190000.0,
     7,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15240,22 +11856,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-03-08',
-    1719000,
+    17190000.0,
     8,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15267,22 +11877,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-04-11',
-    1719000,
+    17190000.0,
     9,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15294,22 +11898,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-05-10',
-    1719000,
+    17190000.0,
     10,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15321,22 +11919,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-06-13',
-    1719000,
+    17190000.0,
     11,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15348,22 +11940,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-07-10',
-    1719000,
+    17190000.0,
     12,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15375,22 +11961,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-08-08',
-    1719000,
+    17190000.0,
     13,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15402,22 +11982,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-09-11',
-    1719000,
+    17190000.0,
     14,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15429,22 +12003,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-10-17',
-    1719000,
+    17190000.0,
     15,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15456,22 +12024,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-14',
-    1719000,
+    17190000.0,
     16,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15483,22 +12045,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-12-12',
-    1719000,
+    17190000.0,
     17,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15510,22 +12066,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-01-11',
-    1719000,
+    17190000.0,
     18,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15537,22 +12087,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-02-12',
-    1719000,
+    17190000.0,
     19,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15564,22 +12108,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-03-12',
-    1719000,
+    17190000.0,
     20,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15591,22 +12129,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-08',
-    1719000,
+    17190000.0,
     21,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15618,22 +12150,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-05-15',
-    1719000,
+    17190000.0,
     22,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15645,22 +12171,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-06-11',
-    1719000,
+    17190000.0,
     23,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15672,22 +12192,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-07-10',
-    1719000,
+    17190000.0,
     24,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15699,22 +12213,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-08-16',
-    1719000,
+    17190000.0,
     25,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15726,22 +12234,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-16',
-    1719000,
+    17190000.0,
     26,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15753,22 +12255,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-10',
-    1719000,
+    17190000.0,
     27,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15780,22 +12276,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-19',
-    1719000,
+    17190000.0,
     28,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15807,22 +12297,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-12',
-    1719000,
+    17190000.0,
     29,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15834,22 +12318,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-10',
-    1719000,
+    17190000.0,
     30,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15861,22 +12339,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-12',
-    1727000,
+    17270000.0,
     31,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15888,22 +12360,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-18',
-    1727000,
+    17270000.0,
     32,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15915,22 +12381,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-09',
-    1727000,
+    17270000.0,
     33,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15942,22 +12402,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-13',
-    1727000,
+    17270000.0,
     34,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15969,22 +12423,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-07',
-    1762000,
+    17620000.0,
     35,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -15996,22 +12444,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-14',
-    1762000,
+    17620000.0,
     36,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16023,22 +12465,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-13',
-    1762000,
+    17620000.0,
     37,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16050,22 +12486,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-12',
-    1762000,
+    17620000.0,
     38,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16077,22 +12507,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-16',
-    1762000,
+    17620000.0,
     39,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16104,22 +12528,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-11',
-    1762000,
+    17620000.0,
     40,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16131,22 +12549,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-13',
-    1762000,
+    17620000.0,
     41,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16158,22 +12570,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-19',
-    1762000,
+    17620000.0,
     42,
     'Pago',
-    c.id,
+    36,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16185,22 +12591,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-22',
-    379000,
+    3790000.0,
     1,
     'Pago',
-    c.id,
+    38,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16212,22 +12612,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-22',
-    379000,
+    3790000.0,
     2,
     'Pago',
-    c.id,
+    38,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16239,22 +12633,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-22',
-    379000,
+    3790000.0,
     3,
     'Pago',
-    c.id,
+    38,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16266,22 +12654,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-28',
-    3811000,
+    38110000.0,
     1,
     'Pago',
-    c.id,
+    39,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16293,22 +12675,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-29',
-    3811000,
+    38110000.0,
     2,
     'Pago',
-    c.id,
+    39,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16320,22 +12696,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-27',
-    3811000,
+    38110000.0,
     3,
     'Pago',
-    c.id,
+    39,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16347,22 +12717,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-30',
-    12000000,
+    120000000.0,
     4,
     'Pago',
-    c.id,
+    39,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16374,22 +12738,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-31',
-    3908000,
+    39080000.0,
     5,
     'Pago',
-    c.id,
+    39,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16401,22 +12759,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-29',
-    3908000,
+    39080000.0,
     6,
     'Pago',
-    c.id,
+    39,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16428,22 +12780,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-31',
-    3908000,
+    39080000.0,
     7,
     'Pago',
-    c.id,
+    39,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16455,22 +12801,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-15',
-    23741000,
+    237410000.0,
     8,
     'Pago',
-    c.id,
+    39,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16482,22 +12822,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-16',
-    867000,
+    8670000.0,
     1,
     'Pago',
-    c.id,
+    41,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16509,22 +12843,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-16',
-    867000,
+    8670000.0,
     2,
     'Pago',
-    c.id,
+    41,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16536,22 +12864,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-18',
-    871000,
+    8710000.0,
     3,
     'Pago',
-    c.id,
+    41,
     'cuota',
-    0,
-    3930
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    39300.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16563,22 +12885,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-15',
-    929000,
+    9290000.0,
     4,
     'Pago',
-    c.id,
+    41,
     'cuota',
-    0,
-    62000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    620000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16590,22 +12906,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-08',
-    919000,
+    9190000.0,
     5,
     'Pago',
-    c.id,
+    41,
     'cuota',
-    0,
-    52000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    520000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16617,22 +12927,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-14',
-    925000,
+    9250000.0,
     6,
     'Pago',
-    c.id,
+    41,
     'cuota',
-    0,
-    58000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    580000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16644,22 +12948,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-29',
-    912200,
+    9122000.0,
     7,
     'Pago',
-    c.id,
+    41,
     'cuota',
-    0,
-    45200
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    452000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16671,22 +12969,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-22',
-    957000,
+    9570000.0,
     8,
     'Pago',
-    c.id,
+    41,
     'cuota',
-    0,
-    90207
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    902070.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16698,22 +12990,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-25',
-    999000,
+    9990000.0,
     9,
     'Pago',
-    c.id,
+    41,
     'cuota',
-    0,
-    131668.400000000023283064365386962890625
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1.3166840000000002e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16725,22 +13011,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-25',
-    968000,
+    9680000.0,
     10,
     'Pago',
-    c.id,
+    41,
     'cuota',
-    0,
-    101207.80000000001746229827404022216796875
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1.0120780000000002e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16752,22 +13032,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-25',
-    939000,
+    9390000.0,
     11,
     'Pago',
-    c.id,
+    41,
     'cuota',
-    0,
-    71729.800000000002910383045673370361328125
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    717298.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16779,22 +13053,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-25',
-    163213,
+    1632130.0,
     12,
     'Pago',
-    c.id,
+    41,
     'cuota',
-    0,
-    41269.2000000000043655745685100555419921875
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    4.12692e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16806,22 +13074,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-08-31',
-    1237000,
+    12370000.0,
     1,
     'Pago',
-    c.id,
+    42,
     'cuota',
-    0,
-    2000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    20000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16833,22 +13095,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-16',
-    1271000,
+    12710000.0,
     2,
     'Pago',
-    c.id,
+    42,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16860,22 +13116,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-06',
-    1278000,
+    12780000.0,
     3,
     'Pago',
-    c.id,
+    42,
     'cuota',
-    0,
-    7367
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    73670.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16887,22 +13137,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-10',
-    1278000,
+    12780000.0,
     4,
     'Pago',
-    c.id,
+    42,
     'cuota',
-    0,
-    7367
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    73670.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16914,22 +13158,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-10',
-    1286000,
+    12860000.0,
     5,
     'Pago',
-    c.id,
+    42,
     'cuota',
-    0,
-    14733
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    147330.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16941,22 +13179,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-07',
-    1281000,
+    12810000.0,
     6,
     'Pago',
-    c.id,
+    42,
     'cuota',
-    0,
-    10313
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    103130.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16968,22 +13200,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-06',
-    1280000,
+    12800000.0,
     7,
     'Pago',
-    c.id,
+    42,
     'cuota',
-    0,
-    8840
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    88400.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -16995,22 +13221,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-02',
-    1278000,
+    12780000.0,
     8,
     'Pago',
-    c.id,
+    42,
     'cuota',
-    0,
-    7202
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    72020.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17022,22 +13242,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-02',
-    1276700,
+    12767000.0,
     9,
     'Pago',
-    c.id,
+    42,
     'cuota',
-    0,
-    5700
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    57000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17049,22 +13263,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-29',
-    1271000,
+    12710000.0,
     10,
     'Pago',
-    c.id,
+    42,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17076,22 +13284,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-01',
-    1275000,
+    12750000.0,
     11,
     'Pago',
-    c.id,
+    42,
     'cuota',
-    0,
-    4321
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    43210.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17103,22 +13305,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-29',
-    1271000,
+    12710000.0,
     12,
     'Pago',
-    c.id,
+    42,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17130,22 +13326,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-03',
-    1279000,
+    12790000.0,
     13,
     'Pago',
-    c.id,
+    42,
     'cuota',
-    0,
-    8643
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    86430.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17157,22 +13347,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-01',
-    1275000,
+    12750000.0,
     14,
     'Pago',
-    c.id,
+    42,
     'cuota',
-    0,
-    4671
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    46710.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17184,22 +13368,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-29',
-    1271000,
+    12710000.0,
     15,
     'Pago',
-    c.id,
+    42,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17211,22 +13389,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-02',
-    276000,
+    2760000.0,
     16,
     'Pago',
-    c.id,
+    42,
     'cuota',
-    0,
-    5762
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    57620.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17238,22 +13410,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-29',
-    1271000,
+    12710000.0,
     17,
     'Pago',
-    c.id,
+    42,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17265,22 +13431,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-29',
-    1271000,
+    12710000.0,
     18,
     'Pago',
-    c.id,
+    42,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17292,22 +13452,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-19',
-    12712500,
+    127125000.0,
     1,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17319,22 +13473,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-05-20',
-    2139000,
+    21390000.0,
     2,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17346,22 +13494,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-06-19',
-    2139000,
+    21390000.0,
     3,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17373,22 +13515,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-06-26',
-    10000000,
+    100000000.0,
     4,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17400,22 +13536,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-07-17',
-    1842000,
+    18420000.0,
     5,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17427,22 +13557,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-08-16',
-    1842000,
+    18420000.0,
     6,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17454,22 +13578,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-18',
-    1842000,
+    18420000.0,
     7,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17481,22 +13599,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-18',
-    1842000,
+    18420000.0,
     8,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17508,22 +13620,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-18',
-    1842000,
+    18420000.0,
     9,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17535,22 +13641,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-16',
-    1842000,
+    18420000.0,
     10,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17562,22 +13662,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-20',
-    1842000,
+    18420000.0,
     11,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17589,22 +13683,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-18',
-    1842000,
+    18420000.0,
     12,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17616,22 +13704,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-13',
-    1842000,
+    18420000.0,
     13,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17643,22 +13725,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-21',
-    1842000,
+    18420000.0,
     14,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17670,22 +13746,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-21',
-    1842000,
+    18420000.0,
     15,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17697,22 +13767,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-18',
-    1842000,
+    18420000.0,
     16,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17724,22 +13788,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-22',
-    1842000,
+    18420000.0,
     17,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17751,22 +13809,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-21',
-    1842000,
+    18420000.0,
     18,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17778,22 +13830,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-15',
-    1842000,
+    18420000.0,
     19,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17805,22 +13851,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-14',
-    1842000,
+    18420000.0,
     20,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17832,22 +13872,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-21',
-    1842000,
+    18420000.0,
     21,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17859,22 +13893,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-18',
-    1842000,
+    18420000.0,
     22,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17886,22 +13914,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-20',
-    1842000,
+    18420000.0,
     23,
     'Pago',
-    c.id,
+    43,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17913,22 +13935,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-03-30',
-    1993000,
+    19930000.0,
     1,
     'Pago',
-    c.id,
+    44,
     'cuota',
-    0,
-    259257
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2592570.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17940,22 +13956,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-07',
-    2602000,
+    26020000.0,
     2,
     'Pago',
-    c.id,
+    44,
     'cuota',
-    0,
-    868117
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    8681170.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17967,22 +13977,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-25',
-    2541000,
+    25410000.0,
     3,
     'Pago',
-    c.id,
+    44,
     'cuota',
-    0,
-    807231
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    8072310.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -17994,22 +13998,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-24',
-    2633000,
+    26330000.0,
     4,
     'Pago',
-    c.id,
+    44,
     'cuota',
-    0,
-    899543
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    8995430.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18021,22 +14019,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-28',
-    2653000,
+    26530000.0,
     5,
     'Pago',
-    c.id,
+    44,
     'cuota',
-    0,
-    919183
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    9191830.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18048,22 +14040,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-08',
-    2725000,
+    27250000.0,
     6,
     'Pago',
-    c.id,
+    44,
     'cuota',
-    0,
-    991854
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    9918540.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18075,22 +14061,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-15',
-    2740564,
+    27405640.0,
     7,
     'Pago',
-    c.id,
+    44,
     'cuota',
-    0,
-    1007566
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    10075660.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18102,22 +14082,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-27',
-    703264,
+    7032640.0,
     8,
     'Pago',
-    c.id,
+    44,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18129,22 +14103,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-07-27',
-    709000,
+    7090000.0,
     1,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18156,22 +14124,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-08-24',
-    709000,
+    7090000.0,
     2,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18183,22 +14145,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-09-25',
-    709000,
+    7090000.0,
     3,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18210,22 +14166,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-10-22',
-    709000,
+    7090000.0,
     4,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18237,22 +14187,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-11-25',
-    709000,
+    7090000.0,
     5,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18264,22 +14208,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-12-23',
-    709000,
+    7090000.0,
     6,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18291,22 +14229,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-01-31',
-    709000,
+    7090000.0,
     7,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18318,22 +14250,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-03-07',
-    709000,
+    7090000.0,
     8,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18345,22 +14271,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-04-02',
-    709000,
+    7090000.0,
     9,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18372,22 +14292,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-05-04',
-    709000,
+    7090000.0,
     10,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18399,22 +14313,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-07-22',
-    709000,
+    7090000.0,
     11,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18426,22 +14334,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-08-16',
-    709000,
+    7090000.0,
     12,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18453,22 +14355,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-09-06',
-    709000,
+    7090000.0,
     13,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18480,22 +14376,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-09-06',
-    709000,
+    7090000.0,
     14,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18507,22 +14397,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-10-08',
-    709000,
+    7090000.0,
     15,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18534,22 +14418,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-11-24',
-    709000,
+    7090000.0,
     16,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18561,22 +14439,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-12-10',
-    718000,
+    7180000.0,
     17,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    9000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    90000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18588,22 +14460,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-01-11',
-    709000,
+    7090000.0,
     18,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18615,22 +14481,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-03-13',
-    744000,
+    7440000.0,
     19,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    34551.933333333334303461015224456787109375
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    3.4551933333333336e+16
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18642,22 +14502,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-03-13',
-    719000,
+    7190000.0,
     20,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    9642.399999999999636202119290828704833984375
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    96424.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18669,22 +14523,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-06-16',
-    765000,
+    7650000.0,
     21,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    55444
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    554440.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18696,22 +14544,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-06-16',
-    1290000,
+    12900000.0,
     22,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    580534
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    5805340.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18723,22 +14565,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-08',
-    1297000,
+    12970000.0,
     23,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    588186
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    5881860.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18750,22 +14586,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-29',
-    1325000,
+    13250000.0,
     24,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    615507
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    6155070.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18777,22 +14607,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-23',
-    1345000,
+    13450000.0,
     25,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    636398
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    6363980.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18804,22 +14628,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-05',
-    1379000,
+    13790000.0,
     26,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    670147
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    6701470.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18831,22 +14649,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-19',
-    1390000,
+    13900000.0,
     27,
     'Pago',
-    c.id,
+    45,
     'cuota',
-    0,
-    681396
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    6813960.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18858,22 +14670,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-19',
-    639000,
+    6390000.0,
     1,
     'Pago',
-    c.id,
+    46,
     'cuota',
-    0,
-    15633
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    156330.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18885,22 +14691,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-10-17',
-    1237000,
+    12370000.0,
     1,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    24000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    240000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18912,22 +14712,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-09-28',
-    12257000,
+    122570000.0,
     2,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18939,22 +14733,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-12-13',
-    2127000,
+    21270000.0,
     3,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    14368
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    143680.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18966,22 +14754,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-01-19',
-    2142000,
+    21420000.0,
     4,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    28737
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    287370.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -18993,22 +14775,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-02-22',
-    2133000,
+    21330000.0,
     5,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    20557
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    205570.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19020,22 +14796,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-12',
-    2182000,
+    21820000.0,
     6,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    69447
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    694470.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19047,22 +14817,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-30',
-    2169000,
+    21690000.0,
     7,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    56558
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    565580.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19074,22 +14838,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-05-31',
-    2168000,
+    21680000.0,
     8,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    55557
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    555570.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19101,22 +14859,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-07-31',
-    2228000,
+    22280000.0,
     9,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    115557
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1155570.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19128,22 +14880,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-08-16',
-    2208000,
+    22080000.0,
     10,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    95789
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    957890.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19155,22 +14901,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-25',
-    2124000,
+    21240000.0,
     11,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    11557
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    115570.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19182,22 +14922,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-06',
-    2255000,
+    22550000.0,
     12,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    134057
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1340570.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19209,22 +14943,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-11',
-    2276000,
+    22760000.0,
     13,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    155057
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1550570.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19236,22 +14964,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-21',
-    2302000,
+    23020000.0,
     14,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    180370
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1803700.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19263,22 +14985,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-06',
-    2580000,
+    25800000.0,
     15,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    458500
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    4585000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19290,22 +15006,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-29',
-    2391000,
+    23910000.0,
     16,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    269353
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2693530.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19317,22 +15027,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-29',
-    2316000,
+    23160000.0,
     17,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    194800
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1948000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19344,22 +15048,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-11',
-    2426000,
+    24260000.0,
     18,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    303999
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    3039990.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19371,22 +15069,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-20',
-    2434000,
+    24340000.0,
     19,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    313057
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    3130570.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19398,22 +15090,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-29',
-    2472000,
+    24720000.0,
     20,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    351057
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    3510570.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19425,22 +15111,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-14',
-    2433000,
+    24330000.0,
     21,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    311969
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    3119690.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19452,22 +15132,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-14',
-    2361000,
+    23610000.0,
     22,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    239145
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    2391450.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19479,22 +15153,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-17',
-    2291000,
+    22910000.0,
     23,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    169000
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1690000.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19506,22 +15174,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-21',
-    2296000,
+    22960000.0,
     24,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    175058
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1750580.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19533,22 +15195,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-31',
-    2315000,
+    23150000.0,
     25,
     'Pago',
-    c.id,
+    47,
     'cuota',
-    0,
-    194057
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1940570.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19560,22 +15216,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-13',
-    2424000,
+    24240000.0,
     1,
     'Pago',
-    c.id,
+    48,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19587,22 +15237,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-24',
-    2424000,
+    24240000.0,
     2,
     'Pago',
-    c.id,
+    48,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19614,22 +15258,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-25',
-    2435000,
+    24350000.0,
     3,
     'Pago',
-    c.id,
+    48,
     'cuota',
-    0,
-    11345
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    113450.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19641,22 +15279,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-29',
-    2432000,
+    24320000.0,
     4,
     'Pago',
-    c.id,
+    48,
     'cuota',
-    0,
-    8242
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    82420.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19668,22 +15300,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-27',
-    2440000,
+    24400000.0,
     5,
     'Pago',
-    c.id,
+    48,
     'cuota',
-    0,
-    16483
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    164830.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19695,22 +15321,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-30',
-    2428000,
+    24280000.0,
     6,
     'Pago',
-    c.id,
+    48,
     'cuota',
-    0,
-    4309
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    43090.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19722,22 +15342,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-21',
-    2500000,
+    25000000.0,
     7,
     'Pago',
-    c.id,
+    48,
     'cuota',
-    0,
-    76345
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    763450.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19749,22 +15363,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-27',
-    2473000,
+    24730000.0,
     8,
     'Pago',
-    c.id,
+    48,
     'cuota',
-    0,
-    49450
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    494500.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19776,22 +15384,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-31',
-    2473000,
+    24730000.0,
     9,
     'Pago',
-    c.id,
+    48,
     'cuota',
-    0,
-    49450
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    494500.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19803,22 +15405,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-19',
-    553759,
+    5537590.0,
     10,
     'Pago',
-    c.id,
+    48,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19830,22 +15426,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-13',
-    1638000,
+    16380000.0,
     1,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19857,22 +15447,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-05-31',
-    1638000,
+    16380000.0,
     2,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19884,22 +15468,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-07-31',
-    1638000,
+    16380000.0,
     3,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19911,22 +15489,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-10',
-    1638000,
+    16380000.0,
     4,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19938,22 +15510,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-10',
-    1638000,
+    16380000.0,
     5,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19965,22 +15531,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-10',
-    1638000,
+    16380000.0,
     6,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -19992,22 +15552,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-10',
-    1638000,
+    16380000.0,
     7,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20019,22 +15573,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-11-19',
-    1638000,
+    16380000.0,
     8,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20046,22 +15594,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-10',
-    1638000,
+    16380000.0,
     9,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20073,22 +15615,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-10',
-    1638000,
+    16380000.0,
     10,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20100,22 +15636,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-10',
-    1638000,
+    16380000.0,
     11,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20127,22 +15657,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-10',
-    1638000,
+    16380000.0,
     12,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20154,22 +15678,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-04-09',
-    1638000,
+    16380000.0,
     13,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20181,22 +15699,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-13',
-    1638000,
+    16380000.0,
     14,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20208,22 +15720,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-10',
-    1638000,
+    16380000.0,
     15,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20235,22 +15741,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-08',
-    1638000,
+    16380000.0,
     16,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20262,22 +15762,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-13',
-    1638000,
+    16380000.0,
     17,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20289,22 +15783,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-09-08',
-    1638000,
+    16380000.0,
     18,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20316,22 +15804,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-10-16',
-    1638000,
+    16380000.0,
     19,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20343,22 +15825,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-11',
-    1638000,
+    16380000.0,
     20,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20370,22 +15846,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-02',
-    1638000,
+    16380000.0,
     21,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20397,22 +15867,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-07',
-    1638000,
+    16380000.0,
     22,
     'Pago',
-    c.id,
+    49,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20424,22 +15888,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-07',
-    1688000,
+    16880000.0,
     1,
     'Pago',
-    c.id,
+    50,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20451,22 +15909,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-01-28',
-    1823000,
+    18230000.0,
     1,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20478,22 +15930,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-02-25',
-    1823000,
+    18230000.0,
     2,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20505,22 +15951,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-03-26',
-    1823000,
+    18230000.0,
     3,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20532,22 +15972,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-04-22',
-    1823000,
+    18230000.0,
     4,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20559,22 +15993,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-05-24',
-    1823000,
+    18230000.0,
     5,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20586,22 +16014,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-06-30',
-    1823000,
+    18230000.0,
     6,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20613,22 +16035,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-07-26',
-    1823000,
+    18230000.0,
     7,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20640,22 +16056,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-08-27',
-    1823000,
+    18230000.0,
     8,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20667,22 +16077,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-09-27',
-    1823000,
+    18230000.0,
     9,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20694,22 +16098,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-10-25',
-    1823000,
+    18230000.0,
     10,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20721,22 +16119,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-11-29',
-    1823000,
+    18230000.0,
     11,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20748,22 +16140,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2021-12-27',
-    1823000,
+    18230000.0,
     12,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20775,22 +16161,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-01-24',
-    1823000,
+    18230000.0,
     13,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20802,22 +16182,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-02-28',
-    1823000,
+    18230000.0,
     14,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20829,22 +16203,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-04-04',
-    1823000,
+    18230000.0,
     15,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20856,22 +16224,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-05-02',
-    1823000,
+    18230000.0,
     16,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20883,22 +16245,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-06-06',
-    1823000,
+    18230000.0,
     17,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20910,22 +16266,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-07-05',
-    1823000,
+    18230000.0,
     18,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20937,22 +16287,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-08-02',
-    1823000,
+    18230000.0,
     19,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20964,22 +16308,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-09-05',
-    1823000,
+    18230000.0,
     20,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -20991,22 +16329,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-10-05',
-    1823000,
+    18230000.0,
     21,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21018,22 +16350,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-11-04',
-    1823000,
+    18230000.0,
     22,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21045,22 +16371,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2022-12-05',
-    1823000,
+    18230000.0,
     23,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21072,22 +16392,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-01-04',
-    1823000,
+    18230000.0,
     24,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21099,22 +16413,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-02-06',
-    1823000,
+    18230000.0,
     25,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21126,22 +16434,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-03-06',
-    1823000,
+    18230000.0,
     26,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21153,22 +16455,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-04-17',
-    1823000,
+    18230000.0,
     27,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21180,22 +16476,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-05-10',
-    1823000,
+    18230000.0,
     28,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21207,22 +16497,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-06-20',
-    1823000,
+    18230000.0,
     29,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21234,22 +16518,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-07-11',
-    1823000,
+    18230000.0,
     30,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21261,22 +16539,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-08-10',
-    1823000,
+    18230000.0,
     31,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21288,22 +16560,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-09-07',
-    1823000,
+    18230000.0,
     32,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21315,22 +16581,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-10-07',
-    1823000,
+    18230000.0,
     33,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21342,22 +16602,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-11-20',
-    1823000,
+    18230000.0,
     34,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21369,22 +16623,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2023-12-12',
-    1823000,
+    18230000.0,
     35,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21396,22 +16644,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-01-11',
-    1823000,
+    18230000.0,
     36,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21423,22 +16665,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-02-12',
-    1823000,
+    18230000.0,
     37,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21450,22 +16686,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-03-18',
-    1823000,
+    18230000.0,
     38,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21477,22 +16707,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-04-13',
-    1823000,
+    18230000.0,
     39,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21504,22 +16728,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-05-15',
-    1823000,
+    18230000.0,
     40,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21531,22 +16749,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-06-11',
-    1823000,
+    18230000.0,
     41,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21558,22 +16770,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-07-11',
-    1823000,
+    18230000.0,
     42,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21585,22 +16791,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-08-28',
-    1823000,
+    18230000.0,
     43,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21612,22 +16812,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-09-26',
-    1823000,
+    18230000.0,
     44,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21639,22 +16833,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-10-23',
-    1823000,
+    18230000.0,
     45,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21666,22 +16854,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-18',
-    1823000,
+    18230000.0,
     46,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21693,22 +16875,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2024-12-18',
-    1823000,
+    18230000.0,
     47,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21720,22 +16896,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-01-20',
-    1823000,
+    18230000.0,
     48,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21747,22 +16917,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-02-10',
-    1823000,
+    18230000.0,
     49,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21774,22 +16938,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-03-07',
-    1823000,
+    18230000.0,
     50,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21801,22 +16959,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-13',
-    1823000,
+    18230000.0,
     51,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21828,22 +16980,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-05-13',
-    1823000,
+    18230000.0,
     52,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21855,22 +17001,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-06-10',
-    1823000,
+    18230000.0,
     53,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21882,22 +17022,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-07-14',
-    1837462,
+    18374620.0,
     54,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    14462
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    144620.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21909,22 +17043,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-08-21',
-    1856057,
+    18560570.0,
     55,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    33057
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    330570.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21936,22 +17064,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-07',
-    1990351,
+    19903510.0,
     56,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    167351
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1673510.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21963,22 +17085,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-11-07',
-    1853991,
+    18539910.0,
     57,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    30991
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    309910.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -21990,22 +17106,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2025-12-09',
-    1893246,
+    18932460.0,
     58,
     'Pago',
-    c.id,
+    51,
     'cuota',
-    0,
-    70246
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    702460.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -22017,22 +17127,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-02-02',
-    1426000,
+    14260000.0,
     1,
     'Pago',
-    c.id,
+    52,
     'cuota',
-    0,
-    118592
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    1185920.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -22044,22 +17148,16 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-02-02',
-    1382000,
+    13820000.0,
     2,
     'Pago',
-    c.id,
+    52,
     'cuota',
-    0,
-    74120
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    741200.0
+);
 
 
 INSERT INTO creditos_pagocredito (
@@ -22071,19 +17169,13 @@ INSERT INTO creditos_pagocredito (
     tipo_pago,
     cobro_juridico_pagado,
     interes_moratorio_pagado
-)
-SELECT
+) VALUES (
     '2026-01-07',
-    640000,
+    6400000.0,
     1,
     'Pago',
-    c.id,
+    53,
     'cuota',
-    0,
-    0
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL;
+    0.0,
+    0.0
+);

@@ -12,27 +12,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    2289384,
+    2289384.0,
     '2025-12-28',
     '2026-12-28',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-12-28'
+    3
 );
 
 
@@ -45,27 +33,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    3034440,
+    3034440.0,
     '2025-04-14',
     '2026-04-14',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-04-14'
+    9
 );
 
 
@@ -78,27 +54,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    2814000,
+    2814000.0,
     '2025-05-07',
     '2026-05-07',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-05-07'
+    10
 );
 
 
@@ -111,27 +75,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    1666800,
+    1666800.0,
     '2025-10-01',
     '2026-10-01',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-10-01'
+    11
 );
 
 
@@ -144,27 +96,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    1743000,
+    1743000.0,
     '2025-10-07',
     '2026-10-07',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-10-07'
+    13
 );
 
 
@@ -177,27 +117,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    2622000,
+    2622000.0,
     '2025-06-28',
     '2026-06-28',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-06-28'
+    15
 );
 
 
@@ -210,27 +138,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    4352316,
+    4352316.0,
     '2026-01-07',
     '2027-01-07',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2026-01-07'
+    16
 );
 
 
@@ -243,27 +159,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    3237600,
+    3237600.0,
     '2025-07-21',
     '2026-07-21',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-07-21'
+    17
 );
 
 
@@ -276,27 +180,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    3288000,
+    3288000.0,
     '2025-10-21',
     '2026-10-21',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-10-21'
+    19
 );
 
 
@@ -309,27 +201,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    1806000,
+    1806000.0,
     '2025-05-01',
     '2026-05-01',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-05-01'
+    18
 );
 
 
@@ -342,27 +222,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    2256000,
+    2256000.0,
     '2025-09-28',
     '2026-09-28',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-09-28'
+    20
 );
 
 
@@ -375,27 +243,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    2232000,
+    2232000.0,
     '2025-12-07',
     '2026-12-07',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-12-07'
+    21
 );
 
 
@@ -408,27 +264,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    1620000,
+    1620000.0,
     '2025-10-07',
     '2027-01-02',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-10-07'
+    23
 );
 
 
@@ -441,27 +285,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    1608000,
+    1608000.0,
     '2025-04-14',
     '2026-04-14',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-04-14'
+    24
 );
 
 
@@ -474,27 +306,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    1590924,
+    1590924.0,
     '2025-06-28',
     '2026-06-28',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-06-28'
+    25
 );
 
 
@@ -507,27 +327,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    2635800,
+    2635800.0,
     '2025-06-21',
     '2026-06-21',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-06-21'
+    29
 );
 
 
@@ -540,27 +348,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    1608000,
+    1608000.0,
     '2025-11-07',
     '2026-11-07',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-11-07'
+    33
 );
 
 
@@ -573,27 +369,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    1608000,
+    1608000.0,
     '2025-09-07',
     '2026-09-07',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-09-07'
+    34
 );
 
 
@@ -606,27 +390,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    1800000,
+    1800000.0,
     '2025-08-07',
     '2026-08-07',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-08-07'
+    35
 );
 
 
@@ -639,27 +411,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    1410048,
+    1410048.0,
     '2025-07-07',
     '2026-07-07',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-07-07'
+    36
 );
 
 
@@ -672,27 +432,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    2412000,
+    2412000.0,
     '2025-06-30',
     '2026-06-30',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-06-30'
+    39
 );
 
 
@@ -705,27 +453,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    3448200,
+    3448200.0,
     '2025-02-21',
     '2026-02-21',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-02-21'
+    43
 );
 
 
@@ -738,27 +474,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    2410800,
+    2410800.0,
     '2025-11-21',
     '2026-11-21',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-11-21'
+    44
 );
 
 
@@ -771,27 +495,15 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    1572000,
+    1572000.0,
     '2025-11-28',
     '2026-11-28',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-11-28'
+    46
 );
 
 
@@ -804,25 +516,13 @@ INSERT INTO creditos_serviciocredito (
     creado_en,
     actualizado_en,
     credito_id
-)
-SELECT
+) VALUES (
     'seguro',
-    1902000,
+    1902000.0,
     '2025-09-07',
     '2026-09-07',
     'Activo',
     NOW(6),
     NOW(6),
-    c.id
-FROM creditos_credito c
-JOIN contratos_usuario u ON u.id = c.usuario_id
-JOIN contratos_vehiculo_contratos v ON v.id = c.vehiculo_id
-WHERE u.cedula = ''
-AND v.placa = ''
-AND c.fecha_inicio = NULL
-AND NOT EXISTS (
-    SELECT 1 FROM creditos_serviciocredito s
-    WHERE s.credito_id = c.id
-    AND s.tipo = 'seguro'
-    AND s.fecha_inicio = '2025-09-07'
+    47
 );
