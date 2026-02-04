@@ -82,7 +82,7 @@ INSERT INTO contratos_vehiculo_contratos (
 )
 SELECT
     'APTOFI',
-    'inmueble',
+    'inmue',
     'None',
     NULL,
     'None',
@@ -105,7 +105,7 @@ SELECT
     NULL
 WHERE NOT EXISTS (
     SELECT 1 FROM contratos_vehiculo_contratos
-    WHERE placa = 'APTO FIDELIGNO'
+    WHERE placa = 'APTOFI'
 );
 
 
