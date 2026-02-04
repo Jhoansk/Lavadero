@@ -2574,7 +2574,7 @@ INSERT INTO contratos_vehiculo_contratos (
 SELECT
     'WNV242',
     'HYUNDAI',
-    'GRAND I10, 4P-1.2-MT-GL-AIR BAG',
+    'GRAND I10',
     2016.0,
     'AMARILLO',
     '1248.0',
