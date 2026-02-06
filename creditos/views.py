@@ -38,11 +38,14 @@ from django.core.files.base import ContentFile
 @requiere_sede_financiera_admin
 def detalle_credito(request, credito_id):
     credito = get_object_or_404(Credito, id=credito_id)
+
+    # 🔥 ACTUALIZAR ESTADO DEL CRÉDITO SEGÚN LAS CUOTAS
+    credito.verificar_estado_credito()
+
     cronograma = credito.cuotas_credito.all().order_by('numero')
     pagos = credito.pagos.all().order_by('fecha_pago')
     prendas = NombrePrendas.objects.all()
     recibos = credito.recibos.prefetch_related("pagos")
-
 
     saldo_capital = credito.saldo_capital()
     intereses_pendientes = credito.intereses_pendientes()
@@ -91,7 +94,7 @@ def detalle_credito(request, credito_id):
         'saldo': saldo_total,
         'servicios_activos': servicios_activos,
 
-        # Nuevos datos para el template
+        # Datos de mora
         'cuotas_mora_info': cuotas_mora_info,
         'moratorios_acumulados': moratorios_acumulados,
         'prendas': prendas,
@@ -1026,12 +1029,18 @@ def lista_creditos(request):
     # ---------------------------
     # BASE QUERY
     # ---------------------------
-    creditos = Credito.objects.all().select_related("usuario", "vehiculo")
+    creditos_qs = Credito.objects.all().select_related("usuario", "vehiculo")
+
+    # 🔥 SINCRONIZAR ESTADO DE LOS CRÉDITOS
+    # (solo una vez por carga)
+    for credito in creditos_qs:
+        credito.verificar_estado_credito()
 
     # ---------------------------
     # FILTROS APLICADOS
     # ---------------------------
-    
+    creditos = creditos_qs
+
     if estado:
         creditos = creditos.filter(estado=estado)
 
@@ -1077,7 +1086,7 @@ def lista_creditos(request):
     # ---------------------------
     # PAGINACIÓN
     # ---------------------------
-    paginator = Paginator(creditos, 10)  # 10 por página
+    paginator = Paginator(creditos, 10)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
@@ -1169,6 +1178,14 @@ def dashboard(request):
     hoy = timezone.now().date()
     fecha_alerta = hoy + timedelta(days=7)
 
+    # -------------------------------------------------
+    # 🔥 SINCRONIZAR ESTADO DE LOS CRÉDITOS
+    # -------------------------------------------------
+    creditos_qs = Credito.objects.all().only("id", "estado")
+
+    for credito in creditos_qs:
+        credito.verificar_estado_credito()
+
     # ---------------- METRICAS GENERALES ----------------
     total_creditos = Credito.objects.count()
 
@@ -1184,25 +1201,21 @@ def dashboard(request):
     if total_prestado > 0:
         recuperacion = (total_pagado / total_prestado) * 100
 
-    # ---------------- VALOR TOTAL EN MORA (sumando cuotas en Mora) ----------------
+    # ---------------- VALOR TOTAL EN MORA ----------------
     cuotas_en_mora_qs = CuotaCredito.objects.filter(estado="Mora")
     valor_mora = cuotas_en_mora_qs.aggregate(total=Sum("cuota_total"))["total"] or 0
 
-    # Creditos al dia (simplemente los activos)
     al_dia = activos
-
     cartera_activa = total_prestado - total_pagado
     cartera_vencida = valor_mora
 
     # ---------------- ALERTAS ----------------
-    # Cuotas próximas: cuotas NO pagadas con fecha_vencimiento entre hoy y fecha_alerta
     cuotas_proximas_qs = CuotaCredito.objects.filter(
         pagada=False,
         fecha_vencimiento__gte=hoy,
         fecha_vencimiento__lte=fecha_alerta
     ).select_related("credito").order_by("fecha_vencimiento")[:10]
 
-    # Construimos una lista amigable para template (contiene cuota, credito, fecha_venc)
     cuotas_proximas = [{
         "credito": cuota.credito,
         "cuota_numero": cuota.numero,
@@ -1210,7 +1223,6 @@ def dashboard(request):
         "cuota_total": cuota.cuota_total
     } for cuota in cuotas_proximas_qs]
 
-    # Créditos en mora > 30 días (buscamos créditos que tengan alguna cuota en mora con fecha_vencimiento <= hoy-30)
     fecha_30 = hoy - timedelta(days=30)
     creditos_mora_prolongada_qs = Credito.objects.filter(
         cuotas_credito__estado="Mora",
@@ -1220,11 +1232,9 @@ def dashboard(request):
     mora_mas_30 = list(creditos_mora_prolongada_qs)
 
     # ---------------- GRAFICAS ----------------
-    # Créditos por estado
     estados_labels = ["Activos", "En mora", "Cobro jurídico", "Finalizados"]
     estados_data = [activos, mora, juridico, finalizados]
 
-    # Pagos mensuales (por fecha_pago)
     pagos_mensuales_qs = (
         PagoCredito.objects
         .annotate(mes=TruncMonth("fecha_pago"))
@@ -1235,7 +1245,6 @@ def dashboard(request):
     pagos_labels = [p["mes"].strftime("%b %Y") for p in pagos_mensuales_qs]
     pagos_data = [float(p["total"]) for p in pagos_mensuales_qs]
 
-    # Créditos otorgados por mes (por fecha_inicio)
     creditos_mensuales_qs = (
         Credito.objects
         .annotate(mes=TruncMonth("fecha_inicio"))
@@ -1246,7 +1255,6 @@ def dashboard(request):
     creditos_labels = [c["mes"].strftime("%b %Y") for c in creditos_mensuales_qs]
     creditos_data = [float(c["total"]) for c in creditos_mensuales_qs]
 
-    # Mora mensual: sumar cuota_total de cuotas en Mora por mes de fecha_vencimiento
     mora_mensual_qs = (
         CuotaCredito.objects.filter(estado="Mora")
         .annotate(mes=TruncMonth("fecha_vencimiento"))
@@ -1260,11 +1268,9 @@ def dashboard(request):
     # ---------------- ULTIMOS REGISTROS ----------------
     ultimos_pagos = PagoCredito.objects.select_related("credito").order_by("-id")[:10]
     ultimos_creditos = Credito.objects.select_related("usuario").order_by("-id")[:10]
-    
 
     # ---------------- CONTEXTO ----------------
     context = {
-        # métricas
         "total_creditos": total_creditos,
         "total_prestado": float(total_prestado),
         "total_pagado": float(total_pagado),
@@ -1278,11 +1284,9 @@ def dashboard(request):
         "cartera_activa": float(cartera_activa),
         "cartera_vencida": float(cartera_vencida),
 
-        # alertas
         "cuotas_proximas": cuotas_proximas,
         "mora_mas_30": mora_mas_30,
 
-        # graficas
         "estados_labels": estados_labels,
         "estados_data": estados_data,
         "pagos_labels": pagos_labels,
@@ -1292,7 +1296,6 @@ def dashboard(request):
         "mora_labels": mora_labels,
         "mora_data": mora_data,
 
-        # listas
         "ultimos_pagos": ultimos_pagos,
         "ultimos_creditos": ultimos_creditos,
     }
