@@ -21,9 +21,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'YULY LORENA',
+    'RAMIREZ',
+    'VARGAS',
     '1010198197',
     '3204040135',
     'KR 14 I 91 B 21 SUR',
@@ -59,9 +59,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'LUIS EDUARDO',
+    'PAEZ',
+    'OLAYA',
     '12102501',
     '3213482522',
     'KR 77 62 A 24 SUR',
@@ -97,9 +97,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ROSA VIRGINIA',
+    'MENSA',
+    'SALGADO',
     '36152310',
     '3043540390',
     'KR 77 63 A 24 SUR',
@@ -135,9 +135,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ASTRID ELENA',
+    'ACEVEDO',
+    'VELEZ',
     '43098201',
     '3123805754',
     'KR 24 A 33 22 SUR',
@@ -173,9 +173,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ROBERT ALEXANDER',
+    'CASTELLANOS',
+    'SUAREZ',
     '1022422720',
     '3202201059',
     'KR 99 14 78',
@@ -211,9 +211,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'EDWAR ALFONSO',
+    'ARIZA',
+    'HERRERÑO',
     '1101174264',
     '3226505267',
     'KR 77 L BIS 48 SUR 99',
@@ -249,9 +249,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JORGE LEONARDO',
+    'RINCON',
+    'CORTES',
     '1030590447',
     '3167445491',
     'KR 84 A 145 95',
@@ -287,7 +287,7 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
+    'SISTEMA INTELIGENTE DE TRANSPORTE',
     '',
     '',
     '900865216',
@@ -325,9 +325,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ALBERTO',
+    'HERREÑO',
+    'CORTES',
     '13706405',
     '3226505267',
     'KR 77 L BIS 48 54 SUR',
@@ -363,9 +363,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'OSCAR MAURICIO',
+    'LONDOÑO',
+    'SANCHEZ',
     '79770704',
     '3213177432',
     'CL 9 13 A 33',
@@ -401,9 +401,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'RAFAEL ORLANDO',
+    'HERNANDEZ',
+    'HERNANDEZ',
     '1022956749',
     '3214793340',
     'CL 126 B 118 28',
@@ -439,9 +439,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'CARLOS HERNANDO',
+    'PACHECO',
+    'RODRIGUEZ',
     '19386336',
     '3166850660',
     'KR 26 C 28 66 SUR',
@@ -477,9 +477,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JOSE RODRIGO',
+    'COLORADO',
+    'TORO',
     '79722729',
     '3208961117',
     'CL 57 A 35 78',
@@ -515,9 +515,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'URIEL RICARDO',
+    'RODRIGUEZ',
+    'MENDEZ',
     '80179714',
     '3055761594',
     'KR 105 B 130 C 09',
@@ -553,9 +553,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JOSE RICARDO',
+    'BELTRAN',
+    'RODRIGUEZ',
     '11348218',
     '3115353023',
     'CL 19 5 C 05',
@@ -591,9 +591,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JILLY JOHANNA',
+    'FLOREZ',
+    'HUERTAS',
     '1022399957',
     '3125659399',
     'KR 53 F 1 16',
@@ -629,9 +629,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'HENRY',
+    'RODRIGUEZ',
+    'LOZANO',
     '16642698',
     '3125295849',
     'KR 13 A BIS 58 B 55 SUR',
@@ -667,9 +667,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'DELIA MILENA',
+    'GONZALEZ',
+    'ESCALANTE',
     '52910069',
     '3107792084',
     'CL 34 24 22',
@@ -705,9 +705,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'LUIS HUMBERTO',
+    'GONZALEZ',
+    'MONROY',
     '1056412423',
     '3144329867',
     'KR 17 187 57',
@@ -743,9 +743,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JHON JAIRO',
+    'RODRIGUEZ',
+    'GALINDO',
     '1023031707',
     '80775042',
     'KR 78 9 17',
@@ -781,9 +781,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JUDDY MATHERLEY',
+    'COY',
+    'MURCIO',
     '1014217626',
     '3228061030',
     'KR 116 D 70 C 10',
@@ -819,9 +819,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JUAN JOVANI',
+    'RESTREPO',
+    'VELEZ',
     '9923663',
     '3024242470',
     'CL 22 A SUR 4 34',
@@ -857,9 +857,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'FERNANDO',
+    'VEGA',
+    'BENAVIDEZ',
     '80180629',
     '3132087113',
     'CL 70 A 104 41',
@@ -895,9 +895,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'DIANA JAZMIN',
+    'AHUMADA',
+    'MEDINA',
     '53119366',
     '3176548314',
     'CL 36 I SUR 8 C 08 ESTE',
@@ -933,9 +933,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'EVA ESPERANZA',
+    'FLOREZ',
+    'RONCANCIO',
     '37697584',
     '3203117859',
     'KR 95 68 71',
@@ -971,9 +971,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ABELARDO',
+    'CANO',
+    'MORALES',
     '19344891',
     '3213964355',
     'KR 72 C BIS 55 50',
@@ -1009,9 +1009,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'EDWIN MAURICIO',
+    'RAMOS',
+    'AMAYA',
     '79910032',
     '3144373876',
     'CL 47 13 15',
@@ -1047,8 +1047,8 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
+    'JORGE HERNANDO',
+    'VILLAMARIN',
     '',
     '80260073',
     '3123971709',
@@ -1085,9 +1085,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'NORA MILENA',
+    'ANGEL',
+    'SIMBAQUEBA',
     '52545888',
     '3167621284',
     'CL 60 22 B 05',
@@ -1123,9 +1123,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'CRSITIAN JIMMY',
+    'CASTAÑO',
+    'BERGEL',
     '1136886297',
     '3134529120',
     'KR 17 B 64 25 SUR',
@@ -1161,9 +1161,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'MARIA ANA DILIA',
+    'CERERO',
+    'RODRIGUEZ',
     '41646874',
     '3142370344',
     'CL 10 1 A 01',
@@ -1199,8 +1199,8 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
+    'BLANCA ISABEL',
+    'JIMENEZ',
     '',
     '41454780',
     '3142886302',
@@ -1237,9 +1237,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JHON JAIRO',
+    'SANCHEZ',
+    'GUTIERREZ',
     '11226529',
     '3134244415',
     'CL 52 SUR 79 B 43',
@@ -1275,9 +1275,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ALEX FERNEY',
+    'RUIZ',
+    'RAMOS',
     '80802503',
     '3138235573',
     'CL 23 B 113 79',
@@ -1313,9 +1313,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JAVIER',
+    'MUTIS',
+    'CORTES',
     '79942882',
     '3103167694',
     'CL 153 A 7 E 44',
@@ -1351,9 +1351,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'WILLIAM DAVID',
+    'RODRIGUEZ',
+    'BELTRAN',
     '1026271119',
     '3005752485',
     'CL 12 C 71 C 31',
@@ -1389,9 +1389,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JHOAN STIVEN',
+    'JIMENEZ',
+    'JACINTO',
     '1014291005',
     '3115795558',
     'KR 94 74 A 30',
@@ -1427,9 +1427,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'CAMILO ANDRES',
+    'BORNACHERA',
+    'AMAZO',
     '1000455502',
     '3014932408',
     'TV 112 D 64 D 35',
@@ -1465,9 +1465,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ANA ISABEL',
+    'CHAVES',
+    'ORGANISTA',
     '39073068',
     '3133764826',
     'CL 13 68 86',
@@ -1503,9 +1503,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'OLBAR',
+    'URREGO',
+    'GONZALEZ',
     '79606394',
     '3115276056',
     'KR 78 H 65 C 65 SUR',
@@ -1541,9 +1541,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'YARITZA DADIANS',
+    'SILVA',
+    'BRIÑEZ',
     '1022342459',
     '3138117366',
     'KR 103 57 C 22 SUR',
@@ -1579,9 +1579,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'DIEGO ALEJANDRO',
+    'ORTEGA',
+    'MARTIN',
     '1013629824',
     '3118898768',
     'KR 93 D 6 A 15',
@@ -1617,9 +1617,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ANA YORLEY',
+    'AGUDELO',
+    'PUENTES',
     '23781960',
     '3137507301',
     'KR 79 BIS A 73 92 SUR',
@@ -1655,9 +1655,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JONATAN ALEXANDER',
+    'ROJAS',
+    'RAMIREZ',
     '1110525497',
     '3132395145',
     'CL 112 BIS 81 51',
@@ -1693,9 +1693,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JULIO ALBERTO',
+    'ACOSTA',
+    'SARMIENTO',
     '80821040',
     '3208054936',
     'KR 147 A 142 50',
@@ -1731,9 +1731,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JORGE ALIRIO',
+    'CASTAÑEDA',
+    'DUARTE',
     '80263816',
     '3112624631',
     'CL 34 A 88 D 62',
@@ -1769,9 +1769,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'VIVIANA MARCELA',
+    'JARAMILLO',
+    'GIRALDO',
     '52910024',
     '3106287545',
     'DG 69 A 14 T 33 SUR',
@@ -1807,9 +1807,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'CRISTIAN ALEJANDRO',
+    'BAUTISTA',
+    'RODRIGUEZ',
     '1024553516',
     '3142375235',
     'CL 62 B 19 32 SUR',
@@ -1845,9 +1845,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'PAULA ALEJANDRA',
+    'GOMEZ',
+    'ORTIZ',
     '1000689615',
     '3202838567',
     'CL 31 A 68 C 20',
@@ -1883,9 +1883,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'FIDELIGNO',
+    'SUAREZ',
+    'MOJICA',
     '79341188',
     '3214094635',
     'KR 28 A 40 53 SUR',
@@ -1921,9 +1921,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'AURELIANO',
+    'CARDENAS',
+    'JIMENEZ',
     '19434558',
     '3144922192',
     'KR 21 40 A 41 SUR',
@@ -1959,9 +1959,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JOSE IGNACIO',
+    'ROJAS',
+    'BAQUERO',
     '19399694',
     '3134788216',
     'KR 6 A 49 D 60 SUR',
@@ -1997,9 +1997,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'LINA YINETH',
+    'HERRAN',
+    'AGUDELO',
     '1106307739',
     '3232366918',
     'KR 81 D BIS 11 D 23',
@@ -2035,9 +2035,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'DEINER FARID',
+    'MONROY',
+    'AMORTEGUI',
     '1068976664',
     '3058148949',
     'KR 14 H ESTE 61 C 07 SUR',
@@ -2073,9 +2073,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'PAOLA ANDREA',
+    'ARIAS',
+    'MORALES',
     '1126589592',
     '3135090540',
     'CL 79 119 95',
@@ -2111,9 +2111,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ELKIN MAURICIO',
+    'BOYACA',
+    'JOYA',
     '79412932',
     '3158940790',
     'KR 23 B 44 52 SUR',
@@ -2149,9 +2149,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JOSE AGOBARDO',
+    'ARIAS',
+    'MORALES',
     '94152860',
     '3212925502',
     'CL 79 119 95',
@@ -2187,9 +2187,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'NELLY PAOLA',
+    'SANCHEZ',
+    'GARZON',
     '40342931',
     '3208470916',
     'CL 54 C SUR 99 A 41',
@@ -2225,9 +2225,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JEISSON GIOVANNY',
+    'ROZO',
+    'RAMIREZ',
     '1022353289',
     '3202932976',
     'KR 42 C BIS 5 A 62',
@@ -2263,9 +2263,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'DIANA MARIA',
+    'PEREZ',
+    'QUINTERO',
     '53082490',
     '3193270374',
     'CL 72 B SUR 89 A 01',
@@ -2301,9 +2301,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'MARIA AYDE',
+    'MARTINEZ',
+    'GONZALEZ',
     '30274167',
     '3112930046',
     'CL 33 SUR 52 A 89',
@@ -2339,9 +2339,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'BRANDON YESSID',
+    'MESA',
+    'VENTURA',
     '1019089285',
     '3054096983',
     'CL 49 B BIS A SUR 1 45',
@@ -2377,9 +2377,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'GALO ALCIDES',
+    'DE JESUS',
+    'HERRERA',
     '665655',
     '3214581996',
     'KR 44 ESTE 22 A 41',
@@ -2415,9 +2415,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ARIEL FREDY',
+    'PORRAS',
+    'CELIS',
     '4188842',
     '3118737080',
     'KR 86 B BIS 57 B 51 SUR',
@@ -2453,9 +2453,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'DEISY LILIANA',
+    'PEREZ',
+    'MORENO',
     '52837619',
     '7103345',
     'CL 54 SUR F 34 01',
@@ -2491,9 +2491,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'MARIA STELLA',
+    'ROJAS',
+    'HERNANDEZ',
     '41654657',
     '3142167765',
     'KR 77 BIS 58 445 SUR',
@@ -2529,9 +2529,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'HERNANDO',
+    'GOMEZ',
+    'ROBERTO',
     '19242034',
     '3102714471',
     'CL 1 BIS 1 A 22',
@@ -2567,9 +2567,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'YAMILE',
+    'ECHAVARRIA',
+    'OSORIO',
     '52230226',
     '3112354776',
     'KR 15 A 26 38 SUR',
@@ -2605,9 +2605,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JOSE EUGENIO',
+    'NOVOA',
+    'MELO',
     '17131335',
     '3124346726',
     'KR 22 A 66 47 SUR',
@@ -2643,9 +2643,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ALBERTO ELISIO',
+    'LINARES',
+    'BERNAL',
     '80376556',
     '3118433774',
     'KR 105 16 I 25',
@@ -2681,9 +2681,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'LAURA KATHERINE',
+    'ACERO',
+    'PEÑA',
     '1012355864',
     '3022673932',
     'TR 60 59 24 SUR',
@@ -2719,9 +2719,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JONATHAN ALEXANDER',
+    'GUTIERREZ',
+    'DIAZ',
     '1016053420',
     '3023613459',
     'CL 16 J 104 28',
@@ -2757,9 +2757,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'MARIA ISABEL',
+    'OCHOA',
+    'DE MURCIA',
     '51716077',
     '3202223115',
     'CL 45 B SUR 82 D 54',
@@ -2795,9 +2795,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ANGIE JULIETH',
+    'SALCEDO',
+    'MARTINEZ',
     '1022415688',
     '3208923666',
     'CL 8 BIS D 81 90',
@@ -2833,9 +2833,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'EFREN',
+    'ACERO',
+    'ACERO',
     '80821411',
     '3103411311',
     'KR 105 16 I 56',
@@ -2871,9 +2871,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'PABLO EMILIO',
+    'ROZO',
+    'BRAN',
     '19243446',
     '3214101667',
     'KR 86 A 71 15',
@@ -2909,9 +2909,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'SANDRA IRENE',
+    'RODRIGUEZ',
+    'TORRES',
     '52735531',
     '3102003833',
     'CL 182 51 31',
@@ -2947,9 +2947,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JEISSON ENRIQUE',
+    'RODRIGUEZ',
+    'ESLAVA',
     '80258658',
     '3045919633',
     'CL 11 B 74 57',
@@ -2985,9 +2985,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'BRAIAN ALFONSO',
+    'MORA',
+    'PACHECO',
     '1013621465',
     '3175373193',
     'KR 26 C 28 66 SUR',
@@ -3023,9 +3023,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'NESTOR UBEYMAR',
+    'ARGUELLO',
+    'SIMBAQUEBA',
     '79623757',
     '3108698788',
     'CL 51 SUR 77 R 21',
@@ -3061,8 +3061,8 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
+    'ANYELA MILENA',
+    'ESPINOSA',
     '',
     '52268414',
     '3166732155',
@@ -3099,9 +3099,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'CARLOS GUIOVANNI',
+    'BUITRAGO',
+    'GONZALEZ',
     '79792485',
     '3102609198',
     'DG 3 9 02',
@@ -3137,9 +3137,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'GLORIA ELSY',
+    'RIVERA',
+    'DE GARCIA',
     '51556937',
     '3058193828',
     'CL 39 SUR 72 N 42',
@@ -3175,9 +3175,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'MARIA CILENIA',
+    'GARCIA',
+    'RODRIGUEZ',
     '39642729',
     '3182055741',
     'KR 80 B BIS 59 75 SUR',
@@ -3213,9 +3213,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JAVIER',
+    'OBANDO',
+    'BEJARANO',
     '80376704',
     '3115306771',
     'KR 97 F 34 A 30 SUR',
@@ -3251,9 +3251,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'CARLOS HERNAN',
+    'GUTIERREZ',
+    'MEDINA',
     '79541767',
     '3144750813',
     'AV AMERICAS 72 C 35',
@@ -3289,9 +3289,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'FANNY DEL CARMEN',
+    'GUTIERREZ',
+    'MONTENEGRO',
     '49733621',
     '3012655487',
     'CL 145 19 79',
@@ -3327,9 +3327,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'DAYAN SILVERIA',
+    'ROLDAN',
+    'QUINTERO',
     '1051654612',
     '3104838251',
     'CL 3 A SUR 19 78',
@@ -3365,9 +3365,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'DEISY LILIANA',
+    'MORALES',
+    'MORALES',
     '1073130648',
     '3203354883',
     'CL 13 37 53',
@@ -3403,9 +3403,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'CONSUELO',
+    'CHICUE',
+    'BOLAÑOS',
     '41589473',
     '3222342936',
     'KR 32 69 J 66',
@@ -3441,9 +3441,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'EBER ARMANDO',
+    'ALCOCER',
+    'BELEÑO',
     '85453829',
     '3133763909',
     'KR 100 58a 03 SUR',
@@ -3479,9 +3479,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ANGEL EXNEIDER',
+    'MARTINEZ',
+    'GAONA',
     '80721969',
     '3136905973',
     'KR 10 D 26 A 39 SUR',
@@ -3517,9 +3517,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ABELARDO',
+    'PARRA',
+    'MARIN',
     '79321374',
     '3107614031',
     'KR 9 A 68 B 17 SUR',
@@ -3555,9 +3555,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JORGE ENRIQUE',
+    'GUATAQUIRA',
+    'MONTOYA',
     '19361106',
     '3233241442',
     'TV 73 D BIS 65 29',
@@ -3593,9 +3593,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'DIANA CAROLINA',
+    'SINESTERRA',
+    'VELASCO',
     '1030531770',
     '3133975437',
     'KR 93 B 34 15 SUR',
@@ -3631,9 +3631,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JORGE ELIECER',
+    'RIOS',
+    'QUINTERO',
     '91275604',
     '3114401413',
     'CL 68 B 80 D 05',
@@ -3669,9 +3669,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ALEJANDRA',
+    'POLOCHE',
+    'AROCA',
     '52715211',
     '3214987404',
     'CL 69 L SUR 30 66',
@@ -3707,9 +3707,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'YANETH YADIRA',
+    'MORALES',
+    'CHIQUIZA',
     '52917322',
     '3156769918',
     'KR 32 13 226',
@@ -3745,9 +3745,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'PATRICIA YANETH',
+    'JIMENEZ',
+    'PEDRAZA',
     '53128866',
     '3118891535',
     'KR 6 G ESTE 106 47 SUR',
@@ -3783,8 +3783,8 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
+    'FABIO NELSON',
+    'MORENO',
     '',
     '79956895',
     '3005182491',
@@ -3821,9 +3821,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'HECTOR MANUEL',
+    'PACHECO',
+    'RODRIGUEZ',
     '79325572',
     '3103482028',
     'KR 10 C 25 80 SUR',
@@ -3859,9 +3859,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JOSE RAMIRO',
+    'ULLOA',
+    'TORRES',
     '79293146',
     '3204910206',
     'TV 52 1 B 05',
@@ -3897,9 +3897,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'FRANCISO',
+    'MELO',
+    'DAZA',
     '1071323',
     '3004488230',
     'KR 32 38 A SUR',
@@ -3935,9 +3935,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'FLORESMIRO',
+    'MONROY',
+    'CAÑON',
     '6910720',
     '3217523492',
     'CL 53 SUR 19 38 SUR',
@@ -3973,9 +3973,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'BRAULIO ANTONIO',
+    'ROJAS',
+    'RONCANCIO',
     '19312384',
     '3133742673',
     'CL 64 103 68',
@@ -4011,9 +4011,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JONATHAN',
+    'ULLOA',
+    'MONROY',
     '80794690',
     '3007898501',
     'KR 50 04 F 64',
@@ -4049,9 +4049,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'HENRY',
+    'SANCHEZ',
+    'PEREZ',
     '86008313',
     '3134014487',
     'KR 80 D 7 B 83',
@@ -4087,9 +4087,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JUAN EVANGELISTA',
+    'PACHECO',
+    'RODRIGUEZ',
     '79269085',
     '3114640360',
     'KR 26 C 28 66 SUR',
@@ -4125,8 +4125,8 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
+    'MARLY ANDREA',
+    'OSPINA',
     '',
     '24436780',
     '3202437028',
@@ -4163,9 +4163,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ROSA ELVIRA',
+    'BUITRAGO',
+    'TORRES',
     '41649231',
     '3132297192',
     'TV 154 A BIS 132 D 18',
@@ -4201,9 +4201,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'MARIA DEL TRANSITO',
+    'HERNANDEZ',
+    'GARCIA',
     '23963464',
     '3214226282',
     'KR 69 D 4 31 SUR',
@@ -4239,9 +4239,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'DIOSELINA',
+    'BUSTOS',
+    'NIETO',
     '20334495',
     '3209724683',
     'DG 183 11 55',
@@ -4277,9 +4277,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'LUZ MYRIAM',
+    'PACHECO',
+    'RODRIGUEZ',
     '51923877',
     '3165892919',
     'KR 26 C 28 66 SUR',
@@ -4315,9 +4315,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JAIME RAUL',
+    'MONTES',
+    'GALINDO',
     '1032360406',
     '3023862220',
     'KR 12 25 39 SUR',
@@ -4353,9 +4353,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'CAREN LORENA',
+    'CORDOBA',
+    'CHAPARRO',
     '1019110080',
     '3017591811',
     'CL 131 C 126 80',
@@ -4391,9 +4391,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'GABRIEL',
+    'GARZON',
+    'BERNAL',
     '1023963084',
     '3058265668',
     'CL 2 9 F 81',
@@ -4429,9 +4429,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'MARICELA',
+    'RODRIGUEZ',
+    'GUERRERO',
     '1033689252',
     '3123215037',
     'DG 9 D SUR 7 A 22 ESTE',
@@ -4467,9 +4467,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'GONZALO EVANGELISTA',
+    'CARDENAS',
+    'BLANCO',
     '19263493',
     '3104764287',
     'KR 73 A 76 11',
@@ -4505,9 +4505,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'OSCAR ALEJANDRO',
+    'MORALES',
+    'VARGAS',
     '1018424268',
     '3203787010',
     'CL 22 A SUR 13 22',
@@ -4543,9 +4543,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JHON NEIVER',
+    'RODRIGUEZ',
+    'SALAS',
     '79767973',
     '3204676514',
     'KR 1 B 60 31',
@@ -4581,9 +4581,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'GUNDISALVO',
+    'BURGOS',
+    'DOMINGUEZ',
     '1019048624',
     '3105892004',
     'KR 97 C 156 A 08',
@@ -4619,9 +4619,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'SERAFIN',
+    'HERRERA',
+    'MORENO',
     '19232709',
     '3133800440',
     'CL 34 B 87 F 56 SUR',
@@ -4657,9 +4657,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ISMENIA',
+    'SANDOVAL',
+    'ROBLES',
     '1022331117',
     '3185687546',
     'KR 147 150 26',
@@ -4695,8 +4695,8 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
+    'ERNESTO',
+    'VARGAS',
     '',
     '5600186',
     '3226505267',
@@ -4733,9 +4733,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'LUIS ALBERTO',
+    'JULIO',
+    'OROZO',
     '72186334',
     '3108691067',
     'KR 14 I 136 A 90 SUR',
@@ -4771,9 +4771,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'LUIS ANTONIO',
+    'CONTRERAS',
+    'AREVALO',
     '19105681',
     '3142358201',
     'CL 71 B SUR 14 70',
@@ -4809,8 +4809,8 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
+    'HELBER',
+    'DIAZ',
     '',
     '74372860',
     '3204520106',
@@ -4847,9 +4847,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'YEINSON',
+    'CRIOLLO',
+    'RAMIREZ',
     '79749119',
     '3115644726',
     'CL 3 BIS 68 40',
@@ -4885,9 +4885,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'EDINSON',
+    'TORRES',
+    'SANTIAGO',
     '79989379',
     '3202914794',
     'KR 36 69 I 43 SUR',
@@ -4923,8 +4923,8 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
+    'GERMAN GUILLERMO',
+    'CORTES',
     '',
     '6755811',
     '3013920400',
@@ -4961,9 +4961,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'PAOLA ANDREA',
+    'BEDOYA',
+    'DORIA',
     '1033766608',
     '3122415945',
     'CL 6 C 82 A 78',
@@ -4999,9 +4999,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'YAMID',
+    'LOZANO',
+    'HERRERA',
     '1073693144',
     '3144513862',
     'KR 14 I 136 A 90 SUR',
@@ -5037,9 +5037,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ALBERTO',
+    'QUINTANA',
+    'GUABA',
     '2995188',
     '3166965996',
     'KR 5 H 49 C 10 SUR',
@@ -5075,9 +5075,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'WILLIAM MANUEL',
+    'APONTE',
+    'PATIÑO',
     '80747312',
     '3112784704',
     'CL 73 A SUR 18 G 10',
@@ -5113,8 +5113,8 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
+    'WALDORE',
+    'MARTINEZ',
     '',
     '79521002',
     '3132140848',
@@ -5151,9 +5151,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ANGIE GISSED',
+    'MANRIQUE',
+    'LEBRO',
     '1000047547',
     '3106073002',
     'CL 4 BIS A 40 C 72',
@@ -5189,9 +5189,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'WILBER DARIO',
+    'GALINDO',
+    'MERCHAN',
     '80829767',
     '3214727875',
     'KR 81 H 54 C 19',
@@ -5227,9 +5227,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ALEXIS',
+    'ROJAS',
+    'ACOSTA',
     '80260259',
     '3204302104',
     'CL 19 3 A 303 ESTE',
@@ -5265,9 +5265,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JOSE RICARDO',
+    'LAVERDE',
+    'VELANDIA',
     '79154519',
     '3102487016',
     'KR 14 C ESTE 91 B 46 SUR',
@@ -5303,9 +5303,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'GUSTAVO',
+    'JIMENEZ',
+    'CHAVEZ',
     '17148073',
     '3132732460',
     'KR 18 SUR 13 D 40',
@@ -5341,9 +5341,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'DIEGO',
+    'LINARES',
+    'MARTINEZ',
     '79611109',
     '3103282215',
     'CL 10 26 46',
@@ -5379,8 +5379,8 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
+    'ALBERTO RAMIRO',
+    'RODRIGUEZ',
     '',
     '19068547',
     '3118083299',
@@ -5417,9 +5417,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'MARIA INES',
+    'GARZON',
+    'MORA',
     '20589949',
     '3118083299',
     'CL 108 SUR 5 B 45',
@@ -5455,9 +5455,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'SANDRA PAOLA',
+    'MURCIA',
+    'GARCIA',
     '1073232225',
     '3125641858',
     'CL 23 D 103 B 12',
@@ -5493,9 +5493,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JAVIER',
+    'URQUIJO',
+    'RODRIGUEZ',
     '3056946',
     '3105531533',
     'KR 97 C 72 52 SUR',
@@ -5531,9 +5531,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'DIANA PATRICIA',
+    'CADENA',
+    'RIAÑO',
     '1023866700',
     '3182909636',
     'KR 15 ESTE 32 A 60',
@@ -5569,9 +5569,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'DIEGO ALEJANDRO',
+    'APONTE',
+    'PATIÑO',
     '1007404195',
     '3112784704',
     'CL 73 A SUR 18 G 10',
@@ -5607,9 +5607,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'GERARDO',
+    'LARA',
+    'HUERTAS',
     '74339484',
     '3142123120',
     'KR 87 B SUR 2 C 17',
@@ -5645,8 +5645,8 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
+    'MIGUEL ANGEL',
+    'TORRES',
     '',
     '4050996',
     '3115620845',
@@ -5683,9 +5683,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'EDGARDO RAFAEL',
+    'CASTELLON',
+    'CASTRO',
     '73560144',
     '3144388646',
     'KR 6 A ESTE 38 56',
@@ -5721,9 +5721,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'NOHORA YORLENY',
+    'QUIROGA',
+    'GONZALEZ',
     '52766348',
     '3174938148',
     'KR 99 49 A 81',
@@ -5759,9 +5759,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'YULIA ANDREA',
+    'PAEZ',
+    'MENSA',
     '53093617',
     '3043720760',
     'KR 77 N 63 A 25',
@@ -5797,9 +5797,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'FABIO',
+    'RINCON',
+    'GUERRERO',
     '79326503',
     '3144106633',
     'CL 141 100 B 09',
@@ -5835,8 +5835,8 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
+    'JORGE ERNESTO',
+    'BOLAÑOS',
     '',
     '3228085',
     '3133456910',
@@ -5873,9 +5873,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'URIEL',
+    'HERREÑO',
+    'CORTES',
     '13616739',
     '3226505267',
     'KR 77 L BIS 48 54 SUR',
@@ -5911,9 +5911,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'HELKI',
+    'HERREÑO',
+    'OLAYA',
     '2000014533',
     '3226505267',
     'KR 77 L BIS 48 54 SUR',
@@ -5949,9 +5949,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'MATILDE',
+    'CASTRO',
+    'SUSA',
     '23823421',
     '3133302586',
     'CL 137 118 48',
@@ -5987,9 +5987,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'WILSON ENRIQUE',
+    'BERNAL',
+    'ROBLES',
     '80062363',
     '3213177432',
     'KR 32 19 B 10',
@@ -6025,9 +6025,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'CARLOS MARIO',
+    'ROMERO',
+    'LOPEZ',
     '79870584',
     '3112540745',
     'CL 150 A 96 A 71',
@@ -6063,9 +6063,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ALVARO ANDRES',
+    'CANTE',
+    'GUZMAN',
     '1033681725',
     '3112273242',
     'KR 19 A BIS 57 19',
@@ -6101,9 +6101,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JOSE LIBARDO',
+    'ARISTIZABAL',
+    'OSORIO',
     '9845670',
     '3219107147',
     'KR 145 145 46',
@@ -6139,9 +6139,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'MISAEL DE JESUS',
+    'CARO',
+    'MONTAÑO',
     '79243969',
     '3166204741',
     'KR 136 A 145 31',
@@ -6177,9 +6177,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'SIGIFREDO',
+    'ACOSTA',
+    'MENDEZ',
     '93366652',
     '3144924040',
     'CL 49 SUR 87 K 03',
@@ -6215,9 +6215,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ALVARO JAVIER',
+    'MORENO',
+    'AGUIRRE',
     '1079232690',
     '3118797810',
     'KR 89 58 A SUR 59',
@@ -6253,9 +6253,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'WILMAR JOSE',
+    'NUÑEZ',
+    'CARREÑO',
     '1053584812',
     '3115553006',
     'CL 54 A BIS SUR 80 C 29',
@@ -6291,9 +6291,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'MARTHA CECILIA',
+    'PINZON',
+    'GONZALEZ',
     '23780236',
     '3133598745',
     'TV 112 D 64 D 35',
@@ -6329,9 +6329,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JESUS DAVID',
+    'AREVALO',
+    'SERRANO',
     '79726457',
     '3133731664',
     'KR 7 9 34 SUR',
@@ -6367,9 +6367,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'GILDARDO',
+    'TORO',
+    'LOPEZ',
     '5262693',
     '3144557680',
     'KR 100 38 C 16 SUR',
@@ -6405,9 +6405,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'CARLOS JULIO',
+    'HERNANDEZ',
+    'BAUTISTA',
     '2954975',
     '3132913419',
     'KR 97 B 42 25 SUR',
@@ -6443,9 +6443,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'LUIS ALBERTO',
+    'SANCHEZ',
+    'BECERRA',
     '6770417',
     '3144792304',
     'KR 100 A 60 19',
@@ -6481,9 +6481,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'ALVARO FERNANDO',
+    'ZAPATA',
+    'CORREA',
     '19221226',
     '3103384347',
     'CL 6 B 79 C 81',
@@ -6519,9 +6519,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'JEIMMY YURLEY',
+    'PACHECO',
+    'AVILEZ',
     '1023902935',
     '3103482028',
     'KR 10 C 25 80 SUR',
@@ -6557,9 +6557,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'PEDRO ANTONIO',
+    'SANCHEZ',
+    'AREVALO',
     '19259994',
     '3214864914',
     'KR 33 69 J 54',
@@ -6595,9 +6595,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'CARLOS ALBERTO',
+    'THERAN',
+    'POLO',
     '72227015',
     '3144056247',
     'CL 31 A SUR 68 C 20',
@@ -6633,9 +6633,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'BERNARDO AUGUSTO',
+    'OTALORA',
+    'SANCHEZ',
     '2995444',
     '3125058124',
     'KR 51 A 127 75',
@@ -6671,9 +6671,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'CLARA ANATILDE',
+    'CLAVIJO',
+    'URREGO',
     '20586905',
     '3104791112',
     'KR 81 H 45 73 SUR',
@@ -6709,9 +6709,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'CLAUDIA YANETH',
+    'CORTES',
+    'TORRES',
     '24134690',
     '3022865016',
     'CL 71 A SUR 14 A 51 SUR',
@@ -6747,9 +6747,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'WILMAR',
+    'MENDOZA',
+    'CIFUENTES',
     '1020715668',
     '3184003350',
     'CL 151 111 A 26',
@@ -6785,9 +6785,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'OLIVERIO',
+    'RUBIANO',
+    'NOVOA',
     '19122311',
     '3057151924',
     'KR 83 53 B 20 AUR',
@@ -6823,9 +6823,9 @@ INSERT INTO contratos_usuario (
     documento4
 )
 SELECT
-    '',
-    '',
-    '',
+    'NATHALY JOHANNA',
+    'PAEZ',
+    'VANEGAS',
     '53165487',
     '3167921859',
     'KR 9 54 18',
