@@ -77,12 +77,20 @@ class Credito(models.Model):
         - valor_pagado de pagos tipo 'cuota'
         - valor_pagado de pagos tipo 'abono'
         Los pagos de mora y cobro jurídico NO afectan saldo.
+        También se ignoran pagos ANULADOS.
         """
-        pagos_cuota = self.pagos.filter(tipo_pago='cuota').aggregate(
+
+        pagos_cuota = self.pagos.filter(
+            tipo_pago='cuota',
+            anulado=False
+        ).aggregate(
             total=models.Sum('valor_pagado')
         )['total'] or Decimal('0.00')
 
-        abonos_capital = self.pagos.filter(tipo_pago='abono').aggregate(
+        abonos_capital = self.pagos.filter(
+            tipo_pago='abono',
+            anulado=False
+        ).aggregate(
             total=models.Sum('valor_pagado')
         )['total'] or Decimal('0.00')
 
@@ -91,7 +99,15 @@ class Credito(models.Model):
         return max(saldo, Decimal('0.00'))
 
     def intereses_pendientes(self):
-        cuotas_pagadas = self.pagos.filter(tipo_pago='cuota').count()
+        """
+        Calcula intereses pendientes del crédito ignorando pagos anulados
+        """
+
+        cuotas_pagadas = self.pagos.filter(
+            tipo_pago='cuota',
+            anulado=False
+        ).count()
+
         cuotas_restantes = self.cuotas - cuotas_pagadas
 
         interes_mensual = Decimal(str(self.interes)) / Decimal('100')
@@ -106,8 +122,10 @@ class Credito(models.Model):
         cuota_fija_base = self.cuotas_credito.first().cuota_total - self.total_servicios_activos()
 
         for _ in range(cuotas_restantes):
+
             interes_mes = saldo * interes_mensual
             abono_capital = cuota_fija_base - interes_mes
+
             saldo -= abono_capital
             total_intereses += interes_mes
 
@@ -403,17 +421,81 @@ class PagoCredito(models.Model):
     fecha_pago = models.DateField(auto_now_add=True)
     valor_pagado = models.DecimalField(max_digits=12, decimal_places=2)
 
-    # NUEVO
+    # Pagos adicionales
     interes_moratorio_pagado = models.DecimalField(max_digits=12, decimal_places=2, default=0)
     cobro_juridico_pagado = models.DecimalField(max_digits=12, decimal_places=2, default=0)
 
     cuota_numero = models.PositiveIntegerField(blank=True, null=True)
-    tipo_pago = models.CharField(max_length=10, choices=TIPO_PAGO_CHOICES, default='cuota')
+
+    tipo_pago = models.CharField(
+        max_length=10,
+        choices=TIPO_PAGO_CHOICES,
+        default='cuota'
+    )
+
     observacion = models.TextField(blank=True, null=True)
+
+    # Control de anulación
+    anulado = models.BooleanField(default=False)
+    fecha_anulacion = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         tipo = "Abono" if self.tipo_pago == 'abono' else f"Cuota {self.cuota_numero}"
         return f"{tipo} - {self.credito.usuario.nombre}"
+
+    # -------------------------------------------------
+    # FUNCION PARA ANULAR PAGO
+    # -------------------------------------------------
+    def anular_pago(self):
+
+        # Si ya está anulado no hacer nada
+        if self.anulado:
+            return
+
+        credito = self.credito
+
+        # ---------------------------------
+        # SI ES PAGO DE CUOTA
+        # ---------------------------------
+        if self.tipo_pago == "cuota" and self.cuota_numero:
+
+            try:
+                cuota = credito.cuotas_credito.get(numero=self.cuota_numero)
+
+                cuota.pagada = False
+                cuota.estado = "Pendiente"
+
+                cuota.save(update_fields=["pagada", "estado"])
+
+            except CuotaCredito.DoesNotExist:
+                pass
+
+        # ---------------------------------
+        # SI ES ABONO A CAPITAL
+        # ---------------------------------
+        if self.tipo_pago == "abono":
+
+            # recalcular cronograma del crédito
+            credito.generar_cronograma(recalcular=True)
+
+        # ---------------------------------
+        # ELIMINAR RELACIÓN CON RECIBOS
+        # ---------------------------------
+        for recibo in self.recibos.all():
+            recibo.pagos.remove(self)
+
+        # ---------------------------------
+        # MARCAR PAGO COMO ANULADO
+        # ---------------------------------
+        self.anulado = True
+        self.fecha_anulacion = timezone.now()
+
+        self.save(update_fields=["anulado", "fecha_anulacion"])
+
+        # ---------------------------------
+        # VERIFICAR ESTADO DEL CREDITO
+        # ---------------------------------
+        credito.verificar_estado_credito()
 
 
 class CuotaCredito(models.Model):

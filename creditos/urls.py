@@ -32,5 +32,6 @@ urlpatterns = [
     path('solicitud/<int:solicitud_id>/pdf-prenda/', views.generar_pdf_prenda, name='generar_pdf_prenda'),
     path('creditos/estado/<str:estado>/', views.creditos_por_estado, name='creditos_por_estado'),
     path('prenda/crear/', views.crear_prenda, name='crear_prenda'),
+    path('anular-pago/<int:pago_id>/', views.anular_pago, name='anular_pago'),
 
 ]

@@ -219,7 +219,7 @@ def registrar_pago(request, credito_id):
 
     # Mostrar solo cuotas no pagadas
     cuotas_disponibles = credito.cuotas_credito.filter(pagada=False).order_by('numero')
-    opciones_cuotas = [
+    opciones_cuotas = [('', 'Seleccionar cuota')] + [
         (c.numero, f"Cuota {c.numero} - vence {c.fecha_vencimiento} - ${c.cuota_total:,.2f}")
         for c in cuotas_disponibles
     ]
@@ -1609,3 +1609,11 @@ def crear_prenda(request):
     return render(request, 'creditos/crear_prenda.html', {
         'form': form
     })
+
+def anular_pago(request, pago_id):
+
+    pago = get_object_or_404(PagoCredito, id=pago_id)
+
+    pago.anular_pago()
+
+    return redirect("detalle_credito", pago.credito.id)
