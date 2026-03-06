@@ -160,7 +160,7 @@ class Credito(models.Model):
         dias_mora = (hoy - cuota.fecha_vencimiento).days
 
         # Interés moratorio = tasa anual / 365 * días de mora
-        tasa_diaria = (Decimal(str(self.interes_moratorio)) / Decimal('100')) / Decimal('365')
+        tasa_diaria = (Decimal(str(self.interes_moratorio)) / Decimal('100')) / Decimal('30')
         interes_mora = (Decimal(cuota.cuota_total) * tasa_diaria * dias_mora).quantize(
             Decimal('0.01'),
             rounding=ROUND_HALF_UP
