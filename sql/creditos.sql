@@ -21,8 +21,8 @@ INSERT INTO creditos_credito (
     24,
     '2025-01-01',
     'Activo',
-    53165487,
-    838725,
+    511,
+    223,
     3.40
 );
 
@@ -44,8 +44,8 @@ INSERT INTO creditos_credito (
     24,
     '2025-08-10',
     'Activo',
-    79341188,
-    0,
+    329,
+    224,
     3.40
 );
 
@@ -67,8 +67,8 @@ INSERT INTO creditos_credito (
     1,
     '2022-08-25',
     'Finalizado',
-    11348218,
-    0,
+    400,
+    295,
     3.40
 );
 
@@ -90,8 +90,8 @@ INSERT INTO creditos_credito (
     18,
     '2020-09-16',
     'Finalizado',
-    6910720,
-    0,
+    457,
+    296,
     3.40
 );
 
@@ -113,8 +113,8 @@ INSERT INTO creditos_credito (
     24,
     '2022-12-07',
     'Finalizado',
-    6910720,
-    0,
+    457,
+    296,
     3.40
 );
 
@@ -136,8 +136,8 @@ INSERT INTO creditos_credito (
     6,
     '2024-01-16',
     'Finalizado',
-    6910720,
-    0,
+    457,
+    296,
     3.40
 );
 
@@ -159,8 +159,8 @@ INSERT INTO creditos_credito (
     36,
     '2024-05-14',
     'Finalizado',
-    1022399957,
-    0,
+    401,
+    298,
     3.40
 );
 
@@ -182,8 +182,8 @@ INSERT INTO creditos_credito (
     24,
     '2024-02-11',
     'Activo',
-    16642698,
-    0,
+    330,
+    225,
     3.40
 );
 
@@ -205,8 +205,8 @@ INSERT INTO creditos_credito (
     36,
     '2020-09-15',
     'Finalizado',
-    1022956749,
-    0,
+    350,
+    299,
     3.40
 );
 
@@ -228,8 +228,8 @@ INSERT INTO creditos_credito (
     36,
     '2022-02-17',
     'Finalizado',
-    13706405,
-    0,
+    399,
+    299,
     3.40
 );
 
@@ -251,8 +251,8 @@ INSERT INTO creditos_credito (
     36,
     '2025-06-08',
     'Activo',
-    52910069,
-    0,
+    159,
+    80,
     3.40
 );
 
@@ -274,8 +274,8 @@ INSERT INTO creditos_credito (
     3,
     '2022-05-25',
     'Finalizado',
-    1056412423,
-    0,
+    137,
+    301,
     3.40
 );
 
@@ -297,8 +297,8 @@ INSERT INTO creditos_credito (
     36,
     '2022-12-07',
     'Finalizado',
-    13706405,
-    0,
+    399,
+    302,
     3.40
 );
 
@@ -320,8 +320,8 @@ INSERT INTO creditos_credito (
     50,
     '2021-07-12',
     'Finalizado',
-    1023031707,
-    0,
+    402,
+    303,
     3.40
 );
 
@@ -343,8 +343,8 @@ INSERT INTO creditos_credito (
     60,
     '2025-10-16',
     'Activo',
-    79325572,
-    0,
+    65,
+    136,
     3.40
 );
 
@@ -366,8 +366,8 @@ INSERT INTO creditos_credito (
     12,
     '2024-01-23',
     'Activo',
-    9923663,
-    0,
+    291,
+    41,
     3.40
 );
 
@@ -389,8 +389,8 @@ INSERT INTO creditos_credito (
     12,
     '2021-12-16',
     'Finalizado',
-    80180629,
-    0,
+    404,
+    305,
     3.40
 );
 
@@ -412,8 +412,8 @@ INSERT INTO creditos_credito (
     36,
     '2021-11-22',
     'Finalizado',
-    53119366,
-    0,
+    405,
+    306,
     3.40
 );
 
@@ -435,8 +435,8 @@ INSERT INTO creditos_credito (
     24,
     '2020-09-15',
     'Finalizado',
-    19344891,
-    0,
+    407,
+    307,
     3.40
 );
 
@@ -458,8 +458,8 @@ INSERT INTO creditos_credito (
     63,
     '2020-09-15',
     'Finalizado',
-    79910032,
-    0,
+    408,
+    428,
     3.40
 );
 
@@ -481,8 +481,8 @@ INSERT INTO creditos_credito (
     48,
     '2020-11-20',
     'Finalizado',
-    52545888,
-    0,
+    410,
+    309,
     3.40
 );
 
@@ -504,8 +504,8 @@ INSERT INTO creditos_credito (
     5,
     '2020-10-16',
     'Finalizado',
-    1136886297,
-    0,
+    411,
+    310,
     3.40
 );
 
@@ -527,8 +527,8 @@ INSERT INTO creditos_credito (
     12,
     '2020-10-16',
     'Finalizado',
-    1136886297,
-    0,
+    411,
+    310,
     3.40
 );
 
@@ -550,8 +550,8 @@ INSERT INTO creditos_credito (
     12,
     '2022-02-12',
     'Finalizado',
-    41454780,
-    0,
+    413,
+    311,
     3.40
 );
 
@@ -573,8 +573,8 @@ INSERT INTO creditos_credito (
     36,
     '2020-11-24',
     'Finalizado',
-    11226529,
-    0,
+    414,
+    312,
     3.40
 );
 
@@ -596,8 +596,8 @@ INSERT INTO creditos_credito (
     60,
     '2020-09-15',
     'Activo',
-    79942882,
-    0,
+    331,
+    226,
     3.40
 );
 
@@ -619,8 +619,8 @@ INSERT INTO creditos_credito (
     6,
     '2020-11-19',
     'Finalizado',
-    1026271119,
-    0,
+    416,
+    314,
     3.40
 );
 
@@ -642,8 +642,8 @@ INSERT INTO creditos_credito (
     5,
     '2021-07-16',
     'Finalizado',
-    1000455502,
-    0,
+    418,
+    315,
     3.40
 );
 
@@ -665,8 +665,8 @@ INSERT INTO creditos_credito (
     36,
     '2020-12-23',
     'Finalizado',
-    1013629824,
-    0,
+    422,
+    316,
     3.40
 );
 
@@ -688,8 +688,8 @@ INSERT INTO creditos_credito (
     18,
     '2021-08-18',
     'Finalizado',
-    79606394,
-    0,
+    420,
+    318,
     3.40
 );
 
@@ -711,8 +711,8 @@ INSERT INTO creditos_credito (
     1,
     '2021-07-16',
     'Finalizado',
-    1022342459,
-    0,
+    421,
+    319,
     3.40
 );
 
@@ -734,8 +734,8 @@ INSERT INTO creditos_credito (
     60,
     '2024-02-11',
     'Activo',
-    79325572,
-    0,
+    65,
+    227,
     3.40
 );
 
@@ -757,8 +757,8 @@ INSERT INTO creditos_credito (
     29,
     '2021-06-10',
     'Finalizado',
-    23781960,
-    0,
+    423,
+    320,
     3.40
 );
 
@@ -780,8 +780,8 @@ INSERT INTO creditos_credito (
     24,
     '2023-03-08',
     'Finalizado',
-    72227015,
-    0,
+    506,
+    228,
     3.40
 );
 
@@ -803,8 +803,8 @@ INSERT INTO creditos_credito (
     60,
     '2023-03-08',
     'Activo',
-    79325572,
-    0,
+    65,
+    228,
     3.40
 );
 
@@ -826,8 +826,8 @@ INSERT INTO creditos_credito (
     24,
     '2023-03-08',
     'Finalizado',
-    79325572,
-    0,
+    65,
+    228,
     3.40
 );
 
@@ -849,8 +849,8 @@ INSERT INTO creditos_credito (
     60,
     '2021-11-29',
     'Finalizado',
-    41589473,
-    0,
+    447,
+    321,
     3.40
 );
 
@@ -872,8 +872,8 @@ INSERT INTO creditos_credito (
     18,
     '2022-03-02',
     'Finalizado',
-    1110525497,
-    0,
+    424,
+    322,
     3.40
 );
 
@@ -895,8 +895,8 @@ INSERT INTO creditos_credito (
     6,
     '2021-01-20',
     'Finalizado',
-    20586905,
-    0,
+    508,
+    323,
     3.40
 );
 
@@ -918,8 +918,8 @@ INSERT INTO creditos_credito (
     65,
     '2022-02-16',
     'Activo',
-    80821040,
-    0,
+    332,
+    229,
     3.40
 );
 
@@ -941,8 +941,8 @@ INSERT INTO creditos_credito (
     36,
     '2022-02-17',
     'Activo',
-    80263816,
-    0,
+    333,
+    230,
     3.40
 );
 
@@ -964,8 +964,8 @@ INSERT INTO creditos_credito (
     48,
     '2022-02-25',
     'Activo',
-    19434558,
-    0,
+    334,
+    231,
     3.40
 );
 
@@ -987,8 +987,8 @@ INSERT INTO creditos_credito (
     12,
     '2022-05-24',
     'Finalizado',
-    19068547,
-    0,
+    485,
+    324,
     3.40
 );
 
@@ -1010,8 +1010,8 @@ INSERT INTO creditos_credito (
     12,
     '2022-05-28',
     'Finalizado',
-    52910024,
-    0,
+    425,
+    325,
     3.40
 );
 
@@ -1033,8 +1033,8 @@ INSERT INTO creditos_credito (
     36,
     '2024-08-15',
     'Activo',
-    1024553516,
-    0,
+    335,
+    232,
     3.40
 );
 
@@ -1056,8 +1056,8 @@ INSERT INTO creditos_credito (
     2,
     '2022-07-30',
     'Finalizado',
-    1000689615,
-    0,
+    426,
+    326,
     3.40
 );
 
@@ -1079,8 +1079,8 @@ INSERT INTO creditos_credito (
     24,
     '2022-12-07',
     'Finalizado',
-    79341188,
-    0,
+    329,
+    327,
     3.40
 );
 
@@ -1102,8 +1102,8 @@ INSERT INTO creditos_credito (
     36,
     '2022-12-07',
     'Finalizado',
-    19434558,
-    0,
+    334,
+    436,
     3.40
 );
 
@@ -1125,8 +1125,8 @@ INSERT INTO creditos_credito (
     36,
     '2023-05-10',
     'Activo',
-    1126589592,
-    0,
+    336,
+    233,
     3.40
 );
 
@@ -1148,8 +1148,8 @@ INSERT INTO creditos_credito (
     48,
     '2023-06-27',
     'Activo',
-    19399694,
-    0,
+    337,
+    234,
     3.40
 );
 
@@ -1171,8 +1171,8 @@ INSERT INTO creditos_credito (
     24,
     '2023-10-13',
     'Finalizado',
-    1106307739,
-    0,
+    427,
+    328,
     3.40
 );
 
@@ -1194,8 +1194,8 @@ INSERT INTO creditos_credito (
     22,
     '2023-05-12',
     'Finalizado',
-    1068976664,
-    0,
+    428,
+    329,
     3.40
 );
 
@@ -1217,8 +1217,8 @@ INSERT INTO creditos_credito (
     30,
     '2023-05-12',
     'Activo',
-    1126589592,
-    0,
+    336,
+    235,
     3.40
 );
 
@@ -1240,8 +1240,8 @@ INSERT INTO creditos_credito (
     48,
     '2023-05-12',
     'Finalizado',
-    79412932,
-    0,
+    429,
+    330,
     3.40
 );
 
@@ -1263,8 +1263,8 @@ INSERT INTO creditos_credito (
     10,
     '2024-04-23',
     'Finalizado',
-    94152860,
-    0,
+    18,
+    16,
     3.40
 );
 
@@ -1286,8 +1286,8 @@ INSERT INTO creditos_credito (
     36,
     '2024-02-29',
     'Finalizado',
-    40342931,
-    0,
+    430,
+    331,
     3.40
 );
 
@@ -1309,8 +1309,8 @@ INSERT INTO creditos_credito (
     48,
     '2025-06-08',
     'Finalizado',
-    1022353289,
-    0,
+    157,
+    128,
     3.40
 );
 
@@ -1332,8 +1332,8 @@ INSERT INTO creditos_credito (
     36,
     '2024-09-03',
     'Finalizado',
-    53082490,
-    0,
+    165,
+    128,
     3.40
 );
 
@@ -1355,8 +1355,8 @@ INSERT INTO creditos_credito (
     60,
     '2024-07-16',
     'Finalizado',
-    30274167,
-    0,
+    431,
+    332,
     3.40
 );
 
@@ -1378,8 +1378,8 @@ INSERT INTO creditos_credito (
     18,
     '2024-07-16',
     'Finalizado',
-    1019089285,
-    0,
+    7,
+    8,
     3.40
 );
 
@@ -1401,8 +1401,8 @@ INSERT INTO creditos_credito (
     24,
     '2024-07-16',
     'Activo',
-    665655,
-    0,
+    432,
+    236,
     3.40
 );
 
@@ -1424,8 +1424,8 @@ INSERT INTO creditos_credito (
     36,
     '2024-08-16',
     'Activo',
-    4188842,
-    0,
+    339,
+    237,
     3.40
 );
 
@@ -1447,8 +1447,8 @@ INSERT INTO creditos_credito (
     4,
     '2025-06-06',
     'Finalizado',
-    52837619,
-    0,
+    433,
+    333,
     3.40
 );
 
@@ -1470,8 +1470,8 @@ INSERT INTO creditos_credito (
     24,
     '2025-09-27',
     'Finalizado',
-    41654657,
-    0,
+    178,
+    430,
     3.40
 );
 
@@ -1493,8 +1493,8 @@ INSERT INTO creditos_credito (
     48,
     '2025-08-10',
     'Activo',
-    19242034,
-    0,
+    218,
+    238,
     3.40
 );
 
@@ -1516,8 +1516,8 @@ INSERT INTO creditos_credito (
     48,
     '2025-09-15',
     'Activo',
-    52230226,
-    0,
+    186,
+    239,
     3.40
 );
 
@@ -1539,8 +1539,8 @@ INSERT INTO creditos_credito (
     24,
     '2025-02-12',
     'Activo',
-    17131335,
-    0,
+    271,
+    240,
     3.40
 );
 
@@ -1562,8 +1562,8 @@ INSERT INTO creditos_credito (
     63,
     '2021-07-16',
     'Activo',
-    1016053420,
-    0,
+    340,
+    241,
     3.40
 );
 
@@ -1585,8 +1585,8 @@ INSERT INTO creditos_credito (
     46,
     '2021-10-29',
     'Finalizado',
-    79243969,
-    0,
+    497,
+    334,
     3.40
 );
 
@@ -1608,8 +1608,8 @@ INSERT INTO creditos_credito (
     36,
     '2022-05-28',
     'Finalizado',
-    1022415688,
-    0,
+    435,
+    335,
     3.40
 );
 
@@ -1631,8 +1631,8 @@ INSERT INTO creditos_credito (
     24,
     '2025-09-24',
     'Activo',
-    80821411,
-    0,
+    222,
+    131,
     3.40
 );
 
@@ -1654,8 +1654,8 @@ INSERT INTO creditos_credito (
     24,
     '2021-05-04',
     'Finalizado',
-    19243446,
-    0,
+    436,
+    336,
     3.40
 );
 
@@ -1677,8 +1677,8 @@ INSERT INTO creditos_credito (
     48,
     '2021-07-16',
     'Finalizado',
-    52735531,
-    0,
+    437,
+    337,
     3.40
 );
 
@@ -1700,8 +1700,8 @@ INSERT INTO creditos_credito (
     30,
     '2020-09-15',
     'Finalizado',
-    52735531,
-    0,
+    437,
+    338,
     3.40
 );
 
@@ -1723,8 +1723,8 @@ INSERT INTO creditos_credito (
     39,
     '2021-07-16',
     'Finalizado',
-    80258658,
-    0,
+    121,
+    339,
     3.40
 );
 
@@ -1746,8 +1746,8 @@ INSERT INTO creditos_credito (
     43,
     '2023-09-05',
     'Finalizado',
-    1013621465,
-    0,
+    438,
+    341,
     3.40
 );
 
@@ -1769,8 +1769,8 @@ INSERT INTO creditos_credito (
     30,
     '2023-05-10',
     'Finalizado',
-    79623757,
-    0,
+    439,
+    437,
     3.40
 );
 
@@ -1792,8 +1792,8 @@ INSERT INTO creditos_credito (
     12,
     '2023-03-04',
     'Finalizado',
-    52268414,
-    0,
+    440,
+    343,
     3.40
 );
 
@@ -1815,8 +1815,8 @@ INSERT INTO creditos_credito (
     12,
     '2024-01-16',
     'Finalizado',
-    79792485,
-    0,
+    441,
+    344,
     3.40
 );
 
@@ -1838,8 +1838,8 @@ INSERT INTO creditos_credito (
     60,
     '2020-09-15',
     'Finalizado',
-    36152310,
-    0,
+    341,
+    345,
     3.40
 );
 
@@ -1861,8 +1861,8 @@ INSERT INTO creditos_credito (
     30,
     '2021-07-09',
     'Finalizado',
-    51556937,
-    0,
+    442,
+    346,
     3.40
 );
 
@@ -1884,8 +1884,8 @@ INSERT INTO creditos_credito (
     60,
     '2020-09-15',
     'Finalizado',
-    79293146,
-    0,
+    455,
+    347,
     3.40
 );
 
@@ -1907,8 +1907,8 @@ INSERT INTO creditos_credito (
     36,
     '2021-06-08',
     'Finalizado',
-    39642729,
-    0,
+    443,
+    348,
     3.40
 );
 
@@ -1930,8 +1930,8 @@ INSERT INTO creditos_credito (
     30,
     '2021-06-10',
     'Finalizado',
-    79541767,
-    0,
+    445,
+    349,
     3.40
 );
 
@@ -1953,8 +1953,8 @@ INSERT INTO creditos_credito (
     60,
     '2023-05-12',
     'Finalizado',
-    79770704,
-    0,
+    66,
+    351,
     3.40
 );
 
@@ -1976,8 +1976,8 @@ INSERT INTO creditos_credito (
     8,
     '2021-03-19',
     'Finalizado',
-    79269085,
-    0,
+    281,
+    352,
     3.40
 );
 
@@ -1999,8 +1999,8 @@ INSERT INTO creditos_credito (
     60,
     '2021-05-04',
     'Finalizado',
-    49733621,
-    0,
+    234,
+    168,
     3.40
 );
 
@@ -2022,8 +2022,8 @@ INSERT INTO creditos_credito (
     48,
     '2020-07-11',
     'Finalizado',
-    23963464,
-    0,
+    462,
+    353,
     3.40
 );
 
@@ -2045,8 +2045,8 @@ INSERT INTO creditos_credito (
     36,
     '2020-09-15',
     'Finalizado',
-    1051654612,
-    0,
+    446,
+    354,
     3.40
 );
 
@@ -2068,8 +2068,8 @@ INSERT INTO creditos_credito (
     48,
     '2025-05-06',
     'Activo',
-    1073130648,
-    0,
+    85,
+    45,
     3.40
 );
 
@@ -2091,8 +2091,8 @@ INSERT INTO creditos_credito (
     10,
     '2021-10-05',
     'Finalizado',
-    1020715668,
-    0,
+    509,
+    355,
     3.40
 );
 
@@ -2114,8 +2114,8 @@ INSERT INTO creditos_credito (
     60,
     '2022-06-26',
     'Finalizado',
-    19259994,
-    0,
+    505,
+    19,
     3.40
 );
 
@@ -2137,8 +2137,8 @@ INSERT INTO creditos_credito (
     10,
     '2020-12-16',
     'Finalizado',
-    41589473,
-    0,
+    447,
+    356,
     3.40
 );
 
@@ -2160,8 +2160,8 @@ INSERT INTO creditos_credito (
     30,
     '2021-10-27',
     'Finalizado',
-    80721969,
-    0,
+    449,
+    357,
     3.40
 );
 
@@ -2183,8 +2183,8 @@ INSERT INTO creditos_credito (
     4,
     '2021-08-18',
     'Finalizado',
-    79321374,
-    0,
+    450,
+    358,
     3.40
 );
 
@@ -2206,8 +2206,8 @@ INSERT INTO creditos_credito (
     36,
     '2022-03-02',
     'Finalizado',
-    19361106,
-    0,
+    451,
+    359,
     3.40
 );
 
@@ -2229,8 +2229,8 @@ INSERT INTO creditos_credito (
     48,
     '2024-06-07',
     'Activo',
-    36152310,
-    0,
+    341,
+    242,
     3.40
 );
 
@@ -2252,8 +2252,8 @@ INSERT INTO creditos_credito (
     24,
     '2025-11-20',
     'Activo',
-    91275604,
-    0,
+    266,
+    99,
     3.40
 );
 
@@ -2275,8 +2275,8 @@ INSERT INTO creditos_credito (
     36,
     '2023-05-09',
     'Activo',
-    52715211,
-    0,
+    277,
+    193,
     3.40
 );
 
@@ -2298,8 +2298,8 @@ INSERT INTO creditos_credito (
     36,
     '2022-03-19',
     'Finalizado',
-    19122311,
-    0,
+    510,
+    360,
     3.40
 );
 
@@ -2321,8 +2321,8 @@ INSERT INTO creditos_credito (
     36,
     '2022-03-19',
     'Finalizado',
-    13706405,
-    0,
+    399,
+    361,
     3.40
 );
 
@@ -2344,8 +2344,8 @@ INSERT INTO creditos_credito (
     31,
     '2021-11-22',
     'Finalizado',
-    52917322,
-    0,
+    453,
+    362,
     3.40
 );
 
@@ -2367,8 +2367,8 @@ INSERT INTO creditos_credito (
     22,
     '2023-05-09',
     'Finalizado',
-    53128866,
-    0,
+    454,
+    363,
     3.40
 );
 
@@ -2390,8 +2390,8 @@ INSERT INTO creditos_credito (
     60,
     '2023-10-04',
     'Finalizado',
-    79325572,
-    0,
+    65,
+    71,
     3.40
 );
 
@@ -2413,8 +2413,8 @@ INSERT INTO creditos_credito (
     48,
     '2023-10-04',
     'Finalizado',
-    79325572,
-    0,
+    65,
+    71,
     3.40
 );
 
@@ -2436,8 +2436,8 @@ INSERT INTO creditos_credito (
     36,
     '2020-05-09',
     'Finalizado',
-    36152310,
-    0,
+    341,
+    365,
     3.40
 );
 
@@ -2459,8 +2459,8 @@ INSERT INTO creditos_credito (
     12,
     '2023-03-08',
     'Finalizado',
-    19263493,
-    0,
+    468,
+    366,
     3.40
 );
 
@@ -2482,8 +2482,8 @@ INSERT INTO creditos_credito (
     9,
     '2021-09-06',
     'Finalizado',
-    1010198197,
-    0,
+    342,
+    367,
     3.40
 );
 
@@ -2505,8 +2505,8 @@ INSERT INTO creditos_credito (
     47,
     '2020-10-27',
     'Finalizado',
-    1071323,
-    0,
+    456,
+    368,
     3.40
 );
 
@@ -2528,8 +2528,8 @@ INSERT INTO creditos_credito (
     48,
     '2021-04-20',
     'Finalizado',
-    79770704,
-    0,
+    66,
+    369,
     3.40
 );
 
@@ -2551,8 +2551,8 @@ INSERT INTO creditos_credito (
     24,
     '2021-04-20',
     'Finalizado',
-    79770704,
-    0,
+    66,
+    369,
     3.40
 );
 
@@ -2574,8 +2574,8 @@ INSERT INTO creditos_credito (
     60,
     '2020-09-15',
     'Finalizado',
-    19312384,
-    0,
+    458,
+    371,
     3.40
 );
 
@@ -2597,8 +2597,8 @@ INSERT INTO creditos_credito (
     36,
     '2024-06-12',
     'Activo',
-    86008313,
-    0,
+    343,
+    244,
     3.40
 );
 
@@ -2620,8 +2620,8 @@ INSERT INTO creditos_credito (
     53,
     '2021-09-06',
     'Activo',
-    1010198197,
-    0,
+    342,
+    243,
     3.40
 );
 
@@ -2643,8 +2643,8 @@ INSERT INTO creditos_credito (
     36,
     '2025-11-29',
     'Activo',
-    79269085,
-    0,
+    281,
+    187,
     3.40
 );
 
@@ -2666,8 +2666,8 @@ INSERT INTO creditos_credito (
     7,
     '2021-10-03',
     'Finalizado',
-    24436780,
-    0,
+    460,
+    372,
     3.40
 );
 
@@ -2689,8 +2689,8 @@ INSERT INTO creditos_credito (
     48,
     '2020-11-24',
     'Finalizado',
-    41649231,
-    0,
+    461,
+    373,
     3.40
 );
 
@@ -2712,8 +2712,8 @@ INSERT INTO creditos_credito (
     36,
     '2022-09-17',
     'Finalizado',
-    36152310,
-    0,
+    341,
+    374,
     3.40
 );
 
@@ -2735,8 +2735,8 @@ INSERT INTO creditos_credito (
     49,
     '2021-09-11',
     'Finalizado',
-    20334495,
-    0,
+    463,
+    245,
     3.40
 );
 
@@ -2758,8 +2758,8 @@ INSERT INTO creditos_credito (
     31,
     '2024-07-16',
     'Activo',
-    1030590447,
-    0,
+    344,
+    245,
     3.40
 );
 
@@ -2781,8 +2781,8 @@ INSERT INTO creditos_credito (
     36,
     '2023-03-08',
     'Finalizado',
-    51923877,
-    0,
+    464,
+    375,
     3.40
 );
 
@@ -2804,8 +2804,8 @@ INSERT INTO creditos_credito (
     60,
     '2024-07-05',
     'Activo',
-    12102501,
-    0,
+    345,
+    246,
     3.40
 );
 
@@ -2827,8 +2827,8 @@ INSERT INTO creditos_credito (
     36,
     '2022-01-06',
     'Finalizado',
-    1032360406,
-    0,
+    465,
+    376,
     3.40
 );
 
@@ -2850,8 +2850,8 @@ INSERT INTO creditos_credito (
     60,
     '2024-07-05',
     'Activo',
-    1019110080,
-    0,
+    346,
+    247,
     3.40
 );
 
@@ -2873,8 +2873,8 @@ INSERT INTO creditos_credito (
     12,
     '2020-10-16',
     'Finalizado',
-    1033689252,
-    0,
+    467,
+    377,
     3.40
 );
 
@@ -2896,8 +2896,8 @@ INSERT INTO creditos_credito (
     36,
     '2023-06-27',
     'Activo',
-    1018424268,
-    0,
+    347,
+    248,
     3.40
 );
 
@@ -2919,8 +2919,8 @@ INSERT INTO creditos_credito (
     40,
     '2022-03-14',
     'Finalizado',
-    79767973,
-    0,
+    469,
+    378,
     3.40
 );
 
@@ -2942,8 +2942,8 @@ INSERT INTO creditos_credito (
     25,
     '2020-09-15',
     'Finalizado',
-    1019048624,
-    0,
+    90,
+    85,
     3.40
 );
 
@@ -2965,8 +2965,8 @@ INSERT INTO creditos_credito (
     3,
     '2022-04-10',
     'Finalizado',
-    43098201,
-    0,
+    349,
+    85,
     3.40
 );
 
@@ -2988,8 +2988,8 @@ INSERT INTO creditos_credito (
     34,
     '2022-03-02',
     'Finalizado',
-    19232709,
-    0,
+    470,
+    380,
     3.40
 );
 
@@ -3011,8 +3011,8 @@ INSERT INTO creditos_credito (
     48,
     '2025-09-10',
     'Activo',
-    1022331117,
-    0,
+    228,
+    157,
     3.40
 );
 
@@ -3034,8 +3034,8 @@ INSERT INTO creditos_credito (
     48,
     '2024-08-15',
     'Activo',
-    36152310,
-    0,
+    341,
+    249,
     3.40
 );
 
@@ -3057,8 +3057,8 @@ INSERT INTO creditos_credito (
     22,
     '2021-08-18',
     'Finalizado',
-    5600186,
-    0,
+    471,
+    381,
     3.40
 );
 
@@ -3080,8 +3080,8 @@ INSERT INTO creditos_credito (
     6,
     '2021-05-02',
     'Finalizado',
-    2995444,
-    0,
+    507,
+    382,
     3.40
 );
 
@@ -3103,8 +3103,8 @@ INSERT INTO creditos_credito (
     36,
     '2022-12-07',
     'Finalizado',
-    72186334,
-    0,
+    472,
+    383,
     3.40
 );
 
@@ -3126,8 +3126,8 @@ INSERT INTO creditos_credito (
     28,
     '2023-01-06',
     'Finalizado',
-    19105681,
-    0,
+    473,
+    384,
     3.40
 );
 
@@ -3149,8 +3149,8 @@ INSERT INTO creditos_credito (
     1,
     '2023-09-05',
     'Finalizado',
-    43098201,
-    0,
+    349,
+    385,
     3.40
 );
 
@@ -3172,8 +3172,8 @@ INSERT INTO creditos_credito (
     36,
     '2025-06-08',
     'Activo',
-    74372860,
-    0,
+    161,
+    82,
     3.40
 );
 
@@ -3195,8 +3195,8 @@ INSERT INTO creditos_credito (
     48,
     '2021-10-27',
     'Finalizado',
-    79749119,
-    0,
+    474,
+    386,
     3.40
 );
 
@@ -3218,8 +3218,8 @@ INSERT INTO creditos_credito (
     6,
     '2024-07-16',
     'Finalizado',
-    79770704,
-    0,
+    66,
+    386,
     3.40
 );
 
@@ -3241,8 +3241,8 @@ INSERT INTO creditos_credito (
     48,
     '2020-10-27',
     'Finalizado',
-    79989379,
-    0,
+    475,
+    387,
     3.40
 );
 
@@ -3264,8 +3264,8 @@ INSERT INTO creditos_credito (
     4,
     '2023-01-24',
     'Finalizado',
-    43098201,
-    0,
+    349,
+    388,
     3.40
 );
 
@@ -3287,8 +3287,8 @@ INSERT INTO creditos_credito (
     24,
     '2023-01-24',
     'Finalizado',
-    43098201,
-    0,
+    349,
+    388,
     3.40
 );
 
@@ -3310,8 +3310,8 @@ INSERT INTO creditos_credito (
     24,
     '2023-01-24',
     'Finalizado',
-    43098201,
-    0,
+    349,
+    388,
     3.40
 );
 
@@ -3333,8 +3333,8 @@ INSERT INTO creditos_credito (
     60,
     '2022-12-07',
     'Activo',
-    1022422720,
-    0,
+    348,
+    250,
     3.40
 );
 
@@ -3356,8 +3356,8 @@ INSERT INTO creditos_credito (
     24,
     '2021-08-18',
     'Finalizado',
-    6755811,
-    0,
+    476,
+    390,
     3.40
 );
 
@@ -3379,8 +3379,8 @@ INSERT INTO creditos_credito (
     48,
     '2021-05-25',
     'Finalizado',
-    1101174264,
-    0,
+    397,
+    391,
     3.40
 );
 
@@ -3402,8 +3402,8 @@ INSERT INTO creditos_credito (
     48,
     '2023-10-04',
     'Activo',
-    1022956749,
-    0,
+    350,
+    251,
     3.40
 );
 
@@ -3425,8 +3425,8 @@ INSERT INTO creditos_credito (
     15,
     '2020-09-15',
     'Finalizado',
-    1033766608,
-    0,
+    477,
+    392,
     3.40
 );
 
@@ -3448,8 +3448,8 @@ INSERT INTO creditos_credito (
     12,
     '2021-08-18',
     'Finalizado',
-    80179714,
-    0,
+    362,
+    263,
     3.40
 );
 
@@ -3471,8 +3471,8 @@ INSERT INTO creditos_credito (
     12,
     '2025-06-06',
     'Finalizado',
-    80179714,
-    0,
+    362,
+    263,
     3.40
 );
 
@@ -3494,8 +3494,8 @@ INSERT INTO creditos_credito (
     30,
     '2020-09-16',
     'Finalizado',
-    1073693144,
-    0,
+    478,
+    393,
     3.40
 );
 
@@ -3517,8 +3517,8 @@ INSERT INTO creditos_credito (
     60,
     '2022-05-28',
     'Finalizado',
-    2995188,
-    0,
+    479,
+    394,
     3.40
 );
 
@@ -3540,8 +3540,8 @@ INSERT INTO creditos_credito (
     7,
     '2024-07-06',
     'Finalizado',
-    80747312,
-    0,
+    244,
+    395,
     3.40
 );
 
@@ -3563,8 +3563,8 @@ INSERT INTO creditos_credito (
     6,
     '2024-08-15',
     'Finalizado',
-    79521002,
-    0,
+    480,
+    396,
     3.40
 );
 
@@ -3586,8 +3586,8 @@ INSERT INTO creditos_credito (
     14,
     '2025-05-06',
     'Activo',
-    1000047547,
-    0,
+    111,
+    24,
     3.40
 );
 
@@ -3609,8 +3609,8 @@ INSERT INTO creditos_credito (
     14,
     '2022-11-23',
     'Finalizado',
-    80829767,
-    0,
+    481,
+    397,
     3.40
 );
 
@@ -3632,8 +3632,8 @@ INSERT INTO creditos_credito (
     36,
     '2022-03-02',
     'Finalizado',
-    13706405,
-    0,
+    399,
+    398,
     3.40
 );
 
@@ -3655,8 +3655,8 @@ INSERT INTO creditos_credito (
     9,
     '2024-01-23',
     'Finalizado',
-    80260259,
-    0,
+    482,
+    399,
     3.40
 );
 
@@ -3678,8 +3678,8 @@ INSERT INTO creditos_credito (
     36,
     '2025-11-22',
     'Activo',
-    79154519,
-    0,
+    221,
+    36,
     3.40
 );
 
@@ -3701,8 +3701,8 @@ INSERT INTO creditos_credito (
     60,
     '2024-08-15',
     'Finalizado',
-    79770704,
-    0,
+    66,
+    400,
     3.40
 );
 
@@ -3724,8 +3724,8 @@ INSERT INTO creditos_credito (
     7,
     '2024-11-20',
     'Finalizado',
-    17148073,
-    0,
+    483,
+    401,
     3.40
 );
 
@@ -3747,8 +3747,8 @@ INSERT INTO creditos_credito (
     4,
     '2021-08-18',
     'Finalizado',
-    79611109,
-    0,
+    484,
+    401,
     3.40
 );
 
@@ -3770,8 +3770,8 @@ INSERT INTO creditos_credito (
     6,
     '2023-02-17',
     'Finalizado',
-    900865216,
-    0,
+    398,
+    252,
     3.40
 );
 
@@ -3793,8 +3793,8 @@ INSERT INTO creditos_credito (
     60,
     '2024-08-15',
     'Activo',
-    20589949,
-    0,
+    351,
+    252,
     3.40
 );
 
@@ -3816,8 +3816,8 @@ INSERT INTO creditos_credito (
     12,
     '2024-08-15',
     'Activo',
-    1073232225,
-    0,
+    352,
+    253,
     3.40
 );
 
@@ -3839,8 +3839,8 @@ INSERT INTO creditos_credito (
     1,
     '2020-09-15',
     'Finalizado',
-    900865216,
-    0,
+    398,
+    402,
     3.40
 );
 
@@ -3862,8 +3862,8 @@ INSERT INTO creditos_credito (
     5,
     '2020-09-15',
     'Finalizado',
-    900865216,
-    0,
+    398,
+    402,
     3.40
 );
 
@@ -3885,8 +3885,8 @@ INSERT INTO creditos_credito (
     60,
     '2020-09-15',
     'Finalizado',
-    900865216,
-    0,
+    398,
+    402,
     3.40
 );
 
@@ -3908,8 +3908,8 @@ INSERT INTO creditos_credito (
     32,
     '2021-09-11',
     'Finalizado',
-    3056946,
-    0,
+    353,
+    254,
     3.40
 );
 
@@ -3931,8 +3931,8 @@ INSERT INTO creditos_credito (
     24,
     '2024-08-15',
     'Activo',
-    3056946,
-    0,
+    353,
+    254,
     3.40
 );
 
@@ -3954,8 +3954,8 @@ INSERT INTO creditos_credito (
     1,
     '2020-09-15',
     'Finalizado',
-    900865216,
-    0,
+    398,
+    404,
     3.40
 );
 
@@ -3977,8 +3977,8 @@ INSERT INTO creditos_credito (
     24,
     '2020-09-15',
     'Finalizado',
-    1023866700,
-    0,
+    307,
+    405,
     3.40
 );
 
@@ -4000,8 +4000,8 @@ INSERT INTO creditos_credito (
     84,
     '2026-06-02',
     'Finalizado',
-    1023866700,
-    0,
+    307,
+    405,
     3.40
 );
 
@@ -4023,8 +4023,8 @@ INSERT INTO creditos_credito (
     24,
     '2025-07-10',
     'Finalizado',
-    1007404195,
-    0,
+    238,
+    103,
     3.40
 );
 
@@ -4046,8 +4046,8 @@ INSERT INTO creditos_credito (
     61,
     '2021-09-11',
     'Finalizado',
-    74339484,
-    0,
+    486,
+    406,
     3.40
 );
 
@@ -4069,8 +4069,8 @@ INSERT INTO creditos_credito (
     25,
     '2023-03-08',
     'Finalizado',
-    19386336,
-    0,
+    356,
+    407,
     3.40
 );
 
@@ -4092,8 +4092,8 @@ INSERT INTO creditos_credito (
     12,
     '2021-03-17',
     'Finalizado',
-    4050996,
-    0,
+    487,
+    408,
     3.40
 );
 
@@ -4115,8 +4115,8 @@ INSERT INTO creditos_credito (
     36,
     '2022-03-19',
     'Finalizado',
-    13706405,
-    0,
+    399,
+    409,
     3.40
 );
 
@@ -4138,8 +4138,8 @@ INSERT INTO creditos_credito (
     60,
     '2024-03-27',
     'Activo',
-    73560144,
-    0,
+    354,
+    255,
     3.40
 );
 
@@ -4161,8 +4161,8 @@ INSERT INTO creditos_credito (
     61,
     '2020-03-20',
     'Activo',
-    24134690,
-    0,
+    355,
+    256,
     3.40
 );
 
@@ -4184,8 +4184,8 @@ INSERT INTO creditos_credito (
     30,
     '2023-07-27',
     'Finalizado',
-    52766348,
-    0,
+    488,
+    410,
     3.40
 );
 
@@ -4207,8 +4207,8 @@ INSERT INTO creditos_credito (
     37,
     '2022-03-30',
     'Finalizado',
-    53093617,
-    0,
+    489,
+    411,
     3.40
 );
 
@@ -4230,8 +4230,8 @@ INSERT INTO creditos_credito (
     36,
     '2022-03-19',
     'Finalizado',
-    13706405,
-    0,
+    399,
+    412,
     3.40
 );
 
@@ -4253,8 +4253,8 @@ INSERT INTO creditos_credito (
     47,
     '2022-03-30',
     'Finalizado',
-    79326503,
-    0,
+    490,
+    434,
     3.40
 );
 
@@ -4276,8 +4276,8 @@ INSERT INTO creditos_credito (
     7,
     '2020-09-16',
     'Finalizado',
-    79770704,
-    0,
+    66,
+    293,
     3.40
 );
 
@@ -4299,8 +4299,8 @@ INSERT INTO creditos_credito (
     36,
     '2021-01-09',
     'Finalizado',
-    1022956749,
-    0,
+    350,
+    293,
     3.40
 );
 
@@ -4322,8 +4322,8 @@ INSERT INTO creditos_credito (
     9,
     '2021-09-13',
     'Finalizado',
-    3228085,
-    0,
+    491,
+    414,
     3.40
 );
 
@@ -4345,8 +4345,8 @@ INSERT INTO creditos_credito (
     36,
     '2023-06-27',
     'Finalizado',
-    13616739,
-    0,
+    492,
+    415,
     3.40
 );
 
@@ -4368,8 +4368,8 @@ INSERT INTO creditos_credito (
     23,
     '2020-09-15',
     'Finalizado',
-    23823421,
-    0,
+    494,
+    416,
     3.40
 );
 
@@ -4391,8 +4391,8 @@ INSERT INTO creditos_credito (
     65,
     '2020-09-16',
     'Finalizado',
-    23823421,
-    0,
+    494,
+    435,
     3.40
 );
 
@@ -4414,8 +4414,8 @@ INSERT INTO creditos_credito (
     6,
     '2021-08-14',
     'Finalizado',
-    80062363,
-    0,
+    2,
+    417,
     3.40
 );
 
@@ -4437,8 +4437,8 @@ INSERT INTO creditos_credito (
     36,
     '2020-10-16',
     'Finalizado',
-    79870584,
-    0,
+    495,
+    418,
     3.40
 );
 
@@ -4460,8 +4460,8 @@ INSERT INTO creditos_credito (
     60,
     '2021-05-08',
     'Activo',
-    1033681725,
-    0,
+    496,
+    257,
     3.40
 );
 
@@ -4483,8 +4483,8 @@ INSERT INTO creditos_credito (
     31,
     '2021-10-26',
     'Activo',
-    9845670,
-    0,
+    357,
+    258,
     3.40
 );
 
@@ -4506,8 +4506,8 @@ INSERT INTO creditos_credito (
     48,
     '2025-02-04',
     'Activo',
-    19386336,
-    0,
+    356,
+    259,
     3.40
 );
 
@@ -4529,8 +4529,8 @@ INSERT INTO creditos_credito (
     56,
     '2025-03-16',
     'Finalizado',
-    79722729,
-    0,
+    358,
+    22,
     3.40
 );
 
@@ -4552,8 +4552,8 @@ INSERT INTO creditos_credito (
     60,
     '2024-03-27',
     'Activo',
-    93366652,
-    0,
+    498,
+    260,
     3.40
 );
 
@@ -4575,8 +4575,8 @@ INSERT INTO creditos_credito (
     48,
     '2020-09-15',
     'Finalizado',
-    1053584812,
-    0,
+    359,
+    420,
     3.40
 );
 
@@ -4598,8 +4598,8 @@ INSERT INTO creditos_credito (
     7,
     '2021-07-23',
     'Finalizado',
-    79726457,
-    0,
+    501,
+    421,
     3.40
 );
 
@@ -4621,8 +4621,8 @@ INSERT INTO creditos_credito (
     17,
     '2021-08-18',
     'Finalizado',
-    5262693,
-    0,
+    502,
+    422,
     3.40
 );
 
@@ -4644,8 +4644,8 @@ INSERT INTO creditos_credito (
     60,
     '2021-08-18',
     'Finalizado',
-    2954975,
-    0,
+    503,
+    423,
     3.40
 );
 
@@ -4667,8 +4667,8 @@ INSERT INTO creditos_credito (
     36,
     '2021-08-18',
     'Finalizado',
-    80179714,
-    0,
+    362,
+    424,
     3.40
 );
 
@@ -4690,8 +4690,8 @@ INSERT INTO creditos_credito (
     108,
     '2017-06-27',
     'Activo',
-    6770417,
-    0,
+    504,
+    261,
     3.40
 );
 
@@ -4713,8 +4713,8 @@ INSERT INTO creditos_credito (
     60,
     '2025-10-16',
     'Activo',
-    1023902935,
-    0,
+    361,
+    262,
     3.40
 );
 
@@ -4736,8 +4736,8 @@ INSERT INTO creditos_credito (
     46,
     '2020-11-20',
     'Finalizado',
-    1023902935,
-    0,
+    361,
+    262,
     3.40
 );
 
