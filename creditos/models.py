@@ -100,39 +100,37 @@ class Credito(models.Model):
 
     def intereses_pendientes(self):
         """
-        Calcula intereses pendientes del crédito ignorando pagos anulados
+        Calcula los intereses pendientes usando el cronograma real
+        de CuotaCredito, ignorando cuotas ya pagadas.
         """
 
-        cuotas_pagadas = self.pagos.filter(
-            tipo_pago='cuota',
-            anulado=False
-        ).count()
+        from decimal import Decimal
+        from django.db.models import Sum
 
-        cuotas_restantes = self.cuotas - cuotas_pagadas
-
-        interes_mensual = Decimal(str(self.interes)) / Decimal('100')
-        saldo = self.saldo_capital()
-
-        total_intereses = Decimal('0')
-
-        # Si aún no existe cronograma, no calcular
+        # Si no hay cronograma aún
         if not self.cuotas_credito.exists():
             return Decimal('0.00')
 
-        cuota_fija_base = self.cuotas_credito.first().cuota_total - self.total_servicios_activos()
+        intereses = self.cuotas_credito.filter(
+            pagada=False
+        ).aggregate(
+            total=Sum('interes')
+        )['total'] or Decimal('0.00')
 
-        for _ in range(cuotas_restantes):
+        # Seguridad para evitar valores negativos
+        if intereses < 0:
+            intereses = Decimal('0.00')
 
-            interes_mes = saldo * interes_mensual
-            abono_capital = cuota_fija_base - interes_mes
-
-            saldo -= abono_capital
-            total_intereses += interes_mes
-
-        return total_intereses.quantize(Decimal('0.01'))
+        return intereses.quantize(Decimal('0.01'))
 
     def saldo_total(self):
-        return (self.saldo_capital() + self.intereses_pendientes()).quantize(Decimal('0.01'))
+
+        capital = self.saldo_capital()
+        intereses = self.intereses_pendientes()
+
+        total = capital + intereses
+
+        return max(total, Decimal('0.00')).quantize(Decimal('0.01'))
 
     # -------------------------------
     # CÁLCULO DE MORATORIOS

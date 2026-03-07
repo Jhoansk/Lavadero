@@ -1648,36 +1648,22 @@ def reparar_sistema_financiero(request):
 
     creditos = Credito.objects.all()
 
-    creditos_reparados = 0
-
     for credito in creditos:
 
-        saldo = Decimal(str(credito.valor_inicial))
+        # Recalcular estado de cuotas
+        for cuota in credito.cuotas_credito.all():
 
-        cuotas = credito.cuotas_credito.order_by("numero")
+            if cuota.saldo_restante < 0:
+                cuota.saldo_restante = 0
 
-        for cuota in cuotas:
-
-            saldo -= cuota.abono_capital
-
-            if saldo < 0:
-                saldo = Decimal("0.00")
-
-            cuota.saldo_restante = saldo
-
-            # evitar intereses negativos
             if cuota.interes < 0:
-                cuota.interes = Decimal("0.00")
+                cuota.interes = 0
 
             cuota.save()
 
+        # recalcular estado del crédito
         credito.verificar_estado_credito()
 
-        creditos_reparados += 1
-
-    messages.success(
-        request,
-        f"Reparación financiera completada. Créditos reparados: {creditos_reparados}"
-    )
+    messages.success(request, "Sistema financiero reparado correctamente")
 
     return redirect("dashboard")
