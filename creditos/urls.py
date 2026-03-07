@@ -34,5 +34,6 @@ urlpatterns = [
     path('prenda/crear/', views.crear_prenda, name='crear_prenda'),
     path('anular-pago/<int:pago_id>/', views.anular_pago, name='anular_pago'),
     path('recalcular-creditos/', views.recalcular_todos_creditos, name='recalcular_creditos'),
+    path('reparar-sistema-financiero/',views.reparar_sistema_financiero, name='reparar_sistema_financiero'),
 
 ]

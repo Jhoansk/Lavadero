@@ -43,6 +43,7 @@ urlpatterns = [
     path('planillas/', include('planillas.urls')),
     path("home/", contratos_views.inicio, name="home"),
     path('redirigir-por-sede/', vehiculos_views.redirigir_por_sede, name='redirigir_por_sede'),
+    
 
 ]
 if settings.DEBUG:
