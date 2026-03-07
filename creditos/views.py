@@ -1618,31 +1618,28 @@ def anular_pago(request, pago_id):
 
     return redirect("detalle_credito", pago.credito.id)
 
-
-def recalcular_credito(credito):
-    pagos = PagoCredito.objects.filter(credito=credito).order_by("fecha_pago")
-
-    total_pagado = Decimal("0.00")
-    capital_pagado = Decimal("0.00")
-    interes_pagado = Decimal("0.00")
-
-    for pago in pagos:
-        total_pagado += pago.total
-        capital_pagado += pago.capital
-        interes_pagado += pago.interes
-
-    credito.total_pagado = total_pagado
-    credito.capital_pagado = capital_pagado
-    credito.interes_pagado = interes_pagado
-    credito.saldo_actual = credito.monto_total - capital_pagado
-
-    credito.save()
-
 def recalcular_todos_creditos(request):
+
     creditos = Credito.objects.all()
 
     for credito in creditos:
-        recalcular_credito(credito)
+
+        saldo = Decimal(str(credito.valor_inicial))
+
+        cuotas = credito.cuotas_credito.order_by("numero")
+
+        for cuota in cuotas:
+
+            saldo -= cuota.abono_capital
+
+            if saldo < 0:
+                saldo = Decimal("0.00")
+
+            cuota.saldo_restante = saldo
+            cuota.save(update_fields=["saldo_restante"])
+
+        credito.verificar_estado_credito()
 
     messages.success(request, "Todos los créditos fueron recalculados correctamente.")
+
     return redirect("dashboard")
