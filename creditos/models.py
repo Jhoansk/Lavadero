@@ -125,12 +125,18 @@ class Credito(models.Model):
 
     def saldo_total(self):
 
-        capital = self.saldo_capital()
-        intereses = self.intereses_pendientes()
+        capital_pagado = self.cuotas_credito.filter(
+            pagada=True
+        ).aggregate(
+            total=Sum('abono_capital')
+        )['total'] or Decimal('0.00')
 
-        total = capital + intereses
+        saldo = Decimal(str(self.valor_inicial)) - capital_pagado
 
-        return max(total, Decimal('0.00')).quantize(Decimal('0.01'))
+        if saldo < 0:
+            saldo = Decimal('0.00')
+
+        return saldo.quantize(Decimal('0.01'))
 
     # -------------------------------
     # CÁLCULO DE MORATORIOS
