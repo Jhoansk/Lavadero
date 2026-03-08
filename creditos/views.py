@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .models import Credito, PagoCredito, AprobacionCredito, CuotaCredito, ServicioCredito,SolicitudCredito, NombrePrendas, ReciboPago
+from .models import Credito, PagoCredito, AprobacionCredito, CuotaCredito, ServicioCredito,SolicitudCredito, NombrePrendas, ReciboPago, ConsecutivoRecibo
 from .forms import CreditoForm, PagoForm, DocumentosUsuarioForm, RenovarServicioForm, UsuarioCreditoForm, VehiculoCreditoForm, NombrePrendasForm
 from datetime import date, datetime, timedelta
 from django.http import JsonResponse
@@ -1355,19 +1355,47 @@ def numero_a_letras(valor):
     except:
         return ""
 
+def generar_consecutivo_recibo():
+
+    with transaction.atomic():
+
+        consecutivo = ConsecutivoRecibo.objects.select_for_update().first()
+
+        if not consecutivo:
+            consecutivo = ConsecutivoRecibo.objects.create(ultimo_numero=1072)
+
+        consecutivo.ultimo_numero += 1
+        consecutivo.save()
+
+        return consecutivo.ultimo_numero
+
 @login_required
 @requiere_sede_financiera_admin
 def generar_recibo(request):
     ids = request.GET.get("ids", "")
     ids_list = [int(x) for x in ids.split(",") if x.isdigit()]
 
-    pagos = PagoCredito.objects.filter(id__in=ids_list)
+    pagos = PagoCredito.objects.filter(id__in=ids_list).order_by("id")
+
     if not pagos.exists():
         return HttpResponse("No se encontraron pagos.", status=404)
 
     credito = pagos.first().credito
     fecha_hora = timezone.now()
+
     total_operacion = sum(p.valor_pagado for p in pagos)
+
+    # 🔹 Generar consecutivo
+    numero = generar_consecutivo_recibo()
+
+    # 🔹 Crear recibo primero
+    recibo = ReciboPago.objects.create(
+        credito=credito,
+        numero_recibo=numero,
+        total=total_operacion
+    )
+
+    recibo.pagos.set(pagos)
 
     pagos_items = []
 
@@ -1390,9 +1418,10 @@ def generar_recibo(request):
 
         pagos_items.append(item)
 
+    # 🔹 Contexto para PDF
     context = {
         "pago_operacion": {
-            "consecutivo": pagos.first().id,
+            "consecutivo": recibo.numero_formateado,
             "items_count": len(pagos_items),
             "fecha_hora": fecha_hora,
         },
@@ -1401,30 +1430,23 @@ def generar_recibo(request):
         "credito": credito,
     }
 
-    # -------------------------
-    # 🔥 GENERAR PDF
-    # -------------------------
+    # 🔹 Generar PDF
     html_string = render_to_string("creditos/recibo_pago.html", context)
-    pdf_file = HTML(string=html_string, base_url=request.build_absolute_uri()).write_pdf()
+    pdf_file = HTML(
+        string=html_string,
+        base_url=request.build_absolute_uri()
+    ).write_pdf()
 
-    # -------------------------
-    # 🔥 GUARDAR RECIBO
-    # -------------------------
-    recibo = ReciboPago.objects.create(
-        credito=credito,
-        total=total_operacion
-    )
-    recibo.pagos.set(pagos)
+    # 🔹 Guardar archivo
+    nombre_archivo = f"recibo_{recibo.numero_recibo}.pdf"
 
-    nombre_archivo = f"recibo_credito_{credito.id}_{recibo.id}.pdf"
     recibo.archivo.save(nombre_archivo, ContentFile(pdf_file))
     recibo.save()
 
-    # -------------------------
-    # 🔥 DEVOLVER PDF
-    # -------------------------
+    # 🔹 Devolver PDF
     response = HttpResponse(pdf_file, content_type="application/pdf")
     response["Content-Disposition"] = f'inline; filename="{nombre_archivo}"'
+
     return response
 
 

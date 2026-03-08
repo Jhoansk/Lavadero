@@ -1,5 +1,6 @@
 {% extends "layout_creditos.html" %}
 {% load humanize %}
+{% load i18n %}
 
 {% block title %} Detalle del Crédito #{{ credito.id }} {% endblock %}
 
@@ -147,7 +148,9 @@
                             {% with c=item.cuota m=item.moratorio %}
                             <tr>
                                 <td>{{ c.numero }}</td>
-                                <td>{{ c.fecha_vencimiento }}</td>
+                                {% language 'es' %}
+                                <td>{{ c.fecha_vencimiento|date:"d M Y" }}</td>
+                                {% endlanguage %}
                                 <td>${{ c.abono_capital|floatformat:0|intcomma }}</td>
                                 <td>${{ c.interes|floatformat:0|intcomma }}</td>
                                 <td>${{ c.cuota_total|floatformat:0|intcomma }}</td>
@@ -208,8 +211,9 @@
                     <tbody>
                         {% for p in pagos %}
                         <tr>
-
-                            <td>{{ p.fecha_pago }}</td>
+                            {% language 'es' %}
+                            <td>{{ p.fecha_pago|date:"d M Y" }}</td>
+                            {% endlanguage %}
 
                             <td>
                                 {% if p.tipo_pago == "abono" %}

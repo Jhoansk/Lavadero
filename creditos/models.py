@@ -4,6 +4,7 @@ from datetime import date
 from decimal import Decimal, ROUND_HALF_UP, ROUND_UP
 from dateutil.relativedelta import relativedelta
 from django.utils import timezone
+from django.db.models import Sum
 
 
 
@@ -73,30 +74,17 @@ class Credito(models.Model):
     # ------------------------------- 
     def saldo_capital(self):
         """
-        El saldo solo debe restar:
-        - valor_pagado de pagos tipo 'cuota'
-        - valor_pagado de pagos tipo 'abono'
-        Los pagos de mora y cobro jurídico NO afectan saldo.
-        También se ignoran pagos ANULADOS.
+        Saldo real de capital pendiente basado en el cronograma.
+        Suma el capital de las cuotas que aún no están pagadas.
         """
 
-        pagos_cuota = self.pagos.filter(
-            tipo_pago='cuota',
-            anulado=False
+        capital_pendiente = self.cuotas_credito.filter(
+            pagada=False
         ).aggregate(
-            total=models.Sum('valor_pagado')
+            total=Sum('abono_capital')
         )['total'] or Decimal('0.00')
 
-        abonos_capital = self.pagos.filter(
-            tipo_pago='abono',
-            anulado=False
-        ).aggregate(
-            total=models.Sum('valor_pagado')
-        )['total'] or Decimal('0.00')
-
-        saldo = Decimal(str(self.valor_inicial)) - pagos_cuota - abonos_capital
-
-        return max(saldo, Decimal('0.00'))
+        return capital_pendiente.quantize(Decimal('0.01'))
 
     def intereses_pendientes(self):
         """
@@ -124,19 +112,10 @@ class Credito(models.Model):
         return intereses.quantize(Decimal('0.01'))
 
     def saldo_total(self):
-
-        capital_pagado = self.cuotas_credito.filter(
-            pagada=True
-        ).aggregate(
-            total=Sum('abono_capital')
-        )['total'] or Decimal('0.00')
-
-        saldo = Decimal(str(self.valor_inicial)) - capital_pagado
-
-        if saldo < 0:
-            saldo = Decimal('0.00')
-
-        return saldo.quantize(Decimal('0.01'))
+        return (
+            self.saldo_capital() +
+            self.intereses_pendientes()
+        ).quantize(Decimal('0.01'))
 
     # -------------------------------
     # CÁLCULO DE MORATORIOS
@@ -696,12 +675,23 @@ class SolicitudCredito(models.Model):
     def __str__(self):
         return f"Solicitud {self.id} - {self.usuario}"
 
+class ConsecutivoRecibo(models.Model):
+    ultimo_numero = models.PositiveIntegerField(default=1072)
+
+    def __str__(self):
+        return f"Último consecutivo recibo: {self.ultimo_numero}"
+        
+
 class ReciboPago(models.Model):
     credito = models.ForeignKey(Credito, on_delete=models.CASCADE, related_name="recibos")
     pagos = models.ManyToManyField(PagoCredito, related_name="recibos")
+
+    numero_recibo = models.PositiveIntegerField(unique=True, null=True, blank=True)
+
     archivo = models.FileField(upload_to="recibos/")
     total = models.DecimalField(max_digits=12, decimal_places=2)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        return f"Recibo #{self.id} - Crédito {self.credito.id}"
+    @property
+    def numero_formateado(self):
+        return f"RC-{self.numero_recibo:06d}" if self.numero_recibo else "Sin consecutivo"

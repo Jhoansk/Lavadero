@@ -1019,7 +1019,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-09',
-        1843757.35,
+        1823096.35,
         32,
         'Pago',
         2,
@@ -1030,7 +1030,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-10',
-        1841691.14,
+        1823096.14,
         33,
         'Pago',
         2,
@@ -1041,7 +1041,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-20',
-        1847889.34,
+        1823096.34,
         34,
         'Pago',
         2,
@@ -1052,7 +1052,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-12',
-        1841692.00,
+        1823097.00,
         35,
         'Pago',
         2,
@@ -1074,7 +1074,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-02',
-        1845823.00,
+        1823096.00,
         37,
         'Pago',
         2,
@@ -1085,7 +1085,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-03-18',
-        1839625.00,
+        1823096.00,
         38,
         'Pago',
         2,
@@ -1096,7 +1096,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-13',
-        1849955.81,
+        1823096.81,
         39,
         'Pago',
         2,
@@ -1107,7 +1107,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-15',
-        1845823.00,
+        1823096.00,
         40,
         'Pago',
         2,
@@ -1118,7 +1118,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-06',
-        1843757.00,
+        1823096.00,
         41,
         'Pago',
         2,
@@ -1129,7 +1129,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-07',
-        1841691.41,
+        1823096.41,
         42,
         'Pago',
         2,
@@ -1140,7 +1140,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-28',
-        1852021.48,
+        1823096.48,
         43,
         'Pago',
         2,
@@ -1151,7 +1151,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-26',
-        1852021.00,
+        1823096.00,
         44,
         'Pago',
         2,
@@ -1162,7 +1162,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-23',
-        1854088.00,
+        1823097.00,
         45,
         'Pago',
         2,
@@ -1228,7 +1228,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-13',
-        1901606.39,
+        1823095.86,
         51,
         'Pago',
         2,
@@ -1239,7 +1239,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-13',
-        1839624.84,
+        1823096.30,
         52,
         'Pago',
         2,
@@ -1261,7 +1261,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-14',
-        1837558.00,
+        1823096.00,
         54,
         'Pago',
         2,
@@ -1272,7 +1272,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-21',
-        1856153.30,
+        1823096.30,
         55,
         'Pago',
         2,
@@ -1283,7 +1283,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-11',
-        1990446.97,
+        1823095.97,
         56,
         'Pago',
         2,
@@ -1294,7 +1294,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-11',
-        1854087.76,
+        1823096.76,
         57,
         'Pago',
         2,
@@ -1305,7 +1305,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-12',
-        1893342.82,
+        1823096.82,
         58,
         'Pago',
         2,
@@ -1316,7 +1316,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-02-13',
-        1506411.22,
+        1361786.22,
         59,
         'Pago',
         2,
@@ -1448,7 +1448,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-09-14',
-        1260000.00,
+        1225029.00,
         12,
         'Pago',
         3,
@@ -1459,7 +1459,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-11-16',
-        1292000.00,
+        1225029.00,
         13,
         'Pago',
         3,
@@ -1591,7 +1591,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-08-25',
-        36661000.00,
+        30204918.00,
         25,
         'Pago',
         3,
@@ -3681,7 +3681,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-10-24',
-        661000.00,
+        647000.00,
         31,
         'Pago',
         9,
@@ -3725,7 +3725,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-22',
-        664932.00,
+        647000.00,
         35,
         'Pago',
         9,
@@ -3769,7 +3769,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-06',
-        655000.00,
+        647000.00,
         39,
         'Pago',
         9,
@@ -3780,7 +3780,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-24',
-        658000.00,
+        647000.00,
         40,
         'Pago',
         9,
@@ -3791,7 +3791,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-25',
-        667000.00,
+        647000.00,
         41,
         'Pago',
         9,
@@ -3802,7 +3802,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-27',
-        669000.00,
+        647000.00,
         42,
         'Pago',
         9,
@@ -3813,7 +3813,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-31',
-        670000.00,
+        647000.00,
         43,
         'Pago',
         9,
@@ -3824,7 +3824,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-30',
-        670000.00,
+        647000.00,
         44,
         'Pago',
         9,
@@ -3835,7 +3835,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-29',
-        670000.00,
+        647000.00,
         45,
         'Pago',
         9,
@@ -3846,7 +3846,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-13',
-        658932.00,
+        647000.00,
         46,
         'Pago',
         9,
@@ -3857,7 +3857,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-02-16',
-        660932.00,
+        647000.00,
         47,
         'Pago',
         9,
@@ -3868,7 +3868,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-03',
-        654333.00,
+        647000.00,
         48,
         'Pago',
         9,
@@ -3879,7 +3879,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-04',
-        655799.00,
+        647000.00,
         49,
         'Pago',
         9,
@@ -3901,7 +3901,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-06',
-        655066.00,
+        647000.00,
         51,
         'Pago',
         9,
@@ -3912,7 +3912,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-03-07',
-        650666.00,
+        647000.00,
         52,
         'Pago',
         9,
@@ -3923,7 +3923,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-28',
-        665933.00,
+        647000.00,
         53,
         'Pago',
         9,
@@ -3934,7 +3934,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-14',
-        659466.00,
+        647000.00,
         54,
         'Pago',
         9,
@@ -3945,7 +3945,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-17',
-        660932.00,
+        647000.00,
         55,
         'Pago',
         9,
@@ -3956,7 +3956,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-16',
-        660932.00,
+        647000.00,
         56,
         'Pago',
         9,
@@ -3967,7 +3967,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-13',
-        657933.00,
+        647000.00,
         57,
         'Pago',
         9,
@@ -3978,7 +3978,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-03',
-        678530.00,
+        647000.00,
         58,
         'Pago',
         9,
@@ -4000,7 +4000,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-08',
-        268687.00,
+        259000.00,
         60,
         'Pago',
         9,
@@ -4011,7 +4011,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-09',
-        270000.00,
+        259000.00,
         61,
         'Pago',
         9,
@@ -4022,7 +4022,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-29',
-        270000.00,
+        259000.00,
         62,
         'Pago',
         9,
@@ -4033,7 +4033,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-01-19',
-        289527.00,
+        259000.00,
         63,
         'Pago',
         9,
@@ -4979,7 +4979,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-12-21',
-        603500.00,
+        573500.00,
         13,
         'Pago',
         13,
@@ -4990,7 +4990,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-01-31',
-        669561.00,
+        573500.00,
         14,
         'Pago',
         13,
@@ -5001,7 +5001,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-02-28',
-        668127.50,
+        573500.00,
         15,
         'Pago',
         13,
@@ -5012,7 +5012,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-03-14',
-        574304.03,
+        573500.00,
         16,
         'Pago',
         13,
@@ -5023,7 +5023,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-03-14',
-        659931.53,
+        573500.00,
         17,
         'Pago',
         13,
@@ -5034,7 +5034,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-07',
-        702538.00,
+        573500.00,
         18,
         'Pago',
         13,
@@ -5045,7 +5045,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-07',
-        687722.00,
+        573500.00,
         19,
         'Pago',
         13,
@@ -5056,7 +5056,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-09-13',
-        753971.00,
+        573500.00,
         20,
         'Pago',
         13,
@@ -5067,7 +5067,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-20',
-        912782.60,
+        573500.00,
         21,
         'Pago',
         13,
@@ -5078,7 +5078,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-20',
-        892633.63,
+        573500.00,
         22,
         'Pago',
         13,
@@ -5089,7 +5089,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-20',
-        874434.57,
+        573500.00,
         23,
         'Pago',
         13,
@@ -5100,7 +5100,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-20',
-        1933012.60,
+        573500.00,
         24,
         'Pago',
         13,
@@ -5111,7 +5111,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-21',
-        934881.47,
+        573500.00,
         25,
         'Pago',
         13,
@@ -5122,7 +5122,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-21',
-        1276662.50,
+        573500.00,
         26,
         'Pago',
         13,
@@ -5133,7 +5133,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-15',
-        823900.00,
+        573500.00,
         27,
         'Pago',
         13,
@@ -5144,7 +5144,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-15',
-        910832.70,
+        573500.00,
         28,
         'Pago',
         13,
@@ -5155,7 +5155,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-15',
-        890683.73,
+        573500.00,
         29,
         'Pago',
         13,
@@ -5166,7 +5166,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-15',
-        871184.73,
+        573500.00,
         30,
         'Pago',
         13,
@@ -5771,7 +5771,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-08-31',
-        3502900.48,
+        3458431.48,
         55,
         'Pago',
         14,
@@ -5782,7 +5782,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-09-30',
-        3446956.65,
+        3402457.65,
         56,
         'Pago',
         14,
@@ -5793,7 +5793,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-10-30',
-        3389893.93,
+        3345363.93,
         57,
         'Pago',
         14,
@@ -5804,7 +5804,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-11-30',
-        3331689.97,
+        3287129.97,
         58,
         'Pago',
         14,
@@ -5815,7 +5815,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-12-30',
-        3272321.92,
+        3227729.92,
         59,
         'Pago',
         14,
@@ -5826,7 +5826,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-01-31',
-        3211766.51,
+        3165836.51,
         60,
         'Pago',
         14,
@@ -6332,7 +6332,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-31',
-        634800.00,
+        626000.00,
         22,
         'Pago',
         16,
@@ -6365,7 +6365,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-08-09',
-        638900.00,
+        626000.00,
         25,
         'Pago',
         16,
@@ -6376,7 +6376,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-10-18',
-        643000.00,
+        626000.00,
         26,
         'Pago',
         16,
@@ -6387,7 +6387,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-03-12',
-        651827.55,
+        626000.00,
         27,
         'Pago',
         16,
@@ -6398,7 +6398,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-01-23',
-        674827.55,
+        626000.00,
         28,
         'Pago',
         16,
@@ -6409,7 +6409,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-29',
-        690000.00,
+        626000.00,
         29,
         'Pago',
         16,
@@ -6420,7 +6420,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-05',
-        706170.00,
+        626000.00,
         30,
         'Pago',
         16,
@@ -6431,7 +6431,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        1022591.87,
+        626000.00,
         31,
         'Pago',
         16,
@@ -6442,7 +6442,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        1002726.80,
+        626000.00,
         32,
         'Pago',
         16,
@@ -6453,7 +6453,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        980733.33,
+        626000.00,
         33,
         'Pago',
         16,
@@ -6464,7 +6464,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        959449.33,
+        626000.00,
         34,
         'Pago',
         16,
@@ -6475,7 +6475,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        937455.87,
+        626000.00,
         35,
         'Pago',
         16,
@@ -6486,7 +6486,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        916171.87,
+        626000.00,
         36,
         'Pago',
         16,
@@ -6497,7 +6497,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        894178.40,
+        626000.00,
         37,
         'Pago',
         16,
@@ -6508,7 +6508,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        872184.93,
+        626000.00,
         38,
         'Pago',
         16,
@@ -6519,7 +6519,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        850900.93,
+        626000.00,
         39,
         'Pago',
         16,
@@ -6530,7 +6530,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        828907.47,
+        626000.00,
         40,
         'Pago',
         16,
@@ -6541,7 +6541,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        807623.47,
+        626000.00,
         41,
         'Pago',
         16,
@@ -6552,7 +6552,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        785630.00,
+        626000.00,
         42,
         'Pago',
         16,
@@ -6563,7 +6563,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        763636.53,
+        626000.00,
         43,
         'Pago',
         16,
@@ -6574,7 +6574,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        743062.00,
+        626000.00,
         44,
         'Pago',
         16,
@@ -6585,7 +6585,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        721068.53,
+        626000.00,
         45,
         'Pago',
         16,
@@ -6596,7 +6596,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        699784.53,
+        626000.00,
         46,
         'Pago',
         16,
@@ -6607,7 +6607,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        677791.07,
+        626000.00,
         47,
         'Pago',
         16,
@@ -6618,7 +6618,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        656507.07,
+        626000.00,
         48,
         'Pago',
         16,
@@ -6629,7 +6629,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        634513.60,
+        626000.00,
         49,
         'Pago',
         16,
@@ -7047,7 +7047,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-17',
-        1361108.00,
+        1347000.00,
         31,
         'Pago',
         17,
@@ -7058,7 +7058,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-29',
-        1365319.00,
+        1347000.00,
         32,
         'Pago',
         17,
@@ -7069,7 +7069,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-17',
-        1351580.00,
+        1347000.00,
         33,
         'Pago',
         17,
@@ -7399,7 +7399,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-10-19',
-        549802.94,
+        544000.00,
         15,
         'Pago',
         18,
@@ -7410,7 +7410,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-11-16',
-        547802.94,
+        544000.00,
         16,
         'Pago',
         18,
@@ -7432,7 +7432,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-01-14',
-        546802.94,
+        544000.00,
         18,
         'Pago',
         18,
@@ -7564,7 +7564,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-01-19',
-        551802.94,
+        544000.00,
         30,
         'Pago',
         18,
@@ -7575,7 +7575,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-18',
-        550802.94,
+        544000.00,
         31,
         'Pago',
         18,
@@ -7586,7 +7586,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-21',
-        553000.00,
+        544000.00,
         32,
         'Pago',
         18,
@@ -7597,7 +7597,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-30',
-        555000.00,
+        544000.00,
         33,
         'Pago',
         18,
@@ -7608,7 +7608,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-19',
-        551803.00,
+        544000.00,
         34,
         'Pago',
         18,
@@ -7619,7 +7619,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-30',
-        554803.00,
+        544000.00,
         35,
         'Pago',
         18,
@@ -7630,7 +7630,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-21',
-        553000.00,
+        544000.00,
         36,
         'Pago',
         18,
@@ -7641,7 +7641,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-31',
-        559803.00,
+        544000.00,
         37,
         'Pago',
         18,
@@ -7652,7 +7652,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-28',
-        559803.00,
+        544000.00,
         38,
         'Pago',
         18,
@@ -7663,7 +7663,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-25',
-        555000.00,
+        544000.00,
         39,
         'Pago',
         18,
@@ -8092,7 +8092,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-12-16',
-        1490045.70,
+        1483200.00,
         16,
         'Pago',
         21,
@@ -8103,7 +8103,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-01-17',
-        1490045.70,
+        1483200.00,
         17,
         'Pago',
         21,
@@ -8114,7 +8114,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-02-15',
-        1490045.70,
+        1483200.00,
         18,
         'Pago',
         21,
@@ -8125,7 +8125,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-03-23',
-        1490045.70,
+        1483200.00,
         19,
         'Pago',
         21,
@@ -8136,7 +8136,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-04-18',
-        1490045.70,
+        1483200.00,
         20,
         'Pago',
         21,
@@ -8587,7 +8587,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-08-10',
-        2108000.00,
+        2093175.00,
         13,
         'Pago',
         22,
@@ -9995,7 +9995,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-11-17',
-        1829309.86,
+        1812000.00,
         15,
         'Pago',
         25,
@@ -10028,7 +10028,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-08-02',
-        1840309.86,
+        1812000.00,
         18,
         'Pago',
         25,
@@ -10050,7 +10050,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-20',
-        1879550.00,
+        1812000.00,
         20,
         'Pago',
         25,
@@ -10061,7 +10061,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-20',
-        1832650.00,
+        1812000.00,
         21,
         'Pago',
         25,
@@ -10083,7 +10083,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-01-08',
-        1840000.00,
+        1812000.00,
         23,
         'Pago',
         25,
@@ -10094,7 +10094,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-09',
-        1849000.00,
+        1812000.00,
         24,
         'Pago',
         25,
@@ -10105,7 +10105,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-09-20',
-        1833310.00,
+        1812000.00,
         25,
         'Pago',
         25,
@@ -10127,7 +10127,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-11-19',
-        1815000.00,
+        1812000.00,
         27,
         'Pago',
         25,
@@ -10138,7 +10138,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-12-14',
-        1824000.00,
+        1812000.00,
         28,
         'Pago',
         25,
@@ -11315,7 +11315,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-12-30',
-        2217000.00,
+        2190240.96,
         27,
         'Pago',
         208,
@@ -11370,7 +11370,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-05',
-        2163000.00,
+        2151000.00,
         32,
         'Pago',
         208,
@@ -11392,7 +11392,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-07',
-        2163000.00,
+        2151000.00,
         34,
         'Pago',
         208,
@@ -11414,7 +11414,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-09',
-        2163000.00,
+        2149000.00,
         36,
         'Pago',
         208,
@@ -11436,7 +11436,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-11',
-        2163000.00,
+        2159000.00,
         38,
         'Pago',
         208,
@@ -11447,7 +11447,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-12',
-        2163000.00,
+        2155000.00,
         39,
         'Pago',
         208,
@@ -11480,7 +11480,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-03',
-        2163000.00,
+        2135949.00,
         42,
         'Pago',
         208,
@@ -11491,7 +11491,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-03-04',
-        2163000.00,
+        2158097.00,
         43,
         'Pago',
         208,
@@ -11502,7 +11502,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-05',
-        2163000.00,
+        2150743.00,
         44,
         'Pago',
         208,
@@ -11513,7 +11513,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-07',
-        2163000.00,
+        2076950.00,
         45,
         'Pago',
         208,
@@ -12184,7 +12184,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-10-31',
-        950000.00,
+        903000.00,
         1,
         'Pago',
         32,
@@ -12195,7 +12195,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-12-21',
-        950000.00,
+        903000.00,
         2,
         'Pago',
         32,
@@ -12206,7 +12206,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-01-31',
-        950000.00,
+        903000.00,
         3,
         'Pago',
         32,
@@ -12217,7 +12217,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-02-21',
-        951400.00,
+        903000.00,
         4,
         'Pago',
         32,
@@ -12228,7 +12228,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-03-23',
-        948400.00,
+        903000.00,
         5,
         'Pago',
         32,
@@ -12239,7 +12239,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-04-18',
-        944000.00,
+        903000.00,
         6,
         'Pago',
         32,
@@ -12250,7 +12250,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-07-05',
-        944000.00,
+        903000.00,
         7,
         'Pago',
         32,
@@ -12261,7 +12261,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-30',
-        940000.00,
+        903000.00,
         8,
         'Pago',
         32,
@@ -12272,7 +12272,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-06-30',
-        913000.00,
+        903000.00,
         9,
         'Pago',
         32,
@@ -12283,7 +12283,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-08-16',
-        945893.00,
+        903000.00,
         10,
         'Pago',
         32,
@@ -12294,7 +12294,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-06-09',
-        939120.00,
+        903000.00,
         11,
         'Pago',
         32,
@@ -12305,7 +12305,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-09-23',
-        925575.00,
+        903000.00,
         12,
         'Pago',
         32,
@@ -12316,7 +12316,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-02',
-        976745.00,
+        903000.00,
         13,
         'Pago',
         32,
@@ -12327,7 +12327,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-02',
-        954170.00,
+        903000.00,
         14,
         'Pago',
         32,
@@ -12338,7 +12338,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-02',
-        930842.50,
+        903000.00,
         15,
         'Pago',
         32,
@@ -12349,7 +12349,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-23',
-        1191244.00,
+        903000.00,
         16,
         'Pago',
         32,
@@ -12360,7 +12360,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-29',
-        1035018.60,
+        903000.00,
         17,
         'Pago',
         32,
@@ -12371,7 +12371,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-29',
-        1003293.20,
+        903000.00,
         18,
         'Pago',
         32,
@@ -12382,7 +12382,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-02',
-        1239699.00,
+        903000.00,
         19,
         'Pago',
         32,
@@ -12393,7 +12393,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-16',
-        1304173.00,
+        903000.00,
         20,
         'Pago',
         32,
@@ -12404,7 +12404,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-06',
-        1320079.00,
+        903000.00,
         21,
         'Pago',
         32,
@@ -12415,7 +12415,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-25',
-        1299056.00,
+        903000.00,
         22,
         'Pago',
         32,
@@ -12426,7 +12426,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-25',
-        1282681.40,
+        903000.00,
         23,
         'Pago',
         32,
@@ -12437,7 +12437,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-25',
-        1250956.00,
+        903000.00,
         24,
         'Pago',
         32,
@@ -12448,7 +12448,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-25',
-        1733230.60,
+        903000.00,
         25,
         'Pago',
         32,
@@ -12459,7 +12459,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-08',
-        1206949.80,
+        903000.00,
         26,
         'Pago',
         32,
@@ -12470,7 +12470,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-08',
-        1175224.40,
+        903000.00,
         27,
         'Pago',
         32,
@@ -12481,7 +12481,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-23',
-        1155780.00,
+        903000.00,
         28,
         'Pago',
         32,
@@ -12492,7 +12492,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-23',
-        9859854.00,
+        9638799.60,
         29,
         'Pago',
         32,
@@ -12503,7 +12503,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-20',
-        1362768.00,
+        -3369712.00,
         30,
         'Pago',
         32,
@@ -12514,7 +12514,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-18',
-        1361322.00,
+        1274554.00,
         31,
         'Pago',
         32,
@@ -12525,7 +12525,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-03-18',
-        1356983.00,
+        1271661.00,
         32,
         'Pago',
         32,
@@ -12536,7 +12536,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-21',
-        1436000.00,
+        1355017.00,
         33,
         'Pago',
         32,
@@ -12547,7 +12547,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-14',
-        1482305.00,
+        1322305.00,
         34,
         'Pago',
         32,
@@ -12558,7 +12558,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-15',
-        1452428.00,
+        1246123.00,
         35,
         'Pago',
         32,
@@ -12569,7 +12569,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-22',
-        1481048.00,
+        1304620.00,
         36,
         'Pago',
         32,
@@ -12580,7 +12580,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-21',
-        1497258.00,
+        1292210.00,
         37,
         'Pago',
         32,
@@ -12591,7 +12591,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-01-20',
-        1505935.00,
+        1284677.00,
         38,
         'Pago',
         32,
@@ -12690,7 +12690,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-12-30',
-        382000.00,
+        340964.86,
         9,
         'Pago',
         33,
@@ -12712,7 +12712,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-01-03',
-        382000.00,
+        376471.39,
         11,
         'Pago',
         33,
@@ -12723,7 +12723,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-01-03',
-        480000.00,
+        437025.00,
         12,
         'Pago',
         33,
@@ -12789,7 +12789,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-01-09',
-        1850000.00,
+        1748000.00,
         6,
         'Pago',
         34,
@@ -12800,7 +12800,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-11-17',
-        1975240.00,
+        1748000.00,
         7,
         'Pago',
         34,
@@ -12811,7 +12811,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-11-17',
-        1931540.00,
+        1748000.00,
         8,
         'Pago',
         34,
@@ -12822,7 +12822,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-02',
-        1968000.00,
+        1748000.00,
         9,
         'Pago',
         34,
@@ -12833,7 +12833,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-02',
-        1863000.00,
+        1748000.00,
         10,
         'Pago',
         34,
@@ -12844,7 +12844,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-02',
-        1818000.00,
+        1748000.00,
         11,
         'Pago',
         34,
@@ -12855,7 +12855,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-02',
-        1798000.00,
+        1748000.00,
         12,
         'Pago',
         34,
@@ -12866,7 +12866,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-02',
-        1788000.00,
+        1748000.00,
         13,
         'Pago',
         34,
@@ -12877,7 +12877,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-02',
-        1765000.00,
+        1748000.00,
         14,
         'Pago',
         34,
@@ -12888,7 +12888,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-03-28',
-        1850000.00,
+        1789000.00,
         15,
         'Pago',
         34,
@@ -12899,7 +12899,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-09-05',
-        1831000.00,
+        1748000.00,
         16,
         'Pago',
         34,
@@ -12910,7 +12910,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-09-05',
-        1783000.00,
+        1748000.00,
         17,
         'Pago',
         34,
@@ -12921,7 +12921,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-10-28',
-        1968000.00,
+        1748000.00,
         18,
         'Pago',
         34,
@@ -12932,7 +12932,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-10-28',
-        1793000.00,
+        1610000.00,
         19,
         'Pago',
         34,
@@ -12943,7 +12943,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-10-28',
-        1752000.00,
+        1610000.00,
         20,
         'Pago',
         34,
@@ -12954,7 +12954,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-10-28',
-        1712000.00,
+        1610000.00,
         21,
         'Pago',
         34,
@@ -12965,7 +12965,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-13',
-        2104440.00,
+        1610000.00,
         22,
         'Pago',
         34,
@@ -12976,7 +12976,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-13',
-        1883700.00,
+        1610000.00,
         23,
         'Pago',
         34,
@@ -12987,7 +12987,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-13',
-        1827135.33,
+        1610000.00,
         24,
         'Pago',
         34,
@@ -12998,7 +12998,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-13',
-        1772395.33,
+        1610000.00,
         25,
         'Pago',
         34,
@@ -13009,7 +13009,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-10',
-        2100835.33,
+        1610000.00,
         26,
         'Pago',
         34,
@@ -13020,7 +13020,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-10',
-        2044270.67,
+        1610000.00,
         27,
         'Pago',
         34,
@@ -13031,7 +13031,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-10',
-        1993180.00,
+        1610000.00,
         28,
         'Pago',
         34,
@@ -13042,7 +13042,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-10',
-        1936615.33,
+        1610000.00,
         29,
         'Pago',
         34,
@@ -13053,7 +13053,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-10',
-        1881875.33,
+        1610000.00,
         30,
         'Pago',
         34,
@@ -13064,7 +13064,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-10',
-        1825310.67,
+        1610000.00,
         31,
         'Pago',
         34,
@@ -13075,7 +13075,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-10',
-        1770570.67,
+        1610000.00,
         32,
         'Pago',
         34,
@@ -13086,7 +13086,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-10',
-        1714006.00,
+        1610000.00,
         33,
         'Pago',
         34,
@@ -13097,7 +13097,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-10',
-        1657441.33,
+        1610000.00,
         34,
         'Pago',
         34,
@@ -15165,7 +15165,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-02-02',
-        682650.00,
+        675000.00,
         37,
         'Pago',
         39,
@@ -15176,7 +15176,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-03',
-        685070.00,
+        675000.00,
         38,
         'Pago',
         39,
@@ -15187,7 +15187,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-04',
-        689535.00,
+        675000.00,
         39,
         'Pago',
         39,
@@ -15209,7 +15209,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-10',
-        775215.00,
+        675000.00,
         41,
         'Pago',
         39,
@@ -15220,7 +15220,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-10',
-        751500.00,
+        675000.00,
         42,
         'Pago',
         39,
@@ -15231,7 +15231,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-03-12',
-        776745.00,
+        675000.00,
         43,
         'Pago',
         39,
@@ -15242,7 +15242,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-03-12',
-        753030.00,
+        675000.00,
         44,
         'Pago',
         39,
@@ -15253,7 +15253,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-26',
-        794340.00,
+        675000.00,
         45,
         'Pago',
         39,
@@ -15264,7 +15264,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-26',
-        771390.00,
+        675000.00,
         46,
         'Pago',
         39,
@@ -15275,7 +15275,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-26',
-        747675.00,
+        675000.00,
         47,
         'Pago',
         39,
@@ -15286,7 +15286,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-04',
-        749528.16,
+        675000.00,
         48,
         'Pago',
         39,
@@ -15374,7 +15374,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-09-16',
-        805490.00,
+        777000.00,
         8,
         'Pago',
         40,
@@ -15385,7 +15385,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-09-16',
-        785417.50,
+        777000.00,
         9,
         'Pago',
         40,
@@ -15396,7 +15396,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-09-16',
-        951479.00,
+        777000.00,
         10,
         'Pago',
         40,
@@ -17002,7 +17002,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-04-02',
-        759320.82,
+        754000.00,
         10,
         'Pago',
         48,
@@ -17013,7 +17013,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-08-03',
-        759320.82,
+        754000.00,
         11,
         'Pago',
         48,
@@ -17024,7 +17024,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-04-04',
-        759320.82,
+        754000.00,
         12,
         'Pago',
         48,
@@ -17035,7 +17035,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-04-05',
-        757321.00,
+        754000.00,
         13,
         'Pago',
         48,
@@ -17112,7 +17112,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-01',
-        791320.82,
+        754000.00,
         20,
         'Pago',
         48,
@@ -17123,7 +17123,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-21',
-        801853.87,
+        754000.00,
         21,
         'Pago',
         48,
@@ -17134,7 +17134,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-21',
-        774788.00,
+        754000.00,
         22,
         'Pago',
         48,
@@ -17145,7 +17145,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-04',
-        783000.00,
+        754000.00,
         23,
         'Pago',
         48,
@@ -17156,7 +17156,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-13',
-        793309.00,
+        754000.00,
         24,
         'Pago',
         48,
@@ -17233,7 +17233,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-11-13',
-        786718.79,
+        781000.00,
         7,
         'Pago',
         49,
@@ -17266,7 +17266,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-02-19',
-        789718.79,
+        781000.00,
         10,
         'Pago',
         49,
@@ -17277,7 +17277,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-12-03',
-        787718.79,
+        781000.00,
         11,
         'Pago',
         49,
@@ -17299,7 +17299,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-09-06',
-        811000.00,
+        781000.00,
         13,
         'Pago',
         49,
@@ -17321,7 +17321,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-07-29',
-        798700.00,
+        781000.00,
         15,
         'Pago',
         49,
@@ -17332,7 +17332,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-08-27',
-        797719.00,
+        781000.00,
         16,
         'Pago',
         49,
@@ -17343,7 +17343,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-09-24',
-        795690.00,
+        781000.00,
         17,
         'Pago',
         49,
@@ -17354,7 +17354,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-02-11',
-        802000.00,
+        781000.00,
         18,
         'Pago',
         49,
@@ -17365,7 +17365,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-11-19',
-        792700.00,
+        781000.00,
         19,
         'Pago',
         49,
@@ -17376,7 +17376,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-12-14',
-        787000.00,
+        781000.00,
         20,
         'Pago',
         49,
@@ -17387,7 +17387,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-01',
-        790000.00,
+        781000.00,
         21,
         'Pago',
         49,
@@ -17398,7 +17398,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-04',
-        834993.00,
+        781000.00,
         22,
         'Pago',
         49,
@@ -17409,7 +17409,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-04',
-        811445.00,
+        781000.00,
         23,
         'Pago',
         49,
@@ -17420,7 +17420,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-05',
-        815250.00,
+        781000.00,
         24,
         'Pago',
         49,
@@ -17431,7 +17431,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-05',
-        788000.00,
+        781000.00,
         25,
         'Pago',
         49,
@@ -17442,7 +17442,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-06',
-        788000.00,
+        781000.00,
         26,
         'Pago',
         49,
@@ -17453,7 +17453,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-07',
-        789719.00,
+        781000.00,
         27,
         'Pago',
         49,
@@ -17464,7 +17464,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-09',
-        811000.00,
+        781000.00,
         28,
         'Pago',
         49,
@@ -17475,7 +17475,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-10',
-        817718.00,
+        781000.00,
         29,
         'Pago',
         49,
@@ -17486,7 +17486,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-22',
-        827026.93,
+        781000.00,
         30,
         'Pago',
         49,
@@ -17497,7 +17497,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-22',
-        799410.07,
+        781000.00,
         31,
         'Pago',
         49,
@@ -17508,7 +17508,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-17',
-        914655.13,
+        781000.00,
         32,
         'Pago',
         49,
@@ -17519,7 +17519,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-17',
-        887216.00,
+        781000.00,
         33,
         'Pago',
         49,
@@ -17530,7 +17530,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-17',
-        859776.87,
+        781000.00,
         34,
         'Pago',
         49,
@@ -17541,7 +17541,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-17',
-        834108.00,
+        781000.00,
         35,
         'Pago',
         49,
@@ -17552,7 +17552,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-17',
-        806668.87,
+        781000.00,
         36,
         'Pago',
         49,
@@ -17563,7 +17563,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-21',
-        798703.00,
+        781000.00,
         37,
         'Pago',
         49,
@@ -17574,7 +17574,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-21',
-        798718.79,
+        781000.00,
         38,
         'Pago',
         49,
@@ -17585,7 +17585,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-07',
-        789900.00,
+        781000.00,
         39,
         'Pago',
         49,
@@ -17596,7 +17596,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-13',
-        791719.00,
+        781000.00,
         40,
         'Pago',
         49,
@@ -17607,7 +17607,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-25',
-        802243.00,
+        781000.00,
         41,
         'Pago',
         49,
@@ -17618,7 +17618,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-29',
-        833222.87,
+        781000.00,
         42,
         'Pago',
         49,
@@ -17629,7 +17629,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-29',
-        805783.73,
+        781000.00,
         43,
         'Pago',
         49,
@@ -17640,7 +17640,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-23',
-        827912.00,
+        781000.00,
         44,
         'Pago',
         49,
@@ -17651,7 +17651,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-20',
-        825256.67,
+        781000.00,
         45,
         'Pago',
         49,
@@ -17662,7 +17662,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-20',
-        797817.53,
+        781000.00,
         46,
         'Pago',
         49,
@@ -17673,7 +17673,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-25',
-        910229.47,
+        781000.00,
         47,
         'Pago',
         49,
@@ -17684,7 +17684,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-25',
-        882790.33,
+        781000.00,
         48,
         'Pago',
         49,
@@ -17915,7 +17915,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-10-31',
-        1355000.00,
+        1353000.00,
         15,
         'Pago',
         51,
@@ -17926,7 +17926,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-11-25',
-        1355000.00,
+        1353000.00,
         16,
         'Pago',
         51,
@@ -17937,7 +17937,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-12-21',
-        1355000.00,
+        1353000.00,
         17,
         'Pago',
         51,
@@ -17948,7 +17948,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-02',
-        1355000.00,
+        1353000.00,
         18,
         'Pago',
         51,
@@ -17959,7 +17959,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-24',
-        1374468.00,
+        1353000.00,
         19,
         'Pago',
         51,
@@ -17970,7 +17970,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-28',
-        1379068.00,
+        1353000.00,
         20,
         'Pago',
         51,
@@ -17981,7 +17981,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-05',
-        1395935.00,
+        1353000.00,
         21,
         'Pago',
         51,
@@ -17992,7 +17992,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-20',
-        1403602.00,
+        1353000.00,
         22,
         'Pago',
         51,
@@ -18014,7 +18014,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-09',
-        1446537.00,
+        1353000.00,
         24,
         'Pago',
         51,
@@ -18025,7 +18025,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-14',
-        1412803.00,
+        1353000.00,
         25,
         'Pago',
         51,
@@ -18036,7 +18036,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-10',
-        1403602.00,
+        1353000.00,
         26,
         'Pago',
         51,
@@ -18047,7 +18047,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-28',
-        1662455.00,
+        1353000.00,
         27,
         'Pago',
         51,
@@ -18289,7 +18289,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-01-08',
-        1855000.00,
+        1830000.00,
         13,
         'Pago',
         52,
@@ -18300,7 +18300,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-08-30',
-        1855000.00,
+        1830000.00,
         14,
         'Pago',
         52,
@@ -18311,7 +18311,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-09-30',
-        1855000.00,
+        1830000.00,
         15,
         'Pago',
         52,
@@ -18322,7 +18322,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-10-31',
-        1855000.00,
+        1830000.00,
         16,
         'Pago',
         52,
@@ -18333,7 +18333,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-01-12',
-        1850000.00,
+        1830000.00,
         17,
         'Pago',
         52,
@@ -18344,7 +18344,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-12-28',
-        1910000.00,
+        1830000.00,
         18,
         'Pago',
         52,
@@ -18355,7 +18355,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-03',
-        1910000.00,
+        1830000.00,
         19,
         'Pago',
         52,
@@ -18366,7 +18366,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-14',
-        1830000.00,
+        1780032.98,
         20,
         'Pago',
         52,
@@ -18377,7 +18377,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-05',
-        1886000.00,
+        1830000.00,
         21,
         'Pago',
         52,
@@ -18388,7 +18388,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-15',
-        1904725.00,
+        1830000.00,
         22,
         'Pago',
         52,
@@ -18399,7 +18399,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-15',
-        1858275.00,
+        1830000.00,
         23,
         'Pago',
         52,
@@ -18410,7 +18410,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-15',
-        1917901.00,
+        1830000.00,
         24,
         'Pago',
         52,
@@ -18421,7 +18421,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-09-13',
-        954313.08,
+        927000.00,
         1,
         'Pago',
         53,
@@ -18432,7 +18432,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-11-13',
-        1607313.08,
+        927000.00,
         2,
         'Pago',
         53,
@@ -18443,7 +18443,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-30',
-        1044000.00,
+        1039000.00,
         3,
         'Pago',
         53,
@@ -18454,7 +18454,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-04-06',
-        1080000.00,
+        1039000.00,
         4,
         'Pago',
         53,
@@ -18476,7 +18476,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-08-19',
-        1103427.72,
+        1039000.00,
         6,
         'Pago',
         53,
@@ -18487,7 +18487,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-11-25',
-        1096213.86,
+        1039000.00,
         7,
         'Pago',
         53,
@@ -18498,7 +18498,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-18',
-        2116467.27,
+        1039000.00,
         8,
         'Pago',
         53,
@@ -18509,7 +18509,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-18',
-        1348691.27,
+        1039000.00,
         9,
         'Pago',
         53,
@@ -18520,7 +18520,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-18',
-        1370188.00,
+        1039000.00,
         10,
         'Pago',
         53,
@@ -18531,7 +18531,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-20',
-        1352224.00,
+        1039000.00,
         11,
         'Pago',
         53,
@@ -18542,7 +18542,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-11',
-        1370925.00,
+        1039000.00,
         12,
         'Pago',
         53,
@@ -18553,7 +18553,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-11',
-        1338000.00,
+        1039000.00,
         13,
         'Pago',
         53,
@@ -18564,7 +18564,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-11',
-        1305000.00,
+        1039000.00,
         14,
         'Pago',
         53,
@@ -18575,7 +18575,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-29',
-        1292169.67,
+        1039000.00,
         15,
         'Pago',
         53,
@@ -18586,7 +18586,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-29',
-        1256843.67,
+        1039000.00,
         16,
         'Pago',
         53,
@@ -18597,7 +18597,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-29',
-        1220340.13,
+        1039000.00,
         17,
         'Pago',
         53,
@@ -18608,7 +18608,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-29',
-        1185014.13,
+        1039000.00,
         18,
         'Pago',
         53,
@@ -18619,7 +18619,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-29',
-        1327495.67,
+        1039000.00,
         19,
         'Pago',
         53,
@@ -18630,7 +18630,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-29',
-        1290992.13,
+        1039000.00,
         20,
         'Pago',
         53,
@@ -18641,7 +18641,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-29',
-        1255666.13,
+        1039000.00,
         21,
         'Pago',
         53,
@@ -18652,7 +18652,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-29',
-        1219162.60,
+        1039000.00,
         22,
         'Pago',
         53,
@@ -18663,7 +18663,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-29',
-        1183836.60,
+        1039000.00,
         23,
         'Pago',
         53,
@@ -18674,7 +18674,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-29',
-        1147333.07,
+        1039000.00,
         24,
         'Pago',
         53,
@@ -18685,7 +18685,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-29',
-        1110829.53,
+        1039000.00,
         25,
         'Pago',
         53,
@@ -18696,7 +18696,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-29',
-        1076681.07,
+        1039000.00,
         26,
         'Pago',
         53,
@@ -18707,7 +18707,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-29',
-        1040177.53,
+        1039000.00,
         27,
         'Pago',
         53,
@@ -18729,7 +18729,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-07',
-        1046065.00,
+        1039000.00,
         29,
         'Pago',
         53,
@@ -18740,7 +18740,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-27',
-        1110829.53,
+        1039000.00,
         30,
         'Pago',
         53,
@@ -18751,7 +18751,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-27',
-        1074326.00,
+        1039000.00,
         31,
         'Pago',
         53,
@@ -18773,7 +18773,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-13',
-        1057841.00,
+        1039000.00,
         33,
         'Pago',
         53,
@@ -18784,7 +18784,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-28',
-        1288881.00,
+        1039000.00,
         34,
         'Pago',
         53,
@@ -18795,7 +18795,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-28',
-        1253311.00,
+        1039000.00,
         35,
         'Pago',
         53,
@@ -18806,7 +18806,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-28',
-        1216808.00,
+        1039000.00,
         36,
         'Pago',
         53,
@@ -18817,7 +18817,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-07',
-        1188546.73,
+        1039000.00,
         37,
         'Pago',
         53,
@@ -18828,7 +18828,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-07',
-        1155575.80,
+        1039000.00,
         38,
         'Pago',
         53,
@@ -18839,7 +18839,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-25',
-        1142622.93,
+        1039000.00,
         39,
         'Pago',
         53,
@@ -18850,7 +18850,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-25',
-        1107296.93,
+        1039000.00,
         40,
         'Pago',
         53,
@@ -18861,7 +18861,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-25',
-        1070793.40,
+        1039000.00,
         41,
         'Pago',
         53,
@@ -18883,7 +18883,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-26',
-        1181200.00,
+        1039000.00,
         43,
         'Pago',
         53,
@@ -18894,7 +18894,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-26',
-        1385867.00,
+        1039000.00,
         44,
         'Pago',
         53,
@@ -20016,7 +20016,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-10-11',
-        486259.92,
+        438000.00,
         1,
         'Pago',
         58,
@@ -20027,7 +20027,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-10-11',
-        488000.00,
+        438000.00,
         2,
         'Pago',
         58,
@@ -20038,7 +20038,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-01-31',
-        488000.00,
+        438000.00,
         3,
         'Pago',
         58,
@@ -20060,7 +20060,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-02-28',
-        492750.00,
+        438000.00,
         5,
         'Pago',
         58,
@@ -20071,7 +20071,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-03-14',
-        481435.00,
+        438000.00,
         6,
         'Pago',
         58,
@@ -20082,7 +20082,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-03-14',
-        470485.00,
+        438000.00,
         7,
         'Pago',
         58,
@@ -20093,7 +20093,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-07-13',
-        3207738.65,
+        182263.65,
         8,
         'Pago',
         58,
@@ -20544,7 +20544,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-09-29',
-        1445815.44,
+        1409000.00,
         1,
         'Pago',
         59,
@@ -20555,7 +20555,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-10-19',
-        1445815.44,
+        1439000.00,
         2,
         'Pago',
         59,
@@ -20566,7 +20566,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-10-11',
-        1445815.44,
+        1437000.00,
         3,
         'Pago',
         59,
@@ -20577,7 +20577,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-12-16',
-        1445815.44,
+        1429000.00,
         4,
         'Pago',
         59,
@@ -20588,7 +20588,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-01-17',
-        1445815.44,
+        1428000.00,
         5,
         'Pago',
         59,
@@ -20599,7 +20599,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-02-18',
-        1445815.44,
+        1429000.00,
         6,
         'Pago',
         59,
@@ -20610,7 +20610,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-12-03',
-        1445815.44,
+        1431000.00,
         7,
         'Pago',
         59,
@@ -20621,7 +20621,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-04-18',
-        1445815.44,
+        1434000.00,
         8,
         'Pago',
         59,
@@ -20632,7 +20632,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-23',
-        1438800.00,
+        1409000.00,
         9,
         'Pago',
         59,
@@ -20643,7 +20643,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-06-30',
-        1442800.00,
+        1409000.00,
         10,
         'Pago',
         59,
@@ -20654,7 +20654,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-07-22',
-        1438800.00,
+        1409000.00,
         11,
         'Pago',
         59,
@@ -20665,7 +20665,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-08-24',
-        1445815.44,
+        1414000.00,
         12,
         'Pago',
         59,
@@ -20676,7 +20676,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-09-30',
-        1446215.00,
+        1409000.00,
         13,
         'Pago',
         59,
@@ -20687,7 +20687,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-03-11',
-        1445815.44,
+        1403000.00,
         14,
         'Pago',
         59,
@@ -20698,7 +20698,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-11-21',
-        1437815.00,
+        1409000.00,
         15,
         'Pago',
         59,
@@ -20709,7 +20709,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-01',
-        1445815.44,
+        1381000.00,
         16,
         'Pago',
         59,
@@ -20720,7 +20720,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-27',
-        1522231.00,
+        1436000.00,
         17,
         'Pago',
         59,
@@ -20731,7 +20731,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-24',
-        1575962.13,
+        1436000.00,
         18,
         'Pago',
         59,
@@ -20742,7 +20742,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-24',
-        1525510.67,
+        1436000.00,
         19,
         'Pago',
         59,
@@ -20753,7 +20753,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-24',
-        1658937.00,
+        1436000.00,
         20,
         'Pago',
         59,
@@ -21116,7 +21116,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-10-12',
-        718000.00,
+        709000.00,
         17,
         'Pago',
         60,
@@ -21138,7 +21138,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-13',
-        743551.93,
+        709000.00,
         19,
         'Pago',
         60,
@@ -21149,7 +21149,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-13',
-        718642.40,
+        709000.00,
         20,
         'Pago',
         60,
@@ -21160,7 +21160,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-16',
-        764444.00,
+        709000.00,
         21,
         'Pago',
         60,
@@ -21171,7 +21171,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-16',
-        1289534.00,
+        709000.00,
         22,
         'Pago',
         60,
@@ -21182,7 +21182,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-05',
-        1297186.00,
+        709000.00,
         23,
         'Pago',
         60,
@@ -21193,7 +21193,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-29',
-        1324507.00,
+        709000.00,
         24,
         'Pago',
         60,
@@ -21204,7 +21204,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-23',
-        1345398.00,
+        709000.00,
         25,
         'Pago',
         60,
@@ -21215,7 +21215,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-12',
-        1379147.00,
+        709000.00,
         26,
         'Pago',
         60,
@@ -21226,7 +21226,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-19',
-        1390396.00,
+        709000.00,
         27,
         'Pago',
         60,
@@ -21237,7 +21237,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2021-06-09',
-        474000.00,
+        -131418.00,
         1,
         'Pago',
         61,
@@ -21699,7 +21699,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-24',
-        2264955.00,
+        2256000.00,
         19,
         'Pago',
         64,
@@ -21710,7 +21710,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-28',
-        2273900.00,
+        2256000.00,
         20,
         'Pago',
         64,
@@ -21721,7 +21721,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-31',
-        2358272.00,
+        2256000.00,
         21,
         'Pago',
         64,
@@ -21732,7 +21732,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-26',
-        2414522.00,
+        2256000.00,
         22,
         'Pago',
         64,
@@ -21743,7 +21743,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-31',
-        2466000.00,
+        2256000.00,
         23,
         'Pago',
         64,
@@ -21754,7 +21754,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-10',
-        2690656.00,
+        2256000.00,
         24,
         'Pago',
         64,
@@ -21765,7 +21765,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-31',
-        2611395.00,
+        2256000.00,
         25,
         'Pago',
         64,
@@ -21776,7 +21776,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-31',
-        2616509.00,
+        2256000.00,
         26,
         'Pago',
         64,
@@ -21787,7 +21787,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-02-14',
-        2582816.00,
+        2256000.00,
         27,
         'Pago',
         64,
@@ -21798,7 +21798,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-02-14',
-        2483555.00,
+        2256000.00,
         28,
         'Pago',
         64,
@@ -21809,7 +21809,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-04',
-        2527021.00,
+        2256000.00,
         29,
         'Pago',
         64,
@@ -21820,7 +21820,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-04',
-        2447760.00,
+        2256000.00,
         30,
         'Pago',
         64,
@@ -21831,7 +21831,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-07',
-        2614134.00,
+        2256000.00,
         31,
         'Pago',
         64,
@@ -21842,7 +21842,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-26',
-        2749462.00,
+        2256000.00,
         32,
         'Pago',
         64,
@@ -21853,7 +21853,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-26',
-        2670202.00,
+        2256000.00,
         33,
         'Pago',
         64,
@@ -21864,7 +21864,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-23',
-        2662531.00,
+        2256000.00,
         34,
         'Pago',
         64,
@@ -21875,7 +21875,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        2590940.80,
+        2256000.00,
         35,
         'Pago',
         64,
@@ -21886,7 +21886,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        2514236.80,
+        2256000.00,
         36,
         'Pago',
         64,
@@ -21897,7 +21897,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        2434976.00,
+        2256000.00,
         37,
         'Pago',
         64,
@@ -21908,7 +21908,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        2355715.20,
+        2256000.00,
         38,
         'Pago',
         64,
@@ -21919,7 +21919,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-26',
-        2279011.20,
+        2256000.00,
         39,
         'Pago',
         64,
@@ -21974,7 +21974,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-04',
-        2294352.00,
+        2256000.00,
         44,
         'Pago',
         64,
@@ -25670,7 +25670,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-03-02',
-        1407321.12,
+        1396000.00,
         2,
         'Pago',
         76,
@@ -25681,7 +25681,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-03',
-        1429321.12,
+        1396000.00,
         3,
         'Pago',
         76,
@@ -25692,7 +25692,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-04-19',
-        1424321.00,
+        1396000.00,
         4,
         'Pago',
         76,
@@ -25714,7 +25714,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-07',
-        1400000.00,
+        1366678.88,
         6,
         'Pago',
         76,
@@ -25725,7 +25725,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-01-08',
-        1437321.12,
+        1433321.12,
         7,
         'Pago',
         76,
@@ -25736,7 +25736,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-06-09',
-        1447187.00,
+        1405865.88,
         8,
         'Pago',
         76,
@@ -25747,7 +25747,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-10-31',
-        1475250.00,
+        1424063.00,
         9,
         'Pago',
         76,
@@ -25758,7 +25758,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-12-20',
-        1512333.00,
+        1433083.00,
         10,
         'Pago',
         76,
@@ -25769,7 +25769,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-04',
-        1650723.47,
+        1534390.47,
         11,
         'Pago',
         76,
@@ -25780,7 +25780,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-04',
-        1601677.33,
+        1346953.87,
         12,
         'Pago',
         76,
@@ -25791,7 +25791,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-04',
-        1554213.33,
+        1348536.00,
         13,
         'Pago',
         76,
@@ -25802,7 +25802,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-04',
-        1505167.20,
+        1346953.87,
         14,
         'Pago',
         76,
@@ -25813,7 +25813,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-04',
-        1456121.07,
+        1346953.87,
         15,
         'Pago',
         76,
@@ -25824,7 +25824,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-15',
-        1492510.00,
+        1432388.93,
         16,
         'Pago',
         76,
@@ -25835,7 +25835,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-20',
-        1493344.00,
+        1396834.00,
         17,
         'Pago',
         76,
@@ -25846,7 +25846,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-10',
-        1713785.00,
+        1616441.00,
         18,
         'Pago',
         76,
@@ -25857,7 +25857,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-18',
-        1797057.00,
+        1565272.00,
         19,
         'Pago',
         76,
@@ -25868,7 +25868,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-05',
-        1960686.00,
+        1645629.00,
         20,
         'Pago',
         76,
@@ -25879,7 +25879,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-05',
-        1908618.40,
+        1429932.40,
         21,
         'Pago',
         76,
@@ -25890,7 +25890,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-05',
-        1856550.80,
+        1429932.40,
         22,
         'Pago',
         76,
@@ -25901,7 +25901,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-05',
-        1806162.80,
+        1431612.00,
         23,
         'Pago',
         76,
@@ -25912,7 +25912,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-05',
-        1754095.20,
+        1429932.40,
         24,
         'Pago',
         76,
@@ -25923,7 +25923,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-05',
-        1703707.20,
+        1431612.00,
         25,
         'Pago',
         76,
@@ -25934,7 +25934,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-05',
-        1651639.60,
+        1429932.40,
         26,
         'Pago',
         76,
@@ -25945,7 +25945,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-05',
-        1599572.00,
+        1429932.40,
         27,
         'Pago',
         76,
@@ -25956,7 +25956,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-05',
-        1550863.60,
+        1433291.60,
         28,
         'Pago',
         76,
@@ -25967,7 +25967,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-05',
-        1482000.00,
+        1413136.40,
         29,
         'Pago',
         76,
@@ -26209,7 +26209,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-12-03',
-        1622973.19,
+        1615000.00,
         3,
         'Pago',
         77,
@@ -26231,7 +26231,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-09-06',
-        1678000.00,
+        1615000.00,
         5,
         'Pago',
         77,
@@ -26253,7 +26253,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-07-29',
-        1651973.00,
+        1615000.00,
         7,
         'Pago',
         77,
@@ -26264,7 +26264,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-08-27',
-        1650000.00,
+        1615000.00,
         8,
         'Pago',
         77,
@@ -26275,7 +26275,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-09-24',
-        1646000.00,
+        1615000.00,
         9,
         'Pago',
         77,
@@ -26286,7 +26286,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-02-11',
-        1658000.00,
+        1615000.00,
         10,
         'Pago',
         77,
@@ -26297,7 +26297,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-11-19',
-        1639200.00,
+        1615000.00,
         11,
         'Pago',
         77,
@@ -26308,7 +26308,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-12-14',
-        1635000.00,
+        1615000.00,
         12,
         'Pago',
         77,
@@ -26319,7 +26319,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-24',
-        1713838.00,
+        1615000.00,
         13,
         'Pago',
         77,
@@ -26330,7 +26330,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-24',
-        1657108.00,
+        1615000.00,
         14,
         'Pago',
         77,
@@ -26341,7 +26341,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-13',
-        1693704.33,
+        1615000.00,
         15,
         'Pago',
         77,
@@ -26352,7 +26352,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-13',
-        1636964.00,
+        1615000.00,
         16,
         'Pago',
         77,
@@ -26363,7 +26363,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-05',
-        1631000.00,
+        1615000.00,
         17,
         'Pago',
         77,
@@ -26374,7 +26374,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-06',
-        1629000.00,
+        1615000.00,
         18,
         'Pago',
         77,
@@ -26385,7 +26385,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-07',
-        1633973.00,
+        1615000.00,
         19,
         'Pago',
         77,
@@ -26396,7 +26396,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-09',
-        1677000.00,
+        1615000.00,
         20,
         'Pago',
         77,
@@ -26407,7 +26407,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-09',
-        1626000.00,
+        1615000.00,
         21,
         'Pago',
         77,
@@ -26418,7 +26418,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-11',
-        1672000.00,
+        1615000.00,
         22,
         'Pago',
         77,
@@ -26429,7 +26429,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-22',
-        1653437.00,
+        1615000.00,
         23,
         'Pago',
         77,
@@ -26440,7 +26440,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-19',
-        1704686.00,
+        1615000.00,
         24,
         'Pago',
         77,
@@ -26957,7 +26957,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-01-25',
-        1534916.19,
+        1497000.00,
         1,
         'Pago',
         79,
@@ -26968,7 +26968,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-02-03',
-        1541916.19,
+        1497000.00,
         2,
         'Pago',
         79,
@@ -26979,7 +26979,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-03-29',
-        1536916.19,
+        1497000.00,
         3,
         'Pago',
         79,
@@ -26990,7 +26990,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-16',
-        1561000.00,
+        1497000.00,
         4,
         'Pago',
         79,
@@ -27001,7 +27001,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-08-22',
-        1644205.00,
+        1497000.00,
         5,
         'Pago',
         79,
@@ -27012,7 +27012,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-08-22',
-        1606780.00,
+        1497000.00,
         6,
         'Pago',
         79,
@@ -27023,7 +27023,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-11-28',
-        1694105.00,
+        1497000.00,
         7,
         'Pago',
         79,
@@ -27034,7 +27034,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-11-28',
-        1656680.00,
+        1497000.00,
         8,
         'Pago',
         79,
@@ -27045,7 +27045,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-11-28',
-        1618007.50,
+        1497000.00,
         9,
         'Pago',
         79,
@@ -27056,7 +27056,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-11-28',
-        1579335.00,
+        1497000.00,
         10,
         'Pago',
         79,
@@ -27067,7 +27067,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-11-28',
-        1541910.00,
+        1497000.00,
         11,
         'Pago',
         79,
@@ -27078,7 +27078,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-11-28',
-        1503237.50,
+        1497000.00,
         12,
         'Pago',
         79,
@@ -27089,7 +27089,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-11-28',
-        1120221.78,
+        492999.78,
         13,
         'Pago',
         79,
@@ -27628,7 +27628,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-02-14',
-        3082000.00,
+        3049645.00,
         2,
         'Pago',
         80,
@@ -28123,7 +28123,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-11-03',
-        1682000.00,
+        1669362.62,
         3,
         'Pago',
         82,
@@ -28134,7 +28134,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-12-04',
-        1682000.00,
+        1667362.62,
         4,
         'Pago',
         82,
@@ -28167,7 +28167,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-07-22',
-        1710000.00,
+        1682000.00,
         7,
         'Pago',
         82,
@@ -28189,7 +28189,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-09-21',
-        1710600.00,
+        1682000.00,
         9,
         'Pago',
         82,
@@ -28200,7 +28200,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-10-14',
-        1699600.00,
+        1682000.00,
         10,
         'Pago',
         82,
@@ -28211,7 +28211,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-02-12',
-        1682000.00,
+        1639362.62,
         11,
         'Pago',
         82,
@@ -28222,7 +28222,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-01',
-        1682000.00,
+        1605362.62,
         12,
         'Pago',
         82,
@@ -28233,7 +28233,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-13',
-        1796376.00,
+        1682000.00,
         13,
         'Pago',
         82,
@@ -28244,7 +28244,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-13',
-        1734900.00,
+        1682000.00,
         14,
         'Pago',
         82,
@@ -28255,7 +28255,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-21',
-        1777000.00,
+        1682000.00,
         15,
         'Pago',
         82,
@@ -28266,7 +28266,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-16',
-        1805637.00,
+        1682000.00,
         16,
         'Pago',
         82,
@@ -28277,7 +28277,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-31',
-        1855470.00,
+        1682000.00,
         17,
         'Pago',
         82,
@@ -28288,7 +28288,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-31',
-        1796376.00,
+        1682000.00,
         18,
         'Pago',
         82,
@@ -28299,7 +28299,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-13',
-        1877367.00,
+        1682000.00,
         19,
         'Pago',
         82,
@@ -28310,7 +28310,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-27',
-        1884000.00,
+        1682000.00,
         20,
         'Pago',
         82,
@@ -28321,7 +28321,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-27',
-        1903000.00,
+        1682000.00,
         21,
         'Pago',
         82,
@@ -28343,7 +28343,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-03',
-        1922137.00,
+        1682000.00,
         23,
         'Pago',
         82,
@@ -28354,7 +28354,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-18',
-        1945065.00,
+        1682000.00,
         24,
         'Pago',
         82,
@@ -28365,7 +28365,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-13',
-        1992721.00,
+        1682000.00,
         25,
         'Pago',
         82,
@@ -28376,7 +28376,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-13',
-        1933627.00,
+        1682000.00,
         26,
         'Pago',
         82,
@@ -28387,7 +28387,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-20',
-        2067066.00,
+        1682000.00,
         27,
         'Pago',
         82,
@@ -28398,7 +28398,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-20',
-        2007972.00,
+        1682000.00,
         28,
         'Pago',
         82,
@@ -28409,7 +28409,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-20',
-        1950784.00,
+        1682000.00,
         29,
         'Pago',
         82,
@@ -28420,7 +28420,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-02',
-        2154754.13,
+        1682000.00,
         30,
         'Pago',
         82,
@@ -28431,7 +28431,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-02',
-        2097566.13,
+        1682000.00,
         31,
         'Pago',
         82,
@@ -28442,7 +28442,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-02',
-        2049909.47,
+        1682000.00,
         32,
         'Pago',
         82,
@@ -28453,7 +28453,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-02',
-        1990815.20,
+        1682000.00,
         33,
         'Pago',
         82,
@@ -28464,7 +28464,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-02',
-        1933627.20,
+        1682000.00,
         34,
         'Pago',
         82,
@@ -28475,7 +28475,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-02',
-        1874532.93,
+        1682000.00,
         35,
         'Pago',
         82,
@@ -28486,7 +28486,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-02',
-        1817344.93,
+        1682000.00,
         36,
         'Pago',
         82,
@@ -28497,7 +28497,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-02',
-        1758250.67,
+        1682000.00,
         37,
         'Pago',
         82,
@@ -28508,7 +28508,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-02',
-        1699156.40,
+        1682000.00,
         38,
         'Pago',
         82,
@@ -28651,7 +28651,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-02',
-        7673423.00,
+        7462000.00,
         1,
         'Pago',
         83,
@@ -28662,7 +28662,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-02-18',
-        7561493.00,
+        7462000.00,
         2,
         'Pago',
         83,
@@ -28728,7 +28728,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-07-03',
-        789000.00,
+        785230.80,
         3,
         'Pago',
         84,
@@ -28739,7 +28739,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-06-04',
-        787000.00,
+        785230.80,
         4,
         'Pago',
         84,
@@ -28871,7 +28871,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-13',
-        304330.00,
+        303000.00,
         16,
         'Pago',
         84,
@@ -28893,7 +28893,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-05',
-        304329.00,
+        303000.00,
         18,
         'Pago',
         84,
@@ -28904,7 +28904,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-20',
-        304330.00,
+        303000.00,
         19,
         'Pago',
         84,
@@ -28915,7 +28915,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-07',
-        304330.00,
+        303000.00,
         20,
         'Pago',
         84,
@@ -28926,7 +28926,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-24',
-        310200.00,
+        303000.00,
         21,
         'Pago',
         84,
@@ -28937,7 +28937,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-09',
-        304374.00,
+        303000.00,
         22,
         'Pago',
         84,
@@ -28948,7 +28948,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-18',
-        308151.00,
+        303000.00,
         23,
         'Pago',
         84,
@@ -28970,7 +28970,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-27',
-        311200.00,
+        303000.00,
         25,
         'Pago',
         84,
@@ -28981,7 +28981,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-30',
-        308150.00,
+        303000.00,
         26,
         'Pago',
         84,
@@ -28992,7 +28992,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-02-20',
-        307121.00,
+        303000.00,
         27,
         'Pago',
         84,
@@ -29003,7 +29003,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-03-18',
-        308151.00,
+        303000.00,
         28,
         'Pago',
         84,
@@ -29014,7 +29014,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-13',
-        305747.00,
+        303000.00,
         29,
         'Pago',
         84,
@@ -29025,7 +29025,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-16',
-        305060.00,
+        303000.00,
         30,
         'Pago',
         84,
@@ -29036,7 +29036,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-29',
-        305747.00,
+        303000.00,
         31,
         'Pago',
         84,
@@ -29047,7 +29047,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-15',
-        305747.00,
+        303000.00,
         32,
         'Pago',
         84,
@@ -29058,7 +29058,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-16',
-        306091.00,
+        303000.00,
         33,
         'Pago',
         84,
@@ -29069,7 +29069,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-13',
-        306434.00,
+        303000.00,
         34,
         'Pago',
         84,
@@ -29080,7 +29080,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-23',
-        309868.00,
+        303000.00,
         35,
         'Pago',
         84,
@@ -29091,7 +29091,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-19',
-        308494.00,
+        303000.00,
         36,
         'Pago',
         84,
@@ -29102,7 +29102,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-12',
-        305404.00,
+        303000.00,
         37,
         'Pago',
         84,
@@ -29113,7 +29113,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-20',
-        308838.00,
+        303000.00,
         38,
         'Pago',
         84,
@@ -29124,7 +29124,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-17',
-        307808.00,
+        303000.00,
         39,
         'Pago',
         84,
@@ -29135,7 +29135,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-03-18',
-        305404.00,
+        303000.00,
         40,
         'Pago',
         84,
@@ -29146,7 +29146,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-04',
-        305060.00,
+        303000.00,
         41,
         'Pago',
         84,
@@ -29157,7 +29157,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-13',
-        306434.00,
+        303000.00,
         42,
         'Pago',
         84,
@@ -29168,7 +29168,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-20',
-        308838.00,
+        303000.00,
         43,
         'Pago',
         84,
@@ -29179,7 +29179,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-15',
-        307121.00,
+        303000.00,
         44,
         'Pago',
         84,
@@ -30213,7 +30213,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-09',
-        1056000.00,
+        1048867.00,
         31,
         'Pago',
         87,
@@ -30224,7 +30224,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-10',
-        1054000.00,
+        1049245.00,
         32,
         'Pago',
         87,
@@ -30257,7 +30257,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-01',
-        1056000.00,
+        1048867.00,
         35,
         'Pago',
         87,
@@ -30268,7 +30268,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-02',
-        1052000.00,
+        1048440.00,
         36,
         'Pago',
         87,
@@ -30389,7 +30389,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-02',
-        1569000.00,
+        1568176.62,
         11,
         'Pago',
         88,
@@ -30400,7 +30400,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-02',
-        1569000.00,
+        1568176.62,
         12,
         'Pago',
         88,
@@ -30411,7 +30411,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-15',
-        1595673.00,
+        1569000.00,
         13,
         'Pago',
         88,
@@ -30433,7 +30433,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-17',
-        1593895.00,
+        1569000.00,
         15,
         'Pago',
         88,
@@ -30444,7 +30444,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-30',
-        1625902.00,
+        1569000.00,
         16,
         'Pago',
         88,
@@ -30455,7 +30455,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-22',
-        1656132.00,
+        1569000.00,
         17,
         'Pago',
         88,
@@ -30466,7 +30466,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-09',
-        1679797.00,
+        1598000.00,
         18,
         'Pago',
         88,
@@ -30477,7 +30477,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-25',
-        1659710.00,
+        1598000.00,
         19,
         'Pago',
         88,
@@ -30488,7 +30488,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-11',
-        1702175.00,
+        1598000.00,
         20,
         'Pago',
         88,
@@ -30499,7 +30499,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-11',
-        1886968.00,
+        1598000.00,
         21,
         'Pago',
         88,
@@ -30983,7 +30983,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-27',
-        1881385.00,
+        1852000.00,
         11,
         'Pago',
         90,
@@ -30994,7 +30994,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-30',
-        1887682.00,
+        1852000.00,
         12,
         'Pago',
         90,
@@ -31005,7 +31005,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-05',
-        1912869.00,
+        1852000.00,
         13,
         'Pago',
         90,
@@ -31016,7 +31016,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-31',
-        1891880.00,
+        1852000.00,
         14,
         'Pago',
         90,
@@ -31027,7 +31027,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-07',
-        1896078.00,
+        1852000.00,
         15,
         'Pago',
         90,
@@ -31038,7 +31038,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-08',
-        1910770.00,
+        1852000.00,
         16,
         'Pago',
         90,
@@ -31049,7 +31049,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-09',
-        1906572.00,
+        1852000.00,
         17,
         'Pago',
         90,
@@ -31060,7 +31060,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-18',
-        1942463.00,
+        1852000.00,
         18,
         'Pago',
         90,
@@ -31071,7 +31071,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-20',
-        1954759.00,
+        1852000.00,
         19,
         'Pago',
         90,
@@ -31082,7 +31082,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-14',
-        1980530.00,
+        1852000.00,
         20,
         'Pago',
         90,
@@ -31093,7 +31093,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-18',
-        2001024.00,
+        1852000.00,
         21,
         'Pago',
         90,
@@ -31104,7 +31104,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-02-22',
-        1966957.00,
+        1852000.00,
         22,
         'Pago',
         90,
@@ -31115,7 +31115,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-03-18',
-        1923364.00,
+        1852000.00,
         23,
         'Pago',
         90,
@@ -31126,7 +31126,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-18',
-        1966957.00,
+        1852000.00,
         24,
         'Pago',
         90,
@@ -31137,7 +31137,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-20',
-        1966957.00,
+        1852000.00,
         25,
         'Pago',
         90,
@@ -31148,7 +31148,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-22',
-        2006957.00,
+        1852000.00,
         26,
         'Pago',
         90,
@@ -31159,7 +31159,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-16',
-        2009420.00,
+        1852000.00,
         27,
         'Pago',
         90,
@@ -31170,7 +31170,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-15',
-        1986332.00,
+        1852000.00,
         28,
         'Pago',
         90,
@@ -31181,7 +31181,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-23',
-        1993364.00,
+        1852000.00,
         29,
         'Pago',
         90,
@@ -31192,7 +31192,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-19',
-        1986280.00,
+        1852000.00,
         30,
         'Pago',
         90,
@@ -31203,7 +31203,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-12',
-        1977936.00,
+        1852000.00,
         31,
         'Pago',
         90,
@@ -31214,7 +31214,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-20',
-        1994727.00,
+        1852000.00,
         32,
         'Pago',
         90,
@@ -31225,7 +31225,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-18',
-        1992629.00,
+        1852000.00,
         33,
         'Pago',
         90,
@@ -31236,7 +31236,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-03',
-        1969540.00,
+        1852000.00,
         34,
         'Pago',
         90,
@@ -31247,7 +31247,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-03-19',
-        1950463.00,
+        1852000.00,
         35,
         'Pago',
         90,
@@ -31258,7 +31258,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-21',
-        1933858.00,
+        1852000.00,
         36,
         'Pago',
         90,
@@ -31269,7 +31269,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-21',
-        1931759.00,
+        1852000.00,
         37,
         'Pago',
         90,
@@ -31280,7 +31280,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-20',
-        1931759.00,
+        1852000.00,
         38,
         'Pago',
         90,
@@ -31291,7 +31291,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-14',
-        1917067.00,
+        1852000.00,
         39,
         'Pago',
         90,
@@ -31302,7 +31302,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-13',
-        1917067.00,
+        1852000.00,
         40,
         'Pago',
         90,
@@ -31313,7 +31313,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-09',
-        1914968.00,
+        1852000.00,
         41,
         'Pago',
         90,
@@ -31324,7 +31324,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-16',
-        1921265.00,
+        1852000.00,
         42,
         'Pago',
         90,
@@ -31335,7 +31335,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-11',
-        1912869.00,
+        1852000.00,
         43,
         'Pago',
         90,
@@ -31346,7 +31346,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-12',
-        1912869.00,
+        1852000.00,
         44,
         'Pago',
         90,
@@ -31357,7 +31357,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-01',
-        1904109.00,
+        1852000.00,
         45,
         'Pago',
         90,
@@ -31368,7 +31368,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-09-02',
-        1908671.00,
+        1852000.00,
         46,
         'Pago',
         90,
@@ -31401,7 +31401,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-07-22',
-        1900000.00,
+        1894000.00,
         3,
         'Pago',
         91,
@@ -31412,7 +31412,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-07-22',
-        1901000.00,
+        1894000.00,
         4,
         'Pago',
         91,
@@ -31434,7 +31434,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-09-13',
-        1900000.00,
+        1894000.00,
         6,
         'Pago',
         91,
@@ -31445,7 +31445,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-08-10',
-        1900000.00,
+        1894000.00,
         7,
         'Pago',
         91,
@@ -31456,7 +31456,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-11-23',
-        1900800.00,
+        1894000.00,
         8,
         'Pago',
         91,
@@ -31467,7 +31467,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-12-20',
-        1900800.00,
+        1894000.00,
         9,
         'Pago',
         91,
@@ -31555,7 +31555,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-08',
-        1930733.00,
+        1910000.00,
         17,
         'Pago',
         91,
@@ -31566,7 +31566,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-09',
-        1923000.00,
+        1910000.00,
         18,
         'Pago',
         91,
@@ -31577,7 +31577,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-10',
-        1930733.00,
+        1910000.00,
         19,
         'Pago',
         91,
@@ -31588,7 +31588,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-11',
-        1930733.00,
+        1910000.00,
         20,
         'Pago',
         91,
@@ -31599,7 +31599,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-12',
-        1920733.00,
+        1910000.00,
         21,
         'Pago',
         91,
@@ -31643,7 +31643,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-30',
-        1963644.00,
+        1946000.00,
         25,
         'Pago',
         91,
@@ -31654,7 +31654,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-16',
-        1965849.00,
+        1946000.00,
         26,
         'Pago',
         91,
@@ -31665,7 +31665,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-06',
-        1959233.00,
+        1946000.00,
         27,
         'Pago',
         91,
@@ -31676,7 +31676,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-07',
-        1961438.00,
+        1946000.00,
         28,
         'Pago',
         91,
@@ -31687,7 +31687,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-08',
-        1957027.00,
+        1946000.00,
         29,
         'Pago',
         91,
@@ -31698,7 +31698,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-09',
-        1959233.00,
+        1946000.00,
         30,
         'Pago',
         91,
@@ -31709,7 +31709,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-10',
-        1950411.00,
+        1946000.00,
         31,
         'Pago',
         91,
@@ -31731,7 +31731,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-18',
-        2000733.00,
+        1946000.00,
         33,
         'Pago',
         91,
@@ -31742,7 +31742,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-20',
-        1963644.00,
+        1946000.00,
         34,
         'Pago',
         91,
@@ -31753,7 +31753,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-28',
-        2014369.00,
+        1946000.00,
         35,
         'Pago',
         91,
@@ -31764,7 +31764,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-03-27',
-        1741858.00,
+        1692000.00,
         36,
         'Pago',
         91,
@@ -31775,7 +31775,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-29',
-        1745693.00,
+        1692000.00,
         37,
         'Pago',
         91,
@@ -31786,7 +31786,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-31',
-        1749528.00,
+        1692000.00,
         38,
         'Pago',
         91,
@@ -31797,7 +31797,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-28',
-        1751446.00,
+        1692000.00,
         39,
         'Pago',
         91,
@@ -31808,7 +31808,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-25',
-        1738022.00,
+        1692000.00,
         40,
         'Pago',
         91,
@@ -31863,7 +31863,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-08-10',
-        1464441.00,
+        1387000.00,
         5,
         'Pago',
         92,
@@ -31874,7 +31874,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-08-10',
-        1428610.00,
+        1387000.00,
         6,
         'Pago',
         92,
@@ -31951,7 +31951,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-10-22',
-        1380480.00,
+        1365000.00,
         7,
         'Pago',
         93,
@@ -31962,7 +31962,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-11-19',
-        1368500.00,
+        1365000.00,
         8,
         'Pago',
         93,
@@ -31973,7 +31973,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-01-16',
-        1426481.82,
+        1365000.00,
         9,
         'Pago',
         93,
@@ -31984,7 +31984,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-30',
-        1544000.00,
+        1365000.00,
         10,
         'Pago',
         93,
@@ -31995,7 +31995,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-17',
-        1524341.00,
+        1365000.00,
         11,
         'Pago',
         93,
@@ -32006,7 +32006,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-20',
-        1535170.00,
+        1365000.00,
         12,
         'Pago',
         93,
@@ -32017,7 +32017,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-31',
-        1019802.00,
+        786205.00,
         13,
         'Pago',
         93,
@@ -32028,7 +32028,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-03-30',
-        1992257.00,
+        1733000.00,
         14,
         'Pago',
         93,
@@ -32039,7 +32039,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-03',
-        2601117.00,
+        1733000.00,
         15,
         'Pago',
         93,
@@ -32050,7 +32050,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-25',
-        2540231.00,
+        1733000.00,
         16,
         'Pago',
         93,
@@ -32061,7 +32061,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-24',
-        2632543.00,
+        1733000.00,
         17,
         'Pago',
         93,
@@ -32072,7 +32072,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-28',
-        2652183.00,
+        1733000.00,
         18,
         'Pago',
         93,
@@ -32083,7 +32083,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-09',
-        2724854.00,
+        1733000.00,
         19,
         'Pago',
         93,
@@ -32094,7 +32094,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-15',
-        2740566.00,
+        1733000.00,
         20,
         'Pago',
         93,
@@ -32204,7 +32204,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-12-20',
-        1442000.00,
+        1427000.00,
         9,
         'Pago',
         94,
@@ -32215,7 +32215,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-01-18',
-        1442000.00,
+        1425075.74,
         10,
         'Pago',
         94,
@@ -32226,7 +32226,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-13',
-        1470666.00,
+        1427000.00,
         11,
         'Pago',
         94,
@@ -32237,7 +32237,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-31',
-        1465814.00,
+        1427000.00,
         12,
         'Pago',
         94,
@@ -32248,7 +32248,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-23',
-        1503012.00,
+        1427000.00,
         13,
         'Pago',
         94,
@@ -32259,7 +32259,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-30',
-        1620505.00,
+        1427000.00,
         14,
         'Pago',
         94,
@@ -32270,7 +32270,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-11',
-        1812000.00,
+        1542000.00,
         15,
         'Pago',
         94,
@@ -32281,7 +32281,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-11',
-        1760000.00,
+        1542000.00,
         16,
         'Pago',
         94,
@@ -32292,7 +32292,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-11',
-        1826000.00,
+        1542000.00,
         17,
         'Pago',
         94,
@@ -32303,7 +32303,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-01',
-        1762198.00,
+        1542000.00,
         18,
         'Pago',
         94,
@@ -32314,7 +32314,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-03-18',
-        1896859.00,
+        1542000.00,
         19,
         'Pago',
         94,
@@ -32325,7 +32325,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-25',
-        1839092.00,
+        1542000.00,
         20,
         'Pago',
         94,
@@ -32336,7 +32336,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-25',
-        1786664.00,
+        1542000.00,
         21,
         'Pago',
         94,
@@ -32347,7 +32347,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-25',
-        2019871.00,
+        1542000.00,
         22,
         'Pago',
         94,
@@ -32358,7 +32358,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-30',
-        1957929.00,
+        1542000.00,
         23,
         'Pago',
         94,
@@ -32369,7 +32369,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-11',
-        1968414.00,
+        1542000.00,
         24,
         'Pago',
         94,
@@ -32380,7 +32380,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-12',
-        2099152.00,
+        1569000.00,
         25,
         'Pago',
         94,
@@ -32391,7 +32391,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-21',
-        2269576.00,
+        1569000.00,
         26,
         'Pago',
         94,
@@ -32402,7 +32402,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-13',
-        2173588.00,
+        1569000.00,
         27,
         'Pago',
         94,
@@ -32413,7 +32413,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-13',
-        2120242.00,
+        1569000.00,
         28,
         'Pago',
         94,
@@ -32424,7 +32424,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-20',
-        2132689.00,
+        1569000.00,
         29,
         'Pago',
         94,
@@ -32435,7 +32435,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-25',
-        2086456.00,
+        1569000.00,
         30,
         'Pago',
         94,
@@ -32446,7 +32446,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-21',
-        2093569.00,
+        1569000.00,
         31,
         'Pago',
         94,
@@ -32457,7 +32457,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-09',
-        2111351.00,
+        1569000.00,
         32,
         'Pago',
         94,
@@ -32468,7 +32468,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-16',
-        2125577.00,
+        1569000.00,
         33,
         'Pago',
         94,
@@ -32479,7 +32479,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-29',
-        2065796.00,
+        1569000.00,
         34,
         'Pago',
         94,
@@ -32490,7 +32490,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-13',
-        2118464.00,
+        1569000.00,
         35,
         'Pago',
         94,
@@ -32501,7 +32501,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-01-29',
-        2193148.20,
+        1569000.00,
         36,
         'Pago',
         94,
@@ -32622,7 +32622,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-13',
-        1753226.00,
+        1722000.00,
         11,
         'Pago',
         95,
@@ -32633,7 +32633,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-28',
-        1733000.00,
+        1722000.00,
         12,
         'Pago',
         95,
@@ -32644,7 +32644,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-17',
-        1761032.00,
+        1722000.00,
         13,
         'Pago',
         95,
@@ -32655,7 +32655,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-30',
-        1796161.00,
+        1722000.00,
         14,
         'Pago',
         95,
@@ -32666,7 +32666,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-22',
-        1829338.00,
+        1722000.00,
         15,
         'Pago',
         95,
@@ -32677,7 +32677,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-09',
-        1823483.00,
+        1722000.00,
         16,
         'Pago',
         95,
@@ -32688,7 +32688,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-25',
-        1788354.00,
+        1722000.00,
         17,
         'Pago',
         95,
@@ -32699,7 +32699,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-11',
-        1846902.00,
+        1722000.00,
         18,
         'Pago',
         95,
@@ -32710,7 +32710,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-11',
-        1999977.00,
+        1722000.00,
         19,
         'Pago',
         95,
@@ -32952,7 +32952,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-03-09',
-        2280420.00,
+        2214000.00,
         5,
         'Pago',
         96,
@@ -32963,7 +32963,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-03-10',
-        2249000.00,
+        2214000.00,
         6,
         'Pago',
         96,
@@ -32974,7 +32974,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-10-31',
-        1726061.00,
+        1701000.00,
         7,
         'Pago',
         96,
@@ -32985,7 +32985,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-01-12',
-        1785823.00,
+        1701000.00,
         8,
         'Pago',
         96,
@@ -32996,7 +32996,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-02',
-        1795095.00,
+        1701000.00,
         9,
         'Pago',
         96,
@@ -33007,7 +33007,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-15',
-        1797390.00,
+        1701000.00,
         10,
         'Pago',
         96,
@@ -33018,7 +33018,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-17',
-        1906492.00,
+        1701000.00,
         11,
         'Pago',
         96,
@@ -33029,7 +33029,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-31',
-        1845585.00,
+        1701000.00,
         12,
         'Pago',
         96,
@@ -33040,7 +33040,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-20',
-        1883789.00,
+        1701000.00,
         13,
         'Pago',
         96,
@@ -33051,7 +33051,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-26',
-        1834018.00,
+        1701000.00,
         14,
         'Pago',
         96,
@@ -33062,7 +33062,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-31',
-        1840000.00,
+        1701000.00,
         15,
         'Pago',
         96,
@@ -33073,7 +33073,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-31',
-        1823885.00,
+        1701000.00,
         16,
         'Pago',
         96,
@@ -33084,7 +33084,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-10',
-        1848534.00,
+        1701000.00,
         17,
         'Pago',
         96,
@@ -33095,7 +33095,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-26',
-        1824118.00,
+        1701000.00,
         18,
         'Pago',
         96,
@@ -33106,7 +33106,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-12',
-        1822029.00,
+        1701000.00,
         19,
         'Pago',
         96,
@@ -33117,7 +33117,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-02',
-        1883365.00,
+        1701000.00,
         20,
         'Pago',
         96,
@@ -33128,7 +33128,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-03',
-        1882935.00,
+        1701000.00,
         21,
         'Pago',
         96,
@@ -33139,7 +33139,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-13',
-        1920728.00,
+        1701000.00,
         22,
         'Pago',
         96,
@@ -33150,7 +33150,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-31',
-        1892646.00,
+        1701000.00,
         23,
         'Pago',
         96,
@@ -33161,7 +33161,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-31',
-        1956791.00,
+        1701000.00,
         24,
         'Pago',
         96,
@@ -33172,7 +33172,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-09',
-        2033287.00,
+        1701000.00,
         25,
         'Pago',
         96,
@@ -33183,7 +33183,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-11',
-        2005109.00,
+        1701000.00,
         26,
         'Pago',
         96,
@@ -33194,7 +33194,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-01',
-        2098127.00,
+        1701000.00,
         27,
         'Pago',
         96,
@@ -33205,7 +33205,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-28',
-        2083424.00,
+        1701000.00,
         28,
         'Pago',
         96,
@@ -33216,7 +33216,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-13',
-        3005931.00,
+        1701000.00,
         29,
         'Pago',
         96,
@@ -33227,7 +33227,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-22',
-        2316731.00,
+        1701000.00,
         30,
         'Pago',
         96,
@@ -33238,7 +33238,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-09',
-        2304401.00,
+        1701000.00,
         31,
         'Pago',
         96,
@@ -33249,7 +33249,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-22',
-        2352596.00,
+        1701000.00,
         32,
         'Pago',
         96,
@@ -33260,7 +33260,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-16',
-        2400791.40,
+        1701000.00,
         33,
         'Pago',
         96,
@@ -33271,7 +33271,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-16',
-        2341029.60,
+        1701000.00,
         34,
         'Pago',
         96,
@@ -33282,7 +33282,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-16',
-        2281267.80,
+        1701000.00,
         35,
         'Pago',
         96,
@@ -33293,7 +33293,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-16',
-        2227289.40,
+        1701000.00,
         36,
         'Pago',
         96,
@@ -33304,7 +33304,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-16',
-        2167527.60,
+        1701000.00,
         37,
         'Pago',
         96,
@@ -33315,7 +33315,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-16',
-        2109693.60,
+        1701000.00,
         38,
         'Pago',
         96,
@@ -33326,7 +33326,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-16',
-        2049931.80,
+        1701000.00,
         39,
         'Pago',
         96,
@@ -33337,7 +33337,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-16',
-        1992097.80,
+        1701000.00,
         40,
         'Pago',
         96,
@@ -33348,7 +33348,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-16',
-        1932336.00,
+        1701000.00,
         41,
         'Pago',
         96,
@@ -33359,7 +33359,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-16',
-        1872574.00,
+        1701000.00,
         42,
         'Pago',
         96,
@@ -33370,7 +33370,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-07-01',
-        1857152.00,
+        1701000.00,
         43,
         'Pago',
         96,
@@ -33381,7 +33381,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-07-01',
-        1797390.00,
+        1701000.00,
         44,
         'Pago',
         96,
@@ -33392,7 +33392,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-07-01',
-        1739556.00,
+        1701000.00,
         45,
         'Pago',
         96,
@@ -33414,7 +33414,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-09-02',
-        2500000.00,
+        2431661.00,
         47,
         'Pago',
         96,
@@ -33436,7 +33436,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-27',
-        1852000.00,
+        1805000.00,
         2,
         'Pago',
         97,
@@ -33513,7 +33513,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-01',
-        1852000.00,
+        1821164.72,
         9,
         'Pago',
         97,
@@ -33535,7 +33535,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-03',
-        1813000.00,
+        1805000.00,
         11,
         'Pago',
         97,
@@ -33546,7 +33546,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-31',
-        1815000.00,
+        1805000.00,
         12,
         'Pago',
         97,
@@ -33568,7 +33568,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-01-06',
-        1817836.00,
+        1805000.00,
         14,
         'Pago',
         97,
@@ -33579,7 +33579,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-30',
-        1813000.00,
+        1805000.00,
         15,
         'Pago',
         97,
@@ -33623,7 +33623,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-30',
-        1813183.00,
+        1805000.00,
         19,
         'Pago',
         97,
@@ -33722,7 +33722,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-31',
-        1812836.00,
+        1805000.00,
         28,
         'Pago',
         97,
@@ -33733,7 +33733,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-31',
-        1812835.00,
+        1805000.00,
         29,
         'Pago',
         97,
@@ -33755,7 +33755,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-31',
-        1812835.00,
+        1805000.00,
         31,
         'Pago',
         97,
@@ -33810,7 +33810,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-04',
-        1845021.00,
+        1805000.00,
         36,
         'Pago',
         97,
@@ -33920,7 +33920,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-13',
-        1530441.00,
+        1485000.00,
         10,
         'Pago',
         98,
@@ -33931,7 +33931,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-28',
-        1511928.00,
+        1485000.00,
         11,
         'Pago',
         98,
@@ -33942,7 +33942,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-05',
-        1530441.00,
+        1485000.00,
         12,
         'Pago',
         98,
@@ -33953,7 +33953,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-20',
-        1538856.00,
+        1485000.00,
         13,
         'Pago',
         98,
@@ -33964,7 +33964,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-24',
-        1547271.00,
+        1485000.00,
         14,
         'Pago',
         98,
@@ -33975,7 +33975,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-09',
-        1585980.00,
+        1485000.00,
         15,
         'Pago',
         98,
@@ -33986,7 +33986,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-25',
-        1567467.00,
+        1485000.00,
         16,
         'Pago',
         98,
@@ -33997,7 +33997,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-11',
-        1645202.00,
+        1485000.00,
         17,
         'Pago',
         98,
@@ -34008,7 +34008,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-11',
-        1852232.00,
+        1485000.00,
         18,
         'Pago',
         98,
@@ -34294,7 +34294,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-02',
-        1695659.33,
+        1689000.00,
         8,
         'Pago',
         99,
@@ -34305,7 +34305,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-02',
-        1695659.33,
+        1689000.00,
         9,
         'Pago',
         99,
@@ -34316,7 +34316,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-28',
-        1714335.00,
+        1689000.00,
         10,
         'Pago',
         99,
@@ -34327,7 +34327,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-28',
-        1714300.00,
+        1689000.00,
         11,
         'Pago',
         99,
@@ -34338,7 +34338,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-05',
-        1722780.00,
+        1689000.00,
         12,
         'Pago',
         99,
@@ -34349,7 +34349,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-20',
-        1729818.00,
+        1689000.00,
         13,
         'Pago',
         99,
@@ -34360,7 +34360,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-25',
-        1773438.00,
+        1689000.00,
         14,
         'Pago',
         99,
@@ -34371,7 +34371,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-09',
-        1769228.00,
+        1689000.00,
         15,
         'Pago',
         99,
@@ -34382,7 +34382,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-28',
-        1800192.50,
+        1689000.00,
         16,
         'Pago',
         99,
@@ -34393,7 +34393,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-28',
-        1756560.00,
+        1689000.00,
         17,
         'Pago',
         99,
@@ -34404,7 +34404,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-28',
-        1714335.00,
+        1689000.00,
         18,
         'Pago',
         99,
@@ -34723,7 +34723,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-28',
-        1723193.00,
+        1685000.00,
         11,
         'Pago',
         100,
@@ -34745,7 +34745,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-20',
-        1753748.00,
+        1685000.00,
         13,
         'Pago',
         100,
@@ -34756,7 +34756,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-07',
-        1744200.00,
+        1685000.00,
         14,
         'Pago',
         100,
@@ -34767,7 +34767,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-24',
-        1706006.00,
+        1685000.00,
         15,
         'Pago',
         100,
@@ -34778,7 +34778,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-26',
-        1728000.00,
+        1685000.00,
         16,
         'Pago',
         100,
@@ -34789,7 +34789,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-10',
-        1753748.00,
+        1685000.00,
         17,
         'Pago',
         100,
@@ -34800,7 +34800,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-28',
-        2321794.00,
+        1685000.00,
         18,
         'Pago',
         100,
@@ -35163,7 +35163,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-09-14',
-        2113000.00,
+        2083000.00,
         3,
         'Pago',
         102,
@@ -35174,7 +35174,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-10-26',
-        2136000.00,
+        2083000.00,
         4,
         'Pago',
         102,
@@ -35185,7 +35185,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-12-26',
-        2222846.16,
+        2083000.00,
         5,
         'Pago',
         102,
@@ -35196,7 +35196,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-01-24',
-        2217562.00,
+        2083000.00,
         6,
         'Pago',
         102,
@@ -35207,7 +35207,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-02',
-        2201976.00,
+        2083000.00,
         7,
         'Pago',
         102,
@@ -35262,7 +35262,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-20',
-        2120772.00,
+        2083000.00,
         12,
         'Pago',
         102,
@@ -35273,7 +35273,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-24',
-        2217562.00,
+        2083000.00,
         13,
         'Pago',
         102,
@@ -35284,7 +35284,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-20',
-        2439242.00,
+        2165000.00,
         14,
         'Pago',
         102,
@@ -35295,7 +35295,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-20',
-        2361293.00,
+        2165000.00,
         15,
         'Pago',
         102,
@@ -35306,7 +35306,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-20',
-        2285230.00,
+        2165000.00,
         16,
         'Pago',
         102,
@@ -35317,7 +35317,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-20',
-        2211620.00,
+        2165000.00,
         17,
         'Pago',
         102,
@@ -35328,7 +35328,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-18',
-        2215000.00,
+        2165000.00,
         18,
         'Pago',
         102,
@@ -35339,7 +35339,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-01',
-        2182472.00,
+        2165000.00,
         19,
         'Pago',
         102,
@@ -35350,7 +35350,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-03-20',
-        2928430.00,
+        2165000.00,
         20,
         'Pago',
         102,
@@ -35581,7 +35581,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-10-31',
-        1254105.42,
+        1249000.00,
         5,
         'Pago',
         103,
@@ -35592,7 +35592,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-12-21',
-        1250105.00,
+        1249000.00,
         6,
         'Pago',
         103,
@@ -35603,7 +35603,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-01',
-        1252105.00,
+        1249000.00,
         7,
         'Pago',
         103,
@@ -35614,7 +35614,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-02',
-        1252105.42,
+        1249000.00,
         8,
         'Pago',
         103,
@@ -35625,7 +35625,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-28',
-        1252105.00,
+        1249000.00,
         9,
         'Pago',
         103,
@@ -35636,7 +35636,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-29',
-        1301405.00,
+        1249000.00,
         10,
         'Pago',
         103,
@@ -35647,7 +35647,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-16',
-        1314115.00,
+        1249000.00,
         11,
         'Pago',
         103,
@@ -35658,7 +35658,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-08',
-        1393096.00,
+        1249000.00,
         12,
         'Pago',
         103,
@@ -35691,7 +35691,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-08-31',
-        3317000.00,
+        3290000.00,
         3,
         'Pago',
         104,
@@ -35702,7 +35702,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-05-10',
-        3329000.00,
+        3290000.00,
         4,
         'Pago',
         104,
@@ -35713,7 +35713,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-10-24',
-        3291700.00,
+        3290000.00,
         5,
         'Pago',
         104,
@@ -35724,7 +35724,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-11-26',
-        3291756.00,
+        3290000.00,
         6,
         'Pago',
         104,
@@ -35735,7 +35735,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-01-20',
-        3405512.20,
+        3290000.00,
         7,
         'Pago',
         104,
@@ -35757,7 +35757,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-18',
-        3497348.00,
+        3290000.00,
         9,
         'Pago',
         104,
@@ -35768,7 +35768,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-18',
-        3395860.00,
+        3290000.00,
         10,
         'Pago',
         104,
@@ -36923,7 +36923,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-16',
-        1391595.00,
+        1376000.00,
         12,
         'Pago',
         106,
@@ -36945,7 +36945,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-24',
-        1388476.00,
+        1376000.00,
         14,
         'Pago',
         106,
@@ -36956,7 +36956,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-09',
-        1391595.00,
+        1376000.00,
         15,
         'Pago',
         106,
@@ -36967,7 +36967,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-10',
-        1391595.00,
+        1376000.00,
         16,
         'Pago',
         106,
@@ -36978,7 +36978,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-15',
-        1449000.00,
+        1376000.00,
         17,
         'Pago',
         106,
@@ -36989,7 +36989,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-15',
-        1402000.00,
+        1376000.00,
         18,
         'Pago',
         106,
@@ -37550,7 +37550,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-03',
-        1445000.00,
+        1436000.00,
         9,
         'Pago',
         107,
@@ -37561,7 +37561,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-04',
-        1445000.00,
+        1436000.00,
         10,
         'Pago',
         107,
@@ -37572,7 +37572,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-16',
-        1491333.87,
+        1436000.00,
         11,
         'Pago',
         107,
@@ -37583,7 +37583,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-16',
-        1443614.13,
+        1436000.00,
         12,
         'Pago',
         107,
@@ -37605,7 +37605,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-01-08',
-        1442474.00,
+        1436000.00,
         14,
         'Pago',
         107,
@@ -37627,7 +37627,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-10',
-        1440000.00,
+        1436000.00,
         16,
         'Pago',
         107,
@@ -37638,7 +37638,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-11',
-        1440000.00,
+        1436000.00,
         17,
         'Pago',
         107,
@@ -37649,7 +37649,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-12',
-        1440474.00,
+        1436000.00,
         18,
         'Pago',
         107,
@@ -37660,7 +37660,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-01',
-        1440474.00,
+        1436000.00,
         19,
         'Pago',
         107,
@@ -37671,7 +37671,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-02-22',
-        1476687.00,
+        1436000.00,
         20,
         'Pago',
         107,
@@ -37682,7 +37682,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-03-18',
-        1466922.00,
+        1436000.00,
         21,
         'Pago',
         107,
@@ -37693,7 +37693,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-25',
-        1481569.00,
+        1436000.00,
         22,
         'Pago',
         107,
@@ -37704,7 +37704,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-31',
-        1496216.00,
+        1436000.00,
         23,
         'Pago',
         107,
@@ -37715,7 +37715,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-07',
-        1512609.00,
+        1436000.00,
         24,
         'Pago',
         107,
@@ -37726,7 +37726,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-09',
-        1589687.00,
+        1436000.00,
         25,
         'Pago',
         107,
@@ -37737,7 +37737,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-10',
-        1551550.00,
+        1436000.00,
         26,
         'Pago',
         107,
@@ -37748,7 +37748,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-11',
-        1551550.00,
+        1436000.00,
         27,
         'Pago',
         107,
@@ -37759,7 +37759,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-30',
-        1543413.00,
+        1436000.00,
         28,
         'Pago',
         107,
@@ -37770,7 +37770,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-30',
-        1551550.00,
+        1436000.00,
         29,
         'Pago',
         107,
@@ -37781,7 +37781,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-02',
-        1540158.00,
+        1436000.00,
         30,
         'Pago',
         107,
@@ -37792,7 +37792,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-03',
-        1546668.00,
+        1436000.00,
         31,
         'Pago',
         107,
@@ -37803,7 +37803,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-04',
-        1551550.00,
+        1436000.00,
         32,
         'Pago',
         107,
@@ -37814,7 +37814,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-13',
-        1556433.00,
+        1436000.00,
         33,
         'Pago',
         107,
@@ -37825,7 +37825,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-06',
-        1548295.00,
+        1436000.00,
         34,
         'Pago',
         107,
@@ -37836,7 +37836,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-07',
-        1551550.00,
+        1436000.00,
         35,
         'Pago',
         107,
@@ -37847,7 +37847,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-29',
-        1536903.00,
+        1436000.00,
         36,
         'Pago',
         107,
@@ -37957,7 +37957,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-18',
-        1756503.00,
+        1731000.00,
         6,
         'Pago',
         109,
@@ -37968,7 +37968,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-13',
-        1756503.00,
+        1731000.00,
         7,
         'Pago',
         109,
@@ -37979,7 +37979,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-17',
-        1770236.00,
+        1731000.00,
         8,
         'Pago',
         109,
@@ -37990,7 +37990,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-23',
-        1782007.00,
+        1731000.00,
         9,
         'Pago',
         109,
@@ -38001,7 +38001,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-24',
-        1783969.00,
+        1731000.00,
         10,
         'Pago',
         109,
@@ -38012,7 +38012,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-31',
-        1795739.00,
+        1731000.00,
         11,
         'Pago',
         109,
@@ -38023,7 +38023,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-09',
-        1832000.00,
+        1749000.00,
         12,
         'Pago',
         109,
@@ -38034,7 +38034,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-10',
-        1818377.00,
+        1749000.00,
         13,
         'Pago',
         109,
@@ -38045,7 +38045,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-11',
-        1849000.00,
+        1749000.00,
         14,
         'Pago',
         109,
@@ -38056,7 +38056,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-12',
-        1897665.00,
+        1749000.00,
         15,
         'Pago',
         109,
@@ -38067,7 +38067,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-01',
-        1881453.00,
+        1749000.00,
         16,
         'Pago',
         109,
@@ -38078,7 +38078,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-02',
-        1863288.00,
+        1749000.00,
         17,
         'Pago',
         109,
@@ -38089,7 +38089,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-03',
-        1869217.00,
+        1749000.00,
         18,
         'Pago',
         109,
@@ -38100,7 +38100,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-13',
-        1874199.00,
+        1749000.00,
         19,
         'Pago',
         109,
@@ -38111,7 +38111,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-05',
-        1868199.00,
+        1749000.00,
         20,
         'Pago',
         109,
@@ -38122,7 +38122,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-07',
-        1878217.00,
+        1749000.00,
         21,
         'Pago',
         109,
@@ -38133,7 +38133,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-08',
-        1899193.00,
+        1749000.00,
         22,
         'Pago',
         109,
@@ -38144,7 +38144,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-09',
-        1899647.00,
+        1749000.00,
         23,
         'Pago',
         109,
@@ -38155,7 +38155,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-10',
-        1895683.00,
+        1749000.00,
         24,
         'Pago',
         109,
@@ -38166,7 +38166,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-11',
-        1889736.00,
+        1749000.00,
         25,
         'Pago',
         109,
@@ -38177,7 +38177,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-12',
-        1895683.00,
+        1749000.00,
         26,
         'Pago',
         109,
@@ -38188,7 +38188,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-01',
-        1895683.00,
+        1749000.00,
         27,
         'Pago',
         109,
@@ -38199,7 +38199,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-02',
-        1895683.00,
+        1749000.00,
         28,
         'Pago',
         109,
@@ -38210,7 +38210,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-04',
-        1951184.00,
+        1749000.00,
         29,
         'Pago',
         109,
@@ -38221,7 +38221,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-13',
-        1957131.00,
+        1749000.00,
         30,
         'Pago',
         109,
@@ -38232,7 +38232,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-07',
-        1941273.00,
+        1749000.00,
         31,
         'Pago',
         109,
@@ -38243,7 +38243,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-08',
-        2004704.00,
+        1749000.00,
         32,
         'Pago',
         109,
@@ -38254,7 +38254,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-09',
-        2012633.00,
+        1749000.00,
         33,
         'Pago',
         109,
@@ -38265,7 +38265,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-10',
-        2008668.00,
+        1749000.00,
         34,
         'Pago',
         109,
@@ -38276,7 +38276,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-04-11',
-        2004704.00,
+        1749000.00,
         35,
         'Pago',
         109,
@@ -38287,7 +38287,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-08-01',
-        2074081.00,
+        1749000.00,
         36,
         'Pago',
         109,
@@ -38298,7 +38298,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-06-09',
-        1765875.00,
+        1742640.00,
         1,
         'Pago',
         110,
@@ -38309,7 +38309,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-02-11',
-        1740650.42,
+        1680000.00,
         2,
         'Pago',
         110,
@@ -38320,7 +38320,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-12-23',
-        1783600.00,
+        1680000.00,
         3,
         'Pago',
         110,
@@ -38331,7 +38331,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-13',
-        1857938.00,
+        1680000.00,
         4,
         'Pago',
         110,
@@ -38342,7 +38342,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-05',
-        2025550.42,
+        1704500.00,
         5,
         'Pago',
         110,
@@ -38353,7 +38353,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-12',
-        2298800.00,
+        1680000.00,
         6,
         'Pago',
         110,
@@ -38364,7 +38364,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-02-29',
-        2386650.42,
+        1680000.00,
         7,
         'Pago',
         110,
@@ -38375,7 +38375,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-30',
-        2453024.00,
+        1680000.00,
         8,
         'Pago',
         110,
@@ -38386,7 +38386,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-13',
-        2593920.00,
+        1680000.00,
         9,
         'Pago',
         110,
@@ -38397,7 +38397,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-18',
-        2662464.00,
+        1680000.00,
         10,
         'Pago',
         110,
@@ -38408,7 +38408,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-19',
-        2721488.00,
+        1680000.00,
         11,
         'Pago',
         110,
@@ -38419,7 +38419,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-02',
-        3468600.00,
+        1811000.00,
         12,
         'Pago',
         110,
@@ -38430,7 +38430,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-03',
-        3464486.00,
+        1811000.00,
         13,
         'Pago',
         110,
@@ -38969,7 +38969,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-07-09',
-        1081315.00,
+        1077000.00,
         2,
         'Pago',
         112,
@@ -38980,7 +38980,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2022-11-29',
-        1145515.46,
+        1077000.00,
         3,
         'Pago',
         112,
@@ -39013,7 +39013,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-01',
-        1182946.00,
+        1077000.00,
         6,
         'Pago',
         112,
@@ -39024,7 +39024,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-14',
-        1335767.20,
+        1077000.00,
         7,
         'Pago',
         112,
@@ -39035,7 +39035,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-14',
-        1297928.60,
+        1077000.00,
         8,
         'Pago',
         112,
@@ -39046,7 +39046,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-14',
-        1263751.80,
+        1077000.00,
         9,
         'Pago',
         112,
@@ -39057,7 +39057,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-14',
-        1225913.20,
+        1077000.00,
         10,
         'Pago',
         112,
@@ -39068,7 +39068,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-14',
-        1189295.20,
+        1077000.00,
         11,
         'Pago',
         112,
@@ -39079,7 +39079,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-14',
-        1151456.60,
+        1077000.00,
         12,
         'Pago',
         112,
@@ -39090,7 +39090,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-14',
-        1114838.60,
+        1077000.00,
         13,
         'Pago',
         112,
@@ -39321,7 +39321,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-17',
-        2629063.00,
+        2588000.00,
         10,
         'Pago',
         113,
@@ -39332,7 +39332,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-30',
-        2681858.00,
+        2588000.00,
         11,
         'Pago',
         113,
@@ -39343,7 +39343,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-22',
-        2731720.00,
+        2588000.00,
         12,
         'Pago',
         113,
@@ -39354,7 +39354,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-14',
-        2728787.00,
+        2588000.00,
         13,
         'Pago',
         113,
@@ -39365,7 +39365,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-09-27',
-        2704522.00,
+        2588000.00,
         14,
         'Pago',
         113,
@@ -39376,7 +39376,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-11',
-        2789118.00,
+        2588000.00,
         15,
         'Pago',
         113,
@@ -39387,7 +39387,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-11',
-        2828722.00,
+        2588000.00,
         16,
         'Pago',
         113,
@@ -39629,7 +39629,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-18',
-        553000.00,
+        543000.00,
         2,
         'Pago',
         114,
@@ -39640,7 +39640,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-21',
-        547000.00,
+        543000.00,
         3,
         'Pago',
         114,
@@ -39651,7 +39651,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-03-31',
-        550023.00,
+        543000.00,
         4,
         'Pago',
         114,
@@ -39662,7 +39662,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-30',
-        545000.00,
+        543000.00,
         5,
         'Pago',
         114,
@@ -39673,7 +39673,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-30',
-        544022.66,
+        543000.00,
         6,
         'Pago',
         114,
@@ -39684,7 +39684,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-30',
-        548539.00,
+        543000.00,
         7,
         'Pago',
         114,
@@ -39970,7 +39970,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-07',
-        1533000.00,
+        1523000.00,
         7,
         'Pago',
         119,
@@ -39981,7 +39981,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-23',
-        1552343.00,
+        1523000.00,
         8,
         'Pago',
         119,
@@ -39992,7 +39992,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-31',
-        1528000.00,
+        1523000.00,
         9,
         'Pago',
         119,
@@ -40025,7 +40025,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-04-12',
-        1533345.00,
+        1523000.00,
         12,
         'Pago',
         119,
@@ -40278,7 +40278,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-06',
-        1911000.00,
+        1901000.00,
         1,
         'Pago',
         123,
@@ -40289,7 +40289,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-07',
-        1911000.00,
+        1894000.00,
         2,
         'Pago',
         123,
@@ -40300,7 +40300,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-15',
-        1911000.00,
+        1873000.00,
         3,
         'Pago',
         123,
@@ -40311,7 +40311,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-09',
-        9684838.95,
+        9667838.95,
         4,
         'Pago',
         123,
@@ -40322,7 +40322,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-10',
-        9500000.00,
+        9484839.00,
         5,
         'Pago',
         123,
@@ -40355,7 +40355,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-12',
-        815000.00,
+        766167.00,
         8,
         'Pago',
         123,
@@ -40366,7 +40366,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-02',
-        815000.00,
+        790911.00,
         9,
         'Pago',
         123,
@@ -40377,7 +40377,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-18',
-        815000.00,
+        755885.00,
         10,
         'Pago',
         123,
@@ -40388,7 +40388,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-16',
-        815000.00,
+        756809.00,
         11,
         'Pago',
         123,
@@ -40399,7 +40399,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-26',
-        815000.00,
+        747572.33,
         12,
         'Pago',
         123,
@@ -40410,7 +40410,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-26',
-        815000.00,
+        775282.33,
         13,
         'Pago',
         123,
@@ -40421,7 +40421,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-26',
-        409648.21,
+        398564.21,
         14,
         'Pago',
         123,
@@ -40432,7 +40432,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-26',
-        419479.76,
+        -3821.24,
         15,
         'Pago',
         123,
@@ -40751,7 +40751,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-17',
-        2476000.00,
+        2472000.00,
         1,
         'Pago',
         124,
@@ -40762,7 +40762,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-28',
-        2500057.00,
+        2472000.00,
         2,
         'Pago',
         124,
@@ -40773,7 +40773,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-08',
-        2525000.00,
+        2472000.00,
         3,
         'Pago',
         124,
@@ -40784,7 +40784,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-06-09',
-        2537000.00,
+        2472000.00,
         4,
         'Pago',
         124,
@@ -40795,7 +40795,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-10',
-        2551058.00,
+        2472000.00,
         5,
         'Pago',
         124,
@@ -40806,7 +40806,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-02-11',
-        2524000.00,
+        2472000.00,
         6,
         'Pago',
         124,
@@ -40817,7 +40817,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-13',
-        2554000.00,
+        2472000.00,
         7,
         'Pago',
         124,
@@ -40828,7 +40828,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-19',
-        2572858.00,
+        2472000.00,
         8,
         'Pago',
         124,
@@ -40839,7 +40839,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-02-15',
-        2562058.00,
+        2472000.00,
         9,
         'Pago',
         124,
@@ -40850,7 +40850,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-03-30',
-        2576057.00,
+        2472000.00,
         10,
         'Pago',
         124,
@@ -40861,7 +40861,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-17',
-        2567254.00,
+        2472000.00,
         11,
         'Pago',
         124,
@@ -40872,7 +40872,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-21',
-        2575659.00,
+        2472000.00,
         12,
         'Pago',
         124,
@@ -40883,7 +40883,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-22',
-        2579057.86,
+        2472000.00,
         13,
         'Pago',
         124,
@@ -40894,7 +40894,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-07',
-        2548000.00,
+        2472000.00,
         14,
         'Pago',
         124,
@@ -40905,7 +40905,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-13',
-        2556048.00,
+        2472000.00,
         15,
         'Pago',
         124,
@@ -40916,7 +40916,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-25',
-        2589657.00,
+        2472000.00,
         16,
         'Pago',
         124,
@@ -40927,7 +40927,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-08',
-        3385321.60,
+        2472000.00,
         17,
         'Pago',
         124,
@@ -40938,7 +40938,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-08',
-        3301273.60,
+        2472000.00,
         18,
         'Pago',
         124,
@@ -40949,7 +40949,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-08',
-        3214424.00,
+        2472000.00,
         19,
         'Pago',
         124,
@@ -40960,7 +40960,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-08',
-        3130376.00,
+        2472000.00,
         20,
         'Pago',
         124,
@@ -40971,7 +40971,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-08',
-        3043526.40,
+        2472000.00,
         21,
         'Pago',
         124,
@@ -40982,7 +40982,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-08',
-        2956676.80,
+        2472000.00,
         22,
         'Pago',
         124,
@@ -40993,7 +40993,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-08',
-        2878232.00,
+        2472000.00,
         23,
         'Pago',
         124,
@@ -41004,7 +41004,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-08',
-        2791382.40,
+        2472000.00,
         24,
         'Pago',
         124,
@@ -41015,7 +41015,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-08',
-        2707334.40,
+        2472000.00,
         25,
         'Pago',
         124,
@@ -41026,7 +41026,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-08',
-        2620484.80,
+        2472000.00,
         26,
         'Pago',
         124,
@@ -41037,7 +41037,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-08',
-        2977436.80,
+        2472000.00,
         27,
         'Pago',
         124,
@@ -41521,7 +41521,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-03-30',
-        2615081.00,
+        2613000.00,
         11,
         'Pago',
         125,
@@ -41565,7 +41565,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-22',
-        2633730.00,
+        2613000.00,
         15,
         'Pago',
         125,
@@ -41609,7 +41609,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-19',
-        2621884.00,
+        2613000.00,
         19,
         'Pago',
         125,
@@ -41620,7 +41620,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-27',
-        2621884.00,
+        2613000.00,
         20,
         'Pago',
         125,
@@ -41631,7 +41631,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-02',
-        2702350.00,
+        2625000.00,
         21,
         'Pago',
         125,
@@ -41642,7 +41642,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-03',
-        2684500.00,
+        2625000.00,
         22,
         'Pago',
         125,
@@ -41664,7 +41664,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-25',
-        2684500.00,
+        2625000.00,
         24,
         'Pago',
         125,
@@ -41686,7 +41686,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-20',
-        2657506.00,
+        2654000.00,
         26,
         'Pago',
         125,
@@ -41708,7 +41708,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-21',
-        2672047.00,
+        2654000.00,
         28,
         'Pago',
         125,
@@ -41741,7 +41741,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-21',
-        2672047.00,
+        2654000.00,
         31,
         'Pago',
         125,
@@ -41763,7 +41763,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-01-19',
-        2696031.00,
+        2654000.00,
         33,
         'Pago',
         125,
@@ -42071,7 +42071,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-20',
-        2297518.00,
+        2282000.00,
         3,
         'Pago',
         127,
@@ -42082,7 +42082,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-20',
-        2296000.00,
+        2282000.00,
         4,
         'Pago',
         127,
@@ -42093,7 +42093,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-30',
-        2323380.00,
+        2282000.00,
         5,
         'Pago',
         127,
@@ -42104,7 +42104,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-19',
-        2294931.00,
+        2282000.00,
         6,
         'Pago',
         127,
@@ -42137,7 +42137,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-05',
-        2338898.00,
+        2282000.00,
         9,
         'Pago',
         127,
@@ -42148,7 +42148,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-06',
-        2334365.00,
+        2282000.00,
         10,
         'Pago',
         127,
@@ -42159,7 +42159,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-16',
-        2364761.00,
+        2282000.00,
         11,
         'Pago',
         127,
@@ -42170,7 +42170,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-08',
-        2328553.00,
+        2282000.00,
         12,
         'Pago',
         127,
@@ -42203,7 +42203,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-11',
-        2328553.00,
+        2282000.00,
         15,
         'Pago',
         127,
@@ -42214,7 +42214,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-12',
-        2333181.00,
+        2282000.00,
         16,
         'Pago',
         127,
@@ -42225,7 +42225,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-01',
-        2351181.00,
+        2282000.00,
         17,
         'Pago',
         127,
@@ -42236,7 +42236,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-02',
-        2365642.00,
+        2303000.00,
         18,
         'Pago',
         127,
@@ -42247,7 +42247,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-22',
-        2323881.00,
+        2303000.00,
         19,
         'Pago',
         127,
@@ -42258,7 +42258,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-03-19',
-        2316050.00,
+        2303000.00,
         20,
         'Pago',
         127,
@@ -42269,7 +42269,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-05',
-        2376711.00,
+        2346000.00,
         21,
         'Pago',
         127,
@@ -42280,7 +42280,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-03-06',
-        2398201.00,
+        2346000.00,
         22,
         'Pago',
         127,
@@ -42291,7 +42291,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-07',
-        2407612.00,
+        2346000.00,
         23,
         'Pago',
         127,
@@ -42302,7 +42302,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-21',
-        2364612.00,
+        2346000.00,
         24,
         'Pago',
         127,
@@ -42313,7 +42313,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-03-09',
-        2399176.00,
+        2346000.00,
         25,
         'Pago',
         127,
@@ -42324,7 +42324,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-28',
-        2462987.00,
+        2346000.00,
         26,
         'Pago',
         127,
@@ -42335,7 +42335,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-19',
-        2442328.00,
+        2346000.00,
         27,
         'Pago',
         127,
@@ -42346,7 +42346,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-02-02',
-        2558704.00,
+        2346000.00,
         28,
         'Pago',
         127,
@@ -42357,7 +42357,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-02-02',
-        2478940.00,
+        2346000.00,
         29,
         'Pago',
         127,
@@ -42368,7 +42368,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-02-05',
-        834727.00,
+        821000.00,
         1,
         'Pago',
         128,
@@ -42379,7 +42379,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-28',
-        834000.00,
+        821000.00,
         2,
         'Pago',
         128,
@@ -42390,7 +42390,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-21',
-        828726.83,
+        821000.00,
         3,
         'Pago',
         128,
@@ -42401,7 +42401,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-08',
-        837748.00,
+        821000.00,
         4,
         'Pago',
         128,
@@ -42412,7 +42412,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-13',
-        848726.00,
+        821000.00,
         5,
         'Pago',
         128,
@@ -42423,7 +42423,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-11',
-        865662.00,
+        821000.00,
         6,
         'Pago',
         128,
@@ -42434,7 +42434,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-12',
-        868453.80,
+        821000.00,
         7,
         'Pago',
         128,
@@ -42445,7 +42445,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-12',
-        839609.33,
+        821000.00,
         8,
         'Pago',
         128,
@@ -42456,7 +42456,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-02',
-        872176.00,
+        821000.00,
         9,
         'Pago',
         128,
@@ -42467,7 +42467,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-03',
-        866593.00,
+        821000.00,
         10,
         'Pago',
         128,
@@ -42478,7 +42478,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-04',
-        872176.00,
+        821000.00,
         11,
         'Pago',
         128,
@@ -42489,7 +42489,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-05',
-        876000.00,
+        821000.00,
         12,
         'Pago',
         128,
@@ -42500,7 +42500,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-07',
-        899159.00,
+        821000.00,
         13,
         'Pago',
         128,
@@ -42511,7 +42511,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-03-09',
-        925212.00,
+        821000.00,
         14,
         'Pago',
         128,
@@ -42522,7 +42522,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-10',
-        925212.00,
+        821000.00,
         15,
         'Pago',
         128,
@@ -42533,7 +42533,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-10',
-        900000.00,
+        821000.00,
         16,
         'Pago',
         128,
@@ -43413,7 +43413,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-20',
-        2011308.00,
+        1993256.00,
         11,
         'Pago',
         132,
@@ -43424,7 +43424,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-17',
-        2009052.00,
+        1988744.00,
         12,
         'Pago',
         132,
@@ -43435,7 +43435,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-17',
-        2002282.00,
+        1984230.00,
         13,
         'Pago',
         132,
@@ -43446,7 +43446,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-16',
-        2011308.00,
+        2000026.00,
         14,
         'Pago',
         132,
@@ -43457,7 +43457,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-16',
-        2079002.00,
+        2058694.00,
         15,
         'Pago',
         132,
@@ -43468,7 +43468,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-27',
-        2106080.00,
+        2018078.00,
         16,
         'Pago',
         132,
@@ -43479,7 +43479,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-27',
-        1991000.00,
+        1875920.00,
         17,
         'Pago',
         132,
@@ -43501,7 +43501,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-02',
-        2096799.00,
+        2051670.00,
         19,
         'Pago',
         132,
@@ -43512,7 +43512,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-03',
-        2089934.00,
+        2012135.00,
         20,
         'Pago',
         132,
@@ -43523,7 +43523,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-25',
-        2131122.00,
+        2060188.00,
         21,
         'Pago',
         132,
@@ -43534,7 +43534,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-26',
-        2131122.00,
+        2019000.00,
         22,
         'Pago',
         132,
@@ -43545,7 +43545,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-26',
-        2019000.00,
+        1906878.00,
         23,
         'Pago',
         132,
@@ -43556,7 +43556,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-26',
-        1910000.00,
+        1866524.00,
         24,
         'Pago',
         132,
@@ -44128,7 +44128,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-19',
-        1481444.00,
+        1472000.00,
         3,
         'Pago',
         135,
@@ -44139,7 +44139,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-14',
-        1492000.00,
+        1472000.00,
         4,
         'Pago',
         135,
@@ -44150,7 +44150,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-22',
-        1486000.00,
+        1472000.00,
         5,
         'Pago',
         135,
@@ -44161,7 +44161,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-27',
-        1484000.00,
+        1472000.00,
         6,
         'Pago',
         135,
@@ -44172,7 +44172,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-30',
-        1493044.00,
+        1472000.00,
         7,
         'Pago',
         135,
@@ -44183,7 +44183,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-03',
-        1510045.00,
+        1472000.00,
         8,
         'Pago',
         135,
@@ -44194,7 +44194,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-04',
-        1509044.00,
+        1472000.00,
         9,
         'Pago',
         135,
@@ -44205,7 +44205,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-16',
-        1525385.00,
+        1472000.00,
         10,
         'Pago',
         135,
@@ -44216,7 +44216,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-19',
-        1532058.00,
+        1472000.00,
         11,
         'Pago',
         135,
@@ -44227,7 +44227,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-22',
-        1532690.00,
+        1472000.00,
         12,
         'Pago',
         135,
@@ -44238,7 +44238,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-31',
-        1548044.00,
+        1472000.00,
         13,
         'Pago',
         135,
@@ -44249,7 +44249,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-30',
-        1546045.00,
+        1472000.00,
         14,
         'Pago',
         135,
@@ -44260,7 +44260,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-11',
-        1553045.00,
+        1472000.00,
         15,
         'Pago',
         135,
@@ -44271,7 +44271,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-12',
-        1569044.00,
+        1472000.00,
         16,
         'Pago',
         135,
@@ -44282,7 +44282,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-21',
-        1646835.00,
+        1529000.00,
         17,
         'Pago',
         135,
@@ -44293,7 +44293,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-03',
-        1653766.00,
+        1529000.00,
         18,
         'Pago',
         135,
@@ -44304,7 +44304,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-21',
-        1697088.00,
+        1529000.00,
         19,
         'Pago',
         135,
@@ -44315,7 +44315,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-13',
-        1690961.00,
+        1529000.00,
         20,
         'Pago',
         135,
@@ -44326,7 +44326,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-22',
-        1748844.00,
+        1529000.00,
         21,
         'Pago',
         135,
@@ -44337,7 +44337,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-29',
-        1712684.00,
+        1529000.00,
         22,
         'Pago',
         135,
@@ -44348,7 +44348,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-09',
-        1724813.93,
+        1529000.00,
         23,
         'Pago',
         135,
@@ -44359,7 +44359,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-09',
-        1671095.07,
+        1529000.00,
         24,
         'Pago',
         135,
@@ -44370,7 +44370,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-09',
-        1619109.07,
+        1529000.00,
         25,
         'Pago',
         135,
@@ -44381,7 +44381,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-08-24',
-        1665089.00,
+        1646000.00,
         1,
         'Pago',
         136,
@@ -44392,7 +44392,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-05-10',
-        1685175.00,
+        1646000.00,
         2,
         'Pago',
         136,
@@ -44403,7 +44403,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-11-14',
-        1701000.00,
+        1646000.00,
         3,
         'Pago',
         136,
@@ -44414,7 +44414,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-07-12',
-        1688906.00,
+        1646000.00,
         4,
         'Pago',
         136,
@@ -44425,7 +44425,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-17',
-        1709426.00,
+        1646000.00,
         5,
         'Pago',
         136,
@@ -44436,7 +44436,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-02',
-        1691550.00,
+        1646000.00,
         6,
         'Pago',
         136,
@@ -44447,7 +44447,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-23',
-        1663524.00,
+        1646000.00,
         7,
         'Pago',
         136,
@@ -44458,7 +44458,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-16',
-        1759793.00,
+        1646000.00,
         8,
         'Pago',
         136,
@@ -44469,7 +44469,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-19',
-        1769121.00,
+        1646000.00,
         9,
         'Pago',
         136,
@@ -44480,7 +44480,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-22',
-        1794717.00,
+        1646000.00,
         10,
         'Pago',
         136,
@@ -44491,7 +44491,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-16',
-        1784045.00,
+        1646000.00,
         11,
         'Pago',
         136,
@@ -44502,7 +44502,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-16',
-        1765390.00,
+        1646000.00,
         12,
         'Pago',
         136,
@@ -44513,7 +44513,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-23',
-        1788543.00,
+        1646000.00,
         13,
         'Pago',
         136,
@@ -44524,7 +44524,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-12',
-        1808296.00,
+        1646000.00,
         14,
         'Pago',
         136,
@@ -44535,7 +44535,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-12',
-        1752332.00,
+        1646000.00,
         15,
         'Pago',
         136,
@@ -44546,7 +44546,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-12',
-        1694052.00,
+        1646000.00,
         16,
         'Pago',
         136,
@@ -44557,7 +44557,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-14',
-        1761658.93,
+        1646000.00,
         17,
         'Pago',
         136,
@@ -44568,7 +44568,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-14',
-        1703829.47,
+        1646000.00,
         18,
         'Pago',
         136,
@@ -44579,7 +44579,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-14',
-        2146000.00,
+        1646000.00,
         19,
         'Pago',
         136,
@@ -45074,7 +45074,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-31',
-        359299.00,
+        335000.00,
         6,
         'Pago',
         138,
@@ -45085,7 +45085,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-09',
-        385875.00,
+        335000.00,
         7,
         'Pago',
         138,
@@ -45096,7 +45096,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-27',
-        440557.00,
+        335000.00,
         8,
         'Pago',
         138,
@@ -45107,7 +45107,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-03-31',
-        440557.00,
+        335000.00,
         9,
         'Pago',
         138,
@@ -45118,7 +45118,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-25',
-        438000.00,
+        335000.00,
         10,
         'Pago',
         138,
@@ -45129,7 +45129,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-30',
-        439408.00,
+        335000.00,
         11,
         'Pago',
         138,
@@ -45140,7 +45140,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-07',
-        440900.00,
+        335000.00,
         12,
         'Pago',
         138,
@@ -45151,7 +45151,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-23',
-        460290.00,
+        335000.00,
         13,
         'Pago',
         138,
@@ -45162,7 +45162,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-23',
-        448520.33,
+        335000.00,
         14,
         'Pago',
         138,
@@ -45173,7 +45173,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-23',
-        437130.33,
+        335000.00,
         15,
         'Pago',
         138,
@@ -45184,7 +45184,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-23',
-        425360.67,
+        335000.00,
         16,
         'Pago',
         138,
@@ -45195,7 +45195,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-23',
-        413591.00,
+        335000.00,
         17,
         'Pago',
         138,
@@ -45206,7 +45206,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-23',
-        402960.33,
+        335000.00,
         18,
         'Pago',
         138,
@@ -45217,7 +45217,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-23',
-        391190.67,
+        335000.00,
         19,
         'Pago',
         138,
@@ -45228,7 +45228,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-23',
-        379800.67,
+        335000.00,
         20,
         'Pago',
         138,
@@ -45239,7 +45239,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-25',
-        391950.00,
+        335000.00,
         21,
         'Pago',
         138,
@@ -45250,7 +45250,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-25',
-        380560.00,
+        335000.00,
         22,
         'Pago',
         138,
@@ -45261,7 +45261,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-25',
-        368790.33,
+        335000.00,
         23,
         'Pago',
         138,
@@ -45272,7 +45272,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-25',
-        357020.67,
+        335000.00,
         24,
         'Pago',
         138,
@@ -45283,7 +45283,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-25',
-        345630.67,
+        335000.00,
         25,
         'Pago',
         138,
@@ -45371,7 +45371,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-03-16',
-        1927151.00,
+        1756000.00,
         3,
         'Pago',
         139,
@@ -45382,7 +45382,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-03-16',
-        1865457.00,
+        1756000.00,
         4,
         'Pago',
         139,
@@ -45393,7 +45393,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-13',
-        1981088.00,
+        1756000.00,
         5,
         'Pago',
         139,
@@ -45404,7 +45404,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-27',
-        2376922.00,
+        1756000.00,
         6,
         'Pago',
         139,
@@ -45415,7 +45415,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-27',
-        2315227.00,
+        1756000.00,
         7,
         'Pago',
         139,
@@ -45426,7 +45426,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-06',
-        2514453.00,
+        1756000.00,
         8,
         'Pago',
         139,
@@ -45437,7 +45437,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-06',
-        2531260.00,
+        1756000.00,
         9,
         'Pago',
         139,
@@ -45448,7 +45448,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-10-17',
-        2137000.00,
+        2113000.00,
         1,
         'Pago',
         140,
@@ -45481,7 +45481,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-13',
-        2127368.00,
+        2113000.00,
         4,
         'Pago',
         140,
@@ -45492,7 +45492,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-19',
-        2141737.00,
+        2113000.00,
         5,
         'Pago',
         140,
@@ -45503,7 +45503,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-02-22',
-        2133557.00,
+        2113000.00,
         6,
         'Pago',
         140,
@@ -45514,7 +45514,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-04',
-        2182447.00,
+        2113000.00,
         7,
         'Pago',
         140,
@@ -45525,7 +45525,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-30',
-        2169558.00,
+        2113000.00,
         8,
         'Pago',
         140,
@@ -45536,7 +45536,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-31',
-        2168557.00,
+        2113000.00,
         9,
         'Pago',
         140,
@@ -45547,7 +45547,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-31',
-        2228557.00,
+        2113000.00,
         10,
         'Pago',
         140,
@@ -45558,7 +45558,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-16',
-        2208789.00,
+        2113000.00,
         11,
         'Pago',
         140,
@@ -45569,7 +45569,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-25',
-        2124557.00,
+        2113000.00,
         12,
         'Pago',
         140,
@@ -45580,7 +45580,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-11',
-        2256057.00,
+        2122000.00,
         13,
         'Pago',
         140,
@@ -45591,7 +45591,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-12',
-        2277057.00,
+        2122000.00,
         14,
         'Pago',
         140,
@@ -45602,7 +45602,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-21',
-        2302370.00,
+        2122000.00,
         15,
         'Pago',
         140,
@@ -45613,7 +45613,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-03',
-        2580500.00,
+        2122000.00,
         16,
         'Pago',
         140,
@@ -45624,7 +45624,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-29',
-        2391353.00,
+        2122000.00,
         17,
         'Pago',
         140,
@@ -45635,7 +45635,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-29',
-        2316800.00,
+        2122000.00,
         18,
         'Pago',
         140,
@@ -45646,7 +45646,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-07',
-        2425999.00,
+        2122000.00,
         19,
         'Pago',
         140,
@@ -45657,7 +45657,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-20',
-        2435057.00,
+        2122000.00,
         20,
         'Pago',
         140,
@@ -45668,7 +45668,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-29',
-        2473057.00,
+        2122000.00,
         21,
         'Pago',
         140,
@@ -45679,7 +45679,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-14',
-        2433969.00,
+        2122000.00,
         22,
         'Pago',
         140,
@@ -45690,7 +45690,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-14',
-        2361145.00,
+        2122000.00,
         23,
         'Pago',
         140,
@@ -45701,7 +45701,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-17',
-        2291000.00,
+        2122000.00,
         24,
         'Pago',
         140,
@@ -45712,7 +45712,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-21',
-        2297058.00,
+        2122000.00,
         25,
         'Pago',
         140,
@@ -45723,7 +45723,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-31',
-        2316057.00,
+        2122000.00,
         26,
         'Pago',
         140,
@@ -45734,7 +45734,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-02-16',
-        2364898.27,
+        2122000.00,
         27,
         'Pago',
         140,
@@ -45745,7 +45745,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-02-16',
-        2292750.27,
+        2122000.00,
         28,
         'Pago',
         140,
@@ -46328,7 +46328,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-01',
-        2281345.00,
+        2277000.00,
         3,
         'Pago',
         143,
@@ -46339,7 +46339,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-02-20',
-        2301344.00,
+        2277000.00,
         4,
         'Pago',
         143,
@@ -46350,7 +46350,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-03',
-        2301345.00,
+        2277000.00,
         5,
         'Pago',
         143,
@@ -46361,7 +46361,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-23',
-        2300225.00,
+        2277000.00,
         6,
         'Pago',
         143,
@@ -46372,7 +46372,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-20',
-        2302806.00,
+        2277000.00,
         7,
         'Pago',
         143,
@@ -46383,7 +46383,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-22',
-        2315709.00,
+        2277000.00,
         8,
         'Pago',
         143,
@@ -46394,7 +46394,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-31',
-        2320870.00,
+        2277000.00,
         9,
         'Pago',
         143,
@@ -46405,7 +46405,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-21',
-        2313128.00,
+        2277000.00,
         10,
         'Pago',
         143,
@@ -46416,7 +46416,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-30',
-        2323451.00,
+        2277000.00,
         11,
         'Pago',
         143,
@@ -46427,7 +46427,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-23',
-        2318290.00,
+        2277000.00,
         12,
         'Pago',
         143,
@@ -46438,7 +46438,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-22',
-        2321344.00,
+        2277000.00,
         13,
         'Pago',
         143,
@@ -46449,7 +46449,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-30',
-        2320870.00,
+        2277000.00,
         14,
         'Pago',
         143,
@@ -46460,7 +46460,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-28',
-        2438692.00,
+        2382000.00,
         15,
         'Pago',
         143,
@@ -46471,7 +46471,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-02',
-        2400897.00,
+        2382000.00,
         16,
         'Pago',
         143,
@@ -47230,7 +47230,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2023-12-13',
-        2337200.00,
+        2269200.00,
         1,
         'Pago',
         145,
@@ -47241,7 +47241,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-17',
-        2088814.00,
+        1794000.00,
         2,
         'Pago',
         145,
@@ -47252,7 +47252,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-17',
-        2025784.80,
+        1794000.00,
         3,
         'Pago',
         145,
@@ -47263,7 +47263,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-17',
-        1962755.60,
+        1794000.00,
         4,
         'Pago',
         145,
@@ -47274,7 +47274,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-17',
-        1903792.80,
+        1794000.00,
         5,
         'Pago',
         145,
@@ -47285,7 +47285,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-17',
-        1840763.60,
+        1794000.00,
         6,
         'Pago',
         145,
@@ -47296,7 +47296,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-31',
-        1844413.00,
+        1794000.00,
         7,
         'Pago',
         145,
@@ -48704,7 +48704,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-02',
-        1210000.00,
+        1150000.00,
         1,
         'Pago',
         147,
@@ -48715,7 +48715,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-02',
-        1210000.00,
+        1150000.00,
         2,
         'Pago',
         147,
@@ -48770,7 +48770,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-18',
-        1018010.67,
+        920000.00,
         1,
         'Pago',
         148,
@@ -48781,7 +48781,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-18',
-        987773.33,
+        920000.00,
         2,
         'Pago',
         148,
@@ -48792,7 +48792,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-18',
-        955450.67,
+        920000.00,
         3,
         'Pago',
         148,
@@ -48803,7 +48803,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-18',
-        924170.67,
+        920000.00,
         4,
         'Pago',
         148,
@@ -48880,7 +48880,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-25',
-        1170000.00,
+        1156000.00,
         5,
         'Pago',
         149,
@@ -48891,7 +48891,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-23',
-        1168275.00,
+        1156000.00,
         6,
         'Pago',
         149,
@@ -48902,7 +48902,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-21',
-        1165171.00,
+        1156000.00,
         7,
         'Pago',
         149,
@@ -48913,7 +48913,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-19',
-        1162551.00,
+        1156000.00,
         8,
         'Pago',
         149,
@@ -48924,7 +48924,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-21',
-        1165171.00,
+        1156000.00,
         9,
         'Pago',
         149,
@@ -48935,7 +48935,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-19',
-        1162551.00,
+        1156000.00,
         10,
         'Pago',
         149,
@@ -48946,7 +48946,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-18',
-        1160205.00,
+        1156000.00,
         11,
         'Pago',
         149,
@@ -48957,7 +48957,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-21',
-        1165171.00,
+        1156000.00,
         12,
         'Pago',
         149,
@@ -49012,7 +49012,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-25',
-        1170000.00,
+        1156000.00,
         5,
         'Pago',
         150,
@@ -49023,7 +49023,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-23',
-        1168275.00,
+        1156000.00,
         6,
         'Pago',
         150,
@@ -49034,7 +49034,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-21',
-        1165171.00,
+        1156000.00,
         7,
         'Pago',
         150,
@@ -49045,7 +49045,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-19',
-        1162551.00,
+        1156000.00,
         8,
         'Pago',
         150,
@@ -49056,7 +49056,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-21',
-        1165171.00,
+        1156000.00,
         9,
         'Pago',
         150,
@@ -49067,7 +49067,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-19',
-        1162551.00,
+        1156000.00,
         10,
         'Pago',
         150,
@@ -49078,7 +49078,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-18',
-        1160205.00,
+        1156000.00,
         11,
         'Pago',
         150,
@@ -49089,7 +49089,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-21',
-        1165171.00,
+        1156000.00,
         12,
         'Pago',
         150,
@@ -49188,7 +49188,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-29',
-        1096206.00,
+        1059000.00,
         9,
         'Pago',
         151,
@@ -49199,7 +49199,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-04-13',
-        1736640.00,
+        1728000.00,
         1,
         'Pago',
         152,
@@ -49210,7 +49210,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-29',
-        1790669.00,
+        1728000.00,
         2,
         'Pago',
         152,
@@ -49221,7 +49221,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-09',
-        1823120.00,
+        1728000.00,
         3,
         'Pago',
         152,
@@ -49232,7 +49232,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-30',
-        1916006.00,
+        1728000.00,
         4,
         'Pago',
         152,
@@ -49243,7 +49243,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-03-14',
-        2063594.00,
+        1728000.00,
         5,
         'Pago',
         152,
@@ -49254,7 +49254,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-30',
-        2386022.40,
+        1728000.00,
         6,
         'Pago',
         152,
@@ -49265,7 +49265,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-30',
-        2325312.00,
+        1728000.00,
         7,
         'Pago',
         152,
@@ -49276,7 +49276,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-30',
-        2266560.00,
+        1728000.00,
         8,
         'Pago',
         152,
@@ -49287,7 +49287,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-30',
-        2205849.60,
+        1728000.00,
         9,
         'Pago',
         152,
@@ -49298,7 +49298,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-30',
-        2147097.60,
+        1728000.00,
         10,
         'Pago',
         152,
@@ -49309,7 +49309,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-30',
-        2086387.20,
+        1728000.00,
         11,
         'Pago',
         152,
@@ -49320,7 +49320,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-30',
-        2039744.00,
+        1740000.00,
         12,
         'Pago',
         152,
@@ -49331,7 +49331,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-30',
-        1984528.00,
+        1740000.00,
         13,
         'Pago',
         152,
@@ -49342,7 +49342,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-30',
-        1923396.00,
+        1740000.00,
         14,
         'Pago',
         152,
@@ -49353,7 +49353,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-30',
-        1864236.00,
+        1740000.00,
         15,
         'Pago',
         152,
@@ -49364,7 +49364,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-30',
-        1803104.00,
+        1740000.00,
         16,
         'Pago',
         152,
@@ -49738,7 +49738,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-05-31',
-        1879776.00,
+        1830000.00,
         2,
         'Pago',
         153,
@@ -49749,7 +49749,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-31',
-        1946144.00,
+        1830000.00,
         3,
         'Pago',
         153,
@@ -49760,7 +49760,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-09',
-        1964810.00,
+        1830000.00,
         4,
         'Pago',
         153,
@@ -49771,7 +49771,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-09',
-        1900516.00,
+        1830000.00,
         5,
         'Pago',
         153,
@@ -49782,7 +49782,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-09',
-        1836222.00,
+        1830000.00,
         6,
         'Pago',
         153,
@@ -50805,7 +50805,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-03-12',
-        2350000.00,
+        2348000.00,
         7,
         'Pago',
         157,
@@ -50882,7 +50882,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-07',
-        2355983.00,
+        2348000.00,
         14,
         'Pago',
         157,
@@ -50893,7 +50893,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-08',
-        2349984.00,
+        2348000.00,
         15,
         'Pago',
         157,
@@ -50904,7 +50904,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-09',
-        2361305.00,
+        2348000.00,
         16,
         'Pago',
         157,
@@ -51278,7 +51278,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-25',
-        1220053.00,
+        1216000.00,
         1,
         'Pago',
         160,
@@ -51289,7 +51289,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-23',
-        1134566.00,
+        1132000.00,
         2,
         'Pago',
         160,
@@ -51322,7 +51322,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-28',
-        1136436.00,
+        1132000.00,
         5,
         'Pago',
         160,
@@ -51344,7 +51344,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-24',
-        1136000.00,
+        1132000.00,
         7,
         'Pago',
         160,
@@ -51355,7 +51355,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-28',
-        1141000.00,
+        1132000.00,
         8,
         'Pago',
         160,
@@ -51685,7 +51685,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-08',
-        2761675.00,
+        2726000.00,
         1,
         'Pago',
         161,
@@ -51806,7 +51806,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-28',
-        2851065.00,
+        2835000.00,
         12,
         'Pago',
         161,
@@ -51828,7 +51828,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-09',
-        2876769.00,
+        2835000.00,
         14,
         'Pago',
         161,
@@ -51839,7 +51839,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-30',
-        2863917.00,
+        2835000.00,
         15,
         'Pago',
         161,
@@ -51850,7 +51850,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-11',
-        2902473.00,
+        2835000.00,
         16,
         'Pago',
         161,
@@ -51861,7 +51861,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-13',
-        2905686.00,
+        2835000.00,
         17,
         'Pago',
         161,
@@ -51872,7 +51872,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-01-19',
-        2928177.00,
+        2835000.00,
         18,
         'Pago',
         161,
@@ -52741,7 +52741,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-17',
-        1462550.00,
+        1460000.00,
         1,
         'Pago',
         164,
@@ -52763,7 +52763,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-29',
-        1172258.80,
+        1054000.00,
         3,
         'Pago',
         164,
@@ -52774,7 +52774,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-29',
-        1136422.80,
+        1054000.00,
         4,
         'Pago',
         164,
@@ -52785,7 +52785,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-29',
-        1099392.27,
+        1054000.00,
         5,
         'Pago',
         164,
@@ -52796,7 +52796,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-29',
-        1063556.27,
+        1054000.00,
         6,
         'Pago',
         164,
@@ -52807,7 +52807,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-26',
-        3132666.00,
+        3119667.00,
         1,
         'Pago',
         165,
@@ -52818,7 +52818,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-10',
-        3069708.00,
+        3005000.00,
         2,
         'Pago',
         165,
@@ -52829,7 +52829,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-31',
-        3042462.00,
+        3005000.00,
         3,
         'Pago',
         165,
@@ -52840,7 +52840,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-18',
-        3078032.00,
+        3005000.00,
         4,
         'Pago',
         165,
@@ -52851,7 +52851,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-24',
-        3120793.00,
+        3005000.00,
         5,
         'Pago',
         165,
@@ -52862,7 +52862,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-03-18',
-        3195717.00,
+        3005000.00,
         6,
         'Pago',
         165,
@@ -52873,7 +52873,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-03-18',
-        3156552.00,
+        3005000.00,
         7,
         'Pago',
         165,
@@ -52884,7 +52884,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-21',
-        3212746.00,
+        3005000.00,
         8,
         'Pago',
         165,
@@ -52895,7 +52895,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-21',
-        3107170.00,
+        3005000.00,
         9,
         'Pago',
         165,
@@ -52906,7 +52906,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-27',
-        3134415.00,
+        3005000.00,
         10,
         'Pago',
         165,
@@ -52917,7 +52917,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-27',
-        3028840.00,
+        3005000.00,
         11,
         'Pago',
         165,
@@ -52928,7 +52928,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-31',
-        3103029.00,
+        3005000.00,
         12,
         'Pago',
         165,
@@ -52939,7 +52939,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-30',
-        3141227.00,
+        3005000.00,
         13,
         'Pago',
         165,
@@ -52950,7 +52950,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-22',
-        3110576.00,
+        3005000.00,
         14,
         'Pago',
         165,
@@ -52961,7 +52961,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-13',
-        3185500.00,
+        3005000.00,
         15,
         'Pago',
         165,
@@ -52972,7 +52972,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-01-29',
-        3005000.00,
+        3004984.00,
         16,
         'Pago',
         165,
@@ -52983,7 +52983,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-04-02',
-        3158255.00,
+        3005000.00,
         17,
         'Pago',
         165,
@@ -52994,7 +52994,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-04-02',
-        3052679.33,
+        3005000.00,
         18,
         'Pago',
         165,
@@ -53071,7 +53071,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-07-31',
-        2657154.00,
+        2524577.00,
         1,
         'Pago',
         166,
@@ -53082,7 +53082,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-31',
-        2706273.00,
+        2696000.00,
         2,
         'Pago',
         166,
@@ -53115,7 +53115,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-12',
-        2701273.00,
+        2696000.00,
         5,
         'Pago',
         166,
@@ -53159,7 +53159,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-04',
-        2698819.00,
+        2696000.00,
         9,
         'Pago',
         166,
@@ -53170,7 +53170,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-13',
-        2741832.00,
+        2696000.00,
         10,
         'Pago',
         166,
@@ -53181,7 +53181,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-06',
-        2720444.00,
+        2696000.00,
         11,
         'Pago',
         166,
@@ -53192,7 +53192,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-07',
-        2711277.00,
+        2696000.00,
         12,
         'Pago',
         166,
@@ -53203,7 +53203,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-08',
-        2708222.00,
+        2696000.00,
         13,
         'Pago',
         166,
@@ -53214,7 +53214,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-09',
-        2711277.00,
+        2696000.00,
         14,
         'Pago',
         166,
@@ -53236,7 +53236,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-12',
-        2812108.00,
+        2696000.00,
         16,
         'Pago',
         166,
@@ -53247,7 +53247,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-07-01',
-        2818219.00,
+        2696000.00,
         17,
         'Pago',
         166,
@@ -53258,7 +53258,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-25',
-        1590252.00,
+        1545000.00,
         1,
         'Pago',
         167,
@@ -53269,7 +53269,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-25',
-        1552252.00,
+        1545000.00,
         2,
         'Pago',
         167,
@@ -53280,7 +53280,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-22',
-        1762124.00,
+        1545000.00,
         3,
         'Pago',
         167,
@@ -53291,7 +53291,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-22',
-        1707843.00,
+        1545000.00,
         4,
         'Pago',
         167,
@@ -53302,7 +53302,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-22',
-        1655313.00,
+        1545000.00,
         5,
         'Pago',
         167,
@@ -53313,7 +53313,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-22',
-        1601032.00,
+        1545000.00,
         6,
         'Pago',
         167,
@@ -53918,7 +53918,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-02',
-        857832.27,
+        722000.00,
         1,
         'Pago',
         168,
@@ -53929,7 +53929,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-02',
-        832466.00,
+        722000.00,
         2,
         'Pago',
         168,
@@ -53940,7 +53940,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-02',
-        807918.00,
+        722000.00,
         3,
         'Pago',
         168,
@@ -53951,7 +53951,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-02',
-        782551.73,
+        722000.00,
         4,
         'Pago',
         168,
@@ -53962,7 +53962,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-02',
-        758003.73,
+        722000.00,
         5,
         'Pago',
         168,
@@ -53973,7 +53973,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-02',
-        1032637.47,
+        722000.00,
         6,
         'Pago',
         168,
@@ -54006,7 +54006,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-18',
-        870930.00,
+        867000.00,
         3,
         'Pago',
         169,
@@ -54017,7 +54017,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-15',
-        929000.00,
+        867000.00,
         4,
         'Pago',
         169,
@@ -54028,7 +54028,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-03',
-        919000.00,
+        867000.00,
         5,
         'Pago',
         169,
@@ -54039,7 +54039,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-14',
-        925000.00,
+        867000.00,
         6,
         'Pago',
         169,
@@ -54050,7 +54050,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-29',
-        912200.00,
+        867000.00,
         7,
         'Pago',
         169,
@@ -54061,7 +54061,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-22',
-        957207.00,
+        867000.00,
         8,
         'Pago',
         169,
@@ -54072,7 +54072,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-25',
-        998668.40,
+        867000.00,
         9,
         'Pago',
         169,
@@ -54083,7 +54083,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-25',
-        968207.80,
+        867000.00,
         10,
         'Pago',
         169,
@@ -54094,7 +54094,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-25',
-        938729.80,
+        867000.00,
         11,
         'Pago',
         169,
@@ -54105,7 +54105,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-25',
-        908269.20,
+        867000.00,
         12,
         'Pago',
         169,
@@ -54116,7 +54116,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-08-31',
-        1267000.00,
+        1265000.00,
         13,
         'Pago',
         170,
@@ -54138,7 +54138,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-06-11',
-        1307367.00,
+        1300000.00,
         15,
         'Pago',
         170,
@@ -54149,7 +54149,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-12',
-        1307367.00,
+        1300000.00,
         16,
         'Pago',
         170,
@@ -54160,7 +54160,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-01',
-        1314733.00,
+        1300000.00,
         17,
         'Pago',
         170,
@@ -54171,7 +54171,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-02',
-        1310313.00,
+        1300000.00,
         18,
         'Pago',
         170,
@@ -54182,7 +54182,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-03',
-        1308840.00,
+        1300000.00,
         19,
         'Pago',
         170,
@@ -54193,7 +54193,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-04',
-        1278202.00,
+        1271000.00,
         20,
         'Pago',
         170,
@@ -54204,7 +54204,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-05',
-        1276700.00,
+        1271000.00,
         21,
         'Pago',
         170,
@@ -54226,7 +54226,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-07',
-        1275321.00,
+        1271000.00,
         23,
         'Pago',
         170,
@@ -54248,7 +54248,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-03-09',
-        1279643.00,
+        1271000.00,
         25,
         'Pago',
         170,
@@ -54259,7 +54259,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-10',
-        1275671.00,
+        1271000.00,
         26,
         'Pago',
         170,
@@ -54281,7 +54281,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-12',
-        1276762.00,
+        1271000.00,
         28,
         'Pago',
         170,
@@ -54578,7 +54578,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-21',
-        1559990.00,
+        1542000.00,
         1,
         'Pago',
         172,
@@ -54589,7 +54589,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-11-20',
-        1401347.00,
+        1381000.00,
         2,
         'Pago',
         172,
@@ -54600,7 +54600,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-23',
-        1406042.00,
+        1381000.00,
         3,
         'Pago',
         172,
@@ -54611,7 +54611,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-02',
-        1424900.00,
+        1381000.00,
         4,
         'Pago',
         172,
@@ -54622,7 +54622,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-04',
-        1466307.00,
+        1381000.00,
         5,
         'Pago',
         172,
@@ -54633,7 +54633,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-04',
-        1421693.00,
+        1381000.00,
         6,
         'Pago',
         172,
@@ -54666,7 +54666,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-06',
-        1387261.00,
+        1381000.00,
         9,
         'Pago',
         172,
@@ -54677,7 +54677,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-09',
-        1448647.00,
+        1381000.00,
         10,
         'Pago',
         172,
@@ -54688,7 +54688,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-10',
-        1451317.00,
+        1381000.00,
         11,
         'Pago',
         172,
@@ -54699,7 +54699,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-13',
-        1487317.00,
+        1381000.00,
         12,
         'Pago',
         172,
@@ -54710,7 +54710,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-26',
-        1507000.00,
+        1381000.00,
         13,
         'Pago',
         172,
@@ -54721,7 +54721,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-01-26',
-        1507000.00,
+        1381000.00,
         14,
         'Pago',
         172,
@@ -54743,7 +54743,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-09-11',
-        3165158.00,
+        3158000.00,
         2,
         'Pago',
         173,
@@ -54754,7 +54754,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-12-12',
-        3175895.00,
+        3158000.00,
         3,
         'Pago',
         173,
@@ -54776,7 +54776,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-02',
-        3168737.00,
+        3158000.00,
         5,
         'Pago',
         173,
@@ -54787,7 +54787,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-03-18',
-        3197300.00,
+        3158000.00,
         6,
         'Pago',
         173,
@@ -54798,7 +54798,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-22',
-        3211700.00,
+        3158000.00,
         7,
         'Pago',
         173,
@@ -54809,7 +54809,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-21',
-        3208100.00,
+        3158000.00,
         8,
         'Pago',
         173,
@@ -54820,7 +54820,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-14',
-        3290425.00,
+        3158000.00,
         9,
         'Pago',
         173,
@@ -54831,7 +54831,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-09',
-        3383481.00,
+        3158000.00,
         10,
         'Pago',
         173,
@@ -54842,7 +54842,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-11',
-        3488000.00,
+        3158000.00,
         11,
         'Pago',
         173,
@@ -54853,7 +54853,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-12',
-        3490853.00,
+        3158000.00,
         12,
         'Pago',
         173,
@@ -54864,7 +54864,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-07-01',
-        3494000.00,
+        3164000.00,
         13,
         'Pago',
         173,
@@ -54875,7 +54875,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-02-16',
-        3527000.00,
+        3164000.00,
         14,
         'Pago',
         173,
@@ -54930,7 +54930,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-18',
-        2680102.00,
+        2662000.00,
         5,
         'Pago',
         174,
@@ -54941,7 +54941,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-03-18',
-        2697794.00,
+        2662000.00,
         6,
         'Pago',
         174,
@@ -54952,7 +54952,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-13',
-        2770610.00,
+        2662000.00,
         7,
         'Pago',
         174,
@@ -54963,7 +54963,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-06',
-        2749491.00,
+        2662000.00,
         8,
         'Pago',
         174,
@@ -54974,7 +54974,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-07',
-        2755525.00,
+        2662000.00,
         9,
         'Pago',
         174,
@@ -54985,7 +54985,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-04-08',
-        2746474.00,
+        2662000.00,
         10,
         'Pago',
         174,
@@ -54996,7 +54996,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-16',
-        2873185.33,
+        2662000.00,
         11,
         'Pago',
         174,
@@ -55007,7 +55007,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-16',
-        2779660.40,
+        2662000.00,
         12,
         'Pago',
         174,
@@ -55018,7 +55018,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-07-01',
-        2939558.00,
+        2662000.00,
         13,
         'Pago',
         174,
@@ -55029,7 +55029,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-01-11',
-        1213433.00,
+        1180000.00,
         1,
         'Pago',
         175,
@@ -55040,7 +55040,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-26',
-        1611959.00,
+        1180000.00,
         2,
         'Pago',
         175,
@@ -55051,7 +55051,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2024-10-23',
-        10014166.00,
+        10000000.00,
         1,
         'Pago',
         176,
@@ -55084,7 +55084,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-01',
-        1906000.00,
+        1901000.00,
         4,
         'Pago',
         176,
@@ -55095,7 +55095,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-02-22',
-        1933317.00,
+        1901000.00,
         5,
         'Pago',
         176,
@@ -55128,7 +55128,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-05',
-        1912000.00,
+        1901000.00,
         8,
         'Pago',
         176,
@@ -55139,7 +55139,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-07',
-        1965634.00,
+        1901000.00,
         9,
         'Pago',
         176,
@@ -55161,7 +55161,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-03-09',
-        1959960.00,
+        1901000.00,
         11,
         'Pago',
         176,
@@ -55172,7 +55172,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-16',
-        1985024.00,
+        1901000.00,
         12,
         'Pago',
         176,
@@ -55183,7 +55183,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-20',
-        1995960.00,
+        1901000.00,
         13,
         'Pago',
         176,
@@ -55194,7 +55194,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-02-02',
-        2088438.60,
+        1901000.00,
         14,
         'Pago',
         176,
@@ -55205,7 +55205,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-02-02',
-        2023804.60,
+        1901000.00,
         15,
         'Pago',
         176,
@@ -55755,7 +55755,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-08',
-        714242.00,
+        690000.00,
         4,
         'Pago',
         180,
@@ -55788,7 +55788,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-06-25',
-        2435345.00,
+        2424000.00,
         3,
         'Pago',
         181,
@@ -55799,7 +55799,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-29',
-        2432242.00,
+        2424000.00,
         4,
         'Pago',
         181,
@@ -55810,7 +55810,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-27',
-        2440483.00,
+        2424000.00,
         5,
         'Pago',
         181,
@@ -55821,7 +55821,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-30',
-        2428309.00,
+        2424000.00,
         6,
         'Pago',
         181,
@@ -55832,7 +55832,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-21',
-        2500345.00,
+        2424000.00,
         7,
         'Pago',
         181,
@@ -55843,7 +55843,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-27',
-        2473450.00,
+        2424000.00,
         8,
         'Pago',
         181,
@@ -55854,7 +55854,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-31',
-        2473450.00,
+        2424000.00,
         9,
         'Pago',
         181,
@@ -55865,7 +55865,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-01-19',
-        2476197.00,
+        2424000.00,
         10,
         'Pago',
         181,
@@ -55909,7 +55909,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-21',
-        1340484.00,
+        1329000.00,
         4,
         'Pago',
         182,
@@ -55920,7 +55920,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-09-23',
-        1340484.00,
+        1329000.00,
         5,
         'Pago',
         182,
@@ -55931,7 +55931,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-10-30',
-        1340485.00,
+        1329000.00,
         6,
         'Pago',
         182,
@@ -55942,7 +55942,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-21',
-        1340515.00,
+        1329000.00,
         7,
         'Pago',
         182,
@@ -55953,7 +55953,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-27',
-        1330484.00,
+        1329000.00,
         8,
         'Pago',
         182,
@@ -55964,7 +55964,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-01-20',
-        1342484.00,
+        1329000.00,
         9,
         'Pago',
         182,
@@ -56074,7 +56074,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-01-07',
-        1976485.00,
+        1970000.00,
         1,
         'Pago',
         184,
@@ -56162,7 +56162,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-08-21',
-        220260.00,
+        219000.00,
         1,
         'Pago',
         185,
@@ -56426,7 +56426,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-20',
-        1866607.00,
+        1854000.00,
         1,
         'Pago',
         186,
@@ -56437,7 +56437,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-02-02',
-        1959050.00,
+        1854000.00,
         2,
         'Pago',
         186,
@@ -57416,7 +57416,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-01-19',
-        1974335.00,
+        1961000.00,
         5,
         'Pago',
         189,
@@ -57427,7 +57427,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-02-13',
-        1974335.00,
+        1961000.00,
         6,
         'Pago',
         189,
@@ -57438,7 +57438,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-11-21',
-        298118.00,
+        288000.00,
         1,
         'Pago',
         190,
@@ -57471,7 +57471,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-07-11',
-        1478000.00,
+        1466000.00,
         1,
         'Pago',
         191,
@@ -57482,7 +57482,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-05-12',
-        1417453.00,
+        1400000.00,
         2,
         'Pago',
         191,
@@ -57504,7 +57504,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-02-02',
-        1408000.00,
+        1400000.00,
         4,
         'Pago',
         191,
@@ -58087,7 +58087,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-02-02',
-        1426592.00,
+        1308000.00,
         1,
         'Pago',
         195,
@@ -58098,7 +58098,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-02-02',
-        1382120.00,
+        1308000.00,
         2,
         'Pago',
         195,
@@ -58208,7 +58208,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2025-12-18',
-        230260.00,
+        219000.00,
         1,
         'Pago',
         199,
@@ -58219,7 +58219,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-01-19',
-        230260.00,
+        219000.00,
         2,
         'Pago',
         199,
@@ -58230,7 +58230,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-02-02',
-        221292.00,
+        219000.00,
         3,
         'Pago',
         199,
@@ -58483,7 +58483,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-01-19',
-        642633.00,
+        627000.00,
         1,
         'Pago',
         201,
@@ -58494,7 +58494,7 @@ INSERT INTO creditos_pagocredito (
     ),
 (
         '2026-05-02',
-        631000.00,
+        627000.00,
         2,
         'Pago',
         201,
